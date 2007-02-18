@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:context="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://ssel.vub.ac.be/codamos/2005/04/java.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:units="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#"
+  xml:base="http://ssel.vub.ac.be/codamos/2005/04/java.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl"/>
+    <rdfs:comment xml:lang="en">Supports standard java and mobile java for now</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SSEL-2005/04</owl:versionInfo>
+    <rdfs:label xml:lang="en">CoDAMoS Java ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:ID="JavaNet">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaLibrary"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="JDKJavaLang">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CLDCJavaLang"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CLDCJavaUtil">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaLibrary"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="JavaAWT">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaRenderingEngine"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="J2EE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="J2SE"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="J2MESIPAPI">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaLibrary"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Java2Lang">
+    <rdfs:subClassOf rdf:resource="#JDKJavaLang"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CDC">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaLangRef"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaxMicroeditionIO"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaJar"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Java2Util"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#JavaNet"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaLangReflect"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaUtilZip"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaMath"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaText"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Java2IO"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Java2Lang"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="J2ME"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaLangRef">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaLibrary"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="JDK1.1">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JDK1.1JavaIO"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaSQL"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaAWTEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaBeans"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaMath"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaLangReflect"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JDK"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JDK1.1JavaUtil"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaText"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaUtilZip"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaRMI"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaLibrary">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Library"/>
+  </owl:Class>
+  <owl:Class rdf:ID="J2MEWMA2">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="J2MEWMA"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#JDK">
+    <rdfs:subClassOf rdf:resource="#JavaAWT"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaIO"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JDKJavaUtil"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#JDKJavaLang"/>
+    <rdfs:subClassOf rdf:resource="#JavaNet"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaVM"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="StreamJavaIO">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaBeans">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:ID="J2MEBluetooth">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:ID="J2MEMMAPI">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:ID="JavaxMicroeditionMedia">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaJar">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:ID="JavaxMicroeditionPKI">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#J2MEWMA">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaMath">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CLDCJavaLang">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Java2Util">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JDKJavaUtil"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaAWTEvent">
+    <rdfs:subClassOf rdf:resource="#JavaAWT"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Java2IO">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JDK1.1JavaIO"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaRMI">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaIO">
+    <rdfs:subClassOf rdf:resource="#StreamJavaIO"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PersonalJava">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaUtilZip"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaLangReflect"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#JavaRMI"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaSQL"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#JavaBeans"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JDK1.1JavaUtil"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaText"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#JavaNet"/>
+    <rdfs:subClassOf rdf:resource="#JDKJavaLang"/>
+    <rdfs:subClassOf rdf:resource="#JavaAWTEvent"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaVM"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#JavaMath"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JDK1.1JavaIO"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaText">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaxMicroeditionIO">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JDK1.1JavaUtil">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JDKJavaUtil"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PP">
+    <rdfs:subClassOf rdf:resource="#JavaAWTEvent"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PBP"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="J2MELocationAPI">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#J2ME">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaVM"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Java2SQL">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaSQL"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MIDP">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaxMicroeditionMIDlet"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaxMicroeditionRMS"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CLDC"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaxMicroeditionLCDUI"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaxMicroeditionLCDUI">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaRenderingEngine"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MIDP2">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="JavaxMicroeditionLCDUIGame"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#JavaxMicroeditionMedia"/>
+    <rdfs:subClassOf rdf:resource="#JavaxMicroeditionPKI"/>
+    <rdfs:subClassOf rdf:resource="#MIDP"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JDK1.1JavaIO">
+    <rdfs:subClassOf rdf:resource="#JavaIO"/>
+  </owl:Class>
+  <owl:Class rdf:ID="J2ME3D">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaLangReflect">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaSQL">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaxMicroeditionRMS">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:ID="JavaxSwing">
+    <rdfs:subClassOf rdf:resource="#JavaAWTEvent"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PBP">
+    <rdfs:subClassOf rdf:resource="#JavaBeans"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="FP"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="J2MECHAPI">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:ID="J2MEWSA">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaxMicroeditionLCDUIGame">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#JavaRenderingEngine"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaVM">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#VirtualMachine"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CLDC">
+    <rdfs:subClassOf rdf:resource="#StreamJavaIO"/>
+    <rdfs:subClassOf rdf:resource="#JavaxMicroeditionIO"/>
+    <rdfs:subClassOf rdf:resource="#CLDCJavaLang"/>
+    <rdfs:subClassOf rdf:resource="#J2ME"/>
+    <rdfs:subClassOf rdf:resource="#CLDCJavaUtil"/>
+  </owl:Class>
+  <owl:Class rdf:about="#J2SE">
+    <rdfs:subClassOf rdf:resource="#Java2IO"/>
+    <rdfs:subClassOf rdf:resource="#JavaxSwing"/>
+    <rdfs:subClassOf rdf:resource="#JavaLangRef"/>
+    <rdfs:subClassOf rdf:resource="#JDK1.1"/>
+    <rdfs:subClassOf rdf:resource="#Java2Lang"/>
+    <rdfs:subClassOf rdf:resource="#Java2Util"/>
+    <rdfs:subClassOf rdf:resource="#Java2SQL"/>
+    <rdfs:subClassOf rdf:resource="#JavaJar"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaRenderingEngine">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#RenderingEngine"/>
+  </owl:Class>
+  <owl:Class rdf:ID="J2MESATSA">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JDKJavaUtil">
+    <rdfs:subClassOf rdf:resource="#CLDCJavaUtil"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaxMicroeditionMIDlet">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:ID="J2SE5">
+    <rdfs:subClassOf rdf:resource="#J2SE"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JavaUtilZip">
+    <rdfs:subClassOf rdf:resource="#JavaLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#FP">
+    <rdfs:subClassOf rdf:resource="#CDC"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasPBPVersion">
+    <rdfs:domain rdf:resource="#PBP"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPersonalJavaVersion">
+    <rdfs:domain rdf:resource="#PersonalJava"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMIDPVersion">
+    <rdfs:domain rdf:resource="#MIDP"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWMAVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#J2MEWMA"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFPVersion">
+    <rdfs:domain rdf:resource="#FP"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPPVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#PP"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:ID="hasCDCVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#CDC"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasCLDCVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#CLDC"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasJDKVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#JDK"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 1.3, Build 225.4)  http://protege.stanford.edu -->

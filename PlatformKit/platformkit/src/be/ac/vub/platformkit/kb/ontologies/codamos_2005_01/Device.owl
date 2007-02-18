@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE uridef[
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema">
+  <!ENTITY context "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl">
+  <!ENTITY units "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl">
+  <!ENTITY DEFAULT "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Device.owl">
+]>
+
+<rdf:RDF
+  xmlns:rdf = "&rdf;#"
+  xmlns:rdfs = "&rdfs;#"
+  xmlns:owl = "&owl;#"
+  xmlns:xsd = "&xsd;#"
+  xmlns:context = "&context;#"
+  xmlns:units = "&units;#"
+  xmlns = "&DEFAULT;#"
+  xml:base = "&DEFAULT;">
+ 
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo>
+      $Id: Device.owl,v 1.0 2005/08/10 19:52 davy Exp $
+    </owl:versionInfo> 
+    <rdfs:comment>
+      Concept instantiatens
+      Created by:
+        Davy Preuveneers
+    </rdfs:comment> 
+    <owl:imports rdf:resource="&context;" />
+    <owl:imports rdf:resource="&units;" />
+  </owl:Ontology>
+
+
+  <owl:Class rdf:ID="Keyboard">
+    <rdfs:subClassOf rdf:resource="&context;#InputDevice" />
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="#layout">
+    <rdfs:range rdf:resource="&xsd;#string" />
+    <rdfs:domain rdf:resource="#Keyboard" />
+  </owl:DatatypeProperty>
+
+<!--   ############ ########### ############ ############ ########### -->
+  
+  <owl:Class rdf:ID="Mouse">
+    <rdfs:subClassOf rdf:resource="&context;#InputDevice" />
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="#buttons">
+    <rdfs:range rdf:resource="&xsd;#int" />
+    <rdfs:domain rdf:resource="#Mouse" />
+  </owl:DatatypeProperty>
+
+<!--   ############ ########### ############ ############ ########### -->
+
+  <owl:Class rdf:ID="Connector">
+    <rdfs:subClassOf rdf:resource="&context;#InputDevice" />
+    <rdfs:subClassOf rdf:resource="&context;#OutputDevice" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="SerialPort">
+    <rdfs:subClassOf rdf:resource="#Connector" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="IrDAPort">
+    <rdfs:subClassOf rdf:resource="#SerialPort" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="ParallelPort">
+    <rdfs:subClassOf rdf:resource="#Connector" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="USBPort">
+    <rdfs:subClassOf rdf:resource="#Connector" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="FirewirePort">
+    <rdfs:subClassOf rdf:resource="#Connector" />
+  </owl:Class>
+  
+
+<!--   ############ ########### ############ ############ ########### -->
+  
+  <owl:Class rdf:ID="Sensor">
+    <rdfs:subClassOf rdf:resource="&context;#InputDevice" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="TemperatureSensor">
+    <rdfs:subClassOf rdf:resource="#Sensor" />
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:ID="measuresTemperature">
+    <rdfs:domain rdf:resource="#TemperatureSensor" />
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="&units;#Celsius" />
+          <owl:Class rdf:about="&units;#Fahrenheit" />
+          <owl:Class rdf:about="&units;#Kelvin" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  
+   
+  <owl:Class rdf:ID="LocationSensor">
+    <rdfs:subClassOf rdf:resource="#Sensor" />
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:ID="measuresLocation">
+    <rdfs:domain rdf:resource="#LocationSensor" />
+    <rdfs:range rdf:resource="&context;#Coordinate" />
+  </owl:ObjectProperty>
+    
+  <owl:Class rdf:ID="GPS">
+    <rdfs:subClassOf rdf:resource="#LocationSensor" />
+  </owl:Class>
+      
+<!--   ############ ########### ############ ############ ########### -->
+  
+  <owl:Class rdf:ID="RFID_Tag">
+    <rdfs:subClassOf rdf:resource="&context;#InputDevice" />
+  </owl:Class>
+    
+<!--   ############ ########### ############ ############ ########### -->
+  
+  <owl:Class rdf:ID="AudioInputDevice">
+    <rdfs:subClassOf rdf:resource="&context;#InputDevice" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="Microphone">
+    <rdfs:subClassOf rdf:resource="#AudioInputDevice" />
+  </owl:Class>
+
+<!--   ############ ########### ############ ############ ########### -->
+  
+  <owl:Class rdf:ID="AudioOutputDevice">
+    <rdfs:subClassOf rdf:resource="&context;#OutputDevice" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="Speaker">
+    <rdfs:subClassOf rdf:resource="#AudioOutputDevice" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="HeadPhones">
+    <rdfs:subClassOf rdf:resource="#AudioOutputDevice" />
+  </owl:Class>
+
+<!--   ############ ########### ############ ############ ########### -->
+      
+  <owl:Class rdf:ID="VideoInputDevice">
+    <rdfs:subClassOf rdf:resource="&context;#InputDevice" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="Camera">
+    <rdfs:subClassOf rdf:resource="#VideoInputDevice" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="WebCam">
+    <rdfs:subClassOf rdf:resource="#VideoInputDevice" />
+  </owl:Class>
+
+<!--   ############ ########### ############ ############ ########### -->
+      
+  <owl:Class rdf:ID="VideoOutputDevice">
+    <rdfs:subClassOf rdf:resource="&context;#OutputDevice" />
+  </owl:Class>
+    
+  <owl:Class rdf:ID="Projector">
+    <rdfs:subClassOf rdf:resource="#VideoOutputDevice" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="Display">
+    <rdfs:subClassOf rdf:resource="#VideoOutputDevice" />
+  </owl:Class>
+
+<!--   ############ ########### ############ ############ ########### -->
+  
+  <owl:Class rdf:ID="TouchScreen">
+    <rdfs:subClassOf rdf:resource="#VideoInputDevice" />
+    <rdfs:subClassOf rdf:resource="#Display" />
+  </owl:Class>
+
+<!--   ############ ########### ############ ############ ########### -->
+      
+  <owl:Class rdf:ID="Resolution" />
+
+  <owl:ObjectProperty rdf:about="#width">
+    <rdfs:range rdf:resource="&units;#Pixel" />
+    <rdfs:domain rdf:resource="#Resolution" />
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#height">
+    <rdfs:range rdf:resource="&units;#Pixel" />
+    <rdfs:domain rdf:resource="#Resolution" />
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasResolution">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#VideoInputDevice" />
+          <owl:Class rdf:about="#VideoOutputDevice" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Resolution"/>
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasColourDepth">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#VideoInputDevice" />
+          <owl:Class rdf:about="#VideoOutputDevice" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="&units;#ColourDepth" />
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+  </owl:ObjectProperty>
+
+<!--   ############ ########### ############ ############ ########### -->
+
+  <owl:Class rdf:ID="PointOPointNetwork" />
+
+  <owl:Class rdf:ID="WiredNetworkResource">
+    <rdfs:subClassOf rdf:resource="&context;#NetworkResource" />
+  </owl:Class>
+
+
+  <owl:Class rdf:ID="CableNetworkResource">
+    <rdfs:subClassOf rdf:resource="#WiredNetworkResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="XDSLNetworkResource">
+    <rdfs:subClassOf rdf:resource="#WiredNetworkResource" />
+  </owl:Class>
+
+
+  <owl:Class rdf:ID="WirelessNetworkResource">
+    <rdfs:subClassOf rdf:resource="&context;#NetworkResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="InfraredNetworkResource">
+    <rdfs:subClassOf rdf:resource="#PointOPointNetwork" />
+    <rdfs:subClassOf rdf:resource="#WirelessNetworkResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="BluetoothNetworkResource">
+    <rdfs:subClassOf rdf:resource="#WirelessNetworkResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="GPRSNetworkResource">
+    <rdfs:subClassOf rdf:resource="#WirelessNetworkResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="WifiNetworkResource">
+    <rdfs:subClassOf rdf:resource="#WirelessNetworkResource" />
+  </owl:Class>
+
+
+<!--   ############ ########### ############ ############ ########### -->
+
+  <owl:Class rdf:ID="HardDisk">
+    <rdfs:subClassOf rdf:resource="&context;#StorageResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="FlashMemory">
+    <rdfs:subClassOf rdf:resource="&context;#StorageResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="RemovableStorage">
+    <rdfs:subClassOf rdf:resource="&context;#StorageResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="MemoryCard">
+    <rdfs:subClassOf rdf:resource="#RemovableStorage" />
+    <rdfs:subClassOf rdf:resource="#FlashMemory" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="SDCard">
+    <rdfs:subClassOf rdf:resource="#MemoryCard" />
+  </owl:Class>
+
+<!--   ############ ########### ############ ############ ########### -->
+  
+  <owl:Class rdf:ID="Battery">
+    <rdfs:subClassOf rdf:resource="&context;#PowerResource"/>
+  </owl:Class>
+
+<!--   ############ ########### ############ ############ ########### -->
+  
+  <owl:ObjectProperty rdf:about="#cpuIdentifier">
+    <rdfs:range rdf:resource="&units;#StringValue" />
+    <rdfs:domain rdf:resource="&context;#CPUResource" />
+  </owl:ObjectProperty>
+  
+  <owl:Class rdf:ID="ArmProcessor">
+    <rdfs:subClassOf rdf:resource="&context;#CPUResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="X86Processor">
+    <rdfs:subClassOf rdf:resource="&context;#CPUResource" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="AlphaProcessor">
+    <rdfs:subClassOf rdf:resource="&context;#CPUResource" />
+  </owl:Class>
+       
+</rdf:RDF>
+
