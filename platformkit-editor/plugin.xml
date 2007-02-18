@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "be.ac.vub.platformkit.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "be.ac.vub.platformkit.presentation.PlatformkitModelWizardID"
+      name = "%_UI_PlatformkitModelWizard_label"
+      class = "be.ac.vub.platformkit.presentation.PlatformkitModelWizard"
+      category = "be.ac.vub.platformkit.Wizard.category.ID"
+      icon = "icons/full/obj16/PlatformkitModelFile.gif">
+      <description>%_UI_PlatformkitModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "be.ac.vub.platformkit.presentation.PlatformkitEditorID"
+        name = "%_UI_PlatformkitEditor_label"
+        icon = "icons/full/obj16/PlatformkitModelFile.gif"
+        extensions = "platformkit"
+        class = "be.ac.vub.platformkit.presentation.PlatformkitEditor" 
+        contributorClass="be.ac.vub.platformkit.presentation.PlatformkitActionBarContributor" >
+    </editor>
+  </extension>
+  <extension
+        point="org.eclipse.ui.popupMenus">
+     <objectContribution
+           adaptable="false"
+           id="be.ac.vub.platformkit.editor.EObjectContribution"
+           objectClass="org.eclipse.emf.ecore.EObject">
+        <action
+              class="be.ac.vub.platformkit.presentation.popup.action.Profile"
+              enablesFor="1"
+              icon="icons/full/obj16/ConstraintSpace.gif"
+              id="be.ac.vub.platformkit.editor.actions.Profile"
+              label="Profile Against Concrete Platform..."
+              menubarPath="be.ac.vub.platformkit.editor.menu/EObjectGroup">
+           <enablement>
+              <not>
+                 <or>
+                    <objectClass name="be.ac.vub.platformkit.ConstraintSpace"/>
+                    <objectClass name="be.ac.vub.platformkit.ConstraintSet"/>
+                    <objectClass name="be.ac.vub.platformkit.Constraint"/>
+                 </or>
+              </not>
+           </enablement>
+        </action>
+        <menu
+              id="be.ac.vub.platformkit.editor.menu"
+              label="PlatformKit"
+              path="additions">
+           <separator name="EObjectGroup"/>
+        </menu>
+     </objectContribution>
+     <objectContribution
+           adaptable="false"
+           id="be.ac.vub.platformkit.editor.ConstraintSpaceContribution"
+           objectClass="be.ac.vub.platformkit.ConstraintSpace">
+        <action
+              class="be.ac.vub.platformkit.presentation.popup.action.Validate"
+              enablesFor="1"
+              icon="icons/full/obj16/complete_tsk.gif"
+              id="be.ac.vub.platformkit.editor.actions.Validate"
+              label="Validate Against Concrete Platform"
+              menubarPath="additions"/>
+        <action
+              class="be.ac.vub.platformkit.presentation.popup.action.SortLeastSpecificFirst"
+              enablesFor="1"
+              icon="icons/full/obj16/cp_order_obj.gif"
+              id="be.ac.vub.platformkit.editor.actions.SortLeastSpecificFirst"
+              label="Sort Least Specific First"
+              menubarPath="additions"/>
+        <action
+              class="be.ac.vub.platformkit.presentation.popup.action.SortMostSpecificFirst"
+              enablesFor="1"
+              icon="icons/full/obj16/cp_order_obj.gif"
+              id="be.ac.vub.platformkit.editor.actions.SortMostSpecificFirst"
+              label="Sort Most Specific First"
+              menubarPath="additions"/>
+        <action
+              class="be.ac.vub.platformkit.presentation.popup.action.ClassifyTaxonomy"
+              enablesFor="1"
+              icon="icons/full/obj16/GenModel.gif"
+              id="be.ac.vub.platformkit.editor.actions.ClassifyTaxonomy"
+              label="Classify Taxonomy"
+              menubarPath="additions"/>
+        <action
+              class="be.ac.vub.platformkit.presentation.popup.action.AddProductConfig"
+              enablesFor="1"
+              icon="icons/full/obj16/ModelFile.gif"
+              id="be.ac.vub.platformkit.editor.actions.AddProductConfig"
+              label="Add Product Configuration Model..."
+              menubarPath="additions"/>
+        <action
+              class="be.ac.vub.platformkit.presentation.popup.action.AddProductLine"
+              enablesFor="1"
+              icon="icons/full/obj16/EcoreModelFile.gif"
+              id="be.ac.vub.platformkit.editor.actions.AddProductLine"
+              label="Add Product Line Meta-model..."
+              menubarPath="additions"/>
+     </objectContribution>
+  </extension>    
+</plugin>
