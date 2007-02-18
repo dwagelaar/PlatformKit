@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: be.ac.vub.platformkit.editor; singleton:=true
+Bundle-Version: 1.1.0
+Bundle-ClassPath: .
+Bundle-Activator: be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Export-Package: be.ac.vub.platformkit.presentation,
+ be.ac.vub.platformkit.presentation.logging
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
+ be.ac.vub.platformkit.edit;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.ui.console,
+ com.hp.hpl.jena
+Eclipse-LazyStart: true
