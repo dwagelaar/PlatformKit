@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE uridef[
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema">
+  <!ENTITY DEFAULT "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2006/01/User.owl">
+]>
+
+<rdf:RDF
+  xmlns:rdf = "&rdf;#"
+  xmlns:rdfs = "&rdfs;#"
+  xmlns:owl = "&owl;#"
+  xmlns:xsd = "&xsd;#"
+  xmlns = "&DEFAULT;#"
+  xml:base = "&DEFAULT;">
+ 
+  <owl:Ontology rdf:about="">
+    <rdfs:label xml:lang="en">CoDAMoS user ontology</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      $Id: User.owl 242 2006-02-09 07:49:14Z dennis $
+    </owl:versionInfo> 
+    <rdfs:comment>
+      User ontology concepts and definitions
+      Created by:
+        Davy Preuveneers
+    </rdfs:comment>
+  </owl:Ontology>
+
+  
+
+<!--   ############ ########### ############ ############ ########### -->
+<!--   ############                                       ########### -->
+<!--   ############            USER PARAMETERS            ########### -->
+<!--   ############                                       ########### -->
+<!--   ############ ########### ############ ############ ########### -->
+
+  <owl:Class rdf:ID="User" />
+
+  <owl:Class rdf:ID="Activity" />
+
+  <owl:Class rdf:ID="Role" />
+
+  <owl:Class rdf:ID="Mood" />
+
+  <owl:Class rdf:ID="Task" />
+
+  <owl:ObjectProperty rdf:ID="hasRole">
+    <rdfs:domain rdf:resource="#User" />
+    <rdfs:range rdf:resource="#Role" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasTask">
+    <rdfs:domain rdf:resource="#User" />
+    <rdfs:range rdf:resource="#Task" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasActivity">
+    <rdfs:domain rdf:resource="#Task" />
+    <rdfs:range rdf:resource="#Activity" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasMood">
+    <rdfs:range rdf:resource="#Mood" />
+    <rdfs:domain rdf:resource="#User" />
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+  </owl:ObjectProperty>
+
+
+
+<!--   ############ ########### ############ ############ ########### -->
+<!--   ############                                       ########### -->
+<!--   ############            USER PREFERENCES           ########### -->
+<!--   ############                                       ########### -->
+<!--   ############ ########### ############ ############ ########### -->
+
+  <owl:Class rdf:ID="Profile" />
+
+  <owl:Class rdf:ID="ProfileItem" />
+
+  <owl:Class rdf:ID="PreferenceItem">
+    <rdfs:subClassOf rdf:resource="#ProfileItem" />
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:ID="prefProperty">
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+    <rdfs:domain rdf:resource="#PreferenceItem" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="prefValue">
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+    <rdfs:domain rdf:resource="#PreferenceItem" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="prefCondition">
+    <rdfs:domain rdf:resource="#PreferenceItem" />
+  </owl:ObjectProperty>
+
+
+
+  <owl:ObjectProperty rdf:ID="hasProfileItem">
+    <rdfs:domain rdf:resource="#Profile" />
+    <rdfs:range rdf:resource="#ProfileItem" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasProfile">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#User" />
+          <owl:Class rdf:about="#Role" />
+          <owl:Class rdf:about="#Mood" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Profile" />
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+  </owl:ObjectProperty>
+
+</rdf:RDF>

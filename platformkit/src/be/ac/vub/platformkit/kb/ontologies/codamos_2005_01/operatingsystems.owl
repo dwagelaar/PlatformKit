@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:context="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://ssel.vub.ac.be/codamos/2005/01/operatingsystems.owl#"
+    xmlns:units="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#"
+  xml:base="http://ssel.vub.ac.be/codamos/2005/01/operatingsystems.owl">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SSEL-2005/01</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Describes operating systems and their software environments including supported installation methods</rdfs:comment>
+    <owl:imports rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl"/>
+    <rdfs:label xml:lang="en">CoDAMoS operating systems ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:ID="OpenGL">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#RenderingEngine"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Pkgtool">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PackageManager"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MacOS">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#OperatingSystem"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DMG"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Windows16">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Windows"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsME">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Windows98"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsVista">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="WindowsXP"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsPocketPC">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="WindowsCE"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Redhat">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="RPMBasedLinux"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DebBasedLinux">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Linux"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Dpkg"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="QtopiaPhone">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Qtopia"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Debian">
+    <rdfs:subClassOf rdf:resource="#DebBasedLinux"/>
+  </owl:Class>
+  <owl:Class rdf:about="#RPMBasedLinux">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Linux"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="RPM"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsPocketPC2002">
+    <rdfs:subClassOf rdf:resource="#WindowsPocketPC"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsNT">
+    <rdfs:subClassOf rdf:resource="#OpenGL"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Windows32"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="XFree86">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="X11"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RHEL">
+    <rdfs:subClassOf rdf:resource="#Redhat"/>
+  </owl:Class>
+  <owl:Class rdf:ID="KDE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Qt"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DesktopEnvironment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsMobile">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Windows"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CAB"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TgzBasedLinux">
+    <rdfs:subClassOf rdf:resource="#Pkgtool"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Linux"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Linux">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Glibc"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="UNIX"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FamiliarGPE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GPE"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Familiar"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Qt">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#RenderingEngine"/>
+  </owl:Class>
+  <owl:Class rdf:ID="IPKBasedLinux">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Ipkg"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Linux"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Embedix">
+    <rdfs:subClassOf rdf:resource="#IPKBasedLinux"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Windows32">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DirectX"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Windows"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DirectX">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#RenderingEngine"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Xorg">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#X11"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PackageManager">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Software"/>
+  </owl:Class>
+  <owl:Class rdf:ID="QtEmbedded">
+    <rdfs:subClassOf rdf:resource="#Qt"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Fedora">
+    <rdfs:subClassOf rdf:resource="#Redhat"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI">
+    <rdfs:subClassOf rdf:resource="#PackageManager"/>
+  </owl:Class>
+  <owl:Class rdf:about="#X11">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#RenderingEngine"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Glibc">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Libc"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Windows">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#OperatingSystem"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GDI"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Dpkg">
+    <rdfs:subClassOf rdf:resource="#PackageManager"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Ipkg">
+    <rdfs:subClassOf rdf:resource="#PackageManager"/>
+  </owl:Class>
+  <owl:Class rdf:about="#RPM">
+    <rdfs:subClassOf rdf:resource="#PackageManager"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Windows2000">
+    <rdfs:subClassOf rdf:resource="#WindowsNT"/>
+    <rdfs:subClassOf rdf:resource="#MSI"/>
+  </owl:Class>
+  <owl:Class rdf:about="#GPE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DesktopEnvironment"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GTK"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#CAB">
+    <rdfs:subClassOf rdf:resource="#PackageManager"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BSD">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#UNIX"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Windows3.0">
+    <rdfs:subClassOf rdf:resource="#Windows16"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DMG">
+    <rdfs:subClassOf rdf:resource="#PackageManager"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DesktopEnvironment">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Middleware"/>
+  </owl:Class>
+  <owl:Class rdf:about="#WindowsXP">
+    <rdfs:subClassOf rdf:resource="#Windows2000"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Libc">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Library"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OpenZaurusOpie">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="OpenZaurus"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Opie"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MacOSX">
+    <rdfs:subClassOf rdf:resource="#MacOS"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Darwin"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SharpZaurusLinux">
+    <rdfs:subClassOf rdf:resource="#Embedix"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="QtopiaPDA"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#GDI">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#RenderingEngine"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FreeBSD">
+    <rdfs:subClassOf rdf:resource="#BSD"/>
+  </owl:Class>
+  <owl:Class rdf:about="#UNIX">
+    <rdfs:subClassOf rdf:resource="#Libc"/>
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#OperatingSystem"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OpenZaurusGPE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#OpenZaurus"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#GPE"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Windows98">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Windows95"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Familiar">
+    <rdfs:subClassOf rdf:resource="#IPKBasedLinux"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Slackware">
+    <rdfs:subClassOf rdf:resource="#TgzBasedLinux"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Windows3.1">
+    <rdfs:subClassOf rdf:resource="#Windows3.0"/>
+  </owl:Class>
+  <owl:Class rdf:about="#OpenZaurus">
+    <rdfs:subClassOf rdf:resource="#IPKBasedLinux"/>
+  </owl:Class>
+  <owl:Class rdf:about="#GTK">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#RenderingEngine"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Fink">
+    <rdfs:subClassOf rdf:resource="#Dpkg"/>
+  </owl:Class>
+  <owl:Class rdf:ID="GNOME2">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GNOME"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GTK2"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Windows3.11">
+    <rdfs:subClassOf rdf:resource="#Windows3.1"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Ubuntu">
+    <rdfs:subClassOf rdf:resource="#DebBasedLinux"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsMobileSmartphone">
+    <rdfs:subClassOf rdf:resource="#WindowsMobile"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsPocketPC2003">
+    <rdfs:subClassOf rdf:resource="#WindowsPocketPC2002"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mandrake">
+    <rdfs:subClassOf rdf:resource="#RPMBasedLinux"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Darwin">
+    <rdfs:subClassOf rdf:resource="#BSD"/>
+  </owl:Class>
+  <owl:Class rdf:about="#GTK2">
+    <rdfs:subClassOf rdf:resource="#GTK"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FamiliarOpie">
+    <rdfs:subClassOf rdf:resource="#Familiar"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Opie"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsPocketPC2003PhoneEdition">
+    <rdfs:subClassOf rdf:resource="#WindowsPocketPC2003"/>
+    <rdfs:subClassOf rdf:resource="#WindowsMobile"/>
+  </owl:Class>
+  <owl:Class rdf:about="#GNOME">
+    <rdfs:subClassOf rdf:resource="#DesktopEnvironment"/>
+    <rdfs:subClassOf rdf:resource="#GTK"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NetBSD">
+    <rdfs:subClassOf rdf:resource="#BSD"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Opie">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#QtopiaPDA"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#WindowsCE">
+    <rdfs:subClassOf rdf:resource="#Windows"/>
+    <rdfs:subClassOf rdf:resource="#CAB"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Windows95">
+    <rdfs:subClassOf rdf:resource="#Windows3.11"/>
+    <rdfs:subClassOf rdf:resource="#Windows32"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Qtopia">
+    <rdfs:subClassOf rdf:resource="#QtEmbedded"/>
+    <rdfs:subClassOf rdf:resource="#DesktopEnvironment"/>
+  </owl:Class>
+  <owl:Class rdf:about="#QtopiaPDA">
+    <rdfs:subClassOf rdf:resource="#Qtopia"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasDebianVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#Debian"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLinuxVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#Linux"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMandrakeVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#Mandrake"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasBSDVersion">
+    <rdfs:domain rdf:resource="#BSD"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasGTKVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#GTK"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWindowsNTVersion">
+    <rdfs:domain rdf:resource="#WindowsNT"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOpieVersion">
+    <rdfs:domain rdf:resource="#Opie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLibcVersion">
+    <rdfs:domain rdf:resource="#Libc"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasGNOMEVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#GNOME"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasGDIVersion">
+    <rdfs:domain rdf:resource="#GDI"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRPMVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#RPM"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFedoraVersion">
+    <rdfs:domain rdf:resource="#Fedora"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasGPEVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#GPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSharpZaurusLinuxVersion">
+    <rdfs:domain rdf:resource="#SharpZaurusLinux"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasX11Version">
+    <rdfs:domain rdf:resource="#X11"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasXorgVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Xorg"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasGlibcVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#Glibc"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFreeBSDVersion">
+    <rdfs:domain rdf:resource="#FreeBSD"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSlackwareVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Slackware"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFamiliarVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Familiar"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOpenGLVersion">
+    <rdfs:domain rdf:resource="#OpenGL"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRHELVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#RHEL"/>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:ID="hasOpenZaurusVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#OpenZaurus"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasQtopiaVersion">
+    <rdfs:domain rdf:resource="#Qtopia"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasWindowsVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Windows16"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasNetBSDVersion">
+    <rdfs:domain rdf:resource="#NetBSD"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasIpkgVersion">
+    <rdfs:domain rdf:resource="#Ipkg"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasKDEVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#KDE"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasDpkgVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#Dpkg"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasQtVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#Qt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasMSIVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#MSI"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasUbuntuVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#Ubuntu"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasDirectXVersion">
+    <rdfs:domain rdf:resource="#DirectX"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasPkgToolVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Pkgtool"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasQtEmbeddedVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#QtEmbedded"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasMacOSVersion">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdfs:domain rdf:resource="#MacOS"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasXFree86Version">
+    <rdfs:domain rdf:resource="#XFree86"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Context.owl#Version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 1.3, Build 225.4)  http://protege.stanford.edu -->

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE uridef[
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema">
+  <!ENTITY units "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl">
+  <!ENTITY DEFAULT "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2006/01/Environment.owl">
+]>
+
+<rdf:RDF
+  xmlns:rdf = "&rdf;#"
+  xmlns:rdfs = "&rdfs;#"
+  xmlns:owl = "&owl;#"
+  xmlns:xsd = "&xsd;#"
+  xmlns:units = "&units;#"
+  xmlns = "&DEFAULT;#"
+  xml:base = "&DEFAULT;">
+ 
+  <owl:Ontology rdf:about="">
+    <rdfs:label xml:lang="en">CoDAMoS environment ontology</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      $Id: Environment.owl 242 2006-02-09 07:49:14Z dennis $
+    </owl:versionInfo> 
+    <rdfs:comment>
+      Environment ontology concepts and definitions
+      Created by:
+        Davy Preuveneers
+    </rdfs:comment>
+    <owl:imports rdf:resource="&units;" />
+  </owl:Ontology>
+
+  
+
+<!--   ############ ########### ############ ############ ########### -->
+<!--   ############                                       ########### -->
+<!--   ############         ENVIRONMENT PARAMETERS        ########### -->
+<!--   ############                                       ########### -->
+<!--   ############ ########### ############ ############ ########### -->
+
+  <owl:Class rdf:ID="Location" />
+
+  <owl:Class rdf:ID="Coordinate">
+    <rdfs:subClassOf rdf:resource="#Location" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="Address">
+    <rdfs:subClassOf rdf:resource="#Location" />
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:ID="hasLocation">
+    <rdfs:domain rdf:resource="#Environment" />
+    <rdfs:range rdf:resource="#Location" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="isRelativeTo">
+    <rdfs:range rdf:resource="#Location" />
+  </owl:ObjectProperty>
+
+
+  <owl:Class rdf:ID="Time" />
+
+  <owl:ObjectProperty rdf:ID="hasTime">
+    <rdfs:domain rdf:resource="#Environment" />
+    <rdfs:range rdf:resource="#Time" />
+  </owl:ObjectProperty>
+
+
+
+  <owl:Class rdf:ID="Environment" />
+
+  <owl:Class rdf:ID="EnvironmentalCondition" />
+    
+
+  <owl:Class rdf:ID="Pressure">
+    <rdfs:subClassOf rdf:resource="#EnvironmentalCondition" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="Humidity">
+    <rdfs:subClassOf rdf:resource="#EnvironmentalCondition" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="Noise">
+    <rdfs:subClassOf rdf:resource="#EnvironmentalCondition" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="Temperature">
+    <rdfs:subClassOf rdf:resource="#EnvironmentalCondition" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="Lighting">
+    <rdfs:subClassOf rdf:resource="#EnvironmentalCondition" />
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:ID="hasEnvironmentalCondition">
+    <rdfs:domain rdf:resource="#Environment" />
+    <rdfs:range rdf:resource="#EnvironmentalCondition" />
+  </owl:ObjectProperty>
+
+  
+<!--   ############ ########### ############ ############ ########### -->
+<!--   ############                                       ########### -->
+<!--   ############                UNITS                  ########### -->
+<!--   ############                                       ########### -->
+<!--   ############ ########### ############ ############ ########### -->
+  
+  <owl:ObjectProperty rdf:ID="hasValue">
+    <rdfs:domain rdf:resource="#EnvironmentalCondition" />
+    <rdfs:range rdf:resource="&units;#Value" />
+    <rdf:type rdf:resource="&owl;#DeprecatedProperty" />
+  </owl:ObjectProperty>
+  
+</rdf:RDF>

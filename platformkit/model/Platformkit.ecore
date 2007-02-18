@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="platformkit"
+    nsURI="http://ssel.vub.ac.be/platformkit" nsPrefix="platformkit">
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintSpace">
+    <eAnnotations source="GenModel">
+      <details key="documentation" value="The total space of platform constraint sets to consider."/>
+    </eAnnotations>
+    <eOperations name="getIntersectionSet" eType="#//ConstraintSet">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns a constraint set consisting of all the intersection classes of all the constraints. Creates the IntersectionClasses for all ConstraintSets as necessary."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getMostSpecific" upperBound="-1" eType="#//ConstraintSet">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns all or valid constraint sets in order, most-specific first. Requires a reasoner."/>
+      </eAnnotations>
+      <eParameters name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="getLeastSpecific" upperBound="-1" eType="#//ConstraintSet">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns all or valid constraint sets in order, least-specific first. Requires a reasoner."/>
+      </eAnnotations>
+      <eParameters name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="getValid" upperBound="-1" eType="#//ConstraintSet">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns valid constraint sets. Requires a reasoner."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getInvalid" upperBound="-1" eType="#//ConstraintSet">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns invalid constraint sets. Requires a reasoner."/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ontology" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="The list of relative ontology URIs."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraintSet" upperBound="-1"
+        eType="#//ConstraintSet" containment="true" eOpposite="#//ConstraintSet/space">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="The constraint sets that are part of this constraint space."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintSet">
+    <eAnnotations source="GenModel">
+      <details key="documentation" value="A set of platform constraints for a targeted entity."/>
+    </eAnnotations>
+    <eOperations name="isValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns true if all the constraints hold, false otherwise."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getMostSpecific" upperBound="-1" eType="#//Constraint">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns all constraints in this set in order, most-specific first. Requires a reasoner."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getLeastSpecific" upperBound="-1" eType="#//Constraint">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns all constraints in this set in order, least-specific first. Requires a reasoner."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getIntersection" eType="#//Constraint">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns the intersection class constraint of all contained constraints."/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="space" lowerBound="1" eType="#//ConstraintSpace"
+        eOpposite="#//ConstraintSpace/constraintSet">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="The owning constraint space."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="The constraint set identifier. Also used as deployment redirection target when this constraint set refers to a deployable entity."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
+        eType="#//Constraint" containment="true" eOpposite="#//Constraint/set">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="The constraints that are part of this constraint set."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//IOntModelChangeListener">
+    <eAnnotations source="GenModel">
+      <details key="documentation" value="A single platform constraint. Corresponds to an OntClass."/>
+    </eAnnotations>
+    <eOperations name="isValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Returns true if this constraint hold, false otherwise."/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="set" lowerBound="1" eType="#//ConstraintSet"
+        eOpposite="#//ConstraintSet/constraint">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="The owning constraint set."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ontClassURI" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="The URI that identifies the ontology model and the ontology class therein."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OntModel" instanceClassName="com.hp.hpl.jena.ontology.OntModel"
+      interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IOntModelChangeListener" interface="true">
+    <eAnnotations source="GenModel">
+      <details key="documentation" value="Change listener interface for {@link Ontologies#getOntModel()}"/>
+    </eAnnotations>
+    <eOperations name="ontModelChanged">
+      <eAnnotations source="GenModel">
+        <details key="documentation" value="Invoked when ontology model has changed."/>
+      </eAnnotations>
+      <eParameters name="ontModel" eType="#//OntModel">
+        <eAnnotations source="GenModel">
+          <details key="documentation" value="the new ontology model."/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+</ecore:EPackage>
