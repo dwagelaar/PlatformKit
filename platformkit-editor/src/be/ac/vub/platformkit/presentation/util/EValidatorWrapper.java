@@ -2,35 +2,29 @@ package be.ac.vub.platformkit.presentation.util;
 
 import java.util.Map;
 
-import org.eclipse.core.runtime.Assert;
-import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import be.ac.vub.platformkit.presentation.popup.action.Profile;
-
 /**
- * Applies an IEObjectValidator in the EMF validation chain.
+ * Wraps an inner EValidator and applies it if not null.
  * @author dennis
  *
  */
-public class PlatformKitEValidator implements EValidator {
+public abstract class EValidatorWrapper implements EValidator {
 	
-	public static final String DIAGNOSTIC_SOURCE = "be.ac.vub.cddtoolkit.eclipseui";
+	public static final String DIAGNOSTIC_SOURCE = "be.ac.vub.platformkit.editor";
 
 	private EValidator inner;
 	
 	/**
-	 * Creates a new CDDEValidator.
+	 * Creates a new EValidatorWrapper.
 	 * @param inner The wrapped EValidator.
 	 */
-	public PlatformKitEValidator(EValidator inner) {
+	public EValidatorWrapper(EValidator inner) {
 		super();
 		this.inner = inner;
 	}
@@ -48,23 +42,7 @@ public class PlatformKitEValidator implements EValidator {
 		} else {
 			innerValid = EObjectValidator.INSTANCE.validate(eClass, eObject, diagnostics, context);
 		}
-		boolean valid = true;
-		Resource res = eObject.eResource();
-		Assert.isNotNull(res);
-		IEObjectValidator validator = Profile.Registry.INSTANCE.getValidator(res);
-		if (validator != null) {
-			valid = validator.isValid(eObject);
-		}
-		if ((diagnostics != null) && (!valid)) {
-            diagnostics.add
-            (new BasicDiagnostic
-              (Diagnostic.ERROR,
-               DIAGNOSTIC_SOURCE,
-               0,
-               eClass.getName() + " instances are not valid in the chosen context",
-               new Object [] { eObject }));
-		}
-		return innerValid && valid;
+		return innerValid;
 	}
 
 	public boolean validate(EDataType eDataType, Object value,

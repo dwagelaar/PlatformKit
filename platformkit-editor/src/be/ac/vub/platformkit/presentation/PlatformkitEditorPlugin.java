@@ -14,6 +14,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -25,9 +26,11 @@ import org.eclipse.ui.console.IConsoleView;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 
+import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.kb.Ontologies;
 import be.ac.vub.platformkit.presentation.logging.ConsoleStreamHandler;
 import be.ac.vub.platformkit.presentation.util.ErrorDialogRunnable;
+import be.ac.vub.platformkit.presentation.util.PlatformkitEValidator;
 
 import com.hp.hpl.jena.eclipse.JenaPlugin;
 
@@ -121,6 +124,7 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	        if (console == null) {
 	            initConsole();
 	        }
+	        EValidator.Registry.INSTANCE.put(PlatformkitPackage.eINSTANCE, new PlatformkitEValidator());
 		}
 
 		private void initConsole () {

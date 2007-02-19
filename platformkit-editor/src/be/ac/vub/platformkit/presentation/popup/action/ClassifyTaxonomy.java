@@ -183,7 +183,7 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
             monitor.subTask("Loading source ontologies...");
             ont = new Ontologies();
             space.setKnowledgeBase(ont);
-            initSpaceOntologies(space, false);
+            space.init(false);
             worked(monitor);
         } else {
         	monitor.subTask("Using pre-loaded source ontologies...");

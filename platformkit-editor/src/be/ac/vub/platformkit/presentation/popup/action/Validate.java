@@ -65,7 +65,7 @@ public class Validate extends ConstraintSpaceAction {
             monitor.subTask("Loading source ontologies...");
             ont = new Ontologies();
             space.setKnowledgeBase(ont);
-            if (!initSpaceOntologies(space, true)) {
+            if (!space.init(true)) {
                 throw new PlatformKitException(
                         "Ontologies not pre-classified - Choose 'Classify Taxonomy' first");
             }

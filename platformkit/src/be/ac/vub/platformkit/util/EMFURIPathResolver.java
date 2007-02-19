@@ -1,11 +1,12 @@
-package be.ac.vub.platformkit.presentation.util;
+package be.ac.vub.platformkit.util;
 
 import java.io.IOException;
 import java.io.InputStream;
 
+import junit.framework.Assert;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.impl.URIConverterImpl;
-import org.eclipse.jface.util.Assert;
 
 import be.ac.vub.platformkit.util.PathResolver;
 
@@ -23,7 +24,7 @@ public class EMFURIPathResolver implements PathResolver {
      * @param base the base URI to start navigating relative paths from.
      */
     public EMFURIPathResolver(URI base) {
-        Assert.isNotNull(base);
+        Assert.assertNotNull(base);
         this.base = base;
     }
     
