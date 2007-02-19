@@ -19,8 +19,8 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.kb.Ontologies;
-import be.ac.vub.platformkit.presentation.util.CDDEObjectValidator;
-import be.ac.vub.platformkit.presentation.util.CDDEValidator;
+import be.ac.vub.platformkit.presentation.util.PlatformKitEObjectValidator;
+import be.ac.vub.platformkit.presentation.util.PlatformKitEValidator;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
 import be.ac.vub.platformkit.presentation.util.PlatformKitException;
@@ -145,7 +145,7 @@ public class Profile extends PlatformKitAction {
             is.getIntersection();
             worked(monitor);
             monitor.subTask("Determining (in-)valid constraint sets...");
-            IEObjectValidator validator = new CDDEObjectValidator(space);
+            IEObjectValidator validator = new PlatformKitEObjectValidator(space);
             Registry.INSTANCE.put(res, validator);
             worked(monitor);
             monitor.subTask("Profiling editor...");
@@ -216,8 +216,8 @@ public class Profile extends PlatformKitAction {
     	EPackage pack = object.eClass().getEPackage();
     	Assert.isNotNull(pack);
     	EValidator orig = EValidator.Registry.INSTANCE.getEValidator(pack);
-		if (!(orig instanceof CDDEValidator)) {
-    		CDDEValidator eValidator = new CDDEValidator(orig);
+		if (!(orig instanceof PlatformKitEValidator)) {
+    		PlatformKitEValidator eValidator = new PlatformKitEValidator(orig);
     		EValidator.Registry.INSTANCE.put(pack, eValidator);
     		logger.info("Registered new CDDEValidator for " + pack.getNsURI());
     	}

@@ -12,7 +12,12 @@ import org.eclipse.emf.ecore.EObject;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 
-public class CDDEObjectValidator implements IEObjectValidator {
+/**
+ * Validates EObjects against an internal ConstraintSpace copy.
+ * @author dennis
+ *
+ */
+public class PlatformKitEObjectValidator implements IEObjectValidator {
 	private Set invalid = new HashSet();
 	private List valid = new ArrayList();
 	
@@ -20,7 +25,7 @@ public class CDDEObjectValidator implements IEObjectValidator {
 	 * Creates a new CDDEObjectValidator.
 	 * @param space The ConstraintSpace to validate against.
 	 */
-	public CDDEObjectValidator(ConstraintSpace space) {
+	public PlatformKitEObjectValidator(ConstraintSpace space) {
 		Assert.isNotNull(space);
 		for (Iterator it = space.getInvalid().iterator(); it.hasNext();) {
 			ConstraintSet set = (ConstraintSet) it.next();
