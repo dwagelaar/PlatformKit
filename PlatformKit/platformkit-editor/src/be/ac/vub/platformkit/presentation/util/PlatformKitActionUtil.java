@@ -57,8 +57,7 @@ public class PlatformKitActionUtil {
 	    Assert.isNotNull(platformkitURI);
 	    for (int i = 0; i < annotations.size(); i++) {
 	        EAnnotation ann = (EAnnotation) annotations.get(i);
-	        //TODO Use different EAnnotation tags for PlatformKit
-	        if ("CDDToolkit".equals(ann.getSource())) {
+	        if ("PlatformKit".equals(ann.getSource())) {
 	            String ont = (String) ann.getDetails().get("Ontology");
 	            if (ont != null) {
 	                StringTokenizer onts = new StringTokenizer(ont, "\n");
@@ -189,8 +188,7 @@ public class PlatformKitActionUtil {
         }
         for (int i = 0; i < annotations.size(); i++) {
             EAnnotation ann = (EAnnotation) annotations.get(i);
-	        //TODO Use different EAnnotation tags for PlatformKit
-            if ("CDDToolkit".equals(ann.getSource())) {
+            if ("PlatformKit".equals(ann.getSource())) {
                 addConstraints(ann, constraints, set);
             }
         }
@@ -205,8 +203,7 @@ public class PlatformKitActionUtil {
     private static void addConstraints(EAnnotation ann, Set constraints, ConstraintSet set) {
         for (int i = 0; i < ann.getDetails().size(); i++) {
             Entry detail = (Entry) ann.getDetails().get(i);
-	        //TODO Use different EAnnotation tags for PlatformKit
-            if ("ContextConstraint".equals(detail.getKey())) {
+            if ("PlatformConstraint".equals(detail.getKey())) {
                 String constraint = (String) detail.getValue();
                 if (!constraints.contains(constraint) && (constraint != null)) {
                     Constraint c = factory.createConstraint();
