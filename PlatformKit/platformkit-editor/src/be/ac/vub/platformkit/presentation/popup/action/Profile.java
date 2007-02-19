@@ -19,10 +19,10 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.kb.Ontologies;
-import be.ac.vub.platformkit.presentation.util.PlatformKitEObjectValidator;
-import be.ac.vub.platformkit.presentation.util.PlatformKitEValidator;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
+import be.ac.vub.platformkit.presentation.util.PlatformEValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
+import be.ac.vub.platformkit.presentation.util.PlatformKitEObjectValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformKitException;
 import be.ac.vub.platformkit.presentation.util.provider.PlatformKitItemProviderAdapter;
 
@@ -122,7 +122,7 @@ public class Profile extends PlatformKitAction {
             space = (ConstraintSpace) platformkit.getContents().get(0);
             Ontologies ont = new Ontologies();
             space.setKnowledgeBase(ont);
-            if (!initSpaceOntologies(space, true)) {
+            if (!space.init(true)) {
                 throw new PlatformKitException(
                         "Ontologies not pre-classified - Choose 'Classify Taxonomy' first");
             }
@@ -216,10 +216,10 @@ public class Profile extends PlatformKitAction {
     	EPackage pack = object.eClass().getEPackage();
     	Assert.isNotNull(pack);
     	EValidator orig = EValidator.Registry.INSTANCE.getEValidator(pack);
-		if (!(orig instanceof PlatformKitEValidator)) {
-    		PlatformKitEValidator eValidator = new PlatformKitEValidator(orig);
+		if (!(orig instanceof PlatformEValidator)) {
+    		EValidator eValidator = new PlatformEValidator(orig);
     		EValidator.Registry.INSTANCE.put(pack, eValidator);
-    		logger.info("Registered new CDDEValidator for " + pack.getNsURI());
+    		logger.info("Registered new PlatformEValidator for " + pack.getNsURI());
     	}
     }
 }

@@ -1,6 +1,5 @@
 package be.ac.vub.platformkit.presentation.popup.action;
 
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Logger;
 
@@ -13,7 +12,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.resource.impl.URIConverterImpl;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.jface.action.IAction;
@@ -29,11 +27,8 @@ import org.eclipse.ui.WorkbenchException;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.kb.Ontologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
-import be.ac.vub.platformkit.presentation.util.EMFURIPathResolver;
 import be.ac.vub.platformkit.presentation.util.FileDialogRunnable;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
-
-import com.hp.hpl.jena.shared.NotFoundException;
 
 /**
  * Abstract right-click action with progress monitor class.
@@ -51,7 +46,6 @@ public abstract class PlatformKitAction implements IObjectActionDelegate {
 	protected ViewerFilter filter = null;
 
 	private boolean cancelled = false;
-    private URIConverterImpl converter = new URIConverterImpl();
     
     /**
      * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
@@ -155,36 +149,6 @@ public abstract class PlatformKitAction implements IObjectActionDelegate {
         return resourceSet.getResource(source, true);
     }
 
-    /**
-     * Initialises source ontologies for the given constraint space.
-     * @param space The constraint space to initialise.
-     * @param searchPreClassified If true, search for pre-classified ontology.
-     * @return True if the ontologies were already pre-classified.
-     * @throws IllegalArgumentException
-     * @throws CoreException
-     * @throws NotFoundException
-     * @throws IOException
-     */
-    protected boolean initSpaceOntologies(ConstraintSpace space, boolean searchPreClassified)
-    throws IllegalArgumentException, CoreException, NotFoundException, IOException {
-        boolean preClassified = false;
-        space.setPathResolver(new EMFURIPathResolver(space.eResource().getURI()));
-        if (searchPreClassified) {
-            URI uri = PlatformKitActionUtil.getPreClassifiedOntology(space.eResource().getURI());
-            logger.info("Searching pre-classified ontology at: " + uri.toString());
-            try {
-            	space.init(converter.createInputStream(uri));
-            	preClassified = true;
-            } catch (IOException e) {
-            	//abort
-            }
-        }
-        if (!preClassified) {
-            space.init(null);
-        }
-        return preClassified;
-    }
-    
     /**
      * @return True if last run was cancelled.
      */

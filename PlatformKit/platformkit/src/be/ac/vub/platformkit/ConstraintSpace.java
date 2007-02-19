@@ -7,7 +7,6 @@
 package be.ac.vub.platformkit;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -16,7 +15,6 @@ import be.ac.vub.platformkit.kb.Ontologies;
 import be.ac.vub.platformkit.util.PathResolver;
 
 import com.hp.hpl.jena.ontology.OntModel;
-import com.hp.hpl.jena.shared.NotFoundException;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,11 +149,11 @@ public interface ConstraintSpace extends EObject {
      * Loads all ontologies into the knowledge base of this constraint space.
      * Requires knowledge base to be set.
      * @see #setKnowledgeBase(Ontologies)
-     * @param preClassifiedOntology The pre-classified ontology, or null if none.
+     * @param searchPreClassified If true, searches for the pre-classified ontology.
      * @throws IOException if the input ontologies cannot be read.
-     * @throws NotFoundException if constraint classes cannot be found inside the ontologies.
+     * @return True if the pre-classified ontology is found, false otherwise.
      */
-    void init(InputStream preClassifiedOntology)
-    throws IOException, NotFoundException;
+	boolean init(boolean searchPreClassified)
+    throws IOException;
     
 } // ConstraintSpace

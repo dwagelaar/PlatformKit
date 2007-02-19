@@ -21,9 +21,12 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource.Internal;
+import org.eclipse.emf.ecore.resource.impl.URIConverterImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -34,10 +37,10 @@ import be.ac.vub.platformkit.PlatformkitFactory;
 import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.kb.Ontologies;
 import be.ac.vub.platformkit.util.DefaultPathResolver;
+import be.ac.vub.platformkit.util.EMFURIPathResolver;
 import be.ac.vub.platformkit.util.PathResolver;
 
 import com.hp.hpl.jena.ontology.OntModel;
-import com.hp.hpl.jena.shared.NotFoundException;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,6 +80,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	}
 	
     protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+    private static URIConverterImpl converter = new URIConverterImpl();
     
     private Ontologies knowledgeBase = null;
     private PathResolver pathResolver = new DefaultPathResolver();
@@ -385,11 +389,17 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		this.pathResolver = pathResolver;
 	}
 	
-    public void init(InputStream preClassifiedOntology)
-    throws IOException, NotFoundException {
+    public boolean init(boolean searchPreClassified)
+    throws IOException {
     	Assert.assertNotNull(getKnowledgeBase());
-        if (preClassifiedOntology != null) {
-            getKnowledgeBase().loadOntology(preClassifiedOntology);
+    	boolean preClassified = false;
+        if (searchPreClassified) {
+            try {
+            	getKnowledgeBase().loadOntology(getPreClassifiedOntology());
+            	preClassified = true;
+            } catch (IOException e) {
+            	//abort
+            }
         } else {
             EList onts = getOntology();
             for (int i = 0; i < onts.size(); i++) {
@@ -397,6 +407,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
                 getKnowledgeBase().loadOntology(in);
             }
         }
+        return preClassified;
     }
 
     /**
@@ -440,5 +451,21 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
             logger.fine("intersection set reset for constraint space");
         }
     }
+    
+	/**
+	 * @return The contents of the inferred ontology (.inferred.owl).
+	 * @throws IOException if the inferred ontology cannot be found.
+	 */
+	private InputStream getPreClassifiedOntology() throws IOException {
+		URI uri = eResource().getURI().trimFileExtension().appendFileExtension("inferred.owl");
+        logger.info("Searching pre-classified ontology at: " + uri.toString());
+		return converter.createInputStream(uri);
+	}
+
+	@Override
+	public NotificationChain eSetResource(Internal resource, NotificationChain notifications) {
+		setPathResolver(new EMFURIPathResolver(resource.getURI()));
+		return super.eSetResource(resource, notifications);
+	}
 	
 } //ConstraintSpaceImpl
