@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.mindswap.pellet"
+   name="Pellet OWL reasoner Plug-in"
+   version="1.3.1"
+   provider-name="Mindswap.org"
+   class="org.mindswap.pellet.eclipse.PelletPlugin">
+
+   <runtime>
+      <library name="pellet.jar">
+         <export name="*"/>
+      </library>
+      <library name="lib/pellet.jar">
+         <export name="*"/>
+      </library>
+      <library name="lib/rdfapi.jar"/>
+      <library name="lib/aterm-java-1.6.jar"/>
+      <library name="lib/rdfapi.jar"/>
+      <library name="lib/econn-owlapi/abstractparser.jar"/>
+      <library name="lib/econn-owlapi/api.jar"/>
+      <library name="lib/econn-owlapi/examples.jar"/>
+      <library name="lib/econn-owlapi/impl.jar"/>
+      <library name="lib/econn-owlapi/inference.jar"/>
+      <library name="lib/econn-owlapi/io.jar"/>
+      <library name="lib/econn-owlapi/owl-servlet.jar"/>
+      <library name="lib/econn-owlapi/owltest.jar"/>
+      <library name="lib/econn-owlapi/rdfparser.jar"/>
+      <library name="lib/econn-owlapi/rules.jar"/>
+      <library name="lib/econn-owlapi/validation_test.jar"/>
+      <library name="lib/econn-owlapi/validation.jar"/>
+      <library name="lib/xsdlib/relaxngDatatype.jar"/>
+      <library name="lib/xsdlib/xsdlib.jar"/>
+   </runtime>
+   <requires>
+      <import plugin="com.hp.hpl.jena"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui"/>
+   </requires>
+
+</plugin>
