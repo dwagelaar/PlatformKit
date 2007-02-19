@@ -7,6 +7,7 @@
 package be.ac.vub.platformkit;
 
 import com.hp.hpl.jena.ontology.OntClass;
+import com.hp.hpl.jena.ontology.OntModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,5 +103,11 @@ public interface Constraint extends IOntModelChangeListener {
 	 * @return The inner ontology class, if it can be determined. Null otherwise.
 	 */
 	OntClass getOntClass();
+	
+	/**
+	 * @return The OntModel from the constraint set, if any, null otherwise.
+	 * @see #getSet()
+	 */
+	OntModel getOntModel();
 
 } // Constraint
