@@ -12,6 +12,7 @@ import junit.framework.Assert;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -47,6 +48,18 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * @generated
 	 */
 	public static final String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	
+	private class CacheAdapter extends AdapterImpl {
+
+		@Override
+		public void notifyChanged(Notification msg) {
+			super.notifyChanged(msg);
+			if (msg.getFeature().equals(PlatformkitPackage.eINSTANCE.getConstraint_OntClassURI())) {
+				setOntClass(null);
+			}
+		}
+		
+	}
 
     protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
 	private OntClass ontClass = null;
@@ -74,10 +87,10 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected ConstraintImpl() {
 		super();
+		this.eAdapters().add(new CacheAdapter());
 	}
 
 	/**
@@ -299,22 +312,45 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 			if (ontModel == null) {
 				setOntClass(null);
 			} else {
-	            //Jena is not thread-safe when communicating to the DIG reasoner,
-	            //so lock all actions that trigger DIG activity.
-	            synchronized (Ontologies.class) {
-	            	setOntClass(ontModel.getOntClass(ontClassURI));
-	            }
+				setOntClass(findOntClass(ontModel));
 			}
             logger.info("OntModel changed; refreshed " + this);
 		}
 	}
+	
+	protected OntClass findOntClass(OntModel ontModel) {
+		OntClass ontClass = null;
+		if (ontClassURI != null) {
+			if (ontModel != null) {
+	            //Jena is not thread-safe when communicating to the DIG reasoner,
+	            //so lock all actions that trigger DIG activity.
+	            synchronized (Ontologies.class) {
+	            	ontClass = ontModel.getOntClass(ontClassURI);
+	            }
+			}
+		}
+		return ontClass;
+	}
 
 	public OntClass getOntClass() {
+		if (ontClass == null) {
+			ontClass = findOntClass(getOntModel());
+            logger.info("Refreshed " + this);
+		}
 		return ontClass;
 	}
 
 	public void setOntClass(OntClass ontClass) {
 		this.ontClass = ontClass;
+	}
+	
+	public OntModel getOntModel() {
+		ConstraintSet set = getSet();
+		if (set != null) {
+			return set.getOntModel();
+		} else {
+			return null;
+		}
 	}
 
 } //ConstraintImpl
