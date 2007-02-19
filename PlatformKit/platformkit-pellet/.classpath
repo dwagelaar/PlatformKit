@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="lib/aterm-java-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/rdfapi.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/abstractparser.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/api.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/examples.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/impl.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/inference.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/io.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/owl-servlet.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/owltest.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/rdfparser.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/rules.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/validation_test.jar"/>
+	<classpathentry kind="lib" path="lib/econn-owlapi/validation.jar"/>
+	<classpathentry kind="lib" path="lib/xsdlib/relaxngDatatype.jar"/>
+	<classpathentry kind="lib" path="lib/xsdlib/xsdlib.jar"/>
+	<classpathentry exported="true" sourcepath="pellet-1.3-src.zip" kind="lib" path="lib/pellet.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
