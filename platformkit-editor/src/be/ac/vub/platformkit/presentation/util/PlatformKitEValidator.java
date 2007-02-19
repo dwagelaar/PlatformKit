@@ -20,7 +20,7 @@ import be.ac.vub.platformkit.presentation.popup.action.Profile;
  * @author dennis
  *
  */
-public class CDDEValidator implements EValidator {
+public class PlatformKitEValidator implements EValidator {
 	
 	public static final String DIAGNOSTIC_SOURCE = "be.ac.vub.cddtoolkit.eclipseui";
 
@@ -30,7 +30,7 @@ public class CDDEValidator implements EValidator {
 	 * Creates a new CDDEValidator.
 	 * @param inner The wrapped EValidator.
 	 */
-	public CDDEValidator(EValidator inner) {
+	public PlatformKitEValidator(EValidator inner) {
 		super();
 		this.inner = inner;
 	}
