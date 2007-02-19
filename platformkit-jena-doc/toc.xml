@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Jena Documentation">
+	<topic label="Jena website mirror" href="doc/index.html"> 
+		<topic label="Documentation index" href="doc/documentation.html"/> 
+		<topic label="API reference" href="doc/javadoc/index.html"/> 
+	</topic>
+</toc>
