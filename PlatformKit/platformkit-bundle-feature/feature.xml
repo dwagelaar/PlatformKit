@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="be.ac.vub.platformkit.bundle"
+      label="Platformkit Bundle Feature"
+      version="1.1.0"
+      provider-name="Vrije Universiteit Brussel"
+      plugin="be.ac.vub.platformkit"
+      image="VUB_logo_compact.gif">
+
+   <description url="about.html">
+      PlatformKit is a platform modelling and platform dependency management toolkit. It can be used to support development processes based on the Model Driven Architecture (http://www.omg.org/mda/). PlatformKit is a refactored version of CDDToolkit.
+
+A case study on how to use PlatformKit can be found at http://ssel.vub.ac.be/ssel/research:mdd:casestudies
+
+Visit http://ssel.vub.ac.be/ssel/research:mdd:platformkit
+   </description>
+
+   <copyright url="about.html">
+      © Copyright 2005, 2006, 2007 Dennis Wagelaar, Vrije Universiteit Brussel
+
+* Jena (http://jena.sourceforge.net/) *
+© Copyright 2000, 2001, 2002, 2003, 2004, 2005 Hewlett-Packard Development Company, LP
+
+Jena includes software developed by the Apache Software Foundation (http://www.apache.org/).
+Jena is built on top of other sub-systems which we gratefully acknowledge:
+* Xerces
+* JUnit
+* Jakarta ORO
+* ICU4J
+* util.concurrent from Doug Lea
+
+* Pellet (http://www.mindswap.org/2003/pellet/) *
+Copyright (c) 2003 Ron Alford, Mike Grove, Bijan Parsia, Evren Sirin
+
+Pellet includes following software components:
+* Jena toolkit (http://jena.sourceforge.net) developed by HP Labs
+* OWLAPI library (http://sourceforge.net/projects/owlapi) developed by WonderWeb project
+* ATerm library (http://www.cwi.nl/htbin/sen1/twiki/bin/view/SEN1/ATermLibrary) developed by CWI, LORIA-INRIA
+   </copyright>
+
+   <license url="about.html">
+      Vrije Universiteit Brussel makes available all content in this
+plug-in. The Content in this plug-in is provided to you under
+the terms and conditions of the Eclipse Public License Version
+1.0 (&quot;EPL&quot;). A copy of the EPL is available at http://www.eclipse.org/legal/epl-v10.html.
+
+Applicable Licenses
+
+PlatformKit is built upon a number of other open source technologies and products. Here is a list of those products with links to their licenses.
+
+* Jena (http://jena.sourceforge.net/) *
+© Copyright 2000, 2001, 2002, 2003, 2004, 2005 Hewlett-Packard Development Company, LP
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+3. The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS&apos;&apos; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Jena includes software developed by the Apache Software Foundation (http://www.apache.org/).
+Jena is built on top of other sub-systems which we gratefully acknowledge:
+* Xerces
+* JUnit
+* Jakarta ORO
+* ICU4J
+* util.concurrent from Doug Lea
+
+* Pellet (http://www.mindswap.org/2003/pellet/) *
+Copyright (c) 2003 Ron Alford, Mike Grove, Bijan Parsia, Evren Sirin
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Pellet includes following software components:
+* Jena toolkit (http://jena.sourceforge.net) developed by HP Labs
+* OWLAPI library (http://sourceforge.net/projects/owlapi) developed by WonderWeb project
+* ATerm library (http://www.cwi.nl/htbin/sen1/twiki/bin/view/SEN1/ATermLibrary) developed by CWI, LORIA-INRIA
+   </license>
+
+   <url>
+      <update label="PlatformKit update site" url="http://ssel.vub.ac.be/platformkit/update"/>
+   </url>
+
+   <includes
+         id="org.mindswap.pellet"
+         version="0.0.0"/>
+
+   <includes
+         id="com.hp.hpl.jena"
+         version="0.0.0"/>
+
+   <includes
+         id="be.ac.vub.platformkit"
+         version="0.0.0"/>
+
+</feature>
