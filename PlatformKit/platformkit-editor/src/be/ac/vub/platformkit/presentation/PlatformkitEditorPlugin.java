@@ -69,7 +69,7 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
     private static IConsoleManager consoleMgr = null; 
     private static final String PLATFORMKIT_CONSOLE = "be.ac.vub.platformkit.presentation.console"; 
 
-    /**
+	/**
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

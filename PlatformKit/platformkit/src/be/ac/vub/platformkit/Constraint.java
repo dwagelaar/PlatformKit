@@ -74,7 +74,7 @@ public interface Constraint extends IOntModelChangeListener {
 	 * @return the value of the '<em>Ont Class URI</em>' attribute.
 	 * @see #setOntClassURI(String)
 	 * @see be.ac.vub.platformkit.PlatformkitPackage#getConstraint_OntClassURI()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 *        annotation="GenModel documentation='The URI that identifies the ontology model and the ontology class therein.'"
 	 * @generated
 	 */

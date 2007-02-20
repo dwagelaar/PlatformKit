@@ -127,6 +127,11 @@ public interface ConstraintSpace extends EObject {
      * @param pathResolver
      */
 	void setPathResolver(PathResolver pathResolver);
+	
+    /**
+     * @return The path resolver for finding referenced ontologies.
+     */
+	PathResolver getPathResolver();
 
 	/**
 	 * Sets the knowledge base (default = null).
