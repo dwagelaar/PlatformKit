@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Internal;
 import org.eclipse.emf.ecore.resource.impl.URIConverterImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -36,7 +37,6 @@ import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitFactory;
 import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.kb.Ontologies;
-import be.ac.vub.platformkit.util.DefaultPathResolver;
 import be.ac.vub.platformkit.util.EMFURIPathResolver;
 import be.ac.vub.platformkit.util.PathResolver;
 
@@ -83,7 +83,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
     private static URIConverterImpl converter = new URIConverterImpl();
     
     private Ontologies knowledgeBase = null;
-    private PathResolver pathResolver = new DefaultPathResolver();
+    private PathResolver pathResolver = null;
     private ConstraintSet intersectionSet = null;
 
 	/**
@@ -385,11 +385,27 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	}
 
 	public void setPathResolver(PathResolver pathResolver) {
-		Assert.assertNotNull(pathResolver);
 		this.pathResolver = pathResolver;
 	}
 	
-    public boolean init(boolean searchPreClassified)
+    public PathResolver getPathResolver() {
+    	if (pathResolver == null) {
+    		pathResolver = createPathResolver();
+    	}
+		return pathResolver;
+	}
+
+    /**
+     * @return A new PathResolver.
+     * Requires {@link Resource#getURI()} of {@link #eResource()} to be set.
+     */
+    protected PathResolver createPathResolver() {
+    	Assert.assertNotNull(eResource());
+    	Assert.assertNotNull(eResource().getURI());
+    	return new EMFURIPathResolver(eResource().getURI());
+    }
+
+	public boolean init(boolean searchPreClassified)
     throws IOException {
     	Assert.assertNotNull(getKnowledgeBase());
     	boolean preClassified = false;
@@ -403,7 +419,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
         } else {
             EList onts = getOntology();
             for (int i = 0; i < onts.size(); i++) {
-                InputStream in = pathResolver.getContents((String) onts.get(i));
+                InputStream in = getPathResolver().getContents((String) onts.get(i));
                 getKnowledgeBase().loadOntology(in);
             }
         }
@@ -464,7 +480,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 
 	@Override
 	public NotificationChain eSetResource(Internal resource, NotificationChain notifications) {
-		setPathResolver(new EMFURIPathResolver(resource.getURI()));
+		setPathResolver(null);
 		return super.eSetResource(resource, notifications);
 	}
 	

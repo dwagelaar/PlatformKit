@@ -301,8 +301,6 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (ontClassURI: ");
 		result.append(ontClassURI);
-		result.append(", ontClass: ");
-		result.append(ontClass);
 		result.append(')');
 		return result.toString();
 	}
