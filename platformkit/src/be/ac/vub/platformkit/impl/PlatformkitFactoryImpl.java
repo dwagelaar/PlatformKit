@@ -6,8 +6,6 @@
  */
 package be.ac.vub.platformkit.impl;
 
-import be.ac.vub.platformkit.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
