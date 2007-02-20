@@ -13,7 +13,7 @@ Export-Package: be.ac.vub.platformkit,
  be.ac.vub.platformkit.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- com.hp.hpl.jena,
- org.mindswap.pellet,
+ com.hp.hpl.jena;visibility:=reexport,
+ org.mindswap.pellet;visibility:=reexport,
  org.junit
 Eclipse-LazyStart: true

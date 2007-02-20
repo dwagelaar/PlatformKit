@@ -8,7 +8,10 @@ Bundle-Activator: be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin$Imp
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: be.ac.vub.platformkit.presentation,
- be.ac.vub.platformkit.presentation.logging
+ be.ac.vub.platformkit.presentation.logging,
+ be.ac.vub.platformkit.presentation.popup.action,
+ be.ac.vub.platformkit.presentation.util,
+ be.ac.vub.platformkit.presentation.util.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  be.ac.vub.platformkit.edit;visibility:=reexport,
@@ -16,5 +19,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
  org.eclipse.ui.console,
- com.hp.hpl.jena
+ com.hp.hpl.jena;visibility:=reexport
 Eclipse-LazyStart: true
