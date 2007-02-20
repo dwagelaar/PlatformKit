@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.hp.hpl.jena"
+      label="Jena Feature"
+      version="2.3.0"
+      provider-name="Hewlett-Packard Development Company, LP"
+      image="jena_logo_small.gif">
+
+   <description url="about.html">
+      Jena is a Java framework for building Semantic Web applications. It provides a programmatic environment for RDF, RDFS and OWL, including a rule-based inference engine.
+
+Jena is open source and grown out of work with the HP Labs Semantic Web Programme.
+
+The Jena Framework includes:
+
+    * A RDF API
+    * Reading and writing RDF in RDF/XML, N3 and N-Triples
+    * An OWL API
+    * In-memory and persistent storage
+    * RDQL – a query language for RDF
+   </description>
+
+   <copyright url="about.html">
+      © Copyright 2000, 2001, 2002, 2003, 2004, 2005 Hewlett-Packard
+Development Company, LP
+
+Jena includes software developed by the Apache Software Foundation
+(http://www.apache.org/).
+
+Jena is built on top of other sub-systems which we gratefully
+acknowledge:
+* Xerces
+* JUnit
+* Jakarta ORO
+* ICU4J
+* util.concurrent from Doug Lea
+   </copyright>
+
+   <license url="about.html">
+      Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+3. The name of the author may not be used to endorse or promote
+products derived from this software without specific prior written
+permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS&apos;&apos; AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+   </license>
+
+   <url>
+      <update label="PlatformKit update site" url="http://ssel.vub.ac.be/platformkit/update"/>
+   </url>
+
+   <plugin
+         id="com.hp.hpl.jena"
+         download-size="8852"
+         install-size="9705"
+         version="2.3.0.2"/>
+
+   <plugin
+         id="com.hp.hpl.jena.doc"
+         download-size="4240"
+         install-size="4605"
+         version="2.3.0"/>
+
+</feature>
