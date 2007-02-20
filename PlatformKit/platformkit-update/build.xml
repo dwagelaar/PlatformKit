@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="be.ac.vub.platformkit.update" default="all" basedir="../">
+
+	<target name="all.clean">
+		<ant antfile="build.xml" dir="${basedir}/platformkit-bundle-feature" target="clean"/>
+		<antcall target="clean">
+			<param name="base" value="platformkit/"/>
+		</antcall>
+		<antcall target="clean">
+			<param name="base" value="platformkit-edit/"/>
+		</antcall>
+		<antcall target="clean">
+			<param name="base" value="platformkit-editor/"/>
+		</antcall>
+		<antcall target="clean">
+			<param name="base" value="platformkit-feature/"/>
+		</antcall>
+		<antcall target="clean">
+			<param name="base" value="platformkit-jena/"/>
+		</antcall>
+		<antcall target="clean">
+			<param name="base" value="platformkit-jena-doc/"/>
+		</antcall>
+		<antcall target="clean">
+			<param name="base" value="platformkit-jena-feature/"/>
+		</antcall>
+		<antcall target="clean">
+			<param name="base" value="platformkit-pellet/"/>
+		</antcall>
+		<antcall target="clean">
+			<param name="base" value="platformkit-pellet-feature/"/>
+		</antcall>
+		<antcall target="clean">
+			<param name="base" value="platformkit-bundle-feature/"/>
+		</antcall>
+	</target>
+
+	<target name="clean" if="base">
+		<delete file="${base}/build.xml"/>
+		<delete file="${base}/javaCompiler...args"/>
+		<delete dir="${base}/features"/>
+		<delete dir="${base}/plugins"/>
+	</target>
+	
+	<target name="invokeScripts">
+		<ant antfile="build.xml" dir="${basedir}/platformkit-bundle-feature" target="build.update.jar">
+			<property name="feature.destination" value="${basedir}/platformkit-update/features"/>
+			<property name="plugin.destination" value="${basedir}/platformkit-update/plugins"/>
+		</ant>
+	</target>
+	
+	<target name="all" depends="invokeScripts, all.clean"/>
+	
+</project>
