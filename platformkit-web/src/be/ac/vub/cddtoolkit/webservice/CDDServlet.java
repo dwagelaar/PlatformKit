@@ -54,20 +54,19 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import be.ac.vub.cddtoolkit.core.ConstraintList;
-import be.ac.vub.cddtoolkit.core.ConstraintSpace;
-import be.ac.vub.cddtoolkit.core.Ontologies;
-import be.ac.vub.cddtoolkit.core.util.ResourceException;
-import be.ac.vub.cddtoolkit.emf.cddconfig.CddconfigPackage;
+import be.ac.vub.platformkit.ConstraintSet;
+import be.ac.vub.platformkit.ConstraintSpace;
+import be.ac.vub.platformkit.PlatformkitPackage;
+import be.ac.vub.platformkit.kb.Ontologies;
 
 /**
  * Web service interface for the CDDToolkit.
  * @author dennis
  */
 public class CDDServlet extends HttpServlet {
-    static final long serialVersionUID = 20060104;
-    private static final int EXT_LENGTH = "cddconfig".length();
-    
+
+	private static final long serialVersionUID = -8587189401115112481L;
+
     private Logger logger = Logger.getLogger(Ontologies.LOGGER);
     private Level loglevel = Level.INFO;
     private Map knownSpaces = new HashMap();
@@ -78,8 +77,8 @@ public class CDDServlet extends HttpServlet {
     
     static {
         Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
-                "cddconfig", new XMIResourceFactoryImpl());
-        CddconfigPackage packageInstance = CddconfigPackage.eINSTANCE;
+                "platformkit", new XMIResourceFactoryImpl());
+        PlatformkitPackage packageInstance = PlatformkitPackage.eINSTANCE;
         Assert.assertNotNull(packageInstance);
     }
 
@@ -89,11 +88,11 @@ public class CDDServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         try {
-            Properties pars = new Properties();
-            InputStream context = parseParameters(req, pars);
-            boolean leastSpecific = pars.getProperty("result").equals("leastspecific");
-            boolean noValidate = pars.getProperty("noValidate").equals("true");
-            String baseurl = pars.getProperty("baseurl");
+            Properties param = new Properties();
+            InputStream context = parseParameters(req, param);
+            boolean leastSpecific = param.getProperty("result").equals("leastspecific");
+            boolean noValidate = param.getProperty("noValidate").equals("true");
+            String baseurl = param.getProperty("baseurl");
             //pre-calc
             logger.info(DateFormat.getDateInstance().format(new Date()));
             ConstraintSpace space = init(req, baseurl);
@@ -113,7 +112,7 @@ public class CDDServlet extends HttpServlet {
             logger.info(DateFormat.getDateInstance().format(new Date()));
             String redirect = getContainer(baseurl);
             if (result.size() > 0) {
-                redirect += ((ConstraintList) result.get(0)).getId();
+                redirect += ((ConstraintSet) result.get(0)).getName();
             } else {
                 redirect += "none/";
             }
@@ -152,7 +151,7 @@ public class CDDServlet extends HttpServlet {
      * @param baseurl The base URL of the application to configure
      */
     private ConstraintSpace init(HttpServletRequest req, String baseurl)
-    throws FileUploadException, IOException, IllegalArgumentException, ResourceException {
+    throws FileUploadException, IOException, IllegalArgumentException {
         parseLogLevel(getInitParameter("loglevel"));
         logger.info("Request: " + req);
         Long date = new Long(getURLDate(baseurl));
@@ -170,15 +169,20 @@ public class CDDServlet extends HttpServlet {
             }
         }
         resource = loadModel(baseurl);
-        ConstraintSpace space = new ConstraintSpace(new Ontologies());
+        if (resource.getContents().size() == 0) {
+        	throw new IOException("Resource at " + baseurl + " contains no elements");
+        }
+        ConstraintSpace space = (ConstraintSpace) resource.getContents().get(0);
         synchronized (this) {
             urlResources.put(baseurl, resource);
             urlDates.put(baseurl, date);
             knownSpaces.put(baseurl, space);
         }
         synchronized (space) {
-            space.readFromCDDConfig(resource, loadPreclassifiedOntology(baseurl));
-            space.initNoDIG();
+        	Ontologies ont = new Ontologies();
+        	space.setKnowledgeBase(ont);
+        	space.init(true);
+        	ont.attachOWLReasoner();
         }
         return space;
     }
@@ -238,18 +242,6 @@ public class CDDServlet extends HttpServlet {
         checkBaseURL(baseurl);
         URI source = URI.createURI(baseurl);
         return resourceSet.getResource(source, true);
-    }
-    
-    /**
-     * @param baseurl URL of the cddconfig file
-     * @return input stream to the preclassified ".inferred.owl" ontology
-     * @throws IOException
-     */
-    private InputStream loadPreclassifiedOntology(String baseurl) throws IOException {
-        checkBaseURL(baseurl);
-        String ontUrl = baseurl.substring(0, baseurl.length() - EXT_LENGTH) + "inferred.owl";
-        URL ontURL = new URL(ontUrl);
-        return ontURL.openStream();
     }
     
     /**
