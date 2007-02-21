@@ -3,6 +3,7 @@
 
 	<target name="clean">
 		<delete dir="doc/javadoc"/>
+		<delete file="../doc.zip"/>
 	</target>
 	
 	<target name="javadoc" depends="clean">
