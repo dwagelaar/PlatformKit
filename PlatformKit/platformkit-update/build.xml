@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="be.ac.vub.platformkit.update" default="all" basedir="../">
 
-	<target name="all.clean">
-		<ant antfile="build.xml" dir="${basedir}/platformkit-bundle-feature" target="clean"/>
+	<target name="all.clean" depends="script.clean">
 		<antcall target="clean">
 			<param name="base" value="platformkit/"/>
 		</antcall>
@@ -36,19 +35,40 @@
 	</target>
 
 	<target name="clean" if="base">
-		<delete file="${base}/build.xml"/>
-		<delete file="${base}/javaCompiler...args"/>
+		<delete>
+			<fileset dir="${base}">
+				<include name="build.xml"/>
+				<include name="javaCompiler.*"/>
+			</fileset>
+		</delete>
 		<delete dir="${base}/features"/>
 		<delete dir="${base}/plugins"/>
 	</target>
 	
-	<target name="invokeScripts">
+	<target name="script.clean">
+		<ant antfile="build.xml" dir="${basedir}/platformkit-bundle-feature" target="clean">
+			<property name="feature.destination" value="${basedir}/platformkit-update/features"/>
+			<property name="plugin.destination" value="${basedir}/platformkit-update/plugins"/>
+		</ant>
+	</target>
+
+	<target name="prepare">
+		<replaceregexp>
+			<fileset dir="${basedir}/platformkit-bundle-feature/features">
+				<include name="**/feature.xml"/>
+			</fileset>
+			<regexp pattern="label=&quot;([^&quot;]*)&quot;"/>
+			<substitution expression="label=&quot;\1 Source&quot;"/>
+		</replaceregexp>
+	</target>
+	
+	<target name="script.invoke">
 		<ant antfile="build.xml" dir="${basedir}/platformkit-bundle-feature" target="build.update.jar">
 			<property name="feature.destination" value="${basedir}/platformkit-update/features"/>
 			<property name="plugin.destination" value="${basedir}/platformkit-update/plugins"/>
 		</ant>
 	</target>
 	
-	<target name="all" depends="invokeScripts, all.clean"/>
+	<target name="all" depends="prepare, script.invoke, all.clean"/>
 	
 </project>

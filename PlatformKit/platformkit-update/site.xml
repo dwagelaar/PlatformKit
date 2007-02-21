@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/be.ac.vub.platformkit.sdk_1.1.0.jar" id="be.ac.vub.platformkit.sdk" version="1.1.0">
+   <feature url="features/be.ac.vub.platformkit.bundle_1.1.0.jar" id="be.ac.vub.platformkit.bundle" version="1.1.0">
       <category name="PlatformKit"/>
    </feature>
    <category-def name="PlatformKit" label="Platform modelling and platform dependency management toolkit">
