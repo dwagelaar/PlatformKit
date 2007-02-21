@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="be.ac.vub.platformkit.sdk"
-      label="Platformkit SDK"
+      id="be.ac.vub.platformkit.bundle"
+      label="Platformkit Bundle"
       version="1.1.0"
       provider-name="Vrije Universiteit Brussel"
       plugin="be.ac.vub.platformkit"
@@ -89,23 +89,11 @@ Pellet includes following software components:
          version="0.0.0"/>
 
    <includes
-         id="org.mindswap.pellet.source"
-         version="0.0.0"/>
-
-   <includes
          id="com.hp.hpl.jena"
          version="0.0.0"/>
 
    <includes
-         id="com.hp.hpl.jena.source"
-         version="0.0.0"/>
-
-   <includes
          id="be.ac.vub.platformkit"
-         version="0.0.0"/>
-
-   <includes
-         id="be.ac.vub.platformkit.source"
          version="0.0.0"/>
 
 </feature>

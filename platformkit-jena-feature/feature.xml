@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="com.hp.hpl.jena"
-      label="Jena Feature"
+      label="Jena"
       version="2.3.0"
       provider-name="Hewlett-Packard Development Company, LP"
-      image="jena_logo_small.gif">
+      image="jena-logo-small.gif">
 
    <description url="about.html">
       Jena is a Java framework for building Semantic Web applications. It provides a programmatic environment for RDF, RDFS and OWL, including a rule-based inference engine.
@@ -70,8 +70,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="com.hp.hpl.jena"
-         download-size="8852"
-         install-size="9705"
+         download-size="12080"
+         install-size="13168"
          version="2.3.0.2"/>
 
    <plugin
