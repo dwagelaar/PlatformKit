@@ -4,12 +4,12 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
 
-    <display-name>CDDToolkit</display-name>
+    <display-name>PlatformKit</display-name>
     <description>
-      This is the Servlet interface to the Context-Driven
-      Development Toolkit. It can determine which alternative
+      This is the Servlet interface to PlatformKit.
+      It can determine which alternative redirect URL
       (represented by a constraint set) is valid and optimal
-      for a given context description.
+      for a given platform description.
     </description>
     
     <context-param>
@@ -22,11 +22,11 @@
     </context-param>
 
     <servlet>
-      <servlet-name>cddservlet</servlet-name>
+      <servlet-name>platformkitservlet</servlet-name>
       <description>
         Determines the least/most specific option for a given context.
       </description>
-      <servlet-class>be.ac.vub.cddtoolkit.webservice.CDDServlet</servlet-class>
+      <servlet-class>be.ac.vub.platformkit.servlet.PlatformkitServlet</servlet-class>
       <init-param>
       	<param-name>loglevel</param-name>
       	<param-value>INFO</param-value>
@@ -40,7 +40,7 @@
     </servlet>
 
     <servlet-mapping>
-      <servlet-name>cddservlet</servlet-name>
+      <servlet-name>platformkitservlet</servlet-name>
       <url-pattern>/servlet/options</url-pattern>
     </servlet-mapping>
 

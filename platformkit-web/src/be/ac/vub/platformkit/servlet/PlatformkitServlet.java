@@ -18,7 +18,7 @@
  *
  *  (See the file "COPYING" that is included with this source distribution.)
  */
-package be.ac.vub.cddtoolkit.webservice;
+package be.ac.vub.platformkit.servlet;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,10 +60,10 @@ import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.kb.Ontologies;
 
 /**
- * Web service interface for the CDDToolkit.
+ * Web service interface for PlatformKit.
  * @author dennis
  */
-public class CDDServlet extends HttpServlet {
+public class PlatformkitServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -8587189401115112481L;
 

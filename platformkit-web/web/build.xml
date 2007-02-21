@@ -12,7 +12,7 @@
     </target>
 
     <target name="war" depends="clean">
-        <war destfile="cddservlet.war" webxml="resources/WEB-INF/web.xml">
+        <war destfile="platformkitservlet.war" webxml="resources/WEB-INF/web.xml">
         	<fileset dir="resources/" includes="index.html"/>
         	<classes dir="../bin"/>
         	<classes dir="${platformkit.path}/bin"/>
