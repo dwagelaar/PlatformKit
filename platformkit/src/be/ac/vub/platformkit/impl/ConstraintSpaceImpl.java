@@ -70,9 +70,9 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		@Override
 		public void notifyChanged(Notification msg) {
 			super.notifyChanged(msg);
-			if (msg.getFeature().equals(PlatformkitPackage.eINSTANCE.getConstraintSpace_ConstraintSet())) {
+			if (PlatformkitPackage.eINSTANCE.getConstraintSpace_ConstraintSet().equals(msg.getFeature())) {
 				resetCache();
-			} else if (msg.getFeature().equals(PlatformkitPackage.eINSTANCE.getConstraintSpace_Ontology())) {
+			} else if (PlatformkitPackage.eINSTANCE.getConstraintSpace_Ontology().equals(msg.getFeature())) {
 				setKnowledgeBase(null);
 			}
 		}
