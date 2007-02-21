@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/cddtoolkit-core"/>
+	<classpathentry kind="lib" path="lib/commons-fileupload-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="lib/equinox.common.jar"/>
+	<classpathentry kind="lib" path="lib/resources.jar"/>
+	<classpathentry kind="src" path="/cddtoolkit-jena"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/common.jar"/>
+	<classpathentry kind="lib" path="lib/ecore.jar"/>
+	<classpathentry kind="lib" path="lib/ecore.xmi.jar"/>
+	<classpathentry kind="lib" path="lib/runtime.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/cddtoolkit-cddconfig"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CDDToolkit-Web" default="all">
+	<property name="cddtoolkit.core.path" value="../../cddtoolkit-core"/>
+	<property name="cddtoolkit.jena.path" value="../../cddtoolkit-jena"/>
+	<property name="cddtoolkit.cddconfig.path" value="../../cddtoolkit-cddconfig"/>
+	
+	<target name="clean">
+        <delete>
+        	<fileset dir=".">
+	       		<include name="*.war"/>
+        	</fileset>
+        </delete>
+    </target>
+
+    <target name="war" depends="clean">
+        <war destfile="cddservlet.war" webxml="resources/WEB-INF/web.xml">
+        	<fileset dir="resources/" includes="index.html"/>
+        	<classes dir="../bin"/>
+        	<classes dir="${cddtoolkit.core.path}/bin"/>
+        	<classes dir="${cddtoolkit.cddconfig.path}/bin"/>
+        	<lib dir="../lib">
+        		<exclude name="*.xml"/>
+        		<exclude name="javax.servlet.jar"/>
+      		</lib>
+        	<lib dir="${cddtoolkit.jena.path}/lib" includes="*.jar"/>
+       	</war>
+    </target>
+	
+	<target name="all" depends="war"/>
+</project>

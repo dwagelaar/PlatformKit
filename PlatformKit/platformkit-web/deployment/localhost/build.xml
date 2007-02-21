@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DeployCDDToolkitWeb" default="all">
+	<target name="deploy">
+		<copy todir="/opt/jetty-5.1.4/webapps/" file="../../web/cddservlet.war"/>
+	</target>
+
+	<target name="all" depends="deploy"/>
+</project>

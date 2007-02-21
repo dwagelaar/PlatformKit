@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app 
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+    <display-name>CDDToolkit</display-name>
+    <description>
+      This is the Servlet interface to the Context-Driven
+      Development Toolkit. It can determine which alternative
+      (represented by a constraint set) is valid and optimal
+      for a given context description.
+    </description>
+    
+    <context-param>
+      <param-name>webmaster</param-name>
+      <param-value>dennis.wagelaar@vub.ac.be</param-value>
+      <description>
+        The EMAIL address of the administrator to whom questions
+        and comments about this application should be addressed.
+      </description>
+    </context-param>
+
+    <servlet>
+      <servlet-name>cddservlet</servlet-name>
+      <description>
+        Determines the least/most specific option for a given context.
+      </description>
+      <servlet-class>be.ac.vub.cddtoolkit.webservice.CDDServlet</servlet-class>
+      <init-param>
+      	<param-name>loglevel</param-name>
+      	<param-value>INFO</param-value>
+      </init-param>
+      <init-param>
+      	<param-name>allowed-url-base</param-name>
+      	<param-value>http://</param-value>
+	  </init-param>
+      <!-- Load this servlet at server startup time -->
+      <load-on-startup>5</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>cddservlet</servlet-name>
+      <url-pattern>/servlet/options</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+      <session-timeout>30</session-timeout>    <!-- 30 minutes -->
+    </session-config>
+
+</web-app>

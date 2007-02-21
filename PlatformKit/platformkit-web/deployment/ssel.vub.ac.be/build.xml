@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DeployCDDToolkitWeb" default="all">
+	<target name="deploy">
+		<exec dir="../../web" executable="rsync" logError="true">
+			<arg line="-rlvuzC"/>
+			<arg line="cddservlet.war"/>
+			<arg line="dwagelaa@ssel.vub.ac.be:/opt/jetty/webapps/"/>
+		</exec>
+	</target>
+	
+	<target name="fixOwner" depends="deploy">
+		<exec dir="." executable="ssh" logError="true">
+			<arg line="dwagelaa@ssel.vub.ac.be"/>
+			<arg line="chown :ssel /opt/jetty/webapps/cddservlet.war"/>
+		</exec>
+	</target>
+	
+	<target name="fixPermissions" depends="deploy">
+		<exec dir="." executable="ssh" logError="true">
+			<arg line="dwagelaa@ssel.vub.ac.be"/>
+			<arg line="chmod 664 /opt/jetty/webapps/cddservlet.war"/>
+		</exec>
+	</target>
+	
+	<target name="all" depends="fixOwner,fixPermissions"/>
+</project>
