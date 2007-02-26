@@ -7,7 +7,9 @@
 	</target>
 	
 	<target name="javadoc" depends="clean">
-		<javadoc access="protected" author="true"
+		<javadoc 
+			access="protected" 
+			author="true"
 			classpath="
 				../../platformkit-jena/lib/jena.jar:
 				../../platformkit-jena/lib/icu4j_3_4.jar:
@@ -28,7 +30,81 @@
 				${eclipse.home}/plugins/org.eclipse.emf.ecore_2.2.1.v200609210005.jar:
 				../../platformkit-pellet/lib/econn-owlapi/io.jar:
 				${eclipse.home}/plugins/org.eclipse.ui.views_3.2.1.M20060906-0800.jar:
-				${eclipse.home}/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.1.R32x_v20060907/runtime_registry_compatibility.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/lib/arq.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/lib/concurrent.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/bin:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/lib/antlr-2.7.5.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/lib/commons-logging.jar:${eclipse.home}/plugins/org.eclipse.core.commands_3.2.0.I20060605-1400.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/bin:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/econn-owlapi/examples.jar:${eclipse.home}/plugins/org.eclipse.emf.edit_2.2.1.v200609210005.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/econn-owlapi/abstractparser.jar:${eclipse.home}/plugins/org.eclipse.ui.ide_3.2.1.M20060915-1030.jar:${eclipse.home}/plugins/org.eclipse.swt_3.2.2.v3235h.jar:${eclipse.home}/plugins/org.eclipse.emf.edit.ui_2.2.0.v200609210005.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/lib/stax-api-1.0.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/econn-owlapi/validation_test.jar:${eclipse.home}/plugins/org.eclipse.core.contenttype_3.2.0.v20060603.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-edit/bin:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/econn-owlapi/impl.jar:${eclipse.home}/plugins/org.eclipse.emf.ecore.change_2.2.0.v200609210005.jar:${eclipse.home}/plugins/org.eclipse.swt.carbon.macosx_3.2.1.v3235.jar:${eclipse.home}/plugins/org.eclipse.ui.workbench_3.2.1.M20060906-0800.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/econn-owlapi/api.jar:${eclipse.home}/plugins/org.eclipse.ui_3.2.1.M20060913-0800.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/lib/xercesImpl.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/lib/jakarta-oro-2.0.8.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/econn-owlapi/owl-servlet.jar:${eclipse.home}/plugins/org.eclipse.core.resources_3.2.1.R32x_v20060914.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/pellet.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/lib/jenatest.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/econn-owlapi/validation.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit/bin:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/rdfapi.jar:${eclipse.home}/plugins/org.eclipse.ui.console_3.1.100.v20060605.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/lib/econn-owlapi/rules.jar:${eclipse.home}/plugins/org.eclipse.emf.ecore.xmi_2.2.1.v200609210005.jar:${eclipse.home}/plugins/org.eclipse.jface_3.2.1.M20060908-1000.jar:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/lib/stax-1.1.1-dev.jar:${eclipse.home}/plugins/org.eclipse.osgi_3.2.2.R32x_v20061101.jar:${eclipse.home}/plugins/org.junit_3.8.1/junit.jar" destdir="doc/javadoc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="be.ac.vub.platformkit.kb,org.mindswap.pellet.eclipse,be.ac.vub.platformkit.impl,com.hp.hpl.jena.eclipse,be.ac.vub.platformkit.presentation.popup.action,be.ac.vub.platformkit.presentation.logging,be.ac.vub.platformkit.presentation.util.provider,be.ac.vub.platformkit.presentation,be.ac.vub.platformkit.provider,be.ac.vub.platformkit.util,be.ac.vub.platformkit.presentation.util,be.ac.vub.platformkit.kb.util,com.hp.hpl.jena.eclipse.logging" source="1.5" sourcefiles="/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit/src/be/ac/vub/platformkit/PlatformkitFactory.java,/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit/src/be/ac/vub/platformkit/Constraint.java,/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit/src/be/ac/vub/platformkit/IOntModelChangeListener.java,/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit/src/be/ac/vub/platformkit/ConstraintSpace.java,/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit/src/be/ac/vub/platformkit/ConstraintSet.java,/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit/src/be/ac/vub/platformkit/PlatformkitPackage.java" sourcepath="/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-jena/src:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit/src:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-edit/src:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-pellet/src:/Users/dennis/my_documents/PhD/Projects/PlatformKit/platformkit-editor/src" splitindex="true" use="true" version="true">
+				${eclipse.home}/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.1.R32x_v20060907/runtime_registry_compatibility.jar:
+				../../platformkit-jena/lib/arq.jar:
+				../../platformkit-jena/lib/concurrent.jar:
+				../../platformkit-pellet/bin:
+				../../platformkit-jena/lib/antlr-2.7.5.jar:
+				../../platformkit-jena/lib/commons-logging.jar:
+				${eclipse.home}/plugins/org.eclipse.core.commands_3.2.0.I20060605-1400.jar:
+				../../platformkit-jena/bin:
+				../../platformkit-pellet/lib/econn-owlapi/examples.jar:
+				${eclipse.home}/plugins/org.eclipse.emf.edit_2.2.1.v200609210005.jar:
+				../../platformkit-pellet/lib/econn-owlapi/abstractparser.jar:
+				${eclipse.home}/plugins/org.eclipse.ui.ide_3.2.1.M20060915-1030.jar:
+				${eclipse.home}/plugins/org.eclipse.swt_3.2.2.v3235h.jar:
+				${eclipse.home}/plugins/org.eclipse.emf.edit.ui_2.2.0.v200609210005.jar:
+				../../platformkit-jena/lib/stax-api-1.0.jar:
+				../../platformkit-pellet/lib/econn-owlapi/validation_test.jar:
+				${eclipse.home}/plugins/org.eclipse.core.contenttype_3.2.0.v20060603.jar:
+				../../platformkit-edit/bin:
+				../../platformkit-pellet/lib/econn-owlapi/impl.jar:
+				${eclipse.home}/plugins/org.eclipse.emf.ecore.change_2.2.0.v200609210005.jar:
+				${eclipse.home}/plugins/org.eclipse.swt.carbon.macosx_3.2.1.v3235.jar:
+				${eclipse.home}/plugins/org.eclipse.ui.workbench_3.2.1.M20060906-0800.jar:
+				../../platformkit-pellet/lib/econn-owlapi/api.jar:
+				${eclipse.home}/plugins/org.eclipse.ui_3.2.1.M20060913-0800.jar:
+				../../platformkit-jena/lib/xercesImpl.jar:
+				../../platformkit-jena/lib/jakarta-oro-2.0.8.jar:
+				../../platformkit-pellet/lib/econn-owlapi/owl-servlet.jar:
+				${eclipse.home}/plugins/org.eclipse.core.resources_3.2.1.R32x_v20060914.jar:
+				../../platformkit-pellet/lib/pellet.jar:
+				../../platformkit-jena/lib/jenatest.jar:
+				../../platformkit-pellet/lib/econn-owlapi/validation.jar:
+				../../platformkit/bin:
+				../../platformkit-pellet/lib/rdfapi.jar:
+				${eclipse.home}/plugins/org.eclipse.ui.console_3.1.100.v20060605.jar:
+				../../platformkit-pellet/lib/econn-owlapi/rules.jar:
+				${eclipse.home}/plugins/org.eclipse.emf.ecore.xmi_2.2.1.v200609210005.jar:
+				${eclipse.home}/plugins/org.eclipse.jface_3.2.1.M20060908-1000.jar:
+				../../platformkit-jena/lib/stax-1.1.1-dev.jar:
+				${eclipse.home}/plugins/org.eclipse.osgi_3.2.2.R32x_v20061101.jar:
+				${eclipse.home}/plugins/org.junit_3.8.1/junit.jar"
+			destdir="doc/javadoc" 
+			nodeprecated="false" 
+			nodeprecatedlist="false" 
+			noindex="false" 
+			nonavbar="false" 
+			notree="false" 
+			packagenames="
+				be.ac.vub.platformkit.kb,org.mindswap.pellet.eclipse,
+				be.ac.vub.platformkit.impl,com.hp.hpl.jena.eclipse,
+				be.ac.vub.platformkit.presentation.popup.action,
+				be.ac.vub.platformkit.presentation.logging,
+				be.ac.vub.platformkit.presentation.util.provider,
+				be.ac.vub.platformkit.presentation,
+				be.ac.vub.platformkit.provider,
+				be.ac.vub.platformkit.util,
+				be.ac.vub.platformkit.presentation.util,
+				be.ac.vub.platformkit.kb.util,
+				com.hp.hpl.jena.eclipse.logging" 
+			source="1.5" 
+			sourcefiles="
+				../../platformkit/src/be/ac/vub/platformkit/PlatformkitFactory.java,
+				../../platformkit/src/be/ac/vub/platformkit/Constraint.java,
+				../../platformkit/src/be/ac/vub/platformkit/IOntModelChangeListener.java,
+				../../platformkit/src/be/ac/vub/platformkit/ConstraintSpace.java,
+				../../platformkit/src/be/ac/vub/platformkit/ConstraintSet.java,
+				../../platformkit/src/be/ac/vub/platformkit/PlatformkitPackage.java" 
+			sourcepath="
+				../../platformkit-jena/src:
+				../../platformkit/src:
+				../../platformkit-edit/src:
+				../../platformkit-pellet/src:
+				../../platformkit-editor/src" 
+			splitindex="true" 
+			use="true" 
+			version="true">
 			<link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>
 			<link href="../../../com.hp.hpl.jena.doc/doc/javadoc"/>
 			<link href="../../../org.eclipse.emf.doc/references/javadoc"/>
