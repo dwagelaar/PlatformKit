@@ -77,8 +77,10 @@
 			nonavbar="false" 
 			notree="false" 
 			packagenames="
-				be.ac.vub.platformkit.kb,org.mindswap.pellet.eclipse,
-				be.ac.vub.platformkit.impl,com.hp.hpl.jena.eclipse,
+				be.ac.vub.platformkit.kb,
+				org.mindswap.pellet.eclipse,
+				be.ac.vub.platformkit.impl,
+				com.hp.hpl.jena.eclipse,
 				be.ac.vub.platformkit.presentation.popup.action,
 				be.ac.vub.platformkit.presentation.logging,
 				be.ac.vub.platformkit.presentation.util.provider,
