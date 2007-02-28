@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY j2se-1_3 "http://ssel.vub.ac.be/platformkit/java#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+]>
+<rdf:RDF
+	 xmlns:j2se-1_3="&j2se-1_3;"
+	 xmlns:xsd="&xsd;"
+	 xmlns:rdf="&rdf;"
+	 xmlns:rdfs="&rdfs;"
+	 xmlns:owl="&owl;"
+>
+
+	<owl:Ontology rdf:about="http://ssel.vub.ac.be/platformkit/java#j2se-1_3">
+	</owl:Ontology>
+	<owl:Class rdf:about="&j2se-1_3;java.text">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.rmi.CORBA">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.naming.event">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.math">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.image.renderable">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.naming.directory">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.naming">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.CORBA">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.colorchooser">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.stub.java.rmi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.rmi.activation">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.image">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.beans">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.plaf">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.CORBA.portable">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.text.resources">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.filechooser">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.plaf.multi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.sound.midi.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.table">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.event">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.lang">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.naming.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.datatransfer">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.CORBA.DynAnyPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.transaction">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.dnd.peer">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.peer">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.beans.beancontext">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.plaf.basic">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.io">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.SendingContext">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.rmi.registry">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.CORBA_2_3">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.sql">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.rmi.dgc">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.CosNaming">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.sound.sampled.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.security">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.util.zip">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.color">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.undo">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.text.rtf">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.accessibility">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.font">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.print">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.CORBA.TypeCodePackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.border">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.naming.ldap">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.CORBA.ORBPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.plaf.metal">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.lang.ref">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.sound.midi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.rmi.server">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.security.spec">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.im.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.rmi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.dnd">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.security.acl">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.im">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.CORBA_2_3.portable">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.security.cert">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.lang.reflect">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.awt.geom">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;org.omg.CosNaming.NamingContextPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.sound.sampled">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.rmi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.event">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.text.html.parser">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.text.html">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.net">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.security.interfaces">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.util.jar">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.tree">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;javax.swing.text">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.applet">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_3;java.util">
+	</owl:Class>
+</rdf:RDF>

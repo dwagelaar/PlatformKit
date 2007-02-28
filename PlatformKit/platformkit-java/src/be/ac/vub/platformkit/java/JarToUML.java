@@ -64,23 +64,26 @@ public class JarToUML implements Runnable {
 			jarToUML.addJar(new JarFile("/System/Library/Frameworks/JavaVM.framework/Versions/1.3/Classes/classes.jar"));
 			jarToUML.addJar(new JarFile("/System/Library/Frameworks/JavaVM.framework/Versions/1.3/Classes/ui.jar"));
 			jarToUML.setOutputFile("j2se-1_3-api.uml");
+			jarToUML.setOutputModelName("j2se-1_3");
 			jarToUML.run();
 			jarToUML.clearJars();
 			jarToUML.addJar(new JarFile("/System/Library/Frameworks/JavaVM.framework/Versions/1.4/Classes/classes.jar"));
 			jarToUML.addJar(new JarFile("/System/Library/Frameworks/JavaVM.framework/Versions/1.4/Classes/ui.jar"));
 			jarToUML.setOutputFile("j2se-1_4-api.uml");
+			jarToUML.setOutputModelName("j2se-1_4");
 			jarToUML.run();
 			jarToUML.clearJars();
 			jarToUML.addJar(new JarFile("/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/classes.jar"));
 			jarToUML.addJar(new JarFile("/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/ui.jar"));
 			jarToUML.setOutputFile("j2se-1_5-api.uml");
+			jarToUML.setOutputModelName("j2se-1_5");
 			jarToUML.run();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	private Model model = UMLFactory.eINSTANCE.createModel();
+	private Model model = null;
 	private List jars = new ArrayList();
 	private TypeToClassifierSwitch typeToClassifier = null;
 	private FixClassifierSwitch fixClassifier = new FixClassifierSwitch();
@@ -89,9 +92,9 @@ public class JarToUML implements Runnable {
 	private AddClassifierOperationSwitch addClassifierOperation = new AddClassifierOperationSwitch();
 	private Filter filter = null;
 	private String outputFile = "api.uml";
+	private String outputModelName = "api";
 
 	public JarToUML() {
-		typeToClassifier = new TypeToClassifierSwitch(getModel());
 	}
 
 	public void run() {
@@ -100,7 +103,10 @@ public class JarToUML implements Runnable {
 		Resource res = resourceSet.createResource(URI.createURI(getOutputFile()));
 		Assert.assertNotNull(res);
 		try {
+			model = UMLFactory.eINSTANCE.createModel();
 			res.getContents().add(model);
+			model.setName(getOutputModelName());
+			typeToClassifier = new TypeToClassifierSwitch(getModel());
 			for (Iterator it = getJars(); it.hasNext();) {
 				JarFile jar = (JarFile) it.next();
 				addAllClassifiers(jar);
@@ -419,6 +425,14 @@ public class JarToUML implements Runnable {
 
 	public void setOutputFile(String outputFile) {
 		this.outputFile = outputFile;
+	}
+
+	public String getOutputModelName() {
+		return outputModelName;
+	}
+
+	public void setOutputModelName(String outputModelName) {
+		this.outputModelName = outputModelName;
 	}
 
 }
