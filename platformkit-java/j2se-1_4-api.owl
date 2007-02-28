@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY j2se-1_4 "http://ssel.vub.ac.be/platformkit/java#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+]>
+<rdf:RDF
+	 xmlns:j2se-1_4="&j2se-1_4;"
+	 xmlns:xsd="&xsd;"
+	 xmlns:rdf="&rdf;"
+	 xmlns:rdfs="&rdfs;"
+	 xmlns:owl="&owl;"
+>
+
+	<owl:Ontology rdf:about="http://ssel.vub.ac.be/platformkit/java#j2se-1_4">
+	</owl:Ontology>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.event">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.table">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.w3c.dom.traversal">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.colorchooser">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.security.auth">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.plaf">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.io">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.imageio.metadata">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.datatransfer">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.color">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.w3c.dom.views">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.PortableServer">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.im.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.nio">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.math">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CORBA.DynAnyPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.dnd">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.sound.sampled.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.rmi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.sound.sampled">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.xml.sax">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.security.cert">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.security.auth.x500">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.util.zip">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.text.html">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.geom">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.xml.transform.dom">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CORBA_2_3.portable">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.border">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.w3c.dom.events">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.PortableInterceptor">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.xml.transform.sax">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.xml.transform">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.PortableServer.CurrentPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.print.event">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.PortableServer.POAPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.imageio">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CORBA">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.security.spec">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.sql">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.tree">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.security.acl">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.xml.parsers">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.nio.channels">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.naming.ldap">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.IOP">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.security.auth.login">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.security.interfaces">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.PortableServer.portable">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.lang.reflect">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.imageio.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.print.attribute.standard">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.plaf.basic">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.naming.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.IOP.CodecFactoryPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.crypto">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.SendingContext">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.security.auth.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.plaf.multi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.security.auth.kerberos">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.util">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.ietf.jgss">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.util.prefs">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.xml.sax.helpers">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.peer">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.text">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.rmi.CORBA">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.sql">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.Messaging">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.imageio.event">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.dnd.peer">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.w3c.dom.css">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.util.regex">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.net">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.beans">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.transaction">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.net.ssl">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.image">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.print">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.plaf.metal">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.util.jar">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.image.renderable">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.IOP.CodecPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CosNaming.NamingContextPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.nio.channels.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.naming.directory">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.security.auth.callback">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.naming.event">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.print">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CosNaming.NamingContextExtPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.Dynamic">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CORBA.portable">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.util.logging">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.undo">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.rmi.registry">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.xml.transform.stream">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.security">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.text.rtf">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.DynamicAny.DynAnyPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.DynamicAny">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.xml.sax.ext">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CosNaming">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.rmi.server">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.lang">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.nio.charset">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.sound.midi.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.im">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.text.html.parser">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CORBA.TypeCodePackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.PortableServer.POAManagerPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.rmi.dgc">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.rmi.activation">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.stub.java.rmi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.imageio.plugins.jpeg">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.nio.charset.spi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.w3c.dom.stylesheets">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.w3c.dom.html">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.print.attribute">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.font">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.DynamicAny.DynAnyFactoryPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.awt.event">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.imageio.stream">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.applet">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.beans.beancontext">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CORBA_2_3">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.naming">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.CORBA.ORBPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.sound.midi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.w3c.dom">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.lang.ref">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.accessibility">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.PortableInterceptor.ORBInitInfoPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.rmi">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.swing.filechooser">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;org.omg.PortableServer.ServantLocatorPackage">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;javax.transaction.xa">
+	</owl:Class>
+	<owl:Class rdf:about="&j2se-1_4;java.text">
+	</owl:Class>
+</rdf:RDF>

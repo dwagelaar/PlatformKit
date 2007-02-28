@@ -41,7 +41,7 @@ helper context UML2!uml::NamedElement def : qualifiedName(separator : String) : 
 rule Model {
 	from s : UML2!uml::Model (thisModule.inElements->includes(s))
 	to n : OWL!Namespace mapsTo s (
-		URI <- 'http://ssel.vub.ac.be/java#',
+		URI <- 'http://ssel.vub.ac.be/platformkit/java#',
 		name <- s.name),
 	   xsd : OWL!Namespace (
 	   	URI <- 'http://www.w3.org/2001/XMLSchema#',
