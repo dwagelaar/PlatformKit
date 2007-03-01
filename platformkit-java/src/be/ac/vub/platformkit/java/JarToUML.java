@@ -61,6 +61,16 @@ public class JarToUML implements Runnable {
 			logger.setLevel(Level.INFO);
 			JarToUML jarToUML = new JarToUML();
 			jarToUML.setFilter(new JavaAPIFilter());
+			jarToUML.addJar(new JarFile("/Users/dennis/Documents/Software/jdk1.1.8/lib/classes.zip"));
+			jarToUML.setOutputFile("jdk-1_1-api.uml");
+			jarToUML.setOutputModelName("jdk-1_1");
+			jarToUML.run();
+			jarToUML.clearJars();
+			jarToUML.addJar(new JarFile("/Users/dennis/Documents/Software/jdk1.2.2/jre/lib/rt.jar"));
+			jarToUML.setOutputFile("j2se-1_2-api.uml");
+			jarToUML.setOutputModelName("j2se-1_2");
+			jarToUML.run();
+			jarToUML.clearJars();
 			jarToUML.addJar(new JarFile("/System/Library/Frameworks/JavaVM.framework/Versions/1.3/Classes/classes.jar"));
 			jarToUML.addJar(new JarFile("/System/Library/Frameworks/JavaVM.framework/Versions/1.3/Classes/ui.jar"));
 			jarToUML.setOutputFile("j2se-1_3-api.uml");
