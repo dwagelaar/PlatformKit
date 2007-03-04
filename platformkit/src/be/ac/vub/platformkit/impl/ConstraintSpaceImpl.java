@@ -67,7 +67,6 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 
 	private class CacheAdapter extends AdapterImpl {
 
-		@Override
 		public void notifyChanged(Notification msg) {
 			super.notifyChanged(msg);
 			if (PlatformkitPackage.eINSTANCE.getConstraintSpace_ConstraintSet().equals(msg.getFeature())) {
@@ -478,7 +477,6 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		return converter.createInputStream(uri);
 	}
 
-	@Override
 	public NotificationChain eSetResource(Internal resource, NotificationChain notifications) {
 		setPathResolver(null);
 		return super.eSetResource(resource, notifications);

@@ -95,7 +95,6 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	
 	private class CacheAdapter extends AdapterImpl {
 
-		@Override
 		public void notifyChanged(Notification msg) {
 			super.notifyChanged(msg);
 			if ((msg.getFeature().equals(PlatformkitPackage.eINSTANCE.getConstraintSet_Constraint())) ||

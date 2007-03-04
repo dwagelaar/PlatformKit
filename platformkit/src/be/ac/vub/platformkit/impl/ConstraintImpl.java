@@ -51,7 +51,6 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	
 	private class CacheAdapter extends AdapterImpl {
 
-		@Override
 		public void notifyChanged(Notification msg) {
 			super.notifyChanged(msg);
 			if (msg.getFeature().equals(PlatformkitPackage.eINSTANCE.getConstraint_OntClassURI())) {
