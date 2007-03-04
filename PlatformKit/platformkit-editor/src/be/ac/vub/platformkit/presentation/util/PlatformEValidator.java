@@ -25,7 +25,6 @@ public class PlatformEValidator extends EValidatorWrapper {
 		super(inner);
 	}
 
-	@Override
 	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map context) {
 		boolean superValid = super.validate(eClass, eObject, diagnostics, context);
 		boolean valid = true;
