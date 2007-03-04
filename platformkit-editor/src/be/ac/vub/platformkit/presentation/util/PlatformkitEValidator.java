@@ -24,7 +24,6 @@ public class PlatformkitEValidator extends EValidatorWrapper {
 	
 	protected class EValidatorPlatformkitSwitch extends PlatformkitSwitch {
 
-		@Override
 		public Object caseConstraint(Constraint object) {
 			//TODO guarantee previous validation of ConstraintSpace?
 			Assert.isNotNull(object.getSet());
@@ -40,13 +39,6 @@ public class PlatformkitEValidator extends EValidatorWrapper {
 			return super.caseConstraint(object);
 		}
 
-//		@Override
-//		public Object caseConstraintSet(ConstraintSet object) {
-//			// TODO Auto-generated method stub
-//			return super.caseConstraintSet(object);
-//		}
-
-		@Override
 		public Object caseConstraintSpace(ConstraintSpace object) {
 			//don't validate constraint spaces that already have a knowledge base;
 			//these have already been validated (changes reset the knowledge base)
@@ -74,7 +66,6 @@ public class PlatformkitEValidator extends EValidatorWrapper {
 		super(null);
 	}
 
-	@Override
 	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map context) {
 		boolean superValid = super.validate(eClass, eObject, diagnostics, context);
 		Diagnostic diag = (Diagnostic) validatorSwitch.doSwitch(eObject);
