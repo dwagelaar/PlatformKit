@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="DeployCDDToolkitWeb" default="all">
+<project name="DeployPlatformKitWeb" default="all">
 	<target name="deploy">
-		<copy todir="/opt/jetty-5.1.4/webapps/" file="../../web/cddservlet.war"/>
+		<copy todir="/Applications/jetty-5.1.4/webapps/" file="../../web/platformkitservlet.war"/>
 	</target>
 
 	<target name="all" depends="deploy"/>
