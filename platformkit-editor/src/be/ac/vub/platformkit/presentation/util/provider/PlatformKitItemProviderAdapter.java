@@ -51,16 +51,20 @@ public class PlatformKitItemProviderAdapter implements
 	    ResourceLocator {
 
 	private ItemProviderAdapter inner;
+	private AdapterFactory factory;
 	private IEObjectValidator validator = null;
-	private Logger logger = Logger.getLogger(Ontologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
 	
 	/**
 	 * Creates a new PlatformKitItemProviderAdapter
 	 * @param inner The wrapped ItemProviderAdapter
+	 * @param factory The adapter factory to create new wrapped adapters
 	 */
-	public PlatformKitItemProviderAdapter(ItemProviderAdapter inner) {
+	public PlatformKitItemProviderAdapter(ItemProviderAdapter inner, AdapterFactory factory) {
 		Assert.isNotNull(inner);
+		Assert.isNotNull(factory);
 		this.inner = inner;
+		this.factory = factory;
 	}
 	
 	/**
@@ -82,18 +86,18 @@ public class PlatformKitItemProviderAdapter implements
     protected void updateObject(EObject object) {
     	Assert.isNotNull(object);
     	if (object.eAdapters().size() == 0) {
-    		object.eAdapters().add(this);
-			logger.info("Linked wrapper adapter for child descriptor value " + object.toString());
-    		return;
+        	// Bug #26: Profiling the Instant Messenger configuration editor throws ClassCastException
+    		// Solved: use AdapterFactory from editingDomain to pro-actively create underlying adapter
+			logger.info("Creating new adapters using adapter factory " + factory);
+			factory.adaptAllNew(object);
     	}
 		for (int i = 0; i < object.eAdapters().size(); i++) {
 			Object adapter = object.eAdapters().get(i);
-			logger.info(object + " adapter = " + adapter);
 			if (adapter instanceof ItemProviderAdapter) {
 				PlatformKitItemProviderAdapter wrapper =
-					new PlatformKitItemProviderAdapter((ItemProviderAdapter) adapter);
+					new PlatformKitItemProviderAdapter((ItemProviderAdapter) adapter, factory);
 				wrapper.setValidator(getValidator());
-				logger.info("Created wrapper adapter for child descriptor value " + object.toString());
+				logger.info("Created wrapper adapter for new child " + object.toString());
 				object.eAdapters().set(i, wrapper);
 			}
 		}
@@ -159,7 +163,7 @@ public class PlatformKitItemProviderAdapter implements
 		}
 		return true;
 	}
-
+	
 	public Command createCommand(Object object, EditingDomain editingDomain,
 			Class commandClass, CommandParameter commandParameter) {
 		return inner.createCommand(object, editingDomain, commandClass, commandParameter);

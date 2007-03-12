@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.jface.util.Assert;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -187,18 +188,20 @@ public class Profile extends PlatformKitAction {
     	Assert.isNotNull(object);
 		for (int i = 0; i < object.eAdapters().size(); i++) {
 			Object adapter = object.eAdapters().get(i);
-			if (adapter instanceof ItemProviderAdapter) {
+			if ((adapter instanceof ItemProviderAdapter) && (editingDomain instanceof AdapterFactoryEditingDomain)) {
 				PlatformKitItemProviderAdapter wrapper =
-					new PlatformKitItemProviderAdapter((ItemProviderAdapter) adapter);
+					new PlatformKitItemProviderAdapter(
+							(ItemProviderAdapter) adapter, 
+							((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory());
 				logger.info("Created wrapper adapter for " + object.toString());
 				object.eAdapters().set(i, wrapper);
 				adapter = wrapper;
 			}
    			if (adapter instanceof PlatformKitItemProviderAdapter) {
-   				PlatformKitItemProviderAdapter cddAdapter = (PlatformKitItemProviderAdapter) adapter;
-   				if ((cddAdapter.getValidator() != validator)) {
-       				cddAdapter.setValidator(validator);
-       				logger.info("Attached new validator to wrapper " + cddAdapter.toString());
+   				PlatformKitItemProviderAdapter pkAdapter = (PlatformKitItemProviderAdapter) adapter;
+   				if ((pkAdapter.getValidator() != validator)) {
+       				pkAdapter.setValidator(validator);
+       				logger.info("Attached new validator to wrapper " + pkAdapter.toString());
    				}
    			}
 		}
