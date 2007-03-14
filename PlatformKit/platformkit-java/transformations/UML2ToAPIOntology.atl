@@ -79,38 +79,29 @@ helper context UML2!uml::Package def : compatibleInPrev() : Sequence(UML2!uml::P
 	UML2!uml::Package->allInstancesFrom('PREVIN')->select(p|self->isCompatibleWith(p));
 
 helper context UML2!uml::Classifier def : isCompatibleWith(c : UML2!uml::Classifier) : Boolean =
-	if c->oclIsUndefined() then true
-	else
-		if self->namedElementIsCompatibleWith(c)
-		then (c.general->select(g|not self->hasGeneralCompatibleWith(g))->isEmpty())
-		else false endif
-	endif;
+	if self->namedElementIsCompatibleWith(c)
+	then (let compGenerals : Sequence(UML2!uml::Classifier) = c.general->select(g|not self->hasGeneralCompatibleWith(g))
+		  in if compGenerals->isEmpty() then true
+		  	 else compGenerals->debug(self.qualifiedName + ' misses generals compatible with ')->isEmpty() endif) and
+		 (let compFeatures : Sequence(UML2!uml::Feature) = c->allFeatures()->select(f|not self->hasFeatureCompatibleWith(f))
+		  in if compFeatures->isEmpty() then true
+		  	 else compFeatures->debug(self.qualifiedName + ' misses features compatible with ')->isEmpty() endif)
+	else false endif;
 
-helper context UML2!uml::Dependency def : isCompatibleWith(d : UML2!uml::Dependency) : Boolean =
-	if d->oclIsUndefined() then true
-	else
-		if self->namedElementIsCompatibleWith(d)
-		then (d.supplier->select(s|not self->hasSupplierCompatibleWith(s))->isEmpty())
-		else false endif
-	endif;
+helper context UML2!uml::Classifier def : hasFeatureCompatibleWith(f : UML2!uml::Feature) : Boolean =
+	self->allFeatures()->select(o|o->isCompatibleWith(f))->notEmpty();
 
 helper context UML2!uml::StructuralFeature def : isCompatibleWith(f : UML2!uml::StructuralFeature) : Boolean =
-	if f->oclIsUndefined() then true
-	else
-		if self->typedElementIsCompatibleWith(f)
-		then (self.isStatic = f.isStatic) and
-			 (self.isReadOnly = f.isReadOnly)
-		else false endif
-	endif;
+	if self->typedElementIsCompatibleWith(f)
+	then (self.isStatic = f.isStatic) and
+		 (self.isReadOnly = f.isReadOnly)
+	else false endif;
 
 helper context UML2!uml::BehavioralFeature def : isCompatibleWith(f : UML2!uml::BehavioralFeature) : Boolean =
-	if f->oclIsUndefined() then true
-	else
-		if self->namedElementIsCompatibleWith(f)
-		then (self.isStatic = f.isStatic) and
-			 (self.isAbstract = f.isAbstract)
-		else false endif
-	endif;
+	if self->namedElementIsCompatibleWith(f)
+	then (self.isStatic = f.isStatic) and
+		 (if self.isAbstract then f.isAbstract else true endif)
+	else false endif;
 
 helper context UML2!uml::Parameter def : isCompatibleWith(p : UML2!uml::Parameter) : Boolean =
 	if p->oclIsUndefined() then true
@@ -126,41 +117,53 @@ helper context UML2!uml::TypedElement def : isCompatibleWith(t : UML2!uml::Typed
 helper context UML2!uml::NamedElement def : isCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
 	self->namedElementIsCompatibleWith(e);
 
+helper context UML2!uml::NamedElement def : visibilityIsCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
+	if (self.visibility = #public) then true
+	else if (self.visibility = #protected) then (e.visibility = #protected) or (e.visibility = #private)
+	else if (self.visibility = #package) then (e.visibility = #package) or (e.visibility = #private)
+	else (self.visibility = e.visibility) endif endif endif;
+
 helper context UML2!uml::TypedElement def : typedElementIsCompatibleWith(t : UML2!uml::TypedElement) : Boolean =
-	if t->oclIsUndefined() then true
-	else
-		if self->namedElementIsCompatibleWith(t)
-		then if self.type->oclIsUndefined()
-			 then t.type->oclIsUndefined()
-			 else if t.type->oclIsUndefined()
-			 	  then false
-				  else self.type.qualifiedName = t.type.qualifiedName endif endif
-		else false endif
-	endif;
+	if self->namedElementIsCompatibleWith(t)
+	then if self.type->oclIsUndefined()
+		 then t.type->oclIsUndefined()
+		 else if t.type->oclIsUndefined()
+		 	  then false
+			  else (self.type->qualifiedName('::') = t.type->qualifiedName('::')) endif endif
+	else false endif;
 	
 helper context UML2!uml::NamedElement def : namedElementIsCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
-	if e->oclIsUndefined() then true
-	else
-		if (self->qualifiedName('::') = e->qualifiedName('::')) and (self->oclType() = e->oclType()) and (self.visibility = e.visibility)
-		then (e->ownedNamed()->select(o|not self->containsElementCompatibleWith(o))->isEmpty()) and
-			 (e.clientDependency->select(d|not self->hasDependencyCompatibleWith(d))->isEmpty())
-		else false endif
-	endif;
+	if (self->qualifiedName('::') = e->qualifiedName('::')) and (self->oclType() = e->oclType()) and (self->visibilityIsCompatibleWith(e))
+	then (let ownedComp : Sequence(UML2!uml::NamedElement) = e->ownedNamed()->select(o|not self->containsElementCompatibleWith(o))
+		  in if ownedComp->isEmpty() then true 
+		  	 else if self->oclIsKindOf(UML2!uml::Package)
+			 	  then ownedComp->debug(self.qualifiedName + ' misses elements compatible with ')->isEmpty()
+			      else false endif endif) and
+		 (let compSuppliers : Sequence(UML2!uml::NamedElement) = e->suppliers()->select(d|not self->hasSupplierCompatibleWith(d))
+		  in if compSuppliers->isEmpty() then true
+		  	 else compSuppliers->debug(self.qualifiedName + ' misses dependency suppliers compatible with ')->isEmpty() endif)
+	else false endif;
 
-helper context UML2!uml::Element def : containsElementCompatibleWith(e : UML2!uml::Element) : Boolean =
+helper context UML2!uml::Element def : containsElementCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
 	self->ownedNamed()->select(o|o->isCompatibleWith(e))->notEmpty();
 
 helper context UML2!uml::Classifier def : hasGeneralCompatibleWith(c : UML2!uml::Classifier) : Boolean =
-	self.general->select(g|g->isCompatibleWith(c))->notEmpty();
+	self.general->select(g|if g->isCompatibleWith(c) then true else g->hasGeneralCompatibleWith(c) endif)->notEmpty();
 
-helper context UML2!uml::Element def : hasDependencyCompatibleWith(d : UML2!uml::Dependency) : Boolean =
-	self.clientDependency->select(c|c->isCompatibleWith(d))->notEmpty();
+helper context UML2!uml::NamedElement def : hasSupplierCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
+	self->suppliers()->select(s|if s->isCompatibleWith(e) then true else s->hasSupplierCompatibleWith(e) endif)->notEmpty();
 
-helper context UML2!uml::Dependency def : hasSupplierCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
-	self.supplier->select(s|s->isCompatibleWith(e))->notEmpty();
+helper context UML2!uml::NamedElement def : suppliers() : Set(UML2!uml::NamedElement) =
+	self.clientDependency->collect(d|d.supplier
+			->select(n|not n.name->oclIsUndefined())
+		)->flatten()->asSet();
 
-helper context UML2!uml::Element def : ownedNamed() : Sequence(UML!uml::NamedElement) =
-	self.ownedElement->select(o|o->oclIsKindOf(UML2!uml::NamedElement) and not self->oclIsKindOf(UML2!uml::Package));
+helper context UML2!uml::Element def : ownedNamed() : Sequence(UML2!uml::NamedElement) =
+	self.ownedElement
+		->select(o|o->oclIsKindOf(UML2!uml::NamedElement) and 
+			       (not o->oclIsKindOf(UML2!uml::Package)) and
+				   (not o->oclIsKindOf(UML2!uml::Feature)))
+		->select(n|not n.name->oclIsUndefined());
 
 -- ======================================================================
 -- helper methods end
