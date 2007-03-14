@@ -1,0 +1,273 @@
+-- @atlcompiler atl2006
+-- $Id$
+-- Transforms a UML2 model to an API OWL ontology containing all the packages
+module UML2ToAPIOntology;
+
+create OUT : OWL from IN : UML2, PLATFORM : OWL, JAVA : OWL, PREVOUT : OWL, PREVIN : UML2;
+
+-- ======================================================================
+-- helper attributes begin
+-- ======================================================================
+
+helper def : inElements : Set(UML2!ecore::EObject) = UML2!ecore::EObject->allInstancesFrom('IN');
+
+helper def : includedPackages : Set(UML2!uml::Package) = UML2!uml::Package->allInstancesFrom('IN')
+	->select(p|p->oclIsTypeOf(UML2!uml::Package) and p.packagedElement
+		->select(p2|not p2->oclIsKindOf(UML2!uml::Package))->notEmpty());
+
+helper def : platformPlatform : Set(OWL!owl::OWLClass) = OWL!owl::OWLClass->allInstancesFrom('PLATFORM')
+	->select(o|o.localName = 'Platform');
+
+helper def : javaLibrary : Set(OWL!owl::OWLClass) = OWL!owl::OWLClass->allInstancesFrom('JAVA')
+	->select(o|o.localName = 'JavaLibrary');
+
+helper def : platformProvidesFeature : OWL!owl::OWLObjectProperty =
+	OWL!owl::OWLObjectProperty->allInstancesFrom('PLATFORM')
+		->select(p|p.localName = 'providesFeature')->first();
+
+helper def : platformOntology : Set(OWL!owl::OWLOntology) = 
+	OWL!owl::OWLOntology->allInstancesFrom('PLATFORM');
+
+helper def : javaOntology : Set(OWL!owl::OWLOntology) = 
+	OWL!owl::OWLOntology->allInstancesFrom('JAVA');
+
+helper def : prevOntology : Set(OWL!owl::OWLOntology) = 
+	OWL!owl::OWLOntology->allInstancesFrom('PREVOUT');
+
+helper def : prevModel : Set(UML2!uml::Model) = 
+	UML2!uml::Model->allInstancesFrom('PREVIN');
+
+-- ======================================================================
+-- helper attributes end
+-- ======================================================================
+
+-- ======================================================================
+-- helper methods begin
+-- ======================================================================
+
+helper context UML2!uml::NamedElement def : qualifiedName(separator : String) : String =
+	if self.owner->oclIsTypeOf(UML2!uml::Package) then
+		self.owner->qualifiedName(separator) + separator + self.name
+	else
+		self.name
+	endif;
+
+helper context String def: firstToUpper() : String =
+	self->substring(1, 1)->toUpper() + self->substring(2, self->size());
+
+helper context UML2!uml::NamedElement def : ontClassName() : String =
+	if self.owner->oclIsTypeOf(UML2!uml::Package) then
+		self.owner->ontClassName() + self.name->firstToUpper()
+	else
+		self.name->firstToUpper()
+	endif;
+
+helper context UML2!uml::Package def : references() : Set(UML2!uml::Package) =
+	self.packagedElement->collect(p|p->referencesOtherThan(self))->flatten()->asSet();
+
+helper context UML2!uml::PackageableElement def : referencesOtherThan(p : UML2!uml::Package) : Set(UML2!uml::Package) =
+	Set{};
+
+helper context UML2!uml::Classifier def : referencesOtherThan(p : UML2!uml::Package) : Set(UML2!uml::Package) =
+	(if self->getNearestPackage() <> p then Set{self->getNearestPackage()} else Set{} endif)->union(
+	self->parents()->collect(c|c->referencesOtherThan(p))->flatten());
+
+helper context UML2!uml::Package def : owlClassesInPrev() : Sequence(OWL!owl::OWLClass) =
+	OWL!owl::OWLClass->allInstancesFrom('PREVOUT')->select(c|c.localName = self->ontClassName());
+
+helper context UML2!uml::Package def : compatibleInPrev() : Sequence(UML2!uml::Package) =
+	UML2!uml::Package->allInstancesFrom('PREVIN')->select(p|self->isCompatibleWith(p));
+
+helper context UML2!uml::Classifier def : isCompatibleWith(c : UML2!uml::Classifier) : Boolean =
+	if c->oclIsUndefined() then true
+	else
+		if self->namedElementIsCompatibleWith(c)
+		then (c.general->select(g|not self->hasGeneralCompatibleWith(g))->isEmpty())
+		else false endif
+	endif;
+
+helper context UML2!uml::Dependency def : isCompatibleWith(d : UML2!uml::Dependency) : Boolean =
+	if d->oclIsUndefined() then true
+	else
+		if self->namedElementIsCompatibleWith(d)
+		then (d.supplier->select(s|not self->hasSupplierCompatibleWith(s))->isEmpty())
+		else false endif
+	endif;
+
+helper context UML2!uml::StructuralFeature def : isCompatibleWith(f : UML2!uml::StructuralFeature) : Boolean =
+	if f->oclIsUndefined() then true
+	else
+		if self->typedElementIsCompatibleWith(f)
+		then (self.isStatic = f.isStatic) and
+			 (self.isReadOnly = f.isReadOnly)
+		else false endif
+	endif;
+
+helper context UML2!uml::BehavioralFeature def : isCompatibleWith(f : UML2!uml::BehavioralFeature) : Boolean =
+	if f->oclIsUndefined() then true
+	else
+		if self->namedElementIsCompatibleWith(f)
+		then (self.isStatic = f.isStatic) and
+			 (self.isAbstract = f.isAbstract)
+		else false endif
+	endif;
+
+helper context UML2!uml::Parameter def : isCompatibleWith(p : UML2!uml::Parameter) : Boolean =
+	if p->oclIsUndefined() then true
+	else
+		if self->typedElementIsCompatibleWith(p)
+		then (self.direction = p.direction)
+		else false endif
+	endif;
+
+helper context UML2!uml::TypedElement def : isCompatibleWith(t : UML2!uml::TypedElement) : Boolean =
+	self->typedElementIsCompatibleWith(t);
+	
+helper context UML2!uml::NamedElement def : isCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
+	self->namedElementIsCompatibleWith(e);
+
+helper context UML2!uml::TypedElement def : typedElementIsCompatibleWith(t : UML2!uml::TypedElement) : Boolean =
+	if t->oclIsUndefined() then true
+	else
+		if self->namedElementIsCompatibleWith(t)
+		then if self.type->oclIsUndefined()
+			 then t.type->oclIsUndefined()
+			 else if t.type->oclIsUndefined()
+			 	  then false
+				  else self.type.qualifiedName = t.type.qualifiedName endif endif
+		else false endif
+	endif;
+	
+helper context UML2!uml::NamedElement def : namedElementIsCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
+	if e->oclIsUndefined() then true
+	else
+		if (self->qualifiedName('::') = e->qualifiedName('::')) and (self->oclType() = e->oclType()) and (self.visibility = e.visibility)
+		then (e->ownedNamed()->select(o|not self->containsElementCompatibleWith(o))->isEmpty()) and
+			 (e.clientDependency->select(d|not self->hasDependencyCompatibleWith(d))->isEmpty())
+		else false endif
+	endif;
+
+helper context UML2!uml::Element def : containsElementCompatibleWith(e : UML2!uml::Element) : Boolean =
+	self->ownedNamed()->select(o|o->isCompatibleWith(e))->notEmpty();
+
+helper context UML2!uml::Classifier def : hasGeneralCompatibleWith(c : UML2!uml::Classifier) : Boolean =
+	self.general->select(g|g->isCompatibleWith(c))->notEmpty();
+
+helper context UML2!uml::Element def : hasDependencyCompatibleWith(d : UML2!uml::Dependency) : Boolean =
+	self.clientDependency->select(c|c->isCompatibleWith(d))->notEmpty();
+
+helper context UML2!uml::Dependency def : hasSupplierCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
+	self.supplier->select(s|s->isCompatibleWith(e))->notEmpty();
+
+helper context UML2!uml::Element def : ownedNamed() : Sequence(UML!uml::NamedElement) =
+	self.ownedElement->select(o|o->oclIsKindOf(UML2!uml::NamedElement) and not self->oclIsKindOf(UML2!uml::Package));
+
+-- ======================================================================
+-- helper methods end
+-- ======================================================================
+
+-- ======================================================================
+-- transformation rules begin
+-- ======================================================================
+
+rule Model {
+	from s : UML2!uml::Model (thisModule.inElements->includes(s))
+	using {
+		prevNotEmpty : Boolean = thisModule.prevModel->select(m|m.packagedElement->notEmpty())->notEmpty();
+	}
+	to n : OWL!rdfs::Namespace mapsTo s (
+		URI <- 'http://ssel.vub.ac.be/platformkit/' + s.name + '#',
+		name <- s.name),
+	   xsd : OWL!rdfs::Namespace (
+	   	URI <- 'http://www.w3.org/2001/XMLSchema#',
+		name <- 'xsd'),
+	   units : OWL!rdfs::Namespace (
+	   	URI <- 'http://localhost/~dennis/Units.owl#',
+		name <- 'units'),
+	   platform : OWL!rdfs::Namespace (
+	   	URI <- 'http://localhost/~dennis/Platform.owl#',
+		name <- 'platform'),
+	   java : OWL!rdfs::Namespace (
+	   	URI <- 'http://localhost/~dennis/Java.owl#',
+		name <- 'java'),
+	   ont : OWL!owl::OWLOntology (
+	   	localName <- '',
+		namespace <- n,
+		RDFSLabel <- Sequence{label},
+		RDFSComment <- Sequence{comment},
+		ownedNamespace <- Set{n, xsd, units, platform, java}->union(
+			if prevNotEmpty	then thisModule.prevOntology->collect(o|thisModule->PrevNamespace(o)) else Set{} endif),
+-- !!! OWLImports generates bogus namespace !!!
+		OWLImports <- thisModule.platformOntology->union(thisModule.javaOntology)->union(
+			if prevNotEmpty	then thisModule.prevOntology else Set{} endif),
+		contains <- thisModule.includedPackages->union(
+			thisModule.includedPackages->collect(p|
+				thisModule->resolveTemp(p, 'platform')))),
+	   label : OWL!rdfs::PlainLiteral (
+	   	language <- 'en',
+		lexicalForm <- s.name),
+	   comment : OWL!rdfs::PlainLiteral (
+	   	language <- 'en',
+		lexicalForm <- 'Generated by $Id$')
+}
+
+rule PrevNamespace(o : OWL!owl::OWLOntology) {
+	to n : OWL!rdfs::Namespace (
+		URI <- o.namespace.URI,
+		name <- o.namespace.name)
+	do {
+		n;
+	}
+}
+
+rule Package {
+	from s : UML2!uml::Package (thisModule.includedPackages->includes(s))
+	using {
+		refs : Set(UML2!uml::Package) = s->references();
+		compatiblePacks : Sequence(UML2!uml::Package) = s->compatibleInPrev()->debug(s.qualifiedName + ' compatible packages');
+		equivalentPacks : Sequence(UML2!uml::Package) = compatiblePacks->select(p|p->isCompatibleWith(s))->debug(s.qualifiedName + ' equivalent packages');
+		compatibleClasses : Sequence(OWL!owl::OWLClass) = compatiblePacks->collect(p|p->owlClassesInPrev())->flatten();
+		equivalentClasses : Sequence(OWL!owl::OWLClass) = equivalentPacks->collect(p|p->owlClassesInPrev())->flatten();
+		superClasses : Sequence(OWL!owl::OWLClass) = compatibleClasses->select(c|equivalentClasses->excludes(c));
+	}
+	to t : OWL!owl::OWLClass mapsTo s (
+		localName <- s->ontClassName()->debug('Package'),
+		RDFSSubClassOf <- if superClasses->isEmpty()
+			then thisModule.javaLibrary else superClasses endif,
+		OWLEquivalentClass <- if equivalentClasses->isEmpty()
+			then Sequence{} else equivalentClasses endif,
+		RDFSComment <- Sequence{comment},
+		RDFSSeeAlso <- refs,
+		namespace <- s->getModel()),
+	   comment : OWL!rdfs::PlainLiteral (
+	   	language <- 'en',
+		lexicalForm <- s->qualifiedName('.') + ' for ' + s->getModel().name),
+	   platform : OWL!owl::OWLClass (
+	   	localName <- (s->ontClassName() + 'Platform'),
+		RDFSSubClassOf <- thisModule.platformPlatform,
+		RDFSComment <- Sequence{platformcomment},
+		OWLEquivalentClass <- Sequence{intersection},
+		namespace <- s->getModel()),
+	   platformcomment : OWL!rdfs::PlainLiteral (
+	   	language <- 'en',
+		lexicalForm <- 'Platform providing ' + comment.lexicalForm),
+	   intersection : OWL!owl::IntersectionClass (
+	   	OWLIntersectionOf <- refs->collect(p|thisModule->PlatformClass(p))
+			->union(Set{thisModule->PlatformClass(s)}),
+	   	namespace <- s->getModel())
+}
+
+rule PlatformClass(p : UML2!uml::Package) {
+	to platform : OWL!owl::SomeValuesFromRestriction (
+		RDFSSubClassOf <- thisModule.platformPlatform,
+		OWLOnProperty <- thisModule.platformProvidesFeature,
+		OWLSomeValuesFrom <- p,
+		namespace <- p->getModel())
+	do {
+		platform;
+	}
+}
+
+-- ======================================================================
+-- transformation rules end
+-- ======================================================================
