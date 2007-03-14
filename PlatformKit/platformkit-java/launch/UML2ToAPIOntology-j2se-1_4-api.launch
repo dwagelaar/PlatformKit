@@ -6,7 +6,7 @@
 <mapEntry key="OWL" value="EMF"/>
 <mapEntry key="IN" value=""/>
 </mapAttribute>
-<stringAttribute key="ATL File Name" value="/platformkit-java/UML2ToAPIOntology.atl"/>
+<stringAttribute key="ATL File Name" value="/platformkit-java/transformations/UML2ToAPIOntology.atl"/>
 <mapAttribute key="Libs"/>
 <booleanAttribute key="Mode Debug" value="false"/>
 <mapAttribute key="ModelType">
