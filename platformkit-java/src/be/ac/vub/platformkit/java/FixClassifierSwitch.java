@@ -13,7 +13,6 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 /**
@@ -88,11 +87,7 @@ public class FixClassifierSwitch extends UMLSwitch {
 		JavaClass javaClass = getJavaClass();
 		Assert.assertNotNull(javaClass);
 		classifier.setIsAbstract(javaClass.isAbstract());
-		if (javaClass.isPublic()) {
-			classifier.setVisibility(VisibilityKind.PUBLIC_LITERAL);	
-		} else if (javaClass.isProtected()) {
-			classifier.setVisibility(VisibilityKind.PROTECTED_LITERAL);	
-		}
+		classifier.setVisibility(JarToUML.toUMLVisibility(javaClass));
 		return classifier;
 	}
 
