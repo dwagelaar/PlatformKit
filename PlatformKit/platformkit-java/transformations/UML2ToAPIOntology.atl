@@ -62,6 +62,8 @@ helper context UML2!uml::NamedElement def : ontClassName() : String =
 		self.name->firstToUpper()
 	endif;
 
+-- ======================================================================
+
 helper context UML2!uml::Package def : references() : Set(UML2!uml::Package) =
 	self.packagedElement->collect(p|p->referencesOtherThan(self))->flatten()->asSet();
 
@@ -71,6 +73,8 @@ helper context UML2!uml::PackageableElement def : referencesOtherThan(p : UML2!u
 helper context UML2!uml::Classifier def : referencesOtherThan(p : UML2!uml::Package) : Set(UML2!uml::Package) =
 	(if self->getNearestPackage() <> p then Set{self->getNearestPackage()} else Set{} endif)->union(
 	self->parents()->collect(c|c->referencesOtherThan(p))->flatten());
+
+-- ======================================================================
 
 helper context UML2!uml::Package def : owlClassesInPrev() : Sequence(OWL!owl::OWLClass) =
 	OWL!owl::OWLClass->allInstancesFrom('PREVOUT')->select(c|c.localName = self->ontClassName());
@@ -136,7 +140,7 @@ helper context UML2!uml::NamedElement def : namedElementIsCompatibleWith(e : UML
 	if (self->qualifiedName('::') = e->qualifiedName('::')) and (self->oclType() = e->oclType()) and (self->visibilityIsCompatibleWith(e))
 	then (let ownedComp : Sequence(UML2!uml::NamedElement) = e->ownedNamed()->select(o|not self->containsElementCompatibleWith(o))
 		  in if ownedComp->isEmpty() then true 
-		  	 else if self->oclIsKindOf(UML2!uml::Package)
+		  	 else if self->oclIsKindOf(UML2!uml::Package) or self->oclIsKindOf(UML2!uml::Classifier)
 			 	  then ownedComp->debug(self.qualifiedName + ' misses elements compatible with ')->isEmpty()
 			      else false endif endif) and
 		 (let compSuppliers : Sequence(UML2!uml::NamedElement) = e->suppliers()->select(d|not self->hasSupplierCompatibleWith(d))
