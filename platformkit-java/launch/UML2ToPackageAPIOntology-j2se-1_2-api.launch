@@ -11,7 +11,9 @@
 <mapEntry key="IN" value=""/>
 </mapAttribute>
 <stringAttribute key="ATL File Name" value="/platformkit-java/transformations/UML2ToAPIOntology.atl"/>
-<mapAttribute key="Libs"/>
+<mapAttribute key="Libs">
+<mapEntry key="APIOntologyLib" value="/platformkit-java/transformations/APIOntologyLib.asm"/>
+</mapAttribute>
 <booleanAttribute key="Mode Debug" value="false"/>
 <mapAttribute key="ModelType">
 <mapEntry key="OUT" value="MODELOUTPUT"/>
@@ -24,14 +26,14 @@
 <mapEntry key="IN" value="MODELINPUT"/>
 </mapAttribute>
 <mapAttribute key="Path">
-<mapEntry key="OUT" value="/platformkit-java/jdk-1_1-api.owl"/>
+<mapEntry key="OUT" value="/platformkit-java/j2se-1_2-api.owl"/>
 <mapEntry key="JAVA" value="/platformkit-java/Java.owl"/>
 <mapEntry key="UML2" value="/uml2cs-transformations/metamodels/UML2Profiles.ecore"/>
-<mapEntry key="PREVOUT" value="/platformkit-java/empty.owl"/>
+<mapEntry key="PREVOUT" value="/platformkit-java/jdk-1_1-api.owl"/>
 <mapEntry key="PLATFORM" value="/platformkit-java/Platform.owl"/>
-<mapEntry key="PREVIN" value="/platformkit-java/empty.uml"/>
+<mapEntry key="PREVIN" value="/platformkit-java/jdk-1_1-api.uml"/>
 <mapEntry key="OWL" value="uri:http:///org/eclipse/owl.ecore"/>
-<mapEntry key="IN" value="/platformkit-java/jdk-1_1-api.uml"/>
+<mapEntry key="IN" value="/platformkit-java/j2se-1_2-api.uml"/>
 </mapAttribute>
 <stringAttribute key="Project Name" value="platformkit-java"/>
 <mapAttribute key="Output">
@@ -40,11 +42,13 @@
 <booleanAttribute key="ContinueAfterError" value="false"/>
 <mapAttribute key="Input">
 <mapEntry key="JAVA" value="OWL"/>
-<mapEntry key="PREVOUT" value="OWL"/>
 <mapEntry key="PLATFORM" value="OWL"/>
+<mapEntry key="PREVOUT" value="OWL"/>
 <mapEntry key="PREVIN" value="UML2"/>
 <mapEntry key="IN" value="UML2"/>
 </mapAttribute>
 <booleanAttribute key="AllowInterModelReferences" value="true"/>
-<listAttribute key="Superimpose"/>
+<listAttribute key="Superimpose">
+<listEntry value="/platformkit-java/transformations/UML2ToPackageAPIOntology.asm"/>
+</listAttribute>
 </launchConfiguration>
