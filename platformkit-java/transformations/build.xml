@@ -34,6 +34,8 @@
     			<inmodel name="PREVOUT" model="@{prevout}"/>
     			<inmodel name="PREVIN" model="@{previn}"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
+    			<library name="APIOntologyLib" path="/${ant.project.name}/APIOntologyLib.asm"/>
+    			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
     		</am3.atl>
         	<am3.saveModel model="@{out}" path="@{path}"/>
         </sequential>
