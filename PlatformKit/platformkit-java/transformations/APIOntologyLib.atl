@@ -42,9 +42,6 @@ helper context UML2!uml::Package def : references() : Set(UML2!uml::Package) =
 helper context UML2!uml::PackageableElement def : referencesOtherPackageThan(p : UML2!uml::Package) : Set(UML2!uml::Package) =
 	if self->getNearestPackage() <> p then Set{self->getNearestPackage()} else Set{} endif;
 
---helper context UML2!uml::Classifier def : referencesOtherPackageThan(p : UML2!uml::Package) : Set(UML2!uml::Package) =
---	if self->getNearestPackage() <> p then Set{self->getNearestPackage()} else Set{} endif;
-
 helper context UML2!uml::Classifier def : references() : Set(UML2!uml::Classifier) =
 	self.general->union(
 		self.general->collect(g|g->references()))->union(
@@ -73,6 +70,16 @@ helper context UML2!uml::Package def : compatibleInPrev() : Sequence(UML2!uml::P
 
 helper context UML2!uml::Classifier def : compatibleInPrev() : Sequence(UML2!uml::Classifier) =
 	UML2!uml::Classifier->allInstancesFrom('PREVIN')->select(c|self->isCompatibleWith(c));
+
+helper context UML2!uml::Package def : isCompatibleWith(p : UML2!uml::Package) : Boolean =
+	if self->namedElementIsCompatibleWith(p)
+	then (let compClassifiers : Sequence(UML2!uml::Classifier) = p->allOwnedClassifiers()->select(c|not self->hasOwnedClassifierCompatibleWith(c))
+		  in if compClassifiers->isEmpty() then true
+		  	 else compClassifiers->debug(self.qualifiedName + ' misses classifiers compatible with ')->isEmpty() endif)
+	else false endif;
+
+helper context UML2!uml::Package def : hasOwnedClassifierCompatibleWith(c : UML2!uml::Classifier) : Boolean =
+	self->allOwnedClassifiers()->select(o|o->isCompatibleWith(c))->notEmpty();
 
 helper context UML2!uml::Classifier def : isCompatibleWith(c : UML2!uml::Classifier) : Boolean =
 	if self->namedElementIsCompatibleWith(c)
