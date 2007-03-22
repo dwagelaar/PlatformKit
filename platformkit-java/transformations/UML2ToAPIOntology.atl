@@ -26,9 +26,16 @@ helper def : platformPlatform : Set(OWL!owl::OWLClass) = OWL!owl::OWLClass->allI
 helper def : javaLibrary : Set(OWL!owl::OWLClass) = OWL!owl::OWLClass->allInstancesFrom('JAVA')
 	->select(o|o.localName = 'JavaLibrary');
 
+helper def : javaJRE : Set(OWL!owl::OWLClass) = OWL!owl::OWLClass->allInstancesFrom('JAVA')
+	->select(o|o.localName = 'JRE');
+
 helper def : platformProvidesFeature : OWL!owl::OWLObjectProperty =
 	OWL!owl::OWLObjectProperty->allInstancesFrom('PLATFORM')
 		->select(p|p.localName = 'providesFeature')->first();
+
+helper def : jreProvidesBuiltinJavaLibrary : OWL!owl::OWLObjectProperty =
+	OWL!owl::OWLObjectProperty->allInstancesFrom('JAVA')
+		->select(p|p.localName = 'providesBuiltinJavaLibrary')->first();
 
 helper def : platformOntology : Set(OWL!owl::OWLOntology) = 
 	OWL!owl::OWLOntology->allInstancesFrom('PLATFORM');

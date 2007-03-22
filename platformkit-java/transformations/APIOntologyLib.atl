@@ -80,7 +80,9 @@ helper context UML2!uml::TypedElement def : referencesOtherThan(c : UML2!uml::Cl
 --	UML2!uml::Classifier->allInstancesFrom('PREVIN')->select(c|self->isCompatibleWith(c));
 
 helper context UML2!uml::NamedElement def : owlClassesInPrev() : Sequence(OWL!owl::OWLClass) =
-	OWL!owl::OWLClass->allInstances()->select(c|c.localName = self->ontClassName() + 'Library');
+	OWL!owl::OWLClass->allInstances()
+		->select(c|c.localName = self->ontClassName() + 'Library')
+		->select(o|o.namespace.name = self->getModel().name);
 
 helper context UML2!uml::Package def : compatibleInPrev() : Sequence(UML2!uml::Package) =
 	UML2!uml::Package->allInstances()
