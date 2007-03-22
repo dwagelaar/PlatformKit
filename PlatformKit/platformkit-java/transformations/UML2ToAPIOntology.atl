@@ -3,7 +3,7 @@
 -- Base module for transforming a UML2 model to an API OWL ontology
 module UML2ToAPIOntology; --abstract
 
-create OUT : OWL from IN : UML2, PLATFORM : OWL, JAVA : OWL, PREVOUT : OWL, PREVIN : UML2;
+create OUT : OWL from IN : UML2, PLATFORM : OWL, JAVA : OWL;--, PREVOUT : OWL, PREVIN : UML2;
 
 uses APIOntologyLib;
 
@@ -36,11 +36,20 @@ helper def : platformOntology : Set(OWL!owl::OWLOntology) =
 helper def : javaOntology : Set(OWL!owl::OWLOntology) = 
 	OWL!owl::OWLOntology->allInstancesFrom('JAVA');
 
-helper def : prevOntology : Set(OWL!owl::OWLOntology) = 
-	OWL!owl::OWLOntology->allInstancesFrom('PREVOUT');
+--helper def : prevOntology : Set(OWL!owl::OWLOntology) = 
+--	OWL!owl::OWLOntology->allInstancesFrom('PREVOUT');
+--
+--helper def : prevModel : Set(UML2!uml::Model) = 
+--	UML2!uml::Model->allInstancesFrom('PREVIN');
 
-helper def : prevModel : Set(UML2!uml::Model) = 
-	UML2!uml::Model->allInstancesFrom('PREVIN');
+helper def : importedOntologies : Set(OWL!owl::OWLOntology) = 
+	OWL!owl::OWLOntology->allInstances()->select(o|
+		OWL!owl::OWLOntology->allInstancesFrom('PLATFORM')->excludes(o) and
+		OWL!owl::OWLOntology->allInstancesFrom('JAVA')->excludes(o));
+
+helper def : prevModels : Set(UML2!uml::Model) = 
+	UML2!uml::Model->allInstances()->select(m|
+		UML2!uml::Model->allInstancesFrom('IN')->excludes(m));
 
 -- ======================================================================
 -- helper attributes end
