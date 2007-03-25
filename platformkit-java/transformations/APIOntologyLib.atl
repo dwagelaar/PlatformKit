@@ -10,7 +10,7 @@ library APIOntologyLib;
 -- ======================================================================
 
 helper context UML2!uml::NamedElement def : qualifiedName(separator : String) : String =
-	if self.owner->oclIsTypeOf(UML2!uml::Package) then
+	if self.owner->oclIsTypeOf(UML2!uml::Package) or self.owner->oclIsTypeOf(UML2!uml::Classifier) then
 		self.owner->qualifiedName(separator) + separator + self.name
 	else
 		self.name
