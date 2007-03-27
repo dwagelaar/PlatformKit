@@ -3,8 +3,8 @@
 	<!ENTITY jdk-1_1 "http://ssel.vub.ac.be/platformkit/jdk-1_1#">
 	<!ENTITY platform "http://localhost/~dennis/Platform.owl#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-	<!ENTITY units "http://localhost/~dennis/Units.owl#">
 	<!ENTITY j2me-midp-1_0 "http://ssel.vub.ac.be/platformkit/j2me-midp-1_0#">
+	<!ENTITY units "http://localhost/~dennis/Units.owl#">
 	<!ENTITY java "http://localhost/~dennis/Java.owl#">
 	<!ENTITY ns_3 "http://localhost/~dennis/">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -15,8 +15,8 @@
 	 xmlns:jdk-1_1="&jdk-1_1;"
 	 xmlns:platform="&platform;"
 	 xmlns:xsd="&xsd;"
-	 xmlns:units="&units;"
 	 xmlns:j2me-midp-1_0="&j2me-midp-1_0;"
+	 xmlns:units="&units;"
 	 xmlns:java="&java;"
 	 xmlns:ns_3="&ns_3;"
 	 xmlns:rdf="&rdf;"
@@ -32,30 +32,30 @@
 		<rdfs:label xml:lang="en">jdk-1_1</rdfs:label>
 	</owl:Ontology>
 	<owl:Class rdf:about="&jdk-1_1;Jdk-1_1ClassLibrary">
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityInterfacesLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAppletLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaNetLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiRegistryLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaMathLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSqlLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtImageLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaTextLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaTextResourcesLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityAclLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaLangLibrary"/>
 		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaUtilZipLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiDgcLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtEventLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtDatatransferLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSqlLibrary"/>
 		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaLangReflectLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaBeansLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaTextLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityInterfacesLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaNetLibrary"/>
 		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiServerLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiRegistryLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaBeansLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaMathLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAppletLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityAclLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtImageLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiDgcLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtDatatransferLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtEventLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaTextResourcesLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the entire API for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;Jdk-1_1">
@@ -68,17 +68,87 @@
 		</rdfs:subClassOf>
 		<rdfs:comment xml:lang="en">jdk-1_1 Java Runtime Environment</rdfs:comment>
 	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaUtilZipLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.util.zip package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaLangLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangReflectLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaNetLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.lang package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaSqlLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaMathLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.sql package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaLangReflectLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.lang.reflect package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaTextLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.text package for jdk-1_1</rdfs:comment>
+	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaSecurityInterfacesLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaMathLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaSecurityLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.security.interfaces package for jdk-1_1</rdfs:comment>
 	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaNetLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.net package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaRmiServerLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaNetLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.rmi.server package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaRmiRegistryLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.rmi.registry package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaBeansLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangReflectLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.beans package for jdk-1_1</rdfs:comment>
+	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaUtilLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.util package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaMathLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.math package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaAppletLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
@@ -88,45 +158,25 @@
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.applet package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaNetLibrary">
+	<owl:Class rdf:about="&jdk-1_1;JavaSecurityAclLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.net package for jdk-1_1</rdfs:comment>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaSecurityLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.security.acl package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaRmiRegistryLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+	<owl:Class rdf:about="&jdk-1_1;JavaIoLibrary">
+		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaIoLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.rmi.registry package for jdk-1_1</rdfs:comment>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.io package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaSecurityLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.security package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaMathLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.math package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaSqlLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaMathLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.sql package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaRmiLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaNetLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.rmi package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaAwtImageLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
@@ -135,73 +185,24 @@
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt.image package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaAwtPeerLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtImageLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt.peer package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaTextLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.text package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaTextResourcesLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.text.resources package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaIoLibrary">
-		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaIoLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.io package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaAwtLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtImageLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtDatatransferLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaNetLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtEventLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaSecurityAclLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaSecurityLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.security.acl package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaLangLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaNetLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangReflectLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.lang package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaUtilZipLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.util.zip package for jdk-1_1</rdfs:comment>
-	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaRmiDgcLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.rmi.dgc package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaAwtDatatransferLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt.datatransfer package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaRmiLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaNetLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.rmi package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaAwtEventLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
@@ -210,32 +211,131 @@
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt.event package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaAwtDatatransferLibrary">
+	<owl:Class rdf:about="&jdk-1_1;JavaAwtPeerLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt.datatransfer package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaLangReflectLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.lang.reflect package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaBeansLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtImageLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangReflectLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.beans package for jdk-1_1</rdfs:comment>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt.peer package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaRmiServerLibrary">
+	<owl:Class rdf:about="&jdk-1_1;JavaAwtLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtDatatransferLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaNetLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtImageLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtEventLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaTextResourcesLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.rmi.server package for jdk-1_1</rdfs:comment>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaUtilLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.text.resources package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaUtilZipPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaUtilZipLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.util.zip package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaLangReflectPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaNetPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaLangLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.lang package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaSqlPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaMathPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaSqlLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.sql package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaLangReflectPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaLangReflectLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.lang.reflect package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaTextPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaTextLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.text package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaSecurityInterfacesPlatform">
 		<owl:equivalentClass>
@@ -255,6 +355,88 @@
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
 		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.security.interfaces package for jdk-1_1</rdfs:comment>
 	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaNetPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaNetLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.net package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaRmiServerPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaRmiPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaNetPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaRmiServerLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.rmi.server package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaRmiRegistryPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaRmiPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaRmiRegistryLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.rmi.registry package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaBeansPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaLangReflectPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaAwtPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaBeansLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.beans package for jdk-1_1</rdfs:comment>
+	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
 		<owl:equivalentClass>
 			<owl:Class >
@@ -272,6 +454,24 @@
 		</owl:equivalentClass>
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
 		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.util package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaMathPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaMathLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.math package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaAppletPlatform">
 		<owl:equivalentClass>
@@ -295,51 +495,53 @@
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
 		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.applet package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaNetPlatform">
+	<owl:Class rdf:about="&jdk-1_1;JavaSecurityAclPlatform">
 		<owl:equivalentClass>
 			<owl:Class >
 				<owl:intersectionOf rdf:parseType="Collection">
 					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
 					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaSecurityPlatform">
 					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaNetLibrary"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaSecurityAclLibrary"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
 		</owl:equivalentClass>
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.net package for jdk-1_1</rdfs:comment>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.security.acl package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaRmiRegistryPlatform">
+	<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
 		<owl:equivalentClass>
 			<owl:Class >
 				<owl:intersectionOf rdf:parseType="Collection">
 					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
 					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaRmiPlatform">
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
 					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaRmiRegistryLibrary"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaIoLibrary"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
 		</owl:equivalentClass>
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.rmi.registry package for jdk-1_1</rdfs:comment>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.io package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaSecurityPlatform">
 		<owl:equivalentClass>
 			<owl:Class >
 				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
 					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
 					</owl:Class>
 					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
 					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&platform;providesFeature"/>
@@ -350,66 +552,6 @@
 		</owl:equivalentClass>
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
 		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.security package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaMathPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaMathLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.math package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaSqlPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaMathPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaSqlLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.sql package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaRmiPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaNetPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.rmi package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaAwtImagePlatform">
 		<owl:equivalentClass>
@@ -431,183 +573,13 @@
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
 		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.awt.image package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaAwtPeerPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaAwtPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaAwtImagePlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.awt.peer package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaTextPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaTextLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.text package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaTextResourcesPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaTextResourcesLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.text.resources package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.io package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaAwtPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaAwtImagePlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaAwtDatatransferPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaNetPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaAwtPeerPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaAwtEventPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.awt package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaSecurityAclPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaSecurityPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaSecurityAclLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.security.acl package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaNetPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaLangReflectPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaLangLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.lang package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaUtilZipPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaUtilZipLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.util.zip package for jdk-1_1</rdfs:comment>
-	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaRmiDgcPlatform">
 		<owl:equivalentClass>
 			<owl:Class >
 				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaRmiPlatform">
-					</owl:Class>
 					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaRmiPlatform">
 					</owl:Class>
 					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
 					</owl:Class>
@@ -620,6 +592,42 @@
 		</owl:equivalentClass>
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
 		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.rmi.dgc package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaAwtDatatransferPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaAwtDatatransferLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.awt.datatransfer package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaRmiPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaNetPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.rmi package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaAwtEventPlatform">
 		<owl:equivalentClass>
@@ -641,82 +649,74 @@
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
 		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.awt.event package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaAwtDatatransferPlatform">
+	<owl:Class rdf:about="&jdk-1_1;JavaAwtPeerPlatform">
 		<owl:equivalentClass>
 			<owl:Class >
 				<owl:intersectionOf rdf:parseType="Collection">
 					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaAwtDatatransferLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.awt.datatransfer package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaLangReflectPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaLangReflectLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.lang.reflect package for jdk-1_1</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaBeansPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
 					</owl:Class>
 					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
 					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaAwtImagePlatform">
+					</owl:Class>
 					<owl:Class rdf:about="&jdk-1_1;JavaAwtPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
-					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaLangReflectPlatform">
 					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaBeansLibrary"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
 		</owl:equivalentClass>
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.beans package for jdk-1_1</rdfs:comment>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.awt.peer package for jdk-1_1</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&jdk-1_1;JavaRmiServerPlatform">
+	<owl:Class rdf:about="&jdk-1_1;JavaAwtPlatform">
 		<owl:equivalentClass>
 			<owl:Class >
 				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaAwtDatatransferPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaAwtPeerPlatform">
+					</owl:Class>
 					<owl:Class rdf:about="&jdk-1_1;JavaNetPlatform">
 					</owl:Class>
 					<owl:Class rdf:about="&jdk-1_1;JavaIoPlatform">
 					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaRmiPlatform">
+					<owl:Class rdf:about="&jdk-1_1;JavaAwtImagePlatform">
 					</owl:Class>
-					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					<owl:Class rdf:about="&jdk-1_1;JavaAwtEventPlatform">
 					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaRmiServerLibrary"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
 		</owl:equivalentClass>
 		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.rmi.server package for jdk-1_1</rdfs:comment>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.awt package for jdk-1_1</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="&jdk-1_1;JavaTextResourcesPlatform">
+		<owl:equivalentClass>
+			<owl:Class >
+				<owl:intersectionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="&jdk-1_1;JavaLangPlatform">
+					</owl:Class>
+					<owl:Class rdf:about="&jdk-1_1;JavaUtilPlatform">
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&platform;providesFeature"/>
+						<owl:someValuesFrom rdf:resource="&jdk-1_1;JavaTextResourcesLibrary"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
+		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the java.text.resources package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 </rdf:RDF>
