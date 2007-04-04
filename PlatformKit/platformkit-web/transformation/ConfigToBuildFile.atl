@@ -8,7 +8,10 @@ create OUT : XML from IN : CFG;
 -- helper attributes begin
 -- ======================================================================
 
+helper def : MetamodelPath : String = '/platformkit-web/metamodels';
 helper def : ModelPath : String = '/platformkit-web/models';
+helper def : HibernateMapping30URI : String = 'http://hibernate.sourceforge.net/hibernate-mapping-3.0.xsd';
+helper def : ThisTransPath : String = '/platformkit-web/transformation';
 
 -- ======================================================================
 -- helper attributes end
@@ -20,12 +23,13 @@ helper def : ModelPath : String = '/platformkit-web/models';
 
 rule ConfigRoot {
 	from s : CFG!transformations::TransformationConfig
-	-- <project name="s.buildPath" default="all">
+	-- <project name="s.buildPath" default="PlatformKitWeb">
 	to root : XML!XML::Root mapsTo s (
 		name <- 'project',
 		children <- s->contents()
 			->union(Sequence{
-				thisModule->PlatformKitWeb(s)
+				thisModule->PlatformKitWeb(s),
+				thisModule->GenerateHibernateMapping(s)
 			})),
 	   name : XML!XML::Attribute (
 	   	parent <- root,
@@ -38,12 +42,14 @@ rule ConfigRoot {
 }
 
 rule PlatformKitWeb(c : CFG!transformations::TransformationConfig) {
-	-- <target name="PlatformKitWeb" depends="loadBaseModels">
+	-- <target name="PlatformKitWeb" depends="allBase">
 	to target : XML!XML::Element (
 		name <- 'target',
 		children <- Sequence{
 			thisModule->LoadModel('inModel', 'UML2', thisModule.ModelPath + '/PlatformKitWeb.uml'),
-			thisModule->TransformInvocation('inModel', 'im')
+			thisModule->TransformInvocation('inModel', 'im'),
+			thisModule->LoadURIModel('HBM', 'MOF', thisModule.HibernateMapping30URI),
+			thisModule->MacroInvocation('generateHibernateMapping', 'inModel', 'outHBM', c.targetPath + '/PlatformKitWeb')
 		}),
 	   targetName : XML!XML::Attribute(
 	   	name <- 'name',
@@ -56,6 +62,84 @@ rule PlatformKitWeb(c : CFG!transformations::TransformationConfig) {
 	-- </target>
 	do {
 		target;
+	}
+}
+
+rule GenerateHibernateMapping(c : CFG!transformations::TransformationConfig) {
+	-- <macrodef name="generateHibernateMapping">
+	to macrodef : XML!XML::Element (
+		name <- 'macrodef',
+		children <- Sequence{
+			thisModule->MacrodefAttribute('in', 'MODEL.IN'),
+			thisModule->MacrodefAttribute('out', 'MODEL.OUT'),
+			thisModule->MacrodefAttribute('path', 'MODEL.OUT.PATH'),
+			seq
+		}),
+	   macrodefName : XML!XML::Attribute (
+	   	name <- 'name',
+		value <- 'generateHibernateMapping',
+		parent <- macrodef),
+	-- <sequential>
+	   seq : XML!XML::Element (
+	   	name <- 'sequential',
+		children <- Sequence{
+			thisModule->Atl(thisModule.ThisTransPath + '/GenerateHibernateMapping.atl', true, Sequence{
+		   		thisModule->Inmodel('HBM', 'HBM'),
+				thisModule->Inmodel('UML2', 'UML2'),
+				thisModule->Inmodel('IN', '@{in}'),
+				thisModule->Outmodel('OUT', '@{out}', 'HBM', '@{path}'),
+				thisModule->Library('UML2', thisModule.LibPath + '/UML2.asm')}),
+			thisModule->SaveModel()})
+	-- </sequential>
+	-- </macrodef>
+	do {
+		macrodef->debug('GenerateHibernateMapping');
+	}
+}
+
+rule MacroInvocation(macro : String, "in" : String, out : String, path : String) {
+	-- <macro in="in" out="out" path="path"/>
+	to macroInv : XML!XML::Element (
+		name <- macro->debug('MacroInvocation')),
+	   macroInvIn : XML!XML::Attribute (
+	   	name <- 'in',
+		value <- "in",
+		parent <- macroInv),
+	   macroInvOut : XML!XML::Attribute (
+	   	name <- 'out',
+		value <- out,
+		parent <- macroInv),
+	   macroInvPath : XML!XML::Attribute (
+	   	name <- 'path',
+		value <- path,
+		parent <- macroInv)
+	do {
+		macroInv;
+	}
+}
+
+rule LoadURIModel(name : String, metamodel : String, uri : String) {
+	-- <am3.loadModel modelHandler="EMF" name="name" metamodel="metamodel" nsuri="uri"/>
+	to loadModel : XML!XML::Element (
+	   	name <- 'am3.loadModel'),
+	   loadModelHandler : XML!XML::Attribute (
+	   	name <- 'modelHandler',
+		value <- 'EMF',
+		parent <- loadModel),
+	   loadModelName : XML!XML::Attribute (
+	   	name <- 'name',
+		value <- name->debug('LoadModel'),
+		parent <- loadModel),
+	   loadModelMM : XML!XML::Attribute (
+	   	name <- 'metamodel',
+		value <- metamodel,
+		parent <- loadModel),
+	   loadModelURI : XML!XML::Attribute (
+	   	name <- 'nsuri',
+		value <- uri,
+		parent <- loadModel)
+	do {
+		loadModel;
 	}
 }
 
