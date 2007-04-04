@@ -1,0 +1,64 @@
+-- @atlcompiler atl2006
+-- Generates a build.xml file from a Transformations.ecore config file
+module ConfigToBuildFile; --extends ConfigToBuildFile from uml2cs-transformations
+
+create OUT : XML from IN : CFG;
+
+-- ======================================================================
+-- helper attributes begin
+-- ======================================================================
+
+helper def : ModelPath : String = '/platformkit-web/models';
+
+-- ======================================================================
+-- helper attributes end
+-- ======================================================================
+
+-- ======================================================================
+-- transformation rules begin
+-- ======================================================================
+
+rule ConfigRoot {
+	from s : CFG!transformations::TransformationConfig
+	-- <project name="s.buildPath" default="all">
+	to root : XML!XML::Root mapsTo s (
+		name <- 'project',
+		children <- s->contents()
+			->union(Sequence{
+				thisModule->PlatformKitWeb(s)
+			})),
+	   name : XML!XML::Attribute (
+	   	parent <- root,
+	   	name <- 'name',
+		value <- s.buildPath),
+	   default : XML!XML::Attribute (
+	   	parent <- root,
+	   	name <- 'default',
+		value <- 'PlatformKitWeb')
+}
+
+rule PlatformKitWeb(c : CFG!transformations::TransformationConfig) {
+	-- <target name="PlatformKitWeb" depends="loadBaseModels">
+	to target : XML!XML::Element (
+		name <- 'target',
+		children <- Sequence{
+			thisModule->LoadModel('inModel', 'UML2', thisModule.ModelPath + '/PlatformKitWeb.uml'),
+			thisModule->TransformInvocation('inModel', 'im')
+		}),
+	   targetName : XML!XML::Attribute(
+	   	name <- 'name',
+		value <- 'PlatformKitWeb',
+		parent <- target),
+	   targetDepends : XML!XML::Attribute(
+	   	name <- 'depends',
+		value <- 'allBase',
+		parent <- target)
+	-- </target>
+	do {
+		target;
+	}
+}
+
+-- ======================================================================
+-- transformation rules end
+-- ======================================================================

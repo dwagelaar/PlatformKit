@@ -1,0 +1,61 @@
+ Volume in Laufwerk C: hat keine Bezeichnung.
+ Volumeseriennummer: 786D-A8D8
+
+ Verzeichnis von C:\Eclipse320WS\DennisHib\lib
+
+28.02.2007  20:01    <DIR>          .
+28.02.2007  20:01    <DIR>          ..
+07.09.2006  14:22         1'034'049 ant-1.6.5.jar
+07.09.2006  14:22             5'667 ant-antlr-1.6.5.jar
+07.09.2006  14:22            74'237 ant-junit-1.6.5.jar
+07.09.2006  14:22             9'180 ant-launcher-1.6.5.jar
+07.09.2006  14:22             6'763 ant-swing-1.6.5.jar
+07.09.2006  14:22           444'689 antlr-2.7.6rc1.jar
+07.09.2006  14:22             1'249 antlr.license.txt
+07.09.2006  14:22            11'560 apache.license-2.0.txt
+07.09.2006  14:22             2'717 apache.license.txt
+07.09.2006  14:22            16'777 asm-attrs.jar
+07.09.2006  14:22            26'360 asm.jar
+07.09.2006  14:22           487'360 c3p0-0.9.0.jar
+07.09.2006  14:22            26'934 c3p0.license.txt
+07.09.2006  14:22           282'338 cglib-2.1.3.jar
+07.09.2006  14:22           142'704 cleanimports.jar
+07.09.2006  14:22           175'426 commons-collections-2.1.1.jar
+07.09.2006  14:22            38'015 commons-logging-1.0.4.jar
+07.09.2006  14:22           171'071 concurrent-1.3.2.jar
+07.09.2006  14:22            17'978 connector.jar
+07.09.2006  14:22             9'838 connector.licence.txt
+28.02.2007  20:01                 0 contents.txt
+07.09.2006  14:22           313'898 dom4j-1.6.1.jar
+07.09.2006  14:22            47'531 ehcache-1.1.jar
+07.09.2006  14:22         1'971'632 hibernate3.jar
+07.09.2006  14:22           630'486 hsqldb.jar
+07.09.2006  14:22           104'359 jaas.jar
+07.09.2006  14:22             9'909 jaas.licence.txt
+07.09.2006  14:22            24'180 jacc-1_0-fr.jar
+07.09.2006  14:22           226'877 jaxen-1.1-beta-7.jar
+07.09.2006  14:22           374'582 jboss-cache.jar
+07.09.2006  14:22           583'206 jboss-common.jar
+07.09.2006  14:22           591'568 jboss-jmx.jar
+07.09.2006  14:22           223'640 jboss-system.jar
+07.09.2006  14:22             6'727 jdbc2_0-stdext.jar
+07.09.2006  14:22             8'130 jdbc2_0-stdext.licence.txt
+07.09.2006  14:22         1'611'518 jgroups-2.2.8.jar
+07.09.2006  14:22             8'812 jta.jar
+07.09.2006  14:22             9'879 jta.licence.txt
+07.09.2006  14:22           121'070 junit-3.8.1.jar
+07.09.2006  14:22           350'627 log4j-1.2.11.jar
+07.09.2006  14:22           442'841 mysql-connector-java-3.1.11a-bin.jar
+07.09.2006  14:22         1'590'707 mysql-grt-java-1.0.0-bin.jar
+07.09.2006  14:22           114'308 oscache-2.1.jar
+07.09.2006  14:22           475'943 proxool-0.8.3.jar
+07.09.2006  14:22            74'969 servlet.jar
+07.09.2006  14:22            30'602 swarmcache-1.0rc2.jar
+07.09.2006  14:22           142'026 syndiag2.jar
+07.09.2006  14:22             4'845 version.properties
+07.09.2006  14:22             5'762 versioncheck.jar
+07.09.2006  14:22         1'010'806 xerces-2.6.2.jar
+07.09.2006  14:22           123'705 xml-apis.jar
+07.09.2006  14:22             3'009 _README.txt
+              52 Datei(en)     14'223'066 Bytes
+               2 Verzeichnis(se), 10'216'411'136 Bytes frei
