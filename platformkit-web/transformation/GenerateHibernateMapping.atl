@@ -18,6 +18,13 @@ helper context UML2!uml::Class def : isPersistent() : Boolean =
 helper context UML2!uml::Class def : getPersistent() : UML2!Persistence::Persistent =
 	thisModule.persistents->select(o|o.base_Class=self)->first();
 
+helper context UML2!uml::PrimitiveType def : getGeneratorClass() : String =
+	if self.name = 'Integer' or self.name = 'UnlimitedNatural' or self.name = 'Real'
+	then 'native' else 'assigned' endif;
+
+helper context UML2!uml::Type def : getGeneratorClass() : String =
+	'assigned';
+
 -- ======================================================================
 -- helpers end
 -- ======================================================================
@@ -48,7 +55,7 @@ rule Class {
 		column1 <- persistent.id.name + '_ID',
 		generator <- gen),
 	   gen : HBM!GeneratorType (
-	   	class <- 'assigned')
+	   	class <- persistent.id.type->getGeneratorClass())
 }
 
 rule Property(s : UML2!uml::Property) {
