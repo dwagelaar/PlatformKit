@@ -1,0 +1,64 @@
+-- Generates a test hibernate mapping 3.0 model from a uml2 model
+module GenerateHibernateMapping;
+
+create OUT : HBM from IN : UML2;
+
+uses UML2;
+
+-- ======================================================================
+-- helpers begin
+-- ======================================================================
+
+helper def : persistents : Sequence(UML2!Persistence::Persistent) = 
+	UML2!Persistence::Persistent->allInstances();
+
+helper context UML2!uml::Class def : isPersistent() : Boolean =
+	thisModule.persistents->select(o|o.base_Class=self)->notEmpty();
+
+helper context UML2!uml::Class def : getPersistent() : UML2!Persistence::Persistent =
+	thisModule.persistents->select(o|o.base_Class=self)->first();
+
+-- ======================================================================
+-- helpers end
+-- ======================================================================
+
+-- ======================================================================
+-- transformation rules begin
+-- ======================================================================
+
+rule HibernateMapping {
+	from s : UML2!uml::Model
+	to hm : HBM!HibernateMappingType mapsTo s (
+		class <- UML2!Class->allInstances()),
+	   dr : HBM!DocumentRoot (
+		hibernateMapping <- hm)
+}
+
+rule Class {
+	from s : UML2!uml::Class (s->isPersistent())
+	using { persistent : UML2!Persistence::Persistent = s->getPersistent(); }
+	to c : HBM!ClassType mapsTo s (
+		name <- s->qualifiedName('.'),
+		table <- s.name->toUpper(),
+		property <- s.attribute->select(a|a <> persistent.id)
+			->collect(p|thisModule->Property(p)),
+		id <- id),
+	   id : HBM!IdType (
+	   	name <- persistent.id.name,
+		column1 <- persistent.id.name + '_ID',
+		generator <- gen),
+	   gen : HBM!GeneratorType (
+	   	class <- 'assigned')
+}
+
+rule Property(s : UML2!uml::Property) {
+	to t : HBM!PropertyType (
+		name <- s.name)
+	do {
+		t;
+	}
+}
+
+-- ======================================================================
+-- transformation rules end
+-- ======================================================================
