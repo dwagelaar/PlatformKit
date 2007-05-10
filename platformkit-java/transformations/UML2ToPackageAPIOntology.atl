@@ -6,7 +6,7 @@ module UML2ToPackageAPIOntology; --extends UML2ToAPIOntology
 create OUT : OWL from IN : UML2, PLATFORM : OWL, JAVA : OWL;--, PREVOUT : OWL, PREVIN : UML2;
 
 uses UML2ToAPIOntology;
-uses APIOntologyLib;
+--uses APIOntologyLib;
 
 -- ======================================================================
 -- transformation rules begin
