@@ -46,18 +46,15 @@ helper def : javaOntology : Set(OWL!owl::OWLOntology) =
 helper def : importedOntologies : Set(OWL!owl::OWLOntology) = 
 	OWL!owl::OWLOntology->allInstances()->select(o|
 		OWL!owl::OWLOntology->allInstancesFrom('PLATFORM')->excludes(o) and
-		OWL!owl::OWLOntology->allInstancesFrom('JAVA')->excludes(o))
-		->debug('importedOntologies');
+		OWL!owl::OWLOntology->allInstancesFrom('JAVA')->excludes(o));
 
 helper def : prevModels : Set(UML2!uml::Model) = 
 	UML2!uml::Model->allInstances()->select(m|
-		UML2!uml::Model->allInstancesFrom('IN')->excludes(m))
-		->debug('prevModels');
+		UML2!uml::Model->allInstancesFrom('IN')->excludes(m));
 
 helper def : prevPackages : Set(UML2!uml::Package) = 
 	UML2!uml::Package->allInstances()->select(p|
-		UML2!uml::Package->allInstancesFrom('IN')->excludes(p))
-		->debug('prevPackages');
+		UML2!uml::Package->allInstancesFrom('IN')->excludes(p));
 
 helper def : ontClassNames : Map(UML2!uml::NamedElement, String) =
 	UML2!uml::Package->allInstances()->union(
@@ -65,8 +62,7 @@ helper def : ontClassNames : Map(UML2!uml::NamedElement, String) =
 		->select(n|not n.name->oclIsUndefined())
 		->iterate(
 			e; acc : Map(UML2!uml::NamedElement, String) = Map{} |
-			acc->including(e, e->ontClassName()))
-		->debug('ontClassNames');
+			acc->including(e, e->ontClassName()));
 
 helper def : qualifiedNames : Map(UML2!uml::NamedElement, String) =
 	UML2!uml::Package->allInstances()->union(
@@ -74,15 +70,13 @@ helper def : qualifiedNames : Map(UML2!uml::NamedElement, String) =
 		->select(n|not n.name->oclIsUndefined())
 		->iterate(
 			e; acc : Map(UML2!uml::NamedElement, String) = Map{} |
-			acc->including(e, e->qualifiedName('::')))
-		->debug('qualifiedNames');
+			acc->including(e, e->qualifiedName('::')));
 
 helper def : allOwnedClassifiers : Map(UML2!uml::Package, Sequence(UML2!uml::Classifier)) =
 	UML2!uml::Package->allInstances()
 		->iterate(
 			e; acc : Map(UML2!uml::Package, Sequence(UML2!uml::Classifier)) = Map{} |
-			acc->including(e, e->allOwnedClassifiers()))
-		->debug('allOwnedClassifiers');
+			acc->including(e, e->allOwnedClassifiers()));
 
 -- ======================================================================
 -- helper attributes end
