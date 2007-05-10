@@ -81,9 +81,7 @@ rule Package {
 	from s : UML2!uml::Package (thisModule.includedPackages->includes(s))
 	using {
 		allOwnedClassifiers : Sequence(UML2!uml::Classifier) = 
-			UML2!uml::Classifier->allInstances()->select(c|
-				c->getNearestPackage() = s and 
-				(c->oclIsKindOf(UML2!uml::Class) or c->oclIsKindOf(UML2!uml::Interface)));
+			thisModule.allOwnedClassifiers->get(s);
 	}
 	to t : OWL!owl::OWLClass mapsTo s (
 		localName <- (s->ontClassName() + 'Library')->debug('Package'),
