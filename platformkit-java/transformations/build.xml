@@ -88,19 +88,25 @@
     </macrodef>
 	
 	<target name="loadModels">
-		<am3.loadModel modelHandler="EMF" name="UML2"          metamodel="MOF"  nsuri="http://www.eclipse.org/uml2/2.0.0/UML"/>
-		<am3.loadModel modelHandler="EMF" name="OWL"           metamodel="MOF"  nsuri="http:///org/eclipse/owl.ecore"/>
-		<am3.loadModel modelHandler="EMF" name="Platform"      metamodel="OWL"  path="/platformkit-java/Platform.owl"/>
-		<am3.loadModel modelHandler="EMF" name="Java"          metamodel="OWL"  path="/platformkit-java/Java.owl"/>
-		<am3.loadModel modelHandler="EMF" name="EmptyOWL"      metamodel="OWL"  path="/platformkit-java/empty.owl"/>
-		<am3.loadModel modelHandler="EMF" name="EmptyUML"      metamodel="UML2" path="/platformkit-java/empty.uml"/>
-		<am3.loadModel modelHandler="EMF" name="J2ME-MIDP-1_0" metamodel="UML2" path="/platformkit-java/j2me-midp-1_0-api.uml"/>
-		<am3.loadModel modelHandler="EMF" name="J2ME-PP-1_0"   metamodel="UML2" path="/platformkit-java/j2me-pp-1_0-api.uml"/>
-		<am3.loadModel modelHandler="EMF" name="JDK-1_1"       metamodel="UML2" path="/platformkit-java/jdk-1_1-api.uml"/>
-		<am3.loadModel modelHandler="EMF" name="J2SE-1_2"      metamodel="UML2" path="/platformkit-java/j2se-1_2-api.uml"/>
-		<am3.loadModel modelHandler="EMF" name="J2SE-1_3"      metamodel="UML2" path="/platformkit-java/j2se-1_3-api.uml"/>
-		<am3.loadModel modelHandler="EMF" name="J2SE-1_4"      metamodel="UML2" path="/platformkit-java/j2se-1_4-api.uml"/>
-		<am3.loadModel modelHandler="EMF" name="J2SE-1_5"      metamodel="UML2" path="/platformkit-java/j2se-1_5-api.uml"/>
+		<parallel>
+			<am3.loadModel modelHandler="EMF" name="UML2"          metamodel="MOF"  nsuri="http://www.eclipse.org/uml2/2.0.0/UML"/>
+			<am3.loadModel modelHandler="EMF" name="OWL"           metamodel="MOF"  nsuri="http:///org/eclipse/owl.ecore"/>
+		</parallel>
+		<parallel>
+			<sequential>
+				<am3.loadModel modelHandler="EMF" name="Platform"      metamodel="OWL"  path="/platformkit-java/Platform.owl"/>
+				<am3.loadModel modelHandler="EMF" name="Java"          metamodel="OWL"  path="/platformkit-java/Java.owl"/>
+				<am3.loadModel modelHandler="EMF" name="EmptyOWL"      metamodel="OWL"  path="/platformkit-java/empty.owl"/>
+			</sequential>
+			<am3.loadModel modelHandler="EMF" name="EmptyUML"      metamodel="UML2" path="/platformkit-java/empty.uml"/>
+			<am3.loadModel modelHandler="EMF" name="J2ME-MIDP-1_0" metamodel="UML2" path="/platformkit-java/j2me-midp-1_0-api.uml"/>
+			<am3.loadModel modelHandler="EMF" name="J2ME-PP-1_0"   metamodel="UML2" path="/platformkit-java/j2me-pp-1_0-api.uml"/>
+			<am3.loadModel modelHandler="EMF" name="JDK-1_1"       metamodel="UML2" path="/platformkit-java/jdk-1_1-api.uml"/>
+			<am3.loadModel modelHandler="EMF" name="J2SE-1_2"      metamodel="UML2" path="/platformkit-java/j2se-1_2-api.uml"/>
+			<am3.loadModel modelHandler="EMF" name="J2SE-1_3"      metamodel="UML2" path="/platformkit-java/j2se-1_3-api.uml"/>
+			<am3.loadModel modelHandler="EMF" name="J2SE-1_4"      metamodel="UML2" path="/platformkit-java/j2se-1_4-api.uml"/>
+			<am3.loadModel modelHandler="EMF" name="J2SE-1_5"      metamodel="UML2" path="/platformkit-java/j2se-1_5-api.uml"/>
+		</parallel>
 	</target>
 	
 	<target name="pre-transform" depends="loadModels">
@@ -111,7 +117,7 @@
 			<preUML2ToAPIOntology in="J2SE-1_3"      out="preJ2SE-1_3_OWL"    path="/platformkit-java/j2se-1_3-api.owl"/>
 			<preUML2ToAPIOntology in="J2SE-1_2"      out="preJ2SE-1_2_OWL"    path="/platformkit-java/j2se-1_2-api.owl"/>
 			<preUML2ToAPIOntology in="JDK-1_1"       out="preJDK-1_1_OWL"     path="/platformkit-java/jdk-1_1-api.owl"/>
-			<preUML2ToAPIOntology in="J2ME-PP-1_0"   out="preJ2ME-PP-1_0_OWL" path="/platformkit-java/j2me-pp-1_0-api.owl"/>
+			<!--preUML2ToAPIOntology in="J2ME-PP-1_0"   out="preJ2ME-PP-1_0_OWL" path="/platformkit-java/j2me-pp-1_0-api.owl"/-->
 			<UML2ToAPIOntology    in="J2ME-MIDP-1_0" out="J2ME-MIDP-1_0_OWL"  path="/platformkit-java/j2me-midp-1_0-api.owl"/>
 		</parallel>
 		<nice newpriority="${curpri}"/>
@@ -122,9 +128,9 @@
 		<parallel threadCount="4"><!-- start heaviest task first -->
 			<UML2ToAPIOntology1 in="J2SE-1_5"    prevout="preJ2SE-1_4_OWL"   previn="J2SE-1_4"      out="J2SE-1_5_OWL"            path="/platformkit-java/j2se-1_5-api.owl"/>
 			<UML2ToAPIOntology1 in="J2SE-1_4"    prevout="preJ2SE-1_3_OWL"   previn="J2SE-1_3"      out="J2SE-1_4_OWL"            path="/platformkit-java/j2se-1_4-api.owl"/>
-			<UML2ToAPIOntology2 in="J2SE-1_3"    prevout="preJ2SE-1_2_OWL"   previn="J2SE-1_2"      prevout2="preJ2ME-PP-1_0_OWL" previn2="J2ME-PP-1_0"   out="J2SE-1_3_OWL"    path="/platformkit-java/j2se-1_3-api.owl"/>
+			<UML2ToAPIOntology1 in="J2SE-1_3"    prevout="preJ2SE-1_2_OWL"   previn="J2SE-1_2"      out="J2SE-1_3_OWL"            path="/platformkit-java/j2se-1_3-api.owl"/>
 			<UML2ToAPIOntology2 in="J2SE-1_2"    prevout="preJDK-1_1_OWL"    previn="JDK-1_1"       prevout2="J2ME-MIDP-1_0_OWL"  previn2="J2ME-MIDP-1_0" out="J2SE-1_2_OWL"    path="/platformkit-java/j2se-1_2-api.owl"/>
-			<UML2ToAPIOntology2 in="J2ME-PP-1_0" prevout="preJ2SE-1_2_OWL"   previn="J2SE-1_2"      prevout2="J2ME-MIDP-1_0_OWL"  previn2="J2ME-MIDP-1_0" out="J2ME-PP-1_0_OWL" path="/platformkit-java/j2me-pp-1_0-api.owl"/>
+			<!--UML2ToAPIOntology2 in="J2ME-PP-1_0" prevout="preJ2SE-1_2_OWL"   previn="J2SE-1_2"      prevout2="J2ME-MIDP-1_0_OWL"  previn2="J2ME-MIDP-1_0" out="J2ME-PP-1_0_OWL" path="/platformkit-java/j2me-pp-1_0-api.owl"/-->
 			<UML2ToAPIOntology1 in="JDK-1_1"     prevout="J2ME-MIDP-1_0_OWL" previn="J2ME-MIDP-1_0" out="JDK-1_1_OWL"             path="/platformkit-java/jdk-1_1-api.owl"/>
 		</parallel>
 		<nice newpriority="${curpri}"/>
