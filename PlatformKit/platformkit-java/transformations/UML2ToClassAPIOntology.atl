@@ -6,7 +6,7 @@ module UML2ToClassAPIOntology; --extends UML2ToAPIOntology
 create OUT : OWL from IN : UML2, PLATFORM : OWL, JAVA : OWL;--, PREVOUT : OWL, PREVIN : UML2;
 
 uses UML2ToAPIOntology;
-uses APIOntologyLib;
+--uses APIOntologyLib;
 
 -- ======================================================================
 -- transformation rules begin
@@ -80,39 +80,49 @@ rule Model {
 rule Package {
 	from s : UML2!uml::Package (thisModule.includedPackages->includes(s))
 	using {
-		allOwnedClassifiers : Sequence(UML2!uml::Classifier) = 
-			thisModule.allOwnedClassifiers->get(s);
+		allOwnedClassifiers : Sequence(UML2!uml::Classifier) = thisModule.allOwnedClassifiers->get(s);
+		refs : Set(UML2!uml::Package) = s->references()->debug(s.qualifiedName + ' referenced packages');
+		compatiblePacks : Sequence(UML2!uml::Package) = s->compatibleInPrev()->debug(s.qualifiedName + ' compatible packages');
+		equivalentPacks : Sequence(UML2!uml::Package) = compatiblePacks->select(p|p->isCompatibleWith(s))->debug(s.qualifiedName + ' equivalent packages');
+		compatibleClasses : Sequence(OWL!owl::OWLClass) = compatiblePacks->collect(p|p->owlClassesInPrev())->flatten();
+		equivalentClasses : Sequence(OWL!owl::OWLClass) = equivalentPacks->collect(p|p->owlClassesInPrev())->flatten();
+		superClasses : Sequence(OWL!owl::OWLClass) = compatibleClasses->select(c|equivalentClasses->excludes(c));
 	}
 	to t : OWL!owl::OWLClass mapsTo s (
 		localName <- (s->ontClassName() + 'Library')->debug('Package'),
-		RDFSSubClassOf <- thisModule.javaLibrary,
-		OWLEquivalentClass <- Sequence{intersection},
+		RDFSSubClassOf <- allOwnedClassifiers->union(superClasses),
+		OWLEquivalentClass <- if equivalentClasses->isEmpty()
+			then Sequence{} else equivalentClasses endif,
 		RDFSComment <- Sequence{comment},
+		RDFSSeeAlso <- refs,
 		namespace <- s->getModel()),
 	   comment : OWL!rdfs::PlainLiteral (
 	   	language <- 'en',
 		lexicalForm <- 'JavaLibrary implementing the ' + s->qualifiedName('.') + ' package for ' + s->getModel().name),
-	   intersection : OWL!owl::IntersectionClass (
-	   	OWLIntersectionOf <- allOwnedClassifiers,
-	   	namespace <- s->getModel()),
 	   platform : OWL!owl::OWLClass (
 	   	localName <- (s->ontClassName() + 'Platform'),
 		RDFSSubClassOf <- thisModule.platformPlatform,
 		RDFSComment <- Sequence{platformcomment},
-		OWLEquivalentClass <- Sequence{platformintersection},
+		OWLEquivalentClass <- Sequence{intersection},
 		namespace <- s->getModel()),
 	   platformcomment : OWL!rdfs::PlainLiteral (
 	   	language <- 'en',
 		lexicalForm <- 'Platform providing ' + comment.lexicalForm),
-	   platformintersection : OWL!owl::IntersectionClass (
-	   	OWLIntersectionOf <- allOwnedClassifiers->collect(c|thisModule->resolveTemp(c, 'platform')),
-	   	namespace <- s->getModel())
+	   intersection : OWL!owl::IntersectionClass (
+	   	OWLIntersectionOf <- refs->collect(r|thisModule->resolveTemp(r, 'platform'))
+			->union(Set{restriction}),
+	   	namespace <- s->getModel()),
+	   restriction : OWL!owl::SomeValuesFromRestriction (
+		OWLOnProperty <- thisModule.platformProvidesFeature,
+		OWLSomeValuesFrom <- s,
+		namespace <- s->getModel())
 }
 
 rule Classifier {
 	from s : UML2!uml::Classifier (thisModule.includedClassifiers->includes(s))
 	using {
-		refs : Set(UML2!uml::Classifier) = s->references();
+--		refs : Set(UML2!uml::Classifier) = s->transReferences(Set{s})->debug(s.qualifiedName + ' referenced classifiers');
+		refs : Set(UML2!uml::Classifier) = thisModule.classifierReferences->get(s)->debug(s.qualifiedName + ' referenced classifiers');
 		compatibleClassifiers : Sequence(UML2!uml::Classifier) = s->compatibleInPrev()->debug(s.qualifiedName + ' compatible classifiers');
 		equivalentClassifiers : Sequence(UML2!uml::Classifier) = compatibleClassifiers->select(p|p->isCompatibleWith(s))->debug(s.qualifiedName + ' equivalent classifiers');
 		compatibleClasses : Sequence(OWL!owl::OWLClass) = compatibleClassifiers->collect(p|p->owlClassesInPrev())->flatten();
@@ -142,8 +152,12 @@ rule Classifier {
 		lexicalForm <- 'Platform providing ' + comment.lexicalForm),
 	   intersection : OWL!owl::IntersectionClass (
 	   	OWLIntersectionOf <- refs->collect(r|thisModule->resolveTemp(r, 'platform'))
-			->union(Set{thisModule->PlatformClass(s)}),
-	   	namespace <- s->getModel())
+			->union(Set{restriction}),
+	   	namespace <- s->getModel()),
+	   restriction : OWL!owl::SomeValuesFromRestriction (
+		OWLOnProperty <- thisModule.platformProvidesFeature,
+		OWLSomeValuesFrom <- s,
+		namespace <- s->getModel())
 }
 
 -- ======================================================================
