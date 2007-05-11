@@ -78,6 +78,13 @@ helper def : allOwnedClassifiers : Map(UML2!uml::Package, Sequence(UML2!uml::Cla
 			e; acc : Map(UML2!uml::Package, Sequence(UML2!uml::Classifier)) = Map{} |
 			acc->including(e, e->allOwnedClassifiers()));
 
+helper def : classifierReferences : Map(UML2!uml::Classifier, Set(UML2!uml::Classifier)) =
+	UML2!uml::Classifier->allInstancesFrom('IN')
+		->select(c|c->oclIsKindOf(UML2!uml::Class) or c->oclIsKindOf(UML2!uml::Interface))
+		->iterate(
+			e; acc : Map(UML2!uml::Classifier, Set(UML2!uml::Classifier)) = Map{} |
+			acc->including(e, e->references()));
+
 -- ======================================================================
 -- helper attributes end
 -- ======================================================================
@@ -121,12 +128,19 @@ helper context UML2!uml::Package def : allOwnedClassifiers() : Sequence(UML2!uml
 
 helper context UML2!uml::Package def : references() : Set(UML2!uml::Package) =
 	thisModule.allOwnedClassifiers->get(self)
-		->collect(c|c->references())->flatten()->asSet()
+--		->collect(c|c->transReferences(Set{c}))->flatten()->asSet()
+		->collect(c|thisModule.classifierReferences->get(c))->flatten()->asSet()
 		->collect(r|r->referencesOtherPackageThan(self))->flatten()->asSet();
 
 helper context UML2!uml::PackageableElement def : referencesOtherPackageThan(p : UML2!uml::Package) : Set(UML2!uml::Package) =
 	if self->getNearestPackage() <> p then Set{self->getNearestPackage()} else Set{} endif;
 
+-- Transitive references
+--helper context UML2!uml::Classifier def : transReferences(skip : Set(UML2!uml::Classifier)) : Set(UML2!uml::Classifier) =
+--	let refs : Set(UML2!uml::Classifier) = thisModule.classifierReferences->get(self)
+--		->reject(c|skip->includes(c))
+--	in refs->union(refs->collect(r|r->transReferences(skip->union(refs)))->flatten());
+	
 -- Non-transitive references
 helper context UML2!uml::Classifier def : references() : Set(UML2!uml::Classifier) =
 	self.general->union(
@@ -138,7 +152,7 @@ helper context UML2!uml::BehavioralFeature def : referencesOtherThan(c : UML2!um
 	self.ownedParameter->collect(p|p->referencesOtherThan(c))->flatten();
 
 helper context UML2!uml::TypedElement def : referencesOtherThan(c : UML2!uml::Classifier) : Sequence(UML2!uml::Classifier) =
-	if thisModule.inElements->includes(self.type) and self.type <> c then
+	if self.type->getModel() = c->getModel() and self.type <> c then
 		if self.type->oclIsKindOf(UML2!uml::Class) or self.type->oclIsKindOf(UML2!uml::Interface)
 		then Sequence{self.type} else Sequence{} endif
 	else Sequence{} endif;
@@ -159,7 +173,7 @@ helper context UML2!uml::Package def : compatibleInPrev() : Sequence(UML2!uml::P
 helper context UML2!uml::Classifier def : compatibleInPrev() : Sequence(UML2!uml::Classifier) =
 	let packageName : String = thisModule.qualifiedNames->get(self->getNearestPackage()) in
 		thisModule.prevPackages
-			->select(p|p->getQualifiedName() = packageName)
+			->select(p|thisModule.qualifiedNames->get(p) = packageName)
 			->collect(p1|thisModule.allOwnedClassifiers->get(p1))->flatten()
 			->select(c|self->isCompatibleWith(c));
 
@@ -279,15 +293,15 @@ rule PrevNamespace(o : OWL!owl::OWLOntology) {
 	}
 }
 
-rule PlatformClass(e : UML2!uml::Element) {
-	to platform : OWL!owl::SomeValuesFromRestriction (
-		OWLOnProperty <- thisModule.platformProvidesFeature,
-		OWLSomeValuesFrom <- e,
-		namespace <- e->getModel())
-	do {
-		platform;
-	}
-}
+--rule PlatformClass(e : UML2!uml::Element) {
+--	to platform : OWL!owl::SomeValuesFromRestriction (
+--		OWLOnProperty <- thisModule.platformProvidesFeature,
+--		OWLSomeValuesFrom <- e,
+--		namespace <- e->getModel())
+--	do {
+--		platform;
+--	}
+--}
 
 -- ======================================================================
 -- transformation rules end
