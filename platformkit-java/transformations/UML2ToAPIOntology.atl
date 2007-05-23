@@ -54,44 +54,19 @@ helper def : prevPackages : Set(UML2!uml::Package) =
 	UML2!uml::Package->allInstances()->select(p|
 		UML2!uml::Package->allInstancesFrom('IN')->excludes(p));
 
---helper def : ontClassNames : Map(UML2!uml::NamedElement, String) =
---	UML2!uml::Package->allInstances()->union(
---	UML2!uml::Classifier->allInstances())
---		->select(n|not n.name->oclIsUndefined())
---		->iterate(
---			e; acc : Map(UML2!uml::NamedElement, String) = Map{} |
---			acc->including(e, e->ontClassName()));
-
---helper def : qualifiedNames : Map(UML2!uml::NamedElement, String) =
---	UML2!uml::Package->allInstances()->union(
---	UML2!uml::Type->allInstances())
---		->select(n|not n.name->oclIsUndefined())
---		->iterate(
---			e; acc : Map(UML2!uml::NamedElement, String) = Map{} |
---			acc->including(e, e->qualifiedName('::')));
-
---helper def : allOwnedClassifiers : Map(UML2!uml::Package, Sequence(UML2!uml::Classifier)) =
---	UML2!uml::Package->allInstances()
---		->iterate(
---			e; acc : Map(UML2!uml::Package, Sequence(UML2!uml::Classifier)) = Map{} |
---			acc->including(e, e->allOwnedClassifiers()));
-
---helper def : classifierReferences : Map(UML2!uml::Classifier, Set(UML2!uml::Classifier)) =
---	UML2!uml::Classifier->allInstancesFrom('IN')
---		->select(c|c->oclIsKindOf(UML2!uml::Class) or c->oclIsKindOf(UML2!uml::Interface))
---		->iterate(
---			e; acc : Map(UML2!uml::Classifier, Set(UML2!uml::Classifier)) = Map{} |
---			acc->including(e, e->references()));
-
 -- ======================================================================
 -- general context helper attributes begin
 -- ======================================================================
 
 helper context UML2!uml::NamedElement def : umlQualifiedName : String =
-	if self.owner->oclIsTypeOf(UML2!uml::Package) or self.owner->oclIsKindOf(UML2!uml::Classifier) then
-		self.owner.umlQualifiedName + '::' + self.name
-	else
+	if self->oclIsKindOf(UML2!uml::Feature) then
 		self.name
+	else
+		if self.owner->oclIsTypeOf(UML2!uml::Package) or self.owner->oclIsKindOf(UML2!uml::Classifier) then
+			self.owner.umlQualifiedName + '::' + self.name
+		else
+			self.name
+		endif
 	endif;
 
 helper context UML2!uml::NamedElement def : javaQualifiedName : String =
@@ -166,21 +141,6 @@ helper context UML2!uml::Classifier def : compatibleInPrev : Sequence(UML2!uml::
 -- ======================================================================
 -- general helper methods
 -- ======================================================================
-
---helper context UML2!uml::NamedElement def : qualifiedName(separator : String) : String =
---	if self.owner->oclIsTypeOf(UML2!uml::Package) or self.owner->oclIsKindOf(UML2!uml::Classifier) then
---		self.owner->qualifiedName(separator) + separator + self.name
---	else
---		self.name
---	endif;
-
---helper context UML2!uml::NamedElement def : getQualifiedName() : String =
---	let qualifiedName : String = thisModule.qualifiedNames->get(self) in
---		if qualifiedName->oclIsUndefined() then
---			self.name
---		else
---			qualifiedName
---		endif;
 
 helper context String def: firstToUpper() : String =
 	self->substring(1, 1)->toUpper() + self->substring(2, self->size());
