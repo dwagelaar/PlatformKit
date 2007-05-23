@@ -33,14 +33,17 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Properties;
 import java.util.Set;
-import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.Platform;
 import org.mindswap.pellet.jena.PelletReasoner;
 import org.mindswap.pellet.jena.PelletReasonerFactory;
 
@@ -70,15 +73,13 @@ import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.ReasonerVocabulary;
 
 /**
- * The ontology repository for the CDDToolkit.
+ * The ontology repository for the PlatformKit.
  * @author dennis
  */
 public class Ontologies {
     public static final String LOGGER = "be.ac.vub.platformkit";
-    
+    public static final String ONTOLOGY_EXT_POINT = "be.ac.vub.platformkit.ontology";
     public static final String LOCAL_INF_NS = "http://local/platformkit/inferred.owl";
-    
-    public static final String ONTOLOGIES = "ontologies.properties";
 
     protected static Logger logger = Logger.getLogger(LOGGER);
     private OntModel baseOntology;
@@ -397,36 +398,56 @@ public class Ontologies {
      * @throws IOException if the local ontology mapping could not be read.
      */
     private void addLocalOntologies(OntDocumentManager dm) throws IOException {
-        Properties ontologies = new Properties();
-        ontologies.load(getClass().getResourceAsStream(ONTOLOGIES));
-        for (int i = 1; i <= ontologies.size(); i++) {
-            String mapping = ontologies.getProperty(String.valueOf(i));
-            if (mapping == null) {
-                throw new IOException(
-                        "Invalid ontologies.properties format: index " + i + " not found");
-            }
-            StringTokenizer map = new StringTokenizer(mapping, "=");
-            try {
-                String ns = map.nextToken();
-                String resource = map.nextToken();
-                addLocalOntology(dm, ns, resource);
-            } catch (NoSuchElementException e) {
-                throw new IOException("Invalid ontologies.properties format: " + mapping);
-            }
+    	addLocalOntologies(dm, BaseOntologyProvider.INSTANCE);
+		IExtensionRegistry registry = Platform.getExtensionRegistry();
+        if (registry == null) {
+        	logger.info("Eclipse platform extension registry not found. Local ontology registration does not work outside Eclipse.");
+        	return;
         }
+		IExtensionPoint point = registry.getExtensionPoint(ONTOLOGY_EXT_POINT);
+		IExtension[] extensions = point.getExtensions();
+		for (int i = 0 ; i < extensions.length ; i++) {
+			IConfigurationElement[] elements = extensions[i].getConfigurationElements();
+			for (int j = 0 ; j < elements.length ; j++) {
+				try {
+					IOntologyProvider provider = (IOntologyProvider)
+						elements[j].createExecutableExtension("provider");
+					InputStream[] streams = provider.getOntologies();
+					for (int k = 0; k < streams.length; k++) {
+						addLocalOntology(dm, streams[k]);
+					}
+				} catch (CoreException e) {
+					throw new IOException(e.getLocalizedMessage());
+				}
+			}
+		 }
+    }
+    
+    /**
+     * Adds all known local ontologies to the document manager.
+     * @param dm The document manager.
+     * @param provider The ontology provider.
+     * @throws IOException if the local ontology mapping could not be read.
+     */
+    private void addLocalOntologies(OntDocumentManager dm, IOntologyProvider provider) throws IOException {
+		InputStream[] streams = provider.getOntologies();
+		for (int k = 0; k < streams.length; k++) {
+			addLocalOntology(dm, streams[k]);
+		}
     }
     
     /**
      * Adds a local ontology to the document manager.
      * @param dm The document manager.
-     * @param ns The remote ontology namespace.
-     * @param resource The local ontology model resource, relative to this class' location.
+     * @param resource The local ontology model resource.
      */
-    private void addLocalOntology(OntDocumentManager dm, String ns, String resource) {
-        logger.info("Adding local ontology: " + getClass().getResource(resource).toString() + 
-                " for namespace " + ns);
+    private void addLocalOntology(OntDocumentManager dm, InputStream resource) {
         OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
-        model.read(getClass().getResourceAsStream(resource), null, null);
+        model.read(resource, null, null);
+        //registerPrefix(model);
+        String ns = model.getNsPrefixURI("");
+        ns = ns.substring(0, ns.length() - 1);
+        logger.info("Adding local ontology " + ns);
         dm.addModel(ns, model);
     }
 

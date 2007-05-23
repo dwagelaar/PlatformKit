@@ -5,7 +5,7 @@
   <!ENTITY owl "http://www.w3.org/2002/07/owl">
   <!ENTITY xsd "http://www.w3.org/2001/XMLSchema">
   <!ENTITY units "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl">
-  <!ENTITY DEFAULT "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2006/02/Platform.owl">
+  <!ENTITY DEFAULT "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl">
 ]>
 
 <rdf:RDF
