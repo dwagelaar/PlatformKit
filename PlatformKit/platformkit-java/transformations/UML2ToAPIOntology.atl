@@ -152,9 +152,10 @@ helper context UML2!uml::BehavioralFeature def : referencesOtherThan(c : UML2!um
 	self.ownedParameter->collect(p|p->referencesOtherThan(c))->flatten();
 
 helper context UML2!uml::TypedElement def : referencesOtherThan(c : UML2!uml::Classifier) : Sequence(UML2!uml::Classifier) =
-	if self.type->getModel() = c->getModel() and self.type <> c then
-		if self.type->oclIsKindOf(UML2!uml::Class) or self.type->oclIsKindOf(UML2!uml::Interface)
-		then Sequence{self.type} else Sequence{} endif
+	if self.type->oclIsKindOf(UML2!uml::Class) or self.type->oclIsKindOf(UML2!uml::Interface) then
+		if self.type->getModel() = c->getModel() and self.type <> c
+		then Sequence{self.type}
+		else Sequence{} endif
 	else Sequence{} endif;
 
 -- ======================================================================
@@ -189,12 +190,14 @@ helper context UML2!uml::Package def : hasOwnedClassifierCompatibleWith(c : UML2
 
 helper context UML2!uml::Classifier def : isCompatibleWith(c : UML2!uml::Classifier) : Boolean =
 	if self->namedElementIsCompatibleWith(c) then
-		if (let compGenerals : Sequence(UML2!uml::Classifier) = c.general->select(g|not self->hasGeneralCompatibleWith(g))
-			  in if compGenerals->isEmpty() then true
-			  	 else compGenerals->debug(self.qualifiedName + ' misses generals compatible with ')->isEmpty() endif)
-		then (let compFeatures : Sequence(UML2!uml::Feature) = c->allFeatures()->select(f|not self->hasFeatureCompatibleWith(f))
-			  in if compFeatures->isEmpty() then true
-			  	 else compFeatures->debug(self.qualifiedName + ' misses features compatible with ')->isEmpty() endif)
+		if (if self.isAbstract then c.isAbstract else true endif) then
+			if (let compGenerals : Sequence(UML2!uml::Classifier) = c.general->select(g|not self->hasGeneralCompatibleWith(g))
+				  in if compGenerals->isEmpty() then true
+				  	 else compGenerals->debug(self.qualifiedName + ' misses generals compatible with ')->isEmpty() endif)
+			then (let compFeatures : Sequence(UML2!uml::Feature) = c->allFeatures()->select(f|not self->hasFeatureCompatibleWith(f))
+				  in if compFeatures->isEmpty() then true
+				  	 else compFeatures->debug(self.qualifiedName + ' misses features compatible with ')->isEmpty() endif)
+			else false endif
 		else false endif
 	else false endif;
 
@@ -209,8 +212,19 @@ helper context UML2!uml::StructuralFeature def : isCompatibleWith(f : UML2!uml::
 
 helper context UML2!uml::BehavioralFeature def : isCompatibleWith(f : UML2!uml::BehavioralFeature) : Boolean =
 	if self->namedElementIsCompatibleWith(f)
-	then (self.isStatic = f.isStatic) and
-		 (if self.isAbstract then f.isAbstract else true endif)
+	then if (self.isStatic = f.isStatic) and (self.ownedParameter->size() = f.ownedParameter->size()) and
+		    (if self.isAbstract then f.isAbstract else true endif)
+		 then thisModule->compatibleParameters(self.ownedParameter, f.ownedParameter)
+		 else false endif
+	else false endif;
+
+helper def : compatibleParameters(selfpars : Sequence(UML2!uml::Parameter), otherpars : Sequence(UML2!uml::Parameter)) : Boolean =
+	let selfpar : UML2!uml::Parameter = selfpars->first() in
+	let otherpar : UML2!uml::Parameter = otherpars->first() in
+	if selfpar->isCompatibleWith(otherpar) then
+		thisModule->compatibleParameters(
+			selfpars->excluding(selfpar), 
+			otherpars->excluding(otherpar))
 	else false endif;
 
 helper context UML2!uml::Parameter def : isCompatibleWith(p : UML2!uml::Parameter) : Boolean =
