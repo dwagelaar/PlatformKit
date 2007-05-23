@@ -44,13 +44,13 @@
 
    <element name="ontology">
       <complexType>
-         <attribute name="location" type="string" use="required">
+         <attribute name="provider" type="string" use="required">
             <annotation>
                <documentation>
                   
                </documentation>
                <appInfo>
-                  <meta.attribute kind="resource"/>
+                  <meta.attribute kind="java" basedOn="be.ac.vub.platformkit.kb.IOntologyProvider"/>
                </appInfo>
             </annotation>
          </attribute>
