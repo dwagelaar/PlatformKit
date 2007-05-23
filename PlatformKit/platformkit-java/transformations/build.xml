@@ -95,7 +95,7 @@
 				<am3.loadModel modelHandler="EMF" name="UML2"          metamodel="MOF"  nsuri="http://www.eclipse.org/uml2/2.0.0/UML"/>
 				<am3.loadModel modelHandler="EMF" name="EmptyUML"      metamodel="UML2" path="/platformkit-java/empty.uml"/>
 				<am3.loadModel modelHandler="EMF" name="J2ME-MIDP-1_0" metamodel="UML2" path="/platformkit-java/j2me-midp-1_0-api.uml"/>
-				<am3.loadModel modelHandler="EMF" name="J2ME-PP-1_0"   metamodel="UML2" path="/platformkit-java/j2me-pp-1_0-api.uml"/>
+				<!--am3.loadModel modelHandler="EMF" name="J2ME-PP-1_0"   metamodel="UML2" path="/platformkit-java/j2me-pp-1_0-api.uml"/-->
 				<am3.loadModel modelHandler="EMF" name="JDK-1_1"       metamodel="UML2" path="/platformkit-java/jdk-1_1-api.uml"/>
 				<am3.loadModel modelHandler="EMF" name="J2SE-1_2"      metamodel="UML2" path="/platformkit-java/j2se-1_2-api.uml"/>
 				<am3.loadModel modelHandler="EMF" name="J2SE-1_3"      metamodel="UML2" path="/platformkit-java/j2se-1_3-api.uml"/>
