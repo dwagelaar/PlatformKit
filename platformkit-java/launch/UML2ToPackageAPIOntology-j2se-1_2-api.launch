@@ -26,7 +26,7 @@
 <mapAttribute key="Path">
 <mapEntry key="OUT" value="/platformkit-java/j2se-1_2-api.owl"/>
 <mapEntry key="JAVA" value="/platformkit-java/Java.owl"/>
-<mapEntry key="UML2" value="/uml2cs-transformations/metamodels/UML2Profiles.ecore"/>
+<mapEntry key="UML2" value="uri:http://www.eclipse.org/uml2/2.0.0/UML"/>
 <mapEntry key="PREVOUT" value="/platformkit-java/jdk-1_1-api.owl"/>
 <mapEntry key="PLATFORM" value="/platformkit-java/Platform.owl"/>
 <mapEntry key="PREVIN" value="/platformkit-java/jdk-1_1-api.uml"/>

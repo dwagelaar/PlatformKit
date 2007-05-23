@@ -9,9 +9,7 @@
 <mapEntry key="IN" value=""/>
 </mapAttribute>
 <stringAttribute key="ATL File Name" value="/platformkit-java/transformations/UML2ToAPIOntology.atl"/>
-<mapAttribute key="Libs">
-<mapEntry key="APIOntologyLib" value="/platformkit-java/transformations/APIOntologyLib.asm"/>
-</mapAttribute>
+<mapAttribute key="Libs"/>
 <booleanAttribute key="Mode Debug" value="false"/>
 <mapAttribute key="ModelType">
 <mapEntry key="OUT" value="MODELOUTPUT"/>
