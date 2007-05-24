@@ -87,38 +87,4 @@
 		<rdfs:seeAlso rdf:resource="#JavaxMicroeditionXletLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.xlet.ixc package for j2me-pp-1_0</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="#JavaxMicroeditionXletPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&j2se-1_3;JavaLangPlatform"/>
-					<owl:Class rdf:about="&j2se-1_3;JavaIoPlatform"/>
-					<owl:Class rdf:about="&j2se-1_3;JavaAwtPlatform"/>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="#JavaxMicroeditionXletLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the javax.microedition.xlet package for j2me-pp-1_0</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="#JavaxMicroeditionXletIxcPlatform">
-		<owl:equivalentClass>
-			<owl:Class >
-				<owl:intersectionOf rdf:parseType="Collection">
-					<owl:Class rdf:about="&j2se-1_3;JavaLangPlatform"/>
-					<owl:Class rdf:about="&j2se-1_3;JavaRmiPlatform"/>
-					<owl:Class rdf:about="#JavaxMicroeditionXletPlatform"/>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&platform;providesFeature"/>
-						<owl:someValuesFrom rdf:resource="#JavaxMicroeditionXletIxcLibrary"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<rdfs:subClassOf rdf:resource="&platform;Platform"/>
-		<rdfs:comment xml:lang="en">Platform providing JavaLibrary implementing the javax.microedition.xlet.ixc package for j2me-pp-1_0</rdfs:comment>
-	</owl:Class>
 </rdf:RDF>
