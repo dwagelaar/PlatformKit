@@ -42,9 +42,7 @@ rule Model {
 		OWLImports <- thisModule.platformOntology->union(thisModule.javaOntology)->union(
 			if prevNotEmpty then thisModule.importedOntologies else Set{} endif),
 		contains <- Sequence{apiClass, jreClass}->union(
-			thisModule.includedPackages)->union(
-			thisModule.includedPackages->collect(p|
-				thisModule->resolveTemp(p, 'platform')))),
+			thisModule.includedPackages)),
 	   label : OWL!rdfs::PlainLiteral (
 	   	language <- 'en',
 		lexicalForm <- s.name),
@@ -94,23 +92,7 @@ rule Package {
 		namespace <- s->getModel()),
 	   comment : OWL!rdfs::PlainLiteral (
 	   	language <- 'en',
-		lexicalForm <- 'JavaLibrary implementing the ' + s.javaQualifiedName + ' package for ' + s->getModel().name),
-	   platform : OWL!owl::OWLClass (
-	   	localName <- (s.ontClassName + 'Platform'),
-		RDFSSubClassOf <- thisModule.platformPlatform,
-		RDFSComment <- Sequence{platformcomment},
-		OWLEquivalentClass <- Sequence{intersection},
-		namespace <- s->getModel()),
-	   platformcomment : OWL!rdfs::PlainLiteral (
-	   	language <- 'en',
-		lexicalForm <- 'Platform providing ' + comment.lexicalForm),
-	   intersection : OWL!owl::IntersectionClass (
-	   	OWLIntersectionOf <- Set{restriction},
-	   	namespace <- s->getModel()),
-	   restriction : OWL!owl::SomeValuesFromRestriction (
-		OWLOnProperty <- thisModule.platformProvidesFeature,
-		OWLSomeValuesFrom <- s,
-		namespace <- s->getModel())
+		lexicalForm <- 'JavaLibrary implementing the ' + s.javaQualifiedName + ' package for ' + s->getModel().name)
 }
 
 -- ======================================================================
