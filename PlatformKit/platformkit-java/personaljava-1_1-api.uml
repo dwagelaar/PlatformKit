@@ -4280,30 +4280,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_FLIVAAkkEdyB89eqeGHzkg" name="util">
       <packagedElement xmi:type="uml:Package" xmi:id="_FLNNgAkkEdyB89eqeGHzkg" name="zip">
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLNNgQkkEdyB89eqeGHzkg" name="ZipFile" clientDependency="_FRYuAAkkEdyB89eqeGHzkg">
-          <interfaceRealization xmi:id="_FRYuAAkkEdyB89eqeGHzkg" supplier="_FLNNggkkEdyB89eqeGHzkg" client="_FLNNgQkkEdyB89eqeGHzkg" contract="_FLNNggkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FRYuAQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRYuAgkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRYuAwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRYuBAkkEdyB89eqeGHzkg" name="arg0"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRYuBQkkEdyB89eqeGHzkg" name="getEntry" visibility="public">
-            <ownedParameter xmi:id="_FRYuBgkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRYuBwkkEdyB89eqeGHzkg" name="return" type="_FLN0kAkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRYuCAkkEdyB89eqeGHzkg" name="getInputStream" visibility="public">
-            <ownedParameter xmi:id="_FRYuCQkkEdyB89eqeGHzkg" name="arg0" type="_FLN0kAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRYuCgkkEdyB89eqeGHzkg" name="return" type="_FLSGAQkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRYuCwkkEdyB89eqeGHzkg" name="getName" visibility="public">
-            <ownedParameter xmi:id="_FRYuDAkkEdyB89eqeGHzkg" name="return" type="_FK65oAkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRYuDQkkEdyB89eqeGHzkg" name="entries" visibility="public">
-            <ownedParameter xmi:id="_FRYuDgkkEdyB89eqeGHzkg" name="return" type="_FLI8FAkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRYuDwkkEdyB89eqeGHzkg" name="close" visibility="public"/>
-        </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_FLNNggkkEdyB89eqeGHzkg" name="ZipConstants" isAbstract="true"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_FLNNgwkkEdyB89eqeGHzkg" name="ZipException">
           <generalization xmi:id="_FRZVEAkkEdyB89eqeGHzkg" general="_FLNNhAkkEdyB89eqeGHzkg"/>
@@ -4404,7 +4380,6 @@
           <ownedOperation xmi:id="_FRcYYwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
             <ownedParameter xmi:id="_FRcYZAkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
           </ownedOperation>
-          <ownedOperation xmi:id="_FRcYZQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
           <ownedOperation xmi:id="_FRcYZgkkEdyB89eqeGHzkg" name="setInput" visibility="public">
             <ownedParameter xmi:id="_FRcYZwkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
             <ownedParameter xmi:id="_FRcYaAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
@@ -4412,14 +4387,6 @@
           </ownedOperation>
           <ownedOperation xmi:id="_FRcYagkkEdyB89eqeGHzkg" name="setInput" visibility="public">
             <ownedParameter xmi:id="_FRcYawkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRcYbAkkEdyB89eqeGHzkg" name="setDictionary" visibility="public">
-            <ownedParameter xmi:id="_FRcYbQkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRcYbgkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRcYbwkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRc_cAkkEdyB89eqeGHzkg" name="setDictionary" visibility="public">
-            <ownedParameter xmi:id="_FRc_cQkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
           </ownedOperation>
           <ownedOperation xmi:id="_FRc_cgkkEdyB89eqeGHzkg" name="getRemaining" visibility="public">
             <ownedParameter xmi:id="_FRc_cwkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
@@ -4442,9 +4409,6 @@
           <ownedOperation xmi:id="_FRc_fwkkEdyB89eqeGHzkg" name="inflate" visibility="public">
             <ownedParameter xmi:id="_FRc_gAkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
             <ownedParameter xmi:id="_FRc_gQkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRc_ggkkEdyB89eqeGHzkg" name="getAdler" visibility="public">
-            <ownedParameter xmi:id="_FRc_gwkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:id="_FRdmgAkkEdyB89eqeGHzkg" name="getTotalIn" visibility="public">
             <ownedParameter xmi:id="_FRdmgQkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
@@ -4496,25 +4460,6 @@
           </ownedOperation>
           <ownedOperation xmi:id="_FRe0rgkkEdyB89eqeGHzkg" name="reset" visibility="public" isAbstract="true"/>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLOboAkkEdyB89eqeGHzkg" name="Adler32" clientDependency="_FReNmQkkEdyB89eqeGHzkg">
-          <interfaceRealization xmi:id="_FReNmQkkEdyB89eqeGHzkg" supplier="_FLN0lgkkEdyB89eqeGHzkg" client="_FLOboAkkEdyB89eqeGHzkg" contract="_FLN0lgkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FReNmgkkEdyB89eqeGHzkg" name="update" visibility="public">
-            <ownedParameter xmi:id="_FReNmwkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FReNnAkkEdyB89eqeGHzkg" name="update" visibility="public">
-            <ownedParameter xmi:id="_FReNnQkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FReNngkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FReNnwkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRe0oAkkEdyB89eqeGHzkg" name="update" visibility="public">
-            <ownedParameter xmi:id="_FRe0oQkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRe0ogkkEdyB89eqeGHzkg" name="reset" visibility="public"/>
-          <ownedOperation xmi:id="_FRe0owkkEdyB89eqeGHzkg" name="getValue" visibility="public">
-            <ownedParameter xmi:id="_FRe0pAkkEdyB89eqeGHzkg" name="return" type="_FQA1CgkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRe0pQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_FLOboQkkEdyB89eqeGHzkg" name="CheckedInputStream">
           <generalization xmi:id="_FRfbsAkkEdyB89eqeGHzkg" general="_FLN0kgkkEdyB89eqeGHzkg"/>
           <ownedOperation xmi:id="_FRfbsQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
@@ -4556,103 +4501,6 @@
             <ownedParameter xmi:id="_FRgCygkkEdyB89eqeGHzkg" name="return" type="_FLN0lgkkEdyB89eqeGHzkg" direction="return"/>
           </ownedOperation>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLObpAkkEdyB89eqeGHzkg" name="Deflater">
-          <ownedAttribute xmi:id="_FRgCywkkEdyB89eqeGHzkg" name="DEFLATED" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <ownedAttribute xmi:id="_FRgCzAkkEdyB89eqeGHzkg" name="NO_COMPRESSION" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <ownedAttribute xmi:id="_FRgCzQkkEdyB89eqeGHzkg" name="BEST_SPEED" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <ownedAttribute xmi:id="_FRgp0AkkEdyB89eqeGHzkg" name="BEST_COMPRESSION" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <ownedAttribute xmi:id="_FRgp0QkkEdyB89eqeGHzkg" name="DEFAULT_COMPRESSION" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <ownedAttribute xmi:id="_FRgp0gkkEdyB89eqeGHzkg" name="FILTERED" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <ownedAttribute xmi:id="_FRgp0wkkEdyB89eqeGHzkg" name="HUFFMAN_ONLY" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <ownedAttribute xmi:id="_FRgp1AkkEdyB89eqeGHzkg" name="DEFAULT_STRATEGY" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <ownedOperation xmi:id="_FRgp1QkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRgp1gkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRgp1wkkEdyB89eqeGHzkg" name="arg1" type="_FQA1AAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRgp2AkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRgp2QkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRgp2gkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-          <ownedOperation xmi:id="_FRgp2wkkEdyB89eqeGHzkg" name="setInput" visibility="public">
-            <ownedParameter xmi:id="_FRgp3AkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRgp3QkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRgp3gkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRgp3wkkEdyB89eqeGHzkg" name="setInput" visibility="public">
-            <ownedParameter xmi:id="_FRgp4AkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRhQ4AkkEdyB89eqeGHzkg" name="setDictionary" visibility="public">
-            <ownedParameter xmi:id="_FRhQ4QkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRhQ4gkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRhQ4wkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRhQ5AkkEdyB89eqeGHzkg" name="setDictionary" visibility="public">
-            <ownedParameter xmi:id="_FRhQ5QkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRhQ5gkkEdyB89eqeGHzkg" name="setStrategy" visibility="public">
-            <ownedParameter xmi:id="_FRhQ5wkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRhQ6AkkEdyB89eqeGHzkg" name="setLevel" visibility="public">
-            <ownedParameter xmi:id="_FRhQ6QkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRhQ6gkkEdyB89eqeGHzkg" name="needsInput" visibility="public">
-            <ownedParameter xmi:id="_FRhQ6wkkEdyB89eqeGHzkg" name="return" type="_FQA1AAkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRhQ7AkkEdyB89eqeGHzkg" name="finish" visibility="public"/>
-          <ownedOperation xmi:id="_FRhQ7QkkEdyB89eqeGHzkg" name="finished" visibility="public">
-            <ownedParameter xmi:id="_FRhQ7gkkEdyB89eqeGHzkg" name="return" type="_FQA1AAkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRhQ7wkkEdyB89eqeGHzkg" name="deflate" visibility="public">
-            <ownedParameter xmi:id="_FRhQ8AkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRhQ8QkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRhQ8gkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRhQ8wkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRh38AkkEdyB89eqeGHzkg" name="deflate" visibility="public">
-            <ownedParameter xmi:id="_FRh38QkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRh38gkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRh38wkkEdyB89eqeGHzkg" name="getAdler" visibility="public">
-            <ownedParameter xmi:id="_FRh39AkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRh39QkkEdyB89eqeGHzkg" name="getTotalIn" visibility="public">
-            <ownedParameter xmi:id="_FRh39gkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRh39wkkEdyB89eqeGHzkg" name="getTotalOut" visibility="public">
-            <ownedParameter xmi:id="_FRh3-AkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRh3-QkkEdyB89eqeGHzkg" name="reset" visibility="public"/>
-          <ownedOperation xmi:id="_FRh3-gkkEdyB89eqeGHzkg" name="end" visibility="public"/>
-          <ownedOperation xmi:id="_FRh3-wkkEdyB89eqeGHzkg" name="finalize" visibility="protected"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLPCsAkkEdyB89eqeGHzkg" name="DeflaterOutputStream">
-          <generalization xmi:id="_FRh3_AkkEdyB89eqeGHzkg" general="_FLObowkkEdyB89eqeGHzkg"/>
-          <ownedAttribute xmi:id="_FRh3_QkkEdyB89eqeGHzkg" name="def" visibility="protected" type="_FLObpAkkEdyB89eqeGHzkg"/>
-          <ownedAttribute xmi:id="_FRh3_gkkEdyB89eqeGHzkg" name="buf" visibility="protected" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FRifAAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRifAQkkEdyB89eqeGHzkg" name="arg0" type="_FLSGAwkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRifAgkkEdyB89eqeGHzkg" name="arg1" type="_FLObpAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRifAwkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRifBAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRifBQkkEdyB89eqeGHzkg" name="arg0" type="_FLSGAwkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRifBgkkEdyB89eqeGHzkg" name="arg1" type="_FLObpAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRifBwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRifCAkkEdyB89eqeGHzkg" name="arg0" type="_FLSGAwkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRifCQkkEdyB89eqeGHzkg" name="write" visibility="public">
-            <ownedParameter xmi:id="_FRifCgkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRifCwkkEdyB89eqeGHzkg" name="write" visibility="public">
-            <ownedParameter xmi:id="_FRifDAkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRifDQkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRifDgkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRifDwkkEdyB89eqeGHzkg" name="finish" visibility="public"/>
-          <ownedOperation xmi:id="_FRifEAkkEdyB89eqeGHzkg" name="close" visibility="public"/>
-          <ownedOperation xmi:id="_FRifEQkkEdyB89eqeGHzkg" name="deflate" visibility="protected"/>
-        </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_FLPCsQkkEdyB89eqeGHzkg" name="GZIPInputStream">
           <generalization xmi:id="_FRjGEAkkEdyB89eqeGHzkg" general="_FLN0kQkkEdyB89eqeGHzkg"/>
           <ownedAttribute xmi:id="_FRjGEQkkEdyB89eqeGHzkg" name="crc" visibility="protected" type="_FLN0lQkkEdyB89eqeGHzkg"/>
@@ -4672,24 +4520,6 @@
             <ownedParameter xmi:id="_FRjGHQkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:id="_FRjGHgkkEdyB89eqeGHzkg" name="close" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLPCsgkkEdyB89eqeGHzkg" name="GZIPOutputStream">
-          <generalization xmi:id="_FRjtIAkkEdyB89eqeGHzkg" general="_FLPCsAkkEdyB89eqeGHzkg"/>
-          <ownedAttribute xmi:id="_FRjtIQkkEdyB89eqeGHzkg" name="crc" visibility="protected" type="_FLN0lQkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FRjtIgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRjtIwkkEdyB89eqeGHzkg" name="arg0" type="_FLSGAwkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRjtJAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRjtJQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRjtJgkkEdyB89eqeGHzkg" name="arg0" type="_FLSGAwkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRjtJwkkEdyB89eqeGHzkg" name="write" visibility="public">
-            <ownedParameter xmi:id="_FRjtKAkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRjtKQkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRjtKgkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRjtKwkkEdyB89eqeGHzkg" name="finish" visibility="public"/>
-          <ownedOperation xmi:id="_FRjtLAkkEdyB89eqeGHzkg" name="close" visibility="public"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_FLPpwAkkEdyB89eqeGHzkg" name="ZipInputStream" clientDependency="_FRjtLQkkEdyB89eqeGHzkg">
           <generalization xmi:id="_FRkUMAkkEdyB89eqeGHzkg" general="_FLN0kQkkEdyB89eqeGHzkg"/>
@@ -4712,35 +4542,6 @@
             <ownedParameter xmi:id="_FRkUPQkkEdyB89eqeGHzkg" name="return" type="_FQA1CgkkEdyB89eqeGHzkg" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:id="_FRkUPgkkEdyB89eqeGHzkg" name="close" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLPpwQkkEdyB89eqeGHzkg" name="ZipOutputStream" clientDependency="_FRk7QAkkEdyB89eqeGHzkg">
-          <generalization xmi:id="_FRk7QQkkEdyB89eqeGHzkg" general="_FLPCsAkkEdyB89eqeGHzkg"/>
-          <ownedAttribute xmi:id="_FRk7QgkkEdyB89eqeGHzkg" name="STORED" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <ownedAttribute xmi:id="_FRk7QwkkEdyB89eqeGHzkg" name="DEFLATED" visibility="public" isStatic="true" type="_FQAN8gkkEdyB89eqeGHzkg" isReadOnly="true"/>
-          <interfaceRealization xmi:id="_FRk7QAkkEdyB89eqeGHzkg" supplier="_FLNNggkkEdyB89eqeGHzkg" client="_FLPpwQkkEdyB89eqeGHzkg" contract="_FLNNggkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FRk7RAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-            <ownedParameter xmi:id="_FRk7RQkkEdyB89eqeGHzkg" name="arg0" type="_FLSGAwkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRk7RgkkEdyB89eqeGHzkg" name="setComment" visibility="public">
-            <ownedParameter xmi:id="_FRk7RwkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRk7SAkkEdyB89eqeGHzkg" name="setMethod" visibility="public">
-            <ownedParameter xmi:id="_FRk7SQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRliUAkkEdyB89eqeGHzkg" name="setLevel" visibility="public">
-            <ownedParameter xmi:id="_FRliUQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRliUgkkEdyB89eqeGHzkg" name="putNextEntry" visibility="public">
-            <ownedParameter xmi:id="_FRliUwkkEdyB89eqeGHzkg" name="arg0" type="_FLN0kAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRliVAkkEdyB89eqeGHzkg" name="closeEntry" visibility="public"/>
-          <ownedOperation xmi:id="_FRliVQkkEdyB89eqeGHzkg" name="write" visibility="public">
-            <ownedParameter xmi:id="_FRliVgkkEdyB89eqeGHzkg" name="arg0" type="_FQKmCAkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRliVwkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-            <ownedParameter xmi:id="_FRliWAkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FRliWQkkEdyB89eqeGHzkg" name="finish" visibility="public"/>
-          <ownedOperation xmi:id="_FRliWgkkEdyB89eqeGHzkg" name="close" visibility="public"/>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_FLIVAQkkEdyB89eqeGHzkg" name="BitSet" clientDependency="_FRGaIAkkEdyB89eqeGHzkg _FRGaIQkkEdyB89eqeGHzkg">
@@ -5860,362 +5661,12 @@
           </ownedOperation>
           <ownedOperation xmi:id="_FS8NMwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLh9oQkkEdyB89eqeGHzkg" name="DateFormatZoneData_ar">
-          <generalization xmi:id="_FS8NNAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS8NNQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS8NNgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS8NNwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLh9ogkkEdyB89eqeGHzkg" name="DateFormatZoneData_be">
-          <generalization xmi:id="_FS8NOAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS8NOQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS8NOgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS8NOwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLh9owkkEdyB89eqeGHzkg" name="DateFormatZoneData_bg">
-          <generalization xmi:id="_FS80QAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS80QQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS80QgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS80QwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLh9pAkkEdyB89eqeGHzkg" name="DateFormatZoneData_ca">
-          <generalization xmi:id="_FS80RAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS80RQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS80RgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS80RwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLh9pQkkEdyB89eqeGHzkg" name="DateFormatZoneData_cs">
-          <generalization xmi:id="_FS80SAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS80SQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS80SgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS80SwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLiksAkkEdyB89eqeGHzkg" name="DateFormatZoneData_da">
-          <generalization xmi:id="_FS9bUAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS9bUQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS9bUgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS9bUwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLiksQkkEdyB89eqeGHzkg" name="DateFormatZoneData_de">
-          <generalization xmi:id="_FS9bVAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS9bVQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS9bVgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS9bVwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLiksgkkEdyB89eqeGHzkg" name="DateFormatZoneData_de_AT">
-          <generalization xmi:id="_FS9bWAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS9bWQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS9bWgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS9bWwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLikswkkEdyB89eqeGHzkg" name="DateFormatZoneData_de_CH">
-          <generalization xmi:id="_FS-CYAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS-CYQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS-CYgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS-CYwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLjLwAkkEdyB89eqeGHzkg" name="DateFormatZoneData_el">
-          <generalization xmi:id="_FS-CZAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS-CZQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS-CZgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS-CZwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_FLjLwQkkEdyB89eqeGHzkg" name="DateFormatZoneData_en">
           <generalization xmi:id="_FS-pcAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
           <ownedOperation xmi:id="_FS-pcQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
             <ownedParameter xmi:id="_FS-pcgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:id="_FS-pcwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLjLwgkkEdyB89eqeGHzkg" name="DateFormatZoneData_en_CA">
-          <generalization xmi:id="_FS-pdAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS-pdQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS-pdgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS-pdwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLjLwwkkEdyB89eqeGHzkg" name="DateFormatZoneData_en_GB">
-          <generalization xmi:id="_FS-peAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS-peQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS-pegkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS-pewkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLjy0AkkEdyB89eqeGHzkg" name="DateFormatZoneData_en_IE">
-          <generalization xmi:id="_FS_QgAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS_QgQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS_QggkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS_QgwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLjy0QkkEdyB89eqeGHzkg" name="DateFormatZoneData_es">
-          <generalization xmi:id="_FS_QhAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS_QhQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS_QhgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS_QhwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLjy0gkkEdyB89eqeGHzkg" name="DateFormatZoneData_et">
-          <generalization xmi:id="_FS_QiAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS_QiQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS_QigkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS_QiwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLjy0wkkEdyB89eqeGHzkg" name="DateFormatZoneData_fi">
-          <generalization xmi:id="_FS_3kAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS_3kQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS_3kgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS_3kwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLjy1AkkEdyB89eqeGHzkg" name="DateFormatZoneData_fr">
-          <generalization xmi:id="_FS_3lAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS_3lQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS_3lgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS_3lwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLjy1QkkEdyB89eqeGHzkg" name="DateFormatZoneData_fr_BE">
-          <generalization xmi:id="_FS_3mAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FS_3mQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FS_3mgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FS_3mwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLkZ4AkkEdyB89eqeGHzkg" name="DateFormatZoneData_fr_CA">
-          <generalization xmi:id="_FTAeoAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTAeoQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTAeogkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTAeowkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLkZ4QkkEdyB89eqeGHzkg" name="DateFormatZoneData_fr_CH">
-          <generalization xmi:id="_FTAepAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTAepQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTAepgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTAepwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLkZ4gkkEdyB89eqeGHzkg" name="DateFormatZoneData_hr">
-          <generalization xmi:id="_FTAeqAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTAeqQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTAeqgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTAeqwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLkZ4wkkEdyB89eqeGHzkg" name="DateFormatZoneData_hu">
-          <generalization xmi:id="_FTAerAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTBFsAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTBFsQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTBFsgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLkZ5AkkEdyB89eqeGHzkg" name="DateFormatZoneData_is">
-          <generalization xmi:id="_FTBFswkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTBFtAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTBFtQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTBFtgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLlA8AkkEdyB89eqeGHzkg" name="DateFormatZoneData_it">
-          <generalization xmi:id="_FTBFtwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTBFuAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTBFuQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTBFugkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLloAAkkEdyB89eqeGHzkg" name="DateFormatZoneData_it_CH">
-          <generalization xmi:id="_FTBFuwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTBswAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTBswQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTBswgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLloAQkkEdyB89eqeGHzkg" name="DateFormatZoneData_iw">
-          <generalization xmi:id="_FTBswwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTBsxAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTBsxQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTBsxgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLmPEAkkEdyB89eqeGHzkg" name="DateFormatZoneData_ja">
-          <generalization xmi:id="_FTBsxwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTBsyAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTBsyQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTBsygkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLmPEQkkEdyB89eqeGHzkg" name="DateFormatZoneData_ko">
-          <generalization xmi:id="_FTBsywkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTBszAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTBszQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTCT0AkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLmPEgkkEdyB89eqeGHzkg" name="DateFormatZoneData_lt">
-          <generalization xmi:id="_FTCT0QkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTCT0gkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTCT0wkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTCT1AkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLmPEwkkEdyB89eqeGHzkg" name="DateFormatZoneData_lv">
-          <generalization xmi:id="_FTCT1QkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTCT1gkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTCT1wkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTCT2AkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLmPFAkkEdyB89eqeGHzkg" name="DateFormatZoneData_mk">
-          <generalization xmi:id="_FTCT2QkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTCT2gkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTCT2wkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTCT3AkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLmPFQkkEdyB89eqeGHzkg" name="DateFormatZoneData_nl">
-          <generalization xmi:id="_FTC64AkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTC64QkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTC64gkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTC64wkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLm2IAkkEdyB89eqeGHzkg" name="DateFormatZoneData_nl_BE">
-          <generalization xmi:id="_FTC65AkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTC65QkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTC65gkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTC65wkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLm2IQkkEdyB89eqeGHzkg" name="DateFormatZoneData_no">
-          <generalization xmi:id="_FTC66AkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTC66QkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTC66gkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTC66wkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLm2IgkkEdyB89eqeGHzkg" name="DateFormatZoneData_no_NO_NY">
-          <generalization xmi:id="_FTDh8AkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTDh8QkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTDh8gkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTDh8wkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLm2IwkkEdyB89eqeGHzkg" name="DateFormatZoneData_pl">
-          <generalization xmi:id="_FTDh9AkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTDh9QkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTDh9gkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTDh9wkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLndMAkkEdyB89eqeGHzkg" name="DateFormatZoneData_pt">
-          <generalization xmi:id="_FTDh-AkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTDh-QkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTDh-gkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTDh-wkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLndMQkkEdyB89eqeGHzkg" name="DateFormatZoneData_ro">
-          <generalization xmi:id="_FTEJAAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTEJAQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTEJAgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTEJAwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLndMgkkEdyB89eqeGHzkg" name="DateFormatZoneData_ru">
-          <generalization xmi:id="_FTEJBAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTEJBQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTEJBgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTEJBwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLndMwkkEdyB89eqeGHzkg" name="DateFormatZoneData_sh">
-          <generalization xmi:id="_FTEJCAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTEJCQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTEJCgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTEJCwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLndNAkkEdyB89eqeGHzkg" name="DateFormatZoneData_sk">
-          <generalization xmi:id="_FTEwEAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTEwEQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTEwEgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTEwEwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLoEQAkkEdyB89eqeGHzkg" name="DateFormatZoneData_sl">
-          <generalization xmi:id="_FTEwFAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTEwFQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTEwFgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTEwFwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLoEQQkkEdyB89eqeGHzkg" name="DateFormatZoneData_sq">
-          <generalization xmi:id="_FTEwGAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTEwGQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTEwGgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTEwGwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLoEQgkkEdyB89eqeGHzkg" name="DateFormatZoneData_sr">
-          <generalization xmi:id="_FTFXIAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTFXIQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTFXIgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTFXIwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLoEQwkkEdyB89eqeGHzkg" name="DateFormatZoneData_sv">
-          <generalization xmi:id="_FTFXJAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTFXJQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTFXJgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTFXJwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLoERAkkEdyB89eqeGHzkg" name="DateFormatZoneData_th">
-          <generalization xmi:id="_FTFXKAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTFXKQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTFXKgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTFXKwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLoERQkkEdyB89eqeGHzkg" name="DateFormatZoneData_tr">
-          <generalization xmi:id="_FTFXLAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTF-MAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTF-MQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTF-MgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLorUAkkEdyB89eqeGHzkg" name="DateFormatZoneData_uk">
-          <generalization xmi:id="_FTF-MwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTF-NAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTF-NQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTF-NgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLorUQkkEdyB89eqeGHzkg" name="DateFormatZoneData_zh">
-          <generalization xmi:id="_FTF-NwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTF-OAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTF-OQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTF-OgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLorUgkkEdyB89eqeGHzkg" name="DateFormatZoneData_zh_TW">
-          <generalization xmi:id="_FTF-OwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTGlQAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTGlQQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTGlQgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_FLpSYAkkEdyB89eqeGHzkg" name="LocaleElements">
           <generalization xmi:id="_FTHMUAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
@@ -6224,621 +5675,12 @@
           </ownedOperation>
           <ownedOperation xmi:id="_FTHMUwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLp5cAkkEdyB89eqeGHzkg" name="LocaleElements_ar">
-          <generalization xmi:id="_FTHMVAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTHMVQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTHMVgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTHMVwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLp5cQkkEdyB89eqeGHzkg" name="LocaleElements_be">
-          <generalization xmi:id="_FTHMWAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTHzYAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTHzYQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTHzYgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLp5cgkkEdyB89eqeGHzkg" name="LocaleElements_bg">
-          <generalization xmi:id="_FTHzYwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTHzZAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTHzZQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTHzZgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLqggAkkEdyB89eqeGHzkg" name="LocaleElements_ca">
-          <generalization xmi:id="_FTHzZwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTHzaAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTHzaQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTHzagkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLqggQkkEdyB89eqeGHzkg" name="LocaleElements_cs">
-          <generalization xmi:id="_FTIacAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTIacQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTIacgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTIacwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLqgggkkEdyB89eqeGHzkg" name="LocaleElements_da">
-          <generalization xmi:id="_FTIadAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTIadQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTIadgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTIadwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLrHkAkkEdyB89eqeGHzkg" name="LocaleElements_de">
-          <generalization xmi:id="_FTJBgAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTJBgQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTJBggkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTJBgwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLrHkQkkEdyB89eqeGHzkg" name="LocaleElements_de_AT">
-          <generalization xmi:id="_FTJBhAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTJBhQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTJBhgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTJBhwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLrHkgkkEdyB89eqeGHzkg" name="LocaleElements_de_CH">
-          <generalization xmi:id="_FTJBiAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTJokAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTJokQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTJokgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLruoAkkEdyB89eqeGHzkg" name="LocaleElements_el">
-          <generalization xmi:id="_FTJokwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTJolAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTJolQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTJolgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_FLruoQkkEdyB89eqeGHzkg" name="LocaleElements_en">
           <generalization xmi:id="_FTJolwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
           <ownedOperation xmi:id="_FTJomAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
             <ownedParameter xmi:id="_FTJomQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:id="_FTJomgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLruogkkEdyB89eqeGHzkg" name="LocaleElements_en_CA">
-          <generalization xmi:id="_FTKPoAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTKPoQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTKPogkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTKPowkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLruowkkEdyB89eqeGHzkg" name="LocaleElements_en_GB">
-          <generalization xmi:id="_FTKPpAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTKPpQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTKPpgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTKPpwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLrupAkkEdyB89eqeGHzkg" name="LocaleElements_en_IE">
-          <generalization xmi:id="_FTK2sAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTK2sQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTK2sgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTK2swkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLsVsAkkEdyB89eqeGHzkg" name="LocaleElements_es">
-          <generalization xmi:id="_FTK2tAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTK2tQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTK2tgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTK2twkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLsVsQkkEdyB89eqeGHzkg" name="LocaleElements_et">
-          <generalization xmi:id="_FTLdwAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTLdwQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTLdwgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTLdwwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLsVsgkkEdyB89eqeGHzkg" name="LocaleElements_fi">
-          <generalization xmi:id="_FTLdxAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTLdxQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTLdxgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTLdxwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLtj0AkkEdyB89eqeGHzkg" name="LocaleElements_fr">
-          <generalization xmi:id="_FTLdyAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTME0AkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTME0QkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTME0gkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLtj0QkkEdyB89eqeGHzkg" name="LocaleElements_fr_BE">
-          <generalization xmi:id="_FTME0wkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTME1AkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTME1QkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTME1gkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLvZAAkkEdyB89eqeGHzkg" name="LocaleElements_fr_CA">
-          <generalization xmi:id="_FTME1wkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTME2AkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTME2QkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTME2gkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLvZAQkkEdyB89eqeGHzkg" name="LocaleElements_fr_CH">
-          <generalization xmi:id="_FTME2wkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTMr4AkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTMr4QkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTMr4gkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLwAEAkkEdyB89eqeGHzkg" name="LocaleElements_hr">
-          <generalization xmi:id="_FTMr4wkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTMr5AkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTMr5QkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTMr5gkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLwAEQkkEdyB89eqeGHzkg" name="LocaleElements_hu">
-          <generalization xmi:id="_FTMr5wkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTMr6AkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTNS8AkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTNS8QkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLwAEgkkEdyB89eqeGHzkg" name="LocaleElements_is">
-          <generalization xmi:id="_FTNS8gkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTNS8wkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTNS9AkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTNS9QkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLwnIAkkEdyB89eqeGHzkg" name="LocaleElements_it">
-          <generalization xmi:id="_FTNS9gkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTNS9wkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTNS-AkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTNS-QkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLwnIQkkEdyB89eqeGHzkg" name="LocaleElements_it_CH">
-          <generalization xmi:id="_FTN6AAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTN6AQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTN6AgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTN6AwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLwnIgkkEdyB89eqeGHzkg" name="LocaleElements_iw">
-          <generalization xmi:id="_FTN6BAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTN6BQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTN6BgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTN6BwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLxOMAkkEdyB89eqeGHzkg" name="LocaleElements_ja">
-          <generalization xmi:id="_FTOhEAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTOhEQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTOhEgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTOhEwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLx1QAkkEdyB89eqeGHzkg" name="LocaleElements_ko">
-          <generalization xmi:id="_FTPIIAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTPIIQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTPIIgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTPIIwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLycUAkkEdyB89eqeGHzkg" name="LocaleElements_lt">
-          <generalization xmi:id="_FTPIJAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTPIJQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTPIJgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTPIJwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLycUQkkEdyB89eqeGHzkg" name="LocaleElements_lv">
-          <generalization xmi:id="_FTPvMAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTPvMQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTPvMgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTPvMwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLycUgkkEdyB89eqeGHzkg" name="LocaleElements_mk">
-          <generalization xmi:id="_FTPvNAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTPvNQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTPvNgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTPvNwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLzDYAkkEdyB89eqeGHzkg" name="LocaleElements_nl">
-          <generalization xmi:id="_FTPvOAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTPvOQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTQWQAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTQWQQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLzDYQkkEdyB89eqeGHzkg" name="LocaleElements_nl_BE">
-          <generalization xmi:id="_FTQWQgkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTQWQwkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTQWRAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTQWRQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLzDYgkkEdyB89eqeGHzkg" name="LocaleElements_no">
-          <generalization xmi:id="_FTQWRgkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTQWRwkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTQWSAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTQWSQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FLzqcAkkEdyB89eqeGHzkg" name="LocaleElements_no_NO_NY">
-          <generalization xmi:id="_FTQ9UAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTQ9UQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTQ9UgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTQ9UwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL2GsAkkEdyB89eqeGHzkg" name="LocaleElements_pl">
-          <generalization xmi:id="_FTQ9VAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTQ9VQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTQ9VgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTQ9VwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL2GsQkkEdyB89eqeGHzkg" name="LocaleElements_pt">
-          <generalization xmi:id="_FTQ9WAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTQ9WQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTRkYAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTRkYQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL2twAkkEdyB89eqeGHzkg" name="LocaleElements_ro">
-          <generalization xmi:id="_FTRkYgkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTRkYwkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTRkZAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTRkZQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL2twQkkEdyB89eqeGHzkg" name="LocaleElements_ru">
-          <generalization xmi:id="_FTRkZgkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTRkZwkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTRkaAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTRkaQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL3U0AkkEdyB89eqeGHzkg" name="LocaleElements_sh">
-          <generalization xmi:id="_FTSLcAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTSLcQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTSLcgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTSLcwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL3U0QkkEdyB89eqeGHzkg" name="LocaleElements_sk">
-          <generalization xmi:id="_FTSLdAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTSLdQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTSLdgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTSLdwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL3U0gkkEdyB89eqeGHzkg" name="LocaleElements_sl">
-          <generalization xmi:id="_FTSygAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTSygQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTSyggkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTSygwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL374AkkEdyB89eqeGHzkg" name="LocaleElements_sq">
-          <generalization xmi:id="_FTSyhAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTSyhQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTSyhgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTSyhwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL374QkkEdyB89eqeGHzkg" name="LocaleElements_sr">
-          <generalization xmi:id="_FTSyiAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTTZkAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTTZkQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTTZkgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL374gkkEdyB89eqeGHzkg" name="LocaleElements_sv">
-          <generalization xmi:id="_FTTZkwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTTZlAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTTZlQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTTZlgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL4i8AkkEdyB89eqeGHzkg" name="LocaleElements_th">
-          <generalization xmi:id="_FTTZlwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTTZmAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTTZmQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTUAoAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL4i8QkkEdyB89eqeGHzkg" name="LocaleElements_tr">
-          <generalization xmi:id="_FTUAoQkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTUAogkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTUAowkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTUApAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL4i8gkkEdyB89eqeGHzkg" name="LocaleElements_uk">
-          <generalization xmi:id="_FTUApQkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTUApgkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTUApwkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTUAqAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL5KAAkkEdyB89eqeGHzkg" name="LocaleElements_zh">
-          <generalization xmi:id="_FTUnsAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTUnsQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTUnsgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTUnswkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL5xEAkkEdyB89eqeGHzkg" name="LocaleElements_zh_TW">
-          <generalization xmi:id="_FTVOwAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTVOwQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTVOwgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTVOwwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL5xEQkkEdyB89eqeGHzkg" name="LocaleElements_en_AU">
-          <generalization xmi:id="_FTVOxAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTVOxQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTVOxgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTVOxwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL6YIAkkEdyB89eqeGHzkg" name="LocaleElements_en_NZ">
-          <generalization xmi:id="_FTV10AkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTV10QkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTV10gkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTV10wkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL6YIQkkEdyB89eqeGHzkg" name="LocaleElements_en_ZA">
-          <generalization xmi:id="_FTV11AkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTV11QkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTV11gkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTV11wkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL6_MAkkEdyB89eqeGHzkg" name="LocaleElements_es_BO">
-          <generalization xmi:id="_FTV12AkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTV12QkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTV12gkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTWc4AkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL6_MQkkEdyB89eqeGHzkg" name="LocaleElements_es_AR">
-          <generalization xmi:id="_FTWc4QkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTWc4gkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTWc4wkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTWc5AkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL7mQAkkEdyB89eqeGHzkg" name="LocaleElements_es_CL">
-          <generalization xmi:id="_FTWc5QkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTWc5gkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTWc5wkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTWc6AkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL7mQQkkEdyB89eqeGHzkg" name="LocaleElements_es_CO">
-          <generalization xmi:id="_FTWc6QkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTXD8AkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTXD8QkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTXD8gkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL7mQgkkEdyB89eqeGHzkg" name="LocaleElements_es_CR">
-          <generalization xmi:id="_FTXD8wkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTXD9AkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTXD9QkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTXD9gkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL7mQwkkEdyB89eqeGHzkg" name="LocaleElements_es_DO">
-          <generalization xmi:id="_FTXrAAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTXrAQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTXrAgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTXrAwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL8NUAkkEdyB89eqeGHzkg" name="LocaleElements_es_EC">
-          <generalization xmi:id="_FTXrBAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTXrBQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTXrBgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTXrBwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL8NUQkkEdyB89eqeGHzkg" name="LocaleElements_es_GT">
-          <generalization xmi:id="_FTXrCAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTXrCQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTXrCgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTYSEAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL8NUgkkEdyB89eqeGHzkg" name="LocaleElements_es_HN">
-          <generalization xmi:id="_FTYSEQkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTYSEgkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTYSEwkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTYSFAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL8NUwkkEdyB89eqeGHzkg" name="LocaleElements_es_MX">
-          <generalization xmi:id="_FTYSFQkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTYSFgkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTYSFwkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTYSGAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL80YAkkEdyB89eqeGHzkg" name="LocaleElements_es_NI">
-          <generalization xmi:id="_FTYSGQkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTY5IAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTY5IQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTY5IgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL80YQkkEdyB89eqeGHzkg" name="LocaleElements_es_PA">
-          <generalization xmi:id="_FTY5IwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTY5JAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTY5JQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTY5JgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL80YgkkEdyB89eqeGHzkg" name="LocaleElements_es_PE">
-          <generalization xmi:id="_FTY5JwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTY5KAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTY5KQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTY5KgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL80YwkkEdyB89eqeGHzkg" name="LocaleElements_es_PR">
-          <generalization xmi:id="_FTZgMAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTZgMQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTZgMgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTZgMwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL80ZAkkEdyB89eqeGHzkg" name="LocaleElements_es_PY">
-          <generalization xmi:id="_FTZgNAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTaHQAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTaHQQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTaHQgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL9bcAkkEdyB89eqeGHzkg" name="LocaleElements_es_SV">
-          <generalization xmi:id="_FTaHQwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTaHRAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTaHRQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTaHRgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL9bcQkkEdyB89eqeGHzkg" name="LocaleElements_es_UY">
-          <generalization xmi:id="_FTaHRwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTaHSAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTaHSQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTaHSgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL9bcgkkEdyB89eqeGHzkg" name="LocaleElements_es_VE">
-          <generalization xmi:id="_FTauUAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTauUQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTauUgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTauUwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL9bcwkkEdyB89eqeGHzkg" name="LocaleElements_pt_BR">
-          <generalization xmi:id="_FTauVAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTauVQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTauVgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTauVwkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-CgAkkEdyB89eqeGHzkg" name="LocaleElements_de_AT_EURO">
-          <generalization xmi:id="_FTauWAkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTauWQkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTauWgkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTbVYAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-CgQkkEdyB89eqeGHzkg" name="LocaleElements_de_DE_EURO">
-          <generalization xmi:id="_FTbVYQkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTbVYgkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTbVYwkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTbVZAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-CggkkEdyB89eqeGHzkg" name="LocaleElements_de_LU">
-          <generalization xmi:id="_FTbVZQkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTbVZgkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTbVZwkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTbVaAkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-CgwkkEdyB89eqeGHzkg" name="LocaleElements_de_LU_EURO">
-          <generalization xmi:id="_FTbVaQkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTbVagkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTb8cAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTb8cQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-ChAkkEdyB89eqeGHzkg" name="LocaleElements_en_IE_EURO">
-          <generalization xmi:id="_FTb8cgkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTb8cwkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTb8dAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTb8dQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-pkAkkEdyB89eqeGHzkg" name="LocaleElements_es_ES_EURO">
-          <generalization xmi:id="_FTb8dgkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTb8dwkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTb8eAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTb8eQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-pkQkkEdyB89eqeGHzkg" name="LocaleElements_fi_FI_EURO">
-          <generalization xmi:id="_FTb8egkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTb8ewkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTcjgAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTcjgQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-pkgkkEdyB89eqeGHzkg" name="LocaleElements_fr_BE_EURO">
-          <generalization xmi:id="_FTcjggkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTcjgwkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTcjhAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTcjhQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-pkwkkEdyB89eqeGHzkg" name="LocaleElements_fr_FR_EURO">
-          <generalization xmi:id="_FTcjhgkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTcjhwkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTcjiAkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTcjiQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL-plAkkEdyB89eqeGHzkg" name="LocaleElements_fr_LU">
-          <generalization xmi:id="_FTcjigkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTdKkAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTdKkQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTdKkgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL_QoAkkEdyB89eqeGHzkg" name="LocaleElements_fr_LU_EURO">
-          <generalization xmi:id="_FTdKkwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTdKlAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTdKlQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTdKlgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL_QoQkkEdyB89eqeGHzkg" name="LocaleElements_it_IT_EURO">
-          <generalization xmi:id="_FTdKlwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTdKmAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTdKmQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTdKmgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL_QogkkEdyB89eqeGHzkg" name="LocaleElements_nl_BE_EURO">
-          <generalization xmi:id="_FTdKmwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTdxoAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTdxoQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTdxogkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL_QowkkEdyB89eqeGHzkg" name="LocaleElements_nl_NL_EURO">
-          <generalization xmi:id="_FTdxowkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTdxpAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTdxpQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTdxpgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_FL_QpAkkEdyB89eqeGHzkg" name="LocaleElements_pt_PT_EURO">
-          <generalization xmi:id="_FTdxpwkkEdyB89eqeGHzkg" general="_FLMmcAkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FTdxqAkkEdyB89eqeGHzkg" name="getContents" visibility="public">
-            <ownedParameter xmi:id="_FTdxqQkkEdyB89eqeGHzkg" name="return" type="_FRVqswkkEdyB89eqeGHzkg" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FTdxqgkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public"/>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_FLfhYgkkEdyB89eqeGHzkg" name="MessageFormat">
@@ -9327,92 +8169,92 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_FMbVgwkkEdyB89eqeGHzkg" name="Toolkit" isAbstract="true">
         <ownedOperation xmi:id="_FUba8wkkEdyB89eqeGHzkg" name="createButton" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUba9AkkEdyB89eqeGHzkg" name="arg0" type="_FMdxwAkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUba9QkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUba9QkkEdyB89eqeGHzkg" name="return" type="_FMpX8gkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUba9gkkEdyB89eqeGHzkg" name="createTextField" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUba9wkkEdyB89eqeGHzkg" name="arg0" type="_FMg1EQkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUba-AkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUba-AkkEdyB89eqeGHzkg" name="return" type="_FMp_AQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUba-QkkEdyB89eqeGHzkg" name="createLabel" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUba-gkkEdyB89eqeGHzkg" name="arg0" type="_FMgOAQkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUba-wkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUba-wkkEdyB89eqeGHzkg" name="return" type="_FMp_BQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUba_AkkEdyB89eqeGHzkg" name="createList" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUba_QkkEdyB89eqeGHzkg" name="arg0" type="_FMgOAgkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUba_gkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUba_gkkEdyB89eqeGHzkg" name="return" type="_FMqmEAkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcCAAkkEdyB89eqeGHzkg" name="createCheckbox" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcCAQkkEdyB89eqeGHzkg" name="arg0" type="_FMgOAAkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUcCAgkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcCAgkkEdyB89eqeGHzkg" name="return" type="_FMqmEgkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcCAwkkEdyB89eqeGHzkg" name="createScrollbar" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcCBAkkEdyB89eqeGHzkg" name="arg0"/>
-          <ownedParameter xmi:id="_FUcCBQkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcCBQkkEdyB89eqeGHzkg" name="return" type="_FMqmFAkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcCBgkkEdyB89eqeGHzkg" name="createScrollPane" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcCBwkkEdyB89eqeGHzkg" name="arg0" type="_FMdxwwkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUcCCAkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcCCAkkEdyB89eqeGHzkg" name="return" type="_FMrNIQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcCCQkkEdyB89eqeGHzkg" name="createTextArea" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcCCgkkEdyB89eqeGHzkg" name="arg0" type="_FMg1EgkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUcCCwkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcCCwkkEdyB89eqeGHzkg" name="return" type="_FMp_AwkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcCDAkkEdyB89eqeGHzkg" name="createChoice" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcCDQkkEdyB89eqeGHzkg" name="arg0" type="_FMfm8gkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUcCDgkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcCDgkkEdyB89eqeGHzkg" name="return" type="_FMr0MQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcCDwkkEdyB89eqeGHzkg" name="createFrame" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcCEAkkEdyB89eqeGHzkg" name="arg0" type="_FMhcIwkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUcCEQkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcCEQkkEdyB89eqeGHzkg" name="return" type="_FMuQcwkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcpEAkkEdyB89eqeGHzkg" name="createCanvas" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcpEQkkEdyB89eqeGHzkg" name="arg0" type="_FMhcIgkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUcpEgkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcpEgkkEdyB89eqeGHzkg" name="return" type="_FMr0MwkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcpEwkkEdyB89eqeGHzkg" name="createPanel" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcpFAkkEdyB89eqeGHzkg" name="arg0" type="_FMhcIQkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUcpFQkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcpFQkkEdyB89eqeGHzkg" name="return" type="_FMr0NQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcpFgkkEdyB89eqeGHzkg" name="createWindow" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcpFwkkEdyB89eqeGHzkg" name="arg0" type="_FMhcJAkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUcpGAkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcpGAkkEdyB89eqeGHzkg" name="return" type="_FMuQdAkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcpGQkkEdyB89eqeGHzkg" name="createDialog" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcpGgkkEdyB89eqeGHzkg" name="arg0" type="_FMiDMAkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUcpGwkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcpGwkkEdyB89eqeGHzkg" name="return" type="_FMuQdgkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcpHAkkEdyB89eqeGHzkg" name="createMenuBar" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcpHQkkEdyB89eqeGHzkg" name="arg0"/>
-          <ownedParameter xmi:id="_FUcpHgkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcpHgkkEdyB89eqeGHzkg" name="return" type="_FMtCUQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcpHwkkEdyB89eqeGHzkg" name="createMenu" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcpIAkkEdyB89eqeGHzkg" name="arg0"/>
-          <ownedParameter xmi:id="_FUcpIQkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUcpIQkkEdyB89eqeGHzkg" name="return" type="_FMtpYQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUcpIgkkEdyB89eqeGHzkg" name="createPopupMenu" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUdQIAkkEdyB89eqeGHzkg" name="arg0" type="_FMe_4gkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUdQIQkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUdQIQkkEdyB89eqeGHzkg" name="return" type="_FMtpZAkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUdQIgkkEdyB89eqeGHzkg" name="createMenuItem" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUdQIwkkEdyB89eqeGHzkg" name="arg0" type="_FMe_4QkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUdQJAkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUdQJAkkEdyB89eqeGHzkg" name="return" type="_FMtpYgkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUdQJQkkEdyB89eqeGHzkg" name="createFileDialog" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUdQJgkkEdyB89eqeGHzkg" name="arg0"/>
-          <ownedParameter xmi:id="_FUdQJwkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUdQJwkkEdyB89eqeGHzkg" name="return" type="_FMu3gQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUdQKAkkEdyB89eqeGHzkg" name="createCheckboxMenuItem" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUdQKQkkEdyB89eqeGHzkg" name="arg0"/>
-          <ownedParameter xmi:id="_FUdQKgkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUdQKgkkEdyB89eqeGHzkg" name="return" type="_FMuQcQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUdQKwkkEdyB89eqeGHzkg" name="createComponent" visibility="protected">
           <ownedParameter xmi:id="_FUdQLAkkEdyB89eqeGHzkg" name="arg0" type="_FMcjoAkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUdQLQkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUdQLQkkEdyB89eqeGHzkg" name="return" type="_FMu3hQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUdQLgkkEdyB89eqeGHzkg" name="getFontPeer" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUdQLwkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
           <ownedParameter xmi:id="_FUdQMAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FUdQMQkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUdQMQkkEdyB89eqeGHzkg" name="return" type="_FMu3gwkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUd3MAkkEdyB89eqeGHzkg" name="loadSystemColors" visibility="protected">
           <ownedParameter xmi:id="_FUd3MQkkEdyB89eqeGHzkg" name="arg0" type="_FQ1UbAkkEdyB89eqeGHzkg"/>
@@ -9517,7 +8359,7 @@
           <ownedParameter xmi:id="_FUg6jQkkEdyB89eqeGHzkg" name="return" type="_FMdKsAkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUhhkAkkEdyB89eqeGHzkg" name="getPeer" visibility="public">
-          <ownedParameter xmi:id="_FUhhkQkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FUhhkQkkEdyB89eqeGHzkg" name="return" type="_FMow5QkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUhhkgkkEdyB89eqeGHzkg" name="getTreeLock" visibility="public">
           <ownedParameter xmi:id="_FUhhkwkkEdyB89eqeGHzkg" name="return" type="_FK5EcQkkEdyB89eqeGHzkg" direction="return"/>
@@ -9945,6 +8787,9 @@
           <ownedParameter xmi:id="_FUwyIQkkEdyB89eqeGHzkg" name="arg0" type="_FLeTQQkkEdyB89eqeGHzkg"/>
           <ownedParameter xmi:id="_FUwyIgkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
         </ownedOperation>
+        <ownedOperation xmi:id="_CjmawQokEdyRkukVb1sbzA" name="isDoubleBuffered" visibility="public">
+          <ownedParameter xmi:id="_OQjxIAokEdyRkukVb1sbzA" name="return" type="_FQA1AAkkEdyB89eqeGHzkg" direction="return"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_FMcjowkkEdyB89eqeGHzkg" name="MenuContainer" isAbstract="true">
         <ownedOperation xmi:id="_FU7KMAkkEdyB89eqeGHzkg" name="getFont" visibility="public" isAbstract="true">
@@ -10263,7 +9108,7 @@
           <ownedParameter xmi:id="_FU7xRQkkEdyB89eqeGHzkg" name="return" type="_FMcjowkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FU7xRgkkEdyB89eqeGHzkg" name="getPeer" visibility="public">
-          <ownedParameter xmi:id="_FU7xRwkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FU7xRwkkEdyB89eqeGHzkg" name="return" type="_FMtCUgkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FU7xSAkkEdyB89eqeGHzkg" name="getFont" visibility="public">
           <ownedParameter xmi:id="_FU7xSQkkEdyB89eqeGHzkg" name="return" type="_FMlGgQkkEdyB89eqeGHzkg" direction="return"/>
@@ -11969,7 +10814,7 @@
         <ownedAttribute xmi:id="_FVyF2AkkEdyB89eqeGHzkg" name="size" visibility="protected" type="_FQAN8gkkEdyB89eqeGHzkg"/>
         <interfaceRealization xmi:id="_FVyF0gkkEdyB89eqeGHzkg" supplier="_FK5rgQkkEdyB89eqeGHzkg" client="_FMlGgQkkEdyB89eqeGHzkg" contract="_FK5rgQkkEdyB89eqeGHzkg"/>
         <ownedOperation xmi:id="_FVys4AkkEdyB89eqeGHzkg" name="getPeer" visibility="public">
-          <ownedParameter xmi:id="_FVys4QkkEdyB89eqeGHzkg" name="return" direction="return"/>
+          <ownedParameter xmi:id="_FVys4QkkEdyB89eqeGHzkg" name="return" type="_FMu3gwkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FVys4gkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
           <ownedParameter xmi:id="_FVys4wkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
@@ -13614,6 +12459,458 @@
         <ownedOperation xmi:id="_FWU4bQkkEdyB89eqeGHzkg" name="isConsumed" visibility="protected">
           <ownedParameter xmi:id="_FWU4bgkkEdyB89eqeGHzkg" name="return" type="_FQA1AAkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_FMow4QkkEdyB89eqeGHzkg" name="peer">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMow4wkkEdyB89eqeGHzkg" name="ActiveEvent" isAbstract="true">
+          <ownedOperation xmi:id="_FWU4bwkkEdyB89eqeGHzkg" name="dispatch" visibility="public" isAbstract="true"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMow5QkkEdyB89eqeGHzkg" name="ComponentPeer" isAbstract="true">
+          <ownedOperation xmi:id="_FWVfcAkkEdyB89eqeGHzkg" name="setVisible" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWVfcQkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWVfcgkkEdyB89eqeGHzkg" name="setEnabled" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWVfcwkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWVfdAkkEdyB89eqeGHzkg" name="paint" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWVfdQkkEdyB89eqeGHzkg" name="arg0" type="_FMlGgAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWVfdgkkEdyB89eqeGHzkg" name="repaint" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWVfdwkkEdyB89eqeGHzkg" name="arg0" type="_FQA1CgkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWVfeAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWVfeQkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWVfegkkEdyB89eqeGHzkg" name="arg3" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWVfewkkEdyB89eqeGHzkg" name="arg4" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWVffAkkEdyB89eqeGHzkg" name="print" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWVffQkkEdyB89eqeGHzkg" name="arg0" type="_FMlGgAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWVffgkkEdyB89eqeGHzkg" name="setBounds" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWVffwkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWVfgAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWWGgAkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWWGgQkkEdyB89eqeGHzkg" name="arg3" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWGggkkEdyB89eqeGHzkg" name="handleEvent" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWGgwkkEdyB89eqeGHzkg" name="arg0" type="_FMow4AkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWGhAkkEdyB89eqeGHzkg" name="getLocationOnScreen" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWGhQkkEdyB89eqeGHzkg" name="return" type="_FMmUoAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWGhgkkEdyB89eqeGHzkg" name="getPreferredSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWGhwkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWGiAkkEdyB89eqeGHzkg" name="getMinimumSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWGiQkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWGigkkEdyB89eqeGHzkg" name="getColorModel" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWGiwkkEdyB89eqeGHzkg" name="return" type="_FMwssAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWGjAkkEdyB89eqeGHzkg" name="getToolkit" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWGjQkkEdyB89eqeGHzkg" name="return" type="_FMbVgwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWGjgkkEdyB89eqeGHzkg" name="getGraphics" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWGjwkkEdyB89eqeGHzkg" name="return" type="_FMlGgAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWGkAkkEdyB89eqeGHzkg" name="getFontMetrics" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWGkQkkEdyB89eqeGHzkg" name="arg0" type="_FMlGgQkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWWGkgkkEdyB89eqeGHzkg" name="return" type="_FMltkAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWtkAkkEdyB89eqeGHzkg" name="dispose" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWWtkQkkEdyB89eqeGHzkg" name="setForeground" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWtkgkkEdyB89eqeGHzkg" name="arg0" type="_FMltkQkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWtkwkkEdyB89eqeGHzkg" name="setBackground" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWtlAkkEdyB89eqeGHzkg" name="arg0" type="_FMltkQkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWtlQkkEdyB89eqeGHzkg" name="setFont" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWtlgkkEdyB89eqeGHzkg" name="arg0" type="_FMlGgQkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWtlwkkEdyB89eqeGHzkg" name="setCursor" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWtmAkkEdyB89eqeGHzkg" name="arg0" type="_FMiqRQkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWtmQkkEdyB89eqeGHzkg" name="requestFocus" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWWtmgkkEdyB89eqeGHzkg" name="isFocusTraversable" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWtmwkkEdyB89eqeGHzkg" name="return" type="_FQA1AAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWtnAkkEdyB89eqeGHzkg" name="createImage" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWtnQkkEdyB89eqeGHzkg" name="arg0" type="_FMxTwgkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWWtngkkEdyB89eqeGHzkg" name="return" type="_FMm7sQkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWWtnwkkEdyB89eqeGHzkg" name="createImage" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWWtoAkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUoAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUoQkkEdyB89eqeGHzkg" name="return" type="_FMm7sQkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWXUogkkEdyB89eqeGHzkg" name="prepareImage" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWXUowkkEdyB89eqeGHzkg" name="arg0" type="_FMm7sQkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUpAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUpQkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUpgkkEdyB89eqeGHzkg" name="arg3" type="_FMcjogkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUpwkkEdyB89eqeGHzkg" name="return" type="_FQA1AAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWXUqAkkEdyB89eqeGHzkg" name="checkImage" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWXUqQkkEdyB89eqeGHzkg" name="arg0" type="_FMm7sQkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUqgkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUqwkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUrAkkEdyB89eqeGHzkg" name="arg3" type="_FMcjogkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWXUrQkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWXUrgkkEdyB89eqeGHzkg" name="preferredSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWXUrwkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWX7sAkkEdyB89eqeGHzkg" name="minimumSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWX7sQkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWX7sgkkEdyB89eqeGHzkg" name="show" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWX7swkkEdyB89eqeGHzkg" name="hide" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWX7tAkkEdyB89eqeGHzkg" name="enable" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWX7tQkkEdyB89eqeGHzkg" name="disable" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWX7tgkkEdyB89eqeGHzkg" name="reshape" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWX7twkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWX7uAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWX7uQkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWX7ugkkEdyB89eqeGHzkg" name="arg3" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMpX8AkkEdyB89eqeGHzkg" name="ContainerPeer" isAbstract="true">
+          <generalization xmi:id="_FWX7uwkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWX7vAkkEdyB89eqeGHzkg" name="getInsets" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWX7vQkkEdyB89eqeGHzkg" name="return" type="_FMm7sAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWX7vgkkEdyB89eqeGHzkg" name="beginValidate" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWX7vwkkEdyB89eqeGHzkg" name="endValidate" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWX7wAkkEdyB89eqeGHzkg" name="insets" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWYiwAkkEdyB89eqeGHzkg" name="return" type="_FMm7sAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMpX8gkkEdyB89eqeGHzkg" name="ButtonPeer" isAbstract="true">
+          <generalization xmi:id="_FWYiwQkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWYiwgkkEdyB89eqeGHzkg" name="setLabel" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWYiwwkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMpX9AkkEdyB89eqeGHzkg" name="TextComponentPeer" isAbstract="true">
+          <generalization xmi:id="_FWYixAkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWYixQkkEdyB89eqeGHzkg" name="setEditable" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWYixgkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWYixwkkEdyB89eqeGHzkg" name="getText" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWYiyAkkEdyB89eqeGHzkg" name="return" type="_FK65oAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWYiyQkkEdyB89eqeGHzkg" name="setText" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWYiygkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWYiywkkEdyB89eqeGHzkg" name="getSelectionStart" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWYizAkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWYizQkkEdyB89eqeGHzkg" name="getSelectionEnd" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWYizgkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWZJ0AkkEdyB89eqeGHzkg" name="select" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZJ0QkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWZJ0gkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWZJ0wkkEdyB89eqeGHzkg" name="setCaretPosition" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZJ1AkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWZJ1QkkEdyB89eqeGHzkg" name="getCaretPosition" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZJ1gkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMp_AQkkEdyB89eqeGHzkg" name="TextFieldPeer" isAbstract="true">
+          <generalization xmi:id="_FWZJ1wkkEdyB89eqeGHzkg" general="_FMpX9AkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWZJ2AkkEdyB89eqeGHzkg" name="setEchoChar" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZJ2QkkEdyB89eqeGHzkg" name="arg0" type="_FQJ-9wkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWZJ2gkkEdyB89eqeGHzkg" name="getPreferredSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZJ2wkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWZJ3AkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWZJ3QkkEdyB89eqeGHzkg" name="getMinimumSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZJ3gkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWZw4AkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWZw4QkkEdyB89eqeGHzkg" name="setEchoCharacter" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZw4gkkEdyB89eqeGHzkg" name="arg0" type="_FQJ-9wkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWZw4wkkEdyB89eqeGHzkg" name="preferredSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZw5AkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWZw5QkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWZw5gkkEdyB89eqeGHzkg" name="minimumSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZw5wkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWZw6AkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMp_AwkkEdyB89eqeGHzkg" name="TextAreaPeer" isAbstract="true">
+          <generalization xmi:id="_FWZw6QkkEdyB89eqeGHzkg" general="_FMpX9AkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWZw6gkkEdyB89eqeGHzkg" name="insert" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZw6wkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWZw7AkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWZw7QkkEdyB89eqeGHzkg" name="replaceRange" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWZw7gkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWZw7wkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWaX8AkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWaX8QkkEdyB89eqeGHzkg" name="getPreferredSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWaX8gkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWaX8wkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWaX9AkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWaX9QkkEdyB89eqeGHzkg" name="getMinimumSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWaX9gkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWaX9wkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWaX-AkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWaX-QkkEdyB89eqeGHzkg" name="insertText" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWaX-gkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWaX-wkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWaX_AkkEdyB89eqeGHzkg" name="replaceText" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWaX_QkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWaX_gkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWaX_wkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWa_AAkkEdyB89eqeGHzkg" name="preferredSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWa_AQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWa_AgkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWa_AwkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWa_BAkkEdyB89eqeGHzkg" name="minimumSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWa_BQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWa_BgkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWa_BwkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMp_BQkkEdyB89eqeGHzkg" name="LabelPeer" isAbstract="true">
+          <generalization xmi:id="_FWa_CAkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWa_CQkkEdyB89eqeGHzkg" name="setText" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWa_CgkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWa_CwkkEdyB89eqeGHzkg" name="setAlignment" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWa_DAkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMqmEAkkEdyB89eqeGHzkg" name="ListPeer" isAbstract="true">
+          <generalization xmi:id="_FWbmEAkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWbmEQkkEdyB89eqeGHzkg" name="getSelectedIndexes" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWbmEgkkEdyB89eqeGHzkg" name="return" type="_FQ1UbAkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWbmEwkkEdyB89eqeGHzkg" name="add" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWbmFAkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWbmFQkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWbmFgkkEdyB89eqeGHzkg" name="delItems" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWbmFwkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWbmGAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWbmGQkkEdyB89eqeGHzkg" name="removeAll" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWbmGgkkEdyB89eqeGHzkg" name="select" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWbmGwkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWbmHAkkEdyB89eqeGHzkg" name="deselect" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWbmHQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWbmHgkkEdyB89eqeGHzkg" name="makeVisible" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWbmHwkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWbmIAkkEdyB89eqeGHzkg" name="setMultipleMode" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWcNIAkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWcNIQkkEdyB89eqeGHzkg" name="getPreferredSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWcNIgkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWcNIwkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWcNJAkkEdyB89eqeGHzkg" name="getMinimumSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWcNJQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWcNJgkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWcNJwkkEdyB89eqeGHzkg" name="addItem" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWcNKAkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWcNKQkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWcNKgkkEdyB89eqeGHzkg" name="clear" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWcNKwkkEdyB89eqeGHzkg" name="setMultipleSelections" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWcNLAkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWcNLQkkEdyB89eqeGHzkg" name="preferredSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWcNLgkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWcNLwkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWcNMAkkEdyB89eqeGHzkg" name="minimumSize" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWcNMQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWc0MAkkEdyB89eqeGHzkg" name="return" type="_FMltkwkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMqmEgkkEdyB89eqeGHzkg" name="CheckboxPeer" isAbstract="true">
+          <generalization xmi:id="_FWc0MQkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWc0MgkkEdyB89eqeGHzkg" name="setState" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWc0MwkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWc0NAkkEdyB89eqeGHzkg" name="setCheckboxGroup" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWc0NQkkEdyB89eqeGHzkg" name="arg0" type="_FMhcIAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWc0NgkkEdyB89eqeGHzkg" name="setLabel" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWc0NwkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMqmFAkkEdyB89eqeGHzkg" name="ScrollbarPeer" isAbstract="true">
+          <generalization xmi:id="_FWc0OAkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWc0OQkkEdyB89eqeGHzkg" name="setValues" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWc0OgkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWc0OwkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWc0PAkkEdyB89eqeGHzkg" name="arg2" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWc0PQkkEdyB89eqeGHzkg" name="arg3" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWdbQAkkEdyB89eqeGHzkg" name="setLineIncrement" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWdbQQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWdbQgkkEdyB89eqeGHzkg" name="setPageIncrement" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWdbQwkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMrNIQkkEdyB89eqeGHzkg" name="ScrollPanePeer" isAbstract="true">
+          <generalization xmi:id="_FWdbRAkkEdyB89eqeGHzkg" general="_FMpX8AkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWdbRQkkEdyB89eqeGHzkg" name="getHScrollbarHeight" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWdbRgkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWdbRwkkEdyB89eqeGHzkg" name="getVScrollbarWidth" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWdbSAkkEdyB89eqeGHzkg" name="return" type="_FQAN8gkkEdyB89eqeGHzkg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWdbSQkkEdyB89eqeGHzkg" name="setScrollPosition" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWdbSgkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWdbSwkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWdbTAkkEdyB89eqeGHzkg" name="childResized" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWdbTQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWeCUAkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWeCUQkkEdyB89eqeGHzkg" name="setUnitIncrement" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWeCUgkkEdyB89eqeGHzkg" name="arg0" type="_FMdxwgkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWeCUwkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWeCVAkkEdyB89eqeGHzkg" name="setValue" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWeCVQkkEdyB89eqeGHzkg" name="arg0" type="_FMdxwgkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWeCVgkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMr0MQkkEdyB89eqeGHzkg" name="ChoicePeer" isAbstract="true">
+          <generalization xmi:id="_FWeCVwkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWeCWAkkEdyB89eqeGHzkg" name="add" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWeCWQkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWeCWgkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWeCWwkkEdyB89eqeGHzkg" name="remove" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWeCXAkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWeCXQkkEdyB89eqeGHzkg" name="select" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWeCXgkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWepYAkkEdyB89eqeGHzkg" name="addItem" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWepYQkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+            <ownedParameter xmi:id="_FWepYgkkEdyB89eqeGHzkg" name="arg1" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMr0MwkkEdyB89eqeGHzkg" name="CanvasPeer" isAbstract="true">
+          <generalization xmi:id="_FWepYwkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMr0NQkkEdyB89eqeGHzkg" name="PanelPeer" isAbstract="true">
+          <generalization xmi:id="_FWepZAkkEdyB89eqeGHzkg" general="_FMpX8AkkEdyB89eqeGHzkg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMtCUQkkEdyB89eqeGHzkg" name="MenuBarPeer" isAbstract="true">
+          <generalization xmi:id="_FWepZQkkEdyB89eqeGHzkg" general="_FMtCUgkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWepZgkkEdyB89eqeGHzkg" name="addMenu" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWepZwkkEdyB89eqeGHzkg" name="arg0"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWepaAkkEdyB89eqeGHzkg" name="delMenu" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWepaQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWepagkkEdyB89eqeGHzkg" name="addHelpMenu" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWepawkkEdyB89eqeGHzkg" name="arg0"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMtCUgkkEdyB89eqeGHzkg" name="MenuComponentPeer" isAbstract="true">
+          <ownedOperation xmi:id="_FWf3gwkkEdyB89eqeGHzkg" name="dispose" visibility="public" isAbstract="true"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMtpYQkkEdyB89eqeGHzkg" name="MenuPeer" isAbstract="true">
+          <generalization xmi:id="_FWfQcAkkEdyB89eqeGHzkg" general="_FMtpYgkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWfQcQkkEdyB89eqeGHzkg" name="addSeparator" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWfQcgkkEdyB89eqeGHzkg" name="addItem" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWfQcwkkEdyB89eqeGHzkg" name="arg0" type="_FMe_4QkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWfQdAkkEdyB89eqeGHzkg" name="delItem" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWfQdQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMtpYgkkEdyB89eqeGHzkg" name="MenuItemPeer" isAbstract="true">
+          <generalization xmi:id="_FWfQeQkkEdyB89eqeGHzkg" general="_FMtCUgkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWfQegkkEdyB89eqeGHzkg" name="setLabel" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWfQewkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWfQfAkkEdyB89eqeGHzkg" name="setEnabled" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWf3gAkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWf3gQkkEdyB89eqeGHzkg" name="enable" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWf3ggkkEdyB89eqeGHzkg" name="disable" visibility="public" isAbstract="true"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMtpZAkkEdyB89eqeGHzkg" name="PopupMenuPeer" isAbstract="true">
+          <generalization xmi:id="_FWfQdgkkEdyB89eqeGHzkg" general="_FMtpYQkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWfQdwkkEdyB89eqeGHzkg" name="show" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWfQeAkkEdyB89eqeGHzkg" name="arg0" type="_FMkfcQkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMuQcQkkEdyB89eqeGHzkg" name="CheckboxMenuItemPeer" isAbstract="true">
+          <generalization xmi:id="_FWf3hAkkEdyB89eqeGHzkg" general="_FMtpYgkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWf3hQkkEdyB89eqeGHzkg" name="setState" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWf3hgkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMuQcwkkEdyB89eqeGHzkg" name="FramePeer" isAbstract="true">
+          <generalization xmi:id="_FWf3hwkkEdyB89eqeGHzkg" general="_FMuQdAkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWf3iAkkEdyB89eqeGHzkg" name="setTitle" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWf3iQkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWf3igkkEdyB89eqeGHzkg" name="setIconImage" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWf3iwkkEdyB89eqeGHzkg" name="arg0" type="_FMm7sQkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWf3jAkkEdyB89eqeGHzkg" name="setMenuBar" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWf3jQkkEdyB89eqeGHzkg" name="arg0"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWgekAkkEdyB89eqeGHzkg" name="setResizable" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWgekQkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMuQdAkkEdyB89eqeGHzkg" name="WindowPeer" isAbstract="true">
+          <generalization xmi:id="_FWgekgkkEdyB89eqeGHzkg" general="_FMpX8AkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWgekwkkEdyB89eqeGHzkg" name="toFront" visibility="public" isAbstract="true"/>
+          <ownedOperation xmi:id="_FWgelAkkEdyB89eqeGHzkg" name="toBack" visibility="public" isAbstract="true"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMuQdgkkEdyB89eqeGHzkg" name="DialogPeer" isAbstract="true">
+          <generalization xmi:id="_FWgelQkkEdyB89eqeGHzkg" general="_FMuQdAkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWgelgkkEdyB89eqeGHzkg" name="setTitle" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWgelwkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWgemAkkEdyB89eqeGHzkg" name="setResizable" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWgemQkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMu3gQkkEdyB89eqeGHzkg" name="FileDialogPeer" isAbstract="true">
+          <generalization xmi:id="_FWgemgkkEdyB89eqeGHzkg" general="_FMuQdgkkEdyB89eqeGHzkg"/>
+          <ownedOperation xmi:id="_FWgemwkkEdyB89eqeGHzkg" name="setFile" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWgenAkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWgenQkkEdyB89eqeGHzkg" name="setDirectory" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWhFoAkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_FWhFoQkkEdyB89eqeGHzkg" name="setFilenameFilter" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_FWhFogkkEdyB89eqeGHzkg" name="arg0"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMu3gwkkEdyB89eqeGHzkg" name="FontPeer" isAbstract="true"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FMu3hQkkEdyB89eqeGHzkg" name="LightweightPeer" isAbstract="true">
+          <generalization xmi:id="_FWhFowkkEdyB89eqeGHzkg" general="_FMow5QkkEdyB89eqeGHzkg"/>
+        </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_FMzwAAkkEdyB89eqeGHzkg" name="IllegalComponentStateException">
         <generalization xmi:id="_FW6HNgkkEdyB89eqeGHzkg" general="_FLFRsgkkEdyB89eqeGHzkg"/>
