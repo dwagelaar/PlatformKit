@@ -9128,10 +9128,6 @@
         <ownedOperation xmi:id="_FU_bowkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
           <ownedParameter xmi:id="_FU_bpAkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_FU_bpQkkEdyB89eqeGHzkg" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_FU_bpgkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
-          <ownedParameter xmi:id="_FU_bpwkkEdyB89eqeGHzkg" name="arg1"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_FU_bqAkkEdyB89eqeGHzkg" name="addNotify" visibility="public"/>
         <ownedOperation xmi:id="_FU_bqQkkEdyB89eqeGHzkg" name="getLabel" visibility="public">
           <ownedParameter xmi:id="_FU_bqgkkEdyB89eqeGHzkg" name="return" type="_FK65oAkkEdyB89eqeGHzkg" direction="return"/>
@@ -9150,12 +9146,6 @@
           <ownedParameter xmi:id="_FVACswkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FVACtAkkEdyB89eqeGHzkg" name="disable" visibility="public"/>
-        <ownedOperation xmi:id="_FVACtQkkEdyB89eqeGHzkg" name="getShortcut" visibility="public">
-          <ownedParameter xmi:id="_FVACtgkkEdyB89eqeGHzkg" name="return" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_FVACtwkkEdyB89eqeGHzkg" name="setShortcut" visibility="public">
-          <ownedParameter xmi:id="_FVACuAkkEdyB89eqeGHzkg" name="arg0"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_FVACuQkkEdyB89eqeGHzkg" name="deleteShortcut" visibility="public"/>
         <ownedOperation xmi:id="_FVACugkkEdyB89eqeGHzkg" name="enableEvents" visibility="protected">
           <ownedParameter xmi:id="_FVACuwkkEdyB89eqeGHzkg" name="arg0" type="_FQA1CgkkEdyB89eqeGHzkg"/>
@@ -9825,12 +9815,6 @@
         </ownedOperation>
         <ownedOperation xmi:id="_FVQhbgkkEdyB89eqeGHzkg" name="setIconImage" visibility="public">
           <ownedParameter xmi:id="_FVQhbwkkEdyB89eqeGHzkg" name="arg0" type="_FMm7sQkkEdyB89eqeGHzkg"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_FVQhcAkkEdyB89eqeGHzkg" name="getMenuBar" visibility="public">
-          <ownedParameter xmi:id="_FVQhcQkkEdyB89eqeGHzkg" name="return" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_FVRIcAkkEdyB89eqeGHzkg" name="setMenuBar" visibility="public">
-          <ownedParameter xmi:id="_FVRIcQkkEdyB89eqeGHzkg" name="arg0"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FVRIcgkkEdyB89eqeGHzkg" name="isResizable" visibility="public">
           <ownedParameter xmi:id="_FVRIcwkkEdyB89eqeGHzkg" name="return" type="_FQA1AAkkEdyB89eqeGHzkg" direction="return"/>
