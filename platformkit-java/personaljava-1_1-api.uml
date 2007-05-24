@@ -8187,10 +8187,6 @@
           <ownedParameter xmi:id="_FUcCAQkkEdyB89eqeGHzkg" name="arg0" type="_FMgOAAkkEdyB89eqeGHzkg"/>
           <ownedParameter xmi:id="_FUcCAgkkEdyB89eqeGHzkg" name="return" type="_FMqmEgkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_FUcCAwkkEdyB89eqeGHzkg" name="createScrollbar" visibility="protected" isAbstract="true">
-          <ownedParameter xmi:id="_FUcCBAkkEdyB89eqeGHzkg" name="arg0"/>
-          <ownedParameter xmi:id="_FUcCBQkkEdyB89eqeGHzkg" name="return" type="_FMqmFAkkEdyB89eqeGHzkg" direction="return"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_FUcCBgkkEdyB89eqeGHzkg" name="createScrollPane" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUcCBwkkEdyB89eqeGHzkg" name="arg0" type="_FMdxwwkkEdyB89eqeGHzkg"/>
           <ownedParameter xmi:id="_FUcCCAkkEdyB89eqeGHzkg" name="return" type="_FMrNIQkkEdyB89eqeGHzkg" direction="return"/>
@@ -8223,14 +8219,6 @@
           <ownedParameter xmi:id="_FUcpGgkkEdyB89eqeGHzkg" name="arg0" type="_FMiDMAkkEdyB89eqeGHzkg"/>
           <ownedParameter xmi:id="_FUcpGwkkEdyB89eqeGHzkg" name="return" type="_FMuQdgkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_FUcpHAkkEdyB89eqeGHzkg" name="createMenuBar" visibility="protected" isAbstract="true">
-          <ownedParameter xmi:id="_FUcpHQkkEdyB89eqeGHzkg" name="arg0"/>
-          <ownedParameter xmi:id="_FUcpHgkkEdyB89eqeGHzkg" name="return" type="_FMtCUQkkEdyB89eqeGHzkg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_FUcpHwkkEdyB89eqeGHzkg" name="createMenu" visibility="protected" isAbstract="true">
-          <ownedParameter xmi:id="_FUcpIAkkEdyB89eqeGHzkg" name="arg0"/>
-          <ownedParameter xmi:id="_FUcpIQkkEdyB89eqeGHzkg" name="return" type="_FMtpYQkkEdyB89eqeGHzkg" direction="return"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_FUcpIgkkEdyB89eqeGHzkg" name="createPopupMenu" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUdQIAkkEdyB89eqeGHzkg" name="arg0" type="_FMe_4gkkEdyB89eqeGHzkg"/>
           <ownedParameter xmi:id="_FUdQIQkkEdyB89eqeGHzkg" name="return" type="_FMtpZAkkEdyB89eqeGHzkg" direction="return"/>
@@ -8238,10 +8226,6 @@
         <ownedOperation xmi:id="_FUdQIgkkEdyB89eqeGHzkg" name="createMenuItem" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUdQIwkkEdyB89eqeGHzkg" name="arg0" type="_FMe_4QkkEdyB89eqeGHzkg"/>
           <ownedParameter xmi:id="_FUdQJAkkEdyB89eqeGHzkg" name="return" type="_FMtpYgkkEdyB89eqeGHzkg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_FUdQJQkkEdyB89eqeGHzkg" name="createFileDialog" visibility="protected" isAbstract="true">
-          <ownedParameter xmi:id="_FUdQJgkkEdyB89eqeGHzkg" name="arg0"/>
-          <ownedParameter xmi:id="_FUdQJwkkEdyB89eqeGHzkg" name="return" type="_FMu3gQkkEdyB89eqeGHzkg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:id="_FUdQKAkkEdyB89eqeGHzkg" name="createCheckboxMenuItem" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_FUdQKQkkEdyB89eqeGHzkg" name="arg0"/>
