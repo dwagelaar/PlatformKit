@@ -9,7 +9,7 @@
 	<!ENTITY java "http://ssel.vub.ac.be/codamos/2007/01/Java.owl#">
 	<!ENTITY jdk-1_1 "http://ssel.vub.ac.be/codamos/2007/01/jdk-1_1-api.owl#">
 	<!ENTITY j2me-midp-1_0 "http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-1_0-api.owl#">
-	<!ENTITY DEFAULT "http://ssel.vub.ac.be/codamos/2007/01/personaljava-1_1-api.owl#">
+	<!ENTITY DEFAULT "http://ssel.vub.ac.be/codamos/2007/01/personaljava-1_1-api.owl">
 ]>
 <rdf:RDF
 	 xmlns:xsd="&xsd;"
@@ -28,7 +28,7 @@
 	<owl:Ontology rdf:about="">
 		<owl:imports rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl"/>
 		<owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl"/>
-		<owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/jdk-1_1-api.owl#"/>
+		<owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/jdk-1_1-api.owl"/>
 		<owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-1_0-api.owl"/>
 		<rdfs:comment xml:lang="en">Written by Dennis Wagelaar (24/05/2007)</rdfs:comment>
 		<rdfs:label xml:lang="en">personaljava-1_1</rdfs:label>
