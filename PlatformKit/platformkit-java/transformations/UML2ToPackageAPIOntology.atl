@@ -105,8 +105,7 @@ rule Package {
 	   	language <- 'en',
 		lexicalForm <- 'Platform providing ' + comment.lexicalForm),
 	   intersection : OWL!owl::IntersectionClass (
-	   	OWLIntersectionOf <- refs->collect(r|thisModule->resolveTemp(r, 'platform'))
-			->union(Set{restriction}),
+	   	OWLIntersectionOf <- Set{restriction},
 	   	namespace <- s->getModel()),
 	   restriction : OWL!owl::SomeValuesFromRestriction (
 		OWLOnProperty <- thisModule.platformProvidesFeature,
