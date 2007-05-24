@@ -7,7 +7,7 @@
 	<!ENTITY units "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#">
 	<!ENTITY platform "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#">
 	<!ENTITY java "http://ssel.vub.ac.be/codamos/2007/01/Java.owl#">
-	<!ENTITY DEFAULT "http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-1_0-api.owl#">
+	<!ENTITY DEFAULT "http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-1_0-api.owl">
 ]>
 <rdf:RDF
 	 xmlns:xsd="&xsd;"
