@@ -25830,7 +25830,7 @@
           <ownedAttribute xmi:id="_EPzrYArIEdyoFa24eIsxbw" name="HTTP_UNAVAILABLE" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
           <ownedAttribute xmi:id="_GIWhYArIEdyoFa24eIsxbw" name="HTTP_GATEWAY_TIMEOUT" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
           <ownedAttribute xmi:id="_IBIA4ArIEdyoFa24eIsxbw" name="HTTP_VERSION" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
-          <ownedOperation xmi:id="_L43HcArIEdyoFa24eIsxbw" name="getUrl" visibility="public" isAbstract="true">
+          <ownedOperation xmi:id="_L43HcArIEdyoFa24eIsxbw" name="getURL" visibility="public" isAbstract="true">
             <ownedParameter xmi:id="_PAFXEArIEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:id="_YNWX4ArIEdyoFa24eIsxbw" name="getProtocol" visibility="public" isAbstract="true">
