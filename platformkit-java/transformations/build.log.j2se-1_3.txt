@@ -2,6 +2,322 @@
      [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::sampled compatible packages: Sequence {}
      [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::sampled equivalent packages: Sequence {}
      [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::html::parser referenced packages: Set {J2SE-1_3!util, J2SE-1_3!text, J2SE-1_3!html, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::html::parser compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::html::parser equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::portable referenced packages: Set {J2SE-1_3!math, J2SE-1_3!io, J2SE-1_3!lang, J2SE-1_3!portable, J2SE-1_3!CORBA}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::portable compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::portable equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::math referenced packages: Set {J2SE-1_3!util, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::math compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::math equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::print referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::print compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::print equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::beans::beancontext referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!net, J2SE-1_3!io, J2SE-1_3!lang, J2SE-1_3!util, J2SE-1_3!beans}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::beans::beancontext compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::beans::beancontext equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::DynAnyPackage referenced packages: Set {J2SE-1_3!CORBA, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::DynAnyPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::DynAnyPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::server referenced packages: Set {J2SE-1_3!rmi, J2SE-1_3!reflect, J2SE-1_3!net, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::server compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::server equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::rmi::CORBA referenced packages: Set {J2SE-1_3!portable, J2SE-1_3!rmi, J2SE-1_3!portable, J2SE-1_3!CORBA, J2SE-1_3!io, J2SE-1_3!SendingContext, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::rmi::CORBA compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::rmi::CORBA equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CosNaming::NamingContextPackage referenced packages: Set {J2SE-1_3!portable, J2SE-1_3!CORBA, J2SE-1_3!CosNaming, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CosNaming::NamingContextPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CosNaming::NamingContextPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::midi::spi referenced packages: Set {J2SE-1_3!midi, J2SE-1_3!io, J2SE-1_3!net}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::midi::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::midi::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::event referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!net, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!tree, J2SE-1_3!lang, J2SE-1_3!undo, J2SE-1_3!util, J2SE-1_3!text, J2SE-1_3!event, J2SE-1_3!table, J2SE-1_3!beans}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::event compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::event equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::dnd::peer referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!dnd, J2SE-1_3!datatransfer}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::dnd::peer compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::dnd::peer equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::sampled::spi referenced packages: Set {J2SE-1_3!sampled, J2SE-1_3!io, J2SE-1_3!net}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::sampled::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::sampled::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf::basic referenced packages: Set {J2SE-1_3!event, J2SE-1_3!filechooser, J2SE-1_3!border, J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!text, J2SE-1_3!table, J2SE-1_3!lang, J2SE-1_3!plaf, J2SE-1_3!event, J2SE-1_3!beans, J2SE-1_3!accessibility, J2SE-1_3!tree, J2SE-1_3!util}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf::basic compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf::basic equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::lang referenced packages: Set {J2SE-1_3!util, J2SE-1_3!reflect, J2SE-1_3!net, J2SE-1_3!io, J2SE-1_3!security}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::lang compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::lang equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::midi referenced packages: Set {J2SE-1_3!util, J2SE-1_3!net, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::midi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::midi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::peer referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!lang, J2SE-1_3!event, J2SE-1_3!image}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::peer compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::peer equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::cert referenced packages: Set {J2SE-1_3!util, J2SE-1_3!math, J2SE-1_3!io, J2SE-1_3!security, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::cert compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::cert equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CosNaming referenced packages: Set {J2SE-1_3!portable, J2SE-1_3!CORBA, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CosNaming compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CosNaming equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::lang::ref referenced packages: Set {J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::lang::ref compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::lang::ref equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::text::resources referenced packages: Set {J2SE-1_3!util, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::text::resources compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::text::resources equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!accessibility, J2SE-1_3!lang, J2SE-1_3!tree, J2SE-1_3!text, J2SE-1_3!event, J2SE-1_3!border, J2SE-1_3!filechooser}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::event referenced packages: Set {J2SE-1_3!util, J2SE-1_3!awt, J2SE-1_3!text, J2SE-1_3!font, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::event compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::event equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::lang::reflect referenced packages: Set {J2SE-1_3!io, J2SE-1_3!security, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::lang::reflect compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::lang::reflect equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::registry referenced packages: Set {J2SE-1_3!server, J2SE-1_3!rmi, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::registry compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::registry equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::spi referenced packages: Set {J2SE-1_3!naming, J2SE-1_3!util, J2SE-1_3!directory, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA referenced packages: Set {J2SE-1_3!util, J2SE-1_3!portable, J2SE-1_3!math, J2SE-1_3!applet, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::directory referenced packages: Set {J2SE-1_3!naming, J2SE-1_3!util, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::directory compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::directory equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::border referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::border compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::border equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::filechooser referenced packages: Set {J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::filechooser compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::filechooser equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::dnd referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!peer, J2SE-1_3!lang, J2SE-1_3!util, J2SE-1_3!peer, J2SE-1_3!datatransfer, J2SE-1_3!event}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::dnd compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::dnd equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::beans referenced packages: Set {J2SE-1_3!util, J2SE-1_3!applet, J2SE-1_3!beancontext, J2SE-1_3!awt, J2SE-1_3!reflect, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::beans compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::beans equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::image referenced packages: Set {J2SE-1_3!util, J2SE-1_3!math, J2SE-1_3!geom, J2SE-1_3!color, J2SE-1_3!awt, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::image compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::image equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::SendingContext referenced packages: Set {J2SE-1_3!portable, J2SE-1_3!CORBA}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::SendingContext compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::SendingContext equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security referenced packages: Set {J2SE-1_3!spec, J2SE-1_3!net, J2SE-1_3!io, J2SE-1_3!lang, J2SE-1_3!cert, J2SE-1_3!util}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming referenced packages: Set {J2SE-1_3!util, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::sql referenced packages: Set {J2SE-1_3!util, J2SE-1_3!math, J2SE-1_3!io, J2SE-1_3!security, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::sql compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::sql equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::acl referenced packages: Set {J2SE-1_3!util, J2SE-1_3!security, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::acl compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::acl equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::geom referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::geom compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::geom equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::applet referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!util, J2SE-1_3!net, J2SE-1_3!accessibility, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::applet compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::applet equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::spec referenced packages: Set {J2SE-1_3!math, J2SE-1_3!interfaces, J2SE-1_3!security, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::spec compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::spec equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA_2_3 referenced packages: Set {J2SE-1_3!portable, J2SE-1_3!CORBA, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA_2_3 compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA_2_3 equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::rmi referenced packages: Set {J2SE-1_3!rmi, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::rmi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::rmi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::color referenced packages: Set {J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::color compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::color equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt referenced packages: Set {J2SE-1_3!dnd, J2SE-1_3!image, J2SE-1_3!security, J2SE-1_3!color, J2SE-1_3!text, J2SE-1_3!io, J2SE-1_3!net, J2SE-1_3!renderable, J2SE-1_3!text, J2SE-1_3!datatransfer, J2SE-1_3!peer, J2SE-1_3!lang, J2SE-1_3!peer, J2SE-1_3!event, J2SE-1_3!beans, J2SE-1_3!geom, J2SE-1_3!accessibility, J2SE-1_3!font, J2SE-1_3!util, J2SE-1_3!im}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf::metal referenced packages: Set {J2SE-1_3!event, J2SE-1_3!lang, J2SE-1_3!basic, J2SE-1_3!plaf, J2SE-1_3!event, J2SE-1_3!border, J2SE-1_3!beans, J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!tree}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf::metal compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf::metal equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::transaction referenced packages: Set {J2SE-1_3!rmi, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::transaction compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::transaction equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf::multi referenced packages: Set {J2SE-1_3!lang, J2SE-1_3!plaf, J2SE-1_3!filechooser, J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!accessibility, J2SE-1_3!tree, J2SE-1_3!util, J2SE-1_3!text}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf::multi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::plaf::multi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::text referenced packages: Set {J2SE-1_3!util, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::text compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::text equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::io referenced packages: Set {J2SE-1_3!util, J2SE-1_3!net, J2SE-1_3!security, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::io compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::io equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::net referenced packages: Set {J2SE-1_3!util, J2SE-1_3!jar, J2SE-1_3!io, J2SE-1_3!security, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::net compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::net equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing referenced packages: Set {J2SE-1_3!event, J2SE-1_3!border, J2SE-1_3!filechooser, J2SE-1_3!image, J2SE-1_3!awt, J2SE-1_3!text, J2SE-1_3!io, J2SE-1_3!net, J2SE-1_3!colorchooser, J2SE-1_3!text, J2SE-1_3!table, J2SE-1_3!lang, J2SE-1_3!plaf, J2SE-1_3!event, J2SE-1_3!beans, J2SE-1_3!applet, J2SE-1_3!accessibility, J2SE-1_3!tree, J2SE-1_3!util}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::image::renderable referenced packages: Set {J2SE-1_3!util, J2SE-1_3!geom, J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!image, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::image::renderable compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::image::renderable equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::accessibility referenced packages: Set {J2SE-1_3!util, J2SE-1_3!text, J2SE-1_3!event, J2SE-1_3!awt, J2SE-1_3!beans, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::accessibility compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::accessibility equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::font referenced packages: Set {J2SE-1_3!util, J2SE-1_3!geom, J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!text, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::font compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::font equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::rtf referenced packages: Set {J2SE-1_3!text, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::rtf compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::rtf equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::event referenced packages: Set {J2SE-1_3!naming, J2SE-1_3!util, J2SE-1_3!directory, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::event compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::event equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::tree referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!event, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!lang, J2SE-1_3!util, J2SE-1_3!event, J2SE-1_3!border, J2SE-1_3!beans}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::tree compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::tree equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::activation referenced packages: Set {J2SE-1_3!util, J2SE-1_3!rmi, J2SE-1_3!server, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::activation compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::activation equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::undo referenced packages: Set {J2SE-1_3!util, J2SE-1_3!event, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::undo compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::undo equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::util referenced packages: Set {J2SE-1_3!io, J2SE-1_3!security, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::util compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::util equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::colorchooser referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!event, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::colorchooser compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::colorchooser equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi referenced packages: Set {J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA_2_3::portable referenced packages: Set {J2SE-1_3!CORBA, J2SE-1_3!portable, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA_2_3::portable compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA_2_3::portable equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::dgc referenced packages: Set {J2SE-1_3!rmi, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::dgc compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::rmi::dgc equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text referenced packages: Set {J2SE-1_3!event, J2SE-1_3!basic, J2SE-1_3!lang, J2SE-1_3!plaf, J2SE-1_3!event, J2SE-1_3!awt, J2SE-1_3!text, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!accessibility, J2SE-1_3!tree, J2SE-1_3!undo, J2SE-1_3!util, J2SE-1_3!im}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::im referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!util, J2SE-1_3!text, J2SE-1_3!font, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::im compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::im equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::html referenced packages: Set {J2SE-1_3!event, J2SE-1_3!lang, J2SE-1_3!event, J2SE-1_3!awt, J2SE-1_3!io, J2SE-1_3!net, J2SE-1_3!swing, J2SE-1_3!util, J2SE-1_3!text}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::html compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::html equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::TypeCodePackage referenced packages: Set {J2SE-1_3!CORBA, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::TypeCodePackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::TypeCodePackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::datatransfer referenced packages: Set {J2SE-1_3!util, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::datatransfer compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::datatransfer equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::im::spi referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!util, J2SE-1_3!text, J2SE-1_3!im, J2SE-1_3!font, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::im::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::awt::im::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::ORBPackage referenced packages: Set {J2SE-1_3!CORBA, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::ORBPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::CORBA::ORBPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::table referenced packages: Set {J2SE-1_3!awt, J2SE-1_3!event, J2SE-1_3!io, J2SE-1_3!swing, J2SE-1_3!accessibility, J2SE-1_3!lang, J2SE-1_3!util, J2SE-1_3!plaf, J2SE-1_3!event, J2SE-1_3!border, J2SE-1_3!beans}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::table compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::table equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::stub::java::rmi referenced packages: Set {J2SE-1_3!CORBA, J2SE-1_3!rmi}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::stub::java::rmi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::org::omg::stub::java::rmi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::util::jar referenced packages: Set {J2SE-1_3!util, J2SE-1_3!io, J2SE-1_3!lang, J2SE-1_3!zip}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::util::jar compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::util::jar equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::ldap referenced packages: Set {J2SE-1_3!naming, J2SE-1_3!util, J2SE-1_3!directory, J2SE-1_3!io, J2SE-1_3!lang, J2SE-1_3!event}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::ldap compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::naming::ldap equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::interfaces referenced packages: Set {J2SE-1_3!math, J2SE-1_3!security}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::interfaces compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::security::interfaces equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::util::zip referenced packages: Set {J2SE-1_3!util, J2SE-1_3!io, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::util::zip compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::java::util::zip equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] Package: 'JavaxSoundSampledLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingTextHtmlParserLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgCORBAPortableLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaMathLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtPrintLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaBeansBeancontextLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgCORBADynAnyPackageLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaRmiServerLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxRmiCORBALibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgCosNamingNamingContextPackageLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSoundMidiSpiLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingEventLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtDndPeerLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSoundSampledSpiLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingPlafBasicLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaLangLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSoundMidiLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtPeerLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaSecurityCertLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgCosNamingLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaLangRefLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaTextResourcesLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingPlafLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtEventLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaLangReflectLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaRmiRegistryLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxNamingSpiLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgCORBALibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxNamingDirectoryLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingBorderLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingFilechooserLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtDndLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaBeansLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtImageLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgSendingContextLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaSecurityLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxNamingLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaSqlLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaSecurityAclLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtGeomLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAppletLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaSecuritySpecLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgCORBA_2_3Library'
+     [am3.atl] [j2se-1_3] Package: 'JavaxRmiLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtColorLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingPlafMetalLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxTransactionLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingPlafMultiLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaTextLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaIoLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaNetLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtImageRenderableLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxAccessibilityLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtFontLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingTextRtfLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxNamingEventLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingTreeLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaRmiActivationLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingUndoLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaUtilLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingColorchooserLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaRmiLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgCORBA_2_3PortableLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaRmiDgcLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingTextLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtImLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingTextHtmlLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgCORBATypeCodePackageLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtDatatransferLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaAwtImSpiLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgCORBAORBPackageLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxSwingTableLibrary'
+     [am3.atl] [j2se-1_3] Package: 'OrgOmgStubJavaRmiLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaUtilJarLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaxNamingLdapLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaSecurityInterfacesLibrary'
+     [am3.atl] [j2se-1_3] Package: 'JavaUtilZipLibrary'
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::sampled referenced packages: Set {J2SE-1_3!util, J2SE-1_3!net, J2SE-1_3!io, J2SE-1_3!security, J2SE-1_3!lang}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::sampled compatible packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::sound::sampled equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::html::parser referenced packages: Set {J2SE-1_3!util, J2SE-1_3!text, J2SE-1_3!html, J2SE-1_3!io, J2SE-1_3!lang}
      [am3.atl] [j2se-1_3] j2se-1_3::javax::swing::text::html::parser compatible packages: Sequence {J2SE-1_2!parser}
      [am3.atl] [j2se-1_3] j2se-1_2::javax::swing::text::html::parser::ParserDelegator misses dependency suppliers compatible with : Sequence {J2SE-1_3!Serializable}
      [am3.atl] [j2se-1_3] j2se-1_2::javax::swing::text::html::parser misses classifiers compatible with : Sequence {J2SE-1_3!ParserDelegator}
