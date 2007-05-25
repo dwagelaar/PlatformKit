@@ -2,6 +2,558 @@
      [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::metadata compatible packages: Sequence {}
      [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::metadata equivalent packages: Sequence {}
      [am3.atl] [j2se-1_4] j2se-1_4::java::awt::im::spi referenced packages: Set {J2SE-1_4!font, J2SE-1_4!util, J2SE-1_4!im, J2SE-1_4!swing, J2SE-1_4!text, J2SE-1_4!lang, J2SE-1_4!awt}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::im::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::im::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::im referenced packages: Set {J2SE-1_4!font, J2SE-1_4!util, J2SE-1_4!text, J2SE-1_4!lang, J2SE-1_4!awt}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::im compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::im equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print::attribute::standard referenced packages: Set {J2SE-1_4!attribute, J2SE-1_4!lang, J2SE-1_4!util, J2SE-1_4!net}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print::attribute::standard compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print::attribute::standard equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::css referenced packages: Set {J2SE-1_4!views, J2SE-1_4!lang, J2SE-1_4!dom, J2SE-1_4!stylesheets}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::css compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::css equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::event referenced packages: Set {J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!table, J2SE-1_4!lang, J2SE-1_4!tree, J2SE-1_4!undo, J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!swing, J2SE-1_4!beans, J2SE-1_4!event, J2SE-1_4!text}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::event compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::event equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::ServantLocatorPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::ServantLocatorPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::ServantLocatorPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::DynamicAny::DynAnyPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::DynamicAny::DynAnyPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::DynamicAny::DynAnyPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::activation referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!rmi, J2SE-1_4!lang, J2SE-1_4!server}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::activation compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::activation equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::spi referenced packages: Set {J2SE-1_4!metadata, J2SE-1_4!stream, J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!imageio, J2SE-1_4!lang, J2SE-1_4!image}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::midi referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!net}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::midi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::midi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf referenced packages: Set {J2SE-1_4!accessibility, J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!lang, J2SE-1_4!border, J2SE-1_4!tree, J2SE-1_4!filechooser, J2SE-1_4!swing, J2SE-1_4!event, J2SE-1_4!text}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::directory referenced packages: Set {J2SE-1_4!io, J2SE-1_4!naming, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::directory compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::directory equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::datatransfer referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::datatransfer compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::datatransfer equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::traversal referenced packages: Set {J2SE-1_4!dom}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::traversal compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::traversal equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::callback referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::callback compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::callback equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::events referenced packages: Set {J2SE-1_4!views, J2SE-1_4!lang, J2SE-1_4!dom}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::events compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::events equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::tree referenced packages: Set {J2SE-1_4!io, J2SE-1_4!event, J2SE-1_4!awt, J2SE-1_4!lang, J2SE-1_4!border, J2SE-1_4!util, J2SE-1_4!swing, J2SE-1_4!beans, J2SE-1_4!event}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::tree compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::tree equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::crypto referenced packages: Set {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::crypto compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::crypto equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableInterceptor::ORBInitInfoPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableInterceptor::ORBInitInfoPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableInterceptor::ORBInitInfoPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::event referenced packages: Set {J2SE-1_4!naming, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!directory}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::event compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::event equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::net referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!util, J2SE-1_4!jar, J2SE-1_4!channels, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::net compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::net equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::geom referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!awt}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::geom compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::geom equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::peer referenced packages: Set {J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!lang, J2SE-1_4!event, J2SE-1_4!image}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::peer compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::peer equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CosNaming referenced packages: Set {J2SE-1_4!PortableServer, J2SE-1_4!CORBA, J2SE-1_4!lang, J2SE-1_4!portable}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CosNaming compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CosNaming equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::transaction referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!rmi}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::transaction compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::transaction equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::channels referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!nio, J2SE-1_4!spi, J2SE-1_4!lang, J2SE-1_4!charset}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::channels compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::channels equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::dgc referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!rmi}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::dgc compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::dgc equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::beans referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!awt, J2SE-1_4!lang, J2SE-1_4!beancontext, J2SE-1_4!applet, J2SE-1_4!reflect}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::beans compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::beans equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::portable referenced packages: Set {J2SE-1_4!io, J2SE-1_4!CORBA, J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!math}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::portable compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::portable equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom referenced packages: Set {J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!spec, J2SE-1_4!cert}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::applet referenced packages: Set {J2SE-1_4!accessibility, J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!awt, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::applet compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::applet equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text referenced packages: Set {J2SE-1_4!im, J2SE-1_4!event, J2SE-1_4!plaf, J2SE-1_4!lang, J2SE-1_4!tree, J2SE-1_4!util, J2SE-1_4!swing, J2SE-1_4!accessibility, J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!basic, J2SE-1_4!undo, J2SE-1_4!text, J2SE-1_4!event}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::io referenced packages: Set {J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!channels, J2SE-1_4!lang, J2SE-1_4!security, J2SE-1_4!charset}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::io compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::io equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::accessibility referenced packages: Set {J2SE-1_4!util, J2SE-1_4!awt, J2SE-1_4!lang, J2SE-1_4!beans, J2SE-1_4!event, J2SE-1_4!text}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::accessibility compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::accessibility equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::midi::spi referenced packages: Set {J2SE-1_4!io, J2SE-1_4!net, J2SE-1_4!midi}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::midi::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::midi::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::acl referenced packages: Set {J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::acl compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::acl equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::image::renderable referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!awt, J2SE-1_4!geom, J2SE-1_4!lang, J2SE-1_4!image}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::image::renderable compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::image::renderable equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::plugins::jpeg referenced packages: Set {J2SE-1_4!util, J2SE-1_4!imageio, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::plugins::jpeg compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::plugins::jpeg equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt referenced packages: Set {J2SE-1_4!im, J2SE-1_4!datatransfer, J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!geom, J2SE-1_4!peer, J2SE-1_4!beans, J2SE-1_4!security, J2SE-1_4!text, J2SE-1_4!accessibility, J2SE-1_4!io, J2SE-1_4!renderable, J2SE-1_4!text, J2SE-1_4!image, J2SE-1_4!peer, J2SE-1_4!lang, J2SE-1_4!color, J2SE-1_4!font, J2SE-1_4!dnd, J2SE-1_4!event}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::POAPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::POAPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::POAPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::lang::ref referenced packages: Set {J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::lang::ref compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::lang::ref equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::kerberos referenced packages: Set {J2SE-1_4!auth, J2SE-1_4!io, J2SE-1_4!crypto, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::kerberos compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::kerberos equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::xml::sax::helpers referenced packages: Set {J2SE-1_4!util, J2SE-1_4!sax, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::xml::sax::helpers compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::xml::sax::helpers equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::login referenced packages: Set {J2SE-1_4!callback, J2SE-1_4!auth, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::login compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::login equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::views referenced packages: Set {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::views compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::views equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::Dynamic referenced packages: Set {J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::Dynamic compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::Dynamic equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::table referenced packages: Set {J2SE-1_4!io, J2SE-1_4!accessibility, J2SE-1_4!event, J2SE-1_4!awt, J2SE-1_4!plaf, J2SE-1_4!lang, J2SE-1_4!border, J2SE-1_4!util, J2SE-1_4!swing, J2SE-1_4!beans, J2SE-1_4!event}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::table compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::table equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print::attribute referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!net}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print::attribute compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print::attribute equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::zip referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::zip compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::zip equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::colorchooser referenced packages: Set {J2SE-1_4!io, J2SE-1_4!swing, J2SE-1_4!lang, J2SE-1_4!event, J2SE-1_4!awt}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::colorchooser compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::colorchooser equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::lang::reflect referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::lang::reflect compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::lang::reflect equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::stub::java::rmi referenced packages: Set {J2SE-1_4!rmi, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::stub::java::rmi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::stub::java::rmi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::stream referenced packages: Set {J2SE-1_4!io, J2SE-1_4!nio, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::stream compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::stream equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::IOP::CodecPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::IOP::CodecPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::IOP::CodecPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::text referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::text compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::text equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::TypeCodePackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::TypeCodePackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::TypeCodePackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::jar referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!zip}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::jar compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::jar equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::logging referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!beans, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::logging compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::logging equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::filechooser referenced packages: Set {J2SE-1_4!io, J2SE-1_4!swing, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::filechooser compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::filechooser equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA_2_3 referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA_2_3 compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA_2_3 equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform::stream referenced packages: Set {J2SE-1_4!transform, J2SE-1_4!io, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform::stream compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform::stream equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::IOP::CodecFactoryPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::IOP::CodecFactoryPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::IOP::CodecFactoryPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::ietf::jgss referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!net, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::ietf::jgss compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::ietf::jgss equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::beans::beancontext referenced packages: Set {J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!lang, J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!beans}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::beans::beancontext compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::beans::beancontext equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::charset referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!nio, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::charset compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::charset equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::image referenced packages: Set {J2SE-1_4!util, J2SE-1_4!awt, J2SE-1_4!geom, J2SE-1_4!math, J2SE-1_4!lang, J2SE-1_4!color}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::image compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::image equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::server referenced packages: Set {J2SE-1_4!io, J2SE-1_4!net, J2SE-1_4!rmi, J2SE-1_4!lang, J2SE-1_4!reflect}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::server compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::server equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::ldap referenced packages: Set {J2SE-1_4!io, J2SE-1_4!naming, J2SE-1_4!util, J2SE-1_4!event, J2SE-1_4!lang, J2SE-1_4!directory}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::ldap compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::ldap equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer referenced packages: Set {J2SE-1_4!portable, J2SE-1_4!ServantLocatorPackage, J2SE-1_4!CORBA, J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!POAManagerPackage}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::spi referenced packages: Set {J2SE-1_4!io, J2SE-1_4!naming, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!directory}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio referenced packages: Set {J2SE-1_4!metadata, J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!spi, J2SE-1_4!lang, J2SE-1_4!color, J2SE-1_4!stream, J2SE-1_4!util, J2SE-1_4!event, J2SE-1_4!net, J2SE-1_4!image}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableInterceptor referenced packages: Set {J2SE-1_4!CORBA, J2SE-1_4!IOP, J2SE-1_4!lang, J2SE-1_4!portable}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableInterceptor compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableInterceptor equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print::event referenced packages: Set {J2SE-1_4!util, J2SE-1_4!print, J2SE-1_4!lang, J2SE-1_4!attribute}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print::event compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print::event equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::spi referenced packages: Set {J2SE-1_4!callback, J2SE-1_4!auth, J2SE-1_4!util}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text::html referenced packages: Set {J2SE-1_4!event, J2SE-1_4!lang, J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!swing, J2SE-1_4!text, J2SE-1_4!accessibility, J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!event}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text::html compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text::html equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CosNaming::NamingContextPackage referenced packages: Set {J2SE-1_4!CosNaming, J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CosNaming::NamingContextPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CosNaming::NamingContextPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::lang referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!security, J2SE-1_4!reflect}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::lang compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::lang equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::dnd::peer referenced packages: Set {J2SE-1_4!datatransfer, J2SE-1_4!dnd, J2SE-1_4!awt}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::dnd::peer compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::dnd::peer equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::color referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::color compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::color equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::border referenced packages: Set {J2SE-1_4!io, J2SE-1_4!swing, J2SE-1_4!lang, J2SE-1_4!awt}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::border compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::border equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::stylesheets referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!dom}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::stylesheets compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::stylesheets equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::rmi::CORBA referenced packages: Set {J2SE-1_4!io, J2SE-1_4!SendingContext, J2SE-1_4!rmi, J2SE-1_4!portable, J2SE-1_4!CORBA, J2SE-1_4!lang, J2SE-1_4!portable}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::rmi::CORBA compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::rmi::CORBA equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::CurrentPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::CurrentPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::CurrentPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::font referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!text, J2SE-1_4!awt, J2SE-1_4!geom, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::font compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::font equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::naming equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::SendingContext referenced packages: Set {J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::SendingContext compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::SendingContext equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::print referenced packages: Set {J2SE-1_4!io, J2SE-1_4!print, J2SE-1_4!attribute, J2SE-1_4!lang, J2SE-1_4!awt}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::print compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::print equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::xml::sax referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::xml::sax compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::xml::sax equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CosNaming::NamingContextExtPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CosNaming::NamingContextExtPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CosNaming::NamingContextExtPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::interfaces referenced packages: Set {J2SE-1_4!security, J2SE-1_4!math}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::interfaces compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::interfaces equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::DynamicAny referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::DynamicAny compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::DynamicAny equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text::rtf referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!text}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text::rtf compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text::rtf equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA_2_3::portable referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA_2_3::portable compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA_2_3::portable equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::transaction::xa referenced packages: Set {J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::transaction::xa compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::transaction::xa equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::prefs referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::prefs compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::prefs equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::cert referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!math, J2SE-1_4!x500, J2SE-1_4!lang, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::cert compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::cert equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::math referenced packages: Set {J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::math compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::math equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::xml::sax::ext referenced packages: Set {J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::xml::sax::ext compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::xml::sax::ext equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::html referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!dom}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::html compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::w3c::dom::html equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::sampled::spi referenced packages: Set {J2SE-1_4!sampled, J2SE-1_4!io, J2SE-1_4!net}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::sampled::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::sampled::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::ORBPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::ORBPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::ORBPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform::sax referenced packages: Set {J2SE-1_4!transform, J2SE-1_4!sax, J2SE-1_4!ext, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform::sax compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform::sax equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing referenced packages: Set {J2SE-1_4!event, J2SE-1_4!plaf, J2SE-1_4!datatransfer, J2SE-1_4!tree, J2SE-1_4!util, J2SE-1_4!beans, J2SE-1_4!applet, J2SE-1_4!text, J2SE-1_4!io, J2SE-1_4!accessibility, J2SE-1_4!awt, J2SE-1_4!table, J2SE-1_4!colorchooser, J2SE-1_4!event, J2SE-1_4!net, J2SE-1_4!text, J2SE-1_4!filechooser, J2SE-1_4!image, J2SE-1_4!lang, J2SE-1_4!border}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::sql referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!net, J2SE-1_4!math, J2SE-1_4!lang, J2SE-1_4!security}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::sql compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::sql equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::DynamicAny::DynAnyFactoryPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::DynamicAny::DynAnyFactoryPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::DynamicAny::DynAnyFactoryPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::portable referenced packages: Set {J2SE-1_4!PortableServer, J2SE-1_4!lang, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::portable compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::portable equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::dnd referenced packages: Set {J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!datatransfer, J2SE-1_4!lang, J2SE-1_4!peer, J2SE-1_4!util, J2SE-1_4!peer, J2SE-1_4!event}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::dnd compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::dnd equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text::html::parser referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!html, J2SE-1_4!lang, J2SE-1_4!text}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text::html::parser compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::text::html::parser equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!math, J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!applet}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::parsers referenced packages: Set {J2SE-1_4!io, J2SE-1_4!sax, J2SE-1_4!helpers, J2SE-1_4!lang, J2SE-1_4!dom}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::parsers compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::parsers equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::IOP referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::IOP compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::IOP equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::Messaging referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::Messaging compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::Messaging equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::x500 referenced packages: Set {J2SE-1_4!auth, J2SE-1_4!io, J2SE-1_4!lang, J2SE-1_4!security, J2SE-1_4!cert}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::x500 compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::security::auth::x500 equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio referenced packages: Set {J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::channels::spi referenced packages: Set {J2SE-1_4!channels, J2SE-1_4!util, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::channels::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::channels::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::regex referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::regex compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::util::regex equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sql referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!xa, J2SE-1_4!math, J2SE-1_4!sql, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sql compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sql equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf::basic referenced packages: Set {J2SE-1_4!event, J2SE-1_4!plaf, J2SE-1_4!tree, J2SE-1_4!util, J2SE-1_4!beans, J2SE-1_4!text, J2SE-1_4!io, J2SE-1_4!accessibility, J2SE-1_4!awt, J2SE-1_4!table, J2SE-1_4!filechooser, J2SE-1_4!lang, J2SE-1_4!border, J2SE-1_4!swing, J2SE-1_4!event}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf::basic compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf::basic equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::POAManagerPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!portable, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::POAManagerPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::PortableServer::POAManagerPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::rmi referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!rmi}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::rmi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::rmi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf::metal referenced packages: Set {J2SE-1_4!event, J2SE-1_4!plaf, J2SE-1_4!lang, J2SE-1_4!border, J2SE-1_4!tree, J2SE-1_4!swing, J2SE-1_4!beans, J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!basic, J2SE-1_4!event}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf::metal compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf::metal equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::sampled referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!security, J2SE-1_4!net}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::sampled compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::sound::sampled equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::undo referenced packages: Set {J2SE-1_4!io, J2SE-1_4!util, J2SE-1_4!event, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::undo compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::undo equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::event referenced packages: Set {J2SE-1_4!util, J2SE-1_4!imageio, J2SE-1_4!lang, J2SE-1_4!image}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::event compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::event equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi referenced packages: Set {J2SE-1_4!io, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf::multi referenced packages: Set {J2SE-1_4!plaf, J2SE-1_4!lang, J2SE-1_4!tree, J2SE-1_4!util, J2SE-1_4!swing, J2SE-1_4!text, J2SE-1_4!accessibility, J2SE-1_4!io, J2SE-1_4!awt, J2SE-1_4!filechooser, J2SE-1_4!event}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf::multi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::swing::plaf::multi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::charset::spi referenced packages: Set {J2SE-1_4!util, J2SE-1_4!lang, J2SE-1_4!charset}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::charset::spi compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::nio::charset::spi equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::spec referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!security, J2SE-1_4!interfaces, J2SE-1_4!math}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::spec compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::security::spec equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print referenced packages: Set {J2SE-1_4!io, J2SE-1_4!net, J2SE-1_4!awt, J2SE-1_4!event, J2SE-1_4!lang, J2SE-1_4!attribute}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::print equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::registry referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!rmi, J2SE-1_4!server}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::registry compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::rmi::registry equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform::dom referenced packages: Set {J2SE-1_4!transform, J2SE-1_4!lang, J2SE-1_4!dom}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform::dom compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::xml::transform::dom equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::DynAnyPackage referenced packages: Set {J2SE-1_4!lang, J2SE-1_4!CORBA}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::DynAnyPackage compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::org::omg::CORBA::DynAnyPackage equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::event referenced packages: Set {J2SE-1_4!font, J2SE-1_4!util, J2SE-1_4!text, J2SE-1_4!awt, J2SE-1_4!lang}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::event compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::event equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] Package: 'JavaxImageioMetadataLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtImSpiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtImLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxPrintAttributeStandardLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgW3cDomCssLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingEventLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgPortableServerServantLocatorPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgDynamicAnyDynAnyPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaRmiActivationLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxImageioSpiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSoundMidiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingPlafLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxNamingDirectoryLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtDatatransferLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgW3cDomTraversalLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSecurityAuthCallbackLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgW3cDomEventsLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingTreeLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxCryptoLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaUtilLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgPortableInterceptorORBInitInfoPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxNamingEventLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaNetLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtGeomLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtPeerLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCosNamingLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxTransactionLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaNioChannelsLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaRmiDgcLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaBeansLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCORBAPortableLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgW3cDomLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaSecurityLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAppletLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingTextLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaIoLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxAccessibilityLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSoundMidiSpiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaSecurityAclLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtImageRenderableLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxImageioPluginsJpegLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgPortableServerPOAPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaLangRefLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSecurityAuthKerberosLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgXmlSaxHelpersLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSecurityAuthLoginLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgW3cDomViewsLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgDynamicLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingTableLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxPrintAttributeLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaUtilZipLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingColorchooserLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaLangReflectLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgStubJavaRmiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxImageioStreamLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgIOPCodecPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaTextLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCORBATypeCodePackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaUtilJarLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaUtilLoggingLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingFilechooserLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCORBA_2_3Library'
+     [am3.atl] [j2se-1_4] Package: 'JavaxXmlTransformStreamLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgIOPCodecFactoryPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgIetfJgssLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaBeansBeancontextLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaNioCharsetLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtImageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaRmiServerLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxXmlTransformLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxNamingLdapLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgPortableServerLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxNamingSpiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxImageioLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgPortableInterceptorLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxPrintEventLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSecurityAuthSpiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingTextHtmlLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCosNamingNamingContextPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaLangLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtDndPeerLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtColorLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingBorderLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgW3cDomStylesheetsLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxRmiCORBALibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgPortableServerCurrentPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSecurityAuthLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtFontLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxNamingLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgSendingContextLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtPrintLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgXmlSaxLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCosNamingNamingContextExtPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaSecurityInterfacesLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgDynamicAnyLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingTextRtfLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCORBA_2_3PortableLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxTransactionXaLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaUtilPrefsLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaSecurityCertLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaMathLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgXmlSaxExtLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgW3cDomHtmlLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSoundSampledSpiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCORBAORBPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxXmlTransformSaxLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaSqlLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgDynamicAnyDynAnyFactoryPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgPortableServerPortableLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtDndLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingTextHtmlParserLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCORBALibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxXmlParsersLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgIOPLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgMessagingLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSecurityAuthX500Library'
+     [am3.atl] [j2se-1_4] Package: 'JavaNioLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaNioChannelsSpiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaUtilRegexLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSqlLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingPlafBasicLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgPortableServerPOAManagerPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxRmiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingPlafMetalLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSoundSampledLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingUndoLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxImageioEventLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaRmiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxSwingPlafMultiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaNioCharsetSpiLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaSecuritySpecLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxPrintLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaRmiRegistryLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaxXmlTransformDomLibrary'
+     [am3.atl] [j2se-1_4] Package: 'OrgOmgCORBADynAnyPackageLibrary'
+     [am3.atl] [j2se-1_4] Package: 'JavaAwtEventLibrary'
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::metadata referenced packages: Set {J2SE-1_4!util, J2SE-1_4!imageio, J2SE-1_4!lang, J2SE-1_4!dom}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::metadata compatible packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::javax::imageio::metadata equivalent packages: Sequence {}
+     [am3.atl] [j2se-1_4] j2se-1_4::java::awt::im::spi referenced packages: Set {J2SE-1_4!font, J2SE-1_4!util, J2SE-1_4!im, J2SE-1_4!swing, J2SE-1_4!text, J2SE-1_4!lang, J2SE-1_4!awt}
      [am3.atl] [j2se-1_4] j2se-1_4::java::awt::im::spi compatible packages: Sequence {J2SE-1_3!spi}
      [am3.atl] [j2se-1_4] j2se-1_3::java::awt::im::spi::InputMethodContext misses features compatible with : Sequence {J2SE-1_4!createInputMethodJFrame}
      [am3.atl] [j2se-1_4] j2se-1_3::java::awt::im::spi misses classifiers compatible with : Sequence {J2SE-1_4!InputMethodContext}

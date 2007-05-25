@@ -17,6 +17,122 @@
      [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::xlet::ixc compatible packages: Sequence {}
      [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::xlet::ixc equivalent packages: Sequence {}
      [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang referenced packages: Set {J2ME-PP-1_0!net, J2ME-PP-1_0!util, J2ME-PP-1_0!io, J2ME-PP-1_0!reflect, J2ME-PP-1_0!security}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::util::jar referenced packages: Set {J2ME-PP-1_0!util, J2ME-PP-1_0!lang, J2ME-PP-1_0!io, J2ME-PP-1_0!zip}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::util::jar compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::util::jar equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::applet referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!awt, J2ME-PP-1_0!net, J2ME-PP-1_0!util}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::applet compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::applet equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::acl referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!security, J2ME-PP-1_0!util}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::acl compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::acl equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::beans referenced packages: Set {J2ME-PP-1_0!util, J2ME-PP-1_0!applet, J2ME-PP-1_0!awt, J2ME-PP-1_0!lang, J2ME-PP-1_0!io, J2ME-PP-1_0!reflect}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::beans compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::beans equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::color referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!io}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::color compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::color equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!net, J2ME-PP-1_0!cert, J2ME-PP-1_0!util, J2ME-PP-1_0!io, J2ME-PP-1_0!spec}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::net referenced packages: Set {J2ME-PP-1_0!util, J2ME-PP-1_0!jar, J2ME-PP-1_0!lang, J2ME-PP-1_0!io, J2ME-PP-1_0!security}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::net compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::net equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::cert referenced packages: Set {J2ME-PP-1_0!util, J2ME-PP-1_0!math, J2ME-PP-1_0!lang, J2ME-PP-1_0!io, J2ME-PP-1_0!security}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::cert compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::cert equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::interfaces referenced packages: Set {J2ME-PP-1_0!math, J2ME-PP-1_0!security}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::interfaces compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::interfaces equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::rmi referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!io}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::rmi compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::rmi equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::datatransfer referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!io, J2ME-PP-1_0!util}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::datatransfer compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::datatransfer equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::util referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!io, J2ME-PP-1_0!security}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::util compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::util equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::math referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!util}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::math compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::math equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt referenced packages: Set {J2ME-PP-1_0!text, J2ME-PP-1_0!security, J2ME-PP-1_0!net, J2ME-PP-1_0!datatransfer, J2ME-PP-1_0!event, J2ME-PP-1_0!image, J2ME-PP-1_0!lang, J2ME-PP-1_0!beans, J2ME-PP-1_0!color, J2ME-PP-1_0!util, J2ME-PP-1_0!io, J2ME-PP-1_0!peer}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::event referenced packages: Set {J2ME-PP-1_0!text, J2ME-PP-1_0!util, J2ME-PP-1_0!lang, J2ME-PP-1_0!awt}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::event compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::event equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::io referenced packages: Set {J2ME-PP-1_0!net, J2ME-PP-1_0!lang, J2ME-PP-1_0!security, J2ME-PP-1_0!util}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::io compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::io equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::io referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!io}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::io compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::io equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::rmi::registry referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!rmi}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::rmi::registry compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::rmi::registry equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::util::zip referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!io, J2ME-PP-1_0!util}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::util::zip compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::util::zip equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang::reflect referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!io, J2ME-PP-1_0!security}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang::reflect compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang::reflect equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::spec referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!interfaces, J2ME-PP-1_0!security, J2ME-PP-1_0!math}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::spec compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::security::spec equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::peer referenced packages: Set {J2ME-PP-1_0!image, J2ME-PP-1_0!lang, J2ME-PP-1_0!event, J2ME-PP-1_0!awt, J2ME-PP-1_0!io}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::peer compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::peer equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaxMicroeditionXletLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaTextResourcesLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaAwtImageLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaTextLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaLangRefLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaxMicroeditionXletIxcLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaLangLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaUtilJarLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaAppletLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaSecurityAclLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaBeansLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaAwtColorLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaSecurityLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaNetLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaSecurityCertLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaSecurityInterfacesLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaRmiLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaAwtDatatransferLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaUtilLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaMathLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaAwtLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaAwtEventLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaIoLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaxMicroeditionIoLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaRmiRegistryLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaUtilZipLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaLangReflectLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaSecuritySpecLibrary'
+     [am3.atl] [j2me-pp-1_0] Package: 'JavaAwtPeerLibrary'
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::xlet referenced packages: Set {J2ME-PP-1_0!awt, J2ME-PP-1_0!lang}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::xlet compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::xlet equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::text::resources referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!util}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::text::resources compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::text::resources equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::image referenced packages: Set {J2ME-PP-1_0!math, J2ME-PP-1_0!util, J2ME-PP-1_0!lang, J2ME-PP-1_0!awt, J2ME-PP-1_0!color}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::image compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::awt::image equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::text referenced packages: Set {J2ME-PP-1_0!util, J2ME-PP-1_0!lang, J2ME-PP-1_0!io}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::text compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::text equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang::ref referenced packages: Set {J2ME-PP-1_0!lang}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang::ref compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang::ref equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::xlet::ixc referenced packages: Set {J2ME-PP-1_0!lang, J2ME-PP-1_0!registry, J2ME-PP-1_0!xlet, J2ME-PP-1_0!rmi}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::xlet::ixc compatible packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::javax::microedition::xlet::ixc equivalent packages: Sequence {}
+     [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang referenced packages: Set {J2ME-PP-1_0!net, J2ME-PP-1_0!util, J2ME-PP-1_0!io, J2ME-PP-1_0!reflect, J2ME-PP-1_0!security}
      [am3.atl] [j2me-pp-1_0] j2me-pp-1_0::java::lang compatible packages: Sequence {J2ME-MIDP-1_0!lang}
      [am3.atl] [j2me-pp-1_0] j2me-midp-1_0::java::lang::Exception misses features compatible with : Sequence {J2ME-PP-1_0!getLocalizedMessage, J2ME-PP-1_0!printStackTrace, J2ME-PP-1_0!printStackTrace, J2ME-PP-1_0!fillInStackTrace}
      [am3.atl] [j2me-pp-1_0] j2me-midp-1_0::java::lang::RuntimeException misses features compatible with : Sequence {J2ME-PP-1_0!getLocalizedMessage, J2ME-PP-1_0!printStackTrace, J2ME-PP-1_0!printStackTrace, J2ME-PP-1_0!fillInStackTrace}
