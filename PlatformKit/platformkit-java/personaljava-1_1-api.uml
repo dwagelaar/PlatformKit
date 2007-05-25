@@ -12786,18 +12786,6 @@
         <packagedElement xmi:type="uml:Interface" xmi:id="_FMr0NQkkEdyB89eqeGHzkg" name="PanelPeer" isAbstract="true">
           <generalization xmi:id="_FWepZAkkEdyB89eqeGHzkg" general="_FMpX8AkkEdyB89eqeGHzkg"/>
         </packagedElement>
-        <packagedElement xmi:type="uml:Interface" xmi:id="_FMtCUQkkEdyB89eqeGHzkg" name="MenuBarPeer" isAbstract="true">
-          <generalization xmi:id="_FWepZQkkEdyB89eqeGHzkg" general="_FMtCUgkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FWepZgkkEdyB89eqeGHzkg" name="addMenu" visibility="public" isAbstract="true">
-            <ownedParameter xmi:id="_FWepZwkkEdyB89eqeGHzkg" name="arg0"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FWepaAkkEdyB89eqeGHzkg" name="delMenu" visibility="public" isAbstract="true">
-            <ownedParameter xmi:id="_FWepaQkkEdyB89eqeGHzkg" name="arg0" type="_FQAN8gkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FWepagkkEdyB89eqeGHzkg" name="addHelpMenu" visibility="public" isAbstract="true">
-            <ownedParameter xmi:id="_FWepawkkEdyB89eqeGHzkg" name="arg0"/>
-          </ownedOperation>
-        </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_FMtCUgkkEdyB89eqeGHzkg" name="MenuComponentPeer" isAbstract="true">
           <ownedOperation xmi:id="_FWf3gwkkEdyB89eqeGHzkg" name="dispose" visibility="public" isAbstract="true"/>
         </packagedElement>
@@ -12842,9 +12830,6 @@
           <ownedOperation xmi:id="_FWf3igkkEdyB89eqeGHzkg" name="setIconImage" visibility="public" isAbstract="true">
             <ownedParameter xmi:id="_FWf3iwkkEdyB89eqeGHzkg" name="arg0" type="_FMm7sQkkEdyB89eqeGHzkg"/>
           </ownedOperation>
-          <ownedOperation xmi:id="_FWf3jAkkEdyB89eqeGHzkg" name="setMenuBar" visibility="public" isAbstract="true">
-            <ownedParameter xmi:id="_FWf3jQkkEdyB89eqeGHzkg" name="arg0"/>
-          </ownedOperation>
           <ownedOperation xmi:id="_FWgekAkkEdyB89eqeGHzkg" name="setResizable" visibility="public" isAbstract="true">
             <ownedParameter xmi:id="_FWgekQkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
           </ownedOperation>
@@ -12861,18 +12846,6 @@
           </ownedOperation>
           <ownedOperation xmi:id="_FWgemAkkEdyB89eqeGHzkg" name="setResizable" visibility="public" isAbstract="true">
             <ownedParameter xmi:id="_FWgemQkkEdyB89eqeGHzkg" name="arg0" type="_FQA1AAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Interface" xmi:id="_FMu3gQkkEdyB89eqeGHzkg" name="FileDialogPeer" isAbstract="true">
-          <generalization xmi:id="_FWgemgkkEdyB89eqeGHzkg" general="_FMuQdgkkEdyB89eqeGHzkg"/>
-          <ownedOperation xmi:id="_FWgemwkkEdyB89eqeGHzkg" name="setFile" visibility="public" isAbstract="true">
-            <ownedParameter xmi:id="_FWgenAkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FWgenQkkEdyB89eqeGHzkg" name="setDirectory" visibility="public" isAbstract="true">
-            <ownedParameter xmi:id="_FWhFoAkkEdyB89eqeGHzkg" name="arg0" type="_FK65oAkkEdyB89eqeGHzkg"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_FWhFoQkkEdyB89eqeGHzkg" name="setFilenameFilter" visibility="public" isAbstract="true">
-            <ownedParameter xmi:id="_FWhFogkkEdyB89eqeGHzkg" name="arg0"/>
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_FMu3gwkkEdyB89eqeGHzkg" name="FontPeer" isAbstract="true"/>
