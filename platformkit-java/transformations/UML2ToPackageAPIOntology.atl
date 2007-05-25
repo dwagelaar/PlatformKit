@@ -74,15 +74,16 @@ rule Model {
 rule Package {
 	from s : UML2!uml::Package (thisModule.includedPackages->includes(s))
 	using {
-		refs : Set(UML2!uml::Package) = s.references->debug(s.qualifiedName + ' referenced packages');
-		compatiblePacks : Sequence(UML2!uml::Package) = s.compatibleInPrev->debug(s.qualifiedName + ' compatible packages');
-		equivalentPacks : Sequence(UML2!uml::Package) = compatiblePacks->select(p|p->isCompatibleWith(s))->debug(s.qualifiedName + ' equivalent packages');
+		modelPfx : String = thisModule.modelName.prefix;
+		refs : Set(UML2!uml::Package) = s.references->debug(modelPfx + s.qualifiedName + ' referenced packages');
+		compatiblePacks : Sequence(UML2!uml::Package) = s.compatibleInPrev->debug(modelPfx + s.qualifiedName + ' compatible packages');
+		equivalentPacks : Sequence(UML2!uml::Package) = compatiblePacks->select(p|p->isCompatibleWith(s))->debug(modelPfx + s.qualifiedName + ' equivalent packages');
 		compatibleClasses : Sequence(OWL!owl::OWLClass) = compatiblePacks->collect(p|p.owlClassesInPrev)->flatten();
 		equivalentClasses : Sequence(OWL!owl::OWLClass) = equivalentPacks->collect(p|p.owlClassesInPrev)->flatten();
 		superClasses : Sequence(OWL!owl::OWLClass) = compatibleClasses->select(c|equivalentClasses->excludes(c));
 	}
 	to t : OWL!owl::OWLClass mapsTo s (
-		localName <- (s.ontClassName + 'Library')->debug('Package'),
+		localName <- (s.ontClassName + 'Library')->debug(modelPfx + 'Package'),
 		RDFSSubClassOf <- if superClasses->isEmpty()
 			then thisModule.javaLibrary else superClasses endif,
 		OWLEquivalentClass <- if equivalentClasses->isEmpty()
@@ -92,7 +93,7 @@ rule Package {
 		namespace <- s->getModel()),
 	   comment : OWL!rdfs::PlainLiteral (
 	   	language <- 'en',
-		lexicalForm <- 'JavaLibrary implementing the ' + s.javaQualifiedName + ' package for ' + s->getModel().name)
+		lexicalForm <- 'JavaLibrary implementing the ' + s.javaQualifiedName + ' package for ' + thisModule.modelName)
 }
 
 -- ======================================================================
