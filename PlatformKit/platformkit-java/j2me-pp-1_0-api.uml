@@ -25787,6 +25787,122 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_LDqVsAqEEdyURZSuqjvqSQ" name="javax">
     <packagedElement xmi:type="uml:Package" xmi:id="_LOrS4AqEEdyURZSuqjvqSQ" name="microedition">
       <packagedElement xmi:type="uml:Package" xmi:id="_LOrS4QqEEdyURZSuqjvqSQ" name="io">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_bPuOoQrGEdyoFa24eIsxbw" name="HttpConnection" isAbstract="true">
+          <generalization xmi:id="_pZ_U8ArGEdyoFa24eIsxbw" general="_LOshBQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_uvBf8ArGEdyoFa24eIsxbw" name="HEAD" visibility="public" isStatic="true" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_4SpyUArGEdyoFa24eIsxbw" name="GET" visibility="public" isStatic="true" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_556EAArGEdyoFa24eIsxbw" name="POST" visibility="public" isStatic="true" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_79ynUArGEdyoFa24eIsxbw" name="HTTP_OK" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="__7xf0ArGEdyoFa24eIsxbw" name="HTTP_CREATED" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_BtYAUArHEdyoFa24eIsxbw" name="HTTP_ACCEPTED" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_DajT0ArHEdyoFa24eIsxbw" name="HTTP_NOT_AUTHORITATIVE" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_GKfE0ArHEdyoFa24eIsxbw" name="HTTP_NO_CONTENT" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_IZsHUArHEdyoFa24eIsxbw" name="HTTP_RESET" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_Kn0y0ArHEdyoFa24eIsxbw" name="HTTP_PARTIAL" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_Mpr84ArHEdyoFa24eIsxbw" name="HTTP_MULT_CHOICE" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_O3Sc4ArHEdyoFa24eIsxbw" name="HTTP_MOVED_PERM" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_QvcRUArHEdyoFa24eIsxbw" name="HTTP_MOVED_TEMP" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_S_3b0ArHEdyoFa24eIsxbw" name="HTTP_SEE_OTHER" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_UoPH0ArHEdyoFa24eIsxbw" name="HTTP_NOT_MODIFIED" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_WV9N4ArHEdyoFa24eIsxbw" name="HTTP_USE_PROXY" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_X84IYArHEdyoFa24eIsxbw" name="HTTP_TEMP_REDIRECT" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_aAtBUArHEdyoFa24eIsxbw" name="HTTP_BAD_REQUEST" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_bwZdUArHEdyoFa24eIsxbw" name="HTTP_UNAUTHORIZED" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_daJCUArHEdyoFa24eIsxbw" name="HTTP_PAYMENT_REQUIRED" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_fL5T0ArHEdyoFa24eIsxbw" name="HTTP_FORBIDDEN" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_g5AV4ArHEdyoFa24eIsxbw" name="HTTP_NOT_FOUND" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_i2RT0ArHEdyoFa24eIsxbw" name="HTTP_BAD_METHOD" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_lTI-4ArHEdyoFa24eIsxbw" name="HTTP_NOT_ACCEPTABLE" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_nB604ArHEdyoFa24eIsxbw" name="HTTP_PROXY_AUTH" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_pCjP4ArHEdyoFa24eIsxbw" name="HTTP_CLIENT_TIMEOUT" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_q6Lf4ArHEdyoFa24eIsxbw" name="HTTP_CONFLICT" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_snNCYArHEdyoFa24eIsxbw" name="HTTP_GONE" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_ugvW4ArHEdyoFa24eIsxbw" name="HTTP_LENGTH_REQUIRED" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_ySXOYArHEdyoFa24eIsxbw" name="HTTP_PRECON_FAILED" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_0Oot0ArHEdyoFa24eIsxbw" name="HTTP_ENTITY_TOO_LARGE" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_189Q0ArHEdyoFa24eIsxbw" name="HTTP_REQ_TOO_LONG" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_3sbqYArHEdyoFa24eIsxbw" name="HTTP_UNSUPPORTED_TYPE" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_5fBpYArHEdyoFa24eIsxbw" name="HTTP_UNSUPPORTED_RANGE" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_8U_J4ArHEdyoFa24eIsxbw" name="HTTP_EXPECT_FAILED" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_-Vnk4ArHEdyoFa24eIsxbw" name="HTTP_INTERNAL_ERROR" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_AY2A4ArIEdyoFa24eIsxbw" name="HTTP_NOT_IMPLEMENTED" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_CLXHYArIEdyoFa24eIsxbw" name="HTTP_BAD_GATEWAY" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_EPzrYArIEdyoFa24eIsxbw" name="HTTP_UNAVAILABLE" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_GIWhYArIEdyoFa24eIsxbw" name="HTTP_GATEWAY_TIMEOUT" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedAttribute xmi:id="_IBIA4ArIEdyoFa24eIsxbw" name="HTTP_VERSION" visibility="public" isStatic="true" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+          <ownedOperation xmi:id="_L43HcArIEdyoFa24eIsxbw" name="getUrl" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_PAFXEArIEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_YNWX4ArIEdyoFa24eIsxbw" name="getProtocol" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_YNWX4QrIEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_aNEM4ArIEdyoFa24eIsxbw" name="getHost" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_aNEM4QrIEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_cMtJYArIEdyoFa24eIsxbw" name="getFile" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_cMtJYQrIEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_eNpGYArIEdyoFa24eIsxbw" name="getRef" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_eNpGYQrIEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_gLmn4ArIEdyoFa24eIsxbw" name="getQuery" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_gLmn4QrIEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_h4F-4ArIEdyoFa24eIsxbw" name="getPort" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_h4F-4QrIEdyoFa24eIsxbw" name="return" type="_LPGwuQqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_oAA_YArIEdyoFa24eIsxbw" name="getRequestMethod" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_oAA_YQrIEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_q2IQ4ArIEdyoFa24eIsxbw" name="setRequestMethod" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_q2IQ4QrIEdyoFa24eIsxbw" name="arg0" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_waRO4ArIEdyoFa24eIsxbw" name="getRequestProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_xKHXcArIEdyoFa24eIsxbw" name="arg0" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+            <ownedParameter xmi:id="_waRO4QrIEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_5G7dAArIEdyoFa24eIsxbw" name="setRequestProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_5G7dAQrIEdyoFa24eIsxbw" name="arg0" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+            <ownedParameter xmi:id="_5G7dAgrIEdyoFa24eIsxbw" name="arg1" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-LGhgArIEdyoFa24eIsxbw" name="getResponseCode" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-LGhgQrIEdyoFa24eIsxbw" name="return" type="_LPGwuQqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_AY_8cArJEdyoFa24eIsxbw" name="getResponseMessage" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_AY_8cQrJEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_C2LJgArJEdyoFa24eIsxbw" name="getExpiration" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_C2LJgQrJEdyoFa24eIsxbw" name="return" type="_LQYjFAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_GOUKAArJEdyoFa24eIsxbw" name="getDate" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_GOUKAQrJEdyoFa24eIsxbw" name="return" type="_LQYjFAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_H9_-8ArJEdyoFa24eIsxbw" name="getLastModified" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_H-AmAArJEdyoFa24eIsxbw" name="return" type="_LQYjFAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_Kv2bgArJEdyoFa24eIsxbw" name="getHeaderField" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_Kv2bgQrJEdyoFa24eIsxbw" name="arg0" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+            <ownedParameter xmi:id="_Kv2bggrJEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_PQA0AArJEdyoFa24eIsxbw" name="getHeaderFieldInt" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_PQA0AQrJEdyoFa24eIsxbw" name="arg0" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+            <ownedParameter xmi:id="_SbtT8ArJEdyoFa24eIsxbw" name="arg1" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+            <ownedParameter xmi:id="_T19rcArJEdyoFa24eIsxbw" name="return" type="_LPGwuQqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_XogwAArJEdyoFa24eIsxbw" name="getHeaderFieldDate" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_XogwAQrJEdyoFa24eIsxbw" name="arg0" type="_LLHBgAqEEdyURZSuqjvqSQ"/>
+            <ownedParameter xmi:id="_aaV-cArJEdyoFa24eIsxbw" name="arg1" type="_LQYjFAqEEdyURZSuqjvqSQ"/>
+            <ownedParameter xmi:id="_bb9McArJEdyoFa24eIsxbw" name="return" type="_LQYjFAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_fevscArJEdyoFa24eIsxbw" name="getHeaderField" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_fevscQrJEdyoFa24eIsxbw" name="arg0" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+            <ownedParameter xmi:id="_fevscgrJEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_lR7MAArJEdyoFa24eIsxbw" name="getHeaderFieldKey" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_lR7MAQrJEdyoFa24eIsxbw" name="arg0" type="_LPGwuQqEEdyURZSuqjvqSQ"/>
+            <ownedParameter xmi:id="_lR7MAgrJEdyoFa24eIsxbw" name="return" type="_LLHBgAqEEdyURZSuqjvqSQ" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_LOr58AqEEdyURZSuqjvqSQ" name="InputConnection" isAbstract="true">
           <generalization xmi:id="_L8h3YQqEEdyURZSuqjvqSQ" general="_LOr58QqEEdyURZSuqjvqSQ"/>
           <ownedOperation xmi:id="_L8h3YgqEEdyURZSuqjvqSQ" name="openInputStream" visibility="public" isAbstract="true">
