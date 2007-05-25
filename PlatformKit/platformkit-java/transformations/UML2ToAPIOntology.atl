@@ -54,9 +54,15 @@ helper def : prevPackages : Set(UML2!uml::Package) =
 	UML2!uml::Package->allInstances()->select(p|
 		UML2!uml::Package->allInstancesFrom('IN')->excludes(p));
 
+helper def : modelName : String =
+	UML2!uml::Model->allInstancesFrom('IN')->asSequence()->first().name;
+
 -- ======================================================================
 -- general context helper attributes begin
 -- ======================================================================
+
+helper context String def : prefix : String =
+	'[' + self + '] ';
 
 helper context UML2!uml::NamedElement def : umlQualifiedName : String =
 	if self->oclIsKindOf(UML2!uml::Feature) then
@@ -171,7 +177,7 @@ helper context UML2!uml::Package def : isCompatibleWith(p : UML2!uml::Package) :
 	if self->namedElementIsCompatibleWith(p)
 	then (let compClassifiers : Sequence(UML2!uml::Classifier) = p.allOwnedClassifiers->select(c|not self->hasOwnedClassifierCompatibleWith(c))
 		  in if compClassifiers->isEmpty() then true
-		  	 else compClassifiers->debug(self.qualifiedName + ' misses classifiers compatible with ')->isEmpty() endif)
+		  	 else compClassifiers->debug(thisModule.modelName.prefix + self.qualifiedName + ' misses classifiers compatible with ')->isEmpty() endif)
 	else false endif;
 
 helper context UML2!uml::Package def : hasOwnedClassifierCompatibleWith(c : UML2!uml::Classifier) : Boolean =
@@ -182,10 +188,10 @@ helper context UML2!uml::Classifier def : isCompatibleWith(c : UML2!uml::Classif
 		if (if self.isAbstract then c.isAbstract else true endif) then
 			if (let compGenerals : Sequence(UML2!uml::Classifier) = c.general->select(g|not self->hasGeneralCompatibleWith(g))
 				  in if compGenerals->isEmpty() then true
-				  	 else compGenerals->debug(self.qualifiedName + ' misses generals compatible with ')->isEmpty() endif)
+				  	 else compGenerals->debug(thisModule.modelName.prefix + self.qualifiedName + ' misses generals compatible with ')->isEmpty() endif)
 			then (let compFeatures : Sequence(UML2!uml::Feature) = c->allFeatures()->select(f|not self->hasFeatureCompatibleWith(f))
 				  in if compFeatures->isEmpty() then true
-				  	 else compFeatures->debug(self.qualifiedName + ' misses features compatible with ')->isEmpty() endif)
+				  	 else compFeatures->debug(thisModule.modelName.prefix + self.qualifiedName + ' misses features compatible with ')->isEmpty() endif)
 			else false endif
 		else false endif
 	else false endif;
@@ -253,7 +259,7 @@ helper context UML2!uml::NamedElement def : namedElementIsCompatibleWith(e : UML
 		if (self->oclType() = e->oclType()) and (self->visibilityIsCompatibleWith(e)) then
 			(let compSuppliers : Sequence(UML2!uml::NamedElement) = e.suppliers->select(d|not self->hasSupplierCompatibleWith(d))
 			 in if compSuppliers->isEmpty() then true
-			  	 else compSuppliers->debug(self.qualifiedName + ' misses dependency suppliers compatible with ')->isEmpty() endif)
+			  	 else compSuppliers->debug(thisModule.modelName.prefix + self.qualifiedName + ' misses dependency suppliers compatible with ')->isEmpty() endif)
 		else false endif
 	else false endif;
 
