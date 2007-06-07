@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY j2me-midp-1_0 "http://ssel.vub.ac.be/platformkit/j2me-midp-1_0#">
-	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 	<!ENTITY platform "http://localhost/~dennis/Platform.owl#">
-	<!ENTITY units "http://localhost/~dennis/Units.owl#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 	<!ENTITY java "http://localhost/~dennis/Java.owl#">
+	<!ENTITY units "http://localhost/~dennis/Units.owl#">
+	<!ENTITY j2me-midp-1_0 "http://ssel.vub.ac.be/platformkit/j2me-midp-1_0#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY ns_15 "http://localhost/~dennis/">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 ]>
 <rdf:RDF
-	 xmlns:j2me-midp-1_0="&j2me-midp-1_0;"
-	 xmlns:xsd="&xsd;"
 	 xmlns:platform="&platform;"
-	 xmlns:units="&units;"
+	 xmlns:xsd="&xsd;"
 	 xmlns:java="&java;"
+	 xmlns:units="&units;"
+	 xmlns:j2me-midp-1_0="&j2me-midp-1_0;"
 	 xmlns:rdf="&rdf;"
 	 xmlns:owl="&owl;"
 	 xmlns:ns_15="&ns_15;"
@@ -29,12 +29,12 @@
 		<rdfs:label xml:lang="en">j2me-midp-1_0</rdfs:label>
 	</owl:Ontology>
 	<owl:Class rdf:about="&j2me-midp-1_0;J2me-midp-1_0ClassLibrary">
-		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaxMicroeditionLcduiLibrary"/>
 		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaIoLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaLangLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaxMicroeditionLcduiLibrary"/>
 		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaxMicroeditionIoLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaxMicroeditionMidletLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaLangLibrary"/>
 		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaUtilLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaxMicroeditionMidletLibrary"/>
 		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaxMicroeditionRmsLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the entire API for j2me-midp-1_0</rdfs:comment>
 	</owl:Class>
@@ -48,6 +48,11 @@
 		</rdfs:subClassOf>
 		<rdfs:comment xml:lang="en">j2me-midp-1_0 Java Runtime Environment</rdfs:comment>
 	</owl:Class>
+	<owl:Class rdf:about="&j2me-midp-1_0;JavaIoLibrary">
+		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaLangLibrary"/>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.io package for j2me-midp-1_0</rdfs:comment>
+	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-1_0;JavaxMicroeditionLcduiLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaLangLibrary"/>
@@ -55,31 +60,26 @@
 		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaxMicroeditionMidletLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.lcdui package for j2me-midp-1_0</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&j2me-midp-1_0;JavaIoLibrary">
+	<owl:Class rdf:about="&j2me-midp-1_0;JavaxMicroeditionIoLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaIoLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaLangLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.io package for j2me-midp-1_0</rdfs:comment>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.io package for j2me-midp-1_0</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-1_0;JavaLangLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaIoLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.lang package for j2me-midp-1_0</rdfs:comment>
 	</owl:Class>
-	<owl:Class rdf:about="&j2me-midp-1_0;JavaxMicroeditionIoLibrary">
+	<owl:Class rdf:about="&j2me-midp-1_0;JavaUtilLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaIoLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.io package for j2me-midp-1_0</rdfs:comment>
+		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.util package for j2me-midp-1_0</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-1_0;JavaxMicroeditionMidletLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.midlet package for j2me-midp-1_0</rdfs:comment>
-	</owl:Class>
-	<owl:Class rdf:about="&j2me-midp-1_0;JavaUtilLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&j2me-midp-1_0;JavaLangLibrary"/>
-		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.util package for j2me-midp-1_0</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-1_0;JavaxMicroeditionRmsLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
