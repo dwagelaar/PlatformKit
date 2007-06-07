@@ -20399,18 +20399,6 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_NJEGtRRuEdyqhKrSw1_-eA" name="applet">
       <packagedElement xmi:type="uml:Class" xmi:id="_M9RGYhRuEdyqhKrSw1_-eA" name="Applet">
         <generalization xmi:id="_NmuTEhRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9gW8hRuEdyqhKrSw1_-eA"/>
-        <nestedClassifier xmi:type="uml:Class" xmi:id="_Nt-KkxRuEdyqhKrSw1_-eA" name="AccessibleApplet">
-          <generalization xmi:id="_Nt-KlBRuEdyqhKrSw1_-eA" general="_M9rWEhRuEdyqhKrSw1_-eA"/>
-          <ownedOperation xmi:id="_M6PnmBRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="protected">
-            <ownedParameter xmi:id="_MnrQ7BRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_M9RGYhRuEdyqhKrSw1_-eA" effect="create"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_M2z5EhRuEdyqhKrSw1_-eA" name="getAccessibleRole" visibility="public">
-            <ownedParameter xmi:id="_Mq15qRRuEdyqhKrSw1_-eA" name="return" visibility="public" direction="return" effect="create"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_M4bCpBRuEdyqhKrSw1_-eA" name="getAccessibleStateSet" visibility="public">
-            <ownedParameter xmi:id="_Mp-W8RRuEdyqhKrSw1_-eA" name="return" visibility="public" direction="return" effect="create"/>
-          </ownedOperation>
-        </nestedClassifier>
         <ownedOperation xmi:id="_M0oHwBRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public"/>
         <ownedOperation xmi:id="_M20gKBRuEdyqhKrSw1_-eA" name="setStub" visibility="public">
           <ownedParameter xmi:id="_MtQ7iBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NYx9sBRuEdyqhKrSw1_-eA" effect="create"/>
@@ -20483,9 +20471,6 @@
         <ownedOperation xmi:id="_M3J3VhRuEdyqhKrSw1_-eA" name="start" visibility="public"/>
         <ownedOperation xmi:id="_M1iGsxRuEdyqhKrSw1_-eA" name="stop" visibility="public"/>
         <ownedOperation xmi:id="_M5eLhBRuEdyqhKrSw1_-eA" name="destroy" visibility="public"/>
-        <ownedOperation xmi:id="_M2mdshRuEdyqhKrSw1_-eA" name="getAccessibleContext" visibility="public">
-          <ownedParameter xmi:id="_MvCdJBRuEdyqhKrSw1_-eA" name="return" visibility="public" direction="return" effect="create"/>
-        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_NYx9sBRuEdyqhKrSw1_-eA" name="AppletStub" isAbstract="true">
         <ownedOperation xmi:id="_M0zt-RRuEdyqhKrSw1_-eA" name="isActive" visibility="public" isAbstract="true">
