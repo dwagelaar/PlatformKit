@@ -22043,42 +22043,6 @@
           <ownedParameter xmi:id="_MtI_shRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M9iMIhRuEdyqhKrSw1_-eA" name="ConnectException">
-        <generalization xmi:id="_NnB1FxRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M3wUQRRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MqxBJxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M2ESMxRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MvQfkxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MoLAIhRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M-DJgBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M9UJsxRuEdyqhKrSw1_-eA" name="ConnectIOException">
-        <generalization xmi:id="_Nm2O5hRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M3OIyBRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Ms9ZhxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M4IuwhRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Mug4thRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MqVjWRRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M-DJgBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M98b0BRuEdyqhKrSw1_-eA" name="MarshalException">
-        <generalization xmi:id="_Nm__5RRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M7KNkhRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MqetSBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M2GHYRRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MpvtdRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MtVM8hRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M-DJgBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M9tyURRuEdyqhKrSw1_-eA" name="NoSuchObjectException">
-        <generalization xmi:id="_NnGGhRRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M1HP9xRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MtdIwhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_M9ESERRuEdyqhKrSw1_-eA" name="NotBoundException">
         <generalization xmi:id="_Nm0ZuBRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M-DJgBRuEdyqhKrSw1_-eA"/>
         <ownedOperation xmi:id="_M3BUchRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public"/>
@@ -22086,55 +22050,7 @@
           <ownedParameter xmi:id="_MuecdxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M89kYhRuEdyqhKrSw1_-eA" name="RMISecurityException">
-        <generalization xmi:id="_NmxWZRRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M94KYhRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M6W8WRRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Mt4mkhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M43HghRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Mq3HxBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Mu22-BRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M9oSwRRuEdyqhKrSw1_-eA" name="RMISecurityManager">
-        <generalization xmi:id="_NnGtlBRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_NtqBgBRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M1-LlRRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public"/>
-      </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_NY7ushRuEdyqhKrSw1_-eA" name="Remote" isAbstract="true"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M9koYxRuEdyqhKrSw1_-eA" name="ServerError">
-        <generalization xmi:id="_NnGtlxRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M3U2chRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Mnm_dRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MpX6BhRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M928QBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M-OvsBRuEdyqhKrSw1_-eA" name="ServerException">
-        <generalization xmi:id="_NnBOAhRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M6jwpxRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MpTomhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M7fkxxRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MrvRiBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MvUxBhRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M-DJgBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M9Wl8RRuEdyqhKrSw1_-eA" name="ServerRuntimeException">
-        <generalization xmi:id="_NnB1ExRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M7j2NxRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MpywyxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Msth4RRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M-DJgBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M94KYRRuEdyqhKrSw1_-eA" name="StubNotFoundException">
-        <generalization xmi:id="_NnGGhhRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M7GjNBRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Mn4FOhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M4QDhxRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MsEotRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MrqZBRRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M-DJgBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_M9l2gBRuEdyqhKrSw1_-eA" name="UnexpectedException">
         <generalization xmi:id="_Nm6gVBRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
         <ownedOperation xmi:id="_M7asRhRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
@@ -22143,26 +22059,6 @@
         <ownedOperation xmi:id="_M4QqkxRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
           <ownedParameter xmi:id="_MvOqYhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_MpyJtRRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M-DJgBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M90gARRuEdyqhKrSw1_-eA" name="UnknownHostException">
-        <generalization xmi:id="_Nm9joBRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M3nxaRRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Mse4ZRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M4tWhRRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Mp9v6hRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MuJFRhRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M-DJgBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_M-OIoRRuEdyqhKrSw1_-eA" name="UnmarshalException">
-        <generalization xmi:id="_NnERURRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9uZYxRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M6Jg9hRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MsgtlxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M1nmQBRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MpeAqRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MphD-RRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_M-DJgBRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_NJFU0hRuEdyqhKrSw1_-eA" name="registry">
@@ -22188,91 +22084,6 @@
             <ownedParameter xmi:id="_Mp8hxxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_MzUgNRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
           </ownedOperation>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_NtqokhRuEdyqhKrSw1_-eA" name="LocateRegistry">
-          <generalization xmi:id="_NtqokxRuEdyqhKrSw1_-eA" general="_M9rWEhRuEdyqhKrSw1_-eA"/>
-          <ownedOperation xmi:id="_M5D70RRuEdyqhKrSw1_-eA" name="getRegistry" visibility="public" isStatic="true">
-            <ownedParameter xmi:id="_MoBPIRRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY2PIRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_M1BwYRRuEdyqhKrSw1_-eA" name="getRegistry" visibility="public" isStatic="true">
-            <ownedParameter xmi:id="_Mo71KxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_MoxdERRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY2PIRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_M7mScxRuEdyqhKrSw1_-eA" name="getRegistry" visibility="public" isStatic="true">
-            <ownedParameter xmi:id="_MpM66RRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_Mo-4chRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY2PIRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_M54bNBRuEdyqhKrSw1_-eA" name="getRegistry" visibility="public" isStatic="true">
-            <ownedParameter xmi:id="_MtDgJBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_MtchuhRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_Ms8LYxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY2PIRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_M15TFBRuEdyqhKrSw1_-eA" name="getRegistry" visibility="public" isStatic="true">
-            <ownedParameter xmi:id="_Mpi5KhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_MsopZxRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_MmygEhRuEdyqhKrSw1_-eA" name="arg2" visibility="public" effect="create"/>
-            <ownedParameter xmi:id="_MniG-BRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY2PIRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_M7K0ohRuEdyqhKrSw1_-eA" name="createRegistry" visibility="public" isStatic="true">
-            <ownedParameter xmi:id="_Mo5_9RRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_Mtj2eRRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY2PIRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_M2phARRuEdyqhKrSw1_-eA" name="createRegistry" visibility="public" isStatic="true">
-            <ownedParameter xmi:id="_MsNyohRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_Mv9qORRuEdyqhKrSw1_-eA" name="arg1" visibility="public" effect="create"/>
-            <ownedParameter xmi:id="_MtTXyRRuEdyqhKrSw1_-eA" name="arg2" visibility="public" effect="create"/>
-            <ownedParameter xmi:id="_MvYbaBRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY2PIRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-          </ownedOperation>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Interface" xmi:id="_NY2PIhRuEdyqhKrSw1_-eA" name="RegistryHandler" isAbstract="true">
-          <ownedOperation xmi:id="_M6BlJxRuEdyqhKrSw1_-eA" name="registryStub" visibility="public" isAbstract="true">
-            <ownedParameter xmi:id="_Mmx5CRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_MtrySBRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_Mm2KehRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY2PIRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-          </ownedOperation>
-          <ownedOperation xmi:id="_M21uRRRuEdyqhKrSw1_-eA" name="registryImpl" visibility="public" isAbstract="true">
-            <ownedParameter xmi:id="_MuqCoBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-            <ownedParameter xmi:id="_MtbTkxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY2PIRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-          </ownedOperation>
-        </packagedElement>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_NuUI0RRuEdyqhKrSw1_-eA" name="MarshalledObject" clientDependency="_MwWEuBRuEdyqhKrSw1_-eA">
-        <generalization xmi:id="_NuUv4BRuEdyqhKrSw1_-eA" general="_M9rWEhRuEdyqhKrSw1_-eA"/>
-        <interfaceRealization xmi:id="_MwWEuBRuEdyqhKrSw1_-eA" supplier="_NY6gkhRuEdyqhKrSw1_-eA" client="_NuUI0RRuEdyqhKrSw1_-eA" contract="_NY6gkhRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M60PVRRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MpufXBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_M9rWEhRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M5ZTAhRuEdyqhKrSw1_-eA" name="get" visibility="public">
-          <ownedParameter xmi:id="_MtLb9BRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_M9rWEhRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M2izVBRuEdyqhKrSw1_-eA" name="hashCode" visibility="public">
-          <ownedParameter xmi:id="_Mpq0-hRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M2An0BRuEdyqhKrSw1_-eA" name="equals" visibility="public">
-          <ownedParameter xmi:id="_Mm1jZRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_M9rWEhRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Mp6FhxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_NukAchRuEdyqhKrSw1_-eA" name="Naming">
-        <generalization xmi:id="_NukAcxRuEdyqhKrSw1_-eA" general="_M9rWEhRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M5VBlxRuEdyqhKrSw1_-eA" name="lookup" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_MreLwBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Mo28oBRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NY7ushRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M6amthRuEdyqhKrSw1_-eA" name="bind" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_MrmuphRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MnOk9xRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NY7ushRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M602ZxRuEdyqhKrSw1_-eA" name="unbind" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_MuIeMxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M3JQQxRuEdyqhKrSw1_-eA" name="rebind" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_Mtu1mBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MrlgghRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NY7ushRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M1RoBxRuEdyqhKrSw1_-eA" name="list" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_Mva3oRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MrO7NBRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_MzUgNRRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
       </packagedElement>
     </packagedElement>
   </packagedElement>
