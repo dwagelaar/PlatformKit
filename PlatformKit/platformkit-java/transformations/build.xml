@@ -108,7 +108,7 @@
 	
 	<target name="pre-transform" depends="loadModels">
 		<nice currentpriority="curpri" newpriority="1"/>
-		<parallel threadCount="4"><!-- start heaviest task first -->
+		<parallel><!-- threadCount="4"--><!-- start heaviest task first -->
 			<preUML2ToAPIOntology in="J2SE-1_5"      out="preJ2SE-1_5_OWL"    path="/platformkit-java/j2se-1_5-api.owl"/>
 			<preUML2ToAPIOntology in="J2SE-1_4"      out="preJ2SE-1_4_OWL"    path="/platformkit-java/j2se-1_4-api.owl"/>
 			<preUML2ToAPIOntology in="J2SE-1_3"      out="preJ2SE-1_3_OWL"    path="/platformkit-java/j2se-1_3-api.owl"/>
@@ -123,7 +123,7 @@
 	
 	<target name="transform" depends="pre-transform">
 		<nice currentpriority="curpri" newpriority="1"/>
-		<parallel threadCount="4"><!-- start heaviest task first -->
+		<parallel><!-- threadCount="4"--><!-- start heaviest task first -->
 			<UML2ToAPIOntology1 in="J2SE-1_5"    prevout="preJ2SE-1_4_OWL"   previn="J2SE-1_4"      out="J2SE-1_5_OWL"            path="/platformkit-java/j2se-1_5-api.owl"/>
 			<UML2ToAPIOntology1 in="J2SE-1_4"    prevout="preJ2SE-1_3_OWL"   previn="J2SE-1_3"      out="J2SE-1_4_OWL"            path="/platformkit-java/j2se-1_4-api.owl"/>
 			<UML2ToAPIOntology2 in="J2SE-1_3"    prevout="preJ2SE-1_2_OWL"   previn="J2SE-1_2"      prevout2="preJ2ME-PP-1_0_OWL" previn2="J2ME-PP-1_0"                             out="J2SE-1_3_OWL"    path="/platformkit-java/j2se-1_3-api.owl"/>
