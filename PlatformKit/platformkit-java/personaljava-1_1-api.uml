@@ -8300,10 +8300,6 @@
           <ownedParameter xmi:id="_URZQyhRtEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_UbBt4hRtEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_UT7AVhRtEdyqhKrSw1_-eA" name="return" visibility="public" type="_Uo2uiRRtEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_UZMh5RRtEdyqhKrSw1_-eA" name="createCheckboxMenuItem" visibility="protected" isAbstract="true">
-          <ownedParameter xmi:id="_UT5yNBRtEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
-          <ownedParameter xmi:id="_UTcfOBRtEdyqhKrSw1_-eA" name="return" visibility="public" type="_Uo5KwRRtEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_UXvwaxRtEdyqhKrSw1_-eA" name="createComponent" visibility="protected">
           <ownedParameter xmi:id="_URcUGBRtEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_UzsFgBRtEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_UTneURRtEdyqhKrSw1_-eA" name="return" visibility="public" type="_Uo1gaRRtEdyqhKrSw1_-eA" direction="return" effect="create"/>
