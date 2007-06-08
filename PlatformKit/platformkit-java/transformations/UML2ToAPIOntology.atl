@@ -113,16 +113,20 @@ helper context UML2!uml::Classifier def : references : Set(UML2!uml::Classifier)
 -- helper attributes for determining compatibility
 -- ======================================================================
 
+helper context UML2!uml::Interface def : suppliers : Set(UML2!uml::NamedElement) =
+	self.clientDependency->collect(d|d.supplier
+			->select(n|not n.name->oclIsUndefined())
+		)->flatten()->asSet()
+	->union(self.general);
+
 helper context UML2!uml::NamedElement def : suppliers : Set(UML2!uml::NamedElement) =
 	self.clientDependency->collect(d|d.supplier
 			->select(n|not n.name->oclIsUndefined())
 		)->flatten()->asSet();
 
 helper context UML2!uml::NamedElement def : allSuppliers : Set(UML2!uml::NamedElement) =
-	self.clientDependency->collect(d|d.supplier
-			->union(d.supplier->collect(s1|s1.allSuppliers)->flatten())
-			->select(n|not n.name->oclIsUndefined())
-		)->flatten()->asSet();
+	self.suppliers->union(
+		self.suppliers->collect(s|s.allSuppliers)->flatten())->asSet();
 
 helper context UML2!uml::NamedElement def : owlClassesInPrev : Sequence(OWL!owl::OWLClass) =
 	OWL!owl::OWLClass->allInstances()
