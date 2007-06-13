@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launchConfiguration type="org.atl.eclipse.adt.launching.atlTransformation">
 <mapAttribute key="Model Handler">
-<mapEntry key="OUT" value=""/>
-<mapEntry key="JAVA" value=""/>
 <mapEntry key="UML2" value="EMF"/>
-<mapEntry key="PLATFORM" value=""/>
 <mapEntry key="OWL" value="EMF"/>
-<mapEntry key="IN" value=""/>
 </mapAttribute>
-<stringAttribute key="ATL File Name" value="/platformkit-java/transformations/UML2ToAPIOntology.atl"/>
 <mapAttribute key="Libs"/>
+<stringAttribute key="ATL VM" value="Regular VM (with debugger)"/>
 <booleanAttribute key="Mode Debug" value="false"/>
+<stringAttribute key="Project Name" value="platformkit-java"/>
 <mapAttribute key="ModelType">
 <mapEntry key="OUT" value="MODELOUTPUT"/>
 <mapEntry key="JAVA" value="MODELINPUT"/>
@@ -19,6 +16,22 @@
 <mapEntry key="OWL" value="METAMODELOUTPUT"/>
 <mapEntry key="IN" value="MODELINPUT"/>
 </mapAttribute>
+<mapAttribute key="Output">
+<mapEntry key="OUT" value="OWL"/>
+</mapAttribute>
+<booleanAttribute key="ContinueAfterError" value="false"/>
+<booleanAttribute key="profile" value="false"/>
+<booleanAttribute key="AllowInterModelReferences" value="true"/>
+<mapAttribute key="Input">
+<mapEntry key="JAVA" value="OWL"/>
+<mapEntry key="PLATFORM" value="OWL"/>
+<mapEntry key="IN" value="UML2"/>
+</mapAttribute>
+<booleanAttribute key="printExecutionTime" value="true"/>
+<booleanAttribute key="disableAttributeHelperCache" value="false"/>
+<stringAttribute key="ATL File Name" value="/platformkit-java/transformations/UML2ToAPIOntology.atl"/>
+<booleanAttribute key="continueAfterError" value="false"/>
+<booleanAttribute key="showSummary" value="false"/>
 <mapAttribute key="Path">
 <mapEntry key="OUT" value="/platformkit-java/j2me-midp-1_0-api.owl"/>
 <mapEntry key="JAVA" value="/platformkit-java/Java.owl"/>
@@ -27,17 +40,7 @@
 <mapEntry key="OWL" value="uri:http:///org/eclipse/owl.ecore"/>
 <mapEntry key="IN" value="/platformkit-java/j2me-midp-1_0-api.uml"/>
 </mapAttribute>
-<stringAttribute key="Project Name" value="platformkit-java"/>
-<mapAttribute key="Output">
-<mapEntry key="OUT" value="OWL"/>
-</mapAttribute>
-<booleanAttribute key="ContinueAfterError" value="false"/>
-<mapAttribute key="Input">
-<mapEntry key="JAVA" value="OWL"/>
-<mapEntry key="PLATFORM" value="OWL"/>
-<mapEntry key="IN" value="UML2"/>
-</mapAttribute>
-<booleanAttribute key="AllowInterModelReferences" value="true"/>
+<booleanAttribute key="step" value="false"/>
 <listAttribute key="Superimpose">
 <listEntry value="/platformkit-java/transformations/UML2ToPackageAPIOntology.asm"/>
 </listAttribute>
