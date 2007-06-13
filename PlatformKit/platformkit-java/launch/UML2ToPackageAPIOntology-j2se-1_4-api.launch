@@ -37,14 +37,14 @@
 <booleanAttribute key="continueAfterError" value="false"/>
 <booleanAttribute key="showSummary" value="false"/>
 <mapAttribute key="Path">
-<mapEntry key="OUT" value="/platformkit-java/jdk-1_1-api.owl"/>
+<mapEntry key="OUT" value="/platformkit-java/j2se-1_4-api.owl"/>
 <mapEntry key="JAVA" value="/platformkit-java/Java.owl"/>
 <mapEntry key="UML2" value="uri:http://www.eclipse.org/uml2/2.0.0/UML"/>
-<mapEntry key="PREVOUT" value="/platformkit-java/j2me-midp-1_0-api.owl"/>
+<mapEntry key="PREVOUT" value="/platformkit-java/j2se-1_3-api.owl"/>
 <mapEntry key="PLATFORM" value="/platformkit-java/Platform.owl"/>
-<mapEntry key="PREVIN" value="/platformkit-java/j2me-midp-1_0-api.uml"/>
+<mapEntry key="PREVIN" value="/platformkit-java/j2se-1_3-api.uml"/>
 <mapEntry key="OWL" value="uri:http:///org/eclipse/owl.ecore"/>
-<mapEntry key="IN" value="/platformkit-java/jdk-1_1-api.uml"/>
+<mapEntry key="IN" value="/platformkit-java/j2se-1_4-api.uml"/>
 </mapAttribute>
 <booleanAttribute key="step" value="false"/>
 <listAttribute key="Superimpose">
