@@ -1,217 +1,217 @@
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security referenced packages: Set {JDK-1_1!util, JDK-1_1!io, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::math referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::math compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::math equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text referenced packages: Set {JDK-1_1!io, JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::event referenced packages: Set {JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::event compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::event equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::acl referenced packages: Set {JDK-1_1!lang, JDK-1_1!security, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::acl compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::acl equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::datatransfer referenced packages: Set {JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::datatransfer compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::datatransfer equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang::reflect referenced packages: Set {JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang::reflect compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang::reflect equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::beans referenced packages: Set {JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!io, JDK-1_1!lang, JDK-1_1!awt}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::beans compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::beans equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::image referenced packages: Set {JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::image compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::image equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang referenced packages: Set {JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!io, JDK-1_1!net}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::sql referenced packages: Set {JDK-1_1!io, JDK-1_1!lang, JDK-1_1!util, JDK-1_1!math}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::sql compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::sql equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text::resources referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text::resources compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text::resources equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::interfaces referenced packages: Set {JDK-1_1!security, JDK-1_1!math}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::interfaces compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::interfaces equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util::zip referenced packages: Set {JDK-1_1!io, JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util::zip compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util::zip equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::registry referenced packages: Set {JDK-1_1!rmi, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::registry compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::registry equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util referenced packages: Set {JDK-1_1!io, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::applet referenced packages: Set {JDK-1_1!net, JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::applet compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::applet equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::peer referenced packages: Set {JDK-1_1!io, JDK-1_1!image, JDK-1_1!lang, JDK-1_1!awt}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::peer compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::peer equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi referenced packages: Set {JDK-1_1!io, JDK-1_1!net, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::io referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::io compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::io equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::server referenced packages: Set {JDK-1_1!rmi, JDK-1_1!io, JDK-1_1!net, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::server compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::server equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::dgc referenced packages: Set {JDK-1_1!io, JDK-1_1!rmi, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::dgc compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::dgc equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::net referenced packages: Set {JDK-1_1!io, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::net compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::net equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt referenced packages: Set {JDK-1_1!datatransfer, JDK-1_1!io, JDK-1_1!event, JDK-1_1!image, JDK-1_1!lang, JDK-1_1!util, JDK-1_1!peer, JDK-1_1!net}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] Package: 'JavaSecurityLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaMathLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaTextLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtEventLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaSecurityAclLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtDatatransferLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaLangReflectLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaBeansLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtImageLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaLangLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaSqlLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaTextResourcesLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaSecurityInterfacesLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaUtilZipLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaRmiRegistryLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaUtilLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAppletLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtPeerLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaRmiLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaIoLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaRmiServerLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaRmiDgcLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaNetLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtLibrary'
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security referenced packages: Set {JDK-1_1!util, JDK-1_1!io, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::math referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::math compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::math equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text referenced packages: Set {JDK-1_1!io, JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text compatible packages: Sequence {PJ-1_1!text}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text equivalent packages: Sequence {PJ-1_1!text}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::event referenced packages: Set {JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::event compatible packages: Sequence {PJ-1_1!event}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::event equivalent packages: Sequence {PJ-1_1!event}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::acl referenced packages: Set {JDK-1_1!lang, JDK-1_1!security, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::acl compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::acl equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::datatransfer referenced packages: Set {JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::datatransfer compatible packages: Sequence {PJ-1_1!datatransfer}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::datatransfer equivalent packages: Sequence {PJ-1_1!datatransfer}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang::reflect referenced packages: Set {JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang::reflect compatible packages: Sequence {PJ-1_1!reflect}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang::reflect equivalent packages: Sequence {PJ-1_1!reflect}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::beans referenced packages: Set {JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!io, JDK-1_1!lang, JDK-1_1!awt}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::beans compatible packages: Sequence {PJ-1_1!beans}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::beans equivalent packages: Sequence {PJ-1_1!beans}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::image referenced packages: Set {JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::image compatible packages: Sequence {PJ-1_1!image}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::image equivalent packages: Sequence {PJ-1_1!image}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang referenced packages: Set {JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!io, JDK-1_1!net}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang compatible packages: Sequence {PJ-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::lang equivalent packages: Sequence {PJ-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::sql referenced packages: Set {JDK-1_1!io, JDK-1_1!lang, JDK-1_1!util, JDK-1_1!math}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::sql compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::sql equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text::resources referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text::resources compatible packages: Sequence {PJ-1_1!resources}
-     [am3.atl] [jdk-1_1] personaljava-1_1::java::text::resources misses classifiers compatible with : Sequence {JDK-1_1!DateFormatZoneData_ar, JDK-1_1!DateFormatZoneData_be, JDK-1_1!DateFormatZoneData_bg, JDK-1_1!DateFormatZoneData_ca, JDK-1_1!DateFormatZoneData_cs, JDK-1_1!DateFormatZoneData_da, JDK-1_1!DateFormatZoneData_de, JDK-1_1!DateFormatZoneData_de_AT, JDK-1_1!DateFormatZoneData_de_CH, JDK-1_1!DateFormatZoneData_el, JDK-1_1!DateFormatZoneData_en_CA, JDK-1_1!DateFormatZoneData_en_GB, JDK-1_1!DateFormatZoneData_en_IE, JDK-1_1!DateFormatZoneData_es, JDK-1_1!DateFormatZoneData_et, JDK-1_1!DateFormatZoneData_fi, JDK-1_1!DateFormatZoneData_fr, JDK-1_1!DateFormatZoneData_fr_BE, JDK-1_1!DateFormatZoneData_fr_CA, JDK-1_1!DateFormatZoneData_fr_CH, JDK-1_1!DateFormatZoneData_hr, JDK-1_1!DateFormatZoneData_hu, JDK-1_1!DateFormatZoneData_is, JDK-1_1!DateFormatZoneData_it, JDK-1_1!DateFormatZoneData_it_CH, JDK-1_1!DateFormatZoneData_iw, JDK-1_1!DateFormatZoneData_ja, JDK-1_1!DateFormatZoneData_ko, JDK-1_1!DateFormatZoneData_lt, JDK-1_1!DateFormatZoneData_lv, JDK-1_1!DateFormatZoneData_mk, JDK-1_1!DateFormatZoneData_nl, JDK-1_1!DateFormatZoneData_nl_BE, JDK-1_1!DateFormatZoneData_no, JDK-1_1!DateFormatZoneData_no_NO_NY, JDK-1_1!DateFormatZoneData_pl, JDK-1_1!DateFormatZoneData_pt, JDK-1_1!DateFormatZoneData_ro, JDK-1_1!DateFormatZoneData_ru, JDK-1_1!DateFormatZoneData_sh, JDK-1_1!DateFormatZoneData_sk, JDK-1_1!DateFormatZoneData_sl, JDK-1_1!DateFormatZoneData_sq, JDK-1_1!DateFormatZoneData_sr, JDK-1_1!DateFormatZoneData_sv, JDK-1_1!DateFormatZoneData_th, JDK-1_1!DateFormatZoneData_tr, JDK-1_1!DateFormatZoneData_uk, JDK-1_1!DateFormatZoneData_zh, JDK-1_1!DateFormatZoneData_zh_TW, JDK-1_1!LocaleElements_ar, JDK-1_1!LocaleElements_be, JDK-1_1!LocaleElements_bg, JDK-1_1!LocaleElements_ca, JDK-1_1!LocaleElements_cs, JDK-1_1!LocaleElements_da, JDK-1_1!LocaleElements_de, JDK-1_1!LocaleElements_de_AT, JDK-1_1!LocaleElements_de_CH, JDK-1_1!LocaleElements_el, JDK-1_1!LocaleElements_en_CA, JDK-1_1!LocaleElements_en_GB, JDK-1_1!LocaleElements_en_IE, JDK-1_1!LocaleElements_es, JDK-1_1!LocaleElements_et, JDK-1_1!LocaleElements_fi, JDK-1_1!LocaleElements_fr, JDK-1_1!LocaleElements_fr_BE, JDK-1_1!LocaleElements_fr_CA, JDK-1_1!LocaleElements_fr_CH, JDK-1_1!LocaleElements_hr, JDK-1_1!LocaleElements_hu, JDK-1_1!LocaleElements_is, JDK-1_1!LocaleElements_it, JDK-1_1!LocaleElements_it_CH, JDK-1_1!LocaleElements_iw, JDK-1_1!LocaleElements_ja, JDK-1_1!LocaleElements_ko, JDK-1_1!LocaleElements_lt, JDK-1_1!LocaleElements_lv, JDK-1_1!LocaleElements_mk, JDK-1_1!LocaleElements_nl, JDK-1_1!LocaleElements_nl_BE, JDK-1_1!LocaleElements_no, JDK-1_1!LocaleElements_no_NO_NY, JDK-1_1!LocaleElements_pl, JDK-1_1!LocaleElements_pt, JDK-1_1!LocaleElements_ro, JDK-1_1!LocaleElements_ru, JDK-1_1!LocaleElements_sh, JDK-1_1!LocaleElements_sk, JDK-1_1!LocaleElements_sl, JDK-1_1!LocaleElements_sq, JDK-1_1!LocaleElements_sr, JDK-1_1!LocaleElements_sv, JDK-1_1!LocaleElements_th, JDK-1_1!LocaleElements_tr, JDK-1_1!LocaleElements_uk, JDK-1_1!LocaleElements_zh, JDK-1_1!LocaleElements_zh_TW, JDK-1_1!LocaleElements_en_AU, JDK-1_1!LocaleElements_en_NZ, JDK-1_1!LocaleElements_en_ZA, JDK-1_1!LocaleElements_es_BO, JDK-1_1!LocaleElements_es_AR, JDK-1_1!LocaleElements_es_CL, JDK-1_1!LocaleElements_es_CO, JDK-1_1!LocaleElements_es_CR, JDK-1_1!LocaleElements_es_DO, JDK-1_1!LocaleElements_es_EC, JDK-1_1!LocaleElements_es_GT, JDK-1_1!LocaleElements_es_HN, JDK-1_1!LocaleElements_es_MX, JDK-1_1!LocaleElements_es_NI, JDK-1_1!LocaleElements_es_PA, JDK-1_1!LocaleElements_es_PE, JDK-1_1!LocaleElements_es_PR, JDK-1_1!LocaleElements_es_PY, JDK-1_1!LocaleElements_es_SV, JDK-1_1!LocaleElements_es_UY, JDK-1_1!LocaleElements_es_VE, JDK-1_1!LocaleElements_pt_BR, JDK-1_1!LocaleElements_de_AT_EURO, JDK-1_1!LocaleElements_de_DE_EURO, JDK-1_1!LocaleElements_de_LU, JDK-1_1!LocaleElements_de_LU_EURO, JDK-1_1!LocaleElements_en_IE_EURO, JDK-1_1!LocaleElements_es_ES_EURO, JDK-1_1!LocaleElements_fi_FI_EURO, JDK-1_1!LocaleElements_fr_BE_EURO, JDK-1_1!LocaleElements_fr_FR_EURO, JDK-1_1!LocaleElements_fr_LU, JDK-1_1!LocaleElements_fr_LU_EURO, JDK-1_1!LocaleElements_it_IT_EURO, JDK-1_1!LocaleElements_nl_BE_EURO, JDK-1_1!LocaleElements_nl_NL_EURO, JDK-1_1!LocaleElements_pt_PT_EURO}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::text::resources equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::interfaces referenced packages: Set {JDK-1_1!security, JDK-1_1!math}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::interfaces compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::security::interfaces equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util::zip referenced packages: Set {JDK-1_1!io, JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util::zip compatible packages: Sequence {PJ-1_1!zip}
-     [am3.atl] [jdk-1_1] personaljava-1_1::java::util::zip::Inflater misses features compatible with : Sequence {JDK-1_1!setDictionary, JDK-1_1!setDictionary, JDK-1_1!getAdler}
-     [am3.atl] [jdk-1_1] personaljava-1_1::java::util::zip misses classifiers compatible with : Sequence {JDK-1_1!ZipFile, JDK-1_1!Inflater, JDK-1_1!Adler32, JDK-1_1!Deflater, JDK-1_1!DeflaterOutputStream, JDK-1_1!GZIPOutputStream, JDK-1_1!ZipOutputStream}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util::zip equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::registry referenced packages: Set {JDK-1_1!rmi, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::registry compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::registry equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util referenced packages: Set {JDK-1_1!io, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util compatible packages: Sequence {PJ-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::util equivalent packages: Sequence {PJ-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::applet referenced packages: Set {JDK-1_1!net, JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::applet::Applet misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::applet misses classifiers compatible with : Sequence {PJ-1_1!Applet}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::applet compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::applet equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::peer referenced packages: Set {JDK-1_1!io, JDK-1_1!image, JDK-1_1!lang, JDK-1_1!awt}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::peer compatible packages: Sequence {PJ-1_1!peer}
-     [am3.atl] [jdk-1_1] personaljava-1_1::java::awt::peer::FramePeer misses features compatible with : Sequence {JDK-1_1!setMenuBar}
-     [am3.atl] [jdk-1_1] personaljava-1_1::java::awt::peer misses classifiers compatible with : Sequence {JDK-1_1!MenuBarPeer, JDK-1_1!FramePeer, JDK-1_1!FileDialogPeer}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::peer equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi referenced packages: Set {JDK-1_1!io, JDK-1_1!net, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::io referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::io compatible packages: Sequence {PJ-1_1!io}
-     [am3.atl] [jdk-1_1] personaljava-1_1::java::io misses classifiers compatible with : Sequence {JDK-1_1!FileNotFoundException, JDK-1_1!FileInputStream, JDK-1_1!File, JDK-1_1!FileOutputStream, JDK-1_1!RandomAccessFile, JDK-1_1!FilenameFilter, JDK-1_1!FileReader, JDK-1_1!FileWriter}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::io equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::server referenced packages: Set {JDK-1_1!rmi, JDK-1_1!io, JDK-1_1!net, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::server compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::server equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::dgc referenced packages: Set {JDK-1_1!io, JDK-1_1!rmi, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::dgc compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::rmi::dgc equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::net referenced packages: Set {JDK-1_1!io, JDK-1_1!lang}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::net compatible packages: Sequence {PJ-1_1!net}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::net equivalent packages: Sequence {PJ-1_1!net}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt referenced packages: Set {JDK-1_1!datatransfer, JDK-1_1!io, JDK-1_1!event, JDK-1_1!image, JDK-1_1!lang, JDK-1_1!util, JDK-1_1!peer, JDK-1_1!net}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Component misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Container misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Button misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::ScrollPane misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Choice misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Checkbox misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Label misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::List misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::TextComponent misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::TextField misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::TextArea misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Panel misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Canvas misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Frame misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Window misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt::Dialog misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt misses classifiers compatible with : Sequence {PJ-1_1!Component, PJ-1_1!Container, PJ-1_1!Button, PJ-1_1!ScrollPane, PJ-1_1!Choice, PJ-1_1!Checkbox, PJ-1_1!Label, PJ-1_1!List, PJ-1_1!TextComponent, PJ-1_1!TextField, PJ-1_1!TextArea, PJ-1_1!Panel, PJ-1_1!Canvas, PJ-1_1!Frame, PJ-1_1!Window, PJ-1_1!Dialog}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt compatible packages: Sequence {}
-     [am3.atl] [jdk-1_1] jdk-1_1::java::awt equivalent packages: Sequence {}
-     [am3.atl] [jdk-1_1] Package: 'JavaSecurityLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaMathLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaTextLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtEventLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaSecurityAclLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtDatatransferLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaLangReflectLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaBeansLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtImageLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaLangLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaSqlLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaTextResourcesLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaSecurityInterfacesLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaUtilZipLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaRmiRegistryLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaUtilLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAppletLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtPeerLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaRmiLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaIoLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaRmiServerLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaRmiDgcLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaNetLibrary'
-     [am3.atl] [jdk-1_1] Package: 'JavaAwtLibrary'
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang referenced packages: Set {JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect referenced packages: Set {JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util referenced packages: Set {JDK-1_1!lang, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::net referenced packages: Set {JDK-1_1!lang, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::net compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::net equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!security}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::interfaces referenced packages: Set {JDK-1_1!security, JDK-1_1!math}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::interfaces compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::interfaces equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt referenced packages: Set {JDK-1_1!event, JDK-1_1!net, JDK-1_1!datatransfer, JDK-1_1!lang, JDK-1_1!peer, JDK-1_1!util, JDK-1_1!image, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!awt}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!awt}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer referenced packages: Set {JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!image, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::datatransfer referenced packages: Set {JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::datatransfer compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::datatransfer equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!net}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!math, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi referenced packages: Set {JDK-1_1!lang, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::registry referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::registry compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::registry equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::dgc referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::dgc compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::dgc equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!awt, JDK-1_1!reflect, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaLangLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaLangReflectLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaIoLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaUtilLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaUtilZipLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaTextLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaTextResourcesLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaMathLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaNetLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityAclLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityInterfacesLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtImageLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtEventLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtPeerLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtDatatransferLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAppletLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaSqlLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiRegistryLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiDgcLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiServerLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaBeansLibrary'
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang referenced packages: Set {JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang compatible packages: Sequence {PJ-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang equivalent packages: Sequence {PJ-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect referenced packages: Set {JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect compatible packages: Sequence {PJ-1_1!reflect}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect equivalent packages: Sequence {PJ-1_1!reflect}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io compatible packages: Sequence {PJ-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] personaljava-1_1::java::io misses classifiers compatible with : Sequence {JDK-1_1!FileNotFoundException, JDK-1_1!FileInputStream, JDK-1_1!File, JDK-1_1!FileOutputStream, JDK-1_1!RandomAccessFile, JDK-1_1!FilenameFilter, JDK-1_1!FileReader, JDK-1_1!FileWriter}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util referenced packages: Set {JDK-1_1!lang, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util compatible packages: Sequence {PJ-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util equivalent packages: Sequence {PJ-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip compatible packages: Sequence {PJ-1_1!zip}
+     [am3.atl] INFO: [jdk-1_1] personaljava-1_1::java::util::zip::Inflater misses features compatible with : Sequence {JDK-1_1!setDictionary, JDK-1_1!setDictionary, JDK-1_1!getAdler}
+     [am3.atl] INFO: [jdk-1_1] personaljava-1_1::java::util::zip misses classifiers compatible with : Sequence {JDK-1_1!ZipFile, JDK-1_1!Inflater, JDK-1_1!Adler32, JDK-1_1!Deflater, JDK-1_1!DeflaterOutputStream, JDK-1_1!GZIPOutputStream, JDK-1_1!ZipOutputStream}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text compatible packages: Sequence {PJ-1_1!text}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text equivalent packages: Sequence {PJ-1_1!text}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources compatible packages: Sequence {PJ-1_1!resources}
+     [am3.atl] INFO: [jdk-1_1] personaljava-1_1::java::text::resources misses classifiers compatible with : Sequence {JDK-1_1!DateFormatZoneData_ar, JDK-1_1!DateFormatZoneData_be, JDK-1_1!DateFormatZoneData_bg, JDK-1_1!DateFormatZoneData_ca, JDK-1_1!DateFormatZoneData_cs, JDK-1_1!DateFormatZoneData_da, JDK-1_1!DateFormatZoneData_de, JDK-1_1!DateFormatZoneData_de_AT, JDK-1_1!DateFormatZoneData_de_CH, JDK-1_1!DateFormatZoneData_el, JDK-1_1!DateFormatZoneData_en_CA, JDK-1_1!DateFormatZoneData_en_GB, JDK-1_1!DateFormatZoneData_en_IE, JDK-1_1!DateFormatZoneData_es, JDK-1_1!DateFormatZoneData_et, JDK-1_1!DateFormatZoneData_fi, JDK-1_1!DateFormatZoneData_fr, JDK-1_1!DateFormatZoneData_fr_BE, JDK-1_1!DateFormatZoneData_fr_CA, JDK-1_1!DateFormatZoneData_fr_CH, JDK-1_1!DateFormatZoneData_hr, JDK-1_1!DateFormatZoneData_hu, JDK-1_1!DateFormatZoneData_is, JDK-1_1!DateFormatZoneData_it, JDK-1_1!DateFormatZoneData_it_CH, JDK-1_1!DateFormatZoneData_iw, JDK-1_1!DateFormatZoneData_ja, JDK-1_1!DateFormatZoneData_ko, JDK-1_1!DateFormatZoneData_lt, JDK-1_1!DateFormatZoneData_lv, JDK-1_1!DateFormatZoneData_mk, JDK-1_1!DateFormatZoneData_nl, JDK-1_1!DateFormatZoneData_nl_BE, JDK-1_1!DateFormatZoneData_no, JDK-1_1!DateFormatZoneData_no_NO_NY, JDK-1_1!DateFormatZoneData_pl, JDK-1_1!DateFormatZoneData_pt, JDK-1_1!DateFormatZoneData_ro, JDK-1_1!DateFormatZoneData_ru, JDK-1_1!DateFormatZoneData_sh, JDK-1_1!DateFormatZoneData_sk, JDK-1_1!DateFormatZoneData_sl, JDK-1_1!DateFormatZoneData_sq, JDK-1_1!DateFormatZoneData_sr, JDK-1_1!DateFormatZoneData_sv, JDK-1_1!DateFormatZoneData_th, JDK-1_1!DateFormatZoneData_tr, JDK-1_1!DateFormatZoneData_uk, JDK-1_1!DateFormatZoneData_zh, JDK-1_1!DateFormatZoneData_zh_TW, JDK-1_1!LocaleElements_ar, JDK-1_1!LocaleElements_be, JDK-1_1!LocaleElements_bg, JDK-1_1!LocaleElements_ca, JDK-1_1!LocaleElements_cs, JDK-1_1!LocaleElements_da, JDK-1_1!LocaleElements_de, JDK-1_1!LocaleElements_de_AT, JDK-1_1!LocaleElements_de_CH, JDK-1_1!LocaleElements_el, JDK-1_1!LocaleElements_en_CA, JDK-1_1!LocaleElements_en_GB, JDK-1_1!LocaleElements_en_IE, JDK-1_1!LocaleElements_es, JDK-1_1!LocaleElements_et, JDK-1_1!LocaleElements_fi, JDK-1_1!LocaleElements_fr, JDK-1_1!LocaleElements_fr_BE, JDK-1_1!LocaleElements_fr_CA, JDK-1_1!LocaleElements_fr_CH, JDK-1_1!LocaleElements_hr, JDK-1_1!LocaleElements_hu, JDK-1_1!LocaleElements_is, JDK-1_1!LocaleElements_it, JDK-1_1!LocaleElements_it_CH, JDK-1_1!LocaleElements_iw, JDK-1_1!LocaleElements_ja, JDK-1_1!LocaleElements_ko, JDK-1_1!LocaleElements_lt, JDK-1_1!LocaleElements_lv, JDK-1_1!LocaleElements_mk, JDK-1_1!LocaleElements_nl, JDK-1_1!LocaleElements_nl_BE, JDK-1_1!LocaleElements_no, JDK-1_1!LocaleElements_no_NO_NY, JDK-1_1!LocaleElements_pl, JDK-1_1!LocaleElements_pt, JDK-1_1!LocaleElements_ro, JDK-1_1!LocaleElements_ru, JDK-1_1!LocaleElements_sh, JDK-1_1!LocaleElements_sk, JDK-1_1!LocaleElements_sl, JDK-1_1!LocaleElements_sq, JDK-1_1!LocaleElements_sr, JDK-1_1!LocaleElements_sv, JDK-1_1!LocaleElements_th, JDK-1_1!LocaleElements_tr, JDK-1_1!LocaleElements_uk, JDK-1_1!LocaleElements_zh, JDK-1_1!LocaleElements_zh_TW, JDK-1_1!LocaleElements_en_AU, JDK-1_1!LocaleElements_en_NZ, JDK-1_1!LocaleElements_en_ZA, JDK-1_1!LocaleElements_es_BO, JDK-1_1!LocaleElements_es_AR, JDK-1_1!LocaleElements_es_CL, JDK-1_1!LocaleElements_es_CO, JDK-1_1!LocaleElements_es_CR, JDK-1_1!LocaleElements_es_DO, JDK-1_1!LocaleElements_es_EC, JDK-1_1!LocaleElements_es_GT, JDK-1_1!LocaleElements_es_HN, JDK-1_1!LocaleElements_es_MX, JDK-1_1!LocaleElements_es_NI, JDK-1_1!LocaleElements_es_PA, JDK-1_1!LocaleElements_es_PE, JDK-1_1!LocaleElements_es_PR, JDK-1_1!LocaleElements_es_PY, JDK-1_1!LocaleElements_es_SV, JDK-1_1!LocaleElements_es_UY, JDK-1_1!LocaleElements_es_VE, JDK-1_1!LocaleElements_pt_BR, JDK-1_1!LocaleElements_de_AT_EURO, JDK-1_1!LocaleElements_de_DE_EURO, JDK-1_1!LocaleElements_de_LU, JDK-1_1!LocaleElements_de_LU_EURO, JDK-1_1!LocaleElements_en_IE_EURO, JDK-1_1!LocaleElements_es_ES_EURO, JDK-1_1!LocaleElements_fi_FI_EURO, JDK-1_1!LocaleElements_fr_BE_EURO, JDK-1_1!LocaleElements_fr_FR_EURO, JDK-1_1!LocaleElements_fr_LU, JDK-1_1!LocaleElements_fr_LU_EURO, JDK-1_1!LocaleElements_it_IT_EURO, JDK-1_1!LocaleElements_nl_BE_EURO, JDK-1_1!LocaleElements_nl_NL_EURO, JDK-1_1!LocaleElements_pt_PT_EURO}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::net referenced packages: Set {JDK-1_1!lang, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::net compatible packages: Sequence {PJ-1_1!net}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::net equivalent packages: Sequence {PJ-1_1!net}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!security}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::interfaces referenced packages: Set {JDK-1_1!security, JDK-1_1!math}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::interfaces compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::interfaces equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt referenced packages: Set {JDK-1_1!event, JDK-1_1!net, JDK-1_1!datatransfer, JDK-1_1!lang, JDK-1_1!peer, JDK-1_1!util, JDK-1_1!image, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Component misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Container misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Button misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::ScrollPane misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Choice misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Checkbox misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Label misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::List misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::TextComponent misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::TextField misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::TextArea misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Panel misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Canvas misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Frame misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Window misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::Dialog misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt misses classifiers compatible with : Sequence {PJ-1_1!Component, PJ-1_1!Container, PJ-1_1!Button, PJ-1_1!ScrollPane, PJ-1_1!Choice, PJ-1_1!Checkbox, PJ-1_1!Label, PJ-1_1!List, PJ-1_1!TextComponent, PJ-1_1!TextField, PJ-1_1!TextArea, PJ-1_1!Panel, PJ-1_1!Canvas, PJ-1_1!Frame, PJ-1_1!Window, PJ-1_1!Dialog}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!awt}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image compatible packages: Sequence {PJ-1_1!image}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image equivalent packages: Sequence {PJ-1_1!image}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!awt}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event compatible packages: Sequence {PJ-1_1!event}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event equivalent packages: Sequence {PJ-1_1!event}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer referenced packages: Set {JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!image, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer compatible packages: Sequence {PJ-1_1!peer}
+     [am3.atl] INFO: [jdk-1_1] personaljava-1_1::java::awt::peer::FramePeer misses features compatible with : Sequence {JDK-1_1!setMenuBar}
+     [am3.atl] INFO: [jdk-1_1] personaljava-1_1::java::awt::peer misses classifiers compatible with : Sequence {JDK-1_1!MenuBarPeer, JDK-1_1!FramePeer, JDK-1_1!FileDialogPeer}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::datatransfer referenced packages: Set {JDK-1_1!lang}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::datatransfer compatible packages: Sequence {PJ-1_1!datatransfer}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::datatransfer equivalent packages: Sequence {PJ-1_1!datatransfer}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!net}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet::Applet misses features compatible with : Sequence {PJ-1_1!isDoubleBuffered}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet misses classifiers compatible with : Sequence {PJ-1_1!Applet}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!math, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi referenced packages: Set {JDK-1_1!lang, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::registry referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::registry compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::registry equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::dgc referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::dgc compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::dgc equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server compatible packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server equivalent packages: Sequence {}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!awt, JDK-1_1!reflect, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans compatible packages: Sequence {PJ-1_1!beans}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans equivalent packages: Sequence {PJ-1_1!beans}
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaLangLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaLangReflectLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaIoLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaUtilLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaUtilZipLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaTextLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaTextResourcesLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaMathLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaNetLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityAclLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityInterfacesLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtImageLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtEventLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtPeerLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtDatatransferLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaAppletLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaSqlLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiRegistryLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiDgcLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiServerLibrary'
+     [am3.atl] INFO: [jdk-1_1] Package: 'JavaBeansLibrary'
