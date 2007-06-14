@@ -14,11 +14,11 @@ public class JavaOntologyProvider implements IOntologyProvider {
 
 	private static final String[] ontologies = new String[] {
 		"ontology/codamos_2007_01/j2me-midp-1_0-api.owl",
-		"ontology/codamos_2007_01/jdk-1_1-api.owl",
 		"ontology/codamos_2007_01/personaljava-1_1-api.owl",
+		"ontology/codamos_2007_01/jdk-1_1-api.owl",
 		"ontology/codamos_2007_01/j2se-1_2-api.owl",
-		"ontology/codamos_2007_01/j2se-1_3-api.owl",
 		"ontology/codamos_2007_01/j2me-pp-1_0-api.owl",
+		"ontology/codamos_2007_01/j2se-1_3-api.owl",
 		"ontology/codamos_2007_01/j2se-1_4-api.owl",
 		"ontology/codamos_2007_01/j2se-1_5-api.owl"
 	};
