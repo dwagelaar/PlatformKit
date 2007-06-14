@@ -10,66 +10,6 @@
 		<javadoc 
 			access="protected" 
 			author="true"
-			classpath="
-				../../platformkit-jena/lib/jena.jar:
-				../../platformkit-jena/lib/icu4j_3_4.jar:
-				../../platformkit-pellet/lib/econn-owlapi/rdfparser.jar:
-				../../platformkit-pellet/lib/econn-owlapi/owltest.jar:
-				${eclipse.home}/plugins/org.eclipse.equinox.preferences_3.2.1.R32x_v20060717.jar:
-				../../platformkit-pellet/lib/aterm-java-1.6.jar:
-				${eclipse.home}/plugins/org.eclipse.core.jobs_3.2.0.v20060603.jar:
-				../../platformkit-pellet/lib/xsdlib/relaxngDatatype.jar:
-				${eclipse.home}/plugins/org.eclipse.equinox.common_3.2.0.v20060603.jar:
-				${eclipse.home}/plugins/org.eclipse.emf.common.ui_2.2.1.v200609210005.jar:
-				../../platformkit-jena/lib/log4j-1.2.12.jar:
-				../../platformkit-pellet/lib/econn-owlapi/inference.jar:
-				${eclipse.home}/plugins/org.eclipse.core.runtime_3.2.0.v20060603.jar:
-				${eclipse.home}/plugins/org.eclipse.equinox.registry_3.2.1.R32x_v20060814.jar:
-				../../platformkit-pellet/lib/xsdlib/xsdlib.jar:
-				${eclipse.home}/plugins/org.eclipse.emf.common_2.2.1.v200609210005.jar:
-				${eclipse.home}/plugins/org.eclipse.emf.ecore_2.2.1.v200609210005.jar:
-				../../platformkit-pellet/lib/econn-owlapi/io.jar:
-				${eclipse.home}/plugins/org.eclipse.ui.views_3.2.1.M20060906-0800.jar:
-				${eclipse.home}/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.1.R32x_v20060907/runtime_registry_compatibility.jar:
-				../../platformkit-jena/lib/arq.jar:
-				../../platformkit-jena/lib/concurrent.jar:
-				../../platformkit-pellet/bin:
-				../../platformkit-jena/lib/antlr-2.7.5.jar:
-				../../platformkit-jena/lib/commons-logging.jar:
-				${eclipse.home}/plugins/org.eclipse.core.commands_3.2.0.I20060605-1400.jar:
-				../../platformkit-jena/bin:
-				../../platformkit-pellet/lib/econn-owlapi/examples.jar:
-				${eclipse.home}/plugins/org.eclipse.emf.edit_2.2.1.v200609210005.jar:
-				../../platformkit-pellet/lib/econn-owlapi/abstractparser.jar:
-				${eclipse.home}/plugins/org.eclipse.ui.ide_3.2.1.M20060915-1030.jar:
-				${eclipse.home}/plugins/org.eclipse.swt_3.2.2.v3235h.jar:
-				${eclipse.home}/plugins/org.eclipse.emf.edit.ui_2.2.0.v200609210005.jar:
-				../../platformkit-jena/lib/stax-api-1.0.jar:
-				../../platformkit-pellet/lib/econn-owlapi/validation_test.jar:
-				${eclipse.home}/plugins/org.eclipse.core.contenttype_3.2.0.v20060603.jar:
-				../../platformkit-edit/bin:
-				../../platformkit-pellet/lib/econn-owlapi/impl.jar:
-				${eclipse.home}/plugins/org.eclipse.emf.ecore.change_2.2.0.v200609210005.jar:
-				${eclipse.home}/plugins/org.eclipse.swt.carbon.macosx_3.2.1.v3235.jar:
-				${eclipse.home}/plugins/org.eclipse.ui.workbench_3.2.1.M20060906-0800.jar:
-				../../platformkit-pellet/lib/econn-owlapi/api.jar:
-				${eclipse.home}/plugins/org.eclipse.ui_3.2.1.M20060913-0800.jar:
-				../../platformkit-jena/lib/xercesImpl.jar:
-				../../platformkit-jena/lib/jakarta-oro-2.0.8.jar:
-				../../platformkit-pellet/lib/econn-owlapi/owl-servlet.jar:
-				${eclipse.home}/plugins/org.eclipse.core.resources_3.2.1.R32x_v20060914.jar:
-				../../platformkit-pellet/lib/pellet.jar:
-				../../platformkit-jena/lib/jenatest.jar:
-				../../platformkit-pellet/lib/econn-owlapi/validation.jar:
-				../../platformkit/bin:
-				../../platformkit-pellet/lib/rdfapi.jar:
-				${eclipse.home}/plugins/org.eclipse.ui.console_3.1.100.v20060605.jar:
-				../../platformkit-pellet/lib/econn-owlapi/rules.jar:
-				${eclipse.home}/plugins/org.eclipse.emf.ecore.xmi_2.2.1.v200609210005.jar:
-				${eclipse.home}/plugins/org.eclipse.jface_3.2.1.M20060908-1000.jar:
-				../../platformkit-jena/lib/stax-1.1.1-dev.jar:
-				${eclipse.home}/plugins/org.eclipse.osgi_3.2.2.R32x_v20061101.jar:
-				${eclipse.home}/plugins/org.junit_3.8.1/junit.jar"
 			destdir="doc/javadoc" 
 			nodeprecated="false" 
 			nodeprecatedlist="false" 
@@ -81,6 +21,7 @@
 				org.mindswap.pellet.eclipse,
 				be.ac.vub.platformkit.impl,
 				com.hp.hpl.jena.eclipse,
+				be.ac.vub.platformkit.editor.preferences,
 				be.ac.vub.platformkit.presentation.popup.action,
 				be.ac.vub.platformkit.presentation.logging,
 				be.ac.vub.platformkit.presentation.util.provider,
@@ -91,13 +32,6 @@
 				be.ac.vub.platformkit.kb.util,
 				com.hp.hpl.jena.eclipse.logging" 
 			source="1.5" 
-			sourcefiles="
-				../../platformkit/src/be/ac/vub/platformkit/PlatformkitFactory.java,
-				../../platformkit/src/be/ac/vub/platformkit/Constraint.java,
-				../../platformkit/src/be/ac/vub/platformkit/IOntModelChangeListener.java,
-				../../platformkit/src/be/ac/vub/platformkit/ConstraintSpace.java,
-				../../platformkit/src/be/ac/vub/platformkit/ConstraintSet.java,
-				../../platformkit/src/be/ac/vub/platformkit/PlatformkitPackage.java" 
 			sourcepath="
 				../../platformkit-jena/src:
 				../../platformkit/src:
@@ -111,6 +45,18 @@
 			<link href="../../../com.hp.hpl.jena.doc/doc/javadoc"/>
 			<link href="../../../org.eclipse.emf.doc/references/javadoc"/>
 			<link href="../../../org.eclipse.platform.doc.isv/reference/api"/>
+			<link href="http://logging.apache.org/log4j/docs/api/"/>
+			<classpath>
+				<fileset dir="../../platformkit-jena/lib">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="../../platformkit-pellet/lib">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="${eclipse.home}/plugins">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
 		</javadoc>
 	</target>
 	
