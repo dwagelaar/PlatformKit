@@ -23,6 +23,7 @@ public class BaseOntologyProvider implements IOntologyProvider {
 		"ontology/codamos_2006_01/OperatingSystems.owl",
 		"ontology/davy_2006_01/Component.owl",
 		"ontology/davy_2006_01/Draco.owl",
+		"ontology/codamos_2007_01/PackageManagers.owl",
 		"ontology/codamos_2007_01/Java.owl"
 	};
 	
