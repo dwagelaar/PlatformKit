@@ -50,7 +50,7 @@ public class HandlerAdapter extends AppenderSkeleton {
     }
 
     /**
-     * Calls @see Handler#close()
+     * Calls {@link Handler#close()}
      */
     public void close() {
         handler.close();
