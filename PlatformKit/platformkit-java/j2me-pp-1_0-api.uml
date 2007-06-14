@@ -1315,18 +1315,6 @@
         <ownedOperation xmi:id="_M29qFxRuEdyqhKrSw1_-eA" name="removeFocusListener" visibility="public">
           <ownedParameter xmi:id="_Mpa9URRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NY1BARRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M6uvwRRuEdyqhKrSw1_-eA" name="addHierarchyListener" visibility="public">
-          <ownedParameter xmi:id="_Mnu7QRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M2kohhRuEdyqhKrSw1_-eA" name="removeHierarchyListener" visibility="public">
-          <ownedParameter xmi:id="_MvHVpRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M2d62RRuEdyqhKrSw1_-eA" name="addHierarchyBoundsListener" visibility="public">
-          <ownedParameter xmi:id="_Mu4FEhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M4ZNdBRuEdyqhKrSw1_-eA" name="removeHierarchyBoundsListener" visibility="public">
-          <ownedParameter xmi:id="_MoqIVBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M2hlNxRuEdyqhKrSw1_-eA" name="addKeyListener" visibility="public">
           <ownedParameter xmi:id="_MtQUcBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NY4rYxRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
@@ -1344,12 +1332,6 @@
         </ownedOperation>
         <ownedOperation xmi:id="_M4kMkRRuEdyqhKrSw1_-eA" name="removeMouseMotionListener" visibility="public">
           <ownedParameter xmi:id="_MrCG5hRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NY3dQhRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M6pQNRRuEdyqhKrSw1_-eA" name="addInputMethodListener" visibility="public">
-          <ownedParameter xmi:id="_MoLnNhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M2g-IRRuEdyqhKrSw1_-eA" name="removeInputMethodListener" visibility="public">
-          <ownedParameter xmi:id="_MpWE1xRuEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M4FrcBRuEdyqhKrSw1_-eA" name="getListeners" visibility="public">
           <ownedParameter xmi:id="_Mpo_xxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NtlwEhRuEdyqhKrSw1_-eA" effect="create"/>
@@ -1383,15 +1365,6 @@
         </ownedOperation>
         <ownedOperation xmi:id="_M0ngthRuEdyqhKrSw1_-eA" name="processMouseMotionEvent" visibility="protected">
           <ownedParameter xmi:id="_MuPL4hRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_M970whRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M0tAQhRuEdyqhKrSw1_-eA" name="processInputMethodEvent" visibility="protected">
-          <ownedParameter xmi:id="_MoBPKhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M4LyEBRuEdyqhKrSw1_-eA" name="processHierarchyEvent" visibility="protected">
-          <ownedParameter xmi:id="_Ms9ZiBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M3wURhRuEdyqhKrSw1_-eA" name="processHierarchyBoundsEvent" visibility="protected">
-          <ownedParameter xmi:id="_Mm-GTBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M3ywhBRuEdyqhKrSw1_-eA" name="handleEvent" visibility="public">
           <ownedParameter xmi:id="_Mq3u0xRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NuV-ARRuEdyqhKrSw1_-eA" effect="create"/>
@@ -6643,12 +6616,6 @@
           <ownedParameter xmi:id="_MufqlRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_Mu89kRRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDwI4hRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_Muse5RRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_Ntg3kBRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M03YVxRuEdyqhKrSw1_-eA" name="createContext" visibility="public">
-          <ownedParameter xmi:id="_MrqZBBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NuSToBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MpnxphRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NuSToBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MqxoNBRuEdyqhKrSw1_-eA" name="arg2" visibility="public" effect="create"/>
-          <ownedParameter xmi:id="_MpBUsxRuEdyqhKrSw1_-eA" name="return" visibility="public" direction="return" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M1d1SRRuEdyqhKrSw1_-eA" name="getAlpha" visibility="public">
           <ownedParameter xmi:id="_MnzzxRRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4hRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
