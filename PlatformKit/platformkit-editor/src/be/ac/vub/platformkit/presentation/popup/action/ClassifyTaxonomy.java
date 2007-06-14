@@ -14,9 +14,11 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.util.Assert;
 
 import be.ac.vub.platformkit.ConstraintSet;
+import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.kb.Ontologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
@@ -195,7 +197,16 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
         is.getIntersection();
         worked(monitor);
         monitor.subTask("Attaching DL reasoner...");
-        ont.attachPelletReasoner();
+		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
+				.getPreferenceStore();
+		String reasoner = store.getString(PreferenceConstants.P_REASONER);
+		if (PreferenceConstants.P_DIG.equals(reasoner)) {
+			String url = store.getString(PreferenceConstants.P_DIG_URL);
+			ont.setReasonerUrl(url);
+			ont.attachDIGReasoner();
+		} else {
+	        ont.attachPelletReasoner();
+		}
         worked(monitor);
         monitor.subTask("Checking consistency...");
         ont.checkConsistency();
