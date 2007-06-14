@@ -9,3 +9,4 @@ grep "\[j2se-1_2\]" build.log.txt > build.log.j2se-1_2.txt
 grep "\[j2se-1_3\]" build.log.txt > build.log.j2se-1_3.txt
 grep "\[j2se-1_4\]" build.log.txt > build.log.j2se-1_4.txt
 grep "\[j2se-1_5\]" build.log.txt > build.log.j2se-1_5.txt
+grep "\[j2se-1_6\]" build.log.txt > build.log.j2se-1_6.txt
