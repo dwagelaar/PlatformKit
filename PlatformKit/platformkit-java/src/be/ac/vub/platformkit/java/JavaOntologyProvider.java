@@ -20,7 +20,8 @@ public class JavaOntologyProvider implements IOntologyProvider {
 		"ontology/codamos_2007_01/j2me-pp-1_0-api.owl",
 		"ontology/codamos_2007_01/j2se-1_3-api.owl",
 		"ontology/codamos_2007_01/j2se-1_4-api.owl",
-		"ontology/codamos_2007_01/j2se-1_5-api.owl"
+		"ontology/codamos_2007_01/j2se-1_5-api.owl",
+		"ontology/codamos_2007_01/j2se-1_6-api.owl"
 	};
 	
 	protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit.java");
