@@ -22,7 +22,7 @@
   <owl:Ontology rdf:about="">
     <rdfs:label xml:lang="en">Java platform ontology</rdfs:label>
     <owl:versionInfo rdf:datatype="&xsd;#string">
-      $Id:$
+      $Id$
     </owl:versionInfo> 
     <rdfs:comment>
       Java ontology concepts and definitions
@@ -58,6 +58,11 @@
     </owl:disjointWith>
     <owl:disjointWith>
       <rdf:Description rdf:about="&platform;#VirtualMachine">
+        <owl:disjointWith rdf:resource="#JRE"/>
+      </rdf:Description>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <rdf:Description rdf:about="&platform;#PackageManager">
         <owl:disjointWith rdf:resource="#JRE"/>
       </rdf:Description>
     </owl:disjointWith>
