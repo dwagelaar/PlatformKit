@@ -115,5 +115,16 @@
               label="Add Product Line Meta-model..."
               menubarPath="additions"/>
      </objectContribution>
+  </extension>
+  <extension
+        point="org.eclipse.ui.preferencePages">
+     <page
+           class="be.ac.vub.platformkit.editor.preferences.PlatformkitPreferencePage"
+           id="be.ac.vub.platformkit.editor.preferences.PlatformkitPreferencePage"
+           name="PlatformKit"/>
+  </extension>
+  <extension
+        point="org.eclipse.core.runtime.preferences">
+     <initializer class="be.ac.vub.platformkit.editor.preferences.PreferenceInitializer"/>
   </extension>    
 </plugin>
