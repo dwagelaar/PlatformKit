@@ -1,4 +1,4 @@
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang referenced packages: Set {PJ-1_1!reflect, PJ-1_1!util, PJ-1_1!net, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang referenced packages: Set {PJ-1_1!net, PJ-1_1!util, PJ-1_1!io, PJ-1_1!reflect}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang equivalent packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang::reflect referenced packages: Set {PJ-1_1!lang}
@@ -7,40 +7,40 @@
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::io referenced packages: Set {PJ-1_1!util, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::io compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::io equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util referenced packages: Set {PJ-1_1!lang, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util referenced packages: Set {PJ-1_1!io, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util::zip referenced packages: Set {PJ-1_1!lang, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util::zip referenced packages: Set {PJ-1_1!io, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util::zip compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util::zip equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text referenced packages: Set {PJ-1_1!util, PJ-1_1!lang, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text referenced packages: Set {PJ-1_1!util, PJ-1_1!io, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text equivalent packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text::resources referenced packages: Set {PJ-1_1!util, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text::resources compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text::resources equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::net referenced packages: Set {PJ-1_1!lang, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::net referenced packages: Set {PJ-1_1!io, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::net compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::net equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt referenced packages: Set {PJ-1_1!util, PJ-1_1!lang, PJ-1_1!peer, PJ-1_1!net, PJ-1_1!event, PJ-1_1!io, PJ-1_1!datatransfer, PJ-1_1!image}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt referenced packages: Set {PJ-1_1!net, PJ-1_1!image, PJ-1_1!io, PJ-1_1!util, PJ-1_1!peer, PJ-1_1!event, PJ-1_1!lang, PJ-1_1!datatransfer}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::image referenced packages: Set {PJ-1_1!awt, PJ-1_1!util, PJ-1_1!lang}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::image referenced packages: Set {PJ-1_1!util, PJ-1_1!lang, PJ-1_1!awt}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::image compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::image equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::event referenced packages: Set {PJ-1_1!awt, PJ-1_1!util, PJ-1_1!lang}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::event referenced packages: Set {PJ-1_1!util, PJ-1_1!lang, PJ-1_1!awt}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::event compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::event equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::peer referenced packages: Set {PJ-1_1!awt, PJ-1_1!lang, PJ-1_1!image}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::peer referenced packages: Set {PJ-1_1!image, PJ-1_1!lang, PJ-1_1!awt}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::peer compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::peer equivalent packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::datatransfer referenced packages: Set {PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::datatransfer compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::datatransfer equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::applet referenced packages: Set {PJ-1_1!awt, PJ-1_1!util, PJ-1_1!lang, PJ-1_1!net}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::applet referenced packages: Set {PJ-1_1!net, PJ-1_1!util, PJ-1_1!lang, PJ-1_1!awt}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::applet compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::applet equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::beans referenced packages: Set {PJ-1_1!awt, PJ-1_1!reflect, PJ-1_1!util, PJ-1_1!io, PJ-1_1!lang}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::beans referenced packages: Set {PJ-1_1!util, PJ-1_1!io, PJ-1_1!lang, PJ-1_1!awt, PJ-1_1!reflect}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::beans compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::beans equivalent packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] Package: 'JavaLangLibrary'
@@ -58,7 +58,7 @@
      [am3.atl] INFO: [personaljava-1_1] Package: 'JavaAwtDatatransferLibrary'
      [am3.atl] INFO: [personaljava-1_1] Package: 'JavaAppletLibrary'
      [am3.atl] INFO: [personaljava-1_1] Package: 'JavaBeansLibrary'
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang referenced packages: Set {PJ-1_1!reflect, PJ-1_1!util, PJ-1_1!net, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang referenced packages: Set {PJ-1_1!net, PJ-1_1!util, PJ-1_1!io, PJ-1_1!reflect}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang::StringBuffer misses features compatible with : Sequence {J2ME-MIDP-1_0!delete, J2ME-MIDP-1_0!deleteCharAt}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang misses classifiers compatible with : Sequence {J2ME-MIDP-1_0!StringBuffer}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang compatible packages: Sequence {}
@@ -68,13 +68,13 @@
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::lang::reflect equivalent packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::io referenced packages: Set {PJ-1_1!util, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::io compatible packages: Sequence {J2ME-MIDP-1_0!io}
-     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::IOException misses features compatible with : Sequence {PJ-1_1!getLocalizedMessage, PJ-1_1!printStackTrace, PJ-1_1!printStackTrace, PJ-1_1!fillInStackTrace, PJ-1_1!clone, PJ-1_1!finalize}
+     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::IOException misses features compatible with : Sequence {PJ-1_1!clone, PJ-1_1!finalize, PJ-1_1!printStackTrace, PJ-1_1!fillInStackTrace, PJ-1_1!printStackTrace, PJ-1_1!getLocalizedMessage}
      [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::InputStream misses features compatible with : Sequence {PJ-1_1!clone, PJ-1_1!finalize}
      [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::OutputStream misses features compatible with : Sequence {PJ-1_1!clone, PJ-1_1!finalize}
-     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::EOFException misses features compatible with : Sequence {PJ-1_1!getLocalizedMessage, PJ-1_1!printStackTrace, PJ-1_1!printStackTrace, PJ-1_1!fillInStackTrace, PJ-1_1!clone, PJ-1_1!finalize}
-     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::UTFDataFormatException misses features compatible with : Sequence {PJ-1_1!getLocalizedMessage, PJ-1_1!printStackTrace, PJ-1_1!printStackTrace, PJ-1_1!fillInStackTrace, PJ-1_1!clone, PJ-1_1!finalize}
-     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::InterruptedIOException misses features compatible with : Sequence {PJ-1_1!getLocalizedMessage, PJ-1_1!printStackTrace, PJ-1_1!printStackTrace, PJ-1_1!fillInStackTrace, PJ-1_1!clone, PJ-1_1!finalize}
-     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::UnsupportedEncodingException misses features compatible with : Sequence {PJ-1_1!getLocalizedMessage, PJ-1_1!printStackTrace, PJ-1_1!printStackTrace, PJ-1_1!fillInStackTrace, PJ-1_1!clone, PJ-1_1!finalize}
+     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::EOFException misses features compatible with : Sequence {PJ-1_1!clone, PJ-1_1!printStackTrace, PJ-1_1!finalize, PJ-1_1!fillInStackTrace, PJ-1_1!printStackTrace, PJ-1_1!getLocalizedMessage}
+     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::UTFDataFormatException misses features compatible with : Sequence {PJ-1_1!clone, PJ-1_1!printStackTrace, PJ-1_1!finalize, PJ-1_1!fillInStackTrace, PJ-1_1!printStackTrace, PJ-1_1!getLocalizedMessage}
+     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::InterruptedIOException misses features compatible with : Sequence {PJ-1_1!clone, PJ-1_1!printStackTrace, PJ-1_1!finalize, PJ-1_1!fillInStackTrace, PJ-1_1!printStackTrace, PJ-1_1!getLocalizedMessage}
+     [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::UnsupportedEncodingException misses features compatible with : Sequence {PJ-1_1!clone, PJ-1_1!printStackTrace, PJ-1_1!finalize, PJ-1_1!fillInStackTrace, PJ-1_1!printStackTrace, PJ-1_1!getLocalizedMessage}
      [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::DataInput misses features compatible with : Sequence {PJ-1_1!readFloat, PJ-1_1!readDouble, PJ-1_1!readLine}
      [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::DataOutput misses features compatible with : Sequence {PJ-1_1!writeFloat, PJ-1_1!writeDouble, PJ-1_1!writeBytes}
      [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::DataInputStream misses generals compatible with : Sequence {PJ-1_1!FilterInputStream}
@@ -88,42 +88,42 @@
      [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io::OutputStreamWriter misses features compatible with : Sequence {PJ-1_1!getEncoding, PJ-1_1!clone, PJ-1_1!finalize}
      [am3.atl] INFO: [personaljava-1_1] j2me-midp-1_0::java::io misses classifiers compatible with : Sequence {PJ-1_1!Serializable, PJ-1_1!IOException, PJ-1_1!FilterInputStream, PJ-1_1!FilterOutputStream, PJ-1_1!PipedInputStream, PJ-1_1!InputStream, PJ-1_1!PipedOutputStream, PJ-1_1!OutputStream, PJ-1_1!CharConversionException, PJ-1_1!EOFException, PJ-1_1!SyncFailedException, PJ-1_1!UTFDataFormatException, PJ-1_1!InterruptedIOException, PJ-1_1!UnsupportedEncodingException, PJ-1_1!DataInput, PJ-1_1!DataOutput, PJ-1_1!BufferedInputStream, PJ-1_1!DataInputStream, PJ-1_1!ByteArrayInputStream, PJ-1_1!PushbackInputStream, PJ-1_1!SequenceInputStream, PJ-1_1!StringBufferInputStream, PJ-1_1!LineNumberInputStream, PJ-1_1!BufferedOutputStream, PJ-1_1!DataOutputStream, PJ-1_1!ByteArrayOutputStream, PJ-1_1!PrintStream, PJ-1_1!StreamTokenizer, PJ-1_1!FileDescriptor, PJ-1_1!ObjectInput, PJ-1_1!ObjectInputStream, PJ-1_1!ObjectStreamConstants, PJ-1_1!ObjectInputValidation, PJ-1_1!ObjectOutput, PJ-1_1!ObjectOutputStream, PJ-1_1!ObjectStreamClass, PJ-1_1!InvalidClassException, PJ-1_1!ObjectStreamException, PJ-1_1!InvalidObjectException, PJ-1_1!NotActiveException, PJ-1_1!NotSerializableException, PJ-1_1!OptionalDataException, PJ-1_1!StreamCorruptedException, PJ-1_1!WriteAbortedException, PJ-1_1!Reader, PJ-1_1!BufferedReader, PJ-1_1!LineNumberReader, PJ-1_1!CharArrayReader, PJ-1_1!FilterReader, PJ-1_1!PushbackReader, PJ-1_1!InputStreamReader, PJ-1_1!PipedReader, PJ-1_1!StringReader, PJ-1_1!Writer, PJ-1_1!BufferedWriter, PJ-1_1!PrintWriter, PJ-1_1!CharArrayWriter, PJ-1_1!FilterWriter, PJ-1_1!OutputStreamWriter, PJ-1_1!PipedWriter, PJ-1_1!StringWriter, PJ-1_1!Externalizable}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::io equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util referenced packages: Set {PJ-1_1!lang, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util referenced packages: Set {PJ-1_1!io, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util::Calendar misses features compatible with : Sequence {J2ME-MIDP-1_0!before, J2ME-MIDP-1_0!after}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util misses classifiers compatible with : Sequence {J2ME-MIDP-1_0!Calendar, J2ME-MIDP-1_0!Timer, J2ME-MIDP-1_0!TimerTask}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util::zip referenced packages: Set {PJ-1_1!lang, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util::zip referenced packages: Set {PJ-1_1!io, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util::zip compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::util::zip equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text referenced packages: Set {PJ-1_1!util, PJ-1_1!lang, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text referenced packages: Set {PJ-1_1!util, PJ-1_1!io, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text equivalent packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text::resources referenced packages: Set {PJ-1_1!util, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text::resources compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::text::resources equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::net referenced packages: Set {PJ-1_1!lang, PJ-1_1!io}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::net referenced packages: Set {PJ-1_1!io, PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::net compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::net equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt referenced packages: Set {PJ-1_1!util, PJ-1_1!lang, PJ-1_1!peer, PJ-1_1!net, PJ-1_1!event, PJ-1_1!io, PJ-1_1!datatransfer, PJ-1_1!image}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt referenced packages: Set {PJ-1_1!net, PJ-1_1!image, PJ-1_1!io, PJ-1_1!util, PJ-1_1!peer, PJ-1_1!event, PJ-1_1!lang, PJ-1_1!datatransfer}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::image referenced packages: Set {PJ-1_1!awt, PJ-1_1!util, PJ-1_1!lang}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::image referenced packages: Set {PJ-1_1!util, PJ-1_1!lang, PJ-1_1!awt}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::image compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::image equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::event referenced packages: Set {PJ-1_1!awt, PJ-1_1!util, PJ-1_1!lang}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::event referenced packages: Set {PJ-1_1!util, PJ-1_1!lang, PJ-1_1!awt}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::event compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::event equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::peer referenced packages: Set {PJ-1_1!awt, PJ-1_1!lang, PJ-1_1!image}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::peer referenced packages: Set {PJ-1_1!image, PJ-1_1!lang, PJ-1_1!awt}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::peer compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::peer equivalent packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::datatransfer referenced packages: Set {PJ-1_1!lang}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::datatransfer compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::awt::datatransfer equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::applet referenced packages: Set {PJ-1_1!awt, PJ-1_1!util, PJ-1_1!lang, PJ-1_1!net}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::applet referenced packages: Set {PJ-1_1!net, PJ-1_1!util, PJ-1_1!lang, PJ-1_1!awt}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::applet compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::applet equivalent packages: Sequence {}
-     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::beans referenced packages: Set {PJ-1_1!awt, PJ-1_1!reflect, PJ-1_1!util, PJ-1_1!io, PJ-1_1!lang}
+     [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::beans referenced packages: Set {PJ-1_1!util, PJ-1_1!io, PJ-1_1!lang, PJ-1_1!awt, PJ-1_1!reflect}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::beans compatible packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] personaljava-1_1::java::beans equivalent packages: Sequence {}
      [am3.atl] INFO: [personaljava-1_1] Package: 'JavaLangLibrary'
