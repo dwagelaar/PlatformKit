@@ -20,7 +20,7 @@
   <owl:Ontology rdf:about="">
     <rdfs:label xml:lang="en">CoDAMoS platform ontology</rdfs:label>
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-      $Id: Platform.owl 326 2007-02-23 13:33:44Z dennis $
+      $Id$
     </owl:versionInfo> 
     <rdfs:comment>
       Platform ontology concepts and definitions
@@ -211,6 +211,7 @@
     <owl:disjointWith rdf:resource="#Library"/>
     <owl:disjointWith rdf:resource="#OperatingSystem"/>
     <owl:disjointWith rdf:resource="#Middleware"/>
+    <owl:disjointWith rdf:resource="#PackageManager"/>
   </owl:Class>
 
   <owl:Class rdf:ID="RenderingEngine">
@@ -218,6 +219,7 @@
     <owl:disjointWith rdf:resource="#VirtualMachine"/>
     <owl:disjointWith rdf:resource="#OperatingSystem"/>
     <owl:disjointWith rdf:resource="#Middleware"/>
+    <owl:disjointWith rdf:resource="#PackageManager"/>
   </owl:Class>
 
   <owl:Class rdf:ID="Library">
@@ -225,6 +227,7 @@
     <owl:disjointWith rdf:resource="#VirtualMachine"/>
     <owl:disjointWith rdf:resource="#OperatingSystem"/>
     <owl:disjointWith rdf:resource="#Middleware"/>
+    <owl:disjointWith rdf:resource="#PackageManager"/>
   </owl:Class>
 
   <owl:Class rdf:ID="OperatingSystem">
@@ -233,6 +236,7 @@
     <owl:disjointWith rdf:resource="#RenderingEngine"/>
     <owl:disjointWith rdf:resource="#Library"/>
     <owl:disjointWith rdf:resource="#Middleware"/>
+    <owl:disjointWith rdf:resource="#PackageManager"/>
   </owl:Class>
 
   <owl:Class rdf:ID="Middleware">
@@ -241,6 +245,16 @@
     <owl:disjointWith rdf:resource="#RenderingEngine"/>
     <owl:disjointWith rdf:resource="#Library"/>
     <owl:disjointWith rdf:resource="#OperatingSystem"/>
+    <owl:disjointWith rdf:resource="#PackageManager"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="PackageManager">
+    <rdfs:subClassOf rdf:resource="#Software" />
+    <owl:disjointWith rdf:resource="#VirtualMachine"/>
+    <owl:disjointWith rdf:resource="#RenderingEngine"/>
+    <owl:disjointWith rdf:resource="#Library"/>
+    <owl:disjointWith rdf:resource="#OperatingSystem"/>
+    <owl:disjointWith rdf:resource="#Middleware"/>
   </owl:Class>
 
 
