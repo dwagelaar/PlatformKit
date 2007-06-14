@@ -9,11 +9,17 @@ create OUT : OWL from IN : UML2, PLATFORM : OWL, JAVA : OWL;--, PREVOUT : OWL, P
 -- helper attributes begin
 -- ======================================================================
 
+helper def : UML2ToApiOntologyVersionString : String =
+	'$Id$';
+
 helper def : inElements : Set(UML2!ecore::EObject) = UML2!ecore::EObject->allInstancesFrom('IN');
 
 helper def : includedPackages : Set(UML2!uml::Package) = UML2!uml::Package->allInstancesFrom('IN')
 	->select(p|p->oclIsTypeOf(UML2!uml::Package) and p.packagedElement
 		->select(c|c->oclIsKindOf(UML2!uml::Class) or c->oclIsKindOf(UML2!uml::Interface))->notEmpty());
+
+--helper def : includedPackages : Set(UML2!uml::Package) = UML2!uml::Package->allInstancesFrom('IN')
+--	->select(p|p.name = 'CosNaming');
 
 helper def : includedClassifiers : Set(UML2!uml::Classifier) =  UML2!uml::Classifier->allInstancesFrom('IN')
 	->select(c|c->oclIsKindOf(UML2!uml::Class) or c->oclIsKindOf(UML2!uml::Interface));
@@ -144,6 +150,14 @@ helper context UML2!uml::Classifier def : compatibleInPrev : Sequence(UML2!uml::
 			->collect(p1|p1.allOwnedClassifiers)->flatten()
 			->select(c|self->isCompatibleWith(c));
 
+helper context UML2!uml::Classifier def : allFeatures : Set(UML2!uml::Feature) =
+	self.feature
+		->union(self.general
+			->collect(c|c.allFeatures)->flatten()->asSet())
+		->union(self.suppliers
+			->select(s|s->oclIsKindOf(UML2!uml::Classifier))
+			->collect(c|c.allFeatures)->flatten()->asSet());
+
 -- ======================================================================
 -- helper attributes end
 -- ======================================================================
@@ -193,7 +207,7 @@ helper context UML2!uml::Classifier def : isCompatibleWith(c : UML2!uml::Classif
 			if (let compGenerals : Sequence(UML2!uml::Classifier) = c.general->select(g|not self->hasGeneralCompatibleWith(g))
 				  in if compGenerals->isEmpty() then true
 				  	 else compGenerals->debug(thisModule.modelName.prefix + self.qualifiedName + ' misses generals compatible with ')->isEmpty() endif)
-			then (let compFeatures : Sequence(UML2!uml::Feature) = c->allFeatures()->select(f|not self->hasFeatureCompatibleWith(f))
+			then (let compFeatures : Sequence(UML2!uml::Feature) = c.allFeatures->select(f|not self->hasFeatureCompatibleWith(f))
 				  in if compFeatures->isEmpty() then true
 				  	 else compFeatures->debug(thisModule.modelName.prefix + self.qualifiedName + ' misses features compatible with ')->isEmpty() endif)
 			else false endif
@@ -201,7 +215,8 @@ helper context UML2!uml::Classifier def : isCompatibleWith(c : UML2!uml::Classif
 	else false endif;
 
 helper context UML2!uml::Classifier def : hasFeatureCompatibleWith(f : UML2!uml::Feature) : Boolean =
-	self->allFeatures()->select(o|o->isCompatibleWith(f))->notEmpty();
+	self.allFeatures->select(o|o->isCompatibleWith(f))->notEmpty();
+--		->debug(f.qualifiedName + ' (' + f.umlQualifiedName + ') has compatible feature in ' + self.qualifiedName + ' (' + self.umlQualifiedName + ')');
 
 helper context UML2!uml::StructuralFeature def : isCompatibleWith(f : UML2!uml::StructuralFeature) : Boolean =
 	if self->typedElementIsCompatibleWith(f)
@@ -215,6 +230,7 @@ helper context UML2!uml::BehavioralFeature def : isCompatibleWith(f : UML2!uml::
 		    (if self.isAbstract then f.isAbstract else true endif)
 		 then thisModule->compatibleParameters(self.ownedParameter, f.ownedParameter)
 		 else false endif
+--		 	->debug(self.qualifiedName + ' (' + self.umlQualifiedName + ') compatible with ' + f.qualifiedName + ' (' + f.umlQualifiedName + ')')
 	else false endif;
 
 helper def : compatibleParameters(selfpars : Sequence(UML2!uml::Parameter), otherpars : Sequence(UML2!uml::Parameter)) : Boolean =
@@ -230,7 +246,7 @@ helper def : compatibleParameters(selfpars : Sequence(UML2!uml::Parameter), othe
 	endif;
 
 helper context UML2!uml::Parameter def : isCompatibleWith(p : UML2!uml::Parameter) : Boolean =
-	if p->oclIsUndefined() then true
+	if p->oclIsUndefined() then false
 	else
 		if self->typedElementIsCompatibleWith(p)
 		then (self.direction = p.direction)
@@ -259,8 +275,9 @@ helper context UML2!uml::TypedElement def : typedElementIsCompatibleWith(t : UML
 	else false endif;
 	
 helper context UML2!uml::NamedElement def : namedElementIsCompatibleWith(e : UML2!uml::NamedElement) : Boolean =
+--	if (self.umlQualifiedName = e.umlQualifiedName)->debug(self.umlQualifiedName + ' = ' + e.umlQualifiedName) then
 	if (self.umlQualifiedName = e.umlQualifiedName) then
-		if (self->oclType() = e->oclType()) and (self->visibilityIsCompatibleWith(e)) then
+	if (self->oclType() = e->oclType()) and (self->visibilityIsCompatibleWith(e)) then
 			(let compSuppliers : Sequence(UML2!uml::NamedElement) = e.suppliers->select(d|not self->hasSupplierCompatibleWith(d))
 			 in if compSuppliers->isEmpty() then true
 			  	 else compSuppliers->debug(thisModule.modelName.prefix + self.qualifiedName + ' misses dependency suppliers compatible with ')->isEmpty() endif)
