@@ -6,6 +6,7 @@
   <!ENTITY xsd "http://www.w3.org/2001/XMLSchema">
   <!ENTITY units "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl">
   <!ENTITY platform "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl">
+  <!ENTITY pm "http://ssel.vub.ac.be/codamos/2007/01/PackageManagers.owl">
   <!ENTITY DEFAULT "http://ssel.vub.ac.be/codamos/2007/01/Java.owl">
 ]>
 
@@ -16,6 +17,7 @@
   xmlns:xsd = "&xsd;#"
   xmlns:units = "&units;#"
   xmlns:platform = "&platform;#"
+  xmlns:pm = "&pm;#"
   xmlns = "&DEFAULT;#"
   xml:base = "&DEFAULT;">
 
@@ -31,6 +33,7 @@
     </rdfs:comment>
     <owl:imports rdf:resource="&units;"/>
     <owl:imports rdf:resource="&platform;"/>
+    <owl:imports rdf:resource="&pm;"/>
   </owl:Ontology>
 
 <!--   ############ ########### ############ ############ ########### -->
@@ -82,6 +85,11 @@
     <rdf:type rdf:resource="&owl;#FunctionalProperty"/>
     <rdfs:domain rdf:resource="#JRE"/>
     <rdfs:range rdf:resource="#JavaVM"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="providesJavaPackageManager">
+    <rdfs:domain rdf:resource="#JRE"/>
+    <rdfs:range rdf:resource="#JavaPackageManager"/>
   </owl:ObjectProperty>
 
 <!--   ############ ########### ############ ############ ########### -->
@@ -193,6 +201,69 @@
   <Java1.4BytecodeFormat rdf:ID="theJava1.4BytecodeFormat"/>
   <Java5BytecodeFormat rdf:ID="theJava5BytecodeFormat"/>
   <Java6BytecodeFormat rdf:ID="theJava6BytecodeFormat"/>
+
+<!--   ############ ########### ############ ############ ########### -->
+<!--   ############                                       ########### -->
+<!--   ############     JAVAPACKAGEMANAGER PARAMETERS     ########### -->
+<!--   ############                                       ########### -->
+<!--   ############ ########### ############ ############ ########### -->
+
+  <owl:Class rdf:ID="JavaPackageManager">
+    <rdfs:subClassOf rdf:resource="&platform;#PackageManager"/>
+    <owl:disjointWith>
+      <rdf:Description rdf:about="&pm;#CAB">
+        <owl:disjointWith rdf:resource="#JavaPackageManager"/>
+      </rdf:Description>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <rdf:Description rdf:about="&pm;#DMG">
+        <owl:disjointWith rdf:resource="#JavaPackageManager"/>
+      </rdf:Description>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <rdf:Description rdf:about="&pm;#Dpkg">
+        <owl:disjointWith rdf:resource="#JavaPackageManager"/>
+      </rdf:Description>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <rdf:Description rdf:about="&pm;#Ipkg">
+        <owl:disjointWith rdf:resource="#JavaPackageManager"/>
+      </rdf:Description>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <rdf:Description rdf:about="&pm;#MSI">
+        <owl:disjointWith rdf:resource="#JavaPackageManager"/>
+      </rdf:Description>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <rdf:Description rdf:about="&pm;#Pkgtool">
+        <owl:disjointWith rdf:resource="#JavaPackageManager"/>
+      </rdf:Description>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <rdf:Description rdf:about="&pm;#RPM">
+        <owl:disjointWith rdf:resource="#JavaPackageManager"/>
+      </rdf:Description>
+    </owl:disjointWith>
+  </owl:Class>
+
+  <owl:Class rdf:ID="JavaWebApplet">
+    <rdfs:subClassOf rdf:resource="#JavaPackageManager"/>
+    <owl:disjointWith rdf:resource="#JavaWebStart"/>
+    <owl:disjointWith rdf:resource="#JavaMIDlet"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="JavaWebStart">
+    <rdfs:subClassOf rdf:resource="#JavaPackageManager"/>
+    <owl:disjointWith rdf:resource="#JavaWebApplet"/>
+    <owl:disjointWith rdf:resource="#JavaMIDlet"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="JavaMIDlet">
+    <rdfs:subClassOf rdf:resource="#JavaPackageManager"/>
+    <owl:disjointWith rdf:resource="#JavaWebStart"/>
+    <owl:disjointWith rdf:resource="#JavaWebApplet"/>
+  </owl:Class>
 
 </rdf:RDF>
   
