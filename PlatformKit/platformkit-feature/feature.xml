@@ -44,8 +44,8 @@ the terms and conditions of the Eclipse Public License Version
 
    <plugin
          id="be.ac.vub.platformkit.editor"
-         download-size="164"
-         install-size="164"
+         download-size="172"
+         install-size="172"
          version="0.0.0"
          unpack="false"/>
 
@@ -58,21 +58,21 @@ the terms and conditions of the Eclipse Public License Version
 
    <plugin
          id="be.ac.vub.platformkit"
-         download-size="152"
-         install-size="152"
+         download-size="108"
+         install-size="108"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.doc"
-         download-size="480"
-         install-size="517"
+         download-size="800"
+         install-size="847"
          version="0.0.0"/>
 
    <plugin
          id="be.ac.vub.platformkit.java"
-         download-size="0"
-         install-size="0"
+         download-size="36"
+         install-size="36"
          version="0.0.0"
          unpack="false"/>
 

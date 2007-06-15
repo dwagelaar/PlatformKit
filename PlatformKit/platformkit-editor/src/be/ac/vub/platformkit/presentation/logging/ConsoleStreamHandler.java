@@ -2,8 +2,9 @@ package be.ac.vub.platformkit.presentation.logging;
 
 import java.io.OutputStream;
 import java.util.logging.LogRecord;
-import java.util.logging.SimpleFormatter;
 import java.util.logging.StreamHandler;
+
+import be.ac.vub.platformkit.logging.PlatformkitLogFormatter;
 
 /**
  * Flushes after every log and doesn't close output stream.
@@ -16,7 +17,7 @@ public class ConsoleStreamHandler extends StreamHandler {
      * @param out
      */
     public ConsoleStreamHandler(OutputStream out) {
-        super(out, new SimpleFormatter());
+        super(out, PlatformkitLogFormatter.INSTANCE);
     }
     
     /**
@@ -31,6 +32,6 @@ public class ConsoleStreamHandler extends StreamHandler {
      * Don't close output stream.
      */
     public void close() {
-        //don't close
+    	flush();
     }
 }
