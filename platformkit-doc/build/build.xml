@@ -17,27 +17,31 @@
 			nonavbar="false" 
 			notree="false" 
 			packagenames="
-				be.ac.vub.platformkit.kb,
-				org.mindswap.pellet.eclipse,
+				be.ac.vub.platformkit,
 				be.ac.vub.platformkit.impl,
-				com.hp.hpl.jena.eclipse,
-				be.ac.vub.platformkit.editor.preferences,
-				be.ac.vub.platformkit.presentation.popup.action,
-				be.ac.vub.platformkit.presentation.logging,
-				be.ac.vub.platformkit.presentation.util.provider,
-				be.ac.vub.platformkit.presentation,
-				be.ac.vub.platformkit.provider,
-				be.ac.vub.platformkit.util,
-				be.ac.vub.platformkit.presentation.util,
+				be.ac.vub.platformkit.kb,
 				be.ac.vub.platformkit.kb.util,
+				be.ac.vub.platformkit.logging,
+				be.ac.vub.platformkit.util,
+				be.ac.vub.platformkit.provider,
+				be.ac.vub.platformkit.editor.preferences,
+				be.ac.vub.platformkit.presentation,
+				be.ac.vub.platformkit.presentation.logging,
+				be.ac.vub.platformkit.presentation.popup.action,
+				be.ac.vub.platformkit.presentation.util,
+				be.ac.vub.platformkit.presentation.util.provider,
+				be.ac.vub.platformkit.java,
+				org.mindswap.pellet.eclipse,
+				com.hp.hpl.jena.eclipse,
 				com.hp.hpl.jena.eclipse.logging" 
 			source="1.5" 
 			sourcepath="
-				../../platformkit-jena/src:
 				../../platformkit/src:
 				../../platformkit-edit/src:
-				../../platformkit-pellet/src:
-				../../platformkit-editor/src" 
+				../../platformkit-editor/src:
+				../../platformkit-java/src:
+				../../platformkit-jena/src:
+				../../platformkit-pellet/src"
 			splitindex="true" 
 			use="true" 
 			version="true">

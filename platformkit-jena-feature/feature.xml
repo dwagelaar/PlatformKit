@@ -70,8 +70,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="com.hp.hpl.jena"
-         download-size="12080"
-         install-size="13168"
+         download-size="12076"
+         install-size="13164"
          version="0.0.0"/>
 
    <plugin
