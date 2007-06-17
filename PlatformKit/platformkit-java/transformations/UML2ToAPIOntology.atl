@@ -94,6 +94,10 @@ helper context UML2!uml::NamedElement def : ontClassName : String =
 	else '' endif
 	+ self.name->firstToUpper();
 
+helper context UML2!uml::Model def : allOwnedPackages : Sequence(UML2!uml::Package) =
+	self->allOwnedElements()
+		->select(o|o->oclIsKindOf(UML2!uml::Package));
+
 helper context UML2!uml::Package def : allOwnedClassifiers : Sequence(UML2!uml::Classifier) =
 	self->allOwnedElements()
 		->select(o|o->oclIsKindOf(UML2!uml::Class) or o->oclIsKindOf(UML2!uml::Interface))
@@ -106,7 +110,8 @@ helper context UML2!uml::Package def : allOwnedClassifiers : Sequence(UML2!uml::
 helper context UML2!uml::Package def : references : Set(UML2!uml::Package) =
 	self.allOwnedClassifiers
 		->collect(c|c.references)->flatten()->asSet()
-		->collect(r|r->referencesOtherPackageThan(self))->flatten()->asSet();
+		->collect(r|r->referencesOtherPackageThan(self))->flatten()->asSet()
+		->debug(thisModule.modelName.prefix + self.qualifiedName + ' referenced packages');
 	
 -- Non-transitive references
 helper context UML2!uml::Classifier def : references : Set(UML2!uml::Classifier) =
@@ -139,9 +144,25 @@ helper context UML2!uml::NamedElement def : owlClassesInPrev : Sequence(OWL!owl:
 		->select(c|c.localName = self.ontClassName + 'Library')
 		->select(o|o.namespace.name = self->getModel().name);
 
+helper context UML2!uml::Model def : compatibleInPrev : Sequence(UML2!uml::Model) =
+	thisModule.prevModels
+		->select(m|self->hasAllPackagesCompatibleWith(m))
+		->debug(thisModule.modelName.prefix + self.qualifiedName + ' compatible models');
+
 helper context UML2!uml::Package def : compatibleInPrev : Sequence(UML2!uml::Package) =
 	thisModule.prevPackages
-		->select(p|self->isCompatibleWith(p));
+		->select(p|self->isCompatibleWith(p))
+		->debug(thisModule.modelName.prefix + self.qualifiedName + ' compatible packages');
+
+helper context UML2!uml::Package def : equivalentInPrev : Sequence(UML2!uml::Package) =
+	self.compatibleInPrev->select(p|p->isCompatibleWith(self))
+		->debug(thisModule.modelName.prefix + self.qualifiedName + ' equivalent packages');
+
+helper context UML2!uml::Package def : compatibleClasses : Sequence(OWL!owl::OWLClass) =
+	self.compatibleInPrev->collect(p|p.owlClassesInPrev)->flatten();
+
+helper context UML2!uml::Package def : equivalentClasses : Sequence(OWL!owl::OWLClass) =
+	self.equivalentInPrev->collect(p|p.owlClassesInPrev)->flatten();
 
 helper context UML2!uml::Classifier def : compatibleInPrev : Sequence(UML2!uml::Classifier) =
 	let packageName : String = self->getNearestPackage().umlQualifiedName in
@@ -149,6 +170,9 @@ helper context UML2!uml::Classifier def : compatibleInPrev : Sequence(UML2!uml::
 			->select(p|p.umlQualifiedName = packageName)
 			->collect(p1|p1.allOwnedClassifiers)->flatten()
 			->select(c|self->isCompatibleWith(c));
+
+helper context UML2!uml::Classifier def : equivalentInPrev : Sequence(UML2!uml::Classifier) =
+	self.compatibleInPrev->select(c|c->isCompatibleWith(self));
 
 helper context UML2!uml::Classifier def : allFeatures : Set(UML2!uml::Feature) =
 	self.feature
@@ -191,6 +215,14 @@ helper context UML2!uml::TypedElement def : referencesOtherThan(c : UML2!uml::Cl
 -- helper methods for determining compatibility
 -- ======================================================================
 
+helper context UML2!uml::Model def : hasAllPackagesCompatibleWith(m : UML2!uml::Model) : Boolean =
+	m.allOwnedPackages
+			->select(p|not self->hasPackageCompatibleWith(p))->isEmpty();
+		
+helper context UML2!uml::Model def : hasPackageCompatibleWith(p : UML2!uml::Package) : Boolean =
+	self.allOwnedPackages
+			->select(sp|sp.compatibleInPrev->includes(p))->notEmpty();
+		
 helper context UML2!uml::Package def : isCompatibleWith(p : UML2!uml::Package) : Boolean =
 	if self->namedElementIsCompatibleWith(p)
 	then (let compClassifiers : Sequence(UML2!uml::Classifier) = p.allOwnedClassifiers->select(c|not self->hasOwnedClassifierCompatibleWith(c))
