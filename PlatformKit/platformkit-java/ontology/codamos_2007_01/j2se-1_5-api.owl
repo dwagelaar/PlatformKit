@@ -311,7 +311,7 @@
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt.peer package for j2se-1_5</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="#JavaLangLibrary">
-		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2se-1_4;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="#JavaNioChannelsLibrary"/>
 		<rdfs:seeAlso rdf:resource="#JavaNetLibrary"/>
 		<rdfs:seeAlso rdf:resource="#JavaLangReflectLibrary"/>
