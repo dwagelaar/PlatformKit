@@ -126,7 +126,7 @@
 			<UML2ToAPIOntology2 in="J2SE-1_2"    prevout="preJDK-1_1_OWL"    previn="JDK-1_1"       prevout2="J2ME-MIDP-1_0_OWL"  previn2="J2ME-MIDP-1_0"                           out="J2SE-1_2_OWL"    path="/platformkit-java/j2se-1_2-api.owl"/>
 			<UML2ToAPIOntology1 in="JDK-1_1"     prevout="prePJ-1_1_OWL"     previn="PJ-1_1"        out="JDK-1_1_OWL"             path="/platformkit-java/jdk-1_1-api.owl"/>
 			<UML2ToAPIOntology1 in="PJ-1_1"      prevout="J2ME-MIDP-1_0_OWL" previn="J2ME-MIDP-1_0" out="PJ-1_1_OWL"              path="/platformkit-java/personaljava-1_1-api.owl"/>
-			<UML2ToAPIOntology1 in="J2ME-PP-1_0" prevout="J2ME-MIDP-1_0_OWL" previn="J2ME-MIDP-1_0" out="J2ME-PP-1_0_OWL"         path="/platformkit-java/j2me-pp-1_0-api.owl"/>
+			<UML2ToAPIOntology2 in="J2ME-PP-1_0" prevout="preJ2SE-1_2_OWL"   previn="J2SE-1_2"      prevout2="J2ME-MIDP-1_0_OWL"  previn2="J2ME-MIDP-1_0"                           out="J2ME-PP-1_0_OWL" path="/platformkit-java/j2me-pp-1_0-api.owl"/>
 		</parallel>
 		<nice newpriority="${curpri}"/>
 	</target>
