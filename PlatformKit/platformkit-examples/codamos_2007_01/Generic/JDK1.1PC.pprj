@@ -1,4 +1,4 @@
-; Thu Jun 14 22:07:16 CEST 2007
+; Mon Jun 18 17:01:21 CEST 2007
 ; 
 ;+ (version "3.2.1")
 ;+ (build "Build 365")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[JDK1.1PC_ProjectKB_Instance_40106]
-		[JDK1.1PC_ProjectKB_Instance_40107]
-		[JDK1.1PC_ProjectKB_Instance_40108]
-		[JDK1.1PC_ProjectKB_Instance_40109]
-		[JDK1.1PC_ProjectKB_Instance_40110]))
+		[JDK1.1PC_ProjectKB_Instance_50149]
+		[JDK1.1PC_ProjectKB_Instance_50150]
+		[JDK1.1PC_ProjectKB_Instance_50151]
+		[JDK1.1PC_ProjectKB_Instance_50152]
+		[JDK1.1PC_ProjectKB_Instance_50153]))
 
 ([CLSES_TAB] of  Widget
 
@@ -2541,31 +2541,6 @@
 	(boolean_value TRUE)
 	(name "ButtonDisplayed-View Selected Instances"))
 
-([JDK1.1PC_ProjectKB_Instance_40106] of  String
-
-	(name "owl:Class")
-	(string_value "%3ANAME"))
-
-([JDK1.1PC_ProjectKB_Instance_40107] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([JDK1.1PC_ProjectKB_Instance_40108] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([JDK1.1PC_ProjectKB_Instance_40109] of  String
-
-	(name "owl:Thing")
-	(string_value "%3ANAME"))
-
-([JDK1.1PC_ProjectKB_Instance_40110] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
 ([JDK1.1PC_ProjectKB_Instance_402] of  Boolean
 
 	(boolean_value TRUE)
@@ -2817,6 +2792,31 @@
 
 ([JDK1.1PC_ProjectKB_Instance_50] of  Property_List
 )
+
+([JDK1.1PC_ProjectKB_Instance_50149] of  String
+
+	(name "owl:Class")
+	(string_value "%3ANAME"))
+
+([JDK1.1PC_ProjectKB_Instance_50150] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([JDK1.1PC_ProjectKB_Instance_50151] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([JDK1.1PC_ProjectKB_Instance_50152] of  String
+
+	(name "owl:Thing")
+	(string_value "%3ANAME"))
+
+([JDK1.1PC_ProjectKB_Instance_50153] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
 
 ([JDK1.1PC_ProjectKB_Instance_51] of  Widget
 
@@ -3947,9 +3947,9 @@
 		"owl:Class"
 		"rdfs:Container"
 		"owl:Ontology"
-		"xsd:gMonthDay"
-		":TO"
 		"owl:DataRange"
+		":TO"
+		"xsd:gMonthDay"
 		"xsd:NMTOKEN"
 		"xsd:QName"
 		"xsd:unsignedInt"
@@ -3977,45 +3977,45 @@
 		"rdf:List"
 		"rdf:predicate"
 		"owl:hasValue"
-		"xsd:double"
 		"rdf:rest"
+		"xsd:double"
 		"xsd:decimal"
 		"rdf:subject"
-		"xsd:Name"
-		"owl:sameAs"
-		"rdf:value"
 		"owl:SymmetricProperty"
+		"rdf:value"
+		"owl:sameAs"
+		"xsd:Name"
 		"xsd:byte"
-		"owl:AllDifferent"
 		"owl:differentFrom"
-		"rdf:Property"
+		"owl:AllDifferent"
 		"owl:Nothing"
-		"owl:cardinality"
+		"rdf:Property"
 		"owl:InverseFunctionalProperty"
+		"owl:cardinality"
 		"xsd:nonNegativeInteger"
 		"rdf:Statement"
-		":FROM"
 		"rdfs:Literal"
-		"xsd:anySimpleType"
+		":FROM"
 		"owl:disjointWith"
+		"xsd:anySimpleType"
 		"owl:minCardinality"
 		"xsd:ID"
 		"xsd:gDay"
 		"xsd:gYearMonth"
-		"xsd:NCName"
 		"owl:distinctMembers"
+		"xsd:NCName"
 		"xsd:nonPositiveInteger"
 		"rdfs:Datatype"
-		"xsd:token"
-		":DIRECTED-BINARY-RELATION"
 		"owl:TransitiveProperty"
-		"xsd:ENTITY"
-		"xsd:IDREF"
+		":DIRECTED-BINARY-RELATION"
+		"xsd:token"
 		"xsd:normalizedString"
+		"xsd:IDREF"
+		"xsd:ENTITY"
 		"xsd:gMonth"
-		"owl:maxCardinality"
-		"rdf:type"
 		"owl:oneOf"
+		"rdf:type"
+		"owl:maxCardinality"
 		"rdf:object")
 	(journaling_enabled FALSE)
 	(next_frame_number 0)
