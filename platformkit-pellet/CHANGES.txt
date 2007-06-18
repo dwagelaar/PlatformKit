@@ -1,6 +1,120 @@
 Change Log
 
-Pellet 1.3 (Apr 17, 2005)
+Pellet 1.4 (Final Release) (Mar 16, 2007)
+-----------------------------------------
+
+* MODIFIED: Jena jar files to version 2.5.2
+
+* MODIFIED: OWLAPI jar files to the SVN snapshot from 2006-03-16
+
+* ADDED: DL-safe rules parsing for Jena loader
+
+* MODIFIED: OWL 1.1 namespace to the latest spec
+
+* ENHANCED: Vocabulary for OWL 1.1 and Econn for easier manipulation
+
+* ADDED: Handling of NegativeObjectPropertyAssertion and NegativeDataPropertyAssertion
+
+* ADDED: Semantic branching for max cardinality to solve the performance issue
+
+* FIXED: Handling dependency set of differentFrom axioms for maxCardinality restrictions
+
+* FIXED: Enumerated datatype problem
+
+* FIXED: KnowledgeBase.getDomains to ensure consistency
+
+* FIXED: ATermUtils.findPrimitives for qualified cardinality restrictions
+
+* FIXED: Range problems related to xsd:float and xsd:double
+
+* FIXED: Treatment of antisymmetric properties to be irreflexive as
+         dictated by the OWL 1.1 spec
+
+Pellet 1.4-RC2 (Feb 05, 2007)
+-----------------------------
+
+* MODIFIED: Jena jar files to version 2.5.1
+
+* DEPRECATED: Anything based on deprecated Jena RDQL package
+
+* FIXED: Query simplification bug when KB is classified
+
+* FIXED: Caching root nodes so nominal-based model merging
+         succeeds
+
+* FIXED: Inverse functional datatype properties
+
+* FIXED: Iteration over the values of dataypes that excludes
+         some values
+
+* FIXED: Optimized double blocking for cheking r-successors
+
+* ADDED: Ignore transitivity (or complex subproperty) axioms for
+         non-simple properties (e.g. the ones used in cardinality
+         restrictions)
+         
+* FIXED: Various bugs related to cardinality restrictions (due
+         to dependecy set tracking)
+         
+* ENHANCED: Support for OWL 1.1 so ontologies not using those
+            features will be minimally affected         
+
+* MODIFIED: OWL 1.1 syntax to the latest specs
+
+* ADDED: Support to parse multiple facets restrictions on DataRange
+
+* FIXED: DIG parser for inverse functional and transitive properties
+
+* FIXED: OWLAPI reasoner consistency() function
+
+* FIXED: Error messages about valid ontology properties
+
+* FIXED: NullPointerException in species vaidation for rdf:List structures
+
+* ENHANCED: DFA generation for complex properties by caching
+
+* ADDED: Test cases from Thorsten Liebig to the test suite
+
+* FIXED: The issue about anti-symmetric properties
+
+* FIXED: Dependency set info for all values rule
+
+* FIXED: The typo in command line help for DL-dafe rules
+
+* FIXED: Taxonomy builder bug that ignores trivially unsat concepts
+
+* FIXED: KnowledgeBase.addSubClass that ignores nominals if nominal absorption 
+         is turned off
+         
+* ADDED: More test cases for transitive sub properties
+
+* FIXED: The pseudo-model merging problem related to functional props
+
+* FIXED: The IllegalArgumentException with XSDDecimal
+
+* FIXED: Call copyOnWrite for literal nominals
+
+* ENHANCED: More warning messages during loading for invalid structures
+
+Pellet 1.4-RC1 (Nov 07, 2006)
+-----------------------------
+
+* ADDED: Support for OWL 1.1 including qualified cardinality restrictions, complex 
+         subproperty axioms (between a property and a property chain), local ref-
+         lexivity restrictions; reflexive, irreflexive, symmetric, and anti-symmetric 
+         properties; disjoint properties, and user-defined inline datatypes.
+         
+* ADDED: Query subsumption algorithm implemented in QueryEngine       
+         
+* ADDED: An option to do realization concept at a time rather than individual at a time
+
+* MODIFIED: date-time related datatypes to use xsdlib for representation
+
+* FIXED: Taxonomy.isSubNodeOf for equivalances
+
+* FIXED: Various other bugs
+
+Pellet 1.3 (Apr 17, 2006)
 -------------------------
 
 * ENHANCED: SPARQL query engine PelletQueryExecution tu answer non-SELECT queries

@@ -3,7 +3,7 @@
 <plugin
    id="com.hp.hpl.jena"
    name="Jena Plug-in"
-   version="2.3.0.3"
+   version="2.5.3.0"
    provider-name="Hewlett-Packard Development Company, LP"
    class="com.hp.hpl.jena.eclipse.JenaPlugin">
 
@@ -16,14 +16,9 @@
       <library name="lib/arq.jar">
          <export name="*"/>
       </library>
-      <library name="lib/commons-logging.jar">
-         <export name="*"/>
-      </library>
       <library name="lib/concurrent.jar">
       </library>
       <library name="lib/icu4j_3_4.jar">
-      </library>
-      <library name="lib/jakarta-oro-2.0.8.jar">
       </library>
       <library name="lib/jena.jar">
          <export name="*"/>
@@ -34,15 +29,20 @@
       <library name="lib/log4j-1.2.12.jar">
          <export name="*"/>
       </library>
-      <library name="lib/stax-1.1.1-dev.jar">
-         <export name="*"/>
-      </library>
       <library name="lib/stax-api-1.0.jar">
          <export name="*"/>
       </library>
       <library name="lib/xercesImpl.jar">
          <export name="*"/>
       </library>
+      <library name="lib/arq-extra.jar">
+         <export name="*"/>
+      </library>
+      <library name="lib/commons-logging-1.1.jar"/>
+      <library name="lib/iri.jar"/>
+      <library name="lib/json.jar"/>
+      <library name="lib/lucene-core-2.0.0.jar"/>
+      <library name="lib/wstx-asl-3.0.0.jar"/>
    </runtime>
 
    <requires>

@@ -1,6 +1,422 @@
 Release Notes
 =============
 
+==== Jena 2.5.3
+
+Statement.Util
+    o The interface Statement has grown a Util class containing
+      the three constants getSubject, getPredicate, and getObject,
+      which are Map1 objects with the obvious meanings.
+
+Assembler modification-and-fix
+    o There was a bug with the behaviour of OntModelSpec assemblers.
+      The "feature" that if a ja:OntModelSpec had no properties it
+      was treated as an OntModelSpec constant name did not work,
+      since the generalAssembler obligingly inferred properties for
+      it.
+
+      The behavior has changed (I hope for the better ...). Instead,
+      an OntModelSpec is built by modifying the properties of [a copy
+      of] a default spec, which is normally OWL_MEM_RDFS_INF. However,
+      if the root resource is ja:<SomeOntModelSpecConstantName>, then
+      that constant provides the default. This gives the intended
+      behaviour of "I specified no properties" and additionally
+      allows specs to be specified as tweaks-to-a-constant.
+      
+      ContentAssemblers can now be constructed with default FileManager
+      arguments. External content is loaded using that FileManager.
+      The object of an externalContent statement can be a string
+      literal or a URI.
+      
+      AssemblerGroups (which includes the instance Assembler.general)
+      now support a `copy` method which makes a new group initialised
+      with the same mapping.
+
+      ReasonerFactoryAssembler now respects JA:reasonerClass properties,
+      which specify the factory by giving its class name.
+
+ModelSpec and family REMOVED
+    o the long-obsolete and recently-deprecated ModelSpec has been removed,
+      along with its related tests, descendants, registry, and references.
+      OntModelSpec remains (but is no longer a ModelSpec), with the old
+      ModelSpec-oriented constructors deprecated and new Assembler statics
+      introduced.
+
+      OntModelSpec now extends OntModelSpecObsolete, which holds (almost)
+      all of the OntModelSpec's deprecated ModelSpec-oriented machinery. 
+      OMSO will vanish after the next Jena release, when the remaining 
+      ModelSpec code will evaporate.
+
+Deprecated XSD.NS in favour of XSD.getURI() which reports namespace with a 
+      trailing # character.
+      
+Reasoners:
+    o Extended rule syntax to accept URIs wrapped in <..> and file: uris
+
+Typed literals
+    o Fixed problem which prevented Calendars being used to instantiate 
+      XSDDates rather than full XSDDateTimes
+      
+IRI
+    o Fixed conformance problem with mailto:
+    o Rewrote relativize code, fixing a #frag bug.
+      
+==== Jena 2.5.2
+
+RDQL support now in ARQ
+    o Removed old RDQL engine
+      Migrate to SPARQL, use ARQ instead and package com.hp.hpl.jena.query
+      http://jena.sf.net/ARQ/ -- ARQ also supports RDQL as a legacy language
+
+RDFException removed
+    o Removed RDFException. It was obsolete (and recently deprecated). It's
+      subclasses are now subclasses of JenaException.
+
+rdfcat tool
+	o The handling of command line arguments to rdfcat has changed slightly.
+	  The input format (N3, RDF/XML, n-triple) argument, -n, -x and -t
+	  respectively, now *only* affect the following argument. In previous
+	  versions, the format was 'sticky' in that it persisted until another
+	  input format argument was supplied. To set the default input format,
+	  a new parameter -in has been added. See the rdfcat Javadoc for full
+	  details.
+
+==== Jena 2.5.1
+
+Fix for test.bat not setting the classpath correctly.
+Fix for PropertyNotFoundException from OntResourceImpl.getPropertyValue, not a null return.
+
+==== Jena 2.5
+
+ModelJEB is no longer supported
+    o The ModelJEB BDB storage for graphs is no longer supported. (It
+      has been unofficially unsupported for quite a while without
+      complaint.) It's job -- cheap-and-cheerful persistent models -- has
+      been taken over by HSQLDB.
+
+RDFException has been deprecated
+    o It has been obsolete [because of the JenaException revisions] for
+      yonks. No-one should be using it (other than some internal uses
+      to be excised.) It will be removed post-2.5.
+
+Single-Element Unions [hence, OntModels]
+    o If a union graph contains a single element, both find and queryHandler
+      delegate directly to that single element. This means that find does
+      not need to remember all the found elements to discard duplicates,
+      and query gets to use any specialised code for that single graph
+      (rather than the general nested-finds that a full union needs).
+      In particular, if that single graph is a database graph, it will
+      be able to use fastpath.
+
+      A specific use of this is an OntModel with no imports in a database.
+      (If it has imports, then this optimisation cannot apply.)
+
+      In case something breaks as a result, the optimisation can be
+      disabled by setting the system property jena.union.optimise to
+      anything other than "yes".
+
+Reification with Inference Models
+    o A partial fix to a reported bug with reification on inference models.
+      Previously the built-in inference models had the reifier of their
+      base model, and hence deduced triples did not contribute to the
+      ReifiedStatement API calls, so deduced reified statements were
+      invisible. Now those inference models have their own reifier and
+      the reified statements of an inference model are the reified
+      statements of the base model and of the deductions model.
+
+      Reified statements inferred by backwards inference are /not/
+      reported. Reified statements formed from fragments spread between
+      the base model and the deductions model are /not/ reported.
+      Implementing those reifications would be expensive both for
+      the implementors and for any users.
+
+PropertyImpl.getOrdinal() [internal]
+    o now computed on demand rather than on construction. Also log-on-too-big
+      replaced by throw-an-exception. I doubt very very much that this will
+      ever matter. There was no TestPropertyImpl code, but there is now. It
+      should be extended to cover the "illegal URI detection", or perhaps we
+      should remove that since it's RDF/XML-specific and checked by the XML
+      output code anyway?
+
+Turtle support
+    o New Turtle parser (uses javacc, not antlr). Accessed for files with extension ".ttl"
+      and language names "TTL", "TURTLE", "Turtle"
+
+Database backends:
+    o Changed MS SQL Server driver to use NVARCHAR instead of VARCHAR,
+      to fix i18n support.
+    o Fixed i18n bug in Oracle backend and also switched to NVARCHAR.
+    o No requirement to compile Jena for Oracle use.  The Oracle driver
+      now works in the standard Jena distribution.
+
+ModelFactory:
+    o added methods to construct models using Assembler system. Updated
+      ModelFactory howto to include them. Deprecated the ModelSpec
+      methods. Removed them from ModelFactory howto.
+
+ModelSpec:
+    o deprecated the ModelSpec class. Modified the ModelSpec docs to
+      say it's deprecated.
+
+Assembler:
+    o missing subclass declarations added to vocabulary. Bogus `domain`
+      replaced by correct `range`. FileManagerAssembler now by default
+      builds a FileManager with the standard locators. To test this,
+      made the existing standard locator classes have appropriate
+      .equals() and .hashCode() methods.
+
+    o ConnectionAssembler now records subject resource in
+      ConnectionDescription. ConnectionDescription falls over
+      usefully if the URL or type is null when it's opened.
+
+RDF/XML output:
+    o bug whereby a literal containing the sequence "]]>" generated illegal
+      XML (because the "]]>" went through unchanged, and is illegal except
+      as CDATA end) fixed by converting any ">" in element content into
+      "&gt;".
+
+    o unencodable characters (any control character except \n, \t, \r, also
+      \uFFFF and \uFFFE) now throw exceptions. We may allow a new parameter
+      setting to switch this off later.
+
+    o the entity-conversion code has been rewritten using Java regex's to
+      avoid multiple conversions.
+
+    o the new Writer property "showDoctypeDeclaration" is used by the RDF/XML
+      writers to force inclusion of a !DOCTYPE header declaring as entities
+      each of the prefix-mappings of the model. Attributes that start with
+      the URIs of the mapping are written to use the entity invocation
+      instead.
+
+RDF/XML Input:
+    o When reading from a URL, content negotiation is now used
+      prefering: RDF/XML, then XML, over other content types.
+    o An over-eager and confusing warning was suppressed.
+    o Behaviour on very large files has been modified. For such files, checks
+      for illegal reuse of rdf:ID are not made after the first 10000
+      have been seen. A warning is issued about this change when
+      reading a large file.
+
+IRI:
+     Release synchronized with an IRI release (iri 0.3).
+     Minor bug fixes.
+
+Untyped literal operations deprecated (char, boolean, long, float, double, Object)
+     These operations do not work on typed literals.  They converted their arguments
+     to plain strings and parsed strings to retrive values.
+     They are a ghost from pre-datatyping RDF.
+     ** The forms on RDFNode, String, String+lang, and XML literals remain.
+     ** Forms taking a typed literal or a lexical form and RDF datatype added (or already exist).
+     Model:      .add, .listStatements, .listSubjectsWithProperty
+     Resource:   .hasProperty, .addProperty
+
+JAR file changes:
+    Added:    arq-extra.jar
+    Changed:  wstx-asl-2.8.jar ==> wstx-asl-3.0.0.jar
+
+EnhNodes/UnsupportedPolymorhismException/QualifiedRestriction
+    o Any EnhNode now automatically canAs any type already on its
+      view ring if that view is still isValid. Previously it
+      required finding a relevant Personality and Implementation
+      and trying canWrap, which failed if the EnhNode had no EnhGraph,
+      eg a Resource allocated by ResourceFactory.
+
+    o This exposed problems with the QualifiedRestriction family of
+      classes, which didn't override isValid. They do now.
+
+    o Attempting to .as() an EnhNode with no EnhGraph no longer generates
+      a NullPointerException, instead giving an explicit
+      UnsupportedPolymorphism exception.
+
+    o Attempting to canAs an EnhNode with no existing implementation
+      of the required type and no EnhGraph returns false.
+
+OntResourceImpl
+    o some internal modifications to simplify/correct the code:
+
+        - corrected uses of .remove duing an iteration
+        - replaced some loops by existing single Graph methods
+        - some uses of getRequiredProperty + exception handling
+          (probably hangovers from the old days when getProperty
+          threw an exception) replaced by uses of getProperty and
+          tests for null
+
+ResourceImpl
+    o implementation of removeAll simplified in two ways: uses the
+      Model removeAll method, and no longer tests for an InfModel,
+      since the InfGraph implementation of removeAll works on the
+      base model anyway so no special-case code required. Also
+      avoids iffy (but currently safe) use of remove(StmtIterator)
+      where the StmtIterator is active over the same Model.
+
+Statement
+    o the method getWellFormed has been deprecated in favour of a new
+      method hasWellFormedXML(), paralleling Literal's newish
+      isWellFormedXML().
+
+Model
+    o Model has acquired a new method isClosed(), true iff the model has
+      been .close()d
+
+    o Graph ditto
+
+    o The built-in Graph and Model implementations have been modified to
+      implement this method.
+
+Typed literals
+    o Fixed bug in serialization of xsd:duration types.
+    o Added getBigSeconds to XSDDuration to avoid rounding errors in
+      use of getSeconds.
+
+OntModel
+    o the prefix mapping of an OntModel will not offer as a default URI
+      the default URI of any non-base component. This change is
+      implemented via Polyadic and hence any MultiUnion will have this
+      behaviour.
+
+    o added some extra checks so that importing a previously closed model
+      URI no longer causes ClosedException (SF bug 1474220)
+
+    o aliased method 'listImportedModels' to 'listSubModels' (the preferred
+      name), and introduced a Boolean flag to allow the listed sub-models to
+      be presented without their own import sub-models if required
+
+OntDocumentManager
+    o added a 'load hook' so that custom behaviours can be executed just
+      before and/or just after a URI is read in to the contents of an
+      OntModel or one of its sub-models
+
+BooleanClassDescription (UnionClass, IntersectionClass, etc)
+    o canAs() checking in the language profile is now more liberal
+      for OntClass resources, to prevent partially-formed class
+      descriptions triggering a ConversionException (SF bug 1608765)
+
+Legacy DAML API
+    o This entire API has been deprecated, and will be removed in Jena 2.6.
+      Ontology users are encouraged to work with OWL rather than DAML+OIL,
+      however the DAML+OIL profile for OntModel will continue to work
+      and be supported. The deprecated API is in the package:
+           com.hp.hpl.jena.ontology.daml
+      and was originally provided to ease transition of existing code
+      from Jena 1 to Jena 2. This transitional capability is no longer
+      supported.
+
+Reasoners
+   o Fixed a ConcurrentModificationException bug in TransitiveReasoner
+   o added simple string hanlding builtins regexp, strConcat, uriConcat
+   o fixed bug with arithmetic builtins which caused matching against an
+     already bound but incorrect solution to pass.
+   o fixed bug in backward reasoner which caused to try redundant solutions
+     to purely grounded calls. This may improve efficiency in some cases.
+   o fixed bug in duplicate removal in GenericRuleReasoner in pure backward mode
+   o fixed bug in parsing of typed literals to handle user defined prefixes
+     (thanks to Steve Cranefield for the fix)
+   o removed MAX_VARS limit from the old forward rule engine
+
+==== Jena 2.4
+
+JAR file changes:
+    Added:    wstx-asl-2.8.jar
+              json.jar
+              iri.jar
+    Removed:  stax-1.1.1-dev.jar
+              jakarta-oro-2.0.8.jar
+
+
+N3/Turtle:
+    o The syntax form 2.3 is now treated as an XSD decimal, not an XSD double
+      This is inline with chnages to N3 and Turtle specifications and
+      compatible with SPARQL.
+
+General
+    o Fixed various security violations which prevent use within Applets
+
+Model
+    o Model[Con] has acquired a new method, remove(S, P, O),
+      which removes the triple (S, P, O) from the model. None
+      of S, P, O can be null. O is of type RDFNode (no overloading
+      for primitive types etc).
+
+ExtendedIterator [hence NiceIterator and ResultSetIterator]
+    o added toSet() and toList(), which bundle the [remaining]
+      elements of the iterator up as a Set or List. Testing
+      these is a bit tricky; for the moment I've cheated by
+      testing specific instacnes of WrappedIterator, which is
+      built on NiceIterator, and NiceIterator is the base class
+      for /almost/ all the ExtendedIterators in the system,
+      except ResultSetIterator for which I added special code.
+
+Node
+    o added getBlankNodeLabel() as shortcut to the label string
+      of a blank node.
+
+AnonId
+    o added getLabelString(), which delivers the label of this
+      AnonId and (unlike toString()) is guaranteed to do
+      /only/ that.
+
+GraphMatcher
+    o following up on a performance issue, replaced the idiom
+      find().hasNext() for containment in GraphMatch with proper
+      use of contains(). After fixing a hashing problem in
+      LiteralLabel [see below], this worked and sped up the
+      checker /lots/ in some circumstances.
+
+NEW: Assembler specifications
+    o Assembler specifications replace the old ModelSpecs. They are
+      documented in doc/assembler/index.html and linked pages.
+
+JenaTestBase
+    o Added new test method assertInstanceOf to do instanceof testing
+      with a nice failure message; updated (some) test code to use it.
+
+FileGraph[Maker]
+    o The recent change to FileGraph which meant that closed FileGraph's
+      were removed from their owning Maker also meant that they were
+      not deleted when the Maker was closed. Amongst other things, this
+      left crud in the tmp directory when running the tests. Fixed: the
+      Maker remembers /all/ the FileGraphs, even the closed ones.
+
+    o Added a constructor that allows the file language to be explicitly
+      specified.
+
+LiteralLabel
+    o reported bug whereby a LiteralLabel can be constructed with the
+      value part null has been fixed [by putting in the missing 'this.']
+    o discovered a problem with literal labels whose values are arrays:
+      hashing doesn't work. Added delegation so that an RDFDataType
+      can provide a specialised hash function and arranged that the
+      relevant XSD datatypes used it.
+
+Database:
+    o Added a based MS SQL Server 2000/MSDE 2000 driver.
+    o Suppressed the "reifier must fix over-specification" messages from tests.
+
+Reasoners:
+    o Fixed bug in the forward rule engine which prevented firing of axiomatic
+      rules with non-empty bodies (i.e. no pattern match but calls to builtins).
+    o Changed contract for TransitiveReasoner so the same reasoner can be bound
+      to multiple datasets without interference between them
+    o Added error check for backward rules with multiple head clauses
+
+OntModelSpec:
+    o Changed contract for reasoners so that if a ReasonerFactory is supplied then
+      the generated reasoner instances won't be cached. This allows the same spec
+      to be reused multiple times with reasoners which can only be bound once.
+
+   o OntModelSpecs now export access to their to-be-deprecated ModelMakers via
+     the importModelGetters. This is part of the move to using Assemblers.
+
+OntDocumentManager
+    o When the OntDocumentManager asks for a model for an import, it goes via
+      the OntModelSpec's ModelGetter. Since the default ModelGetter just wraps
+      the spec's ModelMaker, this doesn't change the usual behaviour, but it
+      allows the OntModelSpec to use weak Getters.
+
+Jar changes:
+    o stax-1.1.1-dev.jar ==> stax-1.1.2-dev.jar
+    o new iri.jar required
+
 ==== Jena 2.3
 
 ARQ - SPARQL for Jena
@@ -16,12 +432,12 @@ JAR changes
       jakarta-oro-2.0.5.jar  =>  jakarta-oro-2.0.8.jar
       log4j-1.2.7.jar  =>  log4j-1.2.12.jar
       icu4j.jar  =>  icu4j_3_4.jar
-      
+
     Xerces jars updated to Xerces 2.7.1
 
     New Jarfiles:
       arq.jar
-      jenatest.jar 
+      jenatest.jar
       stax-1.1.1-dev.jar
       stax-api-1.0.jar
 
@@ -56,7 +472,7 @@ ARP
 
     o Some changes in the error codes produced for ill-formed
       input.
-      
+
     o The treatment of interrupts has changed. Instead of
       throwing an InterruptedIOException, an error
       is produced: ERR_INTERRUPTED, and reported through
@@ -73,9 +489,9 @@ ARP
 
     o SAX2RDF, SAX2Model protected constructors have changed in a not
       backwardly compatible fashion.
-      
+
     o NTriple command-line option documentation changed, in manner
-      that is theoretically not backwardly compatible. 
+      that is theoretically not backwardly compatible.
       -r is now default (in documentation,
       follows previous implementation). -R option added to cancel -r.
 
@@ -200,36 +616,36 @@ Typed literals:
     o Fixed bug in sameValueAs when comparing an integer to a float/double.
 
 Reasoners:
-    o Extended rule parser to support typed literals using N3 type syntax 
+    o Extended rule parser to support typed literals using N3 type syntax
       such as 'true'^^xsd:byte.
-      
+
     o Fixed bug with rule sets which include a proprocessing hook to ensure,
       the hooks are rerun after new triple adds which should invoke the hook.
-      
+
     o Fixed two bugs with derivation logging of backward rules.
-      
+
     o Modified processing of non-monotonic rulesets (involving drop/remove) so
-      that each entry in the conflict set is fired separately and all the 
+      that each entry in the conflict set is fired separately and all the
       consquences propagated before attempting to fire the next rule.
       To avoid performance hits, rulesets not involving such operators
       execute as before.
-      User defined Builtins which remove data should be marked as such 
+      User defined Builtins which remove data should be marked as such
       using the isMonotonic method.
-      
+
     o Fixed bug in TransitiveGraphCache which had resulted in some
       transitive reductions being incompletely reduced (i.e. some
       indirect property instances were being incorrectly reported as
       being direct).
-      
+
     o Added "drop" operator as an alternative to "remove" when performing
       non-monotonic rewrites.
-      
+
     o Fixed bug in rebind/reset of infgraphs which use TGC and failed to
       reset the transitive engine.
-      
+
     o Optimized Resource.remove operations for the case where the parent model
       is an InfModel.
-      
+
     o The default DIG reasoner used in the documentation examples has been
       changed from Racer to Pellet. Pellet is free and open-source, while Racer
       has switched to a commercial license model.
@@ -242,9 +658,9 @@ Ontology API
       has been deprecated, and will be removed in a future version of Jena.
 
 Command line utilities
-	o New utility jena.rdfcat, which can merge any number of individual rdf
-	  documents together into one model, and perform syntax translation (e.g.
-	  RDF/XML to N3).
+    o New utility jena.rdfcat, which can merge any number of individual rdf
+      documents together into one model, and perform syntax translation (e.g.
+      RDF/XML to N3).
     o New query utilities for SPARQL
 
 ModelLock
@@ -582,9 +998,9 @@ Post Jena 2.1 change list [up to 2.2beta]
 Jena 2.1 - Main changes from Jena 2.0
   Installation
       The names of some jars have changed be sure to update your classpath.
-	  The name of the xerces jars are now: xercesImpl.jar and xml-apis.jar
-	  We also require Jakarta commons logging: commons-logging.jar
-	  See readme.html for the full list of jars.
+      The name of the xerces jars are now: xercesImpl.jar and xml-apis.jar
+      We also require Jakarta commons logging: commons-logging.jar
+      See readme.html for the full list of jars.
 
   OWL Syntax Checker
       Major update from alpha version (Jena 2.0), to production

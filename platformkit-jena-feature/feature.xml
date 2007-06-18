@@ -2,7 +2,7 @@
 <feature
       id="com.hp.hpl.jena"
       label="Jena"
-      version="2.3.0.1"
+      version="2.5.3.0"
       provider-name="Hewlett-Packard Development Company, LP"
       image="jena-logo-small.gif">
 

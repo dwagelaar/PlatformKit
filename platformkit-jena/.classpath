@@ -5,15 +5,18 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/antlr-2.7.5.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/arq.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-logging.jar"/>
 	<classpathentry kind="lib" path="lib/concurrent.jar"/>
 	<classpathentry kind="lib" path="lib/icu4j_3_4.jar"/>
-	<classpathentry kind="lib" path="lib/jakarta-oro-2.0.8.jar"/>
-	<classpathentry exported="true" sourcepath="jena-2.3-src.zip" kind="lib" path="lib/jena.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jena.jar" sourcepath="jena-2.5.3-src.zip"/>
 	<classpathentry exported="true" kind="lib" path="lib/jenatest.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/log4j-1.2.12.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/stax-1.1.1-dev.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/stax-api-1.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="lib/arq-extra.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/iri.jar"/>
+	<classpathentry kind="lib" path="lib/json.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-core-2.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/wstx-asl-3.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
