@@ -22,17 +22,19 @@
   <rdf:Property rdf:ID="providesSoftware"/>
   <rdf:Property rdf:ID="providesSoftware_1"/>
   <rdf:Property rdf:ID="hasJDKVersion"/>
+  <java:JavaWebApplet rdf:ID="jdk1.1JavaWebApplet"/>
   <jdk-1_1:Jdk-1_1 rdf:ID="jdk1.1">
-    <java:providesJavaVM>
-      <java:JavaVM rdf:ID="jdk1.1VM">
-        <java:supportsBytecodeFormat rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#theJava1.1BytecodeFormat"/>
-      </java:JavaVM>
-    </java:providesJavaVM>
+    <java:providesJavaPackageManager rdf:resource="#jdk1.1JavaWebApplet"/>
     <java:providesBuiltinJavaLibrary>
       <jdk-1_1:Jdk-1_1ClassLibrary rdf:ID="jdk1.1ClassLibrary">
         <java:isBuiltinJavaLibraryFor rdf:resource="#jdk1.1"/>
       </jdk-1_1:Jdk-1_1ClassLibrary>
     </java:providesBuiltinJavaLibrary>
+    <java:providesJavaVM>
+      <java:JavaVM rdf:ID="jdk1.1VM">
+        <java:supportsBytecodeFormat rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#theJava1.1BytecodeFormat"/>
+      </java:JavaVM>
+    </java:providesJavaVM>
   </jdk-1_1:Jdk-1_1>
   <platform:Platform rdf:ID="pc">
     <providesSoftware rdf:resource="#jdk1.1"/>
