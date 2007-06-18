@@ -70,14 +70,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="com.hp.hpl.jena"
-         download-size="12076"
-         install-size="13164"
+         download-size="13436"
+         install-size="14661"
          version="0.0.0"/>
 
    <plugin
          id="com.hp.hpl.jena.doc"
-         download-size="4240"
-         install-size="4605"
+         download-size="4868"
+         install-size="5253"
          version="0.0.0"/>
 
 </feature>
