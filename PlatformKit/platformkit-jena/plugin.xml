@@ -38,7 +38,9 @@
       <library name="lib/arq-extra.jar">
          <export name="*"/>
       </library>
-      <library name="lib/commons-logging-1.1.jar"/>
+      <library name="lib/commons-logging-1.1.jar">
+         <export name="*"/>
+      </library>
       <library name="lib/iri.jar"/>
       <library name="lib/json.jar"/>
       <library name="lib/lucene-core-2.0.0.jar"/>
