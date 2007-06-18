@@ -71,8 +71,8 @@ the terms and conditions of the Eclipse Public License Version
 
    <plugin
          id="be.ac.vub.platformkit.java"
-         download-size="36"
-         install-size="36"
+         download-size="32"
+         install-size="32"
          version="0.0.0"
          unpack="false"/>
 
