@@ -15,11 +15,13 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.util.Assert;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 import be.ac.vub.platformkit.ConstraintSet;
+import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.kb.Ontologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.MessageDialogRunnable;
@@ -59,7 +61,7 @@ public class Validate extends ConstraintSpaceAction {
      */
     protected final void runAction(IProgressMonitor monitor)
     throws Exception {
-        monitor.beginTask("Validating PlatformKit constraint sets", 6);
+        monitor.beginTask("Validating PlatformKit constraint sets", 7);
         Ontologies ont = space.getKnowledgeBase();
         if (ont == null) {
             monitor.subTask("Loading source ontologies...");
@@ -74,8 +76,17 @@ public class Validate extends ConstraintSpaceAction {
             monitor.subTask("Using pre-loaded source ontologies");
             worked(monitor);
         }
-        monitor.subTask("Attaching OWL reasoner...");
-        ont.attachOWLReasoner();
+        monitor.subTask("Attaching DL reasoner...");
+		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
+				.getPreferenceStore();
+		String reasoner = store.getString(PreferenceConstants.P_REASONER);
+		if (PreferenceConstants.P_DIG.equals(reasoner)) {
+			String url = store.getString(PreferenceConstants.P_DIG_URL);
+			ont.setReasonerUrl(url);
+			ont.attachDIGReasoner();
+		} else {
+	        ont.attachPelletReasoner();
+		}
         worked(monitor);
         monitor.subTask("Getting context specification...");
         if (!getPlatform(space)) {
@@ -88,6 +99,9 @@ public class Validate extends ConstraintSpaceAction {
         worked(monitor);
         monitor.subTask("Determining valid constraint sets...");
         List valid = space.getValid();
+        worked(monitor);
+        monitor.subTask("Detaching reasoner...");
+        ont.detachReasoner();
         worked(monitor);
         monitor.subTask("Creating report...");
         String report = createReport(valid);
