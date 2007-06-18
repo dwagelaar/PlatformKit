@@ -55,8 +55,8 @@ IN THE SOFTWARE.
 
    <plugin
          id="org.mindswap.pellet"
-         download-size="1740"
-         install-size="2231"
+         download-size="2672"
+         install-size="3285"
          version="0.0.0"/>
 
 </feature>
