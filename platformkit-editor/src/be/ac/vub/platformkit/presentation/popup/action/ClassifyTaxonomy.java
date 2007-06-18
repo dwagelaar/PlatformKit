@@ -36,6 +36,9 @@ import com.hp.hpl.jena.shared.NotFoundException;
  *
  */
 public class ClassifyTaxonomy extends ConstraintSpaceAction {
+
+	private static final int OUTPUTSIZE = 512*1024; // 512 KB
+	
     private class BuildHierarchyMap extends PlatformKitAction implements Runnable {
         private Ontologies ont;
         
@@ -250,7 +253,8 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
                 addFileExtension("owl").lastSegment());
         IContainer cont = file.getParent();
         IFile dest = cont.getFile(path);
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
+    	logger.info("Writing ontology to " + dest.getLocation());
+        ByteArrayOutputStream output = new ByteArrayOutputStream(OUTPUTSIZE);
         ont.saveOntology(output);
         if (dest.exists()) {
             dest.setContents(new ByteArrayInputStream(output.toByteArray()), 
@@ -260,5 +264,6 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
                     true, null);
         }
         output.close();
+    	logger.info("Ontology written to " + dest.getLocation());
     }
 }
