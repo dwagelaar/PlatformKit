@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.util.Assert;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
@@ -19,7 +20,9 @@ import org.eclipse.jface.viewers.ViewerFilter;
 
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
+import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformEValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
@@ -129,8 +132,17 @@ public class Profile extends PlatformKitAction {
             }
             PlatformKitActionUtil.setCachedConstraintSpace(platformkitURI, space);
             worked(monitor);
-            monitor.subTask("Attaching OWL micro reasoner...");
-            ont.attachOWLReasoner();
+            monitor.subTask("Attaching DL reasoner...");
+    		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
+    				.getPreferenceStore();
+    		String reasoner = store.getString(PreferenceConstants.P_REASONER);
+    		if (PreferenceConstants.P_DIG.equals(reasoner)) {
+    			String url = store.getString(PreferenceConstants.P_DIG_URL);
+    			ont.setReasonerUrl(url);
+    			ont.attachDIGReasoner();
+    		} else {
+    	        ont.attachPelletReasoner();
+    		}
             worked(monitor);
         } else {
             monitor.subTask("Using cached constraint space");
