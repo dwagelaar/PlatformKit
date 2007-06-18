@@ -14,7 +14,6 @@
       <library name="lib/pellet.jar">
          <export name="*"/>
       </library>
-      <library name="lib/rdfapi.jar"/>
       <library name="lib/aterm-java-1.6.jar"/>
       <library name="lib/xsdlib/relaxngDatatype.jar"/>
       <library name="lib/xsdlib/xsdlib.jar"/>
