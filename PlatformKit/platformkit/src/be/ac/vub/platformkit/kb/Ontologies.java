@@ -394,6 +394,19 @@ public class Ontologies {
     
     /**
      * Adds all known local ontologies to the document manager.
+     * @param provider The ontology provider.
+     * @throws IOException if the local ontology mapping could not be read.
+     */
+    public void addLocalOntologies(IOntologyProvider provider) throws IOException {
+    	OntDocumentManager dm = getBaseOntology().getDocumentManager();
+		InputStream[] streams = provider.getOntologies();
+		for (int k = 0; k < streams.length; k++) {
+			addLocalOntology(dm, streams[k]);
+		}
+    }
+    
+    /**
+     * Adds all known local ontologies to the document manager.
      * @param dm The document manager.
      * @throws IOException if the local ontology mapping could not be read.
      */

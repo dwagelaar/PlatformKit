@@ -8,5 +8,6 @@ Bundle-Localization: plugin
 Eclipse-LazyStart: true
 Require-Bundle: be.ac.vub.platformkit,
  org.eclipse.osgi,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.junit
 Export-Package: be.ac.vub.platformkit.java
