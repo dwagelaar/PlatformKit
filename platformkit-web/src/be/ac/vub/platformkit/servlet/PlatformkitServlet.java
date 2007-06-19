@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitPackage;
+import be.ac.vub.platformkit.java.JavaOntologyProvider;
 import be.ac.vub.platformkit.kb.Ontologies;
 
 /**
@@ -41,15 +42,18 @@ public class PlatformkitServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -8587189401115112481L;
 
-    private Logger logger = Logger.getLogger(Ontologies.LOGGER);
-    private Level loglevel = Level.INFO;
+    private static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+    private Level loglevel = null;
     private Map knownSpaces = new HashMap();
     private Map urlDates = new HashMap();
-    private Map urlResources = new HashMap();
+//    private Map urlResources = new HashMap();
     private DateFormat dateFormat = new SimpleDateFormat();
     protected ResourceSet resourceSet = new ResourceSetImpl();
     
     static {
+//    	Handler handler = new ConsoleHandler();
+//    	handler.setFormatter(PlatformkitLogFormatter.INSTANCE);
+//    	logger.addHandler(handler);
         Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
                 "platformkit", new XMIResourceFactoryImpl());
         PlatformkitPackage packageInstance = PlatformkitPackage.eINSTANCE;
@@ -62,6 +66,11 @@ public class PlatformkitServlet extends HttpServlet {
 	protected void doAny(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		try {
+			synchronized (this) {
+				if (loglevel == null) {
+			        parseLogLevel(getInitParameter("loglevel"));
+				}
+			}
 			PlatformkitSession session = new PlatformkitSession(req);
             //pre-calc
             logger.info(DateFormat.getDateInstance().format(new Date()));
@@ -70,18 +79,16 @@ public class PlatformkitServlet extends HttpServlet {
             logger.info(DateFormat.getDateInstance().format(new Date()));
             List result;
 			PlatformDescription pd = session.getDescription();
-            synchronized (space) {
-                if (pd.getPlatformOWL() != null) {
-                	InputStream input = pd.getPlatformOWL().getInputStream();
-                    space.getKnowledgeBase().loadInstances(input);
-                    input.close();
-                }
-                if (session.getLeastSpecific()) {
-                    result = space.getLeastSpecific(!session.getNoValidate());
-                } else {
-                    result = space.getMostSpecific(!session.getNoValidate());
-                }
-            }
+			if (pd.getPlatformOWL() != null) {
+				InputStream input = pd.getPlatformOWL().getInputStream();
+				space.getKnowledgeBase().loadInstances(input);
+				input.close();
+			}
+			if (session.getLeastSpecific()) {
+				result = space.getLeastSpecific(!session.getNoValidate());
+			} else {
+				result = space.getMostSpecific(!session.getNoValidate());
+			}
             logger.info(DateFormat.getDateInstance().format(new Date()));
             String redirect = getContainer(session.getBaseURL());
             if (result.size() > 0) {
@@ -91,7 +98,9 @@ public class PlatformkitServlet extends HttpServlet {
             }
             logger.info("Redirecting to " + redirect);
             resp.sendRedirect(redirect);
-		} catch (Exception e) {
+			freeConstraintSpace(space, session.getBaseURL());
+		} catch (Throwable e) {
+			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 			throw new ServletException(e);
 		}
 	}
@@ -141,37 +150,85 @@ public class PlatformkitServlet extends HttpServlet {
      */
     private ConstraintSpace init(HttpServletRequest req, String baseurl)
     throws FileUploadException, IOException, IllegalArgumentException {
-        parseLogLevel(getInitParameter("loglevel"));
-        logger.info("Request: " + req);
-        Long date = new Long(getURLDate(baseurl));
-        Resource resource;
-        if (urlDates.containsKey(baseurl)) {
-            Long oldDate = (Long) urlDates.get(baseurl);
-            if (date.equals(oldDate)) {
-                logger.info("Using cached constraint space");
-                return (ConstraintSpace) knownSpaces.get(baseurl);
-            } else {
-                logger.info("Different constraint space detected - unloading cached resource");
-                resource = (Resource) urlResources.get(baseurl);
-                Assert.assertNotNull(resource);
-                resource.unload();
-            }
-        }
-        resource = loadModel(baseurl);
-        if (resource.getContents().size() == 0) {
-        	throw new IOException("Resource at " + baseurl + " contains no elements");
-        }
-        ConstraintSpace space = (ConstraintSpace) resource.getContents().get(0);
-        synchronized (this) {
-            urlResources.put(baseurl, resource);
-            urlDates.put(baseurl, date);
-            knownSpaces.put(baseurl, space);
-        }
-        synchronized (space) {
+    	logger.info("Request: " + req);
+    	Long date = new Long(getURLDate(baseurl));
+    	ConstraintSpace space = getConstraintSpace(baseurl, date);
+    	if (space.getKnowledgeBase() == null) {
         	Ontologies ont = new Ontologies();
+        	ont.addLocalOntologies(JavaOntologyProvider.INSTANCE);
         	space.setKnowledgeBase(ont);
         	space.init(true);
         	ont.attachPelletReasoner();
+    	}
+    	return space;
+    }
+    
+    /**
+     * Returns space to its pool, so that it can be reused by new clients. 
+     * @param space The constraint space to return to the pool
+     * @param baseurl The base URL of the Platformkit Model
+     */
+    private void freeConstraintSpace(ConstraintSpace space, String baseurl) {
+    	synchronized (this) {
+            logger.info("Returning constraint space to the pool");
+            ConstraintSpacePool pool = (ConstraintSpacePool) knownSpaces.get(baseurl);
+    		pool.addSpace(space);
+    	}
+    }
+    
+    /**
+     * @param baseurl The base URL of the Platformkit Model
+     * @param date The last modification timestamp 
+     * @return The constraint space object
+     * @throws FileUploadException
+     * @throws IOException
+     * @throws IllegalArgumentException
+     */
+    private ConstraintSpace getConstraintSpace(String baseurl, Long date)
+    throws FileUploadException, IOException, IllegalArgumentException {
+    	synchronized (this) {
+        	ConstraintSpace space = findCachedConstraintSpace(baseurl, date);
+        	if (space == null) {
+        		Resource resource = loadModel(baseurl);
+        		if (resource.getContents().size() == 0) {
+        			throw new IOException("Resource at " + baseurl + " contains no elements");
+        		}
+        		space = (ConstraintSpace) resource.getContents().get(0);
+        		if (!knownSpaces.containsKey(baseurl)) {
+        			knownSpaces.put(baseurl, new ConstraintSpacePool());
+        			// don't add space yet, since it isn't free
+        		}
+        		urlDates.put(baseurl, date);
+        	}
+        	return space;
+    	}
+    }
+    
+    /**
+     * @param baseurl The base URL of the Platformkit Model
+     * @param date The last modification timestamp 
+     * @return The cached constraint space from a pool, if any
+     */
+    private ConstraintSpace findCachedConstraintSpace(String baseurl, Long date) {
+        ConstraintSpace space = null;
+        if (urlDates.containsKey(baseurl)) {
+            Long oldDate = (Long) urlDates.get(baseurl);
+            ConstraintSpacePool pool = (ConstraintSpacePool) knownSpaces.get(baseurl);
+            if (date.equals(oldDate)) {
+                logger.info("Checking cached constraint space pool");
+                if (pool.getSpaces().hasMoreElements()) {
+                    logger.info("Using cached constraint space from the pool");
+                    space = (ConstraintSpace) pool.getSpaces().nextElement();
+                    pool.removeSpace(space);
+                }
+            } else {
+                logger.info("Different constraint space detected - purging pool");
+                while (pool.getSpaces().hasMoreElements()) {
+                    space = (ConstraintSpace) pool.getSpaces().nextElement();
+                    pool.removeSpace(space);
+                    resourceSet.getResources().remove(space.eResource());
+                }
+            }
         }
         return space;
     }

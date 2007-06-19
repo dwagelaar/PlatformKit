@@ -6,8 +6,12 @@
 				<include name="common.jar"/>
 				<include name="ecore*.jar"/>
 				<include name="runtime.jar"/>
+				<include name="equinox.registry.jar"/>
 				<include name="equinox.common.jar"/>
+				<include name="osgi.jar"/>
 				<include name="resources.jar"/>
+				<!--include name="platformkit.jar"/>
+				<include name="platformkit-java.jar"/-->
 			</fileset>
 		</delete>
 	</target>
@@ -33,6 +37,11 @@
 				<include name="org.eclipse.core.runtime_*.jar"/>
 			</fileset>
 		</copy>
+		<copy tofile="equinox.registry.jar" verbose="true">
+			<fileset dir="${eclipse.home}/plugins">
+				<include name="org.eclipse.equinox.registry_*.jar"/>
+			</fileset>
+		</copy>
 		<copy tofile="equinox.common.jar" verbose="true">
 			<fileset dir="${eclipse.home}/plugins">
 				<include name="org.eclipse.equinox.common_*.jar"/>
@@ -40,9 +49,24 @@
 		</copy>
 		<copy tofile="resources.jar" verbose="true">
 			<fileset dir="${eclipse.home}/plugins">
-				<include name="org.eclipse.core.resources_*.jar"/>
+				<include name="org.eclipse.core.resources_3.2.2*.jar"/>
 			</fileset>
 		</copy>
+		<copy tofile="osgi.jar" verbose="true">
+			<fileset dir="${eclipse.home}/plugins">
+				<include name="org.eclipse.osgi_3.2.2*.jar"/>
+			</fileset>
+		</copy>
+		<!--copy tofile="platformkit.jar" verbose="true">
+			<fileset dir="${eclipse.home}/plugins">
+				<include name="be.ac.vub.platformkit_1.1.2*.jar"/>
+			</fileset>
+		</copy>
+		<copy tofile="platformkit-java.jar" verbose="true">
+			<fileset dir="${eclipse.home}/plugins">
+				<include name="be.ac.vub.platformkit.java_1.1.0*.jar"/>
+			</fileset>
+		</copy-->
 	</target>
 	
 	<target name="all" depends="copydep"/>

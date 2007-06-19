@@ -30,6 +30,7 @@ public PlatformkitSession(javax.servlet.http.HttpServletRequest req) throws org.
 description = new PlatformDescription();
 description.setBrowserID(req.getHeader("User-Agent"));
 if (ServletFileUpload.isMultipartContent(req)) {
+    logger.info("Retrieving uploaded ontology file");
 	ServletFileUpload upload = new ServletFileUpload();
 	FileItemIterator fileItems = upload.getItemIterator(req);
 	while (fileItems.hasNext()) {
@@ -40,7 +41,7 @@ if (ServletFileUpload.isMultipartContent(req)) {
 		} else {
 			byte[] buf = new byte[1024];
 			ByteArrayOutputStream out = new ByteArrayOutputStream(buf.length);
-			for (int read = stream.read(buf); read > -1;) {
+			for (int read = stream.read(buf); read > -1; read = stream.read(buf)) {
 				out.write(buf, 0, read);
 			}
 			out.flush();
