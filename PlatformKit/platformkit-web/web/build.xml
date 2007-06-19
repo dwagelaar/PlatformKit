@@ -2,6 +2,7 @@
 <project name="CDDToolkit-Web" default="all">
 	<property name="platformkit.path" value="../../platformkit"/>
 	<property name="jena.path" value="../../platformkit-jena"/>
+	<property name="pellet.path" value="../../platformkit-pellet"/>
 	
 	<target name="clean">
         <delete>
@@ -21,6 +22,7 @@
         		<exclude name="javax.servlet.jar"/>
       		</lib>
         	<lib dir="${jena.path}/lib" includes="*.jar"/>
+        	<lib dir="${pellet.path}/lib" includes="*.jar"/>
        	</war>
     </target>
 	

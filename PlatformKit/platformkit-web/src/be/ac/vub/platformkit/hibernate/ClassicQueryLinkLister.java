@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import be.ac.vub.platformkit.descriptions.PlatformDescription;
+import be.ac.vub.platformkit.servlet.PlatformDescription;
 
 public class ClassicQueryLinkLister {
 
@@ -18,7 +18,7 @@ public class ClassicQueryLinkLister {
 		Iterator e_itr = ps.iterator();
 		while ( e_itr.hasNext() ) {
 			PlatformDescription thePD = (PlatformDescription) e_itr.next();
-            System.out.println("Reading PD object: " + thePD.getBrowserID() + ", " + thePD.getBrowserID() + ", " + thePD.getPlatformURI());
+            System.out.println("Reading PD object: " + thePD.getBrowserID() + ", " + thePD.getBrowserID() + ", " + thePD.getPlatformOWL());
         }
         System.out.println("");
     }
@@ -37,18 +37,18 @@ public class ClassicQueryLinkLister {
 		Iterator e_itr = ps.iterator();
 		while ( e_itr.hasNext() ) {
 			PlatformDescription thePD = (PlatformDescription) e_itr.next();
-            System.out.println("Reading PS object using browserID: " + thePD.getBrowserID() + ", " + thePD.getBrowserID() + ", " + thePD.getPlatformURI());
+            System.out.println("Reading PS object using browserID: " + thePD.getBrowserID() + ", " + thePD.getBrowserID() + ", " + thePD.getPlatformOWL());
         }        
     }
 
     public void getObjectUsingPlatformURI(String tableName, String val) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        List ps = session.createQuery("from " + tableName + " where platformURI=" + "'" + val + "'").list();
+        List ps = session.createQuery("from " + tableName + " where platformOWL=" + "'" + val + "'").list();
 		Iterator e_itr = ps.iterator();
 		while ( e_itr.hasNext() ) {
 			PlatformDescription thePD = (PlatformDescription) e_itr.next();
-            System.out.println("Reading PS object using platformURI: " + thePD.getBrowserID() + ", " + thePD.getBrowserID() + ", " + thePD.getPlatformURI());
+            System.out.println("Reading PS object using platformURI: " + thePD.getBrowserID() + ", " + thePD.getBrowserID() + ", " + thePD.getPlatformOWL());
         }        
     }
 

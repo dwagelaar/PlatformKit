@@ -30,5 +30,21 @@
         </contained>
       </contained>
     </contained>
+    <contained xsi:type="di:GraphNode" position="142,20" size="120,-1">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="Persistence.profile.uml#_FJKKYOKpEduy-KDtqDHB8g"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="Persistence.profile.uml#_FJKKYOKpEduy-KDtqDHB8g"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="Persistence.profile.uml#_MitK0OKpEduy-KDtqDHB8g"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
   </diagrams>
 </diagrams:Diagrams>

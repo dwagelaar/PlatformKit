@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_cC6k0OKzEducvf06rPkdnw" name="Platformkit">
+  <packagedElement xmi:type="uml:Package" xmi:id="_cDXQwOKzEducvf06rPkdnw" name="be">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cDXQweKzEducvf06rPkdnw" name="ac">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cDXQwuKzEducvf06rPkdnw" name="vub">
+        <packagedElement xmi:type="uml:Package" xmi:id="_cDXQw-KzEducvf06rPkdnw" name="platformkit">
+          <packagedElement xmi:type="uml:Package" xmi:id="_cDd-cOKzEducvf06rPkdnw" name="impl">
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDd-ceKzEducvf06rPkdnw" name="ConstraintImpl" clientDependency="_cD6qYOKzEducvf06rPkdnw">
+              <generalization xmi:id="_cD7RceKzEducvf06rPkdnw" general="_cD7RcOKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cD7RcuKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD74geKzEducvf06rPkdnw" name="logger" visibility="protected" isStatic="true" type="_cD74gOKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cD74guKzEducvf06rPkdnw" name="ONT_CLASS_URI_EDEFAULT" visibility="protected" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD74g-KzEducvf06rPkdnw" name="ontClassURI" visibility="protected" type="_cDtPAuKzEducvf06rPkdnw"/>
+              <interfaceRealization xmi:id="_cD6qYOKzEducvf06rPkdnw" supplier="_cDX30eKzEducvf06rPkdnw" client="_cDd-ceKzEducvf06rPkdnw" contract="_cDX30eKzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cD74hOKzEducvf06rPkdnw" name="&lt;init>" visibility="protected"/>
+              <ownedOperation xmi:id="_cD74heKzEducvf06rPkdnw" name="eStaticClass" visibility="protected">
+                <ownedParameter xmi:id="_cD74huKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD74h-KzEducvf06rPkdnw" name="getSet" visibility="public">
+                <ownedParameter xmi:id="_cD74iOKzEducvf06rPkdnw" type="_cDX30-KzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD8fkOKzEducvf06rPkdnw" name="basicSetSet" visibility="public">
+                <ownedParameter xmi:id="_cD8fkeKzEducvf06rPkdnw" name="arg0" type="_cDX30-KzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD8fkuKzEducvf06rPkdnw" name="arg1" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD8fk-KzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD8flOKzEducvf06rPkdnw" name="setSet" visibility="public">
+                <ownedParameter xmi:id="_cD8fleKzEducvf06rPkdnw" name="arg0" type="_cDX30-KzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD8fluKzEducvf06rPkdnw" name="getOntClassURI" visibility="public">
+                <ownedParameter xmi:id="_cD8fl-KzEducvf06rPkdnw" type="_cDtPAuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD8fmOKzEducvf06rPkdnw" name="setOntClassURI" visibility="public">
+                <ownedParameter xmi:id="_cD8fmeKzEducvf06rPkdnw" name="arg0" type="_cDtPAuKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD8fmuKzEducvf06rPkdnw" name="isValid" visibility="public">
+                <ownedParameter xmi:id="_cD8fm-KzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD9GoOKzEducvf06rPkdnw" name="eInverseAdd" visibility="public">
+                <ownedParameter xmi:id="_cD9GoeKzEducvf06rPkdnw" name="arg0" type="_cD8fnOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD9GouKzEducvf06rPkdnw" name="arg1" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD9Go-KzEducvf06rPkdnw" name="arg2" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD9tsOKzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD9tseKzEducvf06rPkdnw" name="eInverseRemove" visibility="public">
+                <ownedParameter xmi:id="_cD9tsuKzEducvf06rPkdnw" name="arg0" type="_cD8fnOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD9ts-KzEducvf06rPkdnw" name="arg1" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD9ttOKzEducvf06rPkdnw" name="arg2" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD9tteKzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD9ttuKzEducvf06rPkdnw" name="eBasicRemoveFromContainerFeature" visibility="public">
+                <ownedParameter xmi:id="_cD9tt-KzEducvf06rPkdnw" name="arg0" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD9tuOKzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD9tueKzEducvf06rPkdnw" name="eGet" visibility="public">
+                <ownedParameter xmi:id="_cD9tuuKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD9tu-KzEducvf06rPkdnw" name="arg1" type="_cDvEMOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD-UwOKzEducvf06rPkdnw" name="arg2" type="_cDvEMOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD-UwuKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD-Uw-KzEducvf06rPkdnw" name="eSet" visibility="public">
+                <ownedParameter xmi:id="_cD-UxOKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD-UxeKzEducvf06rPkdnw" name="arg1" type="_cD-UweKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD-UxuKzEducvf06rPkdnw" name="eUnset" visibility="public">
+                <ownedParameter xmi:id="_cD-Ux-KzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD-UyOKzEducvf06rPkdnw" name="eIsSet" visibility="public">
+                <ownedParameter xmi:id="_cD-70OKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD-70eKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD-70uKzEducvf06rPkdnw" name="toString" visibility="public">
+                <ownedParameter xmi:id="_cD-70-KzEducvf06rPkdnw" type="_cDtPAuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD-71OKzEducvf06rPkdnw" name="ontModelChanged" visibility="public">
+                <ownedParameter xmi:id="_cD-71eKzEducvf06rPkdnw" name="arg0" type="_cDvrQOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD-71uKzEducvf06rPkdnw" name="findOntClass" visibility="protected">
+                <ownedParameter xmi:id="_cD-71-KzEducvf06rPkdnw" name="arg0" type="_cDvrQOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cD-72OKzEducvf06rPkdnw" type="_cDvEOOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD-72eKzEducvf06rPkdnw" name="getOntClass" visibility="public">
+                <ownedParameter xmi:id="_cD-72uKzEducvf06rPkdnw" type="_cDvEOOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD-72-KzEducvf06rPkdnw" name="setOntClass" visibility="public">
+                <ownedParameter xmi:id="_cD-73OKzEducvf06rPkdnw" name="arg0" type="_cDvEOOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cD_i4OKzEducvf06rPkdnw" name="getOntModel" visibility="public">
+                <ownedParameter xmi:id="_cD_i4eKzEducvf06rPkdnw" type="_cDvrQOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDfMkOKzEducvf06rPkdnw" name="ConstraintSetImpl" clientDependency="_cEBYEOKzEducvf06rPkdnw">
+              <generalization xmi:id="_cEBYEeKzEducvf06rPkdnw" general="_cD7RcOKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cEBYEuKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cECmMOKzEducvf06rPkdnw" name="logger" visibility="protected" isStatic="true" type="_cD74gOKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cECmMeKzEducvf06rPkdnw" name="NAME_EDEFAULT" visibility="protected" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cECmMuKzEducvf06rPkdnw" name="name" visibility="protected" type="_cDtPAuKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cECmM-KzEducvf06rPkdnw" name="constraint" visibility="protected" type="_cDw5YOKzEducvf06rPkdnw"/>
+              <interfaceRealization xmi:id="_cEBYEOKzEducvf06rPkdnw" supplier="_cDX30-KzEducvf06rPkdnw" client="_cDfMkOKzEducvf06rPkdnw" contract="_cDX30-KzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cECmNOKzEducvf06rPkdnw" name="&lt;init>" visibility="protected"/>
+              <ownedOperation xmi:id="_cECmNeKzEducvf06rPkdnw" name="eStaticClass" visibility="protected">
+                <ownedParameter xmi:id="_cECmNuKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cECmN-KzEducvf06rPkdnw" name="getSpace" visibility="public">
+                <ownedParameter xmi:id="_cECmOOKzEducvf06rPkdnw" type="_cDYe4eKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cECmOeKzEducvf06rPkdnw" name="basicSetSpace" visibility="public">
+                <ownedParameter xmi:id="_cECmOuKzEducvf06rPkdnw" name="arg0" type="_cDYe4eKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cECmO-KzEducvf06rPkdnw" name="arg1" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEDNQOKzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEDNQeKzEducvf06rPkdnw" name="setSpace" visibility="public">
+                <ownedParameter xmi:id="_cEDNQuKzEducvf06rPkdnw" name="arg0" type="_cDYe4eKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEDNQ-KzEducvf06rPkdnw" name="getName" visibility="public">
+                <ownedParameter xmi:id="_cEDNROKzEducvf06rPkdnw" type="_cDtPAuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEDNReKzEducvf06rPkdnw" name="setName" visibility="public">
+                <ownedParameter xmi:id="_cEDNRuKzEducvf06rPkdnw" name="arg0" type="_cDtPAuKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEDNR-KzEducvf06rPkdnw" name="getConstraint" visibility="public">
+                <ownedParameter xmi:id="_cEDNSOKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEDNSeKzEducvf06rPkdnw" name="isValid" visibility="public">
+                <ownedParameter xmi:id="_cED0UOKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cED0UeKzEducvf06rPkdnw" name="getMostSpecific" visibility="public">
+                <ownedParameter xmi:id="_cED0UuKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cED0U-KzEducvf06rPkdnw" name="getLeastSpecific" visibility="public">
+                <ownedParameter xmi:id="_cED0VOKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cED0VeKzEducvf06rPkdnw" name="getIntersection" visibility="public">
+                <ownedParameter xmi:id="_cED0VuKzEducvf06rPkdnw" type="_cDX30eKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cED0V-KzEducvf06rPkdnw" name="eInverseAdd" visibility="public">
+                <ownedParameter xmi:id="_cED0WOKzEducvf06rPkdnw" name="arg0" type="_cD8fnOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cED0WeKzEducvf06rPkdnw" name="arg1" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cED0WuKzEducvf06rPkdnw" name="arg2" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cED0W-KzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cED0XOKzEducvf06rPkdnw" name="eInverseRemove" visibility="public">
+                <ownedParameter xmi:id="_cED0XeKzEducvf06rPkdnw" name="arg0" type="_cD8fnOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEEbYOKzEducvf06rPkdnw" name="arg1" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEEbYeKzEducvf06rPkdnw" name="arg2" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEEbYuKzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEEbY-KzEducvf06rPkdnw" name="eBasicRemoveFromContainerFeature" visibility="public">
+                <ownedParameter xmi:id="_cEEbZOKzEducvf06rPkdnw" name="arg0" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEEbZeKzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEEbZuKzEducvf06rPkdnw" name="eGet" visibility="public">
+                <ownedParameter xmi:id="_cEEbZ-KzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEEbaOKzEducvf06rPkdnw" name="arg1" type="_cDvEMOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEEbaeKzEducvf06rPkdnw" name="arg2" type="_cDvEMOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEEbauKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEEba-KzEducvf06rPkdnw" name="eSet" visibility="public">
+                <ownedParameter xmi:id="_cEEbbOKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEEbbeKzEducvf06rPkdnw" name="arg1" type="_cD-UweKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEEbbuKzEducvf06rPkdnw" name="eUnset" visibility="public">
+                <ownedParameter xmi:id="_cEFCcOKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEFCceKzEducvf06rPkdnw" name="eIsSet" visibility="public">
+                <ownedParameter xmi:id="_cEFCcuKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEFCc-KzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEFCdOKzEducvf06rPkdnw" name="toString" visibility="public">
+                <ownedParameter xmi:id="_cEFCdeKzEducvf06rPkdnw" type="_cDtPAuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEFCduKzEducvf06rPkdnw" name="addAllOntologyChangeListeners" visibility="public">
+                <ownedParameter xmi:id="_cEFCd-KzEducvf06rPkdnw" name="arg0" type="_cDksIeKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEFCeOKzEducvf06rPkdnw" name="removeAllOntologyChangeListeners" visibility="public">
+                <ownedParameter xmi:id="_cEFCeeKzEducvf06rPkdnw" name="arg0" type="_cDksIeKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEFCeuKzEducvf06rPkdnw" name="getTransientSpace" visibility="public">
+                <ownedParameter xmi:id="_cEFCe-KzEducvf06rPkdnw" type="_cDYe4eKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEFCfOKzEducvf06rPkdnw" name="setTransientSpace" visibility="public">
+                <ownedParameter xmi:id="_cEFCfeKzEducvf06rPkdnw" name="arg0" type="_cDYe4eKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEFCfuKzEducvf06rPkdnw" name="getOntModel" visibility="public">
+                <ownedParameter xmi:id="_cEFpgOKzEducvf06rPkdnw" type="_cDvrQOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEFpgeKzEducvf06rPkdnw" name="resetCache" visibility="protected"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDiP4OKzEducvf06rPkdnw" name="ConstraintSpaceImpl" clientDependency="_cEGQkOKzEducvf06rPkdnw">
+              <generalization xmi:id="_cEGQkeKzEducvf06rPkdnw" general="_cD7RcOKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cEGQkuKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cEGQk-KzEducvf06rPkdnw" name="logger" visibility="protected" isStatic="true" type="_cD74gOKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cEGQlOKzEducvf06rPkdnw" name="ontology" visibility="protected" type="_cDw5YOKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cEGQleKzEducvf06rPkdnw" name="constraintSet" visibility="protected" type="_cDw5YOKzEducvf06rPkdnw"/>
+              <interfaceRealization xmi:id="_cEGQkOKzEducvf06rPkdnw" supplier="_cDYe4eKzEducvf06rPkdnw" client="_cDiP4OKzEducvf06rPkdnw" contract="_cDYe4eKzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cEGQluKzEducvf06rPkdnw" name="&lt;init>" visibility="protected"/>
+              <ownedOperation xmi:id="_cEGQl-KzEducvf06rPkdnw" name="eStaticClass" visibility="protected">
+                <ownedParameter xmi:id="_cEGQmOKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEGQmeKzEducvf06rPkdnw" name="getOntology" visibility="public">
+                <ownedParameter xmi:id="_cEG3oOKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEG3oeKzEducvf06rPkdnw" name="getConstraintSet" visibility="public">
+                <ownedParameter xmi:id="_cEG3ouKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEG3o-KzEducvf06rPkdnw" name="getIntersectionSet" visibility="public">
+                <ownedParameter xmi:id="_cEG3pOKzEducvf06rPkdnw" type="_cDX30-KzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEG3peKzEducvf06rPkdnw" name="getLeastSpecific" visibility="public">
+                <ownedParameter xmi:id="_cEG3puKzEducvf06rPkdnw" name="arg0" type="_cDvEMOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEG3p-KzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEG3qOKzEducvf06rPkdnw" name="getMostSpecific" visibility="public">
+                <ownedParameter xmi:id="_cEG3qeKzEducvf06rPkdnw" name="arg0" type="_cDvEMOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEG3quKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEG3q-KzEducvf06rPkdnw" name="getValid" visibility="public">
+                <ownedParameter xmi:id="_cEG3rOKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEG3reKzEducvf06rPkdnw" name="getInvalid" visibility="public">
+                <ownedParameter xmi:id="_cEHesOKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEHeseKzEducvf06rPkdnw" name="eInverseAdd" visibility="public">
+                <ownedParameter xmi:id="_cEHesuKzEducvf06rPkdnw" name="arg0" type="_cD8fnOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEHes-KzEducvf06rPkdnw" name="arg1" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEHetOKzEducvf06rPkdnw" name="arg2" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEHeteKzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEHetuKzEducvf06rPkdnw" name="eInverseRemove" visibility="public">
+                <ownedParameter xmi:id="_cEHet-KzEducvf06rPkdnw" name="arg0" type="_cD8fnOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEHeuOKzEducvf06rPkdnw" name="arg1" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEHeueKzEducvf06rPkdnw" name="arg2" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEHeuuKzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEHeu-KzEducvf06rPkdnw" name="eGet" visibility="public">
+                <ownedParameter xmi:id="_cEHevOKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEHeveKzEducvf06rPkdnw" name="arg1" type="_cDvEMOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEIFwOKzEducvf06rPkdnw" name="arg2" type="_cDvEMOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEIFweKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIFwuKzEducvf06rPkdnw" name="eSet" visibility="public">
+                <ownedParameter xmi:id="_cEIFw-KzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEIFxOKzEducvf06rPkdnw" name="arg1" type="_cD-UweKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIFxeKzEducvf06rPkdnw" name="eUnset" visibility="public">
+                <ownedParameter xmi:id="_cEIFxuKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIFx-KzEducvf06rPkdnw" name="eIsSet" visibility="public">
+                <ownedParameter xmi:id="_cEIFyOKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEIFyeKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIFyuKzEducvf06rPkdnw" name="toString" visibility="public">
+                <ownedParameter xmi:id="_cEIFy-KzEducvf06rPkdnw" type="_cDtPAuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIFzOKzEducvf06rPkdnw" name="getKnowledgeBase" visibility="public">
+                <ownedParameter xmi:id="_cEIFzeKzEducvf06rPkdnw" type="_cDksIeKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIs0OKzEducvf06rPkdnw" name="setKnowledgeBase" visibility="public">
+                <ownedParameter xmi:id="_cEIs0eKzEducvf06rPkdnw" name="arg0" type="_cDksIeKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIs0uKzEducvf06rPkdnw" name="getOntModel" visibility="public">
+                <ownedParameter xmi:id="_cEIs0-KzEducvf06rPkdnw" type="_cDvrQOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIs1OKzEducvf06rPkdnw" name="setPathResolver" visibility="public">
+                <ownedParameter xmi:id="_cEIs1eKzEducvf06rPkdnw" name="arg0" type="_cDnvceKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIs1uKzEducvf06rPkdnw" name="getPathResolver" visibility="public">
+                <ownedParameter xmi:id="_cEIs1-KzEducvf06rPkdnw" type="_cDnvceKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIs2OKzEducvf06rPkdnw" name="createPathResolver" visibility="protected">
+                <ownedParameter xmi:id="_cEIs2eKzEducvf06rPkdnw" type="_cDnvceKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIs2uKzEducvf06rPkdnw" name="init" visibility="public">
+                <ownedParameter xmi:id="_cEIs2-KzEducvf06rPkdnw" name="arg0" type="_cDvEMOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEIs3OKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEIs3eKzEducvf06rPkdnw" name="resetCache" visibility="protected"/>
+              <ownedOperation xmi:id="_cEJ68eKzEducvf06rPkdnw" name="eSetResource" visibility="public">
+                <ownedParameter xmi:id="_cEJ68uKzEducvf06rPkdnw" name="arg0" type="_cEJ68OKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEJ68-KzEducvf06rPkdnw" name="arg1" type="_cD74iuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEJ69OKzEducvf06rPkdnw" type="_cD74iuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDi28OKzEducvf06rPkdnw" name="PlatformkitFactoryImpl" clientDependency="_cEJ69eKzEducvf06rPkdnw">
+              <generalization xmi:id="_cEKiAeKzEducvf06rPkdnw" general="_cEKiAOKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cEKiAuKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <interfaceRealization xmi:id="_cEJ69eKzEducvf06rPkdnw" supplier="_cDa7IeKzEducvf06rPkdnw" client="_cDi28OKzEducvf06rPkdnw" contract="_cDa7IeKzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cEKiA-KzEducvf06rPkdnw" name="init" visibility="public" isStatic="true">
+                <ownedParameter xmi:id="_cEKiBOKzEducvf06rPkdnw" type="_cDa7IeKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEKiBeKzEducvf06rPkdnw" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_cEKiBuKzEducvf06rPkdnw" name="create" visibility="public">
+                <ownedParameter xmi:id="_cEKiB-KzEducvf06rPkdnw" name="arg0" type="_cD1K1OKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEKiCOKzEducvf06rPkdnw" type="_cDvrRuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEKiCeKzEducvf06rPkdnw" name="createConstraintSpace" visibility="public">
+                <ownedParameter xmi:id="_cEKiCuKzEducvf06rPkdnw" type="_cDYe4eKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEKiC-KzEducvf06rPkdnw" name="createConstraintSet" visibility="public">
+                <ownedParameter xmi:id="_cEKiDOKzEducvf06rPkdnw" type="_cDX30-KzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEKiDeKzEducvf06rPkdnw" name="createConstraint" visibility="public">
+                <ownedParameter xmi:id="_cELJEOKzEducvf06rPkdnw" type="_cDX30eKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cELJEeKzEducvf06rPkdnw" name="getPlatformkitPackage" visibility="public">
+                <ownedParameter xmi:id="_cELJEuKzEducvf06rPkdnw" type="_cDcJQeKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cELJE-KzEducvf06rPkdnw" name="getPackage" visibility="public" isStatic="true">
+                <ownedParameter xmi:id="_cELJFOKzEducvf06rPkdnw" type="_cDcJQeKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDjeAOKzEducvf06rPkdnw" name="PlatformkitPackageImpl" clientDependency="_cELwIOKzEducvf06rPkdnw">
+              <generalization xmi:id="_cELwIuKzEducvf06rPkdnw" general="_cELwIeKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cELwI-KzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <interfaceRealization xmi:id="_cELwIOKzEducvf06rPkdnw" supplier="_cDcJQeKzEducvf06rPkdnw" client="_cDjeAOKzEducvf06rPkdnw" contract="_cDcJQeKzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cELwJOKzEducvf06rPkdnw" name="init" visibility="public" isStatic="true">
+                <ownedParameter xmi:id="_cELwJeKzEducvf06rPkdnw" type="_cDcJQeKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cELwJuKzEducvf06rPkdnw" name="getConstraintSpace" visibility="public">
+                <ownedParameter xmi:id="_cELwJ-KzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cELwKOKzEducvf06rPkdnw" name="getConstraintSpace_Ontology" visibility="public">
+                <ownedParameter xmi:id="_cELwKeKzEducvf06rPkdnw" type="_cD1K1uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cELwKuKzEducvf06rPkdnw" name="getConstraintSpace_ConstraintSet" visibility="public">
+                <ownedParameter xmi:id="_cELwK-KzEducvf06rPkdnw" type="_cD1K2OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cELwLOKzEducvf06rPkdnw" name="getConstraintSet" visibility="public">
+                <ownedParameter xmi:id="_cEMXMOKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEMXMeKzEducvf06rPkdnw" name="getConstraintSet_Space" visibility="public">
+                <ownedParameter xmi:id="_cEMXMuKzEducvf06rPkdnw" type="_cD1K2OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEMXM-KzEducvf06rPkdnw" name="getConstraintSet_Name" visibility="public">
+                <ownedParameter xmi:id="_cEMXNOKzEducvf06rPkdnw" type="_cD1K1uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEMXNeKzEducvf06rPkdnw" name="getConstraintSet_Constraint" visibility="public">
+                <ownedParameter xmi:id="_cEMXNuKzEducvf06rPkdnw" type="_cD1K2OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEMXN-KzEducvf06rPkdnw" name="getConstraint" visibility="public">
+                <ownedParameter xmi:id="_cEMXOOKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEMXOeKzEducvf06rPkdnw" name="getConstraint_Set" visibility="public">
+                <ownedParameter xmi:id="_cEMXOuKzEducvf06rPkdnw" type="_cD1K2OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEMXO-KzEducvf06rPkdnw" name="getConstraint_OntClassURI" visibility="public">
+                <ownedParameter xmi:id="_cEMXPOKzEducvf06rPkdnw" type="_cD1K1uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEMXPeKzEducvf06rPkdnw" name="getOntModel" visibility="public">
+                <ownedParameter xmi:id="_cEMXPuKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEM-QOKzEducvf06rPkdnw" name="getIOntModelChangeListener" visibility="public">
+                <ownedParameter xmi:id="_cEM-QeKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEM-QuKzEducvf06rPkdnw" name="getPlatformkitFactory" visibility="public">
+                <ownedParameter xmi:id="_cEM-Q-KzEducvf06rPkdnw" type="_cDa7IeKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEM-ROKzEducvf06rPkdnw" name="createPackageContents" visibility="public"/>
+              <ownedOperation xmi:id="_cEM-ReKzEducvf06rPkdnw" name="initializePackageContents" visibility="public"/>
+              <ownedOperation xmi:id="_cEM-RuKzEducvf06rPkdnw" name="createGenModelAnnotations" visibility="protected"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_cDX30eKzEducvf06rPkdnw" name="Constraint" isAbstract="true">
+            <generalization xmi:id="_cDqywOKzEducvf06rPkdnw" general="_cDYe4-KzEducvf06rPkdnw"/>
+            <ownedAttribute xmi:id="_cDtPA-KzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedOperation xmi:id="_cDt2EOKzEducvf06rPkdnw" name="getSet" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDt2EeKzEducvf06rPkdnw" type="_cDX30-KzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDt2EuKzEducvf06rPkdnw" name="setSet" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDt2E-KzEducvf06rPkdnw" name="arg0" type="_cDX30-KzEducvf06rPkdnw"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDudIOKzEducvf06rPkdnw" name="getOntClassURI" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDudIeKzEducvf06rPkdnw" type="_cDtPAuKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDudIuKzEducvf06rPkdnw" name="setOntClassURI" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDudI-KzEducvf06rPkdnw" name="arg0" type="_cDtPAuKzEducvf06rPkdnw"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDudJOKzEducvf06rPkdnw" name="isValid" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDvEMeKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDvEMuKzEducvf06rPkdnw" name="getOntClass" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDvEOeKzEducvf06rPkdnw" type="_cDvEOOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDvEOuKzEducvf06rPkdnw" name="getOntModel" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDvrQeKzEducvf06rPkdnw" type="_cDvrQOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_cDX30-KzEducvf06rPkdnw" name="ConstraintSet" isAbstract="true">
+            <generalization xmi:id="_cDvrR-KzEducvf06rPkdnw" general="_cDvrRuKzEducvf06rPkdnw"/>
+            <ownedAttribute xmi:id="_cDvrSOKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedOperation xmi:id="_cDvrSeKzEducvf06rPkdnw" name="getSpace" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDwSUOKzEducvf06rPkdnw" type="_cDYe4eKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDwSUeKzEducvf06rPkdnw" name="setSpace" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDwSUuKzEducvf06rPkdnw" name="arg0" type="_cDYe4eKzEducvf06rPkdnw"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDwSU-KzEducvf06rPkdnw" name="getName" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDwSVOKzEducvf06rPkdnw" type="_cDtPAuKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDwSVeKzEducvf06rPkdnw" name="setName" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDwSVuKzEducvf06rPkdnw" name="arg0" type="_cDtPAuKzEducvf06rPkdnw"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDwSV-KzEducvf06rPkdnw" name="getConstraint" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDw5YeKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDw5YuKzEducvf06rPkdnw" name="isValid" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDw5Y-KzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDw5ZOKzEducvf06rPkdnw" name="getMostSpecific" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDw5ZeKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDw5ZuKzEducvf06rPkdnw" name="getLeastSpecific" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDw5Z-KzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDw5aOKzEducvf06rPkdnw" name="getIntersection" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDw5aeKzEducvf06rPkdnw" type="_cDX30eKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDw5auKzEducvf06rPkdnw" name="addAllOntologyChangeListeners" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDxgcOKzEducvf06rPkdnw" name="arg0" type="_cDksIeKzEducvf06rPkdnw"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDxgceKzEducvf06rPkdnw" name="removeAllOntologyChangeListeners" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDxgcuKzEducvf06rPkdnw" name="arg0" type="_cDksIeKzEducvf06rPkdnw"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDxgc-KzEducvf06rPkdnw" name="setTransientSpace" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDxgdOKzEducvf06rPkdnw" name="arg0" type="_cDYe4eKzEducvf06rPkdnw"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDxgdeKzEducvf06rPkdnw" name="getOntModel" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDxgduKzEducvf06rPkdnw" type="_cDvrQOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_cDYe4eKzEducvf06rPkdnw" name="ConstraintSpace" isAbstract="true">
+            <generalization xmi:id="_cDxgd-KzEducvf06rPkdnw" general="_cDvrRuKzEducvf06rPkdnw"/>
+            <ownedAttribute xmi:id="_cDxgeOKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedOperation xmi:id="_cDyHgOKzEducvf06rPkdnw" name="getOntology" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDyHgeKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDyHguKzEducvf06rPkdnw" name="getConstraintSet" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDyHg-KzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDyHhOKzEducvf06rPkdnw" name="getIntersectionSet" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDyHheKzEducvf06rPkdnw" type="_cDX30-KzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDyHhuKzEducvf06rPkdnw" name="getLeastSpecific" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDyHh-KzEducvf06rPkdnw" name="arg0" type="_cDvEMOKzEducvf06rPkdnw"/>
+              <ownedParameter xmi:id="_cDyHiOKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDyHieKzEducvf06rPkdnw" name="getMostSpecific" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDyHiuKzEducvf06rPkdnw" name="arg0" type="_cDvEMOKzEducvf06rPkdnw"/>
+              <ownedParameter xmi:id="_cDyukOKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDyukeKzEducvf06rPkdnw" name="getValid" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDyukuKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDyuk-KzEducvf06rPkdnw" name="getInvalid" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDyulOKzEducvf06rPkdnw" type="_cDw5YOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDyuleKzEducvf06rPkdnw" name="setPathResolver" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDyuluKzEducvf06rPkdnw" name="arg0" type="_cDnvceKzEducvf06rPkdnw"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDyul-KzEducvf06rPkdnw" name="getPathResolver" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDzVoOKzEducvf06rPkdnw" type="_cDnvceKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDzVoeKzEducvf06rPkdnw" name="setKnowledgeBase" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDzVouKzEducvf06rPkdnw" name="arg0" type="_cDksIeKzEducvf06rPkdnw"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDzVo-KzEducvf06rPkdnw" name="getKnowledgeBase" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDzVpOKzEducvf06rPkdnw" type="_cDksIeKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDz8sOKzEducvf06rPkdnw" name="getOntModel" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDz8seKzEducvf06rPkdnw" type="_cDvrQOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cDz8suKzEducvf06rPkdnw" name="init" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDz8s-KzEducvf06rPkdnw" name="arg0" type="_cDvEMOKzEducvf06rPkdnw"/>
+              <ownedParameter xmi:id="_cDz8tOKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_cDYe4-KzEducvf06rPkdnw" name="IOntModelChangeListener" isAbstract="true">
+            <generalization xmi:id="_cDz8teKzEducvf06rPkdnw" general="_cDvrRuKzEducvf06rPkdnw"/>
+            <ownedAttribute xmi:id="_cDz8tuKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedOperation xmi:id="_cDz8t-KzEducvf06rPkdnw" name="ontModelChanged" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cDz8uOKzEducvf06rPkdnw" name="arg0" type="_cDvrQOKzEducvf06rPkdnw"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_cDa7IeKzEducvf06rPkdnw" name="PlatformkitFactory" isAbstract="true">
+            <generalization xmi:id="_cD0jweKzEducvf06rPkdnw" general="_cD0jwOKzEducvf06rPkdnw"/>
+            <ownedAttribute xmi:id="_cD0jwuKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD0jw-KzEducvf06rPkdnw" name="eINSTANCE" visibility="public" isStatic="true" type="_cDa7IeKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedOperation xmi:id="_cD0jxOKzEducvf06rPkdnw" name="createConstraintSpace" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD0jxeKzEducvf06rPkdnw" type="_cDYe4eKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD0jxuKzEducvf06rPkdnw" name="createConstraintSet" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD0jx-KzEducvf06rPkdnw" type="_cDX30-KzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD1K0OKzEducvf06rPkdnw" name="createConstraint" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD1K0eKzEducvf06rPkdnw" type="_cDX30eKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD1K0uKzEducvf06rPkdnw" name="getPlatformkitPackage" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD1K0-KzEducvf06rPkdnw" type="_cDcJQeKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_cDcJQeKzEducvf06rPkdnw" name="PlatformkitPackage" isAbstract="true">
+            <generalization xmi:id="_cD2Y8eKzEducvf06rPkdnw" general="_cD2Y8OKzEducvf06rPkdnw"/>
+            <ownedAttribute xmi:id="_cD2Y8uKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3AAOKzEducvf06rPkdnw" name="eNAME" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3AAeKzEducvf06rPkdnw" name="eNS_URI" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3AAuKzEducvf06rPkdnw" name="eNS_PREFIX" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3AA-KzEducvf06rPkdnw" name="eINSTANCE" visibility="public" isStatic="true" type="_cDcJQeKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3ABeKzEducvf06rPkdnw" name="CONSTRAINT_SPACE" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nEOKzEducvf06rPkdnw" name="CONSTRAINT_SPACE__ONTOLOGY" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nEeKzEducvf06rPkdnw" name="CONSTRAINT_SPACE__CONSTRAINT_SET" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nEuKzEducvf06rPkdnw" name="CONSTRAINT_SPACE_FEATURE_COUNT" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nE-KzEducvf06rPkdnw" name="CONSTRAINT_SET" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nFOKzEducvf06rPkdnw" name="CONSTRAINT_SET__SPACE" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nFeKzEducvf06rPkdnw" name="CONSTRAINT_SET__NAME" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nFuKzEducvf06rPkdnw" name="CONSTRAINT_SET__CONSTRAINT" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nF-KzEducvf06rPkdnw" name="CONSTRAINT_SET_FEATURE_COUNT" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nGOKzEducvf06rPkdnw" name="CONSTRAINT" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nGeKzEducvf06rPkdnw" name="ONT_MODEL" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nGuKzEducvf06rPkdnw" name="IONT_MODEL_CHANGE_LISTENER" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD3nG-KzEducvf06rPkdnw" name="IONT_MODEL_CHANGE_LISTENER_FEATURE_COUNT" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD4OIOKzEducvf06rPkdnw" name="CONSTRAINT__SET" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD4OIeKzEducvf06rPkdnw" name="CONSTRAINT__ONT_CLASS_URI" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD4OIuKzEducvf06rPkdnw" name="CONSTRAINT_FEATURE_COUNT" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_cD4OI-KzEducvf06rPkdnw" name="ONT_MODEL_FEATURE_COUNT" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+            <ownedOperation xmi:id="_cD4OJOKzEducvf06rPkdnw" name="getConstraintSpace" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD4OJeKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD4OJuKzEducvf06rPkdnw" name="getConstraintSpace_Ontology" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD4OJ-KzEducvf06rPkdnw" type="_cD1K1uKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD4OKOKzEducvf06rPkdnw" name="getConstraintSpace_ConstraintSet" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD4OKeKzEducvf06rPkdnw" type="_cD1K2OKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD4OKuKzEducvf06rPkdnw" name="getConstraintSet" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD4OK-KzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD4OLOKzEducvf06rPkdnw" name="getConstraintSet_Space" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD41MOKzEducvf06rPkdnw" type="_cD1K2OKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD41MeKzEducvf06rPkdnw" name="getConstraintSet_Name" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD41MuKzEducvf06rPkdnw" type="_cD1K1uKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD41M-KzEducvf06rPkdnw" name="getConstraintSet_Constraint" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD41NOKzEducvf06rPkdnw" type="_cD1K2OKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD41NeKzEducvf06rPkdnw" name="getConstraint" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD41NuKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD41N-KzEducvf06rPkdnw" name="getConstraint_Set" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD41OOKzEducvf06rPkdnw" type="_cD1K2OKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD41OeKzEducvf06rPkdnw" name="getConstraint_OntClassURI" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD41OuKzEducvf06rPkdnw" type="_cD1K1uKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD41O-KzEducvf06rPkdnw" name="getOntModel" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD5cQOKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD5cQeKzEducvf06rPkdnw" name="getIOntModelChangeListener" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD5cQuKzEducvf06rPkdnw" type="_cD1K1OKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_cD5cQ-KzEducvf06rPkdnw" name="getPlatformkitFactory" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_cD5cROKzEducvf06rPkdnw" type="_cDa7IeKzEducvf06rPkdnw" direction="return"/>
+            </ownedOperation>
+            <nestedClassifier xmi:type="uml:Interface" xmi:id="_cDcJQOKzEducvf06rPkdnw" name="Literals" isAbstract="true">
+              <ownedAttribute xmi:id="_cD1K1eKzEducvf06rPkdnw" name="CONSTRAINT_SPACE" visibility="public" isStatic="true" type="_cD1K1OKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1K1-KzEducvf06rPkdnw" name="CONSTRAINT_SPACE__ONTOLOGY" visibility="public" isStatic="true" type="_cD1K1uKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x4OKzEducvf06rPkdnw" name="CONSTRAINT_SPACE__CONSTRAINT_SET" visibility="public" isStatic="true" type="_cD1K2OKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x4eKzEducvf06rPkdnw" name="CONSTRAINT_SET" visibility="public" isStatic="true" type="_cD1K1OKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x4uKzEducvf06rPkdnw" name="CONSTRAINT_SET__SPACE" visibility="public" isStatic="true" type="_cD1K2OKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x4-KzEducvf06rPkdnw" name="CONSTRAINT_SET__NAME" visibility="public" isStatic="true" type="_cD1K1uKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x5OKzEducvf06rPkdnw" name="CONSTRAINT_SET__CONSTRAINT" visibility="public" isStatic="true" type="_cD1K2OKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x5eKzEducvf06rPkdnw" name="CONSTRAINT" visibility="public" isStatic="true" type="_cD1K1OKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x5uKzEducvf06rPkdnw" name="CONSTRAINT__SET" visibility="public" isStatic="true" type="_cD1K2OKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x5-KzEducvf06rPkdnw" name="CONSTRAINT__ONT_CLASS_URI" visibility="public" isStatic="true" type="_cD1K1uKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x6OKzEducvf06rPkdnw" name="ONT_MODEL" visibility="public" isStatic="true" type="_cD1K1OKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cD1x6eKzEducvf06rPkdnw" name="IONT_MODEL_CHANGE_LISTENER" visibility="public" isStatic="true" type="_cD1K1OKzEducvf06rPkdnw" isReadOnly="true"/>
+            </nestedClassifier>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_cDksIOKzEducvf06rPkdnw" name="kb">
+            <packagedElement xmi:type="uml:Package" xmi:id="_cDl6QOKzEducvf06rPkdnw" name="util">
+              <packagedElement xmi:type="uml:Class" xmi:id="_cDmhUOKzEducvf06rPkdnw" name="NamedClassFilter">
+                <generalization xmi:id="_cEQBleKzEducvf06rPkdnw" general="_cEQBlOKzEducvf06rPkdnw"/>
+                <ownedOperation xmi:id="_cEQBluKzEducvf06rPkdnw" name="&lt;init>" visibility="public"/>
+                <ownedOperation xmi:id="_cEQBl-KzEducvf06rPkdnw" name="accept" visibility="public">
+                  <ownedParameter xmi:id="_cEQBmOKzEducvf06rPkdnw" name="arg0" type="_cD-UweKzEducvf06rPkdnw"/>
+                  <ownedParameter xmi:id="_cEQBmeKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:id="_cEQooOKzEducvf06rPkdnw" name="isNamedClass" visibility="public" isStatic="true">
+                  <ownedParameter xmi:id="_cEQooeKzEducvf06rPkdnw" name="arg0" type="_cDvEOOKzEducvf06rPkdnw"/>
+                  <ownedParameter xmi:id="_cEQoouKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+                </ownedOperation>
+              </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDksIeKzEducvf06rPkdnw" name="Ontologies">
+              <ownedAttribute xmi:id="_cENlUOKzEducvf06rPkdnw" name="LOGGER" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cENlUeKzEducvf06rPkdnw" name="LOCAL_INF_NS" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cENlUuKzEducvf06rPkdnw" name="ONTOLOGIES" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cEOMYOKzEducvf06rPkdnw" name="logger" visibility="protected" isStatic="true" type="_cD74gOKzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cEOMYeKzEducvf06rPkdnw" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_cEOMYuKzEducvf06rPkdnw" name="addOntModelChangeListener" visibility="public">
+                <ownedParameter xmi:id="_cEOMY-KzEducvf06rPkdnw" name="arg0" type="_cDYe4-KzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEOMZOKzEducvf06rPkdnw" name="removeOntModelChangeListener" visibility="public">
+                <ownedParameter xmi:id="_cEOMZeKzEducvf06rPkdnw" name="arg0" type="_cDYe4-KzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEOMZuKzEducvf06rPkdnw" name="notifyOntologyChanged" visibility="protected"/>
+              <ownedOperation xmi:id="_cEOMZ-KzEducvf06rPkdnw" name="attachDIGReasoner" visibility="public"/>
+              <ownedOperation xmi:id="_cEOMaOKzEducvf06rPkdnw" name="attachPelletReasoner" visibility="public"/>
+              <ownedOperation xmi:id="_cEOMaeKzEducvf06rPkdnw" name="attachOWLReasoner" visibility="public"/>
+              <ownedOperation xmi:id="_cEOMauKzEducvf06rPkdnw" name="attachTransitiveReasoner" visibility="public"/>
+              <ownedOperation xmi:id="_cEOMa-KzEducvf06rPkdnw" name="detachReasoner" visibility="public"/>
+              <ownedOperation xmi:id="_cEOMbOKzEducvf06rPkdnw" name="getBaseOntology" visibility="public">
+                <ownedParameter xmi:id="_cEOMbeKzEducvf06rPkdnw" type="_cDvrQOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEOMbuKzEducvf06rPkdnw" name="getOntModel" visibility="public">
+                <ownedParameter xmi:id="_cEOzcOKzEducvf06rPkdnw" type="_cDvrQOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEOzceKzEducvf06rPkdnw" name="getInstances" visibility="public">
+                <ownedParameter xmi:id="_cEOzcuKzEducvf06rPkdnw" type="_cDvrQOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEOzc-KzEducvf06rPkdnw" name="loadOntology" visibility="public">
+                <ownedParameter xmi:id="_cEOzdOKzEducvf06rPkdnw" name="arg0" type="_cDtPAuKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEOzd-KzEducvf06rPkdnw" name="loadOntology" visibility="public">
+                <ownedParameter xmi:id="_cEOzeOKzEducvf06rPkdnw" name="arg0" type="_cEOzduKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEOzeeKzEducvf06rPkdnw" name="loadInstances" visibility="public">
+                <ownedParameter xmi:id="_cEOzeuKzEducvf06rPkdnw" name="arg0" type="_cDtPAuKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEOze-KzEducvf06rPkdnw" name="loadInstances" visibility="public">
+                <ownedParameter xmi:id="_cEOzfOKzEducvf06rPkdnw" name="arg0" type="_cEOzduKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEOzfuKzEducvf06rPkdnw" name="saveOntology" visibility="public">
+                <ownedParameter xmi:id="_cEPagOKzEducvf06rPkdnw" name="arg0" type="_cEOzfeKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEPageKzEducvf06rPkdnw" name="checkConsistency" visibility="public"/>
+              <ownedOperation xmi:id="_cEPaguKzEducvf06rPkdnw" name="setReasonerUrl" visibility="public">
+                <ownedParameter xmi:id="_cEPag-KzEducvf06rPkdnw" name="arg0" type="_cDtPAuKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEPahOKzEducvf06rPkdnw" name="getReasonerUrl" visibility="public">
+                <ownedParameter xmi:id="_cEPaheKzEducvf06rPkdnw" type="_cDtPAuKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEPahuKzEducvf06rPkdnw" name="getLocalNamedClasses" visibility="public">
+                <ownedParameter xmi:id="_cEPaiOKzEducvf06rPkdnw" type="_cEPah-KzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEPaieKzEducvf06rPkdnw" name="updateHierarchy" visibility="public"/>
+              <ownedOperation xmi:id="_cEPaiuKzEducvf06rPkdnw" name="buildHierarchyMap" visibility="public"/>
+              <ownedOperation xmi:id="_cEPai-KzEducvf06rPkdnw" name="updateHierarchy" visibility="public">
+                <ownedParameter xmi:id="_cEPajOKzEducvf06rPkdnw" name="arg0" type="_cDvEOOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEPajeKzEducvf06rPkdnw" name="pruneHierarchyMap" visibility="public">
+                <ownedParameter xmi:id="_cEPajuKzEducvf06rPkdnw" name="arg0" type="_cDvEOOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEQBkOKzEducvf06rPkdnw" name="buildHierarchyMap" visibility="public">
+                <ownedParameter xmi:id="_cEQBkeKzEducvf06rPkdnw" name="arg0" type="_cDvEOOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_cDmhUeKzEducvf06rPkdnw" name="util">
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDnIYOKzEducvf06rPkdnw" name="EMFURIPathResolver" clientDependency="_cEQoo-KzEducvf06rPkdnw">
+              <interfaceRealization xmi:id="_cEQoo-KzEducvf06rPkdnw" supplier="_cDnvceKzEducvf06rPkdnw" client="_cDnIYOKzEducvf06rPkdnw" contract="_cDnvceKzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cEQopeKzEducvf06rPkdnw" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_cEQopuKzEducvf06rPkdnw" name="arg0" type="_cEQopOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEQop-KzEducvf06rPkdnw" name="getContents" visibility="public">
+                <ownedParameter xmi:id="_cEQoqOKzEducvf06rPkdnw" name="arg0" type="_cDtPAuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEQoqeKzEducvf06rPkdnw" type="_cEOzduKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDnIYeKzEducvf06rPkdnw" name="HierarchyComparator" clientDependency="_cERPseKzEducvf06rPkdnw">
+              <ownedAttribute xmi:id="_cERPsuKzEducvf06rPkdnw" name="MOST_SPECIFIC_FIRST" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cERPs-KzEducvf06rPkdnw" name="LEAST_SPECIFIC_FIRST" visibility="public" isStatic="true" type="_cD3ABOKzEducvf06rPkdnw" isReadOnly="true"/>
+              <interfaceRealization xmi:id="_cERPseKzEducvf06rPkdnw" supplier="_cERPsOKzEducvf06rPkdnw" client="_cDnIYeKzEducvf06rPkdnw" contract="_cERPsOKzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cERPtOKzEducvf06rPkdnw" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_cERPteKzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cERPtuKzEducvf06rPkdnw" name="compare" visibility="public">
+                <ownedParameter xmi:id="_cERPt-KzEducvf06rPkdnw" name="arg0" type="_cD-UweKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cERPuOKzEducvf06rPkdnw" name="arg1" type="_cD-UweKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cERPueKzEducvf06rPkdnw" type="_cD3ABOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cERPuuKzEducvf06rPkdnw" name="equals" visibility="public">
+                <ownedParameter xmi:id="_cERPu-KzEducvf06rPkdnw" name="arg0" type="_cD-UweKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cERPvOKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_cDnvceKzEducvf06rPkdnw" name="PathResolver" isAbstract="true">
+              <ownedOperation xmi:id="_cER2wOKzEducvf06rPkdnw" name="getContents" visibility="public" isAbstract="true">
+                <ownedParameter xmi:id="_cER2weKzEducvf06rPkdnw" name="arg0" type="_cDtPAuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cER2wuKzEducvf06rPkdnw" type="_cEOzduKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDnvcuKzEducvf06rPkdnw" name="PlatformkitAdapterFactory">
+              <generalization xmi:id="_cER2xeKzEducvf06rPkdnw" general="_cER2xOKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cESd0OKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cESd0eKzEducvf06rPkdnw" name="modelPackage" visibility="protected" isStatic="true" type="_cDcJQeKzEducvf06rPkdnw"/>
+              <ownedAttribute xmi:id="_cESd0uKzEducvf06rPkdnw" name="modelSwitch" visibility="protected" type="_cDoWgOKzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cESd0-KzEducvf06rPkdnw" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_cESd1OKzEducvf06rPkdnw" name="isFactoryForType" visibility="public">
+                <ownedParameter xmi:id="_cESd1eKzEducvf06rPkdnw" name="arg0" type="_cD-UweKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cESd1uKzEducvf06rPkdnw" type="_cDvEMOKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cESd2OKzEducvf06rPkdnw" name="createAdapter" visibility="public">
+                <ownedParameter xmi:id="_cESd2eKzEducvf06rPkdnw" name="arg0" type="_cESd1-KzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cESd2-KzEducvf06rPkdnw" type="_cESd2uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cESd3OKzEducvf06rPkdnw" name="createConstraintSpaceAdapter" visibility="public">
+                <ownedParameter xmi:id="_cESd3eKzEducvf06rPkdnw" type="_cESd2uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cETE4OKzEducvf06rPkdnw" name="createConstraintSetAdapter" visibility="public">
+                <ownedParameter xmi:id="_cETE4eKzEducvf06rPkdnw" type="_cESd2uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cETE4uKzEducvf06rPkdnw" name="createConstraintAdapter" visibility="public">
+                <ownedParameter xmi:id="_cETE4-KzEducvf06rPkdnw" type="_cESd2uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cETE5OKzEducvf06rPkdnw" name="createOntModelAdapter" visibility="public">
+                <ownedParameter xmi:id="_cETE5eKzEducvf06rPkdnw" type="_cESd2uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cETE5uKzEducvf06rPkdnw" name="createIOntModelChangeListenerAdapter" visibility="public">
+                <ownedParameter xmi:id="_cETE5-KzEducvf06rPkdnw" type="_cESd2uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cETE6OKzEducvf06rPkdnw" name="createEObjectAdapter" visibility="public">
+                <ownedParameter xmi:id="_cETE6eKzEducvf06rPkdnw" type="_cESd2uKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDoWgOKzEducvf06rPkdnw" name="PlatformkitSwitch">
+              <ownedAttribute xmi:id="_cETr8OKzEducvf06rPkdnw" name="copyright" visibility="public" isStatic="true" type="_cDtPAuKzEducvf06rPkdnw" isReadOnly="true"/>
+              <ownedAttribute xmi:id="_cETr8eKzEducvf06rPkdnw" name="modelPackage" visibility="protected" isStatic="true" type="_cDcJQeKzEducvf06rPkdnw"/>
+              <ownedOperation xmi:id="_cETr8uKzEducvf06rPkdnw" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_cETr8-KzEducvf06rPkdnw" name="doSwitch" visibility="public">
+                <ownedParameter xmi:id="_cETr9OKzEducvf06rPkdnw" name="arg0" type="_cDvrRuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cETr9eKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cETr9uKzEducvf06rPkdnw" name="doSwitch" visibility="protected">
+                <ownedParameter xmi:id="_cETr9-KzEducvf06rPkdnw" name="arg0" type="_cD1K1OKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cETr-OKzEducvf06rPkdnw" name="arg1" type="_cDvrRuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cETr-eKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cETr-uKzEducvf06rPkdnw" name="doSwitch" visibility="protected">
+                <ownedParameter xmi:id="_cETr--KzEducvf06rPkdnw" name="arg0" type="_cD3ABOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cETr_OKzEducvf06rPkdnw" name="arg1" type="_cDvrRuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEUTAOKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEUTAeKzEducvf06rPkdnw" name="caseConstraintSpace" visibility="public">
+                <ownedParameter xmi:id="_cEUTAuKzEducvf06rPkdnw" name="arg0" type="_cDYe4eKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEUTA-KzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEUTBOKzEducvf06rPkdnw" name="caseConstraintSet" visibility="public">
+                <ownedParameter xmi:id="_cEUTBeKzEducvf06rPkdnw" name="arg0" type="_cDX30-KzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEUTBuKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEUTB-KzEducvf06rPkdnw" name="caseConstraint" visibility="public">
+                <ownedParameter xmi:id="_cEUTCOKzEducvf06rPkdnw" name="arg0" type="_cDX30eKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEUTCeKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEUTCuKzEducvf06rPkdnw" name="caseOntModel" visibility="public">
+                <ownedParameter xmi:id="_cEUTC-KzEducvf06rPkdnw" name="arg0" type="_cDvrQOKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEUTDOKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEUTDeKzEducvf06rPkdnw" name="caseIOntModelChangeListener" visibility="public">
+                <ownedParameter xmi:id="_cEU6EOKzEducvf06rPkdnw" name="arg0" type="_cDYe4-KzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEU6EeKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEVhIOKzEducvf06rPkdnw" name="defaultCase" visibility="public">
+                <ownedParameter xmi:id="_cEVhIeKzEducvf06rPkdnw" name="arg0" type="_cDvrRuKzEducvf06rPkdnw"/>
+                <ownedParameter xmi:id="_cEVhIuKzEducvf06rPkdnw" type="_cD-UweKzEducvf06rPkdnw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cDoWgeKzEducvf06rPkdnw" name="TreeSorter">
+              <ownedOperation xmi:id="_cEWIMOKzEducvf06rPkdnw" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_cEWIMeKzEducvf06rPkdnw" name="arg0" type="_cERPsOKzEducvf06rPkdnw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_cEWIMuKzEducvf06rPkdnw" name="sort" visibility="public">
+                <ownedParameter xmi:id="_cEWIM-KzEducvf06rPkdnw" name="arg0" type="_cEPah-KzEducvf06rPkdnw"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_cDtPAOKzEducvf06rPkdnw" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cDtPAeKzEducvf06rPkdnw" name="lang">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_cDtPAuKzEducvf06rPkdnw" name="String"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_cDvEMOKzEducvf06rPkdnw" name="boolean"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_cD3ABOKzEducvf06rPkdnw" name="int"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_cD-UweKzEducvf06rPkdnw" name="Object"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_cD7Rc-KzEducvf06rPkdnw" name="util">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cD7RdOKzEducvf06rPkdnw" name="logging">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_cD74gOKzEducvf06rPkdnw" name="Logger"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_cEPah-KzEducvf06rPkdnw" name="List"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_cERPsOKzEducvf06rPkdnw" name="Comparator"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_cEOzdeKzEducvf06rPkdnw" name="io">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_cEOzduKzEducvf06rPkdnw" name="InputStream"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_cEOzfeKzEducvf06rPkdnw" name="OutputStream"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_cDvEM-KzEducvf06rPkdnw" name="com">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cDvENOKzEducvf06rPkdnw" name="hp">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cDvENeKzEducvf06rPkdnw" name="hpl">
+        <packagedElement xmi:type="uml:Package" xmi:id="_cDvENuKzEducvf06rPkdnw" name="jena">
+          <packagedElement xmi:type="uml:Package" xmi:id="_cDvEN-KzEducvf06rPkdnw" name="ontology">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cDvEOOKzEducvf06rPkdnw" name="OntClass"/>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cDvrQOKzEducvf06rPkdnw" name="OntModel"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_cEQBkuKzEducvf06rPkdnw" name="util">
+            <packagedElement xmi:type="uml:Package" xmi:id="_cEQBk-KzEducvf06rPkdnw" name="iterator">
+              <packagedElement xmi:type="uml:Class" xmi:id="_cEQBlOKzEducvf06rPkdnw" name="Filter"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_cDvrQuKzEducvf06rPkdnw" name="org">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cDvrQ-KzEducvf06rPkdnw" name="eclipse">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cDvrROKzEducvf06rPkdnw" name="emf">
+        <packagedElement xmi:type="uml:Package" xmi:id="_cDvrReKzEducvf06rPkdnw" name="ecore">
+          <packagedElement xmi:type="uml:Package" xmi:id="_cD6qYeKzEducvf06rPkdnw" name="impl">
+            <packagedElement xmi:type="uml:Class" xmi:id="_cD7RcOKzEducvf06rPkdnw" name="EObjectImpl"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cEKiAOKzEducvf06rPkdnw" name="EFactoryImpl"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_cELwIeKzEducvf06rPkdnw" name="EPackageImpl"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_cDvrRuKzEducvf06rPkdnw" name="EObject"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_cD0jwOKzEducvf06rPkdnw" name="EFactory"/>
+          <packagedElement xmi:type="uml:DataType" xmi:id="_cD1K1OKzEducvf06rPkdnw" name="EClass"/>
+          <packagedElement xmi:type="uml:DataType" xmi:id="_cD1K1uKzEducvf06rPkdnw" name="EAttribute"/>
+          <packagedElement xmi:type="uml:DataType" xmi:id="_cD1K2OKzEducvf06rPkdnw" name="EReference"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_cD2Y8OKzEducvf06rPkdnw" name="EPackage"/>
+          <packagedElement xmi:type="uml:DataType" xmi:id="_cD8fnOKzEducvf06rPkdnw" name="InternalEObject"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_cEJT4OKzEducvf06rPkdnw" name="resource">
+            <packagedElement xmi:type="uml:Class" xmi:id="_cEJT4uKzEducvf06rPkdnw" name="Resource">
+              <nestedClassifier xmi:type="uml:DataType" xmi:id="_cEJ68OKzEducvf06rPkdnw" name="Internal"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_cDwSWOKzEducvf06rPkdnw" name="common">
+          <packagedElement xmi:type="uml:Package" xmi:id="_cDwSWeKzEducvf06rPkdnw" name="util">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cDw5YOKzEducvf06rPkdnw" name="EList"/>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cEQopOKzEducvf06rPkdnw" name="URI"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_cD74ieKzEducvf06rPkdnw" name="notify">
+            <packagedElement xmi:type="uml:Package" xmi:id="_cER2w-KzEducvf06rPkdnw" name="impl">
+              <packagedElement xmi:type="uml:Class" xmi:id="_cER2xOKzEducvf06rPkdnw" name="AdapterFactoryImpl"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cD74iuKzEducvf06rPkdnw" name="NotificationChain"/>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cESd1-KzEducvf06rPkdnw" name="Notifier"/>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cESd2uKzEducvf06rPkdnw" name="Adapter"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

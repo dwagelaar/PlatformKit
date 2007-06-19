@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/commons-fileupload-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/javax.servlet.jar"/>
 	<classpathentry kind="lib" path="lib/equinox.common.jar"/>
 	<classpathentry kind="lib" path="lib/resources.jar"/>
@@ -22,7 +21,9 @@
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.0.5-bin.jar"/>
 	<classpathentry kind="lib" path="lib/cglib-2.1.3.jar"/>
 	<classpathentry kind="lib" path="lib/asm.jar"/>
+	<classpathentry kind="lib" path="lib/commons-fileupload-1.2.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-jena"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-pellet"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

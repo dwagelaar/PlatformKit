@@ -1,23 +1,3 @@
-/*
- * $Id: CDDServlet.java 2517 2005-11-03 16:19:29Z dwagelaa $
- * Created on 1-sep-2005
- * (C) 2005, Dennis Wagelaar, SSEL, VUB
- *
- *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License, version 2 as
- *  published by the Free Software Foundation.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- *
- *  (See the file "COPYING" that is included with this source distribution.)
- */
 package be.ac.vub.platformkit.servlet;
 
 import java.io.IOException;
@@ -28,12 +8,9 @@ import java.net.URLConnection;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,9 +21,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import junit.framework.Assert;
 
-import org.apache.commons.fileupload.DiskFileUpload;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.fileupload.FileUploadException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -83,34 +57,33 @@ public class PlatformkitServlet extends HttpServlet {
     }
 
     /**
-     * Processes a POST request to the web service.
+     * Processes any request to the web service.
      */
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        try {
-            Properties param = new Properties();
-            InputStream context = parseParameters(req, param);
-            boolean leastSpecific = param.getProperty("result").equals("leastspecific");
-            boolean noValidate = param.getProperty("noValidate").equals("true");
-            String baseurl = param.getProperty("baseurl");
+	protected void doAny(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		try {
+			PlatformkitSession session = new PlatformkitSession(req);
             //pre-calc
             logger.info(DateFormat.getDateInstance().format(new Date()));
-            ConstraintSpace space = init(req, baseurl);
+            ConstraintSpace space = init(req, session.getBaseURL());
             //calculate most/least specific constraint sets
             logger.info(DateFormat.getDateInstance().format(new Date()));
             List result;
+			PlatformDescription pd = session.getDescription();
             synchronized (space) {
-                if (context != null) {
-                    space.getKnowledgeBase().loadInstances(context);
+                if (pd.getPlatformOWL() != null) {
+                	InputStream input = pd.getPlatformOWL().getInputStream();
+                    space.getKnowledgeBase().loadInstances(input);
+                    input.close();
                 }
-                if (leastSpecific) {
-                    result = space.getLeastSpecific(!noValidate);
+                if (session.getLeastSpecific()) {
+                    result = space.getLeastSpecific(!session.getNoValidate());
                 } else {
-                    result = space.getMostSpecific(!noValidate);
+                    result = space.getMostSpecific(!session.getNoValidate());
                 }
             }
             logger.info(DateFormat.getDateInstance().format(new Date()));
-            String redirect = getContainer(baseurl);
+            String redirect = getContainer(session.getBaseURL());
             if (result.size() > 0) {
                 redirect += ((ConstraintSet) result.get(0)).getName();
             } else {
@@ -118,9 +91,25 @@ public class PlatformkitServlet extends HttpServlet {
             }
             logger.info("Redirecting to " + redirect);
             resp.sendRedirect(redirect);
-        } catch (Exception e) {
-            throw new ServletException(e);
-        }
+		} catch (Exception e) {
+			throw new ServletException(e);
+		}
+	}
+
+    /**
+     * Processes a GET request to the web service.
+     */
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		doAny(req, resp);
+	}
+
+    /**
+     * Processes a POST request to the web service.
+     */
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+		doAny(req, resp);
     }
     
     /**
@@ -182,40 +171,9 @@ public class PlatformkitServlet extends HttpServlet {
         	Ontologies ont = new Ontologies();
         	space.setKnowledgeBase(ont);
         	space.init(true);
-        	ont.attachOWLReasoner();
+        	ont.attachPelletReasoner();
         }
         return space;
-    }
-    
-    /**
-     * Extracts the parameters into the given variable and returns
-     * the context ontology input stream, if any.
-     * @param req
-     * @param pars
-     * @return The context ontology input stream, if any, null otherwise.
-     */
-    private InputStream parseParameters(HttpServletRequest req, Properties pars)
-            throws FileUploadException, IOException {
-        InputStream context = null;
-        if (FileUpload.isMultipartContent(req)) {
-            DiskFileUpload fu = new DiskFileUpload();
-            List fileItems = fu.parseRequest(req);
-            for (Iterator fis = fileItems.iterator(); fis.hasNext();) {
-                FileItem fi = (FileItem) fis.next();
-                if (fi.isFormField()) {
-                    pars.setProperty(fi.getFieldName(), fi.getString());
-                } else {
-                    context = fi.getInputStream();
-                }
-            }
-        } else {
-            logger.warning("No context file uploaded");
-            for (Enumeration ns = req.getParameterNames(); ns.hasMoreElements();) {
-                String name = (String) ns.nextElement();
-                pars.setProperty(name, req.getParameter(name));
-            }
-        }
-        return context;
     }
     
     /**
