@@ -1,24 +1,22 @@
 <?xml version="1.0"?>
 <rdf:RDF
-    xmlns:java="http://ssel.vub.ac.be/codamos/2006/01/Java.owl#"
     xmlns="http://local/ZaurusSL-C1000PP.owl#"
-    xmlns:j.0="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#"
+    xmlns:platform="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#"
+    xmlns:java="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:platform="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2006/01/Platform.owl#"
     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:os="http://ssel.vub.ac.be/codamos/2006/01/OperatingSystems.owl#"
+    xmlns:pm="http://ssel.vub.ac.be/codamos/2007/01/PackageManagers.owl#"
     xmlns:units="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#"
     xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:j2me-pp-1_0="http://ssel.vub.ac.be/codamos/2007/01/j2me-pp-1_0-api.owl#"
   xml:base="http://local/ZaurusSL-C1000PP.owl">
   <owl:Ontology rdf:about="">
     <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/j2me-pp-1_0-api.owl"/>
-    <owl:imports rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2006/01/Platform.owl"/>
-    <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2006/01/OperatingSystems.owl"/>
-    <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2006/01/Java.owl"/>
   </owl:Ontology>
   <owl:Class rdf:ID="MilliAmpereHour">
     <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#IntegerValue"/>
@@ -32,10 +30,6 @@
   <owl:Class rdf:ID="Keyboard">
     <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#InputDevice"/>
   </owl:Class>
-  <owl:Class rdf:ID="ZaurusPP1.0">
-    <rdfs:subClassOf rdf:resource="http://ssel.vub.ac.be/codamos/2006/01/Java.owl#PP"/>
-    <rdfs:subClassOf rdf:resource="http://ssel.vub.ac.be/codamos/2006/01/Java.owl#JavaRMI"/>
-  </owl:Class>
   <owl:Class rdf:ID="SerialPort">
     <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#OutputDevice"/>
     <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#InputDevice"/>
@@ -46,9 +40,6 @@
   <owl:Class rdf:ID="IrDAPort">
     <rdfs:subClassOf rdf:resource="#SerialPort"/>
   </owl:Class>
-  <owl:Class rdf:ID="CackoZaurusLinux">
-    <rdfs:subClassOf rdf:resource="http://ssel.vub.ac.be/codamos/2006/01/OperatingSystems.owl#SharpZaurusLinux"/>
-  </owl:Class>
   <owl:Class rdf:ID="SDCard">
     <rdfs:subClassOf>
       <owl:Class rdf:ID="MemoryCard"/>
@@ -57,12 +48,12 @@
   <owl:Class rdf:ID="Battery">
     <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#PowerResource"/>
   </owl:Class>
+  <owl:Class rdf:ID="Display">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#OutputDevice"/>
+  </owl:Class>
   <owl:Class rdf:about="#MemoryCard">
     <rdfs:subClassOf rdf:resource="#FlashMemory"/>
     <rdfs:subClassOf rdf:resource="#RemovableStorage"/>
-  </owl:Class>
-  <owl:Class rdf:ID="Display">
-    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#OutputDevice"/>
   </owl:Class>
   <owl:Class rdf:ID="Touchscreen">
     <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#InputDevice"/>
@@ -71,185 +62,149 @@
   <owl:Class rdf:ID="WiFiResource">
     <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#NetworkResource"/>
   </owl:Class>
+  <rdf:Property rdf:ID="maxCapacity"/>
+  <rdf:Property rdf:ID="instructionSet"/>
+  <rdf:Property rdf:ID="providesSoftware"/>
+  <rdf:Property rdf:ID="providesHardware"/>
   <owl:FunctionalProperty rdf:ID="hasWidth">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="#Display"/>
     <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#Pixel"/>
-  </owl:FunctionalProperty>
-  <owl:FunctionalProperty rdf:ID="hasColourDepth">
     <rdfs:domain rdf:resource="#Display"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#ColourDepth"/>
   </owl:FunctionalProperty>
   <owl:FunctionalProperty rdf:ID="hasHeight">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="#Display"/>
     <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#Pixel"/>
   </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasColourDepth">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#ColourDepth"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Display"/>
+  </owl:FunctionalProperty>
   <owl:FunctionalProperty rdf:ID="hasCackoZaurusLinuxVersion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="#CackoZaurusLinux"/>
-    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2006/01/Platform.owl#Version"/>
   </owl:FunctionalProperty>
-  <units:MegaByte rdf:ID="megaByte1024">
-    <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >1024</units:ival>
-  </units:MegaByte>
-  <platform:Version rdf:ID="version2">
-    <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >2</platform:versionNumber>
-  </platform:Version>
-  <SDCard rdf:ID="pnySD-M512">
+  <SDCard rdf:ID="pnySD-M1024">
+    <maxCapacity>
+      <units:MegaByte rdf:ID="megaByte1024">
+        <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1024</units:ival>
+      </units:MegaByte>
+    </maxCapacity>
     <platform:maxCapacity rdf:resource="#megaByte1024"/>
   </SDCard>
-  <platform:Version rdf:ID="version2.4.18">
-    <platform:hasSubVersion>
-      <platform:Version rdf:ID="version4.18">
-        <platform:hasSubVersion>
-          <platform:Version rdf:ID="version18">
-            <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-            >18</platform:versionNumber>
-          </platform:Version>
-        </platform:hasSubVersion>
-        <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >4</platform:versionNumber>
-      </platform:Version>
-    </platform:hasSubVersion>
-    <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >2</platform:versionNumber>
-  </platform:Version>
-  <platform:Version rdf:ID="version1.22">
-    <platform:hasSubVersion>
-      <platform:Version rdf:ID="version22">
-        <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >22</platform:versionNumber>
-      </platform:Version>
-    </platform:hasSubVersion>
-    <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >1</platform:versionNumber>
-  </platform:Version>
+  <units:StringValue rdf:ID="arm">
+    <units:sval rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arm</units:sval>
+  </units:StringValue>
+  <Keyboard rdf:ID="zaurusSL-C1000Keyboard"/>
   <units:ColourDepth rdf:ID="colours64K">
     <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
     >65536</units:ival>
   </units:ColourDepth>
-  <units:MegaByte rdf:ID="megaByte128">
-    <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >128</units:ival>
-  </units:MegaByte>
-  <platform:Version rdf:ID="version1">
-    <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >1</platform:versionNumber>
-  </platform:Version>
-  <units:MegaBit_Per_Second rdf:ID="megaBitPerSecond11">
-    <units:fval rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
-    >11.0</units:fval>
-  </units:MegaBit_Per_Second>
-  <platform:Version rdf:ID="version2.2">
-    <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >2</platform:versionNumber>
-    <platform:hasSubVersion rdf:resource="#version2"/>
-  </platform:Version>
-  <IrDAPort rdf:ID="zaurusSL-C860COM2"/>
-  <platform:CPUResource rdf:ID="zaurusSL-C860PXA255">
-    <platform:instructionSet>
-      <units:StringValue rdf:ID="arm">
-        <units:sval rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >arm</units:sval>
-      </units:StringValue>
-    </platform:instructionSet>
-    <platform:maxCapacity>
-      <MegaHertz rdf:ID="megaHertz415.33">
-        <units:fval rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
-        >415.33</units:fval>
-      </MegaHertz>
-    </platform:maxCapacity>
-  </platform:CPUResource>
-  <platform:MemoryResource rdf:ID="zaurusSL-C860RAM">
-    <platform:maxCapacity>
-      <units:MegaByte rdf:ID="megaByte64">
-        <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >64</units:ival>
-      </units:MegaByte>
-    </platform:maxCapacity>
-  </platform:MemoryResource>
-  <MilliAmpereHour rdf:ID="mAH1800">
-    <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >1800</units:ival>
-  </MilliAmpereHour>
-  <Keyboard rdf:ID="zaurusSL-C860Keyboard"/>
-  <SerialPort rdf:ID="zaurusSL-C860COM1"/>
-  <FlashMemory rdf:ID="zaurusSL-C860Flash">
-    <platform:maxCapacity rdf:resource="#megaByte128"/>
-  </FlashMemory>
-  <platform:Version rdf:ID="version5.4">
-    <platform:hasSubVersion>
-      <platform:Version rdf:ID="version4">
-        <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >4</platform:versionNumber>
-      </platform:Version>
-    </platform:hasSubVersion>
-    <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >5</platform:versionNumber>
-  </platform:Version>
-  <WiFiResource rdf:ID="planex-gw-cf11x">
-    <platform:maxCapacity rdf:resource="#megaBitPerSecond11"/>
-    <j.0:maxCapacity rdf:resource="#megaBitPerSecond11"/>
-  </WiFiResource>
   <Battery rdf:ID="zaurusSL-C1000Battery">
-    <platform:maxCapacity rdf:resource="#mAH1800"/>
-    <j.0:maxCapacity rdf:resource="#mAH1800"/>
+    <platform:maxCapacity>
+      <MilliAmpereHour rdf:ID="mAH1800">
+        <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1800</units:ival>
+      </MilliAmpereHour>
+    </platform:maxCapacity>
+    <maxCapacity rdf:resource="#mAH1800"/>
   </Battery>
+  <WiFiResource rdf:ID="planex-gw-cf11x">
+    <platform:maxCapacity>
+      <units:MegaBit_Per_Second rdf:ID="megaBitPerSecond11">
+        <units:fval rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >11.0</units:fval>
+      </units:MegaBit_Per_Second>
+    </platform:maxCapacity>
+    <maxCapacity rdf:resource="#megaBitPerSecond11"/>
+  </WiFiResource>
   <units:Pixel rdf:ID="pixels640">
     <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
     >640</units:ival>
   </units:Pixel>
-  <CackoZaurusLinux rdf:ID="cacko-linux-1.22a">
-    <os:hasGlibcVersion rdf:resource="#version2.2"/>
-    <os:hasQtopiaVersion>
-      <platform:Version rdf:ID="version1.5.4">
-        <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >1</platform:versionNumber>
-        <platform:hasSubVersion rdf:resource="#version5.4"/>
-      </platform:Version>
-    </os:hasQtopiaVersion>
-    <os:hasLibcVersion>
-      <platform:Version rdf:ID="version6">
-        <platform:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >6</platform:versionNumber>
-      </platform:Version>
-    </os:hasLibcVersion>
-    <os:hasLinuxVersion rdf:resource="#version2.4.18"/>
-    <hasCackoZaurusLinuxVersion rdf:resource="#version1.22"/>
-  </CackoZaurusLinux>
+  <units:MegaByte rdf:ID="megaByte128">
+    <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >128</units:ival>
+  </units:MegaByte>
+  <units:MegaByte rdf:ID="megaByte64">
+    <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >64</units:ival>
+  </units:MegaByte>
+  <java:JavaVM rdf:ID="zaurusCVM">
+    <java:supportsBytecodeFormat rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#theJava1.3BytecodeFormat"/>
+  </java:JavaVM>
   <units:Pixel rdf:ID="pixels480">
     <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
     >480</units:ival>
   </units:Pixel>
-  <j.0:Platform rdf:ID="zaurusSL-C1000PP">
-    <platform:providesHardware rdf:resource="#zaurusSL-C860Flash"/>
-    <platform:providesSoftware rdf:resource="#cacko-linux-1.22a"/>
-    <platform:providesSoftware>
-      <ZaurusPP1.0 rdf:ID="zaurusPP1.0">
-        <java:hasCDCVersion rdf:resource="#version1"/>
-        <java:hasFPVersion rdf:resource="#version1"/>
-        <java:hasPBPVersion rdf:resource="#version1"/>
-        <java:hasPPVersion rdf:resource="#version1"/>
-      </ZaurusPP1.0>
-    </platform:providesSoftware>
+  <platform:Platform rdf:ID="zaurusSL-C1000">
     <platform:providesHardware>
-      <Touchscreen rdf:ID="zaurusSL-C860Touchscreen">
+      <platform:MemoryResource rdf:ID="zaurusSL-C1000RAM">
+        <maxCapacity rdf:resource="#megaByte64"/>
+        <platform:maxCapacity rdf:resource="#megaByte64"/>
+      </platform:MemoryResource>
+    </platform:providesHardware>
+    <platform:providesHardware>
+      <Touchscreen rdf:ID="zaurusSL-C1000Touchscreen">
         <hasHeight rdf:resource="#pixels480"/>
         <hasColourDepth rdf:resource="#colours64K"/>
         <hasWidth rdf:resource="#pixels640"/>
       </Touchscreen>
     </platform:providesHardware>
+    <platform:providesSoftware>
+      <pm:Ipkg rdf:ID="zaurusIpkg"/>
+    </platform:providesSoftware>
+    <providesHardware rdf:resource="#planex-gw-cf11x"/>
+    <providesHardware rdf:resource="#zaurusSL-C1000Touchscreen"/>
+    <providesSoftware>
+      <j2me-pp-1_0:J2me-pp-1_0 rdf:ID="zaurusPP1.0">
+        <java:providesBuiltinJavaLibrary>
+          <j2me-pp-1_0:J2me-pp-1_0ClassLibrary rdf:ID="zaurusPP1.0ClassLibrary">
+            <java:isBuiltinJavaLibraryFor rdf:resource="#zaurusPP1.0"/>
+          </j2me-pp-1_0:J2me-pp-1_0ClassLibrary>
+        </java:providesBuiltinJavaLibrary>
+        <java:providesJavaVM rdf:resource="#zaurusCVM"/>
+      </j2me-pp-1_0:J2me-pp-1_0>
+    </providesSoftware>
+    <providesHardware>
+      <platform:CPUResource rdf:ID="zaurusSL-C1000PXA270">
+        <instructionSet rdf:resource="#arm"/>
+        <platform:maxCapacity>
+          <MegaHertz rdf:ID="megaHertz415.33">
+            <units:fval rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >415.33</units:fval>
+          </MegaHertz>
+        </platform:maxCapacity>
+        <platform:instructionSet rdf:resource="#arm"/>
+        <maxCapacity rdf:resource="#megaHertz415.33"/>
+      </platform:CPUResource>
+    </providesHardware>
+    <platform:providesHardware rdf:resource="#zaurusSL-C1000Keyboard"/>
+    <platform:providesHardware rdf:resource="#pnySD-M1024"/>
     <platform:providesHardware rdf:resource="#planex-gw-cf11x"/>
     <platform:providesHardware rdf:resource="#zaurusSL-C1000Battery"/>
-    <platform:providesHardware rdf:resource="#zaurusSL-C860PXA255"/>
-    <platform:providesHardware rdf:resource="#zaurusSL-C860RAM"/>
-    <platform:providesHardware rdf:resource="#pnySD-M512"/>
-    <platform:providesHardware rdf:resource="#zaurusSL-C860Keyboard"/>
-  </j.0:Platform>
+    <platform:providesSoftware rdf:resource="#zaurusPP1.0"/>
+    <platform:providesHardware>
+      <SerialPort rdf:ID="zaurusSL-C1000COM1"/>
+    </platform:providesHardware>
+    <providesHardware rdf:resource="#zaurusSL-C1000RAM"/>
+    <platform:providesHardware>
+      <FlashMemory rdf:ID="zaurusSL-C1000Flash">
+        <maxCapacity rdf:resource="#megaByte128"/>
+        <platform:maxCapacity rdf:resource="#megaByte128"/>
+      </FlashMemory>
+    </platform:providesHardware>
+    <platform:providesHardware rdf:resource="#zaurusSL-C1000PXA270"/>
+    <providesHardware rdf:resource="#pnySD-M1024"/>
+    <providesHardware rdf:resource="#zaurusSL-C1000Flash"/>
+    <platform:providesHardware>
+      <IrDAPort rdf:ID="zaurusSL-C1000COM2"/>
+    </platform:providesHardware>
+    <providesHardware rdf:resource="#zaurusSL-C1000Battery"/>
+    <providesHardware rdf:resource="#zaurusSL-C1000Keyboard"/>
+  </platform:Platform>
 </rdf:RDF>
 
 <!-- Created with Protege (with OWL Plugin 3.2.1, Build 365)  http://protege.stanford.edu -->
