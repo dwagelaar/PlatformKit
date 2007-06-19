@@ -3,7 +3,6 @@ package be.ac.vub.platformkit.hibernate;
 import org.hibernate.Session;
 
 import be.ac.vub.platformkit.servlet.PlatformDescription;
-import be.ac.vub.platformkit.servlet.StreamData;
 
 public class StartupManager {
 
@@ -47,12 +46,10 @@ public class StartupManager {
         session.beginTransaction();
         PlatformDescription pd = new PlatformDescription();
         pd.setBrowserID(bID);
-		StreamData data = new StreamData();
-		data.setData(pOWL);
-        pd.setPlatformOWL(data);        
+        pd.setData(pOWL);        
         session.save(pd);
         session.getTransaction().commit();
-        System.out.println("Storing PD object: " + pd.getBrowserID() + ", " + pd.getPlatformOWL());
+        System.out.println("Storing PD object: " + pd.getBrowserID() + ", " + pd.getData());
         return pd.getBrowserID();
     }
 

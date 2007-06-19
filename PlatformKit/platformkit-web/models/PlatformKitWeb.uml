@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Persistence="http:///schemas/Persistence/_41QTUOKpEduy-KDtqDHB8g/1" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xsi:schemaLocation="http:///schemas/Persistence/_41QTUOKpEduy-KDtqDHB8g/1 Persistence.profile.uml#_41QTUeKpEduy-KDtqDHB8g http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Persistence="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xsi:schemaLocation="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2 Persistence.profile.uml#_8oQ3IB6PEdyzWPQ9uYFypQ http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
   <uml:Model xmi:id="_qb8akM37EdqwVrslYOdUDA" name="PlatformKitWeb">
     <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="be">
       <packagedElement xmi:type="uml:Package" xmi:id="_JwPwIcHBEduKcpNg9SVSYQ" name="ac">
@@ -41,7 +41,7 @@
                     <type xmi:type="uml:Interface" href="JavaxServlet.uml#_d2XaEuKgEduOI6ponYIZJQ"/>
                   </ownedParameter>
                   <language>java</language>
-                  <body>description = new PlatformDescription();&#xA;description.setBrowserID(req.getHeader(&quot;User-Agent&quot;));&#xA;if (ServletFileUpload.isMultipartContent(req)) {&#xA;    logger.info(&quot;Retrieving uploaded ontology file&quot;);&#xA;&#x9;ServletFileUpload upload = new ServletFileUpload();&#xA;&#x9;FileItemIterator fileItems = upload.getItemIterator(req);&#xA;&#x9;while (fileItems.hasNext()) {&#xA;&#x9;&#x9;FileItemStream item = fileItems.next();&#xA;&#x9;&#x9;InputStream stream = item.openStream();&#xA;&#x9;&#x9;if (item.isFormField()) {&#xA;&#x9;&#x9;&#x9;parameters.setProperty(item.getFieldName(), Streams.asString(stream));&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;byte[] buf = new byte[1024];&#xA;&#x9;&#x9;&#x9;ByteArrayOutputStream out = new ByteArrayOutputStream(buf.length);&#xA;&#x9;&#x9;&#x9;for (int read = stream.read(buf); read > -1; read = stream.read(buf)) {&#xA;&#x9;&#x9;&#x9;&#x9;out.write(buf, 0, read);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;out.flush();&#xA;&#x9;&#x9;&#x9;StreamData data = new StreamData();&#xA;&#x9;&#x9;&#x9;data.setData(out.toByteArray());&#xA;&#x9;&#x9;&#x9;description.setPlatformOWL(data);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;} else {&#xA;&#x9;logger.warning(&quot;No platform ontology file uploaded&quot;);&#xA;&#x9;for (Enumeration ns = req.getParameterNames(); ns.hasMoreElements();) {&#xA;&#x9;&#x9;String name = (String) ns.nextElement();&#xA;&#x9;&#x9;parameters.setProperty(name, req.getParameter(name));&#xA;&#x9;}&#xA;&#x9;PlatformDescription pd = store.getPlatformDescription(description.getBrowserID());&#xA;&#x9;if (pd != null) {&#xA;&#x9;&#x9;logger.info(&quot;Standard platform ontology found: &quot; + pd);&#xA;&#x9;&#x9;description = pd;&#xA;&#x9;}&#xA;}&#xA;setLeastSpecific(parameters.getProperty(&quot;result&quot;).equals(&quot;leastspecific&quot;));&#xA;setNoValidate(parameters.getProperty(&quot;noValidate&quot;).equals(&quot;true&quot;));&#xA;setBaseURL(parameters.getProperty(&quot;baseurl&quot;));</body>
+                  <body>description = new PlatformDescription();&#xA;description.setBrowserID(req.getHeader(&quot;User-Agent&quot;));&#xA;if (ServletFileUpload.isMultipartContent(req)) {&#xA;    logger.info(&quot;Retrieving uploaded ontology file&quot;);&#xA;&#x9;ServletFileUpload upload = new ServletFileUpload();&#xA;&#x9;FileItemIterator fileItems = upload.getItemIterator(req);&#xA;&#x9;while (fileItems.hasNext()) {&#xA;&#x9;&#x9;FileItemStream item = fileItems.next();&#xA;&#x9;&#x9;InputStream stream = item.openStream();&#xA;&#x9;&#x9;if (item.isFormField()) {&#xA;&#x9;&#x9;&#x9;parameters.setProperty(item.getFieldName(), Streams.asString(stream));&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;description.setFromInputStream(stream);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;} else {&#xA;&#x9;logger.warning(&quot;No platform ontology file uploaded&quot;);&#xA;&#x9;if (req.getParameterNames().hasMoreElements()) {&#xA;&#x9;&#x9;for (Enumeration ns = req.getParameterNames(); ns.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;String name = (String) ns.nextElement();&#xA;&#x9;&#x9;&#x9;parameters.setProperty(name, req.getParameter(name));&#xA;&#x9;&#x9;}&#xA;&#x9;} else {&#xA;&#x9;&#x9;StringTokenizer query = new StringTokenizer(req.getQueryString(), &quot;&amp;&quot;);&#xA;&#x9;&#x9;while (query.hasMoreTokens()) {&#xA;&#x9;&#x9;&#x9;StringTokenizer par = new StringTokenizer(query.nextToken(), &quot;=&quot;);&#xA;&#x9;&#x9;&#x9;parameters.setProperty(par.nextToken(), par.nextToken());&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;PlatformDescription pd = store.getPlatformDescription(description.getBrowserID());&#xA;&#x9;if (pd != null) {&#xA;&#x9;&#x9;logger.info(&quot;Standard platform ontology found: &quot; + pd);&#xA;&#x9;&#x9;description = pd;&#xA;&#x9;} else {&#xA;&#x9;&#x9;logger.info(&quot;No standard platform ontology found&quot;);&#xA;&#x9;}&#xA;}&#xA;logger.info(parameters.toString());&#xA;setLeastSpecific(parameters.getProperty(&quot;result&quot;).equals(&quot;leastspecific&quot;));&#xA;setNoValidate(parameters.getProperty(&quot;noValidate&quot;).equals(&quot;true&quot;));&#xA;setBaseURL(parameters.getProperty(&quot;baseurl&quot;));&#xA;</body>
                 </ownedBehavior>
                 <ownedOperation xmi:id="_C9sHcOKgEduOI6ponYIZJQ" name="PlatformkitSession" method="_L59HwOK0Educvf06rPkdnw">
                   <ownedParameter xmi:id="_JaZFIOKgEduOI6ponYIZJQ" name="req">
@@ -52,17 +52,41 @@
                   <raisedException xmi:type="uml:Class" href="j2se-1_4-headless.uml#_aElkJR5BEdycUoU7n1_rLw"/>
                 </ownedOperation>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_5kM4cOKzEducvf06rPkdnw" name="Dependency1" client="_Cn1osOKfEdusoPrkeXo32Q">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_5kM4cOKzEducvf06rPkdnw" name="Dependency_PlatformkitSession_Ontologies" client="_Cn1osOKfEdusoPrkeXo32Q">
                 <supplier xmi:type="uml:Class" href="Platformkit.uml#_cDksIeKzEducvf06rPkdnw"/>
               </packagedElement>
-              <packagedElement xmi:type="uml:Class" xmi:id="_PCGO0MHCEduKcpNg9SVSYQ" name="PlatformDescription">
+              <packagedElement xmi:type="uml:Class" xmi:id="_PCGO0MHCEduKcpNg9SVSYQ" name="PlatformDescription" clientDependency="_sttssB6UEdyOtOipTtD9pQ">
                 <ownedAttribute xmi:id="_Ra3AgMHDEduKcpNg9SVSYQ" name="browserID">
                   <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:id="_9ymOlOkhEduRRs5q6bLNTg" name="platformOWL" type="_DYACwOkgEduSvsosCY1j6g" association="_9ymOkOkhEduRRs5q6bLNTg">
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9ymOlekhEduRRs5q6bLNTg" value="1"/>
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9ymOlukhEduRRs5q6bLNTg" value="1"/>
+                <ownedAttribute xmi:id="_bSvkoOkgEduSvsosCY1j6g" name="data">
+                  <type xmi:type="uml:DataType" href="j2se-1_4-headless.uml#_W7TNHx5DEdycUoU7n1_rLw"/>
                 </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qCSs0OkhEduRRs5q6bLNTg" name="StreamData_getInputStreamBehavior" specification="_gKYB8OkgEduSvsosCY1j6g">
+                  <ownedParameter xmi:id="_ezs4AOkiEduRRs5q6bLNTg" name="return" direction="return">
+                    <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3e8QB5BEdycUoU7n1_rLw"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>return new ByteArrayInputStream(getData());</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_8kLIsB6MEdyzWPQ9uYFypQ" name="StreamData_setFromInputStream" specification="_o746gB6MEdyzWPQ9uYFypQ">
+                  <ownedParameter xmi:id="__YcAEB6MEdyzWPQ9uYFypQ" name="stream">
+                    <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3e8QB5BEdycUoU7n1_rLw"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>byte[] buf = new byte[1024];&#xA;ByteArrayOutputStream out = new ByteArrayOutputStream(buf.length);&#xA;for (int read = stream.read(buf); read > -1; read = stream.read(buf)) {&#xA;&#x9;out.write(buf, 0, read);&#xA;}&#xA;out.flush();&#xA;setData(out.toByteArray());</body>
+                </ownedBehavior>
+                <ownedOperation xmi:id="_gKYB8OkgEduSvsosCY1j6g" name="getInputStream" method="_qCSs0OkhEduRRs5q6bLNTg">
+                  <ownedParameter xmi:id="_QCdtwOkhEduRRs5q6bLNTg" name="return" direction="return">
+                    <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3e8QB5BEdycUoU7n1_rLw"/>
+                  </ownedParameter>
+                </ownedOperation>
+                <ownedOperation xmi:id="_o746gB6MEdyzWPQ9uYFypQ" name="setFromInputStream" method="_8kLIsB6MEdyzWPQ9uYFypQ">
+                  <ownedParameter xmi:id="_rzpx0B6MEdyzWPQ9uYFypQ" name="stream">
+                    <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3e8QB5BEdycUoU7n1_rLw"/>
+                  </ownedParameter>
+                  <raisedException xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z4We8R5BEdycUoU7n1_rLw"/>
+                </ownedOperation>
               </packagedElement>
               <packagedElement xmi:type="uml:Association" xmi:id="_b4XvcOK4Educvf06rPkdnw" name="A_PlatformkitSession_PlatformDescription" memberEnd="_b4XvceK4Educvf06rPkdnw _b4XvdOK4Educvf06rPkdnw">
                 <ownedEnd xmi:id="_b4XvceK4Educvf06rPkdnw" name="session" type="_Cn1osOKfEdusoPrkeXo32Q" aggregation="shared" association="_b4XvcOK4Educvf06rPkdnw">
@@ -70,25 +94,25 @@
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b4Xvc-K4Educvf06rPkdnw"/>
                 </ownedEnd>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_ZoiI4OK6EdupF4iz9hbLXA" name="Dependency5" client="_Cn1osOKfEdusoPrkeXo32Q">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_ZoiI4OK6EdupF4iz9hbLXA" name="Dependency_PlatformkitSession_java_io" client="_Cn1osOKfEdusoPrkeXo32Q">
                 <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z2bzYB5BEdycUoU7n1_rLw"/>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_tTo9YeLBEduDvd4CuKZXNQ" name="Dependency2" client="_Cn1osOKfEdusoPrkeXo32Q">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_tTo9YeLBEduDvd4CuKZXNQ" name="Dependency_PlatformkitSession_java_util_logging" client="_Cn1osOKfEdusoPrkeXo32Q">
                 <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z3uz4B5BEdycUoU7n1_rLw"/>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_tudRIOLBEduDvd4CuKZXNQ" name="Dependency4" client="_Cn1osOKfEdusoPrkeXo32Q">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_tudRIOLBEduDvd4CuKZXNQ" name="Dependency_PlatformkitSession_org_apache_commons_fileupload_servlet_ServletFileUpload" client="_Cn1osOKfEdusoPrkeXo32Q">
                 <supplier xmi:type="uml:Class" href="CommonsFileupload.uml#_9hrEgeK8Edukv8xN3-i5uA"/>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_uVmJoOLBEduDvd4CuKZXNQ" name="Dependency8" client="_Cn1osOKfEdusoPrkeXo32Q">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_uVmJoOLBEduDvd4CuKZXNQ" name="Dependency_PlatformkitSession_org_apache_commons_fileupload_FileItemIterator" client="_Cn1osOKfEdusoPrkeXo32Q">
                 <supplier xmi:type="uml:Interface" href="CommonsFileupload.uml#_9hp2Y-K8Edukv8xN3-i5uA"/>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_uiFtgOLBEduDvd4CuKZXNQ" name="Dependency9" client="_Cn1osOKfEdusoPrkeXo32Q">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_uiFtgOLBEduDvd4CuKZXNQ" name="Dependency_PlatformkitSession_org_apache_commons_fileupload_FileItemStream" client="_Cn1osOKfEdusoPrkeXo32Q">
                 <supplier xmi:type="uml:Interface" href="CommonsFileupload.uml#_9htgwuK8Edukv8xN3-i5uA"/>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_uw5lkOLBEduDvd4CuKZXNQ" name="Dependency10" client="_Cn1osOKfEdusoPrkeXo32Q">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_uw5lkOLBEduDvd4CuKZXNQ" name="Dependency_PlatformkitSession_org_apache_commons_fileupload_util_Streams" client="_Cn1osOKfEdusoPrkeXo32Q">
                 <supplier xmi:type="uml:Class" href="CommonsFileupload.uml#_9hwkEuK8Edukv8xN3-i5uA"/>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_AG-2YOj-EduA_bpJs0tPHg" name="Dependency14" client="_L7BQsOj0EduMF8bmKxtVtA">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_AG-2YOj-EduA_bpJs0tPHg" name="Dependency_PlatformDescriptionStore_java_util" client="_L7BQsOj0EduMF8bmKxtVtA">
                 <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z20N4R5BEdycUoU7n1_rLw"/>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_L7BQsOj0EduMF8bmKxtVtA" name="PlatformDescriptionStore" clientDependency="_AG-2YOj-EduA_bpJs0tPHg _FzKrMOkAEduA_bpJs0tPHg _vxDuQB5aEdyJx7sGKFMuHQ">
@@ -115,47 +139,17 @@
                   <ownedParameter xmi:id="_IBvxsOj3EduI9ZPsX2odVg" name="pd" type="_PCGO0MHCEduKcpNg9SVSYQ"/>
                 </ownedOperation>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_FzKrMOkAEduA_bpJs0tPHg" name="Dependency7" supplier="_IXtiAOj0EduMF8bmKxtVtA" client="_L7BQsOj0EduMF8bmKxtVtA"/>
-              <packagedElement xmi:type="uml:Association" xmi:id="_aJIewOkAEduA_bpJs0tPHg" name="Association2" memberEnd="_aJIewekAEduA_bpJs0tPHg _aJIexOkAEduA_bpJs0tPHg">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_FzKrMOkAEduA_bpJs0tPHg" name="Dependency_PlatformDescriptionStore_be_ac_vub_platformkit_hibernate" supplier="_IXtiAOj0EduMF8bmKxtVtA" client="_L7BQsOj0EduMF8bmKxtVtA"/>
+              <packagedElement xmi:type="uml:Association" xmi:id="_aJIewOkAEduA_bpJs0tPHg" name="A_PlatformkitSession_PlatformDescriptionStore" memberEnd="_aJIewekAEduA_bpJs0tPHg _aJIexOkAEduA_bpJs0tPHg">
                 <ownedEnd xmi:id="_aJIewekAEduA_bpJs0tPHg" name="session" visibility="protected" type="_Cn1osOKfEdusoPrkeXo32Q" aggregation="shared" association="_aJIewOkAEduA_bpJs0tPHg">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aJIewukAEduA_bpJs0tPHg" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aJIew-kAEduA_bpJs0tPHg" value="1"/>
                 </ownedEnd>
               </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_nCW8gOkXEduSvsosCY1j6g" name="Dependency11" client="_Cn1osOKfEdusoPrkeXo32Q">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_nCW8gOkXEduSvsosCY1j6g" name="Dependency_PlatformkitSession_java_util" client="_Cn1osOKfEdusoPrkeXo32Q">
                 <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z20N4R5BEdycUoU7n1_rLw"/>
               </packagedElement>
-              <packagedElement xmi:type="uml:Class" xmi:id="_DYACwOkgEduSvsosCY1j6g" name="StreamData" clientDependency="_GpxqoOkiEduRRs5q6bLNTg _yZXQAOkiEduRRs5q6bLNTg">
-                <ownedAttribute xmi:id="_bSvkoOkgEduSvsosCY1j6g" name="data">
-                  <type xmi:type="uml:DataType" href="j2se-1_4-headless.uml#_W7TNHx5DEdycUoU7n1_rLw"/>
-                </ownedAttribute>
-                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qCSs0OkhEduRRs5q6bLNTg" name="StreamData_getInputStreamBehavior" specification="_gKYB8OkgEduSvsosCY1j6g">
-                  <ownedParameter xmi:id="_ezs4AOkiEduRRs5q6bLNTg" name="return" direction="return">
-                    <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3e8QB5BEdycUoU7n1_rLw"/>
-                  </ownedParameter>
-                  <language>java</language>
-                  <body>return new ByteArrayInputStream(getData());</body>
-                </ownedBehavior>
-                <interfaceRealization xmi:id="_GpxqoOkiEduRRs5q6bLNTg" name="InterfaceRealization1" client="_DYACwOkgEduSvsosCY1j6g">
-                  <supplier xmi:type="uml:Interface" href="j2se-1_4-headless.uml#_Z2e2sB5BEdycUoU7n1_rLw"/>
-                  <contract href="j2se-1_4-headless.uml#_Z2e2sB5BEdycUoU7n1_rLw"/>
-                </interfaceRealization>
-                <ownedOperation xmi:id="_gKYB8OkgEduSvsosCY1j6g" name="getInputStream" method="_qCSs0OkhEduRRs5q6bLNTg">
-                  <ownedParameter xmi:id="_QCdtwOkhEduRRs5q6bLNTg" name="return" direction="return">
-                    <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3e8QB5BEdycUoU7n1_rLw"/>
-                  </ownedParameter>
-                </ownedOperation>
-              </packagedElement>
-              <packagedElement xmi:type="uml:Association" xmi:id="_9ymOkOkhEduRRs5q6bLNTg" name="Association1" memberEnd="_9ymOkekhEduRRs5q6bLNTg _9ymOlOkhEduRRs5q6bLNTg">
-                <ownedEnd xmi:id="_9ymOkekhEduRRs5q6bLNTg" name="owner" type="_PCGO0MHCEduKcpNg9SVSYQ" aggregation="composite" association="_9ymOkOkhEduRRs5q6bLNTg">
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9ymOkukhEduRRs5q6bLNTg" value="1"/>
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9ymOk-khEduRRs5q6bLNTg"/>
-                </ownedEnd>
-              </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_yZXQAOkiEduRRs5q6bLNTg" name="Dependency15" client="_DYACwOkgEduSvsosCY1j6g">
-                <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z2bzYB5BEdycUoU7n1_rLw"/>
-              </packagedElement>
-              <packagedElement xmi:type="uml:Dependency" xmi:id="_vxDuQB5aEdyJx7sGKFMuHQ" name="Dependency3" client="_L7BQsOj0EduMF8bmKxtVtA">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_vxDuQB5aEdyJx7sGKFMuHQ" name="Dependency_PlatformDescriptionStore_org_hibernate_Session" client="_L7BQsOj0EduMF8bmKxtVtA">
                 <supplier xmi:type="uml:Interface" href="hibernate3.uml#_g2JOIh5aEdyJx7sGKFMuHQ"/>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_kmnHsB5dEdyJx7sGKFMuHQ" name="ConstraintSpacePool">
@@ -171,6 +165,9 @@
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sy07Mx5dEdyJx7sGKFMuHQ"/>
                 </ownedEnd>
               </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_sttssB6UEdyOtOipTtD9pQ" name="Dependency_PlatformDescription_java_io" client="_PCGO0MHCEduKcpNg9SVSYQ">
+                <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z2bzYB5BEdycUoU7n1_rLw"/>
+              </packagedElement>
             </packagedElement>
             <packagedElement xmi:type="uml:Package" xmi:id="_IXtiAOj0EduMF8bmKxtVtA" name="hibernate"/>
           </packagedElement>
@@ -179,7 +176,7 @@
     </packagedElement>
     <profileApplication xmi:id="_McpgcMHLEduY-PgkT4NtFg">
       <eAnnotations xmi:id="_McpgccHLEduY-PgkT4NtFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="Persistence.profile.uml#_41QTUeKpEduy-KDtqDHB8g"/>
+        <references xmi:type="ecore:EPackage" href="Persistence.profile.uml#_8oQ3IB6PEdyzWPQ9uYFypQ"/>
       </eAnnotations>
       <appliedProfile href="Persistence.profile.uml#_ZE1lcMHKEduY-PgkT4NtFg"/>
     </profileApplication>
@@ -190,7 +187,9 @@
       <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </profileApplication>
   </uml:Model>
-  <Persistence:Persistent xmi:id="_BzARcOKqEduy-KDtqDHB8g" id="_Ra3AgMHDEduKcpNg9SVSYQ" base_Class="_PCGO0MHCEduKcpNg9SVSYQ"/>
+  <Persistence:Persistent xmi:id="_EFihAB6QEdyzWPQ9uYFypQ" id="_Ra3AgMHDEduKcpNg9SVSYQ" base_Class="_PCGO0MHCEduKcpNg9SVSYQ"/>
   <Standard:Create xmi:id="_FBHXwOKgEduOI6ponYIZJQ" base_BehavioralFeature="_C9sHcOKgEduOI6ponYIZJQ"/>
   <Standard:Create xmi:id="_3GBiUOj0EduMF8bmKxtVtA"/>
+  <Persistence:Persistent xmi:id="_Sz8kQB6SEdyOtOipTtD9pQ"/>
+  <Persistence:mapped xmi:id="_V14EMB6SEdyOtOipTtD9pQ" type="binary" length="100000" base_Property="_bSvkoOkgEduSvsosCY1j6g"/>
 </xmi:XMI>

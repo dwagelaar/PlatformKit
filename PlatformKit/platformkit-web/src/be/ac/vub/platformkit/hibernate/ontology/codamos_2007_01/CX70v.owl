@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:platform="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#"
+    xmlns:java="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j2me-midp-1_0="http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-1_0-api.owl#"
+    xmlns:p1="http://www.owl-ontologies.com/assert.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:units="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#"
+    xmlns="http://local/CX70v.owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xml:base="http://local/CX70v.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-1_0-api.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Keyboard">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#InputDevice"/>
+  </owl:Class>
+  <owl:Class rdf:ID="GPRSResource">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GSMResource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Display">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#OutputDevice"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MilliAmpereHour">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#IntegerValue"/>
+  </owl:Class>
+  <owl:Class rdf:about="#GSMResource">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#NetworkResource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MegaHertz">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#FloatValue"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FlashMemory">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#StorageResource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Keypad">
+    <rdfs:subClassOf rdf:resource="#Keyboard"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SerialPort">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#InputDevice"/>
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#OutputDevice"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Battery">
+    <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#PowerResource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="IrDAPort">
+    <rdfs:subClassOf rdf:resource="#SerialPort"/>
+  </owl:Class>
+  <rdf:Property rdf:ID="maxCapacity"/>
+  <rdf:Property rdf:ID="providesSoftware"/>
+  <rdf:Property rdf:ID="providesHardware"/>
+  <owl:FunctionalProperty rdf:ID="hasWidth">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Display"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#Pixel"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasHeight">
+    <rdfs:domain rdf:resource="#Display"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#Pixel"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasCackoZaurusLinuxVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasColourDepth">
+    <rdfs:range rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#ColourDepth"/>
+    <rdfs:domain rdf:resource="#Display"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <platform:CPUResource rdf:ID="cx70vCPU"/>
+  <j2me-midp-1_0:J2me-midp-1_0 rdf:ID="siemensMIDP2">
+    <java:providesJavaPackageManager>
+      <java:JavaMIDlet rdf:ID="siemensJavaMIDlet"/>
+    </java:providesJavaPackageManager>
+    <java:providesJavaVM>
+      <java:JavaVM rdf:ID="siemensKVM">
+        <java:supportsBytecodeFormat rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#theJava1.1Preverified1.1BytecodeFormat"/>
+      </java:JavaVM>
+    </java:providesJavaVM>
+    <java:providesBuiltinJavaLibrary>
+      <j2me-midp-1_0:J2me-midp-1_0ClassLibrary rdf:ID="siemensMIDP2ClassLibrary">
+        <java:isBuiltinJavaLibraryFor rdf:resource="#siemensMIDP2"/>
+      </j2me-midp-1_0:J2me-midp-1_0ClassLibrary>
+    </java:providesBuiltinJavaLibrary>
+  </j2me-midp-1_0:J2me-midp-1_0>
+  <units:MegaByte rdf:ID="megaByte10">
+    <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >10</units:ival>
+  </units:MegaByte>
+  <MilliAmpereHour rdf:ID="mAH750">
+    <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >750</units:ival>
+  </MilliAmpereHour>
+  <FlashMemory rdf:ID="cx70vFlash">
+    <maxCapacity rdf:resource="#megaByte10"/>
+    <platform:maxCapacity rdf:resource="#megaByte10"/>
+  </FlashMemory>
+  <GPRSResource rdf:ID="cx70vGPRS"/>
+  <Display rdf:ID="cx70vScreen">
+    <hasHeight>
+      <units:Pixel rdf:ID="pixels160">
+        <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >160</units:ival>
+      </units:Pixel>
+    </hasHeight>
+    <hasColourDepth>
+      <units:ColourDepth rdf:ID="colours64K">
+        <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >65536</units:ival>
+      </units:ColourDepth>
+    </hasColourDepth>
+    <hasWidth>
+      <units:Pixel rdf:ID="pixels120">
+        <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >120</units:ival>
+      </units:Pixel>
+    </hasWidth>
+  </Display>
+  <platform:MemoryResource rdf:ID="cx70vRAM"/>
+  <IrDAPort rdf:ID="cx70vInfraRed"/>
+  <platform:Platform rdf:ID="cx70v">
+    <platform:providesHardware>
+      <Battery rdf:ID="cx70vBattery">
+        <platform:maxCapacity rdf:resource="#mAH750"/>
+        <maxCapacity rdf:resource="#mAH750"/>
+      </Battery>
+    </platform:providesHardware>
+    <platform:providesHardware rdf:resource="#cx70vInfraRed"/>
+    <providesHardware rdf:resource="#cx70vGPRS"/>
+    <providesSoftware rdf:resource="#siemensMIDP2"/>
+    <platform:providesHardware rdf:resource="#cx70vGPRS"/>
+    <platform:providesHardware>
+      <Keypad rdf:ID="cx70vKeypad"/>
+    </platform:providesHardware>
+    <platform:providesHardware rdf:resource="#cx70vScreen"/>
+    <providesHardware rdf:resource="#cx70vBattery"/>
+    <providesHardware rdf:resource="#cx70vScreen"/>
+    <providesHardware rdf:resource="#cx70vKeypad"/>
+    <platform:providesSoftware rdf:resource="#siemensMIDP2"/>
+    <platform:providesHardware rdf:resource="#cx70vFlash"/>
+    <providesHardware rdf:resource="#cx70vRAM"/>
+    <providesHardware rdf:resource="#cx70vCPU"/>
+    <providesHardware rdf:resource="#cx70vInfraRed"/>
+    <providesHardware rdf:resource="#cx70vFlash"/>
+    <platform:providesHardware rdf:resource="#cx70vCPU"/>
+    <platform:providesHardware rdf:resource="#cx70vRAM"/>
+  </platform:Platform>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.2.1, Build 365)  http://protege.stanford.edu -->
