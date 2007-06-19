@@ -85,12 +85,30 @@ rule MappedProperty {
 		if s.class->oclIsUndefined() then false else
 			if s.class->isPersistent() then
 				s.class->getPersistent().id <> s and
-				s->isMapped()
+				if s->isMapped() then
+					s->getMapped().length <= 0
+				else false endif
 			else false endif
 		endif)
 	to t : HBM!PropertyType (
 		name <- s.name,
 		type1 <- s->getMapped().type)
+}
+
+rule MappedPropertyWithLength {
+	from s : UML2!uml::Property (
+		if s.class->oclIsUndefined() then false else
+			if s.class->isPersistent() then
+				s.class->getPersistent().id <> s and
+				if s->isMapped() then
+					s->getMapped().length > 0
+				else false endif
+			else false endif
+		endif)
+	to t : HBM!PropertyType (
+		name <- s.name,
+		type1 <- s->getMapped().type,
+		length <- s->getMapped().length)
 }
 
 -- ======================================================================

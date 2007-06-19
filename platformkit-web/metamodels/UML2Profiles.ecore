@@ -3,5 +3,5 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="uml2profiles2"
     nsURI="platform:/resource/platformkit-web/metamodel/UML2Profiles.ecore" nsPrefix="uml2profiles2">
-  <eClassifiers xsi:type="ecore:EClass" name="Import" abstract="true" eSuperTypes="../../uml2cs-transformations/metamodels/UML2Profiles.ecore#//Import ../models/Persistence.profile.uml#_41QTUuKpEduy-KDtqDHB8g"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Import" abstract="true" eSuperTypes="../../uml2cs-transformations/metamodels/UML2Profiles.ecore#//Import ../models/Persistence.profile.uml#_8oQ3IR6PEdyzWPQ9uYFypQ"/>
 </ecore:EPackage>

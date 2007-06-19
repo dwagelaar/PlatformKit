@@ -39,32 +39,36 @@ if (ServletFileUpload.isMultipartContent(req)) {
 		if (item.isFormField()) {
 			parameters.setProperty(item.getFieldName(), Streams.asString(stream));
 		} else {
-			byte[] buf = new byte[1024];
-			ByteArrayOutputStream out = new ByteArrayOutputStream(buf.length);
-			for (int read = stream.read(buf); read > -1; read = stream.read(buf)) {
-				out.write(buf, 0, read);
-			}
-			out.flush();
-			StreamData data = new StreamData();
-			data.setData(out.toByteArray());
-			description.setPlatformOWL(data);
+			description.setFromInputStream(stream);
 		}
 	}
 } else {
 	logger.warning("No platform ontology file uploaded");
-	for (Enumeration ns = req.getParameterNames(); ns.hasMoreElements();) {
-		String name = (String) ns.nextElement();
-		parameters.setProperty(name, req.getParameter(name));
+	if (req.getParameterNames().hasMoreElements()) {
+		for (Enumeration ns = req.getParameterNames(); ns.hasMoreElements();) {
+			String name = (String) ns.nextElement();
+			parameters.setProperty(name, req.getParameter(name));
+		}
+	} else {
+		StringTokenizer query = new StringTokenizer(req.getQueryString(), "&");
+		while (query.hasMoreTokens()) {
+			StringTokenizer par = new StringTokenizer(query.nextToken(), "=");
+			parameters.setProperty(par.nextToken(), par.nextToken());
+		}
 	}
 	PlatformDescription pd = store.getPlatformDescription(description.getBrowserID());
 	if (pd != null) {
-		logger.info("Standard platform ontology found: " + pd);
+		logger.info("Standard platform ontology found for: \"" + pd.getBrowserID() + "\"");
 		description = pd;
+	} else {
+		logger.info("No standard platform ontology found for: \"" + description.getBrowserID() + "\"");
 	}
 }
+logger.info(parameters.toString());
 setLeastSpecific(parameters.getProperty("result").equals("leastspecific"));
 setNoValidate(parameters.getProperty("noValidate").equals("true"));
 setBaseURL(parameters.getProperty("baseurl"));
+
 }
 
 public boolean getLeastSpecific() {

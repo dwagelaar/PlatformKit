@@ -7,6 +7,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -77,17 +78,17 @@ public class PlatformkitServlet extends HttpServlet {
             ConstraintSpace space = init(req, session.getBaseURL());
             //calculate most/least specific constraint sets
             logger.info(DateFormat.getDateInstance().format(new Date()));
-            List result;
+            List result = Collections.EMPTY_LIST;
 			PlatformDescription pd = session.getDescription();
-			if (pd.getPlatformOWL() != null) {
-				InputStream input = pd.getPlatformOWL().getInputStream();
+			if (pd.getData() != null) {
+				InputStream input = pd.getInputStream();
 				space.getKnowledgeBase().loadInstances(input);
 				input.close();
-			}
-			if (session.getLeastSpecific()) {
-				result = space.getLeastSpecific(!session.getNoValidate());
-			} else {
-				result = space.getMostSpecific(!session.getNoValidate());
+				if (session.getLeastSpecific()) {
+					result = space.getLeastSpecific(!session.getNoValidate());
+				} else {
+					result = space.getMostSpecific(!session.getNoValidate());
+				}
 			}
             logger.info(DateFormat.getDateInstance().format(new Date()));
             String redirect = getContainer(session.getBaseURL());

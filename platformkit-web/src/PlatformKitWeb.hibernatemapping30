@@ -5,6 +5,6 @@
     <id column="browserID_ID" name="browserID">
       <generator class="assigned"/>
     </id>
-    <property name="platformOWL"/>
+    <property length="100000" name="data" type="binary"/>
   </class>
 </hibernate-mapping>

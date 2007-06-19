@@ -44,6 +44,11 @@
             <element href="Persistence.profile.uml#_MitK0OKpEduy-KDtqDHB8g"/>
           </semanticModel>
         </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="Persistence.profile.uml#_waFDAB6PEdyzWPQ9uYFypQ"/>
+          </semanticModel>
+        </contained>
       </contained>
     </contained>
   </diagrams>
