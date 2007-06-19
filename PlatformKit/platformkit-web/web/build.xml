@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="CDDToolkit-Web" default="all">
 	<property name="platformkit.path" value="../../platformkit"/>
+	<property name="platformkit-java.path" value="../../platformkit-java"/>
 	<property name="jena.path" value="../../platformkit-jena"/>
 	<property name="pellet.path" value="../../platformkit-pellet"/>
 	
@@ -14,15 +15,20 @@
 
     <target name="war" depends="clean">
         <war destfile="platformkitservlet.war" webxml="resources/WEB-INF/web.xml">
-        	<fileset dir="resources/" includes="index.html"/>
+        	<fileset dir="resources/" excludes="WEB-INF/*"/>
         	<classes dir="../bin"/>
         	<classes dir="${platformkit.path}/bin"/>
+        	<classes dir="${platformkit.path}/ontology"/>
+        	<classes dir="${platformkit-java.path}/bin"/>
+        	<classes dir="${platformkit-java.path}/ontology"/>
         	<lib dir="../lib">
         		<exclude name="*.xml"/>
         		<exclude name="javax.servlet.jar"/>
       		</lib>
         	<lib dir="${jena.path}/lib" includes="*.jar"/>
         	<lib dir="${pellet.path}/lib" includes="*.jar"/>
+        	<lib dir="${pellet.path}/lib/owlapi" includes="*.jar"/>
+        	<lib dir="${pellet.path}/lib/xsdlib" includes="*.jar"/>
        	</war>
     </target>
 	
