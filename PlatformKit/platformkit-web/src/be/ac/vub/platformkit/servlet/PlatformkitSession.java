@@ -68,7 +68,6 @@ logger.info(parameters.toString());
 setLeastSpecific(parameters.getProperty("result").equals("leastspecific"));
 setNoValidate(parameters.getProperty("noValidate").equals("true"));
 setBaseURL(parameters.getProperty("baseurl"));
-
 }
 
 public boolean getLeastSpecific() {
