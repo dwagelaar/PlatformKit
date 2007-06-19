@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="be.ac.vub.platformkit.descriptions.PlatformDescription" table="PLATFORMDESCRIPTION">
+  <class name="be.ac.vub.platformkit.servlet.PlatformDescription" table="PlatformDescription">
     <id column="browserID_ID" name="browserID">
       <generator class="assigned"/>
     </id>
-    <property name="platformURI"/>
+    <property name="platformOWL"/>
   </class>
 </hibernate-mapping>

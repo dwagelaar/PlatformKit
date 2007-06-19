@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_9hNxgeK8Edukv8xN3-i5uA" name="CommonsFileupload">
+  <packagedElement xmi:type="uml:Package" xmi:id="_9hjvwOK8Edukv8xN3-i5uA" name="org">
+    <packagedElement xmi:type="uml:Package" xmi:id="_9hjvweK8Edukv8xN3-i5uA" name="apache">
+      <packagedElement xmi:type="uml:Package" xmi:id="_9hjvwuK8Edukv8xN3-i5uA" name="commons">
+        <packagedElement xmi:type="uml:Package" xmi:id="_9hjvw-K8Edukv8xN3-i5uA" name="fileupload">
+          <packagedElement xmi:type="uml:Package" xmi:id="_9hkW0eK8Edukv8xN3-i5uA" name="disk">
+            <packagedElement xmi:type="uml:Class" xmi:id="_9hkW0uK8Edukv8xN3-i5uA" name="DiskFileItemFactory" clientDependency="_9h01guK8Edukv8xN3-i5uA">
+              <ownedAttribute xmi:id="_9h1ckeK8Edukv8xN3-i5uA" name="DEFAULT_SIZE_THRESHOLD" visibility="public" isStatic="true" type="_9h1ckOK8Edukv8xN3-i5uA" isReadOnly="true"/>
+              <interfaceRealization xmi:id="_9h01guK8Edukv8xN3-i5uA" supplier="_9htgxOK8Edukv8xN3-i5uA" client="_9hkW0uK8Edukv8xN3-i5uA" contract="_9htgxOK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9h1ckuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_9h1clOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9h2DoOK8Edukv8xN3-i5uA" name="arg0" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h2DoeK8Edukv8xN3-i5uA" name="arg1" type="_9h1ck-K8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h2DouK8Edukv8xN3-i5uA" name="getRepository" visibility="public">
+                <ownedParameter xmi:id="_9h2Do-K8Edukv8xN3-i5uA" type="_9h1ck-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h2DpOK8Edukv8xN3-i5uA" name="setRepository" visibility="public">
+                <ownedParameter xmi:id="_9h2qsOK8Edukv8xN3-i5uA" name="arg0" type="_9h1ck-K8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h2qseK8Edukv8xN3-i5uA" name="getSizeThreshold" visibility="public">
+                <ownedParameter xmi:id="_9h2qsuK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h2qs-K8Edukv8xN3-i5uA" name="setSizeThreshold" visibility="public">
+                <ownedParameter xmi:id="_9h2qtOK8Edukv8xN3-i5uA" name="arg0" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h2qtuK8Edukv8xN3-i5uA" name="createItem" visibility="public">
+                <ownedParameter xmi:id="_9h2qt-K8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h2quOK8Edukv8xN3-i5uA" name="arg1" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h2queK8Edukv8xN3-i5uA" name="arg2" type="_9h2qteK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h3RwOK8Edukv8xN3-i5uA" name="arg3" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h3RweK8Edukv8xN3-i5uA" type="_9hp2YeK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_9hmMAOK8Edukv8xN3-i5uA" name="DiskFileItem" clientDependency="_9h340OK8Edukv8xN3-i5uA">
+              <ownedAttribute xmi:id="_9h340eK8Edukv8xN3-i5uA" name="DEFAULT_CHARSET" visibility="public" isStatic="true" type="_9hznYuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+              <interfaceRealization xmi:id="_9h340OK8Edukv8xN3-i5uA" supplier="_9hp2YeK8Edukv8xN3-i5uA" client="_9hmMAOK8Edukv8xN3-i5uA" contract="_9hp2YeK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9h340uK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9h340-K8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h341OK8Edukv8xN3-i5uA" name="arg1" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h341eK8Edukv8xN3-i5uA" name="arg2" type="_9h2qteK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h341uK8Edukv8xN3-i5uA" name="arg3" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h4f4OK8Edukv8xN3-i5uA" name="arg4" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h4f4eK8Edukv8xN3-i5uA" name="arg5" type="_9h1ck-K8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h4f4uK8Edukv8xN3-i5uA" name="getInputStream" visibility="public">
+                <ownedParameter xmi:id="_9h4f5OK8Edukv8xN3-i5uA" type="_9h4f4-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h4f5eK8Edukv8xN3-i5uA" name="getContentType" visibility="public">
+                <ownedParameter xmi:id="_9h4f5uK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h4f5-K8Edukv8xN3-i5uA" name="getCharSet" visibility="public">
+                <ownedParameter xmi:id="_9h4f6OK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h4f6eK8Edukv8xN3-i5uA" name="getName" visibility="public">
+                <ownedParameter xmi:id="_9h4f6uK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h5G8OK8Edukv8xN3-i5uA" name="isInMemory" visibility="public">
+                <ownedParameter xmi:id="_9h5G8eK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h5G8uK8Edukv8xN3-i5uA" name="getSize" visibility="public">
+                <ownedParameter xmi:id="_9h5G9OK8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h5uAOK8Edukv8xN3-i5uA" name="get" visibility="public">
+                <ownedParameter xmi:id="_9h5uA-K8Edukv8xN3-i5uA" type="_9h5uAuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h5uBOK8Edukv8xN3-i5uA" name="getString" visibility="public">
+                <ownedParameter xmi:id="_9h6VEOK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h6VEeK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h6VEuK8Edukv8xN3-i5uA" name="getString" visibility="public">
+                <ownedParameter xmi:id="_9h6VE-K8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h6VFOK8Edukv8xN3-i5uA" name="write" visibility="public">
+                <ownedParameter xmi:id="_9h6VFeK8Edukv8xN3-i5uA" name="arg0" type="_9h1ck-K8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h6VFuK8Edukv8xN3-i5uA" name="delete" visibility="public"/>
+              <ownedOperation xmi:id="_9h6VF-K8Edukv8xN3-i5uA" name="getFieldName" visibility="public">
+                <ownedParameter xmi:id="_9h6VGOK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h68IOK8Edukv8xN3-i5uA" name="setFieldName" visibility="public">
+                <ownedParameter xmi:id="_9h68IeK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h68IuK8Edukv8xN3-i5uA" name="isFormField" visibility="public">
+                <ownedParameter xmi:id="_9h68I-K8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h68JOK8Edukv8xN3-i5uA" name="setFormField" visibility="public">
+                <ownedParameter xmi:id="_9h68JeK8Edukv8xN3-i5uA" name="arg0" type="_9h2qteK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h68JuK8Edukv8xN3-i5uA" name="getOutputStream" visibility="public">
+                <ownedParameter xmi:id="_9h68KOK8Edukv8xN3-i5uA" type="_9h68J-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h68KeK8Edukv8xN3-i5uA" name="getStoreLocation" visibility="public">
+                <ownedParameter xmi:id="_9h68KuK8Edukv8xN3-i5uA" type="_9h1ck-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h68K-K8Edukv8xN3-i5uA" name="finalize" visibility="protected"/>
+              <ownedOperation xmi:id="_9h68LOK8Edukv8xN3-i5uA" name="getTempFile" visibility="protected">
+                <ownedParameter xmi:id="_9h7jMOK8Edukv8xN3-i5uA" type="_9h1ck-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h7jMeK8Edukv8xN3-i5uA" name="toString" visibility="public">
+                <ownedParameter xmi:id="_9h7jMuK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_9hjvxOK8Edukv8xN3-i5uA" name="FileUploadBase" isAbstract="true">
+            <ownedAttribute xmi:id="_9iT9sOK8Edukv8xN3-i5uA" name="CONTENT_TYPE" visibility="public" isStatic="true" type="_9hznYuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iT9seK8Edukv8xN3-i5uA" name="CONTENT_DISPOSITION" visibility="public" isStatic="true" type="_9hznYuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iT9suK8Edukv8xN3-i5uA" name="FORM_DATA" visibility="public" isStatic="true" type="_9hznYuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iT9s-K8Edukv8xN3-i5uA" name="ATTACHMENT" visibility="public" isStatic="true" type="_9hznYuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iT9tOK8Edukv8xN3-i5uA" name="MULTIPART" visibility="public" isStatic="true" type="_9hznYuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iT9teK8Edukv8xN3-i5uA" name="MULTIPART_FORM_DATA" visibility="public" isStatic="true" type="_9hznYuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iT9tuK8Edukv8xN3-i5uA" name="MULTIPART_MIXED" visibility="public" isStatic="true" type="_9hznYuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iT9t-K8Edukv8xN3-i5uA" name="MAX_HEADER_SIZE" visibility="public" isStatic="true" type="_9h1ckOK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9hkW0OK8Edukv8xN3-i5uA" name="IOFileUploadException">
+              <generalization xmi:id="_9hxyMOK8Edukv8xN3-i5uA" general="_9hnaIuK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9h0OcOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9h0OceK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h0OcuK8Edukv8xN3-i5uA" name="arg1" type="_9hznZOK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h0Oc-K8Edukv8xN3-i5uA" name="getCause" visibility="public">
+                <ownedParameter xmi:id="_9h01geK8Edukv8xN3-i5uA" type="_9h01gOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9hmzEeK8Edukv8xN3-i5uA" name="SizeLimitExceededException">
+              <generalization xmi:id="_9h-mhuK8Edukv8xN3-i5uA" general="_9huu4uK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9h-mh-K8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_9h_NkOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9h_NkeK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9h_NkuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9h_Nk-K8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h_NlOK8Edukv8xN3-i5uA" name="arg1" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h_NleK8Edukv8xN3-i5uA" name="arg2" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9hnaIOK8Edukv8xN3-i5uA" name="FileSizeLimitExceededException">
+              <generalization xmi:id="_9h_NluK8Edukv8xN3-i5uA" general="_9huu4uK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9h_Nl-K8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9h_0oOK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h_0oeK8Edukv8xN3-i5uA" name="arg1" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9h_0ouK8Edukv8xN3-i5uA" name="arg2" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9hnaIeK8Edukv8xN3-i5uA" name="InvalidContentTypeException">
+              <generalization xmi:id="_9h_0o-K8Edukv8xN3-i5uA" general="_9hnaIuK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9h_0pOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_9h_0peK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9h_0puK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9hoBMeK8Edukv8xN3-i5uA" name="FileUploadIOException">
+              <generalization xmi:id="_9iCQ4-K8Edukv8xN3-i5uA" general="_9hznZOK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iCQ5OK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9iCQ5eK8Edukv8xN3-i5uA" name="arg0" type="_9hnaIuK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iCQ5uK8Edukv8xN3-i5uA" name="getCause" visibility="public">
+                <ownedParameter xmi:id="_9iCQ5-K8Edukv8xN3-i5uA" type="_9h01gOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9huu4uK8Edukv8xN3-i5uA" name="SizeException" isAbstract="true">
+              <generalization xmi:id="_9iSvluK8Edukv8xN3-i5uA" general="_9hnaIuK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iSvl-K8Edukv8xN3-i5uA" name="&lt;init>" visibility="protected">
+                <ownedParameter xmi:id="_9iSvmOK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iSvmeK8Edukv8xN3-i5uA" name="arg1" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iSvmuK8Edukv8xN3-i5uA" name="arg2" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iTWoOK8Edukv8xN3-i5uA" name="getActualSize" visibility="public">
+                <ownedParameter xmi:id="_9iTWoeK8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iTWouK8Edukv8xN3-i5uA" name="getPermittedSize" visibility="public">
+                <ownedParameter xmi:id="_9iTWo-K8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9hxLI-K8Edukv8xN3-i5uA" name="UnknownSizeException">
+              <generalization xmi:id="_9idusOK8Edukv8xN3-i5uA" general="_9hnaIuK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iduseK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_9idusuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9idus-K8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <ownedOperation xmi:id="_9iUkwOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+            <ownedOperation xmi:id="_9iUkweK8Edukv8xN3-i5uA" name="isMultipartContent" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_9iUkwuK8Edukv8xN3-i5uA" name="arg0" type="_9htgwOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iUkw-K8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iUkxOK8Edukv8xN3-i5uA" name="isMultipartContent" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_9iUkxeK8Edukv8xN3-i5uA" name="arg0" type="_9iIXguK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iUkxuK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iUkx-K8Edukv8xN3-i5uA" name="getFileItemFactory" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iUkyOK8Edukv8xN3-i5uA" type="_9htgxOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iUkyeK8Edukv8xN3-i5uA" name="setFileItemFactory" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iUkyuK8Edukv8xN3-i5uA" name="arg0" type="_9htgxOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iUky-K8Edukv8xN3-i5uA" name="getSizeMax" visibility="public">
+              <ownedParameter xmi:id="_9iUkzOK8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iUkzeK8Edukv8xN3-i5uA" name="setSizeMax" visibility="public">
+              <ownedParameter xmi:id="_9iVL0OK8Edukv8xN3-i5uA" name="arg0" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVL0eK8Edukv8xN3-i5uA" name="getFileSizeMax" visibility="public">
+              <ownedParameter xmi:id="_9iVL0uK8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVL0-K8Edukv8xN3-i5uA" name="setFileSizeMax" visibility="public">
+              <ownedParameter xmi:id="_9iVL1OK8Edukv8xN3-i5uA" name="arg0" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVL1eK8Edukv8xN3-i5uA" name="getHeaderEncoding" visibility="public">
+              <ownedParameter xmi:id="_9iVL1uK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVL1-K8Edukv8xN3-i5uA" name="setHeaderEncoding" visibility="public">
+              <ownedParameter xmi:id="_9iVL2OK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVL2eK8Edukv8xN3-i5uA" name="parseRequest" visibility="public">
+              <ownedParameter xmi:id="_9iVL2uK8Edukv8xN3-i5uA" name="arg0" type="_9iIXguK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iVL2-K8Edukv8xN3-i5uA" type="_9iI-leK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVL3OK8Edukv8xN3-i5uA" name="getItemIterator" visibility="public">
+              <ownedParameter xmi:id="_9iVL3eK8Edukv8xN3-i5uA" name="arg0" type="_9htgwOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iVy4OK8Edukv8xN3-i5uA" type="_9hp2Y-K8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVy4eK8Edukv8xN3-i5uA" name="parseRequest" visibility="public">
+              <ownedParameter xmi:id="_9iVy4uK8Edukv8xN3-i5uA" name="arg0" type="_9htgwOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iVy4-K8Edukv8xN3-i5uA" type="_9iI-leK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVy5OK8Edukv8xN3-i5uA" name="getBoundary" visibility="protected">
+              <ownedParameter xmi:id="_9iVy5eK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iVy5uK8Edukv8xN3-i5uA" type="_9h5uAuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVy5-K8Edukv8xN3-i5uA" name="getFileName" visibility="protected">
+              <ownedParameter xmi:id="_9iVy6OK8Edukv8xN3-i5uA" name="arg0" type="_9h9YYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iVy6eK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iVy6uK8Edukv8xN3-i5uA" name="getFieldName" visibility="protected">
+              <ownedParameter xmi:id="_9iVy6-K8Edukv8xN3-i5uA" name="arg0" type="_9h9YYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iVy7OK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iWZ8OK8Edukv8xN3-i5uA" name="createItem" visibility="protected">
+              <ownedParameter xmi:id="_9iWZ8eK8Edukv8xN3-i5uA" name="arg0" type="_9h9YYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iWZ8uK8Edukv8xN3-i5uA" name="arg1" type="_9h2qteK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iWZ8-K8Edukv8xN3-i5uA" type="_9hp2YeK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iWZ9OK8Edukv8xN3-i5uA" name="parseHeaders" visibility="protected">
+              <ownedParameter xmi:id="_9iWZ9eK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iWZ9uK8Edukv8xN3-i5uA" type="_9h9YYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iWZ9-K8Edukv8xN3-i5uA" name="getHeader" visibility="protected">
+              <ownedParameter xmi:id="_9iWZ-OK8Edukv8xN3-i5uA" name="arg0" type="_9h9YYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iWZ-eK8Edukv8xN3-i5uA" name="arg1" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iWZ-uK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iWZ--K8Edukv8xN3-i5uA" name="getProgressListener" visibility="public">
+              <ownedParameter xmi:id="_9iY2MOK8Edukv8xN3-i5uA" type="_9hoBMOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iY2MeK8Edukv8xN3-i5uA" name="setProgressListener" visibility="public">
+              <ownedParameter xmi:id="_9iY2MuK8Edukv8xN3-i5uA" name="arg0" type="_9hoBMOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_9hmMAeK8Edukv8xN3-i5uA" name="MultipartStream">
+            <ownedAttribute xmi:id="_9iOeIOK8Edukv8xN3-i5uA" name="CR" visibility="public" isStatic="true" type="_9h5uAeK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iOeIeK8Edukv8xN3-i5uA" name="LF" visibility="public" isStatic="true" type="_9h5uAeK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iOeIuK8Edukv8xN3-i5uA" name="DASH" visibility="public" isStatic="true" type="_9h5uAeK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iOeI-K8Edukv8xN3-i5uA" name="HEADER_PART_SIZE_MAX" visibility="public" isStatic="true" type="_9h1ckOK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iPFMOK8Edukv8xN3-i5uA" name="DEFAULT_BUFSIZE" visibility="protected" isStatic="true" type="_9h1ckOK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iPFMeK8Edukv8xN3-i5uA" name="HEADER_SEPARATOR" visibility="protected" isStatic="true" type="_9h5uAuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iPFMuK8Edukv8xN3-i5uA" name="FIELD_SEPARATOR" visibility="protected" isStatic="true" type="_9h5uAuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iPsQOK8Edukv8xN3-i5uA" name="STREAM_TERMINATOR" visibility="protected" isStatic="true" type="_9h5uAuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_9iQTUOK8Edukv8xN3-i5uA" name="BOUNDARY_PREFIX" visibility="protected" isStatic="true" type="_9h5uAuK8Edukv8xN3-i5uA" isReadOnly="true"/>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9hmMAuK8Edukv8xN3-i5uA" name="MalformedStreamException">
+              <generalization xmi:id="_9h7jM-K8Edukv8xN3-i5uA" general="_9hznZOK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9h7jNOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_9h7jNeK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9h8KQOK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9hpPUOK8Edukv8xN3-i5uA" name="ItemInputStream" clientDependency="_9iC38OK8Edukv8xN3-i5uA">
+              <generalization xmi:id="_9iDfAOK8Edukv8xN3-i5uA" general="_9h4f4-K8Edukv8xN3-i5uA"/>
+              <interfaceRealization xmi:id="_9iC38OK8Edukv8xN3-i5uA" supplier="_9hxLIeK8Edukv8xN3-i5uA" client="_9hpPUOK8Edukv8xN3-i5uA" contract="_9hxLIeK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iDfAeK8Edukv8xN3-i5uA" name="getBytesRead" visibility="public">
+                <ownedParameter xmi:id="_9iDfAuK8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iDfA-K8Edukv8xN3-i5uA" name="available" visibility="public">
+                <ownedParameter xmi:id="_9iDfBOK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iDfBeK8Edukv8xN3-i5uA" name="read" visibility="public">
+                <ownedParameter xmi:id="_9iDfBuK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iDfB-K8Edukv8xN3-i5uA" name="read" visibility="public">
+                <ownedParameter xmi:id="_9iDfCOK8Edukv8xN3-i5uA" name="arg0" type="_9h5uAuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iDfCeK8Edukv8xN3-i5uA" name="arg1" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iDfCuK8Edukv8xN3-i5uA" name="arg2" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iEGEOK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iEGEeK8Edukv8xN3-i5uA" name="close" visibility="public"/>
+              <ownedOperation xmi:id="_9iEGEuK8Edukv8xN3-i5uA" name="skip" visibility="public">
+                <ownedParameter xmi:id="_9iEGE-K8Edukv8xN3-i5uA" name="arg0" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iEGFOK8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iEGFeK8Edukv8xN3-i5uA" name="isClosed" visibility="public">
+                <ownedParameter xmi:id="_9iEGFuK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9huu4OK8Edukv8xN3-i5uA" name="IllegalBoundaryException">
+              <generalization xmi:id="_9iSIgOK8Edukv8xN3-i5uA" general="_9hznZOK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iSIgeK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_9iSIguK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9iSIg-K8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <ownedOperation xmi:id="_9iQTUeK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+            <ownedOperation xmi:id="_9iQTUuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+              <ownedParameter xmi:id="_9iQTU-K8Edukv8xN3-i5uA" name="arg0" type="_9h4f4-K8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iQTVOK8Edukv8xN3-i5uA" name="arg1" type="_9h5uAuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iQTVeK8Edukv8xN3-i5uA" name="arg2" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQTVuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+              <ownedParameter xmi:id="_9iQTV-K8Edukv8xN3-i5uA" name="arg0" type="_9h4f4-K8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iQTWOK8Edukv8xN3-i5uA" name="arg1" type="_9h5uAuK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQTWeK8Edukv8xN3-i5uA" name="getHeaderEncoding" visibility="public">
+              <ownedParameter xmi:id="_9iQTWuK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQTW-K8Edukv8xN3-i5uA" name="setHeaderEncoding" visibility="public">
+              <ownedParameter xmi:id="_9iQTXOK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQ6YOK8Edukv8xN3-i5uA" name="readByte" visibility="public">
+              <ownedParameter xmi:id="_9iQ6YeK8Edukv8xN3-i5uA" type="_9h5uAeK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQ6YuK8Edukv8xN3-i5uA" name="readBoundary" visibility="public">
+              <ownedParameter xmi:id="_9iQ6Y-K8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQ6ZOK8Edukv8xN3-i5uA" name="setBoundary" visibility="public">
+              <ownedParameter xmi:id="_9iQ6ZeK8Edukv8xN3-i5uA" name="arg0" type="_9h5uAuK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQ6ZuK8Edukv8xN3-i5uA" name="readHeaders" visibility="public">
+              <ownedParameter xmi:id="_9iQ6Z-K8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQ6aOK8Edukv8xN3-i5uA" name="readBodyData" visibility="public">
+              <ownedParameter xmi:id="_9iQ6aeK8Edukv8xN3-i5uA" name="arg0" type="_9h68J-K8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iQ6auK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQ6a-K8Edukv8xN3-i5uA" name="discardBodyData" visibility="public">
+              <ownedParameter xmi:id="_9iQ6bOK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iQ6beK8Edukv8xN3-i5uA" name="skipPreamble" visibility="public">
+              <ownedParameter xmi:id="_9iRhcOK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iRhceK8Edukv8xN3-i5uA" name="arrayequals" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_9iRhcuK8Edukv8xN3-i5uA" name="arg0" type="_9h5uAuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iRhc-K8Edukv8xN3-i5uA" name="arg1" type="_9h5uAuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iRhdOK8Edukv8xN3-i5uA" name="arg2" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iRhdeK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iRhduK8Edukv8xN3-i5uA" name="findByte" visibility="protected">
+              <ownedParameter xmi:id="_9iRhd-K8Edukv8xN3-i5uA" name="arg0" type="_9h5uAeK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iRheOK8Edukv8xN3-i5uA" name="arg1" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iRheeK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iRheuK8Edukv8xN3-i5uA" name="findSeparator" visibility="protected">
+              <ownedParameter xmi:id="_9iRhe-K8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_9hmMA-K8Edukv8xN3-i5uA" name="DefaultFileItem">
+            <generalization xmi:id="_9h8KQeK8Edukv8xN3-i5uA" general="_9hmMAOK8Edukv8xN3-i5uA"/>
+            <ownedOperation xmi:id="_9h8KQuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+              <ownedParameter xmi:id="_9h8KQ-K8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h8KROK8Edukv8xN3-i5uA" name="arg1" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h8KReK8Edukv8xN3-i5uA" name="arg2" type="_9h2qteK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h8KRuK8Edukv8xN3-i5uA" name="arg3" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h8KR-K8Edukv8xN3-i5uA" name="arg4" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h8KSOK8Edukv8xN3-i5uA" name="arg5" type="_9h1ck-K8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_9hmzEOK8Edukv8xN3-i5uA" name="ParameterParser">
+            <ownedOperation xmi:id="_9h8xUOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+            <ownedOperation xmi:id="_9h8xUeK8Edukv8xN3-i5uA" name="isLowerCaseNames" visibility="public">
+              <ownedParameter xmi:id="_9h8xUuK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9h8xU-K8Edukv8xN3-i5uA" name="setLowerCaseNames" visibility="public">
+              <ownedParameter xmi:id="_9h8xVOK8Edukv8xN3-i5uA" name="arg0" type="_9h2qteK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9h8xVuK8Edukv8xN3-i5uA" name="parse" visibility="public">
+              <ownedParameter xmi:id="_9h8xV-K8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h9YYOK8Edukv8xN3-i5uA" name="arg1" type="_9h8xVeK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h9YY-K8Edukv8xN3-i5uA" type="_9h9YYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9h9YZeK8Edukv8xN3-i5uA" name="parse" visibility="public">
+              <ownedParameter xmi:id="_9h9_cOK8Edukv8xN3-i5uA" name="arg0" type="_9h9YZOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h9_ceK8Edukv8xN3-i5uA" name="arg1" type="_9h8xVeK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h9_cuK8Edukv8xN3-i5uA" type="_9h9YYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9h-mgOK8Edukv8xN3-i5uA" name="parse" visibility="public">
+              <ownedParameter xmi:id="_9h-mgeK8Edukv8xN3-i5uA" name="arg0" type="_9h9YZOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h-mguK8Edukv8xN3-i5uA" name="arg1" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h-mg-K8Edukv8xN3-i5uA" name="arg2" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h-mhOK8Edukv8xN3-i5uA" name="arg3" type="_9h8xVeK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9h-mheK8Edukv8xN3-i5uA" type="_9h9YYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_9hnaIuK8Edukv8xN3-i5uA" name="FileUploadException">
+            <generalization xmi:id="_9iBCweK8Edukv8xN3-i5uA" general="_9iBCwOK8Edukv8xN3-i5uA"/>
+            <ownedOperation xmi:id="_9iBCwuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+            <ownedOperation xmi:id="_9iBCw-K8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+              <ownedParameter xmi:id="_9iBCxOK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iBCxeK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+              <ownedParameter xmi:id="_9iBCxuK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iBCx-K8Edukv8xN3-i5uA" name="arg1" type="_9h01gOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iBp0OK8Edukv8xN3-i5uA" name="printStackTrace" visibility="public">
+              <ownedParameter xmi:id="_9iBp0eK8Edukv8xN3-i5uA" name="arg0" type="_9iBCyOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iBp0-K8Edukv8xN3-i5uA" name="printStackTrace" visibility="public">
+              <ownedParameter xmi:id="_9iBp1OK8Edukv8xN3-i5uA" name="arg0" type="_9iBp0uK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_9hoBMOK8Edukv8xN3-i5uA" name="ProgressListener" isAbstract="true">
+            <ownedOperation xmi:id="_9iBp1eK8Edukv8xN3-i5uA" name="update" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iCQ4OK8Edukv8xN3-i5uA" name="arg0" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iCQ4eK8Edukv8xN3-i5uA" name="arg1" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iCQ4uK8Edukv8xN3-i5uA" name="arg2" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_9hp2YeK8Edukv8xN3-i5uA" name="FileItem" isAbstract="true">
+            <generalization xmi:id="_9iEGGOK8Edukv8xN3-i5uA" general="_9iEGF-K8Edukv8xN3-i5uA"/>
+            <ownedOperation xmi:id="_9iEGGeK8Edukv8xN3-i5uA" name="getInputStream" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iEtIOK8Edukv8xN3-i5uA" type="_9h4f4-K8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iEtIeK8Edukv8xN3-i5uA" name="getContentType" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iEtIuK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iEtI-K8Edukv8xN3-i5uA" name="getName" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iFUMOK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iFUMeK8Edukv8xN3-i5uA" name="isInMemory" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iFUMuK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iFUM-K8Edukv8xN3-i5uA" name="getSize" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iFUNOK8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iFUNeK8Edukv8xN3-i5uA" name="get" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iFUNuK8Edukv8xN3-i5uA" type="_9h5uAuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iFUN-K8Edukv8xN3-i5uA" name="getString" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iFUOOK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iF7QOK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iF7QeK8Edukv8xN3-i5uA" name="getString" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iF7QuK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iGiUOK8Edukv8xN3-i5uA" name="write" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iGiUeK8Edukv8xN3-i5uA" name="arg0" type="_9h1ck-K8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iGiUuK8Edukv8xN3-i5uA" name="delete" visibility="public" isAbstract="true"/>
+            <ownedOperation xmi:id="_9iGiU-K8Edukv8xN3-i5uA" name="getFieldName" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iGiVOK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iGiVeK8Edukv8xN3-i5uA" name="setFieldName" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iGiVuK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iGiV-K8Edukv8xN3-i5uA" name="isFormField" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iGiWOK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iGiWeK8Edukv8xN3-i5uA" name="setFormField" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iGiWuK8Edukv8xN3-i5uA" name="arg0" type="_9h2qteK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iGiW-K8Edukv8xN3-i5uA" name="getOutputStream" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iHJYOK8Edukv8xN3-i5uA" type="_9h68J-K8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_9hp2Y-K8Edukv8xN3-i5uA" name="FileItemIterator" isAbstract="true">
+            <ownedOperation xmi:id="_9iHJYeK8Edukv8xN3-i5uA" name="hasNext" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iHJYuK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iHJY-K8Edukv8xN3-i5uA" name="next" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iHJZOK8Edukv8xN3-i5uA" type="_9htgwuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_9hqdcOK8Edukv8xN3-i5uA" name="servlet">
+            <packagedElement xmi:type="uml:Class" xmi:id="_9hrEgOK8Edukv8xN3-i5uA" name="FileCleanerCleanup" clientDependency="_9iHwc-K8Edukv8xN3-i5uA">
+              <interfaceRealization xmi:id="_9iHwc-K8Edukv8xN3-i5uA" supplier="_9iHwcuK8Edukv8xN3-i5uA" client="_9hrEgOK8Edukv8xN3-i5uA" contract="_9iHwcuK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iHwdOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_9iHwduK8Edukv8xN3-i5uA" name="contextInitialized" visibility="public">
+                <ownedParameter xmi:id="_9iHwd-K8Edukv8xN3-i5uA" name="arg0" type="_9iHwdeK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iHweOK8Edukv8xN3-i5uA" name="contextDestroyed" visibility="public">
+                <ownedParameter xmi:id="_9iHweeK8Edukv8xN3-i5uA" name="arg0" type="_9iHwdeK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_9hrEgeK8Edukv8xN3-i5uA" name="ServletFileUpload">
+              <generalization xmi:id="_9iIXgOK8Edukv8xN3-i5uA" general="_9hv9AOK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iIXg-K8Edukv8xN3-i5uA" name="isMultipartContent" visibility="public" isStatic="true">
+                <ownedParameter xmi:id="_9iIXhOK8Edukv8xN3-i5uA" name="arg0" type="_9iIXguK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iIXheK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iI-kOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_9iI-keK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9iI-kuK8Edukv8xN3-i5uA" name="arg0" type="_9htgxOK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iI-k-K8Edukv8xN3-i5uA" name="parseRequest" visibility="public">
+                <ownedParameter xmi:id="_9iI-lOK8Edukv8xN3-i5uA" name="arg0" type="_9iIXguK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iI-luK8Edukv8xN3-i5uA" type="_9iI-leK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iI-l-K8Edukv8xN3-i5uA" name="getItemIterator" visibility="public">
+                <ownedParameter xmi:id="_9iI-mOK8Edukv8xN3-i5uA" name="arg0" type="_9iIXguK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iI-meK8Edukv8xN3-i5uA" type="_9hp2Y-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_9hsSoOK8Edukv8xN3-i5uA" name="ServletRequestContext" clientDependency="_9iKMsOK8Edukv8xN3-i5uA">
+              <interfaceRealization xmi:id="_9iKMsOK8Edukv8xN3-i5uA" supplier="_9htgwOK8Edukv8xN3-i5uA" client="_9hsSoOK8Edukv8xN3-i5uA" contract="_9htgwOK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iKMseK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9iKMsuK8Edukv8xN3-i5uA" name="arg0" type="_9iIXguK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iKMs-K8Edukv8xN3-i5uA" name="getCharacterEncoding" visibility="public">
+                <ownedParameter xmi:id="_9iKMtOK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iKMteK8Edukv8xN3-i5uA" name="getContentType" visibility="public">
+                <ownedParameter xmi:id="_9iKMtuK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iKMt-K8Edukv8xN3-i5uA" name="getContentLength" visibility="public">
+                <ownedParameter xmi:id="_9iKMuOK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iKMueK8Edukv8xN3-i5uA" name="getInputStream" visibility="public">
+                <ownedParameter xmi:id="_9iKMuuK8Edukv8xN3-i5uA" type="_9h4f4-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iKMu-K8Edukv8xN3-i5uA" name="toString" visibility="public">
+                <ownedParameter xmi:id="_9iKzwOK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_9hs5sOK8Edukv8xN3-i5uA" name="DiskFileUpload">
+            <generalization xmi:id="_9iKzweK8Edukv8xN3-i5uA" general="_9hjvxOK8Edukv8xN3-i5uA"/>
+            <ownedOperation xmi:id="_9iKzwuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+            <ownedOperation xmi:id="_9iKzw-K8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+              <ownedParameter xmi:id="_9iKzxOK8Edukv8xN3-i5uA" name="arg0" type="_9huu4eK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iKzxeK8Edukv8xN3-i5uA" name="getFileItemFactory" visibility="public">
+              <ownedParameter xmi:id="_9iKzxuK8Edukv8xN3-i5uA" type="_9htgxOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iKzx-K8Edukv8xN3-i5uA" name="setFileItemFactory" visibility="public">
+              <ownedParameter xmi:id="_9iKzyOK8Edukv8xN3-i5uA" name="arg0" type="_9htgxOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iLa0OK8Edukv8xN3-i5uA" name="getSizeThreshold" visibility="public">
+              <ownedParameter xmi:id="_9iLa0eK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iLa0uK8Edukv8xN3-i5uA" name="setSizeThreshold" visibility="public">
+              <ownedParameter xmi:id="_9iLa0-K8Edukv8xN3-i5uA" name="arg0" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iLa1OK8Edukv8xN3-i5uA" name="getRepositoryPath" visibility="public">
+              <ownedParameter xmi:id="_9iLa1eK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iLa1uK8Edukv8xN3-i5uA" name="setRepositoryPath" visibility="public">
+              <ownedParameter xmi:id="_9iLa1-K8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iLa2OK8Edukv8xN3-i5uA" name="parseRequest" visibility="public">
+              <ownedParameter xmi:id="_9iLa2eK8Edukv8xN3-i5uA" name="arg0" type="_9iIXguK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iLa2uK8Edukv8xN3-i5uA" name="arg1" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iLa2-K8Edukv8xN3-i5uA" name="arg2" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iLa3OK8Edukv8xN3-i5uA" name="arg3" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iMB4OK8Edukv8xN3-i5uA" type="_9iI-leK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_9htgwOK8Edukv8xN3-i5uA" name="RequestContext" isAbstract="true">
+            <ownedOperation xmi:id="_9iMB4eK8Edukv8xN3-i5uA" name="getCharacterEncoding" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iMB4uK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iMB4-K8Edukv8xN3-i5uA" name="getContentType" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iMo8OK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iMo8eK8Edukv8xN3-i5uA" name="getContentLength" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iMo8uK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iMo8-K8Edukv8xN3-i5uA" name="getInputStream" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iMo9OK8Edukv8xN3-i5uA" type="_9h4f4-K8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_9htgwuK8Edukv8xN3-i5uA" name="FileItemStream" isAbstract="true">
+            <ownedOperation xmi:id="_9iNQAOK8Edukv8xN3-i5uA" name="openStream" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iNQAeK8Edukv8xN3-i5uA" type="_9h4f4-K8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iNQAuK8Edukv8xN3-i5uA" name="getContentType" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iNQA-K8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iNQBOK8Edukv8xN3-i5uA" name="getName" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iNQBeK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iNQBuK8Edukv8xN3-i5uA" name="getFieldName" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iNQB-K8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iNQCOK8Edukv8xN3-i5uA" name="isFormField" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iNQCeK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_9huu4-K8Edukv8xN3-i5uA" name="ItemSkippedException">
+              <generalization xmi:id="_9iTWpOK8Edukv8xN3-i5uA" general="_9hznZOK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iTWpeK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+            </nestedClassifier>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_9htgxOK8Edukv8xN3-i5uA" name="FileItemFactory" isAbstract="true">
+            <ownedOperation xmi:id="_9iNQCuK8Edukv8xN3-i5uA" name="createItem" visibility="public" isAbstract="true">
+              <ownedParameter xmi:id="_9iNQC-K8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iN3EOK8Edukv8xN3-i5uA" name="arg1" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iN3EeK8Edukv8xN3-i5uA" name="arg2" type="_9h2qteK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iN3EuK8Edukv8xN3-i5uA" name="arg3" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iN3E-K8Edukv8xN3-i5uA" type="_9hp2YeK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_9huu4eK8Edukv8xN3-i5uA" name="DefaultFileItemFactory">
+            <generalization xmi:id="_9iSIhOK8Edukv8xN3-i5uA" general="_9hkW0uK8Edukv8xN3-i5uA"/>
+            <ownedOperation xmi:id="_9iSIheK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+            <ownedOperation xmi:id="_9iSIhuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+              <ownedParameter xmi:id="_9iSIh-K8Edukv8xN3-i5uA" name="arg0" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iSIiOK8Edukv8xN3-i5uA" name="arg1" type="_9h1ck-K8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iSvkOK8Edukv8xN3-i5uA" name="createItem" visibility="public">
+              <ownedParameter xmi:id="_9iSvkeK8Edukv8xN3-i5uA" name="arg0" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iSvkuK8Edukv8xN3-i5uA" name="arg1" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iSvk-K8Edukv8xN3-i5uA" name="arg2" type="_9h2qteK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iSvlOK8Edukv8xN3-i5uA" name="arg3" type="_9hznYuK8Edukv8xN3-i5uA"/>
+              <ownedParameter xmi:id="_9iSvleK8Edukv8xN3-i5uA" type="_9hp2YeK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_9hv9AOK8Edukv8xN3-i5uA" name="FileUpload">
+            <generalization xmi:id="_9iY2M-K8Edukv8xN3-i5uA" general="_9hjvxOK8Edukv8xN3-i5uA"/>
+            <ownedOperation xmi:id="_9iZdQOK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+            <ownedOperation xmi:id="_9iZdQeK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+              <ownedParameter xmi:id="_9iZdQuK8Edukv8xN3-i5uA" name="arg0" type="_9htgxOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iZdQ-K8Edukv8xN3-i5uA" name="getFileItemFactory" visibility="public">
+              <ownedParameter xmi:id="_9iZdROK8Edukv8xN3-i5uA" type="_9htgxOK8Edukv8xN3-i5uA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_9iZdReK8Edukv8xN3-i5uA" name="setFileItemFactory" visibility="public">
+              <ownedParameter xmi:id="_9iZdRuK8Edukv8xN3-i5uA" name="arg0" type="_9htgxOK8Edukv8xN3-i5uA"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_9hv9AeK8Edukv8xN3-i5uA" name="portlet">
+            <packagedElement xmi:type="uml:Class" xmi:id="_9hv9AuK8Edukv8xN3-i5uA" name="PortletFileUpload">
+              <generalization xmi:id="_9iZdR-K8Edukv8xN3-i5uA" general="_9hv9AOK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iZdSuK8Edukv8xN3-i5uA" name="isMultipartContent" visibility="public" isStatic="true">
+                <ownedParameter xmi:id="_9iaEUOK8Edukv8xN3-i5uA" name="arg0" type="_9iZdSeK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iaEUeK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iaEUuK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public"/>
+              <ownedOperation xmi:id="_9iaEU-K8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9iaEVOK8Edukv8xN3-i5uA" name="arg0" type="_9htgxOK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iaEVeK8Edukv8xN3-i5uA" name="parseRequest" visibility="public">
+                <ownedParameter xmi:id="_9iaEVuK8Edukv8xN3-i5uA" name="arg0" type="_9iZdSeK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iaEV-K8Edukv8xN3-i5uA" type="_9iI-leK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iaEWOK8Edukv8xN3-i5uA" name="getItemIterator" visibility="public">
+                <ownedParameter xmi:id="_9iaEWeK8Edukv8xN3-i5uA" name="arg0" type="_9iZdSeK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9iaEWuK8Edukv8xN3-i5uA" type="_9hp2Y-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_9hwkEOK8Edukv8xN3-i5uA" name="PortletRequestContext" clientDependency="_9iarYOK8Edukv8xN3-i5uA">
+              <interfaceRealization xmi:id="_9iarYOK8Edukv8xN3-i5uA" supplier="_9htgwOK8Edukv8xN3-i5uA" client="_9hwkEOK8Edukv8xN3-i5uA" contract="_9htgwOK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9iarYeK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9iarYuK8Edukv8xN3-i5uA" name="arg0" type="_9iZdSeK8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iarY-K8Edukv8xN3-i5uA" name="getCharacterEncoding" visibility="public">
+                <ownedParameter xmi:id="_9iarZOK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iarZeK8Edukv8xN3-i5uA" name="getContentType" visibility="public">
+                <ownedParameter xmi:id="_9iarZuK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iarZ-K8Edukv8xN3-i5uA" name="getContentLength" visibility="public">
+                <ownedParameter xmi:id="_9iaraOK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iaraeK8Edukv8xN3-i5uA" name="getInputStream" visibility="public">
+                <ownedParameter xmi:id="_9iarauK8Edukv8xN3-i5uA" type="_9h4f4-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9iara-K8Edukv8xN3-i5uA" name="toString" visibility="public">
+                <ownedParameter xmi:id="_9iarbOK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_9hwkEeK8Edukv8xN3-i5uA" name="util">
+            <packagedElement xmi:type="uml:Class" xmi:id="_9hwkEuK8Edukv8xN3-i5uA" name="Streams">
+              <ownedOperation xmi:id="_9ibScOK8Edukv8xN3-i5uA" name="copy" visibility="public" isStatic="true">
+                <ownedParameter xmi:id="_9ibSceK8Edukv8xN3-i5uA" name="arg0" type="_9h4f4-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ibScuK8Edukv8xN3-i5uA" name="arg1" type="_9h68J-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ibSc-K8Edukv8xN3-i5uA" name="arg2" type="_9h2qteK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ib5gOK8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9ib5geK8Edukv8xN3-i5uA" name="copy" visibility="public" isStatic="true">
+                <ownedParameter xmi:id="_9ib5guK8Edukv8xN3-i5uA" name="arg0" type="_9h4f4-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ib5g-K8Edukv8xN3-i5uA" name="arg1" type="_9h68J-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ib5hOK8Edukv8xN3-i5uA" name="arg2" type="_9h2qteK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ib5heK8Edukv8xN3-i5uA" name="arg3" type="_9h5uAuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ib5huK8Edukv8xN3-i5uA" type="_9h5G8-K8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9ib5h-K8Edukv8xN3-i5uA" name="asString" visibility="public" isStatic="true">
+                <ownedParameter xmi:id="_9ib5iOK8Edukv8xN3-i5uA" name="arg0" type="_9h4f4-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ib5ieK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9ib5iuK8Edukv8xN3-i5uA" name="asString" visibility="public" isStatic="true">
+                <ownedParameter xmi:id="_9ib5i-K8Edukv8xN3-i5uA" name="arg0" type="_9h4f4-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ib5jOK8Edukv8xN3-i5uA" name="arg1" type="_9hznYuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9ib5jeK8Edukv8xN3-i5uA" type="_9hznYuK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_9hxLIeK8Edukv8xN3-i5uA" name="Closeable" isAbstract="true">
+              <ownedOperation xmi:id="_9icgkOK8Edukv8xN3-i5uA" name="close" visibility="public" isAbstract="true"/>
+              <ownedOperation xmi:id="_9icgkeK8Edukv8xN3-i5uA" name="isClosed" visibility="public" isAbstract="true">
+                <ownedParameter xmi:id="_9icgkuK8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_9hxLIuK8Edukv8xN3-i5uA" name="LimitedInputStream" clientDependency="_9icgk-K8Edukv8xN3-i5uA" isAbstract="true">
+              <generalization xmi:id="_9icgleK8Edukv8xN3-i5uA" general="_9icglOK8Edukv8xN3-i5uA"/>
+              <interfaceRealization xmi:id="_9icgk-K8Edukv8xN3-i5uA" supplier="_9hxLIeK8Edukv8xN3-i5uA" client="_9hxLIuK8Edukv8xN3-i5uA" contract="_9hxLIeK8Edukv8xN3-i5uA"/>
+              <ownedOperation xmi:id="_9icgluK8Edukv8xN3-i5uA" name="&lt;init>" visibility="public">
+                <ownedParameter xmi:id="_9icgl-K8Edukv8xN3-i5uA" name="arg0" type="_9h4f4-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9icgmOK8Edukv8xN3-i5uA" name="arg1" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9idHoOK8Edukv8xN3-i5uA" name="raiseError" visibility="protected" isAbstract="true">
+                <ownedParameter xmi:id="_9idHoeK8Edukv8xN3-i5uA" name="arg0" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9idHouK8Edukv8xN3-i5uA" name="arg1" type="_9h5G8-K8Edukv8xN3-i5uA"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9idHo-K8Edukv8xN3-i5uA" name="read" visibility="public">
+                <ownedParameter xmi:id="_9idHpOK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9idHpeK8Edukv8xN3-i5uA" name="read" visibility="public">
+                <ownedParameter xmi:id="_9idHpuK8Edukv8xN3-i5uA" name="arg0" type="_9h5uAuK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9idHp-K8Edukv8xN3-i5uA" name="arg1" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9idHqOK8Edukv8xN3-i5uA" name="arg2" type="_9h1ckOK8Edukv8xN3-i5uA"/>
+                <ownedParameter xmi:id="_9idHqeK8Edukv8xN3-i5uA" type="_9h1ckOK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9idHquK8Edukv8xN3-i5uA" name="isClosed" visibility="public">
+                <ownedParameter xmi:id="_9idHq-K8Edukv8xN3-i5uA" type="_9h2qteK8Edukv8xN3-i5uA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_9idHrOK8Edukv8xN3-i5uA" name="close" visibility="public"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_9hznYOK8Edukv8xN3-i5uA" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_9hznYeK8Edukv8xN3-i5uA" name="lang">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9hznYuK8Edukv8xN3-i5uA" name="String"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9h01gOK8Edukv8xN3-i5uA" name="Throwable"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_9h1ckOK8Edukv8xN3-i5uA" name="int"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_9h2qteK8Edukv8xN3-i5uA" name="boolean"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_9h5G8-K8Edukv8xN3-i5uA" name="long"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_9h5uAeK8Edukv8xN3-i5uA" name="byte"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9h5uAuK8Edukv8xN3-i5uA" name="byte[]"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_9h8xVeK8Edukv8xN3-i5uA" name="char"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9h9YZOK8Edukv8xN3-i5uA" name="char[]"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_9iBCwOK8Edukv8xN3-i5uA" name="Exception"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_9hznY-K8Edukv8xN3-i5uA" name="io">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9hznZOK8Edukv8xN3-i5uA" name="IOException"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9h1ck-K8Edukv8xN3-i5uA" name="File"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9h4f4-K8Edukv8xN3-i5uA" name="InputStream"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9h68J-K8Edukv8xN3-i5uA" name="OutputStream"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9iBCyOK8Edukv8xN3-i5uA" name="PrintStream"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9iBp0uK8Edukv8xN3-i5uA" name="PrintWriter"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_9iEGF-K8Edukv8xN3-i5uA" name="Serializable"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_9icglOK8Edukv8xN3-i5uA" name="FilterInputStream"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_9h9YYeK8Edukv8xN3-i5uA" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9h9YYuK8Edukv8xN3-i5uA" name="Map"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9iI-leK8Edukv8xN3-i5uA" name="List"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_9iHwcOK8Edukv8xN3-i5uA" name="javax">
+    <packagedElement xmi:type="uml:Package" xmi:id="_9iHwceK8Edukv8xN3-i5uA" name="servlet">
+      <packagedElement xmi:type="uml:Package" xmi:id="_9iIXgeK8Edukv8xN3-i5uA" name="http">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_9iIXguK8Edukv8xN3-i5uA" name="HttpServletRequest"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_9iHwcuK8Edukv8xN3-i5uA" name="ServletContextListener"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9iHwdeK8Edukv8xN3-i5uA" name="ServletContextEvent"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_9iZdSOK8Edukv8xN3-i5uA" name="portlet">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9iZdSeK8Edukv8xN3-i5uA" name="ActionRequest"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -2,7 +2,8 @@ package be.ac.vub.platformkit.hibernate;
 
 import org.hibernate.Session;
 
-import be.ac.vub.platformkit.descriptions.PlatformDescription;
+import be.ac.vub.platformkit.servlet.PlatformDescription;
+import be.ac.vub.platformkit.servlet.StreamData;
 
 public class StartupManager {
 
@@ -33,24 +34,26 @@ public class StartupManager {
 
     //Convenience methods
     private void store(StartupManager mgr) {
-    	mgr.createAndStorePlatformSpecification("myBrowserID 1" , "myPlatformURI 1");
-    	mgr.createAndStorePlatformSpecification("myBrowserID 2" , "myPlatformURI 2");
-    	mgr.createAndStorePlatformSpecification("myBrowserID 3" , "myPlatformURI 3");
-    	mgr.createAndStorePlatformSpecification("myBrowserID 4" , "myPlatformURI 4");
-    	mgr.createAndStorePlatformSpecification("myBrowserID 5" , "myPlatformURI 5");
-    	mgr.createAndStorePlatformSpecification("myBrowserID 6" , "myPlatformURI 6");
+    	mgr.createAndStorePlatformSpecification("myBrowserID 1" , "myPlatformURI 1".getBytes());
+    	mgr.createAndStorePlatformSpecification("myBrowserID 2" , "myPlatformURI 2".getBytes());
+    	mgr.createAndStorePlatformSpecification("myBrowserID 3" , "myPlatformURI 3".getBytes());
+    	mgr.createAndStorePlatformSpecification("myBrowserID 4" , "myPlatformURI 4".getBytes());
+    	mgr.createAndStorePlatformSpecification("myBrowserID 5" , "myPlatformURI 5".getBytes());
+    	mgr.createAndStorePlatformSpecification("myBrowserID 6" , "myPlatformURI 6".getBytes());
     }
 
-    private String createAndStorePlatformSpecification(String bID, String pURI) {
+    private String createAndStorePlatformSpecification(String bID, byte[] pOWL) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        PlatformDescription thePS = new PlatformDescription();
-        thePS.setBrowserID(bID);
-        thePS.setPlatformURI(pURI);        
-        session.save(thePS);
+        PlatformDescription pd = new PlatformDescription();
+        pd.setBrowserID(bID);
+		StreamData data = new StreamData();
+		data.setData(pOWL);
+        pd.setPlatformOWL(data);        
+        session.save(pd);
         session.getTransaction().commit();
-        System.out.println("Storing PD object: " + thePS.getBrowserID() + ", " + thePS.getPlatformURI());
-        return thePS.getBrowserID();
+        System.out.println("Storing PD object: " + pd.getBrowserID() + ", " + pd.getPlatformOWL());
+        return pd.getBrowserID();
     }
 
 }

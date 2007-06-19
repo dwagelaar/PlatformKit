@@ -1,30 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Persistence="http:///schemas/Persistence/_P3jMgOH1EduyTvOzMjLxxQ/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xsi:schemaLocation="http:///schemas/Persistence/_P3jMgOH1EduyTvOzMjLxxQ/0 Persistence.profile.uml#_P3jMguH1EduyTvOzMjLxxQ">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Persistence="http:///schemas/Persistence/_41QTUOKpEduy-KDtqDHB8g/1" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xsi:schemaLocation="http:///schemas/Persistence/_41QTUOKpEduy-KDtqDHB8g/1 Persistence.profile.uml#_41QTUeKpEduy-KDtqDHB8g http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
   <uml:Model xmi:id="_qb8akM37EdqwVrslYOdUDA" name="PlatformKitWeb">
     <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="be">
       <packagedElement xmi:type="uml:Package" xmi:id="_JwPwIcHBEduKcpNg9SVSYQ" name="ac">
         <packagedElement xmi:type="uml:Package" xmi:id="_L0QPQMHBEduKcpNg9SVSYQ" name="vub">
           <packagedElement xmi:type="uml:Package" xmi:id="_OkCPQMHBEduKcpNg9SVSYQ" name="platformkit">
-            <packagedElement xmi:type="uml:Package" xmi:id="_a5-4QMHBEduKcpNg9SVSYQ" name="descriptions">
+            <packagedElement xmi:type="uml:Package" xmi:id="__om3cOKeEdusoPrkeXo32Q" name="servlet">
+              <packagedElement xmi:type="uml:Class" xmi:id="_Cn1osOKfEdusoPrkeXo32Q" name="PlatformkitSession" clientDependency="_5kM4cOKzEducvf06rPkdnw _ZoiI4OK6EdupF4iz9hbLXA _tTo9YeLBEduDvd4CuKZXNQ _tudRIOLBEduDvd4CuKZXNQ _uVmJoOLBEduDvd4CuKZXNQ _uiFtgOLBEduDvd4CuKZXNQ _uw5lkOLBEduDvd4CuKZXNQ _nCW8gOkXEduSvsosCY1j6g">
+                <ownedAttribute xmi:id="__nrYcOKgEduOI6ponYIZJQ" name="parameters" visibility="protected">
+                  <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z22qIB5BEdycUoU7n1_rLw"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_tKi-sOK0Educvf06rPkdnw" value="new Properties()"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_KhuOsOKiEduOI6ponYIZJQ" name="leastSpecific">
+                  <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_--NgwPyKEdqlTr7ZXrCGhQ"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_OyjKsOKiEduOI6ponYIZJQ" name="noValidate">
+                  <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_--NgwPyKEdqlTr7ZXrCGhQ"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_zS-asOKiEduOI6ponYIZJQ" name="baseURL">
+                  <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_2ZOvEOKkEduy-KDtqDHB8g" name="req" visibility="protected">
+                  <type xmi:type="uml:Interface" href="JavaxServlet.uml#_d2XaEuKgEduOI6ponYIZJQ"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_l2MSMeKyEducvf06rPkdnw" name="logger" visibility="protected">
+                  <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3zsYB5BEdycUoU7n1_rLw"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_N1e1wOKzEducvf06rPkdnw" value="Logger.getLogger(Ontologies.LOGGER)"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_b4XvdOK4Educvf06rPkdnw" name="description" type="_PCGO0MHCEduKcpNg9SVSYQ" association="_b4XvcOK4Educvf06rPkdnw">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b4XvdeK4Educvf06rPkdnw" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b4XvduK4Educvf06rPkdnw" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_aJIexOkAEduA_bpJs0tPHg" name="store" visibility="protected" type="_L7BQsOj0EduMF8bmKxtVtA" association="_aJIewOkAEduA_bpJs0tPHg">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aJIexekAEduA_bpJs0tPHg" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aJIexukAEduA_bpJs0tPHg" value="1"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_gV_NIOkBEduA_bpJs0tPHg" value="new PlatformDescriptionStore()"/>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_L59HwOK0Educvf06rPkdnw" name="PlatformkitSessionBehavior" specification="_C9sHcOKgEduOI6ponYIZJQ">
+                  <ownedParameter xmi:id="_QPBAAOj1EduMF8bmKxtVtA" name="req">
+                    <type xmi:type="uml:Interface" href="JavaxServlet.uml#_d2XaEuKgEduOI6ponYIZJQ"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>description = new PlatformDescription();&#xA;description.setBrowserID(req.getHeader(&quot;User-Agent&quot;));&#xA;if (ServletFileUpload.isMultipartContent(req)) {&#xA;&#x9;ServletFileUpload upload = new ServletFileUpload();&#xA;&#x9;FileItemIterator fileItems = upload.getItemIterator(req);&#xA;&#x9;while (fileItems.hasNext()) {&#xA;&#x9;&#x9;FileItemStream item = fileItems.next();&#xA;&#x9;&#x9;InputStream stream = item.openStream();&#xA;&#x9;&#x9;if (item.isFormField()) {&#xA;&#x9;&#x9;&#x9;parameters.setProperty(item.getFieldName(), Streams.asString(stream));&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;byte[] buf = new byte[1024];&#xA;&#x9;&#x9;&#x9;ByteArrayOutputStream out = new ByteArrayOutputStream(buf.length);&#xA;&#x9;&#x9;&#x9;for (int read = stream.read(buf); read > -1;) {&#xA;&#x9;&#x9;&#x9;&#x9;out.write(buf, 0, read);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;out.flush();&#xA;&#x9;&#x9;&#x9;StreamData data = new StreamData();&#xA;&#x9;&#x9;&#x9;data.setData(out.toByteArray());&#xA;&#x9;&#x9;&#x9;description.setPlatformOWL(data);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;} else {&#xA;&#x9;logger.warning(&quot;No platform ontology file uploaded&quot;);&#xA;&#x9;for (Enumeration ns = req.getParameterNames(); ns.hasMoreElements();) {&#xA;&#x9;&#x9;String name = (String) ns.nextElement();&#xA;&#x9;&#x9;parameters.setProperty(name, req.getParameter(name));&#xA;&#x9;}&#xA;&#x9;PlatformDescription pd = store.getPlatformDescription(description.getBrowserID());&#xA;&#x9;if (pd != null) {&#xA;&#x9;&#x9;logger.info(&quot;Standard platform ontology found: &quot; + pd);&#xA;&#x9;&#x9;description = pd;&#xA;&#x9;}&#xA;}&#xA;setLeastSpecific(parameters.getProperty(&quot;result&quot;).equals(&quot;leastspecific&quot;));&#xA;setNoValidate(parameters.getProperty(&quot;noValidate&quot;).equals(&quot;true&quot;));&#xA;setBaseURL(parameters.getProperty(&quot;baseurl&quot;));</body>
+                </ownedBehavior>
+                <ownedOperation xmi:id="_C9sHcOKgEduOI6ponYIZJQ" name="PlatformkitSession" method="_L59HwOK0Educvf06rPkdnw">
+                  <ownedParameter xmi:id="_JaZFIOKgEduOI6ponYIZJQ" name="req">
+                    <type xmi:type="uml:Interface" href="JavaxServlet.uml#_d2XaEuKgEduOI6ponYIZJQ"/>
+                  </ownedParameter>
+                  <raisedException xmi:type="uml:Class" href="CommonsFileupload.uml#_9hnaIuK8Edukv8xN3-i5uA"/>
+                  <raisedException xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z4We8R5BEdycUoU7n1_rLw"/>
+                  <raisedException xmi:type="uml:Class" href="j2se-1_4-headless.uml#_aElkJR5BEdycUoU7n1_rLw"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_5kM4cOKzEducvf06rPkdnw" name="Dependency1" client="_Cn1osOKfEdusoPrkeXo32Q">
+                <supplier xmi:type="uml:Class" href="Platformkit.uml#_cDksIeKzEducvf06rPkdnw"/>
+              </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_PCGO0MHCEduKcpNg9SVSYQ" name="PlatformDescription">
                 <ownedAttribute xmi:id="_Ra3AgMHDEduKcpNg9SVSYQ" name="browserID">
                   <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:id="_UA1kQMHDEduKcpNg9SVSYQ" name="platformURI">
-                  <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                <ownedAttribute xmi:id="_9ymOlOkhEduRRs5q6bLNTg" name="platformOWL" type="_DYACwOkgEduSvsosCY1j6g" association="_9ymOkOkhEduRRs5q6bLNTg">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9ymOlekhEduRRs5q6bLNTg" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9ymOlukhEduRRs5q6bLNTg" value="1"/>
                 </ownedAttribute>
               </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_b4XvcOK4Educvf06rPkdnw" name="A_PlatformkitSession_PlatformDescription" memberEnd="_b4XvceK4Educvf06rPkdnw _b4XvdOK4Educvf06rPkdnw">
+                <ownedEnd xmi:id="_b4XvceK4Educvf06rPkdnw" name="session" type="_Cn1osOKfEdusoPrkeXo32Q" aggregation="shared" association="_b4XvcOK4Educvf06rPkdnw">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b4XvcuK4Educvf06rPkdnw" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b4Xvc-K4Educvf06rPkdnw"/>
+                </ownedEnd>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_ZoiI4OK6EdupF4iz9hbLXA" name="Dependency5" client="_Cn1osOKfEdusoPrkeXo32Q">
+                <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z2bzYB5BEdycUoU7n1_rLw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_tTo9YeLBEduDvd4CuKZXNQ" name="Dependency2" client="_Cn1osOKfEdusoPrkeXo32Q">
+                <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z3uz4B5BEdycUoU7n1_rLw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_tudRIOLBEduDvd4CuKZXNQ" name="Dependency4" client="_Cn1osOKfEdusoPrkeXo32Q">
+                <supplier xmi:type="uml:Class" href="CommonsFileupload.uml#_9hrEgeK8Edukv8xN3-i5uA"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_uVmJoOLBEduDvd4CuKZXNQ" name="Dependency8" client="_Cn1osOKfEdusoPrkeXo32Q">
+                <supplier xmi:type="uml:Interface" href="CommonsFileupload.uml#_9hp2Y-K8Edukv8xN3-i5uA"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_uiFtgOLBEduDvd4CuKZXNQ" name="Dependency9" client="_Cn1osOKfEdusoPrkeXo32Q">
+                <supplier xmi:type="uml:Interface" href="CommonsFileupload.uml#_9htgwuK8Edukv8xN3-i5uA"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_uw5lkOLBEduDvd4CuKZXNQ" name="Dependency10" client="_Cn1osOKfEdusoPrkeXo32Q">
+                <supplier xmi:type="uml:Class" href="CommonsFileupload.uml#_9hwkEuK8Edukv8xN3-i5uA"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_AG-2YOj-EduA_bpJs0tPHg" name="Dependency14" client="_L7BQsOj0EduMF8bmKxtVtA">
+                <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z20N4R5BEdycUoU7n1_rLw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_L7BQsOj0EduMF8bmKxtVtA" name="PlatformDescriptionStore" clientDependency="_AG-2YOj-EduA_bpJs0tPHg _FzKrMOkAEduA_bpJs0tPHg _vxDuQB5aEdyJx7sGKFMuHQ">
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j48iEOj3EduI9ZPsX2odVg" name="PlatformDescriptionStore_getPlatformDescriptionBehavior" specification="_8ekCYOj2EduI9ZPsX2odVg">
+                  <ownedParameter xmi:id="_qSQNgOj3EduI9ZPsX2odVg" name="return" type="_PCGO0MHCEduKcpNg9SVSYQ" direction="return" effect="read"/>
+                  <ownedParameter xmi:id="_lpWrkOj-EduA_bpJs0tPHg" name="browserID">
+                    <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>Session session = HibernateUtil.getSessionFactory().getCurrentSession();&#xA;session.beginTransaction();&#xA;List ps = session.createQuery(&quot;from &quot; + PlatformDescription.class.getCanonicalName() + &quot; where browserID=&quot; + &quot;'&quot; + browserID + &quot;'&quot;).list();&#xA;Iterator e_itr = ps.iterator();&#xA;while ( e_itr.hasNext() ) {&#xA;&#x9;return (PlatformDescription) e_itr.next();&#xA;}&#xA;return null;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_3z0VEOj3EduI9ZPsX2odVg" name="PlatformDescriptionStore_storePlatformDescriptionBehavior" specification="_FpdEoOj3EduI9ZPsX2odVg">
+                  <ownedParameter xmi:id="_79KJAOj3EduI9ZPsX2odVg" name="pd" type="_PCGO0MHCEduKcpNg9SVSYQ"/>
+                  <language>java</language>
+                  <body>Session session = HibernateUtil.getSessionFactory().getCurrentSession();&#xA;session.beginTransaction();&#xA;session.save(pd);&#xA;session.getTransaction().commit();</body>
+                </ownedBehavior>
+                <ownedOperation xmi:id="_8ekCYOj2EduI9ZPsX2odVg" name="getPlatformDescription" method="_j48iEOj3EduI9ZPsX2odVg">
+                  <ownedParameter xmi:id="_9o5HgOj2EduI9ZPsX2odVg" name="return" type="_PCGO0MHCEduKcpNg9SVSYQ" direction="return" effect="read"/>
+                  <ownedParameter xmi:id="_WRGIIOj-EduA_bpJs0tPHg" name="browserID">
+                    <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                  </ownedParameter>
+                </ownedOperation>
+                <ownedOperation xmi:id="_FpdEoOj3EduI9ZPsX2odVg" name="storePlatformDescription" method="_3z0VEOj3EduI9ZPsX2odVg">
+                  <ownedParameter xmi:id="_IBvxsOj3EduI9ZPsX2odVg" name="pd" type="_PCGO0MHCEduKcpNg9SVSYQ"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_FzKrMOkAEduA_bpJs0tPHg" name="Dependency7" supplier="_IXtiAOj0EduMF8bmKxtVtA" client="_L7BQsOj0EduMF8bmKxtVtA"/>
+              <packagedElement xmi:type="uml:Association" xmi:id="_aJIewOkAEduA_bpJs0tPHg" name="Association2" memberEnd="_aJIewekAEduA_bpJs0tPHg _aJIexOkAEduA_bpJs0tPHg">
+                <ownedEnd xmi:id="_aJIewekAEduA_bpJs0tPHg" name="session" visibility="protected" type="_Cn1osOKfEdusoPrkeXo32Q" aggregation="shared" association="_aJIewOkAEduA_bpJs0tPHg">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aJIewukAEduA_bpJs0tPHg" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aJIew-kAEduA_bpJs0tPHg" value="1"/>
+                </ownedEnd>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_nCW8gOkXEduSvsosCY1j6g" name="Dependency11" client="_Cn1osOKfEdusoPrkeXo32Q">
+                <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z20N4R5BEdycUoU7n1_rLw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_DYACwOkgEduSvsosCY1j6g" name="StreamData" clientDependency="_GpxqoOkiEduRRs5q6bLNTg _yZXQAOkiEduRRs5q6bLNTg">
+                <ownedAttribute xmi:id="_bSvkoOkgEduSvsosCY1j6g" name="data">
+                  <type xmi:type="uml:DataType" href="j2se-1_4-headless.uml#_W7TNHx5DEdycUoU7n1_rLw"/>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qCSs0OkhEduRRs5q6bLNTg" name="StreamData_getInputStreamBehavior" specification="_gKYB8OkgEduSvsosCY1j6g">
+                  <ownedParameter xmi:id="_ezs4AOkiEduRRs5q6bLNTg" name="return" direction="return">
+                    <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3e8QB5BEdycUoU7n1_rLw"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>return new ByteArrayInputStream(getData());</body>
+                </ownedBehavior>
+                <interfaceRealization xmi:id="_GpxqoOkiEduRRs5q6bLNTg" name="InterfaceRealization1" client="_DYACwOkgEduSvsosCY1j6g">
+                  <supplier xmi:type="uml:Interface" href="j2se-1_4-headless.uml#_Z2e2sB5BEdycUoU7n1_rLw"/>
+                  <contract href="j2se-1_4-headless.uml#_Z2e2sB5BEdycUoU7n1_rLw"/>
+                </interfaceRealization>
+                <ownedOperation xmi:id="_gKYB8OkgEduSvsosCY1j6g" name="getInputStream" method="_qCSs0OkhEduRRs5q6bLNTg">
+                  <ownedParameter xmi:id="_QCdtwOkhEduRRs5q6bLNTg" name="return" direction="return">
+                    <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3e8QB5BEdycUoU7n1_rLw"/>
+                  </ownedParameter>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_9ymOkOkhEduRRs5q6bLNTg" name="Association1" memberEnd="_9ymOkekhEduRRs5q6bLNTg _9ymOlOkhEduRRs5q6bLNTg">
+                <ownedEnd xmi:id="_9ymOkekhEduRRs5q6bLNTg" name="owner" type="_PCGO0MHCEduKcpNg9SVSYQ" aggregation="composite" association="_9ymOkOkhEduRRs5q6bLNTg">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9ymOkukhEduRRs5q6bLNTg" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9ymOk-khEduRRs5q6bLNTg"/>
+                </ownedEnd>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_yZXQAOkiEduRRs5q6bLNTg" name="Dependency15" client="_DYACwOkgEduSvsosCY1j6g">
+                <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z2bzYB5BEdycUoU7n1_rLw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_vxDuQB5aEdyJx7sGKFMuHQ" name="Dependency3" client="_L7BQsOj0EduMF8bmKxtVtA">
+                <supplier xmi:type="uml:Interface" href="hibernate3.uml#_g2JOIh5aEdyJx7sGKFMuHQ"/>
+              </packagedElement>
             </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_IXtiAOj0EduMF8bmKxtVtA" name="hibernate"/>
           </packagedElement>
         </packagedElement>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:id="_McpgcMHLEduY-PgkT4NtFg">
       <eAnnotations xmi:id="_McpgccHLEduY-PgkT4NtFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="Persistence.profile.uml#_P3jMguH1EduyTvOzMjLxxQ"/>
+        <references xmi:type="ecore:EPackage" href="Persistence.profile.uml#_41QTUeKpEduy-KDtqDHB8g"/>
       </eAnnotations>
       <appliedProfile href="Persistence.profile.uml#_ZE1lcMHKEduY-PgkT4NtFg"/>
     </profileApplication>
+    <profileApplication xmi:id="_A75O0OKgEduOI6ponYIZJQ">
+      <eAnnotations xmi:id="_A8Dm4OKgEduOI6ponYIZJQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
   </uml:Model>
-  <Persistence:Persistent xmi:id="_xzo3gOH1EduyTvOzMjLxxQ" id="_Ra3AgMHDEduKcpNg9SVSYQ" base_Class="_PCGO0MHCEduKcpNg9SVSYQ"/>
+  <Persistence:Persistent xmi:id="_BzARcOKqEduy-KDtqDHB8g" id="_Ra3AgMHDEduKcpNg9SVSYQ" base_Class="_PCGO0MHCEduKcpNg9SVSYQ"/>
+  <Standard:Create xmi:id="_FBHXwOKgEduOI6ponYIZJQ" base_BehavioralFeature="_C9sHcOKgEduOI6ponYIZJQ"/>
+  <Standard:Create xmi:id="_3GBiUOj0EduMF8bmKxtVtA"/>
 </xmi:XMI>

@@ -1,5 +1,6 @@
 -- @atlcompiler atl2006
 -- Generates a build.xml file from a Transformations.ecore config file
+-- $Id$
 module ConfigToBuildFile; --extends ConfigToBuildFile from uml2cs-transformations
 
 create OUT : XML from IN : CFG;
@@ -49,7 +50,7 @@ rule PlatformKitWeb(c : CFG!transformations::TransformationConfig) {
 			thisModule->LoadModel('inModel', 'UML2', thisModule.ModelPath + '/PlatformKitWeb.uml'),
 			thisModule->TransformInvocation('inModel', 'im'),
 			thisModule->LoadURIModel('HBM', 'MOF', thisModule.HibernateMapping30URI),
-			thisModule->MacroInvocation('generateHibernateMapping', 'inModel', 'outHBM', c.targetPath + '/PlatformKitWeb')
+			thisModule->MacroInvocation('generateHibernateMapping', 'inModel', 'outHBM', '/' + c.targetPath + '/PlatformKitWeb.hibernatemapping30')
 		}),
 	   targetName : XML!XML::Attribute(
 	   	name <- 'name',
