@@ -1,0 +1,100 @@
+package be.ac.vub.platformkit.java.popup.util;
+
+import org.eclipse.jface.dialogs.MessageDialog;
+
+import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
+
+public class MessageDialogRunnable implements Runnable {
+	
+	public static final int MODE_ERROR       = 1;
+	public static final int MODE_INFORMATION = 2;
+	public static final int MODE_WARNING     = 4;
+	
+    private String title = null;
+    private String message = null;
+    private int mode = MODE_INFORMATION;
+
+    /**
+     * Creates a new ConstraintListsDialogRunnable.
+     * @param title The dialog title.
+     * @param message The dialog message.
+     */
+    public MessageDialogRunnable(String title, String message) {
+        setTitle(title);
+        setMessage(message);
+    }
+
+    /**
+     * Creates a new ConstraintListsDialogRunnable.
+     * @param title The dialog title.
+     * @param message The dialog message.
+     * @param mode The dialog mode.
+     */
+    public MessageDialogRunnable(String title, String message, int mode) {
+        setTitle(title);
+        setMessage(message);
+        setMode(mode);
+    }
+
+    public void run() {
+    	switch (mode) {
+    	case MODE_ERROR:
+            MessageDialog.openError(
+            		PlatformkitJavaPlugin.getPlugin().getShell(), 
+                    getTitle(), getMessage());
+    		break;
+    	case MODE_INFORMATION:
+            MessageDialog.openInformation(
+            		PlatformkitJavaPlugin.getPlugin().getShell(), 
+                    getTitle(), getMessage());
+    		break;
+    	case MODE_WARNING:
+            MessageDialog.openWarning(
+            		PlatformkitJavaPlugin.getPlugin().getShell(), 
+                    getTitle(), getMessage());
+    		break;
+    	}
+    }
+
+    /**
+     * @param title The title to set.
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * @return Returns the title.
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * @param message The message to set.
+     */
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    /**
+     * @return Returns the message.
+     */
+    public String getMessage() {
+        return message;
+    }
+
+	/**
+	 * @return the mode
+	 */
+	public int getMode() {
+		return mode;
+	}
+
+	/**
+	 * @param mode the mode to set
+	 */
+	public void setMode(int mode) {
+		this.mode = mode;
+	}
+}

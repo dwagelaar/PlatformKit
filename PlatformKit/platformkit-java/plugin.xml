@@ -5,5 +5,73 @@
          point="be.ac.vub.platformkit.ontology">
       <ontology provider="be.ac.vub.platformkit.java.JavaOntologyProvider"/>
    </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="be.ac.vub.platformkit.java.contribution1"
+            nameFilter="*.uml"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="be.ac.vub.platformkit.java.menu1"
+               label="PlatformKit"
+               path="additions">
+            <separator name="group1"/>
+         </menu>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.J2MEMIDP1_0CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.j2memidp1_0CompatAction"
+               label="Determine compatibility with J2ME MIDP 1.0"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.PersonalJava1_1CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.personaljava1_1CompatAction"
+               label="Determine compatibility with Personal Java 1.1"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.J2MEPP1_0CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.j2mepp1_0CompatAction"
+               label="Determine compatibility with J2ME PP 1.0"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.J2SE1_6CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.j2se1_6CompatAction"
+               label="Determine compatibility with J2SE 1.6"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.J2SE1_5CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.j2se1_5CompatAction"
+               label="Determine compatibility with J2SE 1.5"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.J2SE1_4CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.j2se1_4CompatAction"
+               label="Determine compatibility with J2SE 1.4"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.J2SE1_3CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.j2se1_3CompatAction"
+               label="Determine compatibility with J2SE 1.3"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.J2SE1_2CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.j2se1_2CompatAction"
+               label="Determine compatibility with J2SE 1.2"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.JDK1_1CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.jdk1_1CompatAction"
+               label="Determine compatibility with JDK 1.1"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+      </objectContribution>
+   </extension>
 
 </plugin>
