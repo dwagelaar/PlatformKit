@@ -19,7 +19,7 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql:///platformkit</property>
         <property name="connection.username">platformkit</property>
-        <property name="connection.password">Uc+68oid</property>
+        <property name="connection.password"></property>
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
