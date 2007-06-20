@@ -182,7 +182,7 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
      */
     protected void runAction(IProgressMonitor monitor)
     throws Exception {
-        monitor.beginTask("Classifying Taxonomy", 8);
+        monitor.beginTask("Classifying Taxonomy", 9);
         Ontologies ont = space.getKnowledgeBase();
         if (ont == null) {
             monitor.subTask("Loading source ontologies...");
