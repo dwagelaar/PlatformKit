@@ -77,7 +77,7 @@
               enablesFor="1"
               icon="icons/full/obj16/complete_tsk.gif"
               id="be.ac.vub.platformkit.editor.actions.Validate"
-              label="Validate Against Concrete Platform"
+              label="Validate Against Concrete Platform..."
               menubarPath="additions"/>
         <action
               class="be.ac.vub.platformkit.presentation.popup.action.SortLeastSpecificFirst"
