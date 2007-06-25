@@ -8,7 +8,7 @@ import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
@@ -35,7 +35,7 @@ public class PlatformkitPreferencePage
 	public PlatformkitPreferencePage() {
 		super(GRID);
 		setPreferenceStore(PlatformkitEditorPlugin.getPlugin().getPreferenceStore());
-		setDescription("PlatformKit preferences");
+		setDescription("PlatformKit preferences:\n");
 	}
 	
 	/**
@@ -45,22 +45,25 @@ public class PlatformkitPreferencePage
 	 * restore itself.
 	 */
 	public void createFieldEditors() {
-		Group reasonerGroup = new Group(getFieldEditorParent(), SWT.SHADOW_ETCHED_IN);
-		reasonerGroup.setText("OWL DL reasoner");
-		reasonerGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-
-		addField(new RadioGroupFieldEditor(
+		RadioGroupFieldEditor reasoner = new RadioGroupFieldEditor(
 				PreferenceConstants.P_REASONER,
-				"Select OWL DL reasoner to use:",
+				"OWL DL reasoner",
 				1,
 				new String[][] { 
-						{ "&Built-in Pellet 1.3 reasoner", "builtin" }, 
+						{ "&Built-in Pellet reasoner", "builtin" }, 
 						{ "&DIG reasoner", "dig" } },
-				reasonerGroup));
+				getFieldEditorParent(),
+                true);
+        addField(reasoner);
 
+        Composite reasonerUrlContainer = new Composite(
+                reasoner.getRadioBoxControl(getFieldEditorParent()), 
+                SWT.NONE);
+        reasonerUrlContainer.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
+        
 		StringFieldEditor reasonerUrl = new StringFieldEditor(
 				PreferenceConstants.P_DIG_URL, "\tDIG reasoner &URL:",
-				reasonerGroup) {
+				reasonerUrlContainer) {
 
 					/* (non-Javadoc)
 					 * @see org.eclipse.jface.preference.StringFieldEditor#doCheckState()
