@@ -10,32 +10,30 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:units="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#"
     xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
-    xmlns:j2se-1_5="http://ssel.vub.ac.be/codamos/2007/01/j2se-1_5-api.owl#"
+    xmlns:j2se-1_2="http://ssel.vub.ac.be/codamos/2007/01/j2se-1_2-api.owl#"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns="http://local/JDK1.5PC.owl#"
-  xml:base="http://local/JDK1.5PC.owl">
+    xmlns="http://local/JDK1.2PC.owl#"
+  xml:base="http://local/JDK1.2PC.owl">
   <owl:Ontology rdf:about="">
-    <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/j2se-1_5-api.owl"/>
+    <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/j2se-1_2-api.owl"/>
   </owl:Ontology>
-  <java:JavaWebStart rdf:ID="jdk1.5JavaWebStart"/>
-  <j2se-1_5:J2se-1_5ClassLibrary rdf:ID="jdk1.5ClassLibrary">
+  <j2se-1_2:J2se-1_2ClassLibrary rdf:ID="jdk1.2ClassLibrary">
     <java:isBuiltinJavaLibraryFor>
-      <j2se-1_5:J2se-1_5 rdf:ID="jdk1.5">
-        <java:providesJavaPackageManager rdf:resource="#jdk1.5JavaWebStart"/>
+      <j2se-1_2:J2se-1_2 rdf:ID="jdk1.2">
         <java:providesJavaPackageManager>
-          <java:JavaWebApplet rdf:ID="jdk1.5JavaWebApplet"/>
+          <java:JavaWebApplet rdf:ID="jdk1.2JavaWebApplet"/>
         </java:providesJavaPackageManager>
-        <java:providesBuiltinJavaLibrary rdf:resource="#jdk1.5ClassLibrary"/>
+        <java:providesBuiltinJavaLibrary rdf:resource="#jdk1.2ClassLibrary"/>
         <java:providesJavaVM>
-          <java:JavaVM rdf:ID="jdk1.5HotSpotVM">
-            <java:supportsBytecodeFormat rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#theJava5BytecodeFormat"/>
+          <java:JavaVM rdf:ID="jdk1.2HotSpotVM">
+            <java:supportsBytecodeFormat rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#theJava1.2BytecodeFormat"/>
           </java:JavaVM>
         </java:providesJavaVM>
-      </j2se-1_5:J2se-1_5>
+      </j2se-1_2:J2se-1_2>
     </java:isBuiltinJavaLibraryFor>
-  </j2se-1_5:J2se-1_5ClassLibrary>
+  </j2se-1_2:J2se-1_2ClassLibrary>
   <platform:Platform rdf:ID="pc">
-    <platform:providesSoftware rdf:resource="#jdk1.5"/>
+    <platform:providesSoftware rdf:resource="#jdk1.2"/>
   </platform:Platform>
 </rdf:RDF>
 
