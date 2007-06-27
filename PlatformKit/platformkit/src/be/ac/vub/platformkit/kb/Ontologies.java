@@ -411,29 +411,29 @@ public class Ontologies {
      * @throws IOException if the local ontology mapping could not be read.
      */
     private void addLocalOntologies(OntDocumentManager dm) throws IOException {
-    	addLocalOntologies(dm, BaseOntologyProvider.INSTANCE);
-		IExtensionRegistry registry = Platform.getExtensionRegistry();
+        addLocalOntologies(dm, BaseOntologyProvider.INSTANCE);
+        IExtensionRegistry registry = Platform.getExtensionRegistry();
         if (registry == null) {
-        	logger.info("Eclipse platform extension registry not found. Local ontology registration does not work outside Eclipse.");
-        	return;
+            logger.info("Eclipse platform extension registry not found. Local ontology registration does not work outside Eclipse.");
+            return;
         }
-		IExtensionPoint point = registry.getExtensionPoint(ONTOLOGY_EXT_POINT);
-		IExtension[] extensions = point.getExtensions();
-		for (int i = 0 ; i < extensions.length ; i++) {
-			IConfigurationElement[] elements = extensions[i].getConfigurationElements();
-			for (int j = 0 ; j < elements.length ; j++) {
-				try {
-					IOntologyProvider provider = (IOntologyProvider)
-						elements[j].createExecutableExtension("provider");
-					InputStream[] streams = provider.getOntologies();
-					for (int k = 0; k < streams.length; k++) {
-						addLocalOntology(dm, streams[k]);
-					}
-				} catch (CoreException e) {
-					throw new IOException(e.getLocalizedMessage());
-				}
-			}
-		 }
+        IExtensionPoint point = registry.getExtensionPoint(ONTOLOGY_EXT_POINT);
+        IExtension[] extensions = point.getExtensions();
+        for (int i = 0 ; i < extensions.length ; i++) {
+            IConfigurationElement[] elements = extensions[i].getConfigurationElements();
+            for (int j = 0 ; j < elements.length ; j++) {
+                try {
+                    IOntologyProvider provider = (IOntologyProvider)
+                    elements[j].createExecutableExtension("provider");
+                    InputStream[] streams = provider.getOntologies();
+                    for (int k = 0; k < streams.length; k++) {
+                        addLocalOntology(dm, streams[k]);
+                    }
+                } catch (CoreException e) {
+                    throw new IOException(e.getLocalizedMessage());
+                }
+            }
+        }
     }
     
     /**
