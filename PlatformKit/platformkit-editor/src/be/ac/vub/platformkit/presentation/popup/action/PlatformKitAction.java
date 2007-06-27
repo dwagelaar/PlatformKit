@@ -1,5 +1,6 @@
 package be.ac.vub.platformkit.presentation.popup.action;
 
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Logger;
 
@@ -27,8 +28,8 @@ import org.eclipse.ui.WorkbenchException;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.kb.Ontologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
-import be.ac.vub.platformkit.presentation.util.FileDialogRunnable;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
+import be.ac.vub.platformkit.presentation.util.PlatformSpecDialogRunnable;
 
 /**
  * Abstract right-click action with progress monitor class.
@@ -165,7 +166,7 @@ public abstract class PlatformKitAction implements IObjectActionDelegate {
 	 */
 	protected boolean getPlatform(ConstraintSpace space) throws CoreException {
 	    boolean loaded = false;
-	    FileDialogRunnable dlg = new FileDialogRunnable("Load Context");
+	    PlatformSpecDialogRunnable dlg = new PlatformSpecDialogRunnable("Load platform specification");
         if (filter != null) {
             dlg.setFilter(filter);
         }
@@ -177,7 +178,10 @@ public abstract class PlatformKitAction implements IObjectActionDelegate {
 	                IFile file = (IFile) filenames[i];
 	                space.getKnowledgeBase().loadInstances(file.getContents());
 	                loaded = true;
-	            }
+	            } else if (filenames[i] instanceof InputStream) {
+                    space.getKnowledgeBase().loadInstances((InputStream) filenames[i]);
+                    loaded = true;
+                }
 	        }
 	    }
 	    return loaded;

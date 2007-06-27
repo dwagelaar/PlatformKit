@@ -13,9 +13,9 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 
 public class FileDialogRunnable implements Runnable {
-    private String title = "Select Resources";
-    private String message;
-    private Object[] result = null;
+    protected String title = "Select Resources";
+    protected String message;
+    protected Object[] result = null;
     private ViewerFilter filter = null;
 
     /**

@@ -88,9 +88,9 @@ public class Validate extends ConstraintSpaceAction {
 	        ont.attachPelletReasoner();
 		}
         worked(monitor);
-        monitor.subTask("Getting context specification...");
+        monitor.subTask("Retrieving platform specification...");
         if (!getPlatform(space)) {
-            throw new IllegalArgumentException("Must specify a concrete context for validation");
+            throw new IllegalArgumentException("Must specify a concrete platform for validation");
         }
         worked(monitor);
         monitor.subTask("Retrieving intersection set...");
