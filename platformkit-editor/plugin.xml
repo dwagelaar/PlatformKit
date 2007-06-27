@@ -9,6 +9,7 @@
 -->
 
 <plugin>
+   <extension-point id="platformSpec" name="Platform Specification" schema="schema/platformSpec.exsd"/>
 
 
   <extension

@@ -41,6 +41,9 @@ import com.hp.hpl.jena.eclipse.JenaPlugin;
  * @generated
  */
 public final class PlatformkitEditorPlugin extends EMFPlugin {
+    
+    public static final String PLATFORMSPEC_EXT_POINT = "be.ac.vub.platformkit.editor.platformSpec";
+    
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

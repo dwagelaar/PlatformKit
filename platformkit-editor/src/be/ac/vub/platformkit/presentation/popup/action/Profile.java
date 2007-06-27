@@ -150,7 +150,7 @@ public class Profile extends PlatformKitAction {
             worked(monitor);
             worked(monitor);
         }
-        monitor.subTask("Getting platform specification...");
+        monitor.subTask("Retrieving platform specification...");
         if (getPlatform(space)) {
             worked(monitor);
             monitor.subTask("Retrieving intersection set...");
