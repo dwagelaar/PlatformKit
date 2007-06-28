@@ -1,0 +1,153 @@
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::util compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::util equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang::ref compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang::ref equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::io compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::io equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::io compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::io equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::pki compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::pki equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui::game compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui::game equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::midlet compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::midlet equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::rms compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::rms equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::protocol compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::protocol equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::control compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::control equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0 compatible models: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaUtilLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::util referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaLangLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang referenced packages: Set {J2ME-MIDP-2_0!io}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaLangRefLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang::ref referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaIoLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::io referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionIoLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::io referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!io, J2ME-MIDP-2_0!pki}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionPkiLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::pki referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!io}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionLcduiLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!io, J2ME-MIDP-2_0!midlet, J2ME-MIDP-2_0!util}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionLcduiGameLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui::game referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!lcdui}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionMidletLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::midlet referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionRmsLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::rms referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionMediaLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!protocol, J2ME-MIDP-2_0!io}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionMediaProtocolLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::protocol referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!media}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionMediaControlLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::control referenced packages: Set {J2ME-MIDP-2_0!media}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::util compatible packages: Sequence {J2ME-MIDP-1_0!util}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::util::Calendar misses features compatible with : Sequence {J2ME-MIDP-2_0!fields, J2ME-MIDP-2_0!isSet, J2ME-MIDP-2_0!time, J2ME-MIDP-2_0!computeFields, J2ME-MIDP-2_0!computeTime}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::util::Random misses features compatible with : Sequence {J2ME-MIDP-2_0!nextInt, J2ME-MIDP-2_0!nextFloat, J2ME-MIDP-2_0!nextDouble}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::util misses classifiers compatible with : Sequence {J2ME-MIDP-2_0!Calendar, J2ME-MIDP-2_0!Random}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::util equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang compatible packages: Sequence {J2ME-MIDP-1_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::lang::String misses features compatible with : Sequence {J2ME-MIDP-2_0!equalsIgnoreCase, J2ME-MIDP-2_0!valueOf, J2ME-MIDP-2_0!valueOf, J2ME-MIDP-2_0!intern}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::lang::StringBuffer misses features compatible with : Sequence {J2ME-MIDP-2_0!append, J2ME-MIDP-2_0!append, J2ME-MIDP-2_0!insert, J2ME-MIDP-2_0!insert}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::lang::Boolean misses features compatible with : Sequence {J2ME-MIDP-2_0!TRUE, J2ME-MIDP-2_0!FALSE}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::lang::Long misses features compatible with : Sequence {J2ME-MIDP-2_0!floatValue, J2ME-MIDP-2_0!doubleValue}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::lang::Integer misses features compatible with : Sequence {J2ME-MIDP-2_0!floatValue, J2ME-MIDP-2_0!doubleValue}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::lang::Math misses features compatible with : Sequence {J2ME-MIDP-2_0!E, J2ME-MIDP-2_0!PI, J2ME-MIDP-2_0!sin, J2ME-MIDP-2_0!cos, J2ME-MIDP-2_0!tan, J2ME-MIDP-2_0!toRadians, J2ME-MIDP-2_0!toDegrees, J2ME-MIDP-2_0!sqrt, J2ME-MIDP-2_0!ceil, J2ME-MIDP-2_0!floor, J2ME-MIDP-2_0!abs, J2ME-MIDP-2_0!abs, J2ME-MIDP-2_0!max, J2ME-MIDP-2_0!max, J2ME-MIDP-2_0!min, J2ME-MIDP-2_0!min}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::lang::Thread misses features compatible with : Sequence {J2ME-MIDP-2_0!<init>, J2ME-MIDP-2_0!<init>, J2ME-MIDP-2_0!interrupt, J2ME-MIDP-2_0!getName}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::lang misses classifiers compatible with : Sequence {J2ME-MIDP-2_0!String, J2ME-MIDP-2_0!StringBuffer, J2ME-MIDP-2_0!Float, J2ME-MIDP-2_0!Boolean, J2ME-MIDP-2_0!Double, J2ME-MIDP-2_0!Long, J2ME-MIDP-2_0!Integer, J2ME-MIDP-2_0!Math, J2ME-MIDP-2_0!NoClassDefFoundError, J2ME-MIDP-2_0!Thread}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang::ref compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang::ref equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::io compatible packages: Sequence {J2ME-MIDP-1_0!io}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::io::DataInput misses features compatible with : Sequence {J2ME-MIDP-2_0!readFloat, J2ME-MIDP-2_0!readDouble}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::io::DataOutputStream misses features compatible with : Sequence {J2ME-MIDP-2_0!writeFloat, J2ME-MIDP-2_0!writeDouble, J2ME-MIDP-2_0!writeDouble, J2ME-MIDP-2_0!writeFloat}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::io::DataOutput misses features compatible with : Sequence {J2ME-MIDP-2_0!writeFloat, J2ME-MIDP-2_0!writeDouble}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::io::DataInputStream misses features compatible with : Sequence {J2ME-MIDP-2_0!readFloat, J2ME-MIDP-2_0!readDouble, J2ME-MIDP-2_0!readFloat, J2ME-MIDP-2_0!readDouble}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::io::PrintStream misses features compatible with : Sequence {J2ME-MIDP-2_0!print, J2ME-MIDP-2_0!print, J2ME-MIDP-2_0!println, J2ME-MIDP-2_0!println}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::java::io misses classifiers compatible with : Sequence {J2ME-MIDP-2_0!DataInput, J2ME-MIDP-2_0!DataOutputStream, J2ME-MIDP-2_0!DataOutput, J2ME-MIDP-2_0!DataInputStream, J2ME-MIDP-2_0!PrintStream}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::io equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::io compatible packages: Sequence {J2ME-MIDP-1_0!io}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::io::Datagram misses features compatible with : Sequence {J2ME-MIDP-2_0!writeDouble, J2ME-MIDP-2_0!readDouble, J2ME-MIDP-2_0!readFloat, J2ME-MIDP-2_0!writeFloat, J2ME-MIDP-2_0!writeDouble, J2ME-MIDP-2_0!readDouble, J2ME-MIDP-2_0!readFloat, J2ME-MIDP-2_0!writeFloat}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::io misses classifiers compatible with : Sequence {J2ME-MIDP-2_0!Datagram, J2ME-MIDP-2_0!PushRegistry, J2ME-MIDP-2_0!SocketConnection, J2ME-MIDP-2_0!ServerSocketConnection, J2ME-MIDP-2_0!CommConnection, J2ME-MIDP-2_0!SecurityInfo, J2ME-MIDP-2_0!UDPDatagramConnection, J2ME-MIDP-2_0!HttpsConnection, J2ME-MIDP-2_0!SecureConnection}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::io equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::pki compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::pki equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui compatible packages: Sequence {J2ME-MIDP-1_0!lcdui}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Display misses features compatible with : Sequence {J2ME-MIDP-2_0!LIST_ELEMENT, J2ME-MIDP-2_0!CHOICE_GROUP_ELEMENT, J2ME-MIDP-2_0!ALERT, J2ME-MIDP-2_0!COLOR_BACKGROUND, J2ME-MIDP-2_0!COLOR_FOREGROUND, J2ME-MIDP-2_0!COLOR_HIGHLIGHTED_BACKGROUND, J2ME-MIDP-2_0!COLOR_HIGHLIGHTED_FOREGROUND, J2ME-MIDP-2_0!COLOR_BORDER, J2ME-MIDP-2_0!COLOR_HIGHLIGHTED_BORDER, J2ME-MIDP-2_0!getColor, J2ME-MIDP-2_0!getBorderStyle, J2ME-MIDP-2_0!numAlphaLevels, J2ME-MIDP-2_0!setCurrentItem, J2ME-MIDP-2_0!flashBacklight, J2ME-MIDP-2_0!vibrate, J2ME-MIDP-2_0!getBestImageWidth, J2ME-MIDP-2_0!getBestImageHeight}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Displayable misses features compatible with : Sequence {J2ME-MIDP-2_0!getTitle, J2ME-MIDP-2_0!setTitle, J2ME-MIDP-2_0!getTicker, J2ME-MIDP-2_0!setTicker, J2ME-MIDP-2_0!getWidth, J2ME-MIDP-2_0!getHeight, J2ME-MIDP-2_0!sizeChanged}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Image misses features compatible with : Sequence {J2ME-MIDP-2_0!createImage, J2ME-MIDP-2_0!createImage, J2ME-MIDP-2_0!createRGBImage, J2ME-MIDP-2_0!getRGB}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Item misses features compatible with : Sequence {J2ME-MIDP-2_0!LAYOUT_DEFAULT, J2ME-MIDP-2_0!LAYOUT_LEFT, J2ME-MIDP-2_0!LAYOUT_RIGHT, J2ME-MIDP-2_0!LAYOUT_CENTER, J2ME-MIDP-2_0!LAYOUT_TOP, J2ME-MIDP-2_0!LAYOUT_BOTTOM, J2ME-MIDP-2_0!LAYOUT_VCENTER, J2ME-MIDP-2_0!LAYOUT_NEWLINE_BEFORE, J2ME-MIDP-2_0!LAYOUT_NEWLINE_AFTER, J2ME-MIDP-2_0!LAYOUT_SHRINK, J2ME-MIDP-2_0!LAYOUT_EXPAND, J2ME-MIDP-2_0!LAYOUT_VSHRINK, J2ME-MIDP-2_0!LAYOUT_VEXPAND, J2ME-MIDP-2_0!LAYOUT_2, J2ME-MIDP-2_0!PLAIN, J2ME-MIDP-2_0!HYPERLINK, J2ME-MIDP-2_0!BUTTON, J2ME-MIDP-2_0!getLayout, J2ME-MIDP-2_0!setLayout, J2ME-MIDP-2_0!addCommand, J2ME-MIDP-2_0!removeCommand, J2ME-MIDP-2_0!setItemCommandListener, J2ME-MIDP-2_0!getPreferredWidth, J2ME-MIDP-2_0!getPreferredHeight, J2ME-MIDP-2_0!setPreferredSize, J2ME-MIDP-2_0!getMinimumWidth, J2ME-MIDP-2_0!getMinimumHeight, J2ME-MIDP-2_0!setDefaultCommand, J2ME-MIDP-2_0!notifyStateChanged}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Command misses features compatible with : Sequence {J2ME-MIDP-2_0!<init>, J2ME-MIDP-2_0!getLongLabel}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Font misses features compatible with : Sequence {J2ME-MIDP-2_0!FONT_STATIC_TEXT, J2ME-MIDP-2_0!FONT_INPUT_TEXT, J2ME-MIDP-2_0!getFont}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Graphics misses features compatible with : Sequence {J2ME-MIDP-2_0!drawRegion, J2ME-MIDP-2_0!copyArea, J2ME-MIDP-2_0!fillTriangle, J2ME-MIDP-2_0!drawRGB, J2ME-MIDP-2_0!getDisplayColor}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Screen misses features compatible with : Sequence {J2ME-MIDP-2_0!getWidth, J2ME-MIDP-2_0!sizeChanged, J2ME-MIDP-2_0!getHeight}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Alert misses features compatible with : Sequence {J2ME-MIDP-2_0!DISMISS_COMMAND, J2ME-MIDP-2_0!setIndicator, J2ME-MIDP-2_0!getIndicator, J2ME-MIDP-2_0!getWidth, J2ME-MIDP-2_0!sizeChanged, J2ME-MIDP-2_0!getHeight}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Gauge misses features compatible with : Sequence {J2ME-MIDP-2_0!INDEFINITE, J2ME-MIDP-2_0!CONTINUOUS_IDLE, J2ME-MIDP-2_0!INCREMENTAL_IDLE, J2ME-MIDP-2_0!CONTINUOUS_RUNNING, J2ME-MIDP-2_0!INCREMENTAL_UPDATING, J2ME-MIDP-2_0!setLayout, J2ME-MIDP-2_0!addCommand, J2ME-MIDP-2_0!setItemCommandListener, J2ME-MIDP-2_0!setPreferredSize, J2ME-MIDP-2_0!setDefaultCommand, J2ME-MIDP-2_0!getMinimumWidth, J2ME-MIDP-2_0!removeCommand, J2ME-MIDP-2_0!LAYOUT_VSHRINK, J2ME-MIDP-2_0!setDefaultCommand, J2ME-MIDP-2_0!LAYOUT_SHRINK, J2ME-MIDP-2_0!LAYOUT_VEXPAND, J2ME-MIDP-2_0!LAYOUT_CENTER, J2ME-MIDP-2_0!LAYOUT_NEWLINE_BEFORE, J2ME-MIDP-2_0!LAYOUT_VCENTER, J2ME-MIDP-2_0!LAYOUT_TOP, J2ME-MIDP-2_0!notifyStateChanged, J2ME-MIDP-2_0!getPreferredWidth, J2ME-MIDP-2_0!BUTTON, J2ME-MIDP-2_0!setPreferredSize, J2ME-MIDP-2_0!LAYOUT_BOTTOM, J2ME-MIDP-2_0!getLayout, J2ME-MIDP-2_0!LAYOUT_NEWLINE_AFTER, J2ME-MIDP-2_0!LAYOUT_EXPAND, J2ME-MIDP-2_0!addCommand, J2ME-MIDP-2_0!getPreferredHeight, J2ME-MIDP-2_0!LAYOUT_LEFT, J2ME-MIDP-2_0!LAYOUT_DEFAULT, J2ME-MIDP-2_0!HYPERLINK, J2ME-MIDP-2_0!PLAIN, J2ME-MIDP-2_0!setLayout, J2ME-MIDP-2_0!LAYOUT_RIGHT, J2ME-MIDP-2_0!getMinimumHeight, J2ME-MIDP-2_0!setItemCommandListener, J2ME-MIDP-2_0!LAYOUT_2}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Canvas misses features compatible with : Sequence {J2ME-MIDP-2_0!setFullScreenMode, J2ME-MIDP-2_0!sizeChanged, J2ME-MIDP-2_0!sizeChanged, J2ME-MIDP-2_0!getTitle, J2ME-MIDP-2_0!setTicker, J2ME-MIDP-2_0!setTitle, J2ME-MIDP-2_0!getTicker}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Choice misses features compatible with : Sequence {J2ME-MIDP-2_0!POPUP, J2ME-MIDP-2_0!TEXT_WRAP_DEFAULT, J2ME-MIDP-2_0!TEXT_WRAP_ON, J2ME-MIDP-2_0!TEXT_WRAP_OFF, J2ME-MIDP-2_0!deleteAll, J2ME-MIDP-2_0!setFitPolicy, J2ME-MIDP-2_0!getFitPolicy, J2ME-MIDP-2_0!setFont, J2ME-MIDP-2_0!getFont}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::StringItem misses features compatible with : Sequence {J2ME-MIDP-2_0!<init>, J2ME-MIDP-2_0!getAppearanceMode, J2ME-MIDP-2_0!setFont, J2ME-MIDP-2_0!getFont, J2ME-MIDP-2_0!setPreferredSize, J2ME-MIDP-2_0!getMinimumWidth, J2ME-MIDP-2_0!removeCommand, J2ME-MIDP-2_0!LAYOUT_VSHRINK, J2ME-MIDP-2_0!setDefaultCommand, J2ME-MIDP-2_0!LAYOUT_SHRINK, J2ME-MIDP-2_0!LAYOUT_VEXPAND, J2ME-MIDP-2_0!LAYOUT_CENTER, J2ME-MIDP-2_0!LAYOUT_NEWLINE_BEFORE, J2ME-MIDP-2_0!LAYOUT_VCENTER, J2ME-MIDP-2_0!LAYOUT_TOP, J2ME-MIDP-2_0!notifyStateChanged, J2ME-MIDP-2_0!getPreferredWidth, J2ME-MIDP-2_0!BUTTON, J2ME-MIDP-2_0!setPreferredSize, J2ME-MIDP-2_0!LAYOUT_BOTTOM, J2ME-MIDP-2_0!getLayout, J2ME-MIDP-2_0!LAYOUT_NEWLINE_AFTER, J2ME-MIDP-2_0!LAYOUT_EXPAND, J2ME-MIDP-2_0!addCommand, J2ME-MIDP-2_0!getPreferredHeight, J2ME-MIDP-2_0!LAYOUT_LEFT, J2ME-MIDP-2_0!LAYOUT_DEFAULT, J2ME-MIDP-2_0!HYPERLINK, J2ME-MIDP-2_0!PLAIN, J2ME-MIDP-2_0!setLayout, J2ME-MIDP-2_0!LAYOUT_RIGHT, J2ME-MIDP-2_0!getMinimumHeight, J2ME-MIDP-2_0!setItemCommandListener, J2ME-MIDP-2_0!LAYOUT_2}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::ChoiceGroup misses features compatible with : Sequence {J2ME-MIDP-2_0!deleteAll, J2ME-MIDP-2_0!setFitPolicy, J2ME-MIDP-2_0!getFitPolicy, J2ME-MIDP-2_0!setFont, J2ME-MIDP-2_0!getFont, J2ME-MIDP-2_0!getMinimumWidth, J2ME-MIDP-2_0!removeCommand, J2ME-MIDP-2_0!LAYOUT_VSHRINK, J2ME-MIDP-2_0!setDefaultCommand, J2ME-MIDP-2_0!LAYOUT_SHRINK, J2ME-MIDP-2_0!LAYOUT_VEXPAND, J2ME-MIDP-2_0!LAYOUT_CENTER, J2ME-MIDP-2_0!LAYOUT_NEWLINE_BEFORE, J2ME-MIDP-2_0!LAYOUT_VCENTER, J2ME-MIDP-2_0!LAYOUT_TOP, J2ME-MIDP-2_0!notifyStateChanged, J2ME-MIDP-2_0!getPreferredWidth, J2ME-MIDP-2_0!BUTTON, J2ME-MIDP-2_0!setPreferredSize, J2ME-MIDP-2_0!LAYOUT_BOTTOM, J2ME-MIDP-2_0!getLayout, J2ME-MIDP-2_0!LAYOUT_NEWLINE_AFTER, J2ME-MIDP-2_0!LAYOUT_EXPAND, J2ME-MIDP-2_0!addCommand, J2ME-MIDP-2_0!getPreferredHeight, J2ME-MIDP-2_0!LAYOUT_LEFT, J2ME-MIDP-2_0!LAYOUT_DEFAULT, J2ME-MIDP-2_0!HYPERLINK, J2ME-MIDP-2_0!PLAIN, J2ME-MIDP-2_0!setLayout, J2ME-MIDP-2_0!LAYOUT_RIGHT, J2ME-MIDP-2_0!getMinimumHeight, J2ME-MIDP-2_0!setItemCommandListener, J2ME-MIDP-2_0!LAYOUT_2, J2ME-MIDP-2_0!setFont, J2ME-MIDP-2_0!TEXT_WRAP_OFF, J2ME-MIDP-2_0!setFitPolicy, J2ME-MIDP-2_0!TEXT_WRAP_ON, J2ME-MIDP-2_0!getFitPolicy, J2ME-MIDP-2_0!getFont, J2ME-MIDP-2_0!deleteAll, J2ME-MIDP-2_0!POPUP, J2ME-MIDP-2_0!TEXT_WRAP_DEFAULT}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::List misses features compatible with : Sequence {J2ME-MIDP-2_0!deleteAll, J2ME-MIDP-2_0!setSelectCommand, J2ME-MIDP-2_0!setFitPolicy, J2ME-MIDP-2_0!getFitPolicy, J2ME-MIDP-2_0!setFont, J2ME-MIDP-2_0!getFont, J2ME-MIDP-2_0!getWidth, J2ME-MIDP-2_0!sizeChanged, J2ME-MIDP-2_0!getHeight, J2ME-MIDP-2_0!setFont, J2ME-MIDP-2_0!TEXT_WRAP_OFF, J2ME-MIDP-2_0!setFitPolicy, J2ME-MIDP-2_0!TEXT_WRAP_ON, J2ME-MIDP-2_0!getFitPolicy, J2ME-MIDP-2_0!getFont, J2ME-MIDP-2_0!deleteAll, J2ME-MIDP-2_0!POPUP, J2ME-MIDP-2_0!TEXT_WRAP_DEFAULT}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::Form misses features compatible with : Sequence {J2ME-MIDP-2_0!deleteAll, J2ME-MIDP-2_0!getWidth, J2ME-MIDP-2_0!getHeight, J2ME-MIDP-2_0!getWidth, J2ME-MIDP-2_0!sizeChanged, J2ME-MIDP-2_0!getHeight}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::TextBox misses features compatible with : Sequence {J2ME-MIDP-2_0!setInitialInputMode, J2ME-MIDP-2_0!getWidth, J2ME-MIDP-2_0!sizeChanged, J2ME-MIDP-2_0!getHeight}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::TextField misses features compatible with : Sequence {J2ME-MIDP-2_0!DECIMAL, J2ME-MIDP-2_0!UNEDITABLE, J2ME-MIDP-2_0!SENSITIVE, J2ME-MIDP-2_0!NON_PREDICTIVE, J2ME-MIDP-2_0!INITIAL_CAPS_WORD, J2ME-MIDP-2_0!INITIAL_CAPS_SENTENCE, J2ME-MIDP-2_0!setInitialInputMode, J2ME-MIDP-2_0!getMinimumWidth, J2ME-MIDP-2_0!removeCommand, J2ME-MIDP-2_0!LAYOUT_VSHRINK, J2ME-MIDP-2_0!setDefaultCommand, J2ME-MIDP-2_0!LAYOUT_SHRINK, J2ME-MIDP-2_0!LAYOUT_VEXPAND, J2ME-MIDP-2_0!LAYOUT_CENTER, J2ME-MIDP-2_0!LAYOUT_NEWLINE_BEFORE, J2ME-MIDP-2_0!LAYOUT_VCENTER, J2ME-MIDP-2_0!LAYOUT_TOP, J2ME-MIDP-2_0!notifyStateChanged, J2ME-MIDP-2_0!getPreferredWidth, J2ME-MIDP-2_0!BUTTON, J2ME-MIDP-2_0!setPreferredSize, J2ME-MIDP-2_0!LAYOUT_BOTTOM, J2ME-MIDP-2_0!getLayout, J2ME-MIDP-2_0!LAYOUT_NEWLINE_AFTER, J2ME-MIDP-2_0!LAYOUT_EXPAND, J2ME-MIDP-2_0!addCommand, J2ME-MIDP-2_0!getPreferredHeight, J2ME-MIDP-2_0!LAYOUT_LEFT, J2ME-MIDP-2_0!LAYOUT_DEFAULT, J2ME-MIDP-2_0!HYPERLINK, J2ME-MIDP-2_0!PLAIN, J2ME-MIDP-2_0!setLayout, J2ME-MIDP-2_0!LAYOUT_RIGHT, J2ME-MIDP-2_0!getMinimumHeight, J2ME-MIDP-2_0!setItemCommandListener, J2ME-MIDP-2_0!LAYOUT_2}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::DateField misses features compatible with : Sequence {J2ME-MIDP-2_0!getMinimumWidth, J2ME-MIDP-2_0!removeCommand, J2ME-MIDP-2_0!LAYOUT_VSHRINK, J2ME-MIDP-2_0!setDefaultCommand, J2ME-MIDP-2_0!LAYOUT_SHRINK, J2ME-MIDP-2_0!LAYOUT_VEXPAND, J2ME-MIDP-2_0!LAYOUT_CENTER, J2ME-MIDP-2_0!LAYOUT_NEWLINE_BEFORE, J2ME-MIDP-2_0!LAYOUT_VCENTER, J2ME-MIDP-2_0!LAYOUT_TOP, J2ME-MIDP-2_0!notifyStateChanged, J2ME-MIDP-2_0!getPreferredWidth, J2ME-MIDP-2_0!BUTTON, J2ME-MIDP-2_0!setPreferredSize, J2ME-MIDP-2_0!LAYOUT_BOTTOM, J2ME-MIDP-2_0!getLayout, J2ME-MIDP-2_0!LAYOUT_NEWLINE_AFTER, J2ME-MIDP-2_0!LAYOUT_EXPAND, J2ME-MIDP-2_0!addCommand, J2ME-MIDP-2_0!getPreferredHeight, J2ME-MIDP-2_0!LAYOUT_LEFT, J2ME-MIDP-2_0!LAYOUT_DEFAULT, J2ME-MIDP-2_0!HYPERLINK, J2ME-MIDP-2_0!PLAIN, J2ME-MIDP-2_0!setLayout, J2ME-MIDP-2_0!LAYOUT_RIGHT, J2ME-MIDP-2_0!getMinimumHeight, J2ME-MIDP-2_0!setItemCommandListener, J2ME-MIDP-2_0!LAYOUT_2}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui::ImageItem misses features compatible with : Sequence {J2ME-MIDP-2_0!<init>, J2ME-MIDP-2_0!getAppearanceMode, J2ME-MIDP-2_0!getMinimumWidth, J2ME-MIDP-2_0!removeCommand, J2ME-MIDP-2_0!LAYOUT_VSHRINK, J2ME-MIDP-2_0!setDefaultCommand, J2ME-MIDP-2_0!LAYOUT_SHRINK, J2ME-MIDP-2_0!LAYOUT_VEXPAND, J2ME-MIDP-2_0!LAYOUT_VCENTER, J2ME-MIDP-2_0!LAYOUT_TOP, J2ME-MIDP-2_0!notifyStateChanged, J2ME-MIDP-2_0!getPreferredWidth, J2ME-MIDP-2_0!BUTTON, J2ME-MIDP-2_0!setPreferredSize, J2ME-MIDP-2_0!LAYOUT_BOTTOM, J2ME-MIDP-2_0!LAYOUT_EXPAND, J2ME-MIDP-2_0!addCommand, J2ME-MIDP-2_0!getPreferredHeight, J2ME-MIDP-2_0!HYPERLINK, J2ME-MIDP-2_0!PLAIN, J2ME-MIDP-2_0!getMinimumHeight, J2ME-MIDP-2_0!setItemCommandListener, J2ME-MIDP-2_0!LAYOUT_2}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::lcdui misses classifiers compatible with : Sequence {J2ME-MIDP-2_0!Display, J2ME-MIDP-2_0!Displayable, J2ME-MIDP-2_0!Image, J2ME-MIDP-2_0!Item, J2ME-MIDP-2_0!Command, J2ME-MIDP-2_0!Font, J2ME-MIDP-2_0!Graphics, J2ME-MIDP-2_0!ItemCommandListener, J2ME-MIDP-2_0!Screen, J2ME-MIDP-2_0!Alert, J2ME-MIDP-2_0!Gauge, J2ME-MIDP-2_0!Canvas, J2ME-MIDP-2_0!Choice, J2ME-MIDP-2_0!StringItem, J2ME-MIDP-2_0!ChoiceGroup, J2ME-MIDP-2_0!Spacer, J2ME-MIDP-2_0!List, J2ME-MIDP-2_0!Form, J2ME-MIDP-2_0!TextBox, J2ME-MIDP-2_0!TextField, J2ME-MIDP-2_0!DateField, J2ME-MIDP-2_0!CustomItem, J2ME-MIDP-2_0!ImageItem}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui::game compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui::game equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::midlet compatible packages: Sequence {J2ME-MIDP-1_0!midlet}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::midlet::MIDlet misses features compatible with : Sequence {J2ME-MIDP-2_0!platformRequest, J2ME-MIDP-2_0!checkPermission}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::midlet misses classifiers compatible with : Sequence {J2ME-MIDP-2_0!MIDlet}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::midlet equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::rms compatible packages: Sequence {J2ME-MIDP-1_0!rms}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::rms::RecordStore misses features compatible with : Sequence {J2ME-MIDP-2_0!AUTHMODE_PRIVATE, J2ME-MIDP-2_0!AUTHMODE_ANY, J2ME-MIDP-2_0!openRecordStore, J2ME-MIDP-2_0!openRecordStore, J2ME-MIDP-2_0!setMode}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-1_0::javax::microedition::rms misses classifiers compatible with : Sequence {J2ME-MIDP-2_0!RecordStore}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::rms equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::protocol compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::protocol equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::control compatible packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::control equivalent packages: Sequence {}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java compatible packages: Sequence {J2ME-MIDP-1_0!java}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax compatible packages: Sequence {J2ME-MIDP-1_0!javax}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition compatible packages: Sequence {J2ME-MIDP-1_0!microedition}
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0 compatible models: Sequence {J2ME-MIDP-1_0!j2me-midp-1_0}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaUtilLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::util referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaLangLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang referenced packages: Set {J2ME-MIDP-2_0!io}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaLangRefLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::lang::ref referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaIoLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::java::io referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionIoLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::io referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!io, J2ME-MIDP-2_0!pki}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionPkiLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::pki referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!io}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionLcduiLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!io, J2ME-MIDP-2_0!midlet, J2ME-MIDP-2_0!util}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionLcduiGameLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::lcdui::game referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!lcdui}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionMidletLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::midlet referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionRmsLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::rms referenced packages: Set {J2ME-MIDP-2_0!lang}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionMediaLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!protocol, J2ME-MIDP-2_0!io}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionMediaProtocolLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::protocol referenced packages: Set {J2ME-MIDP-2_0!lang, J2ME-MIDP-2_0!media}
+     [am3.atl] INFO: [j2me-midp-2_0] Package: 'JavaxMicroeditionMediaControlLibrary'
+     [am3.atl] INFO: [j2me-midp-2_0] j2me-midp-2_0::javax::microedition::media::control referenced packages: Set {J2ME-MIDP-2_0!media}
