@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:platform="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#"
+    xmlns:java="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://local/PersonalJava1.1PocketPC.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:personaljava-1_1="http://ssel.vub.ac.be/codamos/2007/01/personaljava-1_1-api.owl#"
+    xmlns:pm="http://ssel.vub.ac.be/codamos/2007/01/PackageManagers.owl#"
+    xmlns:units="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xml:base="http://local/PersonalJava1.1PocketPC.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/personaljava-1_1-api.owl"/>
+  </owl:Ontology>
+  <personaljava-1_1:Personaljava-1_1 rdf:ID="personaljava-1_1">
+    <java:providesBuiltinJavaLibrary>
+      <personaljava-1_1:Personaljava-1_1ClassLibrary rdf:ID="personaljava-1_1ClassLibrary">
+        <java:isBuiltinJavaLibraryFor rdf:resource="#personaljava-1_1"/>
+      </personaljava-1_1:Personaljava-1_1ClassLibrary>
+    </java:providesBuiltinJavaLibrary>
+    <java:providesJavaVM>
+      <java:JavaVM rdf:ID="EVM">
+        <java:supportsBytecodeFormat rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#theJava1.1BytecodeFormat"/>
+      </java:JavaVM>
+    </java:providesJavaVM>
+  </personaljava-1_1:Personaljava-1_1>
+  <pm:CAB rdf:ID="pocketpcCAB"/>
+  <platform:Platform rdf:ID="pocketPC">
+    <platform:providesSoftware rdf:resource="#personaljava-1_1"/>
+    <platform:providesSoftware rdf:resource="#pocketpcCAB"/>
+  </platform:Platform>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.2.1, Build 365)  http://protege.stanford.edu -->
