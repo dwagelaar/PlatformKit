@@ -7330,14 +7330,6 @@
           <ownedParameter xmi:id="_MvP4ihRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4BRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_MttAYhRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M7hZ8xRuEdyqhKrSw1_-eA" name="isJavaLetter" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_MnPMCBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MvFgdBRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M2NcIBRuEdyqhKrSw1_-eA" name="isJavaLetterOrDigit" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_MuPL4BRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MqgidRRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M48AAhRuEdyqhKrSw1_-eA" name="isJavaIdentifierStart" visibility="public" isStatic="true">
           <ownedParameter xmi:id="_Mnqp2xRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4BRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_MtchtRRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
@@ -7378,10 +7370,6 @@
         <ownedOperation xmi:id="_M1GB2RRuEdyqhKrSw1_-eA" name="getNumericValue" visibility="public" isStatic="true">
           <ownedParameter xmi:id="_MqUVORRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4BRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_Mq2gtxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M0zG6RRuEdyqhKrSw1_-eA" name="isSpace" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_Mnu7RRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MupbkRRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M4svdBRuEdyqhKrSw1_-eA" name="isSpaceChar" visibility="public" isStatic="true">
           <ownedParameter xmi:id="_MtMDCBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4BRuEdyqhKrSw1_-eA" effect="create"/>
@@ -7627,16 +7615,6 @@
           <ownedParameter xmi:id="_Ms-AkRRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_Mmwq5BRuEdyqhKrSw1_-eA" name="arg2" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M6bNxBRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Muo0hxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_MzTSFBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Mq0rgBRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MvCdIxRuEdyqhKrSw1_-eA" name="arg2" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MpsDEBRuEdyqhKrSw1_-eA" name="arg3" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M5cWURRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_Msv-IRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_MzTSFBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MqIvCBRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M1HP8BRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
           <ownedParameter xmi:id="_MoABBBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_MzTSFBRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_Mr_JKRRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
@@ -7670,12 +7648,6 @@
           <ownedParameter xmi:id="_Msh7sBRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_MtSJpRRuEdyqhKrSw1_-eA" name="arg2" visibility="public" type="_MzUgMhRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_Mpf12xRuEdyqhKrSw1_-eA" name="arg3" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M5n8gBRuEdyqhKrSw1_-eA" name="getBytes" visibility="public">
-          <ownedParameter xmi:id="_Mv5YyBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MnXu5RRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MoBPKRRuEdyqhKrSw1_-eA" name="arg2" visibility="public" type="_MzTSFBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Msam9RRuEdyqhKrSw1_-eA" name="arg3" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M6PnlxRuEdyqhKrSw1_-eA" name="getBytes" visibility="public">
           <ownedParameter xmi:id="_MrbvhBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
@@ -8374,33 +8346,9 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_NtqBgBRuEdyqhKrSw1_-eA" name="SecurityManager">
         <generalization xmi:id="_NtqBgRRuEdyqhKrSw1_-eA" general="_M9rWEhRuEdyqhKrSw1_-eA"/>
-        <ownedAttribute xmi:id="_NBdC1hRuEdyqhKrSw1_-eA" name="inCheck" visibility="protected" type="_NDwI4RRuEdyqhKrSw1_-eA"/>
-        <ownedOperation xmi:id="_M4giOBRuEdyqhKrSw1_-eA" name="getInCheck" visibility="public">
-          <ownedParameter xmi:id="_MqiXphRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M6QOoRRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public"/>
         <ownedOperation xmi:id="_M7oHoRRuEdyqhKrSw1_-eA" name="getClassContext" visibility="protected">
           <ownedParameter xmi:id="_Mmwq6BRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_MzT5IxRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M7UlphRuEdyqhKrSw1_-eA" name="currentClassLoader" visibility="protected">
-          <ownedParameter xmi:id="_MpX6BxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NuDDEBRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M6xzFhRuEdyqhKrSw1_-eA" name="currentLoadedClass" visibility="protected">
-          <ownedParameter xmi:id="_MoGusxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NtlwEhRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M5L3ohRuEdyqhKrSw1_-eA" name="classDepth" visibility="protected">
-          <ownedParameter xmi:id="_MqyPRxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MvSUwxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M1dOMBRuEdyqhKrSw1_-eA" name="classLoaderDepth" visibility="protected">
-          <ownedParameter xmi:id="_Mppm2xRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M2kBdBRuEdyqhKrSw1_-eA" name="inClass" visibility="protected">
-          <ownedParameter xmi:id="_MnJsdBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Mog-aBRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M1-LkxRuEdyqhKrSw1_-eA" name="inClassLoader" visibility="protected">
-          <ownedParameter xmi:id="_MtY3WhRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M02KNxRuEdyqhKrSw1_-eA" name="getSecurityContext" visibility="public">
           <ownedParameter xmi:id="_MqJ9JhRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_M9rWEhRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
@@ -8543,10 +8491,6 @@
         </ownedOperation>
         <ownedOperation xmi:id="_M0p8-RRuEdyqhKrSw1_-eA" name="start" visibility="public"/>
         <ownedOperation xmi:id="_M2tycxRuEdyqhKrSw1_-eA" name="run" visibility="public"/>
-        <ownedOperation xmi:id="_M7SJYBRuEdyqhKrSw1_-eA" name="stop" visibility="public"/>
-        <ownedOperation xmi:id="_M3Zu-RRuEdyqhKrSw1_-eA" name="stop" visibility="public">
-          <ownedParameter xmi:id="_Mr8s5xRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NtebUhRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M21HMRRuEdyqhKrSw1_-eA" name="interrupt" visibility="public"/>
         <ownedOperation xmi:id="_M03_YRRuEdyqhKrSw1_-eA" name="interrupted" visibility="public" isStatic="true">
           <ownedParameter xmi:id="_Mn7IihRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
@@ -8558,8 +8502,6 @@
         <ownedOperation xmi:id="_M4jlhRRuEdyqhKrSw1_-eA" name="isAlive" visibility="public">
           <ownedParameter xmi:id="_MuviORRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M5QJERRuEdyqhKrSw1_-eA" name="suspend" visibility="public"/>
-        <ownedOperation xmi:id="_M2AAyRRuEdyqhKrSw1_-eA" name="resume" visibility="public"/>
         <ownedOperation xmi:id="_M3nKWBRuEdyqhKrSw1_-eA" name="setPriority" visibility="public">
           <ownedParameter xmi:id="_MoJK9RRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
@@ -8581,9 +8523,6 @@
         <ownedOperation xmi:id="_M4IHsRRuEdyqhKrSw1_-eA" name="enumerate" visibility="public" isStatic="true">
           <ownedParameter xmi:id="_MqO1qxRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_MzT5JBRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_MsEBqhRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M228ZRRuEdyqhKrSw1_-eA" name="countStackFrames" visibility="public">
-          <ownedParameter xmi:id="_MqMZYxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M7MCxBRuEdyqhKrSw1_-eA" name="join" visibility="public">
           <ownedParameter xmi:id="_Mmm55BRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4xRuEdyqhKrSw1_-eA" effect="create"/>
@@ -8670,19 +8609,12 @@
           <ownedParameter xmi:id="_Mm0VSxRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_Mo71IRRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M3P98RRuEdyqhKrSw1_-eA" name="stop" visibility="public"/>
         <ownedOperation xmi:id="_M29qGBRuEdyqhKrSw1_-eA" name="interrupt" visibility="public"/>
-        <ownedOperation xmi:id="_M6KIBxRuEdyqhKrSw1_-eA" name="suspend" visibility="public"/>
-        <ownedOperation xmi:id="_M5bINRRuEdyqhKrSw1_-eA" name="resume" visibility="public"/>
         <ownedOperation xmi:id="_M6cb4hRuEdyqhKrSw1_-eA" name="destroy" visibility="public"/>
         <ownedOperation xmi:id="_M08Q0BRuEdyqhKrSw1_-eA" name="list" visibility="public"/>
         <ownedOperation xmi:id="_M4i-cxRuEdyqhKrSw1_-eA" name="uncaughtException" visibility="public">
           <ownedParameter xmi:id="_MspQdRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NufvABRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_MttAZhRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NtebUhRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M17vURRuEdyqhKrSw1_-eA" name="allowThreadSuspension" visibility="public">
-          <ownedParameter xmi:id="_MsEBpRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MveiBBRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M7MCxRRuEdyqhKrSw1_-eA" name="toString" visibility="public">
           <ownedParameter xmi:id="_MnwJaRRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
@@ -9612,9 +9544,6 @@
         <ownedOperation xmi:id="_M5YE5BRuEdyqhKrSw1_-eA" name="halt" visibility="public">
           <ownedParameter xmi:id="_MnGpKRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M1RoCBRuEdyqhKrSw1_-eA" name="runFinalizersOnExit" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_Mqab2RRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M5FxAhRuEdyqhKrSw1_-eA" name="exec" visibility="public">
           <ownedParameter xmi:id="_Mu9kpBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_MsEothRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_Nueg4BRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
@@ -9664,14 +9593,6 @@
         </ownedOperation>
         <ownedOperation xmi:id="_M7lEVRRuEdyqhKrSw1_-eA" name="loadLibrary" visibility="public">
           <ownedParameter xmi:id="_Mt7C1hRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M0oHxhRuEdyqhKrSw1_-eA" name="getLocalizedInputStream" visibility="public">
-          <ownedParameter xmi:id="_MrhPExRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NtsdwBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Mry74BRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NtsdwBRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M1GB1BRuEdyqhKrSw1_-eA" name="getLocalizedOutputStream" visibility="public">
-          <ownedParameter xmi:id="_MsTSORRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Ntd0QBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MrpK6BRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_Ntd0QBRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_Nueg4BRuEdyqhKrSw1_-eA" name="Process" isAbstract="true">
@@ -9748,18 +9669,11 @@
           <ownedParameter xmi:id="_MpOwERRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_MpsqIBRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M02xRRRuEdyqhKrSw1_-eA" name="getenv" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_MnaLKBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MtFVUxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M2ESNhRuEdyqhKrSw1_-eA" name="exit" visibility="public" isStatic="true">
           <ownedParameter xmi:id="_MrrnIRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M5VBmBRuEdyqhKrSw1_-eA" name="gc" visibility="public" isStatic="true"/>
         <ownedOperation xmi:id="_M7EuBhRuEdyqhKrSw1_-eA" name="runFinalization" visibility="public" isStatic="true"/>
-        <ownedOperation xmi:id="_M0qkCBRuEdyqhKrSw1_-eA" name="runFinalizersOnExit" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_MuQaBRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M5ic-BRuEdyqhKrSw1_-eA" name="load" visibility="public" isStatic="true">
           <ownedParameter xmi:id="_MnoNmRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
