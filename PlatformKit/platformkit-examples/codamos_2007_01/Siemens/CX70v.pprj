@@ -1,4 +1,4 @@
-; Tue Jun 19 09:34:16 CEST 2007
+; Thu Jun 28 14:35:52 CEST 2007
 ; 
 ;+ (version "3.2.1")
 ;+ (build "Build 365")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[CX70v_ProjectKB_Instance_20096]
-		[CX70v_ProjectKB_Instance_20097]
-		[CX70v_ProjectKB_Instance_20098]
-		[CX70v_ProjectKB_Instance_20099]
-		[CX70v_ProjectKB_Instance_20100]))
+		[CX70v_ProjectKB_Instance_30057]
+		[CX70v_ProjectKB_Instance_30058]
+		[CX70v_ProjectKB_Instance_30059]
+		[CX70v_ProjectKB_Instance_30060]
+		[CX70v_ProjectKB_Instance_30061]))
 
 ([CLSES_TAB] of  Widget
 
@@ -69,7 +69,7 @@
 
 	(is_hidden TRUE)
 	(property_list [CX70v_ProjectKB_Instance_10003])
-	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
 
 ([CX70v_ProjectKB_Instance_10003] of  Property_List
 )
@@ -78,7 +78,7 @@
 
 	(is_hidden TRUE)
 	(property_list [CX70v_ProjectKB_Instance_10005])
-	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
+	(widget_class_name "script.ProtegeScriptTab"))
 
 ([CX70v_ProjectKB_Instance_10005] of  Property_List
 )
@@ -87,7 +87,7 @@
 
 	(is_hidden TRUE)
 	(property_list [CX70v_ProjectKB_Instance_10007])
-	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
+	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
 
 ([CX70v_ProjectKB_Instance_10007] of  Property_List
 )
@@ -96,7 +96,7 @@
 
 	(is_hidden TRUE)
 	(property_list [CX70v_ProjectKB_Instance_10009])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.WordNetTab"))
 
 ([CX70v_ProjectKB_Instance_10009] of  Property_List
 )
@@ -105,7 +105,7 @@
 
 	(is_hidden TRUE)
 	(property_list [CX70v_ProjectKB_Instance_10011])
-	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
+	(widget_class_name "edu.stanford.smi.protegex.psm.PSMTab"))
 
 ([CX70v_ProjectKB_Instance_10011] of  Property_List
 )
@@ -114,7 +114,7 @@
 
 	(is_hidden TRUE)
 	(property_list [CX70v_ProjectKB_Instance_10013])
-	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
+	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
 
 ([CX70v_ProjectKB_Instance_10013] of  Property_List
 )
@@ -123,7 +123,7 @@
 
 	(is_hidden TRUE)
 	(property_list [CX70v_ProjectKB_Instance_10015])
-	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
+	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
 
 ([CX70v_ProjectKB_Instance_10015] of  Property_List
 )
@@ -132,10 +132,25 @@
 
 	(is_hidden TRUE)
 	(property_list [CX70v_ProjectKB_Instance_10017])
-	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
 
 ([CX70v_ProjectKB_Instance_10017] of  Property_List
 )
+
+([CX70v_ProjectKB_Instance_10018] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_10019])
+	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
+
+([CX70v_ProjectKB_Instance_10019] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_10020] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30021])
+	(widget_class_name "ezpal.EZPalTab"))
 
 ([CX70v_ProjectKB_Instance_10021] of  Widget
 
@@ -693,9 +708,6 @@
 		[CX70v_ProjectKB_Instance_10352]
 		[CX70v_ProjectKB_Instance_10354]
 		[CX70v_ProjectKB_Instance_10356]
-		[CX70v_ProjectKB_Instance_11580]
-		[CX70v_ProjectKB_Instance_20018]
-		[CX70v_ProjectKB_Instance_20020]
 		[CX70v_ProjectKB_Instance_20022]))
 
 ([CX70v_ProjectKB_Instance_10310] of  Widget
@@ -1505,9 +1517,6 @@
 		[CX70v_ProjectKB_Instance_10537]
 		[CX70v_ProjectKB_Instance_10540]
 		[CX70v_ProjectKB_Instance_10542]
-		[CX70v_ProjectKB_Instance_11584]
-		[CX70v_ProjectKB_Instance_20030]
-		[CX70v_ProjectKB_Instance_20032]
 		[CX70v_ProjectKB_Instance_20034]))
 
 ([CX70v_ProjectKB_Instance_10515] of  Widget
@@ -2404,10 +2413,7 @@
 		[CX70v_ProjectKB_Instance_11128]
 		[CX70v_ProjectKB_Instance_11130]
 		[CX70v_ProjectKB_Instance_11132]
-		[CX70v_ProjectKB_Instance_11582]
-		[CX70v_ProjectKB_Instance_20024]
-		[CX70v_ProjectKB_Instance_20026]
-		[CX70v_ProjectKB_Instance_20028]))
+		[CX70v_ProjectKB_Instance_20026]))
 
 ([CX70v_ProjectKB_Instance_11075] of  Widget
 
@@ -3234,31 +3240,6 @@
 ([CX70v_ProjectKB_Instance_20035] of  Property_List
 )
 
-([CX70v_ProjectKB_Instance_20096] of  String
-
-	(name "owl:Class")
-	(string_value "%3ANAME"))
-
-([CX70v_ProjectKB_Instance_20097] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([CX70v_ProjectKB_Instance_20098] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([CX70v_ProjectKB_Instance_20099] of  String
-
-	(name "owl:Thing")
-	(string_value "%3ANAME"))
-
-([CX70v_ProjectKB_Instance_20100] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
 ([CX70v_ProjectKB_Instance_21] of  Boolean
 
 	(boolean_value TRUE)
@@ -3323,6 +3304,169 @@
 
 	(boolean_value TRUE)
 	(name "ButtonDisplayed-Create Instance"))
+
+([CX70v_ProjectKB_Instance_30021] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30022] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30023])
+	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
+
+([CX70v_ProjectKB_Instance_30023] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30024] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30025])
+	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
+
+([CX70v_ProjectKB_Instance_30025] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30026] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30027])
+	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
+
+([CX70v_ProjectKB_Instance_30027] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30028] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30029])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+
+([CX70v_ProjectKB_Instance_30029] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30030] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30031])
+	(widget_class_name "DataGenieTab.DataGenieTab"))
+
+([CX70v_ProjectKB_Instance_30031] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30032] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30033])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
+
+([CX70v_ProjectKB_Instance_30033] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30034] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30035])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+
+([CX70v_ProjectKB_Instance_30035] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30036] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30037])
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+
+([CX70v_ProjectKB_Instance_30037] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30038] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30039])
+	(widget_class_name "se.liu.ida.JessTab.JessTab"))
+
+([CX70v_ProjectKB_Instance_30039] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30040] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30041])
+	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
+
+([CX70v_ProjectKB_Instance_30041] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30042] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30043])
+	(widget_class_name "org.algernon.kb.okbc.protege.plugins.AlgernonTab"))
+
+([CX70v_ProjectKB_Instance_30043] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30044] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30045])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
+
+([CX70v_ProjectKB_Instance_30045] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30046] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30047])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.UMLSTab"))
+
+([CX70v_ProjectKB_Instance_30047] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30048] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30049])
+	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
+
+([CX70v_ProjectKB_Instance_30049] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30050] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [CX70v_ProjectKB_Instance_30051])
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+
+([CX70v_ProjectKB_Instance_30051] of  Property_List
+)
+
+([CX70v_ProjectKB_Instance_30057] of  String
+
+	(name "owl:Class")
+	(string_value "%3ANAME"))
+
+([CX70v_ProjectKB_Instance_30058] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([CX70v_ProjectKB_Instance_30059] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([CX70v_ProjectKB_Instance_30060] of  String
+
+	(name "owl:Thing")
+	(string_value "%3ANAME"))
+
+([CX70v_ProjectKB_Instance_30061] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
 
 ([CX70v_ProjectKB_Instance_31] of  Boolean
 
@@ -3867,9 +4011,9 @@
 		"owl:Class"
 		"rdfs:Container"
 		"owl:Ontology"
-		"xsd:gMonthDay"
-		":TO"
 		"owl:DataRange"
+		":TO"
+		"xsd:gMonthDay"
 		"xsd:NMTOKEN"
 		"xsd:QName"
 		"xsd:unsignedInt"
@@ -3897,46 +4041,47 @@
 		"rdf:List"
 		"rdf:predicate"
 		"owl:hasValue"
-		"xsd:double"
 		"rdf:rest"
+		"xsd:double"
 		"xsd:decimal"
 		"rdf:subject"
-		"xsd:Name"
-		"owl:sameAs"
-		"rdf:value"
 		"owl:SymmetricProperty"
+		"rdf:value"
+		"owl:sameAs"
+		"xsd:Name"
 		"xsd:byte"
-		"owl:AllDifferent"
 		"owl:differentFrom"
-		"rdf:Property"
+		"owl:AllDifferent"
 		"owl:Nothing"
-		"owl:cardinality"
+		"rdf:Property"
 		"owl:InverseFunctionalProperty"
+		"owl:cardinality"
 		"xsd:nonNegativeInteger"
 		"rdf:Statement"
-		":FROM"
 		"rdfs:Literal"
-		"xsd:anySimpleType"
+		":FROM"
 		"owl:disjointWith"
+		"xsd:anySimpleType"
 		"owl:minCardinality"
 		"xsd:ID"
 		"xsd:gDay"
 		"xsd:gYearMonth"
-		"xsd:NCName"
 		"owl:distinctMembers"
+		"xsd:NCName"
 		"xsd:nonPositiveInteger"
 		"rdfs:Datatype"
-		"xsd:token"
-		":DIRECTED-BINARY-RELATION"
 		"owl:TransitiveProperty"
-		"xsd:ENTITY"
-		"xsd:IDREF"
+		":DIRECTED-BINARY-RELATION"
+		"xsd:token"
 		"xsd:normalizedString"
+		"xsd:IDREF"
+		"xsd:ENTITY"
 		"xsd:gMonth"
-		"owl:maxCardinality"
-		"rdf:type"
 		"owl:oneOf"
+		"rdf:type"
+		"owl:maxCardinality"
 		"rdf:object")
+	(journaling_enabled FALSE)
 	(next_frame_number 0)
 	(options [Instance_48])
 	(sources [SOURCES])
