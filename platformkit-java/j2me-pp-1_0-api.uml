@@ -20066,14 +20066,6 @@
           <ownedParameter xmi:id="_MpEYChRuEdyqhKrSw1_-eA" name="arg7" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_Mn3eIRRuEdyqhKrSw1_-eA" name="arg8" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M2oS4hRuEdyqhKrSw1_-eA" name="setURL" visibility="protected">
-          <ownedParameter xmi:id="_MpkHRBRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NuH7kBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MuCXkBRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MsPn0BRuEdyqhKrSw1_-eA" name="arg2" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MnTdchRuEdyqhKrSw1_-eA" name="arg3" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MtgMEBRuEdyqhKrSw1_-eA" name="arg4" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MoYbhBRuEdyqhKrSw1_-eA" name="arg5" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_M9UwwRRuEdyqhKrSw1_-eA" name="MalformedURLException">
         <generalization xmi:id="_Nm4EFhRuEdyqhKrSw1_-eA" isSubstitutable="false" general="_M9H8cBRuEdyqhKrSw1_-eA"/>
@@ -20222,14 +20214,6 @@
         <ownedOperation xmi:id="_M1pbdxRuEdyqhKrSw1_-eA" name="getRequestProperty" visibility="public">
           <ownedParameter xmi:id="_Mnhf4RRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_Mvmd1hRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M7I_dhRuEdyqhKrSw1_-eA" name="setDefaultRequestProperty" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_Mm5NxhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MqLyWxRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M5ic8RRuEdyqhKrSw1_-eA" name="getDefaultRequestProperty" visibility="public" isStatic="true">
-          <ownedParameter xmi:id="_MsPAxhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MpM66xRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M2yD4RRuEdyqhKrSw1_-eA" name="setContentHandlerFactory" visibility="public" isStatic="true">
           <ownedParameter xmi:id="_MvGHiRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NY881RRuEdyqhKrSw1_-eA" effect="create"/>
@@ -20431,7 +20415,6 @@
         <ownedAttribute xmi:id="_NDDlURRuEdyqhKrSw1_-eA" name="HTTP_ENTITY_TOO_LARGE" visibility="public" isStatic="true" type="_NDvh0BRuEdyqhKrSw1_-eA" isReadOnly="true"/>
         <ownedAttribute xmi:id="_NBT45BRuEdyqhKrSw1_-eA" name="HTTP_REQ_TOO_LONG" visibility="public" isStatic="true" type="_NDvh0BRuEdyqhKrSw1_-eA" isReadOnly="true"/>
         <ownedAttribute xmi:id="_NBNyRBRuEdyqhKrSw1_-eA" name="HTTP_UNSUPPORTED_TYPE" visibility="public" isStatic="true" type="_NDvh0BRuEdyqhKrSw1_-eA" isReadOnly="true"/>
-        <ownedAttribute xmi:id="_NC0UwRRuEdyqhKrSw1_-eA" name="HTTP_SERVER_ERROR" visibility="public" isStatic="true" type="_NDvh0BRuEdyqhKrSw1_-eA" isReadOnly="true"/>
         <ownedAttribute xmi:id="_NBXjRBRuEdyqhKrSw1_-eA" name="HTTP_INTERNAL_ERROR" visibility="public" isStatic="true" type="_NDvh0BRuEdyqhKrSw1_-eA" isReadOnly="true"/>
         <ownedAttribute xmi:id="_NCLbkBRuEdyqhKrSw1_-eA" name="HTTP_NOT_IMPLEMENTED" visibility="public" isStatic="true" type="_NDvh0BRuEdyqhKrSw1_-eA" isReadOnly="true"/>
         <ownedAttribute xmi:id="_NCPF9RRuEdyqhKrSw1_-eA" name="HTTP_BAD_GATEWAY" visibility="public" isStatic="true" type="_NDvh0BRuEdyqhKrSw1_-eA" isReadOnly="true"/>
@@ -20691,16 +20674,6 @@
           <ownedParameter xmi:id="_Mr8F2xRuEdyqhKrSw1_-eA" name="arg2" visibility="public" type="_NuBN4hRuEdyqhKrSw1_-eA" effect="create"/>
           <ownedParameter xmi:id="_MtEuSBRuEdyqhKrSw1_-eA" name="arg3" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M40rQhRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MsoCWhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_Nt-xoBRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Mn7vlxRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MpsqKhRuEdyqhKrSw1_-eA" name="arg2" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M7Mp0hRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
-          <ownedParameter xmi:id="_MrVo6hRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NuBN4hRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_MuHQExRuEdyqhKrSw1_-eA" name="arg1" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-          <ownedParameter xmi:id="_Mo28qxRuEdyqhKrSw1_-eA" name="arg2" visibility="public" type="_NDwI4RRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M5n8hRRuEdyqhKrSw1_-eA" name="getInetAddress" visibility="public">
           <ownedParameter xmi:id="_MrRXdxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NuBN4hRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
@@ -20848,12 +20821,6 @@
         <ownedOperation xmi:id="_M1_ZthRuEdyqhKrSw1_-eA" name="receive" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_MtkdghRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NuVW9BRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M7j2MxRuEdyqhKrSw1_-eA" name="setTTL" visibility="protected" isAbstract="true">
-          <ownedParameter xmi:id="_MrR-hRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0xRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M4PccBRuEdyqhKrSw1_-eA" name="getTTL" visibility="protected" isAbstract="true">
-          <ownedParameter xmi:id="_MpBUtRRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0xRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M7gy6BRuEdyqhKrSw1_-eA" name="setTimeToLive" visibility="protected" isAbstract="true">
           <ownedParameter xmi:id="_MtTXxhRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
@@ -20950,14 +20917,8 @@
         <ownedOperation xmi:id="_M46K2BRuEdyqhKrSw1_-eA" name="&lt;init>" visibility="public">
           <ownedParameter xmi:id="_MoxdExRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_M1xXQhRuEdyqhKrSw1_-eA" name="setTTL" visibility="public">
-          <ownedParameter xmi:id="_MnAigRRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0xRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_M5INQxRuEdyqhKrSw1_-eA" name="setTimeToLive" visibility="public">
           <ownedParameter xmi:id="_MrCG5RRuEdyqhKrSw1_-eA" name="arg0" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" effect="create"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_M61ddhRuEdyqhKrSw1_-eA" name="getTTL" visibility="public">
-          <ownedParameter xmi:id="_Mo2VmxRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0xRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
         </ownedOperation>
         <ownedOperation xmi:id="_M4etAhRuEdyqhKrSw1_-eA" name="getTimeToLive" visibility="public">
           <ownedParameter xmi:id="_MtXCKBRuEdyqhKrSw1_-eA" name="return" visibility="public" type="_NDvh0BRuEdyqhKrSw1_-eA" direction="return" effect="create"/>
