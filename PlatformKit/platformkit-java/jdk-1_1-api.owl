@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY jdk-1_1 "http://ssel.vub.ac.be/platformkit/jdk-1_1#">
+	<!ENTITY personaljava-1_1 "http://ssel.vub.ac.be/platformkit/personaljava-1_1#">
 	<!ENTITY platform "http://localhost/~dennis/Platform.owl#">
 	<!ENTITY java "http://localhost/~dennis/Java.owl#">
-	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-	<!ENTITY personaljava-1_1 "http://ssel.vub.ac.be/platformkit/personaljava-1_1#">
+	<!ENTITY jdk-1_1 "http://ssel.vub.ac.be/platformkit/jdk-1_1#">
 	<!ENTITY units "http://localhost/~dennis/Units.owl#">
-	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 ]>
 <rdf:RDF
-	 xmlns:jdk-1_1="&jdk-1_1;"
+	 xmlns:personaljava-1_1="&personaljava-1_1;"
 	 xmlns:platform="&platform;"
 	 xmlns:java="&java;"
-	 xmlns:xsd="&xsd;"
-	 xmlns:personaljava-1_1="&personaljava-1_1;"
+	 xmlns:jdk-1_1="&jdk-1_1;"
 	 xmlns:units="&units;"
-	 xmlns:owl="&owl;"
+	 xmlns:xsd="&xsd;"
 	 xmlns:rdf="&rdf;"
 	 xmlns:rdfs="&rdfs;"
+	 xmlns:owl="&owl;"
 >
 
 	<owl:Ontology rdf:about="http://ssel.vub.ac.be/platformkit/jdk-1_1#">
@@ -30,30 +30,30 @@
 		<rdfs:label xml:lang="en">jdk-1_1</rdfs:label>
 	</owl:Ontology>
 	<owl:Class rdf:about="&jdk-1_1;Jdk-1_1ClassLibrary">
-		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaBeansLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaTextResourcesLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiDgcLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityAclLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiServerLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaAwtDatatransferLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiRegistryLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSqlLibrary"/>
-		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaLangReflectLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAppletLibrary"/>
-		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
-		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaAwtImageLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityLibrary"/>
-		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaTextLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaMathLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityInterfacesLibrary"/>
 		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaLangLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
-		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaUtilZipLibrary"/>
-		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaUtilLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityAclLibrary"/>
+		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaAwtImageLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaTextResourcesLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiServerLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityLibrary"/>
+		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaLangReflectLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSecurityInterfacesLibrary"/>
 		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaAwtEventLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiDgcLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiRegistryLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaUtilZipLibrary"/>
+		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaAwtDatatransferLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAppletLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
+		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaTextLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaSqlLibrary"/>
+		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaBeansLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaMathLibrary"/>
+		<rdfs:subClassOf rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
+		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
+		<rdfs:subClassOf rdf:resource="&personaljava-1_1;JavaUtilLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the entire API for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;Jdk-1_1">
@@ -113,14 +113,14 @@
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaAwtLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
 		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
-		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaAwtDatatransferLibrary"/>
 		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaAwtImageLibrary"/>
+		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaAwtDatatransferLibrary"/>
+		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
 		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaUtilLibrary"/>
 		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaAwtEventLibrary"/>
-		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtPeerLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.awt package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaAwtPeerLibrary">
@@ -133,9 +133,9 @@
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaAppletLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
 		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaAwtLibrary"/>
+		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
 		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaUtilLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.applet package for jdk-1_1</rdfs:comment>
 	</owl:Class>
@@ -149,9 +149,9 @@
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaRmiLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
 		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
+		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.rmi package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaRmiRegistryLibrary">
@@ -169,10 +169,10 @@
 	</owl:Class>
 	<owl:Class rdf:about="&jdk-1_1;JavaRmiServerLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
 		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaIoLibrary"/>
 		<rdfs:seeAlso rdf:resource="&jdk-1_1;JavaRmiLibrary"/>
+		<rdfs:seeAlso rdf:resource="&personaljava-1_1;JavaNetLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the java.rmi.server package for jdk-1_1</rdfs:comment>
 	</owl:Class>
 </rdf:RDF>
