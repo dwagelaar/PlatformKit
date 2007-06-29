@@ -83,6 +83,36 @@
         </sequential>
     </macrodef>
 	
+    <macrodef name="UML2ToAPIOntology3">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="prevout" default="MODEL.PREV.OUT" />
+        <attribute name="previn" default="MODEL.PREV.IN" />
+        <attribute name="prevout2" default="MODEL.PREV.OUT2" />
+        <attribute name="previn2" default="MODEL.PREV.IN2" />
+        <attribute name="prevout3" default="MODEL.PREV.OUT3" />
+        <attribute name="previn3" default="MODEL.PREV.IN3" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="path" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<am3.atl path="/${ant.project.name}/UML2ToAPIOntology.atl" allowInterModelReferences="true">
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<inmodel name="PREVOUT" model="@{prevout}"/>
+    			<inmodel name="PREVIN" model="@{previn}"/>
+    			<inmodel name="PREVOUT2" model="@{prevout2}"/>
+    			<inmodel name="PREVIN2" model="@{previn2}"/>
+    			<inmodel name="PREVOUT3" model="@{prevout3}"/>
+    			<inmodel name="PREVIN3" model="@{previn3}"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
+    			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    		</am3.atl>
+        	<am3.saveModel model="@{out}" path="@{path}"/>
+        </sequential>
+    </macrodef>
+	
 	<target name="loadModels">
 		<am3.loadModel modelHandler="EMF" name="OWL"           metamodel="MOF"  nsuri="http:///org/eclipse/owl.ecore"/>
 		<am3.loadModel modelHandler="EMF" name="Platform"      metamodel="OWL"  path="/platformkit-java/Platform.owl"/>
@@ -125,13 +155,13 @@
 		<parallel threadCount="8"><!-- start heaviest task first -->
 			<UML2ToAPIOntology1 in="J2SE-1_6"      prevout="preJ2SE-1_5_OWL"      previn="J2SE-1_5"      out="J2SE-1_6_OWL"              path="/platformkit-java/j2se-1_6-api.owl"/>
 			<UML2ToAPIOntology1 in="J2SE-1_5"      prevout="preJ2SE-1_4_OWL"      previn="J2SE-1_4"      out="J2SE-1_5_OWL"              path="/platformkit-java/j2se-1_5-api.owl"/>
-			<UML2ToAPIOntology2 in="J2SE-1_4"      prevout="preJ2SE-1_3_OWL"      previn="J2SE-1_3"      prevout2="preJ2ME-PP-1_1_OWL"   previn2="J2ME-PP-1_1"                             out="J2SE-1_4_OWL"    path="/platformkit-java/j2se-1_4-api.owl"/>
-			<UML2ToAPIOntology2 in="J2SE-1_3"      prevout="preJ2SE-1_2_OWL"      previn="J2SE-1_2"      prevout2="preJ2ME-PP-1_0_OWL"   previn2="J2ME-PP-1_0"                             out="J2SE-1_3_OWL"    path="/platformkit-java/j2se-1_3-api.owl"/>
-			<UML2ToAPIOntology2 in="J2SE-1_2"      prevout="preJDK-1_1_OWL"       previn="JDK-1_1"       prevout2="preJ2ME-MIDP-2_0_OWL" previn2="J2ME-MIDP-2_0"                           out="J2SE-1_2_OWL"    path="/platformkit-java/j2se-1_2-api.owl"/>
+			<UML2ToAPIOntology2 in="J2SE-1_4"      prevout="preJ2SE-1_3_OWL"      previn="J2SE-1_3"      prevout2="preJ2ME-PP-1_1_OWL"   previn2="J2ME-PP-1_1"                             out="J2SE-1_4_OWL"              path="/platformkit-java/j2se-1_4-api.owl"/>
+			<UML2ToAPIOntology2 in="J2SE-1_3"      prevout="preJ2SE-1_2_OWL"      previn="J2SE-1_2"      prevout2="preJ2ME-PP-1_0_OWL"   previn2="J2ME-PP-1_0"                             out="J2SE-1_3_OWL"              path="/platformkit-java/j2se-1_3-api.owl"/>
+			<UML2ToAPIOntology2 in="J2SE-1_2"      prevout="preJDK-1_1_OWL"       previn="JDK-1_1"       prevout2="preJ2ME-MIDP-2_0_OWL" previn2="J2ME-MIDP-2_0"                           out="J2SE-1_2_OWL"              path="/platformkit-java/j2se-1_2-api.owl"/>
 			<UML2ToAPIOntology1 in="JDK-1_1"       prevout="prePJ-1_1_OWL"        previn="PJ-1_1"        out="JDK-1_1_OWL"               path="/platformkit-java/jdk-1_1-api.owl"/>
 			<UML2ToAPIOntology1 in="PJ-1_1"        prevout="preJ2ME-MIDP-2_0_OWL" previn="J2ME-MIDP-2_0" out="PJ-1_1_OWL"                path="/platformkit-java/personaljava-1_1-api.owl"/>
-			<UML2ToAPIOntology2 in="J2ME-PP-1_1"   prevout="preJ2SE-1_3_OWL"      previn="J2SE-1_3"      prevout2="preJ2ME-PP-1_0_OWL"   previn2="J2ME-PP-1_0"                             out="J2ME-PP-1_1_OWL" path="/platformkit-java/j2me-pp-1_1-api.owl"/>
-			<UML2ToAPIOntology2 in="J2ME-PP-1_0"   prevout="preJ2SE-1_2_OWL"      previn="J2SE-1_2"      prevout2="J2ME-MIDP-2_0_OWL"    previn2="J2ME-MIDP-2_0"                           out="J2ME-PP-1_0_OWL" path="/platformkit-java/j2me-pp-1_0-api.owl"/>
+			<UML2ToAPIOntology2 in="J2ME-PP-1_1"   prevout="preJ2SE-1_3_OWL"      previn="J2SE-1_3"      prevout2="preJ2ME-PP-1_0_OWL"   previn2="J2ME-PP-1_0"                             out="J2ME-PP-1_1_OWL"           path="/platformkit-java/j2me-pp-1_1-api.owl"/>
+			<UML2ToAPIOntology3 in="J2ME-PP-1_0"   prevout="preJ2SE-1_2_OWL"      previn="J2SE-1_2"      prevout2="J2ME-MIDP-1_0_OWL"    previn2="J2ME-MIDP-1_0"                           prevout3="preJ2ME-MIDP-2_0_OWL" previn3="J2ME-MIDP-2_0"                      out="J2ME-PP-1_0_OWL" path="/platformkit-java/j2me-pp-1_0-api.owl"/>
 			<UML2ToAPIOntology1 in="J2ME-MIDP-2_0" prevout="J2ME-MIDP-1_0_OWL"    previn="J2ME-MIDP-1_0" out="J2ME-MIDP-2_0_OWL"         path="/platformkit-java/j2me-midp-2_0-api.owl"/>
 		</parallel>
 		<nice newpriority="${curpri}"/>
