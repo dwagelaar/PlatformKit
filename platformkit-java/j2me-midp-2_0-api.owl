@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE rdf:RDF [
 	<!ENTITY platform "http://localhost/~dennis/Platform.owl#">
-	<!ENTITY j2me-midp-2_0 "http://ssel.vub.ac.be/platformkit/j2me-midp-2_0#">
-	<!ENTITY j2me-midp-1_0 "http://ssel.vub.ac.be/platformkit/j2me-midp-1_0#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 	<!ENTITY units "http://localhost/~dennis/Units.owl#">
 	<!ENTITY java "http://localhost/~dennis/Java.owl#">
-	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY j2me-midp-1_0 "http://ssel.vub.ac.be/platformkit/j2me-midp-1_0#">
+	<!ENTITY j2me-midp-2_0 "http://ssel.vub.ac.be/platformkit/j2me-midp-2_0#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 ]>
 <rdf:RDF
 	 xmlns:platform="&platform;"
-	 xmlns:j2me-midp-2_0="&j2me-midp-2_0;"
-	 xmlns:j2me-midp-1_0="&j2me-midp-1_0;"
+	 xmlns:xsd="&xsd;"
 	 xmlns:units="&units;"
 	 xmlns:java="&java;"
-	 xmlns:xsd="&xsd;"
-	 xmlns:owl="&owl;"
+	 xmlns:j2me-midp-1_0="&j2me-midp-1_0;"
+	 xmlns:j2me-midp-2_0="&j2me-midp-2_0;"
 	 xmlns:rdf="&rdf;"
 	 xmlns:rdfs="&rdfs;"
+	 xmlns:owl="&owl;"
 >
 
 	<owl:Ontology rdf:about="http://ssel.vub.ac.be/platformkit/j2me-midp-2_0#">
@@ -30,19 +30,19 @@
 		<rdfs:label xml:lang="en">j2me-midp-2_0</rdfs:label>
 	</owl:Ontology>
 	<owl:Class rdf:about="&j2me-midp-2_0;J2me-midp-2_0ClassLibrary">
-		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionMediaProtocolLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaLangRefLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionIoLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionLcduiGameLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaUtilLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionRmsLibrary"/>
 		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionMediaLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionLcduiLibrary"/>
-		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionMediaControlLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionLcduiGameLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionMediaProtocolLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionIoLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaLangRefLibrary"/>
 		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaIoLibrary"/>
 		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionMidletLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionLcduiLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaUtilLibrary"/>
 		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionPkiLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionRmsLibrary"/>
+		<rdfs:subClassOf rdf:resource="&j2me-midp-2_0;JavaxMicroeditionMediaControlLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the entire API for j2me-midp-2_0</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-2_0;J2me-midp-2_0">
@@ -77,9 +77,9 @@
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-2_0;JavaxMicroeditionIoLibrary">
 		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaxMicroeditionIoLibrary"/>
-		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaIoLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaxMicroeditionPkiLibrary"/>
+		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaIoLibrary"/>
+		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.io package for j2me-midp-2_0</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-2_0;JavaxMicroeditionPkiLibrary">
@@ -90,16 +90,16 @@
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-2_0;JavaxMicroeditionLcduiLibrary">
 		<rdfs:subClassOf rdf:resource="&j2me-midp-1_0;JavaxMicroeditionLcduiLibrary"/>
+		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaUtilLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaIoLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaxMicroeditionMidletLibrary"/>
-		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaUtilLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.lcdui package for j2me-midp-2_0</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-2_0;JavaxMicroeditionLcduiGameLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaxMicroeditionLcduiLibrary"/>
+		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.lcdui.game package for j2me-midp-2_0</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-2_0;JavaxMicroeditionMidletLibrary">
@@ -115,14 +115,14 @@
 	<owl:Class rdf:about="&j2me-midp-2_0;JavaxMicroeditionMediaLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaxMicroeditionMediaProtocolLibrary"/>
-		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaIoLibrary"/>
+		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.media package for j2me-midp-2_0</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-2_0;JavaxMicroeditionMediaProtocolLibrary">
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaxMicroeditionMediaLibrary"/>
+		<rdfs:seeAlso rdf:resource="&j2me-midp-2_0;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the javax.microedition.media.protocol package for j2me-midp-2_0</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&j2me-midp-2_0;JavaxMicroeditionMediaControlLibrary">
