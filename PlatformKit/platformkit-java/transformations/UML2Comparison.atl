@@ -92,6 +92,11 @@ helper context UML2!uml::Model def : compatibleInPrev : Sequence(UML2!uml::Model
 		->select(m|self->hasAllPackagesCompatibleWith(m))
 		->debug(thisModule.modelName.prefix + self.qualifiedName + ' compatible models');
 
+helper context UML2!uml::Model def : equivalentInPrev : Sequence(UML2!uml::Model) =
+	thisModule.prevModels
+		->select(m|self->hasAllPackagesEquivalentWith(m))
+		->debug(thisModule.modelName.prefix + self.qualifiedName + ' equivalent models');
+
 helper context UML2!uml::Package def : compatibleInPrev : Sequence(UML2!uml::Package) =
 	thisModule.prevPackages
 		->select(p|self->isCompatibleWith(p))
@@ -136,6 +141,16 @@ helper context UML2!uml::Model def : hasAllPackagesCompatibleWith(m : UML2!uml::
 helper context UML2!uml::Model def : hasPackageCompatibleWith(p : UML2!uml::Package) : Boolean =
 	self.allOwnedPackages
 			->select(sp|sp.compatibleInPrev->includes(p))->notEmpty();
+		
+helper context UML2!uml::Model def : hasAllPackagesEquivalentWith(m : UML2!uml::Model) : Boolean =
+	let equivPackages : Sequence(UML2!uml::Package) = m.allOwnedPackages
+		->select(p|not self->hasPackageEquivalentWith(p))
+	in if equivPackages->isEmpty() then true
+	   else equivPackages->debug(thisModule.modelName.prefix + self.qualifiedName + ' misses packages equivalent with ')->isEmpty() endif;
+		
+helper context UML2!uml::Model def : hasPackageEquivalentWith(p : UML2!uml::Package) : Boolean =
+	self.allOwnedPackages
+			->select(sp|sp.equivalentInPrev->includes(p))->notEmpty();
 		
 helper context UML2!uml::Package def : isCompatibleWith(p : UML2!uml::Package) : Boolean =
 	if self->namedElementIsCompatibleWith(p)

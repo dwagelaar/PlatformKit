@@ -4,9 +4,12 @@
 <mapEntry key="UML2" value="EMF"/>
 <mapEntry key="OWL" value="EMF"/>
 </mapAttribute>
+<mapAttribute key="Libs">
+<mapEntry key="UML2Comparison" value="/platformkit-java/transformations/UML2Comparison.asm"/>
+</mapAttribute>
 <stringAttribute key="ATL VM" value="Regular VM (with debugger)"/>
-<mapAttribute key="Libs"/>
 <booleanAttribute key="Mode Debug" value="false"/>
+<stringAttribute key="Project Name" value="platformkit-java"/>
 <mapAttribute key="ModelType">
 <mapEntry key="OUT" value="MODELOUTPUT"/>
 <mapEntry key="JAVA" value="MODELINPUT"/>
@@ -15,18 +18,17 @@
 <mapEntry key="OWL" value="METAMODELOUTPUT"/>
 <mapEntry key="IN" value="MODELINPUT"/>
 </mapAttribute>
-<stringAttribute key="Project Name" value="platformkit-java"/>
 <mapAttribute key="Output">
 <mapEntry key="OUT" value="OWL"/>
 </mapAttribute>
 <booleanAttribute key="ContinueAfterError" value="false"/>
+<booleanAttribute key="profile" value="false"/>
+<booleanAttribute key="AllowInterModelReferences" value="true"/>
 <mapAttribute key="Input">
 <mapEntry key="JAVA" value="OWL"/>
 <mapEntry key="PLATFORM" value="OWL"/>
 <mapEntry key="IN" value="UML2"/>
 </mapAttribute>
-<booleanAttribute key="AllowInterModelReferences" value="true"/>
-<booleanAttribute key="profile" value="false"/>
 <booleanAttribute key="printExecutionTime" value="true"/>
 <booleanAttribute key="disableAttributeHelperCache" value="false"/>
 <stringAttribute key="ATL File Name" value="/platformkit-java/transformations/UML2ToAPIOntology.atl"/>
