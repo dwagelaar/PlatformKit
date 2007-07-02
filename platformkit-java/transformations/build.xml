@@ -13,6 +13,7 @@
     			<inmodel name="JAVA" model="Java"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
     			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
     		</am3.atl>
         </sequential>
     </macrodef>
@@ -30,6 +31,7 @@
     			<inmodel name="JAVA" model="Java"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
     			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
     		</am3.atl>
         	<am3.saveModel model="@{out}" path="@{path}"/>
         </sequential>
@@ -52,6 +54,7 @@
     			<inmodel name="PREVIN" model="@{previn}"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
     			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
     		</am3.atl>
         	<am3.saveModel model="@{out}" path="@{path}"/>
         </sequential>
@@ -78,6 +81,7 @@
     			<inmodel name="PREVIN2" model="@{previn2}"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
     			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
     		</am3.atl>
         	<am3.saveModel model="@{out}" path="@{path}"/>
         </sequential>
@@ -108,6 +112,7 @@
     			<inmodel name="PREVIN3" model="@{previn3}"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
     			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
     		</am3.atl>
         	<am3.saveModel model="@{out}" path="@{path}"/>
         </sequential>
