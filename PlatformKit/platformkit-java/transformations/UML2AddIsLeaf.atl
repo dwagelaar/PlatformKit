@@ -1,5 +1,5 @@
 -- @atlcompiler atl2006
--- $Id: UML2AddGeneralizations.atl 6843 2007-06-06 21:29:11Z dwagelaa $
+-- $Id$
 -- Copies isLeaf and isReadOnly attribute values from a reference model
 module UML2AddIsLeaf; --extends UML2Copy
 
