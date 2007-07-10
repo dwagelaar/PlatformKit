@@ -1,0 +1,225 @@
+-- @atlcompiler atl2006
+-- $Id: UML2AddGeneralizations.atl 6843 2007-06-06 21:29:11Z dwagelaa $
+-- Copies isLeaf and isReadOnly attribute values from a reference model
+module UML2AddIsLeaf; --extends UML2Copy
+
+create OUT : UML2 from IN : UML2, REF : UML2;
+
+uses UML2Comparison;
+
+-- ======================================================================
+-- model-specific helpers begin
+-- ======================================================================
+
+helper context UML2!uml::Classifier def : fromPrev() : Sequence(UML2!uml::Classifier) =
+	let packageName : String = self->getNearestPackage().umlQualifiedName in
+		thisModule.prevPackages
+			->select(p|p.umlQualifiedName = packageName)
+			->collect(p1|p1.allOwnedClassifiers)->flatten()
+			->select(c|self.umlQualifiedName = c.umlQualifiedName);
+
+-- ======================================================================
+-- model-specific helpers end
+-- ======================================================================
+	
+-- ======================================================================
+-- transformation rules begin
+-- ======================================================================
+
+rule Class {
+    from s : UML2!uml::Class (
+		if thisModule.inElements->includes(s) then
+			s->oclIsTypeOf(UML2!uml::Class)
+		else false endif)
+	using {
+    	prev : UML2!uml::Classifier = s->fromPrev()->first()
+			->debug(s.qualifiedName + ' from prev');
+    }
+    to t : UML2!uml::Class mapsTo s (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isAbstract <- s.isAbstract,
+        isActive <- s.isActive,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        generalization <- s.generalization,
+        powertypeExtent <- s.powertypeExtent,
+        redefinedClassifier <- s.redefinedClassifier,
+        substitution <- s.substitution,
+        representation <- s.representation,
+        collaborationUse <- s.collaborationUse,
+        ownedUseCase <- s.ownedUseCase,
+        useCase <- s.useCase,
+        ownedAttribute <- s.ownedAttribute,
+        ownedConnector <- s.ownedConnector,
+        ownedBehavior <- s.ownedBehavior,
+        classifierBehavior <- s.classifierBehavior,
+        interfaceRealization <- s.interfaceRealization,
+        ownedTrigger <- s.ownedTrigger,
+        nestedClassifier <- s.nestedClassifier,
+        ownedOperation <- s.ownedOperation,
+        ownedReception <- s.ownedReception)
+}
+
+rule Interface {
+    from s : UML2!uml::Interface (thisModule.inElements->includes(s))
+	using {
+    	prev : UML2!uml::Classifier = s->fromPrev()->first()
+			->debug(s.qualifiedName + ' from prev');
+    }
+	to t : UML2!uml::Interface mapsTo s (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isAbstract <- s.isAbstract,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        generalization <- s.generalization,
+        powertypeExtent <- s.powertypeExtent,
+        redefinedClassifier <- s.redefinedClassifier,
+        substitution <- s.substitution,
+        representation <- s.representation,
+        collaborationUse <- s.collaborationUse,
+        ownedUseCase <- s.ownedUseCase,
+        useCase <- s.useCase,
+        ownedAttribute <- s.ownedAttribute,
+        ownedOperation <- s.ownedOperation,
+        nestedClassifier <- s.nestedClassifier,
+        redefinedInterface <- s.redefinedInterface,
+        ownedReception <- s.ownedReception,
+        protocol <- s.protocol)
+}
+
+rule DataType {
+    from s : UML2!uml::DataType (
+		if thisModule.inElements->includes(s) then
+			s->oclIsTypeOf(UML2!uml::DataType)
+		else false endif)
+	using {
+    	prev : UML2!uml::Classifier = s->fromPrev()->first()
+			->debug(s.qualifiedName + ' from prev');
+    }
+	to t : UML2!uml::DataType mapsTo s (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isAbstract <- s.isAbstract,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        generalization <- s.generalization,
+        powertypeExtent <- s.powertypeExtent,
+        redefinedClassifier <- s.redefinedClassifier,
+        substitution <- s.substitution,
+        representation <- s.representation,
+        collaborationUse <- s.collaborationUse,
+        ownedUseCase <- s.ownedUseCase,
+        useCase <- s.useCase,
+        ownedAttribute <- s.ownedAttribute,
+        ownedOperation <- s.ownedOperation)
+}
+
+rule Property {
+    from s : UML2!uml::Property (
+		if thisModule.inElements->includes(s) then
+			s->oclIsTypeOf(UML2!uml::Property)
+		else false endif)
+	using {
+    	prevC : UML2!uml::Classifier = s.namespace->fromPrev()->first();
+		prev : UML2!uml::StructuralFeature = if prevC->oclIsUndefined() then OclUndefined
+			else prevC.allFeatures->select(f|s->isCompatibleWith(f))->first() endif
+			->debug(s.qualifiedName + ' from prev');
+    }
+	to t : UML2!uml::Property mapsTo s (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isStatic <- s.isStatic,
+        isOrdered <- s.isOrdered,
+        isUnique <- s.isUnique,
+        isReadOnly <- if prev->oclIsUndefined() then s.isReadOnly else prev.isReadOnly endif,
+        isDerived <- s.isDerived,
+        isDerivedUnion <- s.isDerivedUnion,
+        aggregation <- s.aggregation,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        type <- s.type,
+        upperValue <- s.upperValue,
+        lowerValue <- s.lowerValue,
+        templateParameter <- s.templateParameter,
+        end <- s.end,
+        deployment <- s.deployment,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        redefinedProperty <- s.redefinedProperty,
+        defaultValue <- s.defaultValue,
+        subsettedProperty <- s.subsettedProperty,
+        association <- s.association,
+        qualifier <- s.qualifier)
+}
+
+rule Operation {
+    from s : UML2!uml::Operation (thisModule.inElements->includes(s))
+	using {
+    	prevC : UML2!uml::Classifier = s.namespace->fromPrev()->first();
+		prev : UML2!uml::BehavioralFeature = if prevC->oclIsUndefined() then OclUndefined
+			else prevC.allFeatures->select(f|s->isCompatibleWith(f))->first() endif
+			->debug(s.qualifiedName + ' from prev');
+    }
+	to t : UML2!uml::Operation mapsTo s (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isStatic <- s.isStatic,
+        isAbstract <- s.isAbstract,
+        concurrency <- s.concurrency,
+        isQuery <- s.isQuery,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        ownedParameter <- s.ownedParameter,
+        method <- s.method,
+        raisedException <- s.raisedException,
+        ownedParameterSet <- s.ownedParameterSet,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        precondition <- s.precondition,
+        postcondition <- s.postcondition,
+        redefinedOperation <- s.redefinedOperation,
+        bodyCondition <- s.bodyCondition)
+}
+
+-- ======================================================================
+-- transformation rules end
+-- ======================================================================
