@@ -1,7 +1,5 @@
 package com.hp.hpl.jena.eclipse.logging;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -12,19 +10,31 @@ import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
 
 public class HandlerAdapter extends AppenderSkeleton {
-    private Handler handler;
-    private static Map levelMap;
+
+	private Handler handler;
     
-    static {
-        levelMap = new HashMap();
-        levelMap.put(org.apache.log4j.Level.ALL, java.util.logging.Level.ALL);
-        levelMap.put(org.apache.log4j.Level.DEBUG, java.util.logging.Level.FINE);
-        levelMap.put(org.apache.log4j.Level.ERROR, java.util.logging.Level.SEVERE);
-        levelMap.put(org.apache.log4j.Level.FATAL, java.util.logging.Level.SEVERE);
-        levelMap.put(org.apache.log4j.Level.INFO, java.util.logging.Level.INFO);
-        levelMap.put(org.apache.log4j.Level.OFF, java.util.logging.Level.OFF);
-        levelMap.put(org.apache.log4j.Level.TRACE, java.util.logging.Level.CONFIG);
-        levelMap.put(org.apache.log4j.Level.WARN, java.util.logging.Level.WARNING);
+    /**
+     * @param description A Log4J log level description (e.g. "WARN" or "INFO")
+     * @return The {@link Level} equivalent
+     */
+    public static Level getLevelFor(String description) {
+    	Level level = Level.INFO;
+    	if ("ALL".equals(description)) {
+    		level = Level.ALL;
+    	} else if ("DEBUG".equals(description)) {
+    		level = Level.FINE;
+    	} else if ("ERROR".equals(description)) {
+    		level = Level.SEVERE;
+    	} else if ("FATAL".equals(description)) {
+    		level = Level.SEVERE;
+    	} else if ("OFF".equals(description)) {
+    		level = Level.OFF;
+    	} else if ("TRACE".equals(description)) {
+    		level = Level.CONFIG;
+    	} else if ("WARN".equals(description)) {
+    		level = Level.WARNING;
+    	}
+    	return level;
     }
 
     /**
@@ -41,7 +51,7 @@ public class HandlerAdapter extends AppenderSkeleton {
      * @param event
      */
     protected void append(LoggingEvent event) {
-        Level level = (Level) levelMap.get(event.getLevel());
+        Level level = getLevelFor(event.getLevel().toString());
         LogRecord record = new LogRecord(level, event.getRenderedMessage());
         if (event.getThrowableInformation() != null) {
             record.setThrown(event.getThrowableInformation().getThrowable());
