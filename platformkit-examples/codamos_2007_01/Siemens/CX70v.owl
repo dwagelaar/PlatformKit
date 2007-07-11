@@ -4,7 +4,7 @@
     xmlns:java="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:j2me-midp-1_0="http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-1_0-api.owl#"
+    xmlns:j2me-midp-2_0="http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-2_0-api.owl#"
     xmlns:p1="http://www.owl-ontologies.com/assert.owl#"
     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -15,7 +15,7 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/"
   xml:base="http://local/CX70v.owl">
   <owl:Ontology rdf:about="">
-    <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-1_0-api.owl"/>
+    <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-2_0-api.owl"/>
   </owl:Ontology>
   <owl:Class rdf:ID="Keyboard">
     <rdfs:subClassOf rdf:resource="http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl#InputDevice"/>
@@ -70,7 +70,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </owl:FunctionalProperty>
   <platform:CPUResource rdf:ID="cx70vCPU"/>
-  <j2me-midp-1_0:J2me-midp-1_0 rdf:ID="siemensMIDP2">
+  <j2me-midp-2_0:J2me-midp-2_0 rdf:ID="siemensMIDP2">
     <java:providesJavaPackageManager>
       <java:JavaMIDlet rdf:ID="siemensJavaMIDlet"/>
     </java:providesJavaPackageManager>
@@ -80,11 +80,11 @@
       </java:JavaVM>
     </java:providesJavaVM>
     <java:providesBuiltinJavaLibrary>
-      <j2me-midp-1_0:J2me-midp-1_0ClassLibrary rdf:ID="siemensMIDP2ClassLibrary">
+      <j2me-midp-2_0:J2me-midp-2_0ClassLibrary rdf:ID="siemensMIDP2ClassLibrary">
         <java:isBuiltinJavaLibraryFor rdf:resource="#siemensMIDP2"/>
-      </j2me-midp-1_0:J2me-midp-1_0ClassLibrary>
+      </j2me-midp-2_0:J2me-midp-2_0ClassLibrary>
     </java:providesBuiltinJavaLibrary>
-  </j2me-midp-1_0:J2me-midp-1_0>
+  </j2me-midp-2_0:J2me-midp-2_0>
   <units:MegaByte rdf:ID="megaByte10">
     <units:ival rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
     >10</units:ival>
