@@ -107,6 +107,7 @@ public class Validate extends ConstraintSpaceAction {
         String report = createReport(valid);
         writeReport(report, space.eResource().getURI());
         showMessage(report);
+        space.getKnowledgeBase().unloadInstances();
         worked(monitor);
     }
 
