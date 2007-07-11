@@ -23,9 +23,6 @@ package be.ac.vub.platformkit.kb;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -100,9 +97,9 @@ public class Ontologies {
     public Ontologies() throws IOException {
         ontology = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
         ontology.setNsPrefix("", LOCAL_INF_NS);
-        addLocalOntologies(ontology.getDocumentManager());
         baseOntology = ontology;
         prefixURIs.add(LOCAL_INF_NS + '#');
+        addLocalOntologies();
     }
 
     /**
@@ -317,11 +314,8 @@ public class Ontologies {
      * @param url the ontology url or namespace.
      */
     public void loadInstances(String url) {
+        unloadInstances();
         logger.fine("Loading instance ontology " + url);
-        if (instances != null) {
-            unregisterPrefix(instances);
-            getOntModel().remove(instances);
-        }
         instances = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
         instances.read(url);
         getOntModel().add(instances);
@@ -334,11 +328,8 @@ public class Ontologies {
      * @param in the inputstream containing the ontology.
      */
     public void loadInstances(InputStream in) {
+        unloadInstances();
         logger.fine("Loading instance ontology from " + in);
-        if (instances != null) {
-            unregisterPrefix(instances);
-            getOntModel().remove(instances);
-        }
         instances = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
         instances.read(in, "");
         getOntModel().add(instances);
@@ -346,17 +337,25 @@ public class Ontologies {
     }
     
     /**
+     * Removes current instance ontology, if any.
+     */
+    public void unloadInstances() {
+        if (instances != null) {
+            logger.fine("Unloading current instance ontology");
+            unregisterPrefix(instances);
+            getOntModel().remove(instances);
+            instances = null;
+        }
+    }
+    
+    /**
      * Writes the ontology to the given output stream.
      * @param out
-     * @throws UnsupportedEncodingException
      */
-    public void saveOntology(OutputStream out)
-    throws UnsupportedEncodingException {
-        PrintStream ps = new PrintStream(out);
-        RDFWriter writer = getOntModel().getWriter(FileUtils.langXMLAbbrev);
+    public void saveOntology(OutputStream out) {
+        RDFWriter writer = getOntModel().getWriter(FileUtils.langXML);
         prepareWriter(writer, LOCAL_INF_NS);
-        String encoding = "UTF-8";
-        writer.write(getOntModel(), new OutputStreamWriter(ps, encoding), LOCAL_INF_NS);
+        writer.write(getOntModel(), out, LOCAL_INF_NS);
     }
     
     /**
@@ -365,10 +364,9 @@ public class Ontologies {
      * @param namespace XML namespace.
      */
     private static void prepareWriter(RDFWriter writer, String namespace) {
-        writer.setProperty("showXmlDeclaration", "" + true);
+        writer.setProperty("showXmlDeclaration", "true");
         writer.setProperty("relativeURIs", "same-document");
         writer.setProperty("xmlbase", namespace);
-        writer.setProperty("blockRules", "propertyAttr");
     }
 
     /**
@@ -410,8 +408,8 @@ public class Ontologies {
      * @param dm The document manager.
      * @throws IOException if the local ontology mapping could not be read.
      */
-    private void addLocalOntologies(OntDocumentManager dm) throws IOException {
-        addLocalOntologies(dm, BaseOntologyProvider.INSTANCE);
+    private void addLocalOntologies() throws IOException {
+        addLocalOntologies(BaseOntologyProvider.INSTANCE);
         IExtensionRegistry registry = Platform.getExtensionRegistry();
         if (registry == null) {
             logger.info("Eclipse platform extension registry not found. Local ontology registration does not work outside Eclipse.");
@@ -424,29 +422,13 @@ public class Ontologies {
             for (int j = 0 ; j < elements.length ; j++) {
                 try {
                     IOntologyProvider provider = (IOntologyProvider)
-                    elements[j].createExecutableExtension("provider");
-                    InputStream[] streams = provider.getOntologies();
-                    for (int k = 0; k < streams.length; k++) {
-                        addLocalOntology(dm, streams[k]);
-                    }
+                    		elements[j].createExecutableExtension("provider");
+                    addLocalOntologies(provider);
                 } catch (CoreException e) {
                     throw new IOException(e.getLocalizedMessage());
                 }
             }
         }
-    }
-    
-    /**
-     * Adds all known local ontologies to the document manager.
-     * @param dm The document manager.
-     * @param provider The ontology provider.
-     * @throws IOException if the local ontology mapping could not be read.
-     */
-    private void addLocalOntologies(OntDocumentManager dm, IOntologyProvider provider) throws IOException {
-		InputStream[] streams = provider.getOntologies();
-		for (int k = 0; k < streams.length; k++) {
-			addLocalOntology(dm, streams[k]);
-		}
     }
     
     /**
@@ -457,11 +439,18 @@ public class Ontologies {
     private void addLocalOntology(OntDocumentManager dm, InputStream resource) {
         OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
         model.read(resource, null, null);
-        //registerPrefix(model);
         String ns = model.getNsPrefixURI("");
         ns = ns.substring(0, ns.length() - 1);
         logger.info("Adding local ontology " + ns);
         dm.addModel(ns, model);
+        /*
+         * If the prefix of this ontology is added, then #getLocalNamedClasses()
+         * will also return the classes from this ontology. This has as a consequence
+         * that taxonomy classification will extend into the standard vocabulary
+         * ontologies as well. This currently creates too much overhead and is not
+         * necessary for proper functioning of PlatformKit.
+         */
+//        registerPrefix(model);
     }
 
     /**
