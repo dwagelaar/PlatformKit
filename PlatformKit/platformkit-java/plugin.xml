@@ -18,6 +18,12 @@
             <separator name="group1"/>
          </menu>
          <action
+               class="be.ac.vub.platformkit.java.popup.actions.J2MEMIDP2_0CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.j2memidp2_0CompatAction"
+               label="Determine compatibility with J2ME MIDP 2.0"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
                class="be.ac.vub.platformkit.java.popup.actions.J2MEMIDP1_0CompatAction"
                enablesFor="1"
                id="be.ac.vub.platformkit.java.j2memidp1_0CompatAction"
@@ -28,6 +34,12 @@
                enablesFor="1"
                id="be.ac.vub.platformkit.java.personaljava1_1CompatAction"
                label="Determine compatibility with Personal Java 1.1"
+               menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.J2MEPP1_1CompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.j2mepp1_1CompatAction"
+               label="Determine compatibility with J2ME PP 1.1"
                menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
          <action
                class="be.ac.vub.platformkit.java.popup.actions.J2MEPP1_0CompatAction"
