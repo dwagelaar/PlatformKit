@@ -179,7 +179,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
             logger.fine(ontClass + " is valid");
             return true;
         } else {
-            logger.fine(ontClass + " is invalid");
+            logger.info(ontClass + " is invalid");
             return false;
         }
 	}
