@@ -20,7 +20,7 @@
 	<owl:Ontology rdf:about="">
 	    <rdfs:label xml:lang="en">Java API collection ontology</rdfs:label>
 	    <owl:versionInfo rdf:datatype="&xsd;#string">
-	      $Id: Java.owl 6912 2007-06-14 14:35:12Z dwagelaa $
+	      $Id$
 	    </owl:versionInfo> 
 	    <rdfs:comment xml:lang="en">
 	      Java API collection ontology that imports all generated Java API ontologies
