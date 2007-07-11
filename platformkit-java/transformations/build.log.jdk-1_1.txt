@@ -26,64 +26,64 @@
      [am3.atl] INFO: [jdk-1_1] jdk-1_1 equivalent models: Sequence {}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaLangLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang referenced packages: Set {JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang referenced packages: Set {JDK-1_1!net, JDK-1_1!reflect, JDK-1_1!io, JDK-1_1!util}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaLangReflectLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect equivalent packages: Sequence {}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect referenced packages: Set {JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaIoLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaUtilLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util equivalent packages: Sequence {}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util referenced packages: Set {JDK-1_1!lang, JDK-1_1!io}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaUtilZipLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip referenced packages: Set {JDK-1_1!lang, JDK-1_1!io, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!io}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaTextLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text referenced packages: Set {JDK-1_1!lang, JDK-1_1!io, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!io}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaTextResourcesLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaMathLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaNetLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::net equivalent packages: Sequence {}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::net referenced packages: Set {JDK-1_1!lang, JDK-1_1!io}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security referenced packages: Set {JDK-1_1!io, JDK-1_1!util, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityAclLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!security}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!security}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityInterfacesLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::interfaces equivalent packages: Sequence {}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::interfaces referenced packages: Set {JDK-1_1!security, JDK-1_1!math}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt referenced packages: Set {JDK-1_1!datatransfer, JDK-1_1!peer, JDK-1_1!util, JDK-1_1!io, JDK-1_1!lang, JDK-1_1!event, JDK-1_1!net, JDK-1_1!image}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt referenced packages: Set {JDK-1_1!net, JDK-1_1!image, JDK-1_1!event, JDK-1_1!peer, JDK-1_1!util, JDK-1_1!io, JDK-1_1!datatransfer, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtImageLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image referenced packages: Set {JDK-1_1!awt, JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image referenced packages: Set {JDK-1_1!util, JDK-1_1!awt, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtEventLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event referenced packages: Set {JDK-1_1!awt, JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!awt}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtPeerLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer referenced packages: Set {JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!io, JDK-1_1!image}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer referenced packages: Set {JDK-1_1!io, JDK-1_1!image, JDK-1_1!lang, JDK-1_1!awt}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtDatatransferLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::datatransfer equivalent packages: Sequence {}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::datatransfer referenced packages: Set {JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAppletLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet referenced packages: Set {JDK-1_1!awt, JDK-1_1!lang, JDK-1_1!net, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet referenced packages: Set {JDK-1_1!net, JDK-1_1!util, JDK-1_1!lang, JDK-1_1!awt}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaSqlLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql referenced packages: Set {JDK-1_1!lang, JDK-1_1!io, JDK-1_1!util, JDK-1_1!math}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!io, JDK-1_1!math}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi referenced packages: Set {JDK-1_1!lang, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi referenced packages: Set {JDK-1_1!net, JDK-1_1!io, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiRegistryLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::registry equivalent packages: Sequence {}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::registry referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi}
@@ -92,10 +92,10 @@
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::dgc referenced packages: Set {JDK-1_1!lang, JDK-1_1!io, JDK-1_1!rmi}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiServerLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server referenced packages: Set {JDK-1_1!net, JDK-1_1!io, JDK-1_1!lang, JDK-1_1!rmi}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaBeansLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans equivalent packages: Sequence {}
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!awt, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans referenced packages: Set {JDK-1_1!io, JDK-1_1!reflect, JDK-1_1!util, JDK-1_1!lang, JDK-1_1!awt}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java compatible packages: Sequence {PJ-1_1!java}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang compatible packages: Sequence {PJ-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect compatible packages: Sequence {PJ-1_1!reflect}
@@ -176,50 +176,50 @@
      [am3.atl] INFO: [jdk-1_1] jdk-1_1 misses packages equivalent with : Sequence {PJ-1_1!io, PJ-1_1!zip, PJ-1_1!resources, PJ-1_1!awt, PJ-1_1!peer, PJ-1_1!applet}
      [am3.atl] INFO: [jdk-1_1] jdk-1_1 equivalent models: Sequence {}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaLangLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang referenced packages: Set {JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang referenced packages: Set {JDK-1_1!net, JDK-1_1!reflect, JDK-1_1!io, JDK-1_1!util}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaLangReflectLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::lang::reflect referenced packages: Set {JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaIoLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::io referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaUtilLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util referenced packages: Set {JDK-1_1!lang, JDK-1_1!io}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaUtilZipLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip referenced packages: Set {JDK-1_1!lang, JDK-1_1!io, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::util::zip referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!io}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaTextLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text referenced packages: Set {JDK-1_1!lang, JDK-1_1!io, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!io}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaTextResourcesLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::text::resources referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaMathLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math referenced packages: Set {JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::math referenced packages: Set {JDK-1_1!util, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaNetLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::net referenced packages: Set {JDK-1_1!lang, JDK-1_1!io}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security referenced packages: Set {JDK-1_1!io, JDK-1_1!util, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityAclLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!security}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::acl referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!security}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaSecurityInterfacesLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::security::interfaces referenced packages: Set {JDK-1_1!security, JDK-1_1!math}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt referenced packages: Set {JDK-1_1!datatransfer, JDK-1_1!peer, JDK-1_1!util, JDK-1_1!io, JDK-1_1!lang, JDK-1_1!event, JDK-1_1!net, JDK-1_1!image}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt referenced packages: Set {JDK-1_1!net, JDK-1_1!image, JDK-1_1!event, JDK-1_1!peer, JDK-1_1!util, JDK-1_1!io, JDK-1_1!datatransfer, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtImageLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image referenced packages: Set {JDK-1_1!awt, JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::image referenced packages: Set {JDK-1_1!util, JDK-1_1!awt, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtEventLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event referenced packages: Set {JDK-1_1!awt, JDK-1_1!lang, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::event referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!awt}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtPeerLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer referenced packages: Set {JDK-1_1!lang, JDK-1_1!awt, JDK-1_1!io, JDK-1_1!image}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::peer referenced packages: Set {JDK-1_1!io, JDK-1_1!image, JDK-1_1!lang, JDK-1_1!awt}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAwtDatatransferLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::awt::datatransfer referenced packages: Set {JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaAppletLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet referenced packages: Set {JDK-1_1!awt, JDK-1_1!lang, JDK-1_1!net, JDK-1_1!util}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::applet referenced packages: Set {JDK-1_1!net, JDK-1_1!util, JDK-1_1!lang, JDK-1_1!awt}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaSqlLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql referenced packages: Set {JDK-1_1!lang, JDK-1_1!io, JDK-1_1!util, JDK-1_1!math}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::sql referenced packages: Set {JDK-1_1!util, JDK-1_1!lang, JDK-1_1!io, JDK-1_1!math}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi referenced packages: Set {JDK-1_1!lang, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi referenced packages: Set {JDK-1_1!net, JDK-1_1!io, JDK-1_1!lang}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiRegistryLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::registry referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiDgcLibrary'
      [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::dgc referenced packages: Set {JDK-1_1!lang, JDK-1_1!io, JDK-1_1!rmi}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaRmiServerLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server referenced packages: Set {JDK-1_1!lang, JDK-1_1!rmi, JDK-1_1!net, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::rmi::server referenced packages: Set {JDK-1_1!net, JDK-1_1!io, JDK-1_1!lang, JDK-1_1!rmi}
      [am3.atl] INFO: [jdk-1_1] Package: 'JavaBeansLibrary'
-     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans referenced packages: Set {JDK-1_1!lang, JDK-1_1!util, JDK-1_1!reflect, JDK-1_1!awt, JDK-1_1!io}
+     [am3.atl] INFO: [jdk-1_1] jdk-1_1::java::beans referenced packages: Set {JDK-1_1!io, JDK-1_1!reflect, JDK-1_1!util, JDK-1_1!lang, JDK-1_1!awt}
