@@ -10,6 +10,26 @@
 <h3>PlatformKit 1.1.3 (HEAD)</h3>
 
 <ul>
+	<li>Unload platform specification after validation.</li>
+	<li>Increase verbosity of isValid() logging: show which platform constraint failed.</li>
+	<li>Added compatiblity check actions for J2ME MIDP 2.0 and J2ME PP 1.1.</li>
+	<li>Added new example platforms for J2ME PP 1.1 and J2ME MIDP 2.0 and updated Siemens CX70v ontology to MIDP 2.0.</li>
+	<li>Added unloadInstances() method to Ontologies class.</li>
+	<li>Fixed bug in Jena plug-in HandlerAdapter where a Log4J Level was not properly converted to a java.util.logging.Level.</li>
+	<li>Generate new UML models with JarToUML 1.0.9 and tag them + update manually derived models with UML2AddIsLeaf.atl.</li>
+	<li>Reintroduce equivalence relationships to preserve ontology robustness (all expected classes will remain, even if new equivalent classes are introduced).</li>
+	<li>Deprecated API from JDK 1.3 does not exist in J2ME PP 1.0 - stripped UML model.</li>
+	<li>Added J2ME PP 1.1 and J2ME MIDP 2.0 ontologies.</li>
+	<li>Change platformkit-examples into a plugin that provides built-in example platform specifications.</li>
+	<li>Added possibility to validate against built-in platform specifications via an Eclipse extension point.</li>
+	<li>Added extra generic example platform descriptions.</li>
+	<li>Add dots to Validate Against Concrete Platform menu option.</li>
+	<li>Removed Pellet version number from preference page and improved preference page layout.</li>
+	<li>Classify Taxonomy Monitor was one step short.</li>
+	<li>Introduce context menu actions on UML models to check their compatibility against known Java APIs.</li>
+	<li>Allow ontology providers to work outside Eclipse.</li>
+	<li>Added Siemens CX70v mobile phone example for codamos_2007_01.</li>
+	<li>Added Zaurus Jeode example for codamos_2007_01.</li>
 	<li>Added release notes document.</li>
 </ul>
 
