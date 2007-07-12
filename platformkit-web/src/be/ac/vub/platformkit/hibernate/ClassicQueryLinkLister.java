@@ -88,8 +88,12 @@ public class ClassicQueryLinkLister {
     	pd.setBrowserID("SIE-CX7V");
     	pd.setFromInputStream(resource.openStream());
     	store.storePlatformDescription(pd);
+
     	// Emulator
+    	resource = ClassicQueryLinkLister.class.getResource("ontology/codamos_2007_01/J2MEMIDP2.0Phone.owl");
+    	Assert.assertNotNull(resource);
     	pd.setBrowserID("Profile/MIDP-2.0 Configuration/CLDC-1.1");
+    	pd.setFromInputStream(resource.openStream());
     	store.storePlatformDescription(pd);
     }
     
