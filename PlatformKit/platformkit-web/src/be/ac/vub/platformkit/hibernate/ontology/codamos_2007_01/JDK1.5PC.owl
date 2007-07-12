@@ -17,11 +17,6 @@
   <owl:Ontology rdf:about="">
     <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/j2se-1_5-api.owl"/>
   </owl:Ontology>
-  <rdf:Property rdf:ID="hasSubVersion"/>
-  <rdf:Property rdf:ID="providesSoftware_1"/>
-  <rdf:Property rdf:ID="versionNumber"/>
-  <rdf:Property rdf:ID="hasJDKVersion"/>
-  <rdf:Property rdf:ID="providesSoftware"/>
   <java:JavaWebStart rdf:ID="jdk1.5JavaWebStart"/>
   <j2se-1_5:J2se-1_5ClassLibrary rdf:ID="jdk1.5ClassLibrary">
     <java:isBuiltinJavaLibraryFor>
@@ -41,8 +36,6 @@
   </j2se-1_5:J2se-1_5ClassLibrary>
   <platform:Platform rdf:ID="pc">
     <platform:providesSoftware rdf:resource="#jdk1.5"/>
-    <providesSoftware rdf:resource="#jdk1.5"/>
-    <providesSoftware_1 rdf:resource="#jdk1.5"/>
   </platform:Platform>
 </rdf:RDF>
 
