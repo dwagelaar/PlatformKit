@@ -3,7 +3,7 @@
 <plugin
    id="com.hp.hpl.jena"
    name="Jena Plug-in"
-   version="2.5.3.0"
+   version="2.5.3.1"
    provider-name="Hewlett-Packard Development Company, LP"
    class="com.hp.hpl.jena.eclipse.JenaPlugin">
 
