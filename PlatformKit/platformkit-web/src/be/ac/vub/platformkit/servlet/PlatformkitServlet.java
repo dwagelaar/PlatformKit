@@ -99,6 +99,7 @@ public class PlatformkitServlet extends HttpServlet {
             }
             logger.info("Redirecting to " + redirect);
             resp.sendRedirect(redirect);
+			space.getKnowledgeBase().unloadInstances();
 			freeConstraintSpace(space, session.getBaseURL());
 		} catch (Throwable e) {
 			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
