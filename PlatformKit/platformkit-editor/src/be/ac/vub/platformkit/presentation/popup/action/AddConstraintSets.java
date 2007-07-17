@@ -91,10 +91,12 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
     	List commands = new ArrayList();
     	EList ontologies = new BasicEList();
     	EList constraintSets = new BasicEList();
+    	ontologies.addAll(space.getOntology());
         for (int i = 0; i < sources.length; i++) {
         	addOntologies(sources[i], ontologies);
         	addConstraintSet(sources[i], constraintSets);
         }
+        ontologies.removeAll(space.getOntology());
         if (!ontologies.isEmpty()) {
             commands.add(createAddOntologyCommand(ontologies));
         }
