@@ -81,6 +81,10 @@ public class ClassicQueryLinkLister {
     	store.storePlatformDescription(pd);
     	pd.setBrowserID("Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3");
     	store.storePlatformDescription(pd);
+    	pd.setBrowserID("Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5");
+    	store.storePlatformDescription(pd);
+    	pd.setBrowserID("Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5");
+    	store.storePlatformDescription(pd);
     	
     	// Siemens CX70v mobile phone
     	resource = ClassicQueryLinkLister.class.getResource("ontology/codamos_2007_01/CX70v.owl");
