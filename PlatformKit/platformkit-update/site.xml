@@ -15,6 +15,9 @@
    <feature url="features/be.ac.vub.platformkit.bundle_1.1.4.jar" id="be.ac.vub.platformkit.bundle" version="1.1.4">
       <category name="PlatformKit"/>
    </feature>
+   <feature url="features/be.ac.vub.platformkit.bundle_1.1.5.jar" id="be.ac.vub.platformkit.bundle" version="1.1.5">
+      <category name="PlatformKit"/>
+   </feature>
    <category-def name="PlatformKit" label="Platform modelling and platform dependency management toolkit">
       <description>
          PlatformKit is a platform modelling and platform dependency management
