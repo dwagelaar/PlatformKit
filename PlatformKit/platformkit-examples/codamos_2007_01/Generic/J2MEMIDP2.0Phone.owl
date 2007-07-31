@@ -27,9 +27,7 @@
           </java:JavaVM>
         </java:providesJavaVM>
         <java:providesBuiltinJavaLibrary>
-          <j2me-midp-2_0:J2me-midp-2_0ClassLibrary rdf:ID="j2me-midp-2_0ClassLibrary">
-            <java:isBuiltinJavaLibraryFor rdf:resource="#j2me-midp-2_0"/>
-          </j2me-midp-2_0:J2me-midp-2_0ClassLibrary>
+          <j2me-midp-2_0:J2me-midp-2_0ClassLibrary rdf:ID="j2me-midp-2_0ClassLibrary"/>
         </java:providesBuiltinJavaLibrary>
         <java:providesJavaPackageManager rdf:resource="#javaMIDlet"/>
       </j2me-midp-2_0:J2me-midp-2_0>

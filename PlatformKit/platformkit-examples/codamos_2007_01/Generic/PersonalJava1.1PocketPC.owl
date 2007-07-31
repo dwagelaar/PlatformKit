@@ -17,22 +17,22 @@
   <owl:Ontology rdf:about="">
     <owl:imports rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/personaljava-1_1-api.owl"/>
   </owl:Ontology>
-  <personaljava-1_1:Personaljava-1_1 rdf:ID="personaljava-1_1">
-    <java:providesBuiltinJavaLibrary>
-      <personaljava-1_1:Personaljava-1_1ClassLibrary rdf:ID="personaljava-1_1ClassLibrary">
-        <java:isBuiltinJavaLibraryFor rdf:resource="#personaljava-1_1"/>
-      </personaljava-1_1:Personaljava-1_1ClassLibrary>
-    </java:providesBuiltinJavaLibrary>
-    <java:providesJavaVM>
-      <java:JavaVM rdf:ID="EVM">
-        <java:supportsBytecodeFormat rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#theJava1.1BytecodeFormat"/>
-      </java:JavaVM>
-    </java:providesJavaVM>
-  </personaljava-1_1:Personaljava-1_1>
-  <pm:CAB rdf:ID="pocketpcCAB"/>
   <platform:Platform rdf:ID="pocketPC">
-    <platform:providesSoftware rdf:resource="#personaljava-1_1"/>
-    <platform:providesSoftware rdf:resource="#pocketpcCAB"/>
+    <platform:providesSoftware>
+      <personaljava-1_1:Personaljava-1_1 rdf:ID="personaljava-1_1">
+        <java:providesBuiltinJavaLibrary>
+          <personaljava-1_1:Personaljava-1_1ClassLibrary rdf:ID="personaljava-1_1ClassLibrary"/>
+        </java:providesBuiltinJavaLibrary>
+        <java:providesJavaVM>
+          <java:JavaVM rdf:ID="EVM">
+            <java:supportsBytecodeFormat rdf:resource="http://ssel.vub.ac.be/codamos/2007/01/Java.owl#theJava1.1BytecodeFormat"/>
+          </java:JavaVM>
+        </java:providesJavaVM>
+      </personaljava-1_1:Personaljava-1_1>
+    </platform:providesSoftware>
+    <platform:providesSoftware>
+      <pm:CAB rdf:ID="pocketpcCAB"/>
+    </platform:providesSoftware>
   </platform:Platform>
 </rdf:RDF>
 
