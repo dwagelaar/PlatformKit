@@ -73,10 +73,8 @@
 
   <owl:ObjectProperty rdf:ID="providesBuiltinJavaLibrary">
     <rdf:type rdf:resource="&owl;#FunctionalProperty"/>
-    <rdf:type rdf:resource="&owl;#InverseFunctionalProperty"/>
     <rdfs:domain rdf:resource="#JRE"/>
     <rdfs:range rdf:resource="#JavaLibrary"/>
-    <owl:inverseOf rdf:resource="#isBuiltinJavaLibraryFor"/>
     <rdfs:comment xml:lang="en"
             >Symbolic library instance of the supported Java API class</rdfs:comment>
   </owl:ObjectProperty>
@@ -117,14 +115,6 @@
     <rdfs:subClassOf rdf:resource="&platform;#Library"/>
   </owl:Class>
   
-  <owl:ObjectProperty rdf:ID="isBuiltinJavaLibraryFor">
-    <rdf:type rdf:resource="&owl;#FunctionalProperty"/>
-    <rdf:type rdf:resource="&owl;#InverseFunctionalProperty"/>
-    <rdfs:domain rdf:resource="#JavaLibrary"/>
-    <rdfs:range rdf:resource="#JRE"/>
-    <owl:inverseOf rdf:resource="#providesBuiltinJavaLibrary"/>
-  </owl:ObjectProperty>
-
 <!--   ############ ########### ############ ############ ########### -->
 <!--   ############                                       ########### -->
 <!--   ############     JAVABYTECODEFORMAT PARAMETERS     ########### -->
