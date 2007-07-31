@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	dir="ltr">
+<head>
+<title>PlatformKit Eclipse Plugin [SSEL]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="alternate" type="application/rss+xml" title="SSEL News"
+	href="http://ssel.vub.ac.be/newsfeed.php" />
+
+<!-- VUB headers -->
+<script type="text/javascript" src="resources/style.js"></script>
+<link rel="stylesheet" type="text/css" media="all"
+	href="resources/vub.css" />
+
+<link rel="stylesheet" type="text/css" media="all"
+	href="resources/vubdienst.css" />
+<!-- End VUB headers -->
+
+<meta name="generator" content="DokuWiki Release 2005-07-13" />
+<link rel="start" href="http://ssel.vub.ac.be/ssel/" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes"
+	href="http://ssel.vub.ac.be/ssel/feed.php" />
+
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/style.css" />
+<meta name="date" content="2007-06-07T16:14:06+0200" />
+<meta name="robots" content="index,follow" />
+<script language="javascript" type="text/javascript" charset="utf-8">
+    var alertText   = 'Please enter the text you want to format.\nIt will be appended to the end of the document.'
+    var notSavedYet = 'There are unsaved changes, that will be lost.\nReally continue?'
+    var DOKU_BASE   = '/ssel/'
+  </script>
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/script.js"></script>
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/tw-sack.js"></script>
+
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/ajax.js"></script>
+
+<!-- Dynamic menu -->
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/menu.js"></script>
+
+<link rel="shortcut icon"
+	href="http://ssel.vub.ac.be/ssel/lib/tpl/sselng/images/favicon.ico" />
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/layout.css" />
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/design.css" />
+
+
+<link rel="stylesheet" media="print" type="text/css"
+	href="resources/print.css" />
+
+</head>
+
+<body
+	onload="window.defaultStatus='Vrije Universiteit Brussel';stylizeLinks();toggleToc();"
+	id="vrije-universiteit-brussel">
+
+<div class="dokuwiki"><!-- VUB header template--> <a name="top"
+	id="top"></a> <!-- Container table-->
+<table align="center">
+	<tr>
+		<td>
+		<div id="container"><!-- Body: table with 2 colomns-->
+		<table border="0" align="left">
+
+			<tr>
+				<td align="left" valign="top"><!-- Content block right (2nd colomn) -->
+				<div id="content"><!-- content --> <!-- End VUB header template -->
+
+				<div class="stylehead"></div>
+
+
+				<div class="page"><!-- wikipage start -->
+				<div class="toc">
+				<div class="tocheader"><script type="text/javascript">showTocToggle("+","-")</script>Table
+				of Contents</div>
+				<div id="tocinside">
+
+				<ul class="toc">
+					<li class="level1">
+					<div class="li"><span class="li"><a
+						href="#platformkit_eclipse_plugin" class="toc">PlatformKit
+					Eclipse Plugin</a></span></div>
+					<ul class="toc">
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#introduction" class="toc">Introduction</a></span></div>
+						<ul class="toc">
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig.1platformkit_model" class="toc">Fig.1:
+							Platformkit Model</a></span></div>
+							</li>
+
+						</ul>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a href="#tasks"
+							class="toc">Tasks</a></span></div>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a href="#see_also"
+							class="toc">See also</a></span></div>
+						</li>
+					</ul>
+					</li>
+				</ul>
+				</div>
+				</div>
+
+
+
+				<h1><a name="platformkit_eclipse_plugin"
+					id="platformkit_eclipse_plugin">PlatformKit Eclipse Plugin</a></h1>
+				<div class="level1">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit.html" class="wikilink1"
+						title="research:mdd:platformkit">Back to the PlatformKit main
+					page</a></strong></div>
+
+					</li>
+				</ul>
+
+				</div>
+
+				<h2><a name="introduction" id="introduction">Introduction</a></h2>
+				<div class="level2">
+
+				<p>The PlatformKit Eclipse Plugin provides assistance in
+				developing <a href="http://www.sei.cmu.edu/productlines/"
+					class="urlextern" title="http://www.sei.cmu.edu/productlines/">Software
+				Product Lines</a> using explicit platform dependency management. One can
+				define platform constraints for each component or feature in the <acronym
+					title="Software Product Line">SPL</acronym> using <acronym
+					title="Web Ontology Language">OWL</acronym>-<acronym
+					title="Description Logic">DL</acronym> ontologies. See the <a
+					href="#literature" title="research:mdd:platformkit:eclipse &crarr;"
+					class="wikilink1">Literature</a> section below for details on how
+				to do this.</p>
+
+				<p>A Domain-Specific Language, defined using <a
+					href="http://www.eclipse.org/emf/" class="urlextern"
+					title="http://www.eclipse.org/emf/">EMF</a>, is used for product
+				configuration. The meta-model for this <acronym
+					title="Domain-Specific Language">DSL</acronym> can be annotated
+				with platform constraints, such that each language element
+				(corresponds to component/feature) can have a number of platform
+				constraints. The <a href="http://ssel.vub.ac.be/ssel/research:mdd:casestudies:im"
+					class="wikilink1" title="research:mdd:casestudies:im">Instant
+				Messenger case study</a> provides example meta-models that are already
+				annotated with platform constraints.</p>
+
+				<p>PlatformKit uses an internal model of a Constraint Space,
+				Constraint Sets and Constraints (see <a
+					href="#fig.1platformkit_model"
+					title="research:mdd:platformkit:eclipse &crarr;" class="wikilink1">Fig.1:
+				Platformkit Model</a> to know what platform constraints it needs to
+				group together and which pre-ordering to use. There are two usage
+				scenarios for Platformkit Models: one can choose to...</p>
+				<ul>
+					<li class="level1">
+					<div class="li">...add all meta-classes of a product line
+					meta-model as constraint sets. This allows for checking which
+					components/features are valid for a concrete platform and which are
+					most- or least-specific regarding platform in general. This
+					scenario is discussed in <a
+						href="research_mdd_platformkit_conflang.html" class="wikilink1"
+						title="research:mdd:platformkit:conflang">Setting up a
+					Platform-Aware Configuration Language</a>.</div>
+					</li>
+				</ul>
+				<ul>
+					<li class="level1">
+					<div class="li">...add a number of concrete product
+					configurations as constraint sets. This allows for validating a
+					product configuration against a concrete platform and checking
+					which product configurations are most- or least-specific regarding
+					platform in general. This scenario is discussed in <a
+						href="research_mdd_platformkit_deploy.html" class="wikilink1"
+						title="research:mdd:platformkit:deploy">Platform-Driven
+					Deployment</a>.</div>
+					</li>
+				</ul>
+
+				<p>PlatformKit does pre-classification of the platform
+				constraint ontologies using a <acronym title="Description Logic">DL</acronym>
+				reasoner (directly or through <a
+					href="http://dl.kr.org/dig/interface.html" class="urlextern"
+					title="http://dl.kr.org/dig/interface.html">DIG</a>). All other
+				operations (validation, determining most-/least-specific) use the
+				pre-classified ontology.</p>
+
+				<p>A Platformkit Model that reflects the meta-classes of a
+				product line meta-model can be used during product configuration. In
+				the product configuration editor, one can &ldquo;profile&rdquo; the
+				editor to only show the configuration choices that are valid for a
+				given platform. In addition, the PlatformKit profiler can use the
+				pre-determined order of the Platformkit Model, such that the choices
+				show up most-specific-first of least-specific-first. Finally, the
+				product configuration model can be validated: this includes the
+				standard check against the product line meta-model as well as a
+				check against the chosen concrete platform. This feature is useful
+				when profiling existing product configuration models against a new
+				platform.</p>
+
+				<p>When the product configuration models have been made, a new
+				Platformkit Model can be created that includes all product
+				configurations. Each Constraint Set in this new model now
+				corresponds with a single product configuration model. The
+				Constraints inside each Constraint Set are the accumulated platform
+				constraints that apply for the whole product configuration. This
+				Platformkit Model and its pre-classified ontology can be put on the
+				web for use with the <a href="research_mdd_platformkit_servlet.html"
+					title="research:mdd:platformkit:eclipse &crarr;" class="wikilink1">PlatformKit
+				Servlet</a>.</p>
+
+				<p>Please report any bugs you find in the <a
+					href="https://ssel.vub.ac.be/bugzilla/query.cgi?product=PlatformKit"
+					class="urlextern"
+					title="https://ssel.vub.ac.be/bugzilla/query.cgi?product=PlatformKit">PlatformKit
+				bugzilla</a>.</p>
+
+				</div>
+
+				<h3><a name="fig.1platformkit_model"
+					id="fig.1platformkit_model">Fig.1: Platformkit Model</a></h3>
+
+				<div class="level3">
+
+				<p><a
+					href="resources/platformkit.gif"
+					class="media" title="research:mdd:platformkit.gif"><img
+					src="resources/platformkit.gif"
+					class="media" alt="" /></a></p>
+
+				</div>
+
+				<h2><a name="tasks" id="tasks">Tasks</a></h2>
+				<div class="level2">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_install.html" class="wikilink1"
+						title="research:mdd:platformkit:install">Installing the
+					PlatformKit Eclipse Plugin</a></strong></div>
+					</li>
+
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_mdaspl.html" class="wikilink1"
+						title="research:mdd:platformkit:mdaspl">Setting up a
+					Model-Driven Software Product Line</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_extractdeps.html"
+						class="wikilink1" title="research:mdd:platformkit:extractdeps">Extracting
+					Platform Dependencies of Third-party Components</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_deps.html" class="wikilink1"
+						title="research:mdd:platformkit:deps">Modelling Platform
+					Dependencies</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_conflang.html" class="wikilink1"
+						title="research:mdd:platformkit:conflang">Setting up a
+					Platform-Aware Configuration Language</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_config.html" class="wikilink1"
+						title="research:mdd:platformkit:config">Platform-Driven
+					Configuration</a></strong></div>
+
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_deploy.html" class="wikilink1"
+						title="research:mdd:platformkit:deploy">Platform-Driven
+					Deployment</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<h2><a name="see_also" id="see_also">See also</a></h2>
+				<div class="level2">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="http://ssel.vub.ac.be/viewcvs/viewcvs.py/*checkout*/PlatformKit/platformkit-bundle-feature/release-notes.html"
+						class="urlextern"
+						title="http://ssel.vub.ac.be/viewcvs/viewcvs.py/*checkout*/PlatformKit/platformkit-bundle-feature/release-notes.html">Release
+					notes</a></strong></div>
+					</li>
+
+					<li class="level1">
+					<div class="li"><strong><a
+						href="https://ssel.vub.ac.be/bugzilla/query.cgi?product=PlatformKit"
+						class="urlextern"
+						title="https://ssel.vub.ac.be/bugzilla/query.cgi?product=PlatformKit">PlatformKit
+					bugzilla</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_servlet.html" class="wikilink1"
+						title="research:mdd:platformkit:servlet">PlatformKit Servlet</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<!-- wikipage stop --></div>
+
+				<div class="clearer">&nbsp;</div>
+
+
+				<!-- VUB footer template --></div>
+				</td>
+				<!-- End Content block right (2nd colomn) -->
+			</tr>
+		</table>
+		<!-- Body table --></div>
+		<!--container--></td>
+	</tr>
+	<!-- End Container table-->
+</table>
+<!-- End VUB footer template --></div>
+
+</body>
+</html>

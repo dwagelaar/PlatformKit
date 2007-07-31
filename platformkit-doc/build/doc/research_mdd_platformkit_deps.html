@@ -1,0 +1,807 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	dir="ltr">
+<head>
+<title>Modelling Platform Dependencies [SSEL]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="alternate" type="application/rss+xml" title="SSEL News"
+	href="http://ssel.vub.ac.be/newsfeed.php" />
+
+<!-- VUB headers -->
+<script type="text/javascript" src="resources/style.js"></script>
+<link rel="stylesheet" type="text/css" media="all"
+	href="resources/vub.css" />
+
+<link rel="stylesheet" type="text/css" media="all"
+	href="resources/vubdienst.css" />
+<!-- End VUB headers -->
+
+<meta name="generator" content="DokuWiki Release 2005-07-13" />
+<link rel="start" href="http://ssel.vub.ac.be/ssel/" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes"
+	href="http://ssel.vub.ac.be/ssel/feed.php" />
+
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/style.css" />
+<meta name="date" content="2007-06-07T16:14:06+0200" />
+<meta name="robots" content="index,follow" />
+<script language="javascript" type="text/javascript" charset="utf-8">
+    var alertText   = 'Please enter the text you want to format.\nIt will be appended to the end of the document.'
+    var notSavedYet = 'There are unsaved changes, that will be lost.\nReally continue?'
+    var DOKU_BASE   = '/ssel/'
+  </script>
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/script.js"></script>
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/tw-sack.js"></script>
+
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/ajax.js"></script>
+
+<!-- Dynamic menu -->
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/menu.js"></script>
+
+<link rel="shortcut icon"
+	href="http://ssel.vub.ac.be/ssel/lib/tpl/sselng/images/favicon.ico" />
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/layout.css" />
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/design.css" />
+
+
+<link rel="stylesheet" media="print" type="text/css"
+	href="resources/print.css" />
+
+</head>
+
+<body
+	onload="window.defaultStatus='Vrije Universiteit Brussel';stylizeLinks();toggleToc();"
+	id="vrije-universiteit-brussel">
+
+<div class="dokuwiki"><!-- VUB header template--> <a name="top"
+	id="top"></a> <!-- Container table-->
+<table align="center">
+	<tr>
+		<td>
+		<div id="container"><!-- Body: table with 2 colomns-->
+		<table border="0" align="left">
+
+			<tr>
+				<td align="left" valign="top"><!-- Content block right (2nd colomn) -->
+				<div id="content"><!-- content --> <!-- End VUB header template -->
+
+				<div class="stylehead"></div>
+
+
+				<div class="page"><!-- wikipage start -->
+				<div class="toc">
+				<div class="tocheader"><script type="text/javascript">showTocToggle("+","-")</script>Table
+				of Contents</div>
+				<div id="tocinside">
+
+				<ul class="toc">
+					<li class="level1">
+					<div class="li"><span class="li"><a
+						href="#modelling_platform_dependencies" class="toc">Modelling
+					Platform Dependencies</a></span></div>
+					<ul class="toc">
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#introduction" class="toc">Introduction</a></span></div>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#preparing_the_platform_vocabulary" class="toc">Preparing
+						the platform vocabulary</a></span></div>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#creating_a_new_platform_dependency_ontology" class="toc">Creating
+						a new platform dependency ontology</a></span></div>
+
+						<ul class="toc">
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._1new_protege_project_kind" class="toc">Fig. 1:
+							New Protégé project kind</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._2new_protege_project_uri" class="toc">Fig. 2:
+							New Protégé project URI</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._3new_protege_project_language_profile" class="toc">Fig.
+							3: New Protégé project language profile</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._4importing_an_ontology_into_protege" class="toc">Fig.
+							4: Importing an ontology into Protégé</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._5import_an_ontology_from_a_repository" class="toc">Fig.
+							5: Import an ontology from a repository</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._6add_a_new_ontology_repository" class="toc">Fig.
+							6: Add a new ontology repository</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._7select_repository_type" class="toc">Fig. 7:
+							Select repository type</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._8create_new_repository" class="toc">Fig. 8:
+							Create new repository</a></span></div>
+							</li>
+
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._9select_ontology_to_import" class="toc">Fig. 9:
+							Select ontology to import</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._10review_the_added_ontology_prefixes" class="toc">Fig.
+							10: Review the added ontology prefixes</a></span></div>
+							</li>
+						</ul>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#adding_platform_dependency_classes" class="toc">Adding
+						platform dependency classes</a></span></div>
+						<ul class="toc">
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._11adding_a_restriction_to_a_jre" class="toc">Fig.
+							11: Adding a restriction to a JRE</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._12description_of_basicjre" class="toc">Fig. 12:
+							Description of BasicJRE</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._13description_of_instantmessengerplatform"
+								class="toc">Fig. 13: Description of InstantMessengerPlatform</a></span></div>
+							</li>
+						</ul>
+						</li>
+
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#related_tasks" class="toc">Related tasks</a></span></div>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a href="#see_also"
+							class="toc">See also</a></span></div>
+						</li>
+					</ul>
+					</li>
+				</ul>
+				</div>
+				</div>
+
+
+
+				<h1><a name="modelling_platform_dependencies"
+					id="modelling_platform_dependencies">Modelling Platform
+				Dependencies</a></h1>
+				<div class="level1">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit.html" class="wikilink1"
+						title="research:mdd:platformkit">Back to the PlatformKit main
+					page</a></strong></div>
+
+					</li>
+				</ul>
+
+				</div>
+
+				<h2><a name="introduction" id="introduction">Introduction</a></h2>
+				<div class="level2">
+
+				<p>Platform dependencies are modelled for the common base
+				architecture of the <acronym title="Software Product Line">SPL</acronym>
+				as well as for the optional features. Platform dependencies are
+				described in <acronym title="Web Ontology Language">OWL</acronym>-<acronym
+					title="Description Logic">DL</acronym>. You can use the <a
+					href="http://protege.stanford.edu/" class="urlextern"
+					title="http://protege.stanford.edu/">Protégé ontology editor</a> to
+				model these ontologies.</p>
+
+				<p>The <a href="http://ssel.vub.ac.be/ssel/research:mdd:casestudies:im"
+					class="wikilink1" title="research:mdd:casestudies:im">Instant
+				Messenger case study</a> uses the general <a
+					href="http://ssel.vub.ac.be/ssel/research:mdd:casestudies" class="wikilink1"
+					title="research:mdd:casestudies">Java Applet model
+				transformations</a>, which already have a <a
+					href="http://ssel.vub.ac.be/viewcvs/viewcvs.py/UML2CaseStudies/uml2cs-transformations-config/model/Transformations.owl?view=markup"
+					class="urlextern"
+					title="http://ssel.vub.ac.be/viewcvs/viewcvs.py/UML2CaseStudies/uml2cs-transformations-config/model/Transformations.owl?view=markup">model
+				of their platform dependencies</a>. The platform dependencies that are
+				specific to the Instant Messenger product line can be found <a
+					href="http://ssel.vub.ac.be/viewcvs/viewcvs.py/UML2CaseStudies/uml2cs-instantmessenger-config/model/InstantMessenger.owl?view=markup"
+					class="urlextern"
+					title="http://ssel.vub.ac.be/viewcvs/viewcvs.py/UML2CaseStudies/uml2cs-instantmessenger-config/model/InstantMessenger.owl?view=markup">here</a>.
+				</p>
+
+				</div>
+
+				<h2><a name="preparing_the_platform_vocabulary"
+					id="preparing_the_platform_vocabulary">Preparing the platform
+				vocabulary</a></h2>
+				<div class="level2">
+
+				<p>Before modelling the platform dependencies, it is a good idea
+				to prepare the platform vocabulary ontologies such that the Protégé
+				ontology editor can access them. These ontologies are bundled with
+				the <a href="research_mdd_platformkit_eclipse.html"
+					class="wikilink1" title="research:mdd:platformkit:eclipse">PlatformKit
+				Eclipse Plugin</a>. Open a terminal window or command prompt and issue
+				the following commands (excluding the &lsquo;$&rsquo;):</p>
+				<pre class="code">$ jar xvf /Applications/eclipse/plugins/be.ac.vub.platformkit_1.1.5.jar ontology
+  created: ontology/
+  created: ontology/codamos_2005_01/
+  created: ontology/codamos_2006_01/
+  created: ontology/codamos_2007_01/
+  created: ontology/davy_2006_01/
+ inflated: ontology/codamos_2005_01/Units.owl
+ inflated: ontology/codamos_2006_01/Context.owl
+ inflated: ontology/codamos_2006_01/Corba.owl
+ inflated: ontology/codamos_2006_01/Environment.owl
+ inflated: ontology/codamos_2006_01/Java.owl
+ inflated: ontology/codamos_2006_01/OperatingSystems.owl
+ inflated: ontology/codamos_2006_01/Platform.owl
+ inflated: ontology/codamos_2006_01/Service.owl
+ inflated: ontology/codamos_2006_01/User.owl
+ inflated: ontology/codamos_2007_01/Java.owl
+ inflated: ontology/codamos_2007_01/PackageManagers.owl
+ inflated: ontology/codamos_2007_01/Platform.owl
+ inflated: ontology/davy_2006_01/Component.owl
+ inflated: ontology/davy_2006_01/Draco.owl
+$ jar xvf /Applications/eclipse/plugins/be.ac.vub.platformkit.java_1.1.1.jar ontology
+  created: ontology/
+  created: ontology/codamos_2007_01/
+ inflated: ontology/codamos_2007_01/JavaAPI.owl
+ inflated: ontology/codamos_2007_01/j2me-midp-1_0-api.owl
+ inflated: ontology/codamos_2007_01/j2me-midp-2_0-api.owl
+ inflated: ontology/codamos_2007_01/j2me-pp-1_0-api.owl
+ inflated: ontology/codamos_2007_01/j2me-pp-1_1-api.owl
+ inflated: ontology/codamos_2007_01/j2se-1_2-api.owl
+ inflated: ontology/codamos_2007_01/j2se-1_3-api.owl
+ inflated: ontology/codamos_2007_01/j2se-1_4-api.owl
+ inflated: ontology/codamos_2007_01/j2se-1_5-api.owl
+ inflated: ontology/codamos_2007_01/j2se-1_6-api.owl
+ inflated: ontology/codamos_2007_01/jdk-1_1-api.owl
+ inflated: ontology/codamos_2007_01/personaljava-1_1-api.owl</pre>
+
+				<p>The expected output is also listed after the commands
+				(without preceding &lsquo;$&rsquo;). We assume here that Eclipse is
+				installed in <code>/Applications/eclipse</code> and that you use
+				version 1.1.5 of the <code>be.ac.vub.platformkit</code> plugin and
+				version 1.1.1 of the <code>be.ac.vub.platformkit.java</code> plugin.
+				Adjust the above commands to reflect your particular Eclipse
+				installation location and plugin versions.</p>
+
+				<p>You should now have a folder named &ldquo;ontology&rdquo;
+				inside the folder from where you executed the above commands
+				(usually your home directory).</p>
+
+				</div>
+
+				<h2><a name="creating_a_new_platform_dependency_ontology"
+					id="creating_a_new_platform_dependency_ontology">Creating a new
+				platform dependency ontology</a></h2>
+				<div class="level2">
+
+				<p>Start up your Protégé editor and do the following:</p>
+				<ul>
+
+					<li class="level1">
+					<div class="li">Click &ldquo;New project...&rdquo;.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Select an &ldquo;<acronym
+						title="Web Ontology Language">OWL</acronym> / <acronym
+						title="Resource Description Framework">RDF</acronym> Files&rdquo;
+					project and click &ldquo;Next&rdquo; (see <a
+						href="#fig._1new_protege_project_kind"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					1</a>).</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Enter an ontology <acronym
+						title="Uniform Resource Identifier">URI</acronym> starting with <code><a
+						href="http://local/" class="urlextern" title="http://local/">http://local/</a></code>
+					(for example: <code><a
+						href="http://local/InstantMessenger.owl" class="urlextern"
+						title="http://local/InstantMessenger.owl">http://local/InstantMessenger.owl</a></code>)
+					and click &ldquo;Next&rdquo; (see <a
+						href="#fig._2new_protege_project_uri"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					2</a>).</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Select the &ldquo;<acronym
+						title="Web Ontology Language">OWL</acronym> <acronym
+						title="Description Logic">DL</acronym>&rdquo; language profile and
+					click &ldquo;Finish&rdquo; (see <a
+						href="#fig._3new_protege_project_language_profile"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					3</a>).</div>
+					</li>
+				</ul>
+
+				</div>
+
+				<h3><a name="fig._1new_protege_project_kind"
+					id="fig._1new_protege_project_kind">Fig. 1: New Protégé project
+				kind</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/newprotegeproject.png"
+					class="media"
+					title="research:mdd:platformkit:newprotegeproject.png"><img
+					src="resources/newprotegeproject.png"
+					class="mediacenter" alt="" width="300" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._2new_protege_project_uri"
+					id="fig._2new_protege_project_uri">Fig. 2: New Protégé project
+				URI</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/newprotegeuri.png"
+					class="media" title="research:mdd:platformkit:newprotegeuri.png"><img
+					src="resources/newprotegeuri.png"
+					class="mediacenter" alt="" width="300" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._3new_protege_project_language_profile"
+					id="fig._3new_protege_project_language_profile">Fig. 3: New
+				Protégé project language profile</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/newprotegelangprofile.png"
+					class="media"
+					title="research:mdd:platformkit:newprotegelangprofile.png"><img
+					src="resources/newprotegelangprofile.png"
+					class="mediacenter" alt="" width="300" /></a></p>
+
+				<p>You should now see an empty ontology in the main screen of
+				the Protégé editor. In order to build our platform dependency
+				ontology on top of the vocabulary that we prepared earlier, we need
+				to import this vocabulary:</p>
+				<ul>
+					<li class="level1">
+					<div class="li">In the main Protégé screen, click the
+					&ldquo;Import ontology...&rdquo; button as marked by a red circle
+					in <a href="#fig._4importing_an_ontology_into_protege"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					4</a>.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Select &ldquo;Import an ontology contained in
+					one of the available repositories&rdquo; and click
+					&ldquo;Next&rdquo; (see <a
+						href="#fig._5import_an_ontology_from_a_repository"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					5</a>).</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Now click &ldquo;Add repository...&rdquo; as
+					marked by a red oval in <a
+						href="#fig._6add_a_new_ontology_repository"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					6</a>.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Select &ldquo;Local folder&rdquo; as
+					repository type and click &ldquo;Next&rdquo; (see <a
+						href="#fig._7select_repository_type"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					7</a>).</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Enter the folder name of the vocabulary that
+					we prepared earlier, select &ldquo;Include sub-folders&rdquo; and
+					click &ldquo;Finish&rdquo; (see <a
+						href="#fig._8create_new_repository"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					8</a>).</div>
+					</li>
+					<li class="level1">
+					<div class="li">Now select the <code><a
+						href="http://ssel.vub.ac.be/codamos/2007/01/JavaAPI.owl"
+						class="urlextern"
+						title="http://ssel.vub.ac.be/codamos/2007/01/JavaAPI.owl">http://ssel.vub.ac.be/codamos/2007/01/JavaAPI.owl</a></code>
+					ontology from the list and click &ldquo;Next&rdquo; (see <a
+						href="#fig._9select_ontology_to_import"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					9</a>).</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">In the next screen, click
+					&ldquo;Finish&rdquo;.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Review the prefixes of the imported
+					ontologies (see <a
+						href="#fig._10review_the_added_ontology_prefixes"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					10</a>). You may want to change the prefix of the <code><a
+						href="http://ssel.vub.ac.be/codamos/2007/01/JavaAPI.owl"
+						class="urlextern"
+						title="http://ssel.vub.ac.be/codamos/2007/01/JavaAPI.owl">http://ssel.vub.ac.be/codamos/2007/01/JavaAPI.owl</a></code>
+					ontology to <code>java-api</code>. Click &ldquo;Close&rdquo; when
+					you&rsquo;re done.</div>
+
+					</li>
+				</ul>
+
+				</div>
+
+				<h3><a name="fig._4importing_an_ontology_into_protege"
+					id="fig._4importing_an_ontology_into_protege">Fig. 4: Importing
+				an ontology into Protégé</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/protegeemptyproject.png"
+					class="media"
+					title="research:mdd:platformkit:protegeemptyproject.png"><img
+					src="resources/protegeemptyproject.png"
+					class="mediacenter" alt="" width="400" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._5import_an_ontology_from_a_repository"
+					id="fig._5import_an_ontology_from_a_repository">Fig. 5: Import
+				an ontology from a repository</a></h3>
+
+				<div class="level3">
+
+				<p><a
+					href="resources/protegeimportontology.png"
+					class="media"
+					title="research:mdd:platformkit:protegeimportontology.png"><img
+					src="resources/protegeimportontology.png"
+					class="mediacenter" alt="" width="450" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._6add_a_new_ontology_repository"
+					id="fig._6add_a_new_ontology_repository">Fig. 6: Add a new
+				ontology repository</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/protegeaddrepository.png"
+					class="media"
+					title="research:mdd:platformkit:protegeaddrepository.png"><img
+					src="resources/protegeaddrepository.png"
+					class="mediacenter" alt="" width="450" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._7select_repository_type"
+					id="fig._7select_repository_type">Fig. 7: Select repository
+				type</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/protegerepositorytype.png"
+					class="media"
+					title="research:mdd:platformkit:protegerepositorytype.png"><img
+					src="resources/protegerepositorytype.png"
+					class="mediacenter" alt="" width="450" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._8create_new_repository"
+					id="fig._8create_new_repository">Fig. 8: Create new repository</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/protegecreaterepository.png"
+					class="media"
+					title="research:mdd:platformkit:protegecreaterepository.png"><img
+					src="resources/protegecreaterepository.png"
+					class="mediacenter" alt="" width="450" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._9select_ontology_to_import"
+					id="fig._9select_ontology_to_import">Fig. 9: Select ontology to
+				import</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/protegeselectimport.png"
+					class="media"
+					title="research:mdd:platformkit:protegeselectimport.png"><img
+					src="resources/protegeselectimport.png"
+					class="mediacenter" alt="" width="450" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._10review_the_added_ontology_prefixes"
+					id="fig._10review_the_added_ontology_prefixes">Fig. 10: Review
+				the added ontology prefixes</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/protegeaddedprefixes.png"
+					class="media"
+					title="research:mdd:platformkit:protegeaddedprefixes.png"><img
+					src="resources/protegeaddedprefixes.png"
+					class="mediacenter" alt="" width="500" /></a></p>
+
+				</div>
+
+				<h2><a name="adding_platform_dependency_classes"
+					id="adding_platform_dependency_classes">Adding platform
+				dependency classes</a></h2>
+				<div class="level2">
+
+				<p>Now that the empty ontology is set up, we can add platform
+				dependencies. It is highly recommendable to use a <a
+					href="http://dl-web.man.ac.uk/dig/" class="urlextern"
+					title="http://dl-web.man.ac.uk/dig/">DIG</a> reasoner while
+				modelling your platform dependencies. The DIG reasoner <acronym
+					title="Uniform Resource Locator">URL</acronym> can be set in
+				Protégé via the &ldquo;<acronym title="Web Ontology Language">OWL</acronym>
+				&rarr; Preferences...&rdquo; menu. As a DIG reasoner, you can use <a
+					href="http://www.racer-systems.com/" class="urlextern"
+					title="http://www.racer-systems.com/">Racer</a>, <a
+					href="http://pellet.owldl.com/" class="urlextern"
+					title="http://pellet.owldl.com/">Pellet</a> or <a
+					href="http://owl.man.ac.uk/factplusplus/" class="urlextern"
+					title="http://owl.man.ac.uk/factplusplus/">Fact</a>. You can use
+				the DIG reasoner to classify the taxonomy based on the ontology
+				facts. This is done via &ldquo;<acronym
+					title="Web Ontology Language">OWL</acronym> &rarr; Classify
+				taxonomy...&rdquo;.</p>
+
+				<p>Now we can add platform dependency classes to the ontology.
+				We assume that you can find your way around Protégé a bit, such that
+				you can do basic ontology editing. Please save your ontology often
+				during the following steps, as we may reach the memory limits of
+				Protégé. This is the guideline procedure for adding platform
+				dependencies:</p>
+				<ul>
+					<li class="level1">
+					<div class="li">A platform dependency is always a subclass of
+					<code>platform:Platform</code>. Start by adding a new subclass to <code>platform:Platform</code>.
+					Name this class <code>InstantMessengerPlatform</code>. This class
+					will represent the platform dependency constraint for the common
+					instant messenger architecture.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Depending on the platform features we want to
+					require, we need to define extra <code>platform:Feature</code>
+					subclasses. <code>InstantMessengerPlatform</code> will require a
+					specific kind of <code>java:<acronym
+						title="Java Runtime Environment">JRE</acronym></code>. Add a subclass to
+					<code>java:<acronym title="Java Runtime Environment">JRE</acronym></code>
+					and name it <code>BasicJRE</code>.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">A <code>java:<acronym
+						title="Java Runtime Environment">JRE</acronym></code> typically provides
+					a built-in <code>java:JavaLibrary</code>. Use the DIG reasoner
+					taxonomy classification result to find out which <code>java:JavaLibrary</code>
+					subclasses we require. For <code>BasicJRE</code> we require a basic
+					version of <code>java.lang</code> and <code>java.util</code>. The
+					Java class library that provides the <code>java.lang</code> package
+					and the <code>java.util</code> package are represented by (several
+					versions of) the classes <code>JavaLangLibrary</code> and <code>JavaUtilLibrary</code>,
+					respectively. <code>j2me-midp-1_0:JavaLangLibrary</code> is
+					sufficient for our requirements and is subclassed by most other
+					versions of <code>JavaLangLibrary</code>, i.e. most other versions
+					of <code>JavaLangLibrary</code> are <em>compatible with</em> <code>j2me-midp-1_0:JavaLangLibrary</code>.
+					<code>personaljava-1_1:JavaLangLibrary</code> is not compatible
+					with <code>j2me-midp-1_0:JavaLangLibrary</code>, but is still
+					sufficient for our requirements.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Add a <em>necessary &amp; sufficient</em>
+					restriction on the <code>java:providesBuiltinJavaLibrary</code>
+					property to the <code>BasicJRE</code> class. As a
+					&ldquo;Filler&rdquo;, enter the union of all <code>JavaLangLibrary</code>
+					classes that are sufficient for our requirements. Any <code>JavaLangLibrary</code>
+					classes that are <em>compatible with</em> one of the other classes
+					in the union may be omitted (see <a
+						href="#fig._11adding_a_restriction_to_a_jre"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					11</a>).</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Add another <em>necessary &amp;
+					sufficient</em> restriction on the <code>java:providesBuiltinJavaLibrary</code>
+					property to the <code>BasicJRE</code> class. As a
+					&ldquo;Filler&rdquo;, enter the union of <code>j2me-midp-1_0:JavaUtilLibrary</code>
+					and <code>personaljava-1_1:JavaUtilLibrary</code>. The resulting <code>BasicJRE</code>
+					description should look like <a
+						href="#fig._12description_of_basicjre"
+						title="research:mdd:platformkit:deps &crarr;" class="wikilink1">Fig.
+					12</a>.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Now add a <em>necessary &amp; sufficient</em>
+					restriction on the <code>platform:providesFeature</code> property
+					to the <code>InstantMessengerPlatform</code> class. As a
+					&ldquo;Filler&rdquo;, enter the &ldquo;BasicJRE&rdquo; class.</div>
+
+					</li>
+				</ul>
+
+				<p>We now have a basic platform dependency class for any instant
+				messenger product. You can add more platform dependency classes for
+				each of the optional instant messenger features, such as
+				&ldquo;JabberNetwork&rdquo;, &ldquo;DefaultJabberTransport&rdquo;,
+				&ldquo;AWTUserInterface&rdquo;, etc. It is also possible to require
+				a particular <em>package manager</em>: see the <code>platform:PackageManager</code>
+				class, the <code>java:JavaPackageManager</code> class and the <code>java:providesJavaPackageManager</code>
+				property.</p>
+
+				<p>After you&rsquo;ve added all platform dependency classes, you
+				can get an idea of which is the most specific platform dependency by
+				choosing &ldquo;<acronym title="Web Ontology Language">OWL</acronym>
+				&rarr; Classify taxonomy...&rdquo; again. The leaf classes in the
+				hierarchy are the <em>most-specific</em> platform requirements. Note
+				that this step will also be performed by PlatformKit itself.</p>
+
+				</div>
+
+				<h3><a name="fig._11adding_a_restriction_to_a_jre"
+					id="fig._11adding_a_restriction_to_a_jre">Fig. 11: Adding a
+				restriction to a JRE</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/createjrerestriction.png"
+					class="media"
+					title="research:mdd:platformkit:createjrerestriction.png"><img
+					src="resources/createjrerestriction.png"
+					class="mediacenter" alt="" width="345" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._12description_of_basicjre"
+					id="fig._12description_of_basicjre">Fig. 12: Description of
+				BasicJRE</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/basicjre.png"
+					class="media" title="research:mdd:platformkit:basicjre.png"><img
+					src="resources/basicjre.png"
+					class="mediacenter" alt="" width="535" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._13description_of_instantmessengerplatform"
+					id="fig._13description_of_instantmessengerplatform">Fig. 13:
+				Description of InstantMessengerPlatform</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/instantmessengerplatform.png"
+					class="media"
+					title="research:mdd:platformkit:instantmessengerplatform.png"><img
+					src="resources/instantmessengerplatform.png"
+					class="mediacenter" alt="" width="535" /></a></p>
+
+				</div>
+
+				<h2><a name="related_tasks" id="related_tasks">Related
+				tasks</a></h2>
+				<div class="level2">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_install.html" class="wikilink1"
+						title="research:mdd:platformkit:install">Installing the
+					PlatformKit Eclipse Plugin</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_mdaspl.html" class="wikilink1"
+						title="research:mdd:platformkit:mdaspl">Setting up a
+					Model-Driven Software Product Line</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong>Previous: <a
+						href="research_mdd_platformkit_extractdeps.html"
+						class="wikilink1" title="research:mdd:platformkit:extractdeps">Extracting
+					Platform Dependencies of Third-party Components</a></strong></div>
+					</li>
+
+					<li class="level1">
+					<div class="li"><strong>Next: <a
+						href="research_mdd_platformkit_conflang.html" class="wikilink1"
+						title="research:mdd:platformkit:conflang">Setting up a
+					Platform-Aware Configuration Language</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_config.html" class="wikilink1"
+						title="research:mdd:platformkit:config">Platform-Driven
+					Configuration</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_deploy.html" class="wikilink1"
+						title="research:mdd:platformkit:deploy">Platform-Driven
+					Deployment</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<h2><a name="see_also" id="see_also">See also</a></h2>
+				<div class="level2">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_eclipse.html" class="wikilink1"
+						title="research:mdd:platformkit:eclipse">PlatformKit Eclipse
+					Plugin</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_servlet.html" class="wikilink1"
+						title="research:mdd:platformkit:servlet">PlatformKit Servlet</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<!-- wikipage stop --></div>
+
+				<div class="clearer">&nbsp;</div>
+
+
+				<!-- VUB footer template --></div>
+				</td>
+				<!-- End Content block right (2nd colomn) -->
+			</tr>
+		</table>
+		<!-- Body table --></div>
+		<!--container--></td>
+	</tr>
+	<!-- End Container table-->
+</table>
+<!-- End VUB footer template --></div>
+
+</body>
+</html>

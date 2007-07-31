@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	dir="ltr">
+<head>
+<title>Setting up a Platform-Aware Configuration Language [SSEL]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="alternate" type="application/rss+xml" title="SSEL News"
+	href="http://ssel.vub.ac.be/newsfeed.php" />
+
+<!-- VUB headers -->
+<script type="text/javascript" src="resources/style.js"></script>
+<link rel="stylesheet" type="text/css" media="all"
+	href="resources/vub.css" />
+
+<link rel="stylesheet" type="text/css" media="all"
+	href="resources/vubdienst.css" />
+<!-- End VUB headers -->
+
+<meta name="generator" content="DokuWiki Release 2005-07-13" />
+<link rel="start" href="http://ssel.vub.ac.be/ssel/" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes"
+	href="http://ssel.vub.ac.be/ssel/feed.php" />
+
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/style.css" />
+<meta name="date" content="2007-06-07T16:14:06+0200" />
+<meta name="robots" content="index,follow" />
+<script language="javascript" type="text/javascript" charset="utf-8">
+    var alertText   = 'Please enter the text you want to format.\nIt will be appended to the end of the document.'
+    var notSavedYet = 'There are unsaved changes, that will be lost.\nReally continue?'
+    var DOKU_BASE   = '/ssel/'
+  </script>
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/script.js"></script>
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/tw-sack.js"></script>
+
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/ajax.js"></script>
+
+<!-- Dynamic menu -->
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/menu.js"></script>
+
+<link rel="shortcut icon"
+	href="http://ssel.vub.ac.be/ssel/lib/tpl/sselng/images/favicon.ico" />
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/layout.css" />
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/design.css" />
+
+
+<link rel="stylesheet" media="print" type="text/css"
+	href="resources/print.css" />
+
+</head>
+
+<body
+	onload="window.defaultStatus='Vrije Universiteit Brussel';stylizeLinks();toggleToc();"
+	id="vrije-universiteit-brussel">
+
+<div class="dokuwiki"><!-- VUB header template--> <a name="top"
+	id="top"></a> <!-- Container table-->
+<table align="center">
+	<tr>
+		<td>
+		<div id="container"><!-- Body: table with 2 colomns-->
+		<table border="0" align="left">
+
+			<tr>
+				<td align="left" valign="top"><!-- Content block right (2nd colomn) -->
+				<div id="content"><!-- content --> <!-- End VUB header template -->
+
+				<div class="stylehead"></div>
+
+
+				<div class="page"><!-- wikipage start -->
+				<div class="toc">
+				<div class="tocheader"><script type="text/javascript">showTocToggle("+","-")</script>Table
+				of Contents</div>
+				<div id="tocinside">
+
+				<ul class="toc">
+					<li class="level1">
+					<div class="li"><span class="li"><a
+						href="#setting_up_a_platform-aware_configuration_language"
+						class="toc">Setting up a Platform-Aware Configuration Language</a></span></div>
+					<ul class="toc">
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#introduction" class="toc">Introduction</a></span></div>
+						<ul class="toc">
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._1a_flowchart_of_setting_up_platform_profiling"
+								class="toc">Fig. 1: A flowchart of setting up platform
+							profiling</a></span></div>
+							</li>
+
+						</ul>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#defining_a_meta-model" class="toc">Defining a
+						meta-model</a></span></div>
+						<ul class="toc">
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._2the_instant_messenger_configuration_language_meta-model"
+								class="toc">Fig. 2: The instant messenger configuration
+							language meta-model</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._3the_annotated_instant_messenger_meta-model"
+								class="toc">Fig. 3: The annotated instant messenger
+							meta-model</a></span></div>
+							</li>
+						</ul>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#creating_a_platformkit_model" class="toc">Creating a
+						Platformkit Model</a></span></div>
+						<ul class="toc">
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._4adding_a_product_line_meta-model" class="toc">Fig.
+							4: Adding a product line meta-model</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._5selecting_product_line_meta-models" class="toc">Fig.
+							5: Selecting product line meta-models</a></span></div>
+							</li>
+
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._6classify_taxonomy" class="toc">Fig. 6: Classify
+							taxonomy</a></span></div>
+							</li>
+							<li class="level3">
+							<div class="li"><span class="li"><a
+								href="#fig._7extra_uri_mappings_for_emf_plugins" class="toc">Fig.
+							7: Extra URI mappings for EMF plugins</a></span></div>
+							</li>
+						</ul>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#related_tasks" class="toc">Related tasks</a></span></div>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a href="#see_also"
+							class="toc">See also</a></span></div>
+						</li>
+					</ul>
+					</li>
+				</ul>
+				</div>
+				</div>
+
+
+
+				<h1><a
+					name="setting_up_a_platform-aware_configuration_language"
+					id="setting_up_a_platform-aware_configuration_language">Setting
+				up a Platform-Aware Configuration Language</a></h1>
+
+				<div class="level1">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit.html" class="wikilink1"
+						title="research:mdd:platformkit">Back to the PlatformKit main
+					page</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<h2><a name="introduction" id="introduction">Introduction</a></h2>
+				<div class="level2">
+
+				<p>We have set up the core assets of our <acronym
+					title="Software Product Line">SPL</acronym> and we have modelled
+				their platform dependencies in an ontology. Now we define a
+				domain-specific modelling language for the configuration of our <acronym
+					title="Software Product Line">SPL</acronym>, in which the platform
+				dependencies and the core assets are brought together. The
+				meta-model of this configuration language is annotated with the
+				names of our platform dependency classes, such that PlatformKit can
+				extract them for each meta-class in the configuration language. The
+				goal is to enable PlatformKit to <em>profile</em> configuration
+				models against a concrete platform description and see whether a
+				particular configuration works for a given platform. A flowchart of
+				the entire procedure is shown in <a
+					href="#fig._1a_flowchart_of_setting_up_platform_profiling"
+					title="research:mdd:platformkit:conflang &crarr;" class="wikilink1">Fig.
+				1</a>. Note that PlatformKit <em>profiling</em> itself is discussed in <a
+					href="research_mdd_platformkit_config" class="wikilink1"
+					title="research:mdd:platformkit:config">Platform-Driven
+				Configuration</a>.</p>
+
+				</div>
+
+				<h3><a
+					name="fig._1a_flowchart_of_setting_up_platform_profiling"
+					id="fig._1a_flowchart_of_setting_up_platform_profiling">Fig. 1:
+				A flowchart of setting up platform profiling</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/platformkit-profiling-overview.png"
+					class="media"
+					title="research:mdd:platformkit-profiling-overview.png"><img
+					src="resources/platformkit-profiling-overview.png"
+					class="mediacenter" alt="" width="350" /></a></p>
+
+				</div>
+
+				<h2><a name="defining_a_meta-model" id="defining_a_meta-model">Defining
+				a meta-model</a></h2>
+
+				<div class="level2">
+
+				<p>The first step in creating our configuration language is to
+				define an <acronym title="Eclipse Modeling Framework">EMF</acronym>
+				meta-model. We assume basic experience with <acronym
+					title="Eclipse Modeling Framework">EMF</acronym> meta-modelling and
+				refer to the <a href="http://www.eclipse.org/modeling/emf/docs/"
+					class="urlextern" title="http://www.eclipse.org/modeling/emf/docs/">EMF
+				documentation</a> for instructions. As an example, we will use the <a
+					href="http://ssel.vub.ac.be/viewcvs/viewcvs.py/UML2CaseStudies/uml2cs-instantmessenger-config/model/InstantMessenger.ecore?view=markup"
+					class="urlextern"
+					title="http://ssel.vub.ac.be/viewcvs/viewcvs.py/UML2CaseStudies/uml2cs-instantmessenger-config/model/InstantMessenger.ecore?view=markup">configuration
+				language meta-model</a> of the <a
+					href="http://ssel.vub.ac.be/ssel/research:mdd:casestudies:im" class="wikilink1"
+					title="research:mdd:casestudies:im">Instant Messenger case
+				study</a>. This meta-model extends the <a
+					href="http://ssel.vub.ac.be/viewcvs/viewcvs.py/UML2CaseStudies/uml2cs-transformations-config/model/Transformations.ecore?view=markup"
+					class="urlextern"
+					title="http://ssel.vub.ac.be/viewcvs/viewcvs.py/UML2CaseStudies/uml2cs-transformations-config/model/Transformations.ecore?view=markup">meta-model</a>
+				of the configuration language for Java Applet model transformations,
+				as is shown in <a
+					href="#fig._2the_instant_messenger_configuration_language_meta-model"
+					title="research:mdd:platformkit:conflang &crarr;" class="wikilink1">Fig.
+				2</a>.</p>
+
+				<p>We now describe the steps to add the platform dependencies to
+				this meta-model. You can use the <acronym
+					title="Eclipse Modeling Framework">EMF</acronym> Ecore editor to do
+				this:</p>
+				<ul>
+					<li class="level1">
+					<div class="li">Add an EAnnotation to the main EPackage
+					(&rdquo;instantmessenger&rdquo; for our example) and set its
+					&ldquo;Source&rdquo; property to &ldquo;PlatformKit&rdquo;.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Add a Details Entry to the
+					&ldquo;PlatformKit&rdquo; EAnnotation.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Set the &ldquo;Key&rdquo; property of the
+					Details Entry to &ldquo;Ontology&rdquo; and the &ldquo;Value&rdquo;
+					property to &ldquo;InstantMessenger.owl&rdquo; (or the name you
+					chose for your platform dependency ontology).</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">For each meta-class that corresponds to a
+					platform dependency, add an EAnnotation and set its
+					&ldquo;Source&rdquo; property to &ldquo;PlatformKit&rdquo;.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Add a Details Entry to this EAnnotation with
+					its &ldquo;Key&rdquo; property set to
+					&ldquo;PlatformConstraint&rdquo; and its &ldquo;Value&rdquo;
+					property set to the <acronym title="Uniform Resource Locator">URL</acronym>
+					of its platform dependency class. This <acronym
+						title="Uniform Resource Locator">URL</acronym> takes the form <code>&lt;ontology
+					<acronym title="Uniform Resource Locator">URL</acronym>&gt;#&lt;class
+					name&gt;</code>. The &ldquo;InstantMessengerConfiguration&rdquo;
+					meta-class, for example, has its &ldquo;PlatformConstraint&rdquo;
+					value set to &ldquo;<a
+						href="http://local/InstantMessenger.owl#InstantMessengerPlatform"
+						class="urlextern"
+						title="http://local/InstantMessenger.owl#InstantMessengerPlatform">http://local/InstantMessenger.owl#InstantMessengerPlatform</a>&ldquo;.</div>
+
+					</li>
+				</ul>
+
+				<p>The resulting meta-model should look like <a
+					href="#fig._3the_annotated_instant_messenger_meta-model"
+					title="research:mdd:platformkit:conflang &crarr;" class="wikilink1">Fig.
+				3</a>.</p>
+
+				</div>
+
+				<h3><a
+					name="fig._2the_instant_messenger_configuration_language_meta-model"
+					id="fig._2the_instant_messenger_configuration_language_meta-model">Fig.
+				2: The instant messenger configuration language meta-model</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/instantmessengerconfiguration.png"
+					class="media"
+					title="research:mdd:platformkit:instantmessengerconfiguration.png"><img
+					src="resources/instantmessengerconfiguration.png"
+					class="mediacenter" alt="" width="535" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._3the_annotated_instant_messenger_meta-model"
+					id="fig._3the_annotated_instant_messenger_meta-model">Fig. 3:
+				The annotated instant messenger meta-model</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/instantmessengereannotations.png"
+					class="media"
+					title="research:mdd:platformkit:instantmessengereannotations.png"><img
+					src="resources/instantmessengereannotations.png"
+					class="mediacenter" alt="" width="480" /></a></p>
+
+				</div>
+
+				<h2><a name="creating_a_platformkit_model"
+					id="creating_a_platformkit_model">Creating a Platformkit Model</a></h2>
+				<div class="level2">
+
+				<p>Once the meta-model has been defined and annotated, a
+				Platformkit Model has to be created:</p>
+				<ul>
+					<li class="level1">
+					<div class="li">Choose &ldquo;File &rarr; New &rarr;
+					Other...&rdquo;.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Select &ldquo;PlatformKit &rarr; Platformkit
+					Model&rdquo; and click &ldquo;Next&rdquo;.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Select the folder that contains the Ecore
+					meta-model as parent folder and use the same base name as file
+					name. For example, use &ldquo;InstantMessenger.platformkit&rdquo;
+					if your meta-model is saved as
+					&ldquo;InstantMessenger.ecore&rdquo;.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Click &ldquo;Finish&rdquo;.</div>
+					</li>
+				</ul>
+
+				<p>You now have an empty PlatformKit Model with a root <a
+					href="research_mdd_platformkit_eclipse.html#fig.1platformkit_model"
+					class="wikilink1" title="research:mdd:platformkit:eclipse">Constraint
+				Space</a> element:</p>
+				<ul>
+
+					<li class="level1">
+					<div class="li">Right-click the Constraint Space element and
+					select &ldquo;Add Product Line Meta-model...&rdquo; as shown in <a
+						href="#fig._4adding_a_product_line_meta-model"
+						title="research:mdd:platformkit:conflang &crarr;"
+						class="wikilink1">Fig. 4</a>.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Select the Ecore meta-model of the
+					configuration language, including all referenced meta-models, then
+					click &ldquo;OK&rdquo;. For example,
+					&ldquo;InstantMessenger.ecore&rdquo; references
+					&ldquo;Transformations.ecore&rdquo;, which means both have to be
+					included as shown in <a
+						href="#fig._5selecting_product_line_meta-models"
+						title="research:mdd:platformkit:conflang &crarr;"
+						class="wikilink1">Fig. 5</a>.</div>
+
+					</li>
+				</ul>
+
+				<p>Your Platformkit Model now has several <a
+					href="research_mdd_platformkit_eclipse.html#fig.1platformkit_model"
+					class="wikilink1" title="research:mdd:platformkit:eclipse">Constraint
+				Sets</a> in its <a
+					href="research_mdd_platformkit_eclipse.html#fig.1platformkit_model"
+					class="wikilink1" title="research:mdd:platformkit:eclipse">Constraint
+				Space</a>. We will now pre-sort the Platformkit Model <em>most-specific-first</em>:
+				</p>
+				<ul>
+					<li class="level1">
+					<div class="li">Right-click the Constraint Space element and
+					select &ldquo;Classify Taxonomy&rdquo; as shown in <a
+						href="#fig._6classify_taxonomy"
+						title="research:mdd:platformkit:conflang &crarr;"
+						class="wikilink1">Fig. 6</a>. The classification procedure may
+					take several minutes.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">As a result, you should have a
+					&ldquo;.inferred.owl&rdquo; file with the same base name as the
+					Platformkit Model, which is also stored in the same folder. For
+					example, you should have an
+					&ldquo;InstantMessenger.inferred.owl&rdquo; file for the
+					&ldquo;InstantMessenger.platformkit&rdquo; model.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Right-click the Constraint Space element
+					again and select &ldquo;Sort Most Specific First&rdquo;.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">As a result, the PlatformKit Model will be
+					re-sorted with the <em>most-specific</em> Constraint Set at the
+					top.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Save the resulting Platformkit Model.</div>
+					</li>
+				</ul>
+
+				<p>In case you wish to package the configuration language as an
+				<acronym title="Eclipse Modeling Framework">EMF</acronym> plugin,
+				you need to bundle the Platformkit Model and the ontologies:</p>
+				<ul>
+					<li class="level1">
+					<div class="li">Include all &ldquo;.platformkit&rdquo;,
+					&ldquo;.owl&rdquo; and &ldquo;.inferred.owl&rdquo; files in your
+					&ldquo;build.properties&rdquo; and make sure they are in the same
+					folder as the &ldquo;.ecore&rdquo; file.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Create extra <acronym
+						title="Uniform Resource Identifier">URI</acronym> mappings for all
+					included &ldquo;.platformkit&rdquo;, &ldquo;.owl&rdquo; and
+					&ldquo;.inferred.owl&rdquo; files. <a
+						href="#fig._7extra_uri_mappings_for_emf_plugins"
+						title="research:mdd:platformkit:conflang &crarr;"
+						class="wikilink1">Fig. 7</a> shows the extra <acronym
+						title="Uniform Resource Identifier">URI</acronym> mappings for the
+					instant messenger configuration language plugin.</div>
+
+					</li>
+				</ul>
+
+				</div>
+
+				<h3><a name="fig._4adding_a_product_line_meta-model"
+					id="fig._4adding_a_product_line_meta-model">Fig. 4: Adding a
+				product line meta-model</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/addplatformkitmetamodel.png"
+					class="media"
+					title="research:mdd:platformkit:addplatformkitmetamodel.png"><img
+					src="resources/addplatformkitmetamodel.png"
+					class="mediacenter" alt="" width="414" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._5selecting_product_line_meta-models"
+					id="fig._5selecting_product_line_meta-models">Fig. 5: Selecting
+				product line meta-models</a></h3>
+
+				<div class="level3">
+
+				<p><a
+					href="resources/selectproductlinemetamodels.png"
+					class="media"
+					title="research:mdd:platformkit:selectproductlinemetamodels.png"><img
+					src="resources/selectproductlinemetamodels.png"
+					class="mediacenter" alt="" width="336" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._6classify_taxonomy"
+					id="fig._6classify_taxonomy">Fig. 6: Classify taxonomy</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/classifymetamodeltaxonomy.png"
+					class="media"
+					title="research:mdd:platformkit:classifymetamodeltaxonomy.png"><img
+					src="resources/classifymetamodeltaxonomy.png"
+					class="mediacenter" alt="" width="416" /></a></p>
+
+				</div>
+
+				<h3><a name="fig._7extra_uri_mappings_for_emf_plugins"
+					id="fig._7extra_uri_mappings_for_emf_plugins">Fig. 7: Extra URI
+				mappings for EMF plugins</a></h3>
+				<div class="level3">
+
+				<p><a
+					href="resources/instantmessengeremfmappings.png"
+					class="media"
+					title="research:mdd:platformkit:instantmessengeremfmappings.png"><img
+					src="resources/instantmessengeremfmappings.png"
+					class="mediacenter" alt="" width="491" /></a></p>
+
+				</div>
+
+				<h2><a name="related_tasks" id="related_tasks">Related
+				tasks</a></h2>
+				<div class="level2">
+
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_install.html" class="wikilink1"
+						title="research:mdd:platformkit:install">Installing the
+					PlatformKit Eclipse Plugin</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_mdaspl.html" class="wikilink1"
+						title="research:mdd:platformkit:mdaspl">Setting up a
+					Model-Driven Software Product Line</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_extractdeps.html"
+						class="wikilink1" title="research:mdd:platformkit:extractdeps">Extracting
+					Platform Dependencies of Third-party Components</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong>Previous: <a
+						href="research_mdd_platformkit_deps.html" class="wikilink1"
+						title="research:mdd:platformkit:deps">Modelling Platform
+					Dependencies</a></strong></div>
+
+					</li>
+					<li class="level1">
+					<div class="li"><strong>Next: <a
+						href="research_mdd_platformkit_config.html" class="wikilink1"
+						title="research:mdd:platformkit:config">Platform-Driven
+					Configuration</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_deploy.html" class="wikilink1"
+						title="research:mdd:platformkit:deploy">Platform-Driven
+					Deployment</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<h2><a name="see_also" id="see_also">See also</a></h2>
+				<div class="level2">
+
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_eclipse.html" class="wikilink1"
+						title="research:mdd:platformkit:eclipse">PlatformKit Eclipse
+					Plugin</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_servlet.html" class="wikilink1"
+						title="research:mdd:platformkit:servlet">PlatformKit Servlet</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<!-- wikipage stop --></div>
+
+				<div class="clearer">&nbsp;</div>
+
+
+				<!-- VUB footer template --></div>
+				</td>
+				<!-- End Content block right (2nd colomn) -->
+			</tr>
+		</table>
+		<!-- Body table --></div>
+		<!--container--></td>
+	</tr>
+	<!-- End Container table-->
+</table>
+<!-- End VUB footer template --></div>
+
+</body>
+</html>
