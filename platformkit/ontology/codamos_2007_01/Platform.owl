@@ -348,10 +348,4 @@
     <rdfs:subPropertyOf rdf:resource="#providesFeature" />
   </owl:ObjectProperty>
 
-  <owl:ObjectProperty rdf:ID="requiresPlatform">
-    <rdfs:domain rdf:resource="#Software" />
-    <rdfs:range rdf:resource="#Platform" />
-    <rdf:type rdf:resource="&owl;#DeprecatedProperty" />
-  </owl:ObjectProperty>
-
 </rdf:RDF>
