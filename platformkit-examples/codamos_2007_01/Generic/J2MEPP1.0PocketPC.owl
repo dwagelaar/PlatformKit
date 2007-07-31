@@ -21,9 +21,7 @@
     <platform:providesSoftware>
       <j2me-pp-1_0:J2me-pp-1_0 rdf:ID="j2me-pp-1_0">
         <java:providesBuiltinJavaLibrary>
-          <j2me-pp-1_0:J2me-pp-1_0ClassLibrary rdf:ID="j2me-pp-1_0ClassLibrary">
-            <java:isBuiltinJavaLibraryFor rdf:resource="#j2me-pp-1_0"/>
-          </j2me-pp-1_0:J2me-pp-1_0ClassLibrary>
+          <j2me-pp-1_0:J2me-pp-1_0ClassLibrary rdf:ID="j2me-pp-1_0ClassLibrary"/>
         </java:providesBuiltinJavaLibrary>
         <java:providesJavaVM>
           <java:JavaVM rdf:ID="CVM">

@@ -1,4 +1,4 @@
-; Thu Jun 28 14:41:35 CEST 2007
+; Fri Jul 27 16:33:51 CEST 2007
 ; 
 ;+ (version "3.2.1")
 ;+ (build "Build 365")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[ZaurusSL-C1000PP_ProjectKB_Instance_57]
-		[ZaurusSL-C1000PP_ProjectKB_Instance_58]
-		[ZaurusSL-C1000PP_ProjectKB_Instance_59]
-		[ZaurusSL-C1000PP_ProjectKB_Instance_60]
-		[ZaurusSL-C1000PP_ProjectKB_Instance_61]))
+		[ZaurusSL-C1000PP_ProjectKB_Instance_20129]
+		[ZaurusSL-C1000PP_ProjectKB_Instance_20130]
+		[ZaurusSL-C1000PP_ProjectKB_Instance_20131]
+		[ZaurusSL-C1000PP_ProjectKB_Instance_20132]
+		[ZaurusSL-C1000PP_ProjectKB_Instance_20133]))
 
 ([CLSES_TAB] of  Widget
 
@@ -447,9 +447,9 @@
 		"owl:Class"
 		"rdfs:Container"
 		"owl:Ontology"
-		"owl:DataRange"
-		":TO"
 		"xsd:gMonthDay"
+		":TO"
+		"owl:DataRange"
 		"xsd:NMTOKEN"
 		"xsd:QName"
 		"xsd:unsignedInt"
@@ -477,45 +477,45 @@
 		"rdf:List"
 		"rdf:predicate"
 		"owl:hasValue"
-		"rdf:rest"
 		"xsd:double"
+		"rdf:rest"
 		"xsd:decimal"
 		"rdf:subject"
-		"owl:SymmetricProperty"
-		"rdf:value"
-		"owl:sameAs"
 		"xsd:Name"
+		"owl:sameAs"
+		"rdf:value"
+		"owl:SymmetricProperty"
 		"xsd:byte"
-		"owl:differentFrom"
 		"owl:AllDifferent"
-		"owl:Nothing"
+		"owl:differentFrom"
 		"rdf:Property"
-		"owl:InverseFunctionalProperty"
+		"owl:Nothing"
 		"owl:cardinality"
+		"owl:InverseFunctionalProperty"
 		"xsd:nonNegativeInteger"
 		"rdf:Statement"
-		"rdfs:Literal"
 		":FROM"
-		"owl:disjointWith"
+		"rdfs:Literal"
 		"xsd:anySimpleType"
+		"owl:disjointWith"
 		"owl:minCardinality"
 		"xsd:ID"
 		"xsd:gDay"
 		"xsd:gYearMonth"
-		"owl:distinctMembers"
 		"xsd:NCName"
+		"owl:distinctMembers"
 		"xsd:nonPositiveInteger"
 		"rdfs:Datatype"
-		"owl:TransitiveProperty"
-		":DIRECTED-BINARY-RELATION"
 		"xsd:token"
-		"xsd:normalizedString"
-		"xsd:IDREF"
+		":DIRECTED-BINARY-RELATION"
+		"owl:TransitiveProperty"
 		"xsd:ENTITY"
+		"xsd:IDREF"
+		"xsd:normalizedString"
 		"xsd:gMonth"
-		"owl:oneOf"
-		"rdf:type"
 		"owl:maxCardinality"
+		"rdf:type"
+		"owl:oneOf"
 		"rdf:object")
 	(journaling_enabled FALSE)
 	(next_frame_number 0)
@@ -585,115 +585,7 @@
 
 	(is_hidden TRUE)
 	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_11])
-	(widget_class_name "edu.stanford.smi.protegex.psm.PSMTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10018] of  Widget
-
-	(is_hidden FALSE)
-	(name "providesSoftware")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10019]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10019] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10020] of  Widget
-
-	(is_hidden FALSE)
-	(name "maxCapacity")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10021]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10021] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10022] of  Widget
-
-	(is_hidden FALSE)
-	(name "instructionSet")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10023]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10023] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10024] of  Widget
-
-	(is_hidden FALSE)
-	(name "providesHardware")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10025]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10025] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10026] of  Widget
-
-	(is_hidden FALSE)
-	(name "providesSoftware")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10027]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10027] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10028] of  Widget
-
-	(is_hidden FALSE)
-	(name "providesHardware")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10029]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10029] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10030] of  Widget
-
-	(is_hidden FALSE)
-	(name "maxCapacity")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10031]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10031] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10032] of  Widget
-
-	(is_hidden FALSE)
-	(name "instructionSet")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10033]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10033] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10034] of  Widget
-
-	(is_hidden FALSE)
-	(name "providesSoftware")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10035]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10035] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10036] of  Widget
-
-	(is_hidden FALSE)
-	(name "maxCapacity")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10037]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10037] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10038] of  Widget
-
-	(is_hidden FALSE)
-	(name "instructionSet")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10039]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10039] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10040] of  Widget
-
-	(is_hidden FALSE)
-	(name "providesHardware")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_10041]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_10041] of  Property_List
-)
+	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_10050] of  Widget
 
@@ -738,7 +630,7 @@
 
 	(is_hidden TRUE)
 	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_13])
-	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
+	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_13] of  Property_List
 )
@@ -747,7 +639,7 @@
 
 	(is_hidden TRUE)
 	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_15])
-	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
+	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_15] of  Property_List
 )
@@ -756,16 +648,16 @@
 
 	(is_hidden TRUE)
 	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_17])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_17] of  Property_List
 )
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_18] of  Widget
 
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_19])
-	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
+	(is_hidden FALSE)
+	(name "java:isBuiltinJavaLibraryFor")
+	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_19]))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_19] of  Property_List
 )
@@ -774,75 +666,58 @@
 
 	(is_hidden TRUE)
 	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_3])
-	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_20] of  Widget
 
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_21])
-	(widget_class_name "ezpal.EZPalTab"))
+	(is_hidden FALSE)
+	(name "java:isBuiltinJavaLibraryFor")
+	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_21]))
+
+([ZaurusSL-C1000PP_ProjectKB_Instance_20129] of  String
+
+	(name "owl:Class")
+	(string_value "%3ANAME"))
+
+([ZaurusSL-C1000PP_ProjectKB_Instance_20130] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([ZaurusSL-C1000PP_ProjectKB_Instance_20131] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([ZaurusSL-C1000PP_ProjectKB_Instance_20132] of  String
+
+	(name "owl:Thing")
+	(string_value "%3ANAME"))
+
+([ZaurusSL-C1000PP_ProjectKB_Instance_20133] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_21] of  Property_List
 )
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_22] of  Widget
 
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_23])
-	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
+	(is_hidden FALSE)
+	(name "java:isBuiltinJavaLibraryFor")
+	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_23]))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_23] of  Property_List
 )
 
-([ZaurusSL-C1000PP_ProjectKB_Instance_24] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_25])
-	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_25] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_26] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_27])
-	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_27] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_28] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_29])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_2858] of  Widget
+([ZaurusSL-C1000PP_ProjectKB_Instance_27] of  Widget
 
 	(is_hidden FALSE)
-	(name "hasCackoZaurusLinuxVersion")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_2859]))
+	(name "java:isBuiltinJavaLibraryFor")
+	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_28]))
 
-([ZaurusSL-C1000PP_ProjectKB_Instance_2859] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_2860] of  Widget
-
-	(is_hidden FALSE)
-	(name "hasCackoZaurusLinuxVersion")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_2861]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_2861] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_2862] of  Widget
-
-	(is_hidden FALSE)
-	(name "hasCackoZaurusLinuxVersion")
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_2863]))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_2863] of  Property_List
+([ZaurusSL-C1000PP_ProjectKB_Instance_28] of  Property_List
 )
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_2864] of  Widget
@@ -854,150 +729,23 @@
 ([ZaurusSL-C1000PP_ProjectKB_Instance_2865] of  Property_List
 )
 
-([ZaurusSL-C1000PP_ProjectKB_Instance_29] of  Property_List
-)
-
 ([ZaurusSL-C1000PP_ProjectKB_Instance_3] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_30] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_31])
-	(widget_class_name "DataGenieTab.DataGenieTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_31] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_32] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_33])
-	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_33] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_34] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_35])
-	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_35] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_36] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_37])
-	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_37] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_38] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_39])
-	(widget_class_name "se.liu.ida.JessTab.JessTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_39] of  Property_List
 )
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_4] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_5])
-	(widget_class_name "script.ProtegeScriptTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_40] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_41])
-	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_41] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_42] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_43])
-	(widget_class_name "org.algernon.kb.okbc.protege.plugins.AlgernonTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_43] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_44] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_45])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_45] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_46] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_47])
-	(widget_class_name "edu.stanford.smi.RemoteKBTab.UMLSTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_47] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_48] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_49])
-	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_49] of  Property_List
-)
+	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_5] of  Property_List
 )
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_50] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_51])
-	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_51] of  Property_List
-)
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_57] of  String
-
-	(name "owl:Class")
-	(string_value "%3ANAME"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_58] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_59] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_6] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_7])
-	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_60] of  String
-
-	(name "owl:Thing")
-	(string_value "%3ANAME"))
-
-([ZaurusSL-C1000PP_ProjectKB_Instance_61] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
+	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_7] of  Property_List
 )
@@ -1006,7 +754,7 @@
 
 	(is_hidden TRUE)
 	(property_list [ZaurusSL-C1000PP_ProjectKB_Instance_9])
-	(widget_class_name "edu.stanford.smi.RemoteKBTab.WordNetTab"))
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
 
 ([ZaurusSL-C1000PP_ProjectKB_Instance_9] of  Property_List
 )
@@ -1576,7 +1324,8 @@
 		[ZaurusSL-C860PP_ProjectKB_Instance_10350]
 		[ZaurusSL-C860PP_ProjectKB_Instance_10352]
 		[ZaurusSL-C860PP_ProjectKB_Instance_10354]
-		[ZaurusSL-C860PP_ProjectKB_Instance_10356]))
+		[ZaurusSL-C860PP_ProjectKB_Instance_10356]
+		[ZaurusSL-C1000PP_ProjectKB_Instance_18]))
 
 ([ZaurusSL-C860PP_ProjectKB_Instance_10310] of  Widget
 
@@ -2384,7 +2133,8 @@
 		[ZaurusSL-C860PP_ProjectKB_Instance_10535]
 		[ZaurusSL-C860PP_ProjectKB_Instance_10537]
 		[ZaurusSL-C860PP_ProjectKB_Instance_10540]
-		[ZaurusSL-C860PP_ProjectKB_Instance_10542]))
+		[ZaurusSL-C860PP_ProjectKB_Instance_10542]
+		[ZaurusSL-C1000PP_ProjectKB_Instance_22]))
 
 ([ZaurusSL-C860PP_ProjectKB_Instance_10515] of  Widget
 
@@ -2610,11 +2360,7 @@
 		[ZaurusSL-C860PP_ProjectKB_Instance_10746]
 		[ZaurusSL-C860PP_ProjectKB_Instance_10748]
 		[ZaurusSL-C860PP_ProjectKB_Instance_10750]
-		[ZaurusSL-C1000PP_ProjectKB_Instance_2864]
-		[ZaurusSL-C1000PP_ProjectKB_Instance_10050]
-		[ZaurusSL-C1000PP_ProjectKB_Instance_10052]
-		[ZaurusSL-C1000PP_ProjectKB_Instance_10054]
-		[ZaurusSL-C1000PP_ProjectKB_Instance_10056]))
+		[ZaurusSL-C1000PP_ProjectKB_Instance_27]))
 
 ([ZaurusSL-C860PP_ProjectKB_Instance_10733] of  Widget
 
@@ -3280,7 +3026,8 @@
 		[ZaurusSL-C860PP_ProjectKB_Instance_11126]
 		[ZaurusSL-C860PP_ProjectKB_Instance_11128]
 		[ZaurusSL-C860PP_ProjectKB_Instance_11130]
-		[ZaurusSL-C860PP_ProjectKB_Instance_11132]))
+		[ZaurusSL-C860PP_ProjectKB_Instance_11132]
+		[ZaurusSL-C1000PP_ProjectKB_Instance_20]))
 
 ([ZaurusSL-C860PP_ProjectKB_Instance_11075] of  Widget
 
