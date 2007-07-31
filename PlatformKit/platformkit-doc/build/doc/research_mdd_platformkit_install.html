@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	dir="ltr">
+<head>
+<title>Installing the PlatformKit Eclipse Plugin [SSEL]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="alternate" type="application/rss+xml" title="SSEL News"
+	href="http://ssel.vub.ac.be/newsfeed.php" />
+
+<!-- VUB headers -->
+<script type="text/javascript" src="resources/style.js"></script>
+<link rel="stylesheet" type="text/css" media="all"
+	href="resources/vub.css" />
+
+<link rel="stylesheet" type="text/css" media="all"
+	href="resources/vubdienst.css" />
+<!-- End VUB headers -->
+
+<meta name="generator" content="DokuWiki Release 2005-07-13" />
+<link rel="start" href="http://ssel.vub.ac.be/ssel/" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes"
+	href="http://ssel.vub.ac.be/ssel/feed.php" />
+
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/style.css" />
+<meta name="date" content="2007-06-07T16:14:06+0200" />
+<meta name="robots" content="index,follow" />
+<script language="javascript" type="text/javascript" charset="utf-8">
+    var alertText   = 'Please enter the text you want to format.\nIt will be appended to the end of the document.'
+    var notSavedYet = 'There are unsaved changes, that will be lost.\nReally continue?'
+    var DOKU_BASE   = '/ssel/'
+  </script>
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/script.js"></script>
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/tw-sack.js"></script>
+
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/ajax.js"></script>
+
+<!-- Dynamic menu -->
+<script language="javascript" type="text/javascript" charset="utf-8"
+	src="resources/menu.js"></script>
+
+<link rel="shortcut icon"
+	href="http://ssel.vub.ac.be/ssel/lib/tpl/sselng/images/favicon.ico" />
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/layout.css" />
+<link rel="stylesheet" media="screen" type="text/css"
+	href="resources/design.css" />
+
+
+<link rel="stylesheet" media="print" type="text/css"
+	href="resources/print.css" />
+
+</head>
+
+<body
+	onload="window.defaultStatus='Vrije Universiteit Brussel';stylizeLinks();toggleToc();"
+	id="vrije-universiteit-brussel">
+
+<div class="dokuwiki"><!-- VUB header template--> <a name="top"
+	id="top"></a> <!-- Container table-->
+<table align="center">
+	<tr>
+		<td>
+		<div id="container"><!-- Body: table with 2 colomns-->
+		<table border="0" align="left">
+
+			<tr>
+				<td align="left" valign="top"><!-- Content block right (2nd colomn) -->
+				<div id="content"><!-- content --> <!-- End VUB header template -->
+
+				<div class="stylehead"></div>
+
+
+				<div class="page"><!-- wikipage start -->
+				<div class="toc">
+				<div class="tocheader"><script type="text/javascript">showTocToggle("+","-")</script>Table
+				of Contents</div>
+				<div id="tocinside">
+
+				<ul class="toc">
+					<li class="level1">
+					<div class="li"><span class="li"><a
+						href="#installing_the_platformkit_eclipse_plugin" class="toc">Installing
+					the PlatformKit Eclipse Plugin</a></span></div>
+					<ul class="toc">
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#system_requirements" class="toc">System Requirements</a></span></div>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a href="#download"
+							class="toc">Download</a></span></div>
+						</li>
+						<li class="level2">
+						<div class="li"><span class="li"><a
+							href="#related_tasks" class="toc">Related tasks</a></span></div>
+						</li>
+
+						<li class="level2">
+						<div class="li"><span class="li"><a href="#see_also"
+							class="toc">See also</a></span></div>
+						</li>
+					</ul>
+					</li>
+				</ul>
+				</div>
+				</div>
+
+
+
+				<h1><a name="installing_the_platformkit_eclipse_plugin"
+					id="installing_the_platformkit_eclipse_plugin">Installing the
+				PlatformKit Eclipse Plugin</a></h1>
+				<div class="level1">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit.html" class="wikilink1"
+						title="research:mdd:platformkit">Back to the PlatformKit main
+					page</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<h2><a name="system_requirements" id="system_requirements">System
+				Requirements</a></h2>
+				<div class="level2">
+
+				<p>You&rsquo;ll need the following installed on your computer:</p>
+				<ul>
+					<li class="level1">
+					<div class="li"><a href="http://www.eclipse.org/"
+						class="urlextern" title="http://www.eclipse.org/">Eclipse 3.2</a></div>
+					</li>
+
+					<li class="level1">
+					<div class="li"><a href="http://www.eclipse.org/emf/"
+						class="urlextern" title="http://www.eclipse.org/emf/">Eclipse
+					EMF 2.2</a></div>
+					</li>
+					<li class="level1">
+					<div class="li"><a href="http://www.eclipse.org/uml2/"
+						class="urlextern" title="http://www.eclipse.org/uml2/">Eclipse
+					UML2 2.0</a> <br />
+					(Update site: <a
+						href="http://download.eclipse.org/tools/uml2/updates/site.xml"
+						class="urlextern"
+						title="http://download.eclipse.org/tools/uml2/updates/site.xml">http://download.eclipse.org/tools/uml2/updates/site.xml</a>)</div>
+					</li>
+					<li class="level1">
+					<div class="li"><a href="http://www.eclipse.org/gmt/atl/"
+						class="urlextern" title="http://www.eclipse.org/gmt/atl/">ATL
+					Development Tools</a> <br />
+
+					(Update site: <a href="http://ssel.vub.ac.be/tools/atl/update/"
+						class="urlextern" title="http://ssel.vub.ac.be/tools/atl/update/">http://ssel.vub.ac.be/tools/atl/update/</a>)</div>
+					</li>
+					<li class="level1">
+					<div class="li"><a href="http://ssel.vub.ac.be/ssel/research:mdd:jar2uml"
+						class="wikilink1" title="research:mdd:jar2uml">Jar2UML</a>
+					(Optional) <br />
+					(Update site: <a href="http://ssel.vub.ac.be/tools/jar2uml/update/"
+						class="urlextern"
+						title="http://ssel.vub.ac.be/tools/jar2uml/update/">http://ssel.vub.ac.be/tools/jar2uml/update/</a>)</div>
+					</li>
+
+					<li class="level1">
+					<div class="li"><a href="http://protege.stanford.edu/"
+						class="urlextern" title="http://protege.stanford.edu/">Protégé</a>
+					(for ontology editing)</div>
+					</li>
+					<li class="level1">
+					<div class="li">A <a href="http://dl-web.man.ac.uk/dig/"
+						class="urlextern" title="http://dl-web.man.ac.uk/dig/">DIG</a>
+					reasoner, such as <a href="http://www.racer-systems.com/"
+						class="urlextern" title="http://www.racer-systems.com/">Racer</a>,
+					<a href="http://pellet.owldl.com/" class="urlextern"
+						title="http://pellet.owldl.com/">Pellet</a> or <a
+						href="http://owl.man.ac.uk/factplusplus/" class="urlextern"
+						title="http://owl.man.ac.uk/factplusplus/">Fact</a>.</div>
+
+					</li>
+				</ul>
+
+				<p>More help on how to install Eclipse features from update
+				sites can be found <a
+					href="http://help.eclipse.org/help32/topic/org.eclipse.platform.doc.user/tasks/tasks-34.htm"
+					class="urlextern"
+					title="http://help.eclipse.org/help32/topic/org.eclipse.platform.doc.user/tasks/tasks-34.htm">here</a>.
+				</p>
+
+				<p>The example used in the documentation is based on the <a
+					href="http://ssel.vub.ac.be/ssel/research:mdd:casestudies:im" class="wikilink1"
+					title="research:mdd:casestudies:im">Instant Messenger case
+				study</a>. You&rsquo;ll need the following extras installed on your
+				computer to run the examples:</p>
+				<ul>
+
+					<li class="level1">
+					<div class="li"><a href="http://subclipse.tigris.org/update/"
+						class="urlextern" title="http://subclipse.tigris.org/update/">Subclipse</a>
+					<br />
+					(Update site: <a href="http://subclipse.tigris.org/update_1.2.x/"
+						class="urlextern"
+						title="http://subclipse.tigris.org/update_1.2.x/">http://subclipse.tigris.org/update_1.2.x/</a>)</div>
+					</li>
+					<li class="level1">
+					<div class="li"><a href="http://www.eclipse.org/gmt/am3/"
+						class="urlextern" title="http://www.eclipse.org/gmt/am3/">ATLAS
+					MegaModel Management</a> <br />
+					(Update site: <a href="http://ssel.vub.ac.be/tools/atl/update/"
+						class="urlextern" title="http://ssel.vub.ac.be/tools/atl/update/">http://ssel.vub.ac.be/tools/atl/update/</a>)</div>
+
+					</li>
+					<li class="level1">
+					<div class="li"><a
+						href="http://topcased-mm.gforge.enseeiht.fr/website/modeling/uml/"
+						class="urlextern"
+						title="http://topcased-mm.gforge.enseeiht.fr/website/modeling/uml/">Topcased
+					UML2 editor</a> <br />
+					(Update site: <a
+						href="http://topcased-mm.gforge.enseeiht.fr/release/update-site/"
+						class="urlextern"
+						title="http://topcased-mm.gforge.enseeiht.fr/release/update-site/">http://topcased-mm.gforge.enseeiht.fr/release/update-site/</a>)</div>
+					</li>
+					<li class="level1">
+					<div class="li"><a href="http://ssel.vub.ac.be/ssel/research:mdd:casestudies"
+						class="wikilink1" title="research:mdd:casestudies">UML2 Case
+					Studies infrastructure plug-in</a> <br />
+					(Update site: <a href="http://ssel.vub.ac.be/tools/uml2cs/update/"
+						class="urlextern"
+						title="http://ssel.vub.ac.be/tools/uml2cs/update/">http://ssel.vub.ac.be/tools/uml2cs/update/</a>)</div>
+
+					</li>
+				</ul>
+
+				<p>You also need to follow the instructions given on the <a
+					href="http://ssel.vub.ac.be/ssel/research:mdd:casestudies:installation:uml2casestudies"
+					class="wikilink1"
+					title="research:mdd:casestudies:installation:uml2casestudies">UML
+				2 Case Studies Installation Instructions</a> page, starting at
+				&ldquo;Downloading from Subversion&rdquo;.</p>
+
+				</div>
+
+				<h2><a name="download" id="download">Download</a></h2>
+
+				<div class="level2">
+
+				<p>To download the PlatformKit Eclipse plugin, do the following
+				in your Eclipse:</p>
+				<ul>
+					<li class="level1">
+					<div class="li">Select &ldquo;Help &rarr; Software Updates
+					&rarr; Find and Install...&rdquo; from the main menu.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Select &ldquo;Search for new features to
+					install&rdquo; and click &ldquo;Next&rdquo;.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Click &ldquo;New Remote Site...&rdquo;.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Choose a name, fill in <a
+						href="http://ssel.vub.ac.be/platformkit/update" class="urlextern"
+						title="http://ssel.vub.ac.be/platformkit/update">http://ssel.vub.ac.be/platformkit/update</a>
+					as <acronym title="Uniform Resource Locator">URL</acronym> and
+					click &ldquo;OK&rdquo;.</div>
+
+					</li>
+					<li class="level1">
+					<div class="li">Click &ldquo;Finish&rdquo;.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Select the newly created update site and
+					click &ldquo;Next&rdquo;.</div>
+					</li>
+					<li class="level1">
+					<div class="li">Now proceed with the installation as you
+					normally would.</div>
+					</li>
+
+				</ul>
+
+				</div>
+
+				<h2><a name="related_tasks" id="related_tasks">Related
+				tasks</a></h2>
+				<div class="level2">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong>Next: <a
+						href="research_mdd_platformkit_mdaspl.html" class="wikilink1"
+						title="research:mdd:platformkit:mdaspl">Setting up a
+					Model-Driven Software Product Line</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_extractdeps.html"
+						class="wikilink1" title="research:mdd:platformkit:extractdeps">Extracting
+					Platform Dependencies of Third-party Components</a></strong></div>
+					</li>
+
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_deps.html" class="wikilink1"
+						title="research:mdd:platformkit:deps">Modelling Platform
+					Dependencies</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_conflang.html" class="wikilink1"
+						title="research:mdd:platformkit:conflang">Setting up a
+					Platform-Aware Configuration Language</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_config.html" class="wikilink1"
+						title="research:mdd:platformkit:config">Platform-Driven
+					Configuration</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_deploy.html" class="wikilink1"
+						title="research:mdd:platformkit:deploy">Platform-Driven
+					Deployment</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<h2><a name="see_also" id="see_also">See also</a></h2>
+				<div class="level2">
+				<ul>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_eclipse.html" class="wikilink1"
+						title="research:mdd:platformkit:eclipse">PlatformKit Eclipse
+					Plugin</a></strong></div>
+					</li>
+					<li class="level1">
+					<div class="li"><strong><a
+						href="research_mdd_platformkit_servlet.html" class="wikilink1"
+						title="research:mdd:platformkit:servlet">PlatformKit Servlet</a></strong></div>
+					</li>
+				</ul>
+
+				</div>
+
+				<!-- wikipage stop --></div>
+
+				<div class="clearer">&nbsp;</div>
+
+
+				<!-- VUB footer template --></div>
+				</td>
+				<!-- End Content block right (2nd colomn) -->
+			</tr>
+		</table>
+		<!-- Body table --></div>
+		<!--container--></td>
+	</tr>
+	<!-- End Container table-->
+</table>
+<!-- End VUB footer template --></div>
+
+</body>
+</html>
