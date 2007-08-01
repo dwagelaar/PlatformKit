@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitPackage;
+import be.ac.vub.platformkit.hibernate.HibernateUtil;
 import be.ac.vub.platformkit.java.JavaOntologyProvider;
 import be.ac.vub.platformkit.kb.Ontologies;
 
@@ -70,6 +71,9 @@ public class PlatformkitServlet extends HttpServlet {
 			synchronized (this) {
 				if (loglevel == null) {
 			        parseLogLevel(getInitParameter("loglevel"));
+				}
+				if (HibernateUtil.connectionPassword == null) {
+					HibernateUtil.connectionPassword = getInitParameter("connection.password");
 				}
 			}
 			PlatformkitSession session = new PlatformkitSession(req);

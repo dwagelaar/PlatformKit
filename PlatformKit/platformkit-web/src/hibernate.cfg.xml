@@ -38,7 +38,7 @@
 
         <!-- Drop and re-create the database schema on startup -->
         <!-- mig: uncomment to create all tables once and never again -->
-        <property name="hbm2ddl.auto">create</property >
+        <!-- <property name="hbm2ddl.auto">create</property > -->
 
 		<!-- Here are application details -->
         <mapping resource="PlatformKitWeb.hibernatemapping30"/>
