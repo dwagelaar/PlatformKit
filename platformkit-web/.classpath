@@ -27,5 +27,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-java"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-jena"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-examples"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

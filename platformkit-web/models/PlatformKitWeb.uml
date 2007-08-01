@@ -115,14 +115,22 @@
               <packagedElement xmi:type="uml:Dependency" xmi:id="_AG-2YOj-EduA_bpJs0tPHg" name="Dependency_PlatformDescriptionStore_java_util" client="_L7BQsOj0EduMF8bmKxtVtA">
                 <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z20N4R5BEdycUoU7n1_rLw"/>
               </packagedElement>
-              <packagedElement xmi:type="uml:Class" xmi:id="_L7BQsOj0EduMF8bmKxtVtA" name="PlatformDescriptionStore" clientDependency="_AG-2YOj-EduA_bpJs0tPHg _FzKrMOkAEduA_bpJs0tPHg _vxDuQB5aEdyJx7sGKFMuHQ">
+              <packagedElement xmi:type="uml:Class" xmi:id="_L7BQsOj0EduMF8bmKxtVtA" name="PlatformDescriptionStore" clientDependency="_AG-2YOj-EduA_bpJs0tPHg _FzKrMOkAEduA_bpJs0tPHg _vxDuQB5aEdyJx7sGKFMuHQ _KN1XMEAJEdyLldlvHDYmBQ">
+                <ownedAttribute xmi:id="_Svk2IEAGEdyLldlvHDYmBQ" name="quotes" visibility="protected" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_aFqiMB5BEdycUoU7n1_rLw"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_YfqI8EAHEdyLldlvHDYmBQ" value="Pattern.compile(&quot;'&quot;)"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_3RRcAEAHEdyLldlvHDYmBQ" name="escapedQuote" visibility="protected" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_nGhPMEAIEdyLldlvHDYmBQ" value="&quot;\\'&quot;"/>
+                </ownedAttribute>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j48iEOj3EduI9ZPsX2odVg" name="PlatformDescriptionStore_getPlatformDescriptionBehavior" specification="_8ekCYOj2EduI9ZPsX2odVg">
                   <ownedParameter xmi:id="_qSQNgOj3EduI9ZPsX2odVg" name="return" type="_PCGO0MHCEduKcpNg9SVSYQ" direction="return" effect="read"/>
                   <ownedParameter xmi:id="_lpWrkOj-EduA_bpJs0tPHg" name="browserID">
                     <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                   </ownedParameter>
                   <language>java</language>
-                  <body>Session session = HibernateUtil.getSessionFactory().getCurrentSession();&#xA;session.beginTransaction();&#xA;List ps = session.createQuery(&quot;from &quot; + PlatformDescription.class.getCanonicalName() + &quot; where browserID=&quot; + &quot;'&quot; + browserID + &quot;'&quot;).list();&#xA;Iterator e_itr = ps.iterator();&#xA;while ( e_itr.hasNext() ) {&#xA;&#x9;return (PlatformDescription) e_itr.next();&#xA;}&#xA;return null;</body>
+                  <body>Session session = HibernateUtil.getSessionFactory().getCurrentSession();&#xA;session.beginTransaction();&#xA;Matcher m = quotes.matcher(browserID);&#xA;List ps = session.createQuery(&quot;from &quot; + PlatformDescription.class.getCanonicalName() + &quot; where browserID=&quot; + &quot;'&quot; + m.replaceAll(escapedQuote) + &quot;'&quot;).list();&#xA;Iterator e_itr = ps.iterator();&#xA;while ( e_itr.hasNext() ) {&#xA;&#x9;return (PlatformDescription) e_itr.next();&#xA;}&#xA;return null;</body>
                 </ownedBehavior>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_3z0VEOj3EduI9ZPsX2odVg" name="PlatformDescriptionStore_storePlatformDescriptionBehavior" specification="_FpdEoOj3EduI9ZPsX2odVg">
                   <ownedParameter xmi:id="_79KJAOj3EduI9ZPsX2odVg" name="pd" type="_PCGO0MHCEduKcpNg9SVSYQ"/>
@@ -167,6 +175,9 @@
               </packagedElement>
               <packagedElement xmi:type="uml:Dependency" xmi:id="_sttssB6UEdyOtOipTtD9pQ" name="Dependency_PlatformDescription_java_io" client="_PCGO0MHCEduKcpNg9SVSYQ">
                 <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_Z2bzYB5BEdycUoU7n1_rLw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_KN1XMEAJEdyLldlvHDYmBQ" name="Dependency1" client="_L7BQsOj0EduMF8bmKxtVtA">
+                <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_aFmQwB5BEdycUoU7n1_rLw"/>
               </packagedElement>
             </packagedElement>
             <packagedElement xmi:type="uml:Package" xmi:id="_IXtiAOj0EduMF8bmKxtVtA" name="hibernate"/>

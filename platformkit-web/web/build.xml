@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="CDDToolkit-Web" default="all">
+<project name="platformkit-web/web" default="all">
 	<property name="platformkit.path" value="../../platformkit"/>
 	<property name="platformkit-java.path" value="../../platformkit-java"/>
 	<property name="jena.path" value="../../platformkit-jena"/>
