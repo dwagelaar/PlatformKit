@@ -106,7 +106,7 @@
           </diagrams>
           <subdiagrams>
             <model href="PlatformKitWeb.uml#__om3cOKeEdusoPrkeXo32Q"/>
-            <diagrams position="0,0" size="100,100" name="unnamed" viewport="52,0">
+            <diagrams position="0,0" size="100,100" name="unnamed" viewport="33,78">
               <property key="pageFormatName" value="ecorePageFormat"/>
               <property key="diagramWidth" value="1090"/>
               <property key="diagramHeight" value="840"/>
@@ -246,6 +246,16 @@
                   <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
                     <element href="PlatformKitWeb.uml#_L7BQsOj0EduMF8bmKxtVtA"/>
                   </semanticModel>
+                  <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+                    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+                      <element href="PlatformKitWeb.uml#_Svk2IEAGEdyLldlvHDYmBQ"/>
+                    </semanticModel>
+                  </contained>
+                  <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+                    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+                      <element href="PlatformKitWeb.uml#_3RRcAEAHEdyLldlvHDYmBQ"/>
+                    </semanticModel>
+                  </contained>
                 </contained>
                 <contained xsi:type="di:GraphNode">
                   <property key="eStructuralFeatureID" value="47"/>

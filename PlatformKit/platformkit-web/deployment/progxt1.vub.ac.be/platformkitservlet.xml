@@ -1,0 +1,23 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Required minimal context configuration :                        -->
+  <!--  + contextPath                                                  -->
+  <!--  + war OR resourceBase                                          -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <Set name="contextPath">/platformkitservlet</Set>
+  <Set name="war"><SystemProperty name="jetty.home" default="."/>/webapps/platformkitservlet.war</Set>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Optional context configuration                                  -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <Set name="extractWAR">false</Set>
+  <Set name="copyWebDir">false</Set>
+  <Set name="defaultsDescriptor"><SystemProperty name="jetty.home" default="."/>/etc/webdefault.xml</Set>
+  <Set name="overrideDescriptor"><SystemProperty name="jetty.home" default="."/>/contexts/platformkitservlet.d/override-web.xml</Set>
+
+</Configure>
+  

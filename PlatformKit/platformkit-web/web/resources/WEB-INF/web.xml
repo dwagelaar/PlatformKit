@@ -35,6 +35,10 @@
       	<param-name>allowed-url-base</param-name>
       	<param-value>http://</param-value>
 	  </init-param>
+      <init-param>
+      	<param-name>connection.password</param-name>
+      	<param-value></param-value>
+	  </init-param>
       <!-- Load this servlet at server startup time -->
       <load-on-startup>5</load-on-startup>
     </servlet>
