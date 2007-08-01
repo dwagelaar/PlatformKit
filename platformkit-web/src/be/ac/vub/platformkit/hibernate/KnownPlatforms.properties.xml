@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>List of browser agent strings mapped to ontology names</comment>
+
+	<!--  Apple MacOS X has Java 1.5 built in -->
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl-nl) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6">JDK 1.5 PC</entry>
+	
+	<!-- Siemens CX70v mobile phone -->
+	<entry key="SIE-CX7V">Siemens CX70v mobile phone with J2ME MIDP 2.0</entry>
+	
+	<!-- Emulator -->
+	<entry key="Profile/MIDP-2.0 Configuration/CLDC-1.1">Mobile phone with J2ME MIDP 2.0</entry>
+</properties>
