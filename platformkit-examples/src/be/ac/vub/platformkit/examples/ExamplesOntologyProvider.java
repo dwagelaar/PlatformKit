@@ -1,5 +1,6 @@
 package be.ac.vub.platformkit.examples;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -63,8 +64,12 @@ public class ExamplesOntologyProvider implements INamedOntologyProvider {
             } else {
                 resource = bundle.getResource(ontologies[i]);
             }
-            Assert.assertNotNull(resource);
-            streams[i] = resource.openStream();
+            if (resource == null) {
+            	streams[i] = new FileInputStream("../platformkit-examples/" + ontologies[i]);
+            } else {
+                streams[i] = resource.openStream();
+            }
+            Assert.assertNotNull(streams[i]);
             logger.fine("Providing ontology " + ontologies[i] + " as " + streams[i]);
         }
         return streams;
