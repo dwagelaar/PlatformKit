@@ -10,15 +10,22 @@ import junit.framework.Assert;
 import be.ac.vub.platformkit.kb.Ontologies;
 
 /**
- * Sorts the list by repeatedly removing the smallest elements ("root" elements).
- * Can deal with incomparable elements, since it only looks for elements that are
- * guaranteed smaller than the current element when comparing.
+ * Sorts the list by repeatedly removing the first smallest element ("root" element).
+ * Can deal with incomparable elements (partially ordered lists), since it only looks
+ * for elements that are guaranteed smaller than the current element when comparing.
+ * Preserves existing list order where possible. 
+ * 
+ * In Java, the Arrays.sort() methods use mergesort or a tuned quicksort depending
+ * on the datatypes and for implementation efficiency switch to insertion sort when
+ * fewer than seven array elements are being sorted. These algorithms are only
+ * applicable to totally ordered lists, however.
+ * 
  * @author dennis
  */
 public class TreeSorter {
     private Logger logger = Logger.getLogger(Ontologies.LOGGER);
     private Comparator comp;
-
+  
     /**
      * Creates a ClusteredSorter.
      * @param comp
@@ -39,30 +46,28 @@ public class TreeSorter {
     public void sort(List list) {
         List sorted = new ArrayList();
         while (!list.isEmpty()) {
-            List removed = removeRootElements(list);
-            Assert.assertFalse(removed.isEmpty());
-            sorted.addAll(removed);
+            Object removed = removeRootElement(list);
+            Assert.assertNotNull("Remove at least one element == false", removed);
+            sorted.add(removed);
         }
         list.addAll(sorted);
     }
 
     /**
-     * Removes the root (i.e. smallest) elements from the list.
+     * Removes the root (i.e. smallest) element from the list.
      * @param list
-     * @return the root elements.
+     * @return the root element.
      */
-    private List removeRootElements(List list) {
-        List rootElements = new ArrayList();
+    private Object removeRootElement(List list) {
         for (Iterator ls = list.iterator(); ls.hasNext();) {
             Object element = ls.next();
             if (isRootElement(element, list)) {
-                rootElements.add(element);
                 ls.remove();
+                logger.info("Root element removed: " + element);
+                return element;
             }
         }
-        logger.info("Root elements removed: " + rootElements.toString());
-        Assert.assertTrue(rootElements.size() >= Math.min(1, list.size()));
-        return rootElements;
+        return null;
     }
     
     /**
