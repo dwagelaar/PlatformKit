@@ -3,7 +3,7 @@
 <plugin
    id="org.mindswap.pellet"
    name="Pellet OWL reasoner Plug-in"
-   version="1.4.0"
+   version="1.5.0"
    provider-name="Mindswap.org"
    class="org.mindswap.pellet.eclipse.PelletPlugin">
 
@@ -19,9 +19,27 @@
       <library name="lib/xsdlib/xsdlib.jar"/>
       <library name="lib/owlapi/rdfapi.jar">
       </library>
-      <library name="lib/owlapi/owlapi.jar">
-      </library>
       <library name="lib/owlapi/commons-lang-2.2.jar">
+      </library>
+      <library name="lib/owlapi/oboparser-1.0.jar">
+      </library>
+      <library name="lib/owlapi/krssparser-1.0.jar">
+      </library>
+      <library name="lib/owlapi/impl-1.0.jar">
+      </library>
+      <library name="lib/owlapi/functionalrenderer-1.0.jar">
+      </library>
+      <library name="lib/owlapi/functionalparser-1.0.jar">
+      </library>
+      <library name="lib/owlapi/examples-1.0.jar">
+      </library>
+      <library name="lib/owlapi/dig1_1-1.0.jar">
+      </library>
+      <library name="lib/owlapi/debugging-1.0.jar">
+      </library>
+      <library name="lib/owlapi/apibinding-1.0.jar">
+      </library>
+      <library name="lib/owlapi/api-1.0.jar">
       </library>
    </runtime>
    <requires>
