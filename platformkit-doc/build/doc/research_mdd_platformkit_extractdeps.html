@@ -51,6 +51,8 @@ Components [SSEL]</title>
 	href="resources/layout.css" />
 <link rel="stylesheet" media="screen" type="text/css"
 	href="resources/design.css" />
+<link rel="stylesheet" media="all" type="text/css"
+	href="resources/note/style.css" />
 
 
 <link rel="stylesheet" media="print" type="text/css"
@@ -118,26 +120,8 @@ Components [SSEL]</title>
 						</li>
 						<li class="level2">
 						<div class="li"><span class="li"><a
-							href="#trimming_the_uml_model" class="toc">Trimming the UML
-						model</a></span></div>
-						<ul class="toc">
-							<li class="level3">
-							<div class="li"><span class="li"><a
-								href="#fig._3the_imported_microjabberwookie_uml_model"
-								class="toc">Fig. 3: The imported MicroJabberWookie UML model</a></span></div>
-							</li>
-							<li class="level3">
-							<div class="li"><span class="li"><a
-								href="#fig._4the_stripped_microjabberwookie_uml_model"
-								class="toc">Fig. 4: The stripped MicroJabberWookie UML model</a></span></div>
-							</li>
-						</ul>
-						</li>
-						<li class="level2">
-						<div class="li"><span class="li"><a
 							href="#comparing_the_uml_model_against_known_platforms"
 							class="toc">Comparing the UML model against known platforms</a></span></div>
-
 						<ul class="toc">
 							<li class="level3">
 							<div class="li"><span class="li"><a
@@ -155,6 +139,7 @@ Components [SSEL]</title>
 						<div class="li"><span class="li"><a
 							href="#related_tasks" class="toc">Related tasks</a></span></div>
 						</li>
+
 						<li class="level2">
 						<div class="li"><span class="li"><a href="#see_also"
 							class="toc">See also</a></span></div>
@@ -212,10 +197,10 @@ Components [SSEL]</title>
 					<div class="li"><a href="http://ssel.vub.ac.be/ssel/research:mdd:jar2uml"
 						class="wikilink1" title="research:mdd:jar2uml">Jar2UML Eclipse
 					plugin</a> <br />
+
 					(Update site: <a href="http://ssel.vub.ac.be/tools/jar2uml/update/"
 						class="urlextern"
 						title="http://ssel.vub.ac.be/tools/jar2uml/update/">http://ssel.vub.ac.be/tools/jar2uml/update/</a>)</div>
-
 					</li>
 				</ul>
 
@@ -236,7 +221,7 @@ Components [SSEL]</title>
 					</li>
 					<li class="level1">
 					<div class="li">Select &ldquo;Jar2UML Import &rarr; Import
-					Jar Files to <acronym title="Unified Modeling Language">UML</acronym>
+					Jar File Dependencies to <acronym title="Unified Modeling Language">UML</acronym>
 					Models&rdquo; and click &ldquo;Next&rdquo; (see <a
 						href="#fig._1jar2uml_import"
 						title="research:mdd:platformkit:extractdeps &crarr;"
@@ -262,13 +247,6 @@ Components [SSEL]</title>
 						title="Unified Modeling Language">UML</acronym> model.</div>
 					</li>
 					<li class="level1">
-					<div class="li">Select &ldquo;Include anonymous and private
-					elements&rdquo; and &ldquo;Include elements referenced by bytecode
-					instructions&rdquo;. This will cause Jar2UML to try and find as
-					many dependencies as it can.</div>
-					</li>
-
-					<li class="level1">
 					<div class="li">Click &ldquo;Finish&rdquo;.</div>
 					</li>
 				</ul>
@@ -280,9 +258,10 @@ Components [SSEL]</title>
 				<div class="level3">
 
 				<p><a
-					href="resources/jar2umlimport.png"
-					class="media" title="research:mdd:jar2umlimport.png"><img
-					src="resources/jar2umlimport.png"
+					href="resources/jar2umlimportdeps.png"
+					class="media"
+					title="research:mdd:platformkit:jar2umlimportdeps.png"><img
+					src="resources/jar2umlimportdeps.png"
 					class="mediacenter" alt="" width="394" /></a></p>
 
 				</div>
@@ -301,98 +280,9 @@ Components [SSEL]</title>
 
 				</div>
 
-				<h2><a name="trimming_the_uml_model"
-					id="trimming_the_uml_model">Trimming the UML model</a></h2>
-
-				<div class="level2">
-
-				<p>The <acronym title="Unified Modeling Language">UML</acronym>
-				model that we&rsquo;ve just imported from the jar file(s) contains
-				all classes, interfaces, operations and attributes in the
-				third-party component as well as all its dependency classes,
-				interfaces, operations and attributes. We only need the
-				dependencies, so the <acronym title="Unified Modeling Language">UML</acronym>
-				model must be stripped of all classes and interfaces that are part
-				of the component itself.</p>
-
-				<p>Unfortunately, no tool support has been implemented to do
-				this for us. This means we have to do it manually:</p>
-
-				<ul>
-					<li class="level1">
-					<div class="li">Open the <acronym
-						title="Unified Modeling Language">UML</acronym> model in the
-					Eclipse <acronym title="Unified Modeling Language">UML</acronym>
-					editor (see <a
-						href="#fig._3the_imported_microjabberwookie_uml_model"
-						title="research:mdd:platformkit:extractdeps &crarr;"
-						class="wikilink1">Fig. 3</a>).</div>
-					</li>
-					<li class="level1">
-					<div class="li">Check which packages are part of the jar
-					file(s) and remove them from the <acronym
-						title="Unified Modeling Language">UML</acronym> model. Since the
-					Java <acronym title="Application Programming Interface">API</acronym>
-					dependencies are always in a different package than the component
-					itself, this is fairly straightforward: Java <acronym
-						title="Application Programming Interface">API</acronym> typically
-					resides in the &ldquo;java.*&rdquo;, &ldquo;javax.*&rdquo; and
-					various &ldquo;org.*&rdquo; packages. When in doubt, check the
-					contents of the jar file(s).</div>
-
-					</li>
-					<li class="level1">
-					<div class="li">Right-click the root element of your <acronym
-						title="Unified Modeling Language">UML</acronym> model and click
-					&ldquo;Validate&rdquo;. This helps to make sure that you have no
-					inconsistencies in your model.</div>
-					</li>
-					<li class="level1">
-					<div class="li">Save your <acronym
-						title="Unified Modeling Language">UML</acronym> model.</div>
-					</li>
-
-				</ul>
-
-				<p>You should now have a trimmed model like the one shown in <a
-					href="#fig._4the_stripped_microjabberwookie_uml_model"
-					title="research:mdd:platformkit:extractdeps &crarr;"
-					class="wikilink1">Fig. 4</a>.</p>
-
-				</div>
-
-				<h3><a name="fig._3the_imported_microjabberwookie_uml_model"
-					id="fig._3the_imported_microjabberwookie_uml_model">Fig. 3: The
-				imported MicroJabberWookie UML model</a></h3>
-				<div class="level3">
-
-				<p><a
-					href="resources/importedmicrojabberwookiemodel.png"
-					class="media"
-					title="research:mdd:platformkit:importedmicrojabberwookiemodel.png"><img
-					src="resources/importedmicrojabberwookiemodel.png"
-					class="mediacenter" alt="" width="333" /></a></p>
-
-				</div>
-
-				<h3><a name="fig._4the_stripped_microjabberwookie_uml_model"
-					id="fig._4the_stripped_microjabberwookie_uml_model">Fig. 4: The
-				stripped MicroJabberWookie UML model</a></h3>
-				<div class="level3">
-
-				<p><a
-					href="resources/strippedmicrojabberwookiemodel.png"
-					class="media"
-					title="research:mdd:platformkit:strippedmicrojabberwookiemodel.png"><img
-					src="resources/strippedmicrojabberwookiemodel.png"
-					class="mediacenter" alt="" width="340" /></a></p>
-
-				</div>
-
 				<h2><a name="comparing_the_uml_model_against_known_platforms"
 					id="comparing_the_uml_model_against_known_platforms">Comparing
 				the UML model against known platforms</a></h2>
-
 				<div class="level2">
 
 				<p>Now that the <acronym title="Unified Modeling Language">UML</acronym>
