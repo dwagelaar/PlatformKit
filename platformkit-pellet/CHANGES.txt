@@ -1,34 +1,52 @@
 Change Log
 
-Pellet 1.4 (Final Release) (Mar 16, 2007)
------------------------------------------
+Pellet 1.5-RC1 (Jun 6, 2007)
+----------------------------
+
+* MODIFIED: Source code to use Java generics
+
+* ENHANCED: Memory management for large TBoxes by improved caching
+
+* ENHANCED: Classification performance (including CD optimization)
+
+* ENHANCED: Progress monitoring for classification
+
+* ADDED: Axiom tracing for explanation generation
+
+* ADDED: Incremental consistency checking after ABox additions
+
+* MODIFIED: OWLAPI jar files to the snapshot from 2007-05-17
+
+* FIXED: Simplification bug for negated nominals 
+
+* FIXED: Subsumption of TOP causes exception during classification 	
+
+* FIXED: NPE when cardinality restrictions used on rdf:types 
+
+* FIXED: Anonmous inverse roles in queries
+
+* FIXED: OWLAPI get[Data|Object]Properties returning incorrect results
+
+* FIXED: PelletQueryExecution to respect ORDER BY
+
+* FIXED: DL-safe rules bug for object properties
+
+Pellet 1.4 (Mar 16, 2007)
+-------------------------
 
 * MODIFIED: Jena jar files to version 2.5.2
 
-* MODIFIED: OWLAPI jar files to the SVN snapshot from 2006-03-16
+* MODIFIED: OWLAPI jar files to the snapshot from 2007-02-22
 
 * ADDED: DL-safe rules parsing for Jena loader
 
-* MODIFIED: OWL 1.1 namespace to the latest spec
-
-* ENHANCED: Vocabulary for OWL 1.1 and Econn for easier manipulation
-
-* ADDED: Handling of NegativeObjectPropertyAssertion and NegativeDataPropertyAssertion
-
-* ADDED: Semantic branching for max cardinality to solve the performance issue
-
-* FIXED: Handling dependency set of differentFrom axioms for maxCardinality restrictions
+* ENHANCED: Vocabulary for OWL 1.1 and Econn
 
 * FIXED: Enumerated datatype problem
 
 * FIXED: KnowledgeBase.getDomains to ensure consistency
 
 * FIXED: ATermUtils.findPrimitives for qualified cardinality restrictions
-
-* FIXED: Range problems related to xsd:float and xsd:double
-
-* FIXED: Treatment of antisymmetric properties to be irreflexive as
-         dictated by the OWL 1.1 spec
 
 Pellet 1.4-RC2 (Feb 05, 2007)
 -----------------------------

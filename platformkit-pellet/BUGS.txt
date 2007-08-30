@@ -1,0 +1,51 @@
+Known Bugs / Issues
+
+* Crash for infinite rdf:List structures
+
+There is no check for cycles in rdf:List structures thus loading a file with 
+cyclic rdf:List's may cause non-termination. 
+
+* Limitations of punning
+
+Pellet uses punning semantics of OWL 1.1 to reason with entities that share
+the same URI, e.g. same URI used to denote an individual and a class. However,
+Pellet does not support using the same URI both as a DatatypeProperty and an 
+ObjectProperty. Loading such an ontology might even cause the reasoner to crash.
+
+* Query results do not contain owl:sameAs or owl:differentFrom
+
+Results to any query that has a variable in the predicate position will not 
+contain any results where that variable is bound to the predicate owl:sameAs
+or owl:differentFrom. This is true for any such SPARQL queries plus any API
+calls, e.g. Model.listStatements function in Jena interface. 
+
+* ABox query engine does not support owl:sameAs or owl:differentFrom
+
+Internal Pellet query engine supports only ABox queries that do not use the 
+predicates owl:sameAs or owl:differentFrom. Such queries can be answered
+through Jena query engine.
+
+* Retrieving the domains or ranges of a property do not return complete answers
+
+Queries to retrieve the domains or ranges of a property are not guranteed to
+return complete answers. Mostly the results contain only a variation of 
+asserted domains/ranges. For example, domain/range of sub/super properties 
+are propogated in the role hierarchy but their sub/super classes are not 
+included in the results.
+
+* Strict partial order on composite object properties not checked
+
+OWL 1.1 requires that there should be a strict partial order on composite object
+properties as described at http://webont.org/owl1.1/owl_specification.html#7
+This condition is not checked by Pellet so loading an ontology with complex 
+subproperty axioms that have cyclic dependencies between object properties will
+yield unexpected results.
+
+* Species validator gives incorrect results
+
+Species validator is known to give incorrect results in some cases. Validator
+will not recognize any SWRL vocabulary either and complain that the ontology
+is OWL-FULL if it contains any SWRL rules. Species validation is not used by 
+the reasoner so this is not an issue for the correctness of the reasoning 
+results. See the command-line arguments for turning off species validator if
+you encounter problems.
