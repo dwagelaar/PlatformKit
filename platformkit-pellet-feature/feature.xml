@@ -2,7 +2,7 @@
 <feature
       id="org.mindswap.pellet"
       label="Pellet OWL reasoner"
-      version="1.4.0"
+      version="1.5.0"
       provider-name="Mindswap.org"
       image="jimsLogo.gif">
 
@@ -55,8 +55,8 @@ IN THE SOFTWARE.
 
    <plugin
          id="org.mindswap.pellet"
-         download-size="2672"
-         install-size="3285"
+         download-size="2444"
+         install-size="3005"
          version="0.0.0"/>
 
 </feature>

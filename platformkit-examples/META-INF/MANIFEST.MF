@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Platformkit Examples
 Bundle-SymbolicName: be.ac.vub.platformkit.examples;singleton:=true
-Bundle-Version: 1.1.5
+Bundle-Version: 1.1.6
 Bundle-Localization: plugin
 Bundle-Vendor: Vrije Universiteit Brussel
 Eclipse-LazyStart: true

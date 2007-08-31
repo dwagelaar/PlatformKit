@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit"
       label="PlatformKit"
-      version="1.1.5"
+      version="1.1.6"
       provider-name="Vrije Universiteit Brussel"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">
@@ -70,8 +70,8 @@ the terms and conditions of the Eclipse Public License Version
 
    <plugin
          id="be.ac.vub.platformkit.doc"
-         download-size="4672"
-         install-size="4724"
+         download-size="5012"
+         install-size="5062"
          version="0.0.0"/>
 
    <plugin
