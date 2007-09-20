@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_ygNyEGdqEdyvQYtGy77bzQ" activeDiagram="_ygXjEGdqEdyvQYtGy77bzQ">
+  <model href="Platformkit.ecore#/"/>
+  <diagrams xmi:id="_ygXjEGdqEdyvQYtGy77bzQ" position="0,0" size="100,100" name="PlatformKit" viewport="0,0">
+    <property xmi:id="_zA0kwGdqEdyvQYtGy77bzQ" key="pageFormatName" value="PlatformKitModel"/>
+    <property xmi:id="_zA0kwWdqEdyvQYtGy77bzQ" key="diagramWidth" value="592"/>
+    <property xmi:id="_zA0kwmdqEdyvQYtGy77bzQ" key="diagramHeight" value="420"/>
+    <property xmi:id="_zA0kw2dqEdyvQYtGy77bzQ" key="pageMarginName" value="Small Margin"/>
+    <property xmi:id="_zA0kxGdqEdyvQYtGy77bzQ" key="diagramTopMargin" value="20"/>
+    <property xmi:id="_zA0kxWdqEdyvQYtGy77bzQ" key="diagramBottomMargin" value="20"/>
+    <property xmi:id="_zA0kxmdqEdyvQYtGy77bzQ" key="diagramLeftMargin" value="20"/>
+    <property xmi:id="_zA0kx2dqEdyvQYtGy77bzQ" key="diagramRightMargin" value="20"/>
+    <property xmi:id="_zA0kyGdqEdyvQYtGy77bzQ" key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ygYKIGdqEdyvQYtGy77bzQ" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="Platformkit.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" xmi:id="_zHGL4GdqEdyvQYtGy77bzQ" position="17,16" size="254,-1">
+      <property xmi:id="_6TBnEmdqEdyvQYtGy77bzQ" key="backgroundColor" value="255,255,255"/>
+      <anchorage xmi:id="_zJZR8GdqEdyvQYtGy77bzQ" graphEdge="_zJy6kGdqEdyvQYtGy77bzQ _zJzhoGdqEdyvQYtGy77bzQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zHGL4WdqEdyvQYtGy77bzQ" presentation="default">
+        <element href="Platformkit.ecore#//ConstraintSpace"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_zHGL4mdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zHGL42dqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="21"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zHGL5GdqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//ConstraintSpace"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_zHvsIGdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zHvsIWdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSpace/ontology"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_zHGL5WdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zHGL5mdqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="11"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zHGL52dqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//ConstraintSpace"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_zHyIYGdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zHyIYWdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSpace/getIntersectionSet"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_zHyIYmdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zHyIY2dqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSpace/getMostSpecific"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_zHyIZGdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zHyIZWdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSpace/getLeastSpecific"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_zHyIZmdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zHyIZ2dqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSpace/getValid"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_zHyIaGdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zHyIaWdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSpace/getInvalid"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_zH1ywGdqEdyvQYtGy77bzQ" position="49,227" size="190,-1">
+      <property xmi:id="_6TBnEWdqEdyvQYtGy77bzQ" key="backgroundColor" value="255,255,255"/>
+      <anchorage xmi:id="_zJZR8WdqEdyvQYtGy77bzQ" graphEdge="_zJy6kGdqEdyvQYtGy77bzQ _zJzhoGdqEdyvQYtGy77bzQ _zJ1W0GdqEdyvQYtGy77bzQ _zJ194GdqEdyvQYtGy77bzQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH1ywWdqEdyvQYtGy77bzQ" presentation="default">
+        <element href="Platformkit.ecore#//ConstraintSet"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_zH1ywmdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zH1yw2dqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="21"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH1yxGdqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//ConstraintSet"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_zH2Z0GdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH2Z0WdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSet/name"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_zH1yxWdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zH1yxmdqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="11"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH1yx2dqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//ConstraintSet"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_zH3A4GdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH3A4WdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSet/isValid"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_zH3A4mdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH3A42dqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSet/getMostSpecific"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_zH3A5GdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH3A5WdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSet/getLeastSpecific"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_zH3A5mdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH3A52dqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//ConstraintSet/getIntersection"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_zH42EGdqEdyvQYtGy77bzQ" position="370,255" size="142,-1">
+      <property xmi:id="_6TBnEGdqEdyvQYtGy77bzQ" key="backgroundColor" value="255,255,255"/>
+      <anchorage xmi:id="_zJ0IsGdqEdyvQYtGy77bzQ" graphEdge="_zJ1W0GdqEdyvQYtGy77bzQ _zJ194GdqEdyvQYtGy77bzQ _zKRbsGdqEdyvQYtGy77bzQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH42EWdqEdyvQYtGy77bzQ" presentation="default">
+        <element href="Platformkit.ecore#//Constraint"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_zH42EmdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zH42E2dqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="21"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH42FGdqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//Constraint"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_zH5dIGdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH5dIWdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//Constraint/ontClassURI"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_zH42FWdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zH42FmdqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="11"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH42F2dqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//Constraint"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_zH6EMGdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH6EMWdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//Constraint/isValid"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_zH6rQGdqEdyvQYtGy77bzQ" position="348,108" size="81,-1">
+      <property xmi:id="_6S_K0GdqEdyvQYtGy77bzQ" key="backgroundColor" value="255,255,255"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH6rQWdqEdyvQYtGy77bzQ" presentation="default">
+        <element href="Platformkit.ecore#//OntModel"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_zH6rQmdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zH6rQ2dqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="21"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH6rRGdqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//OntModel"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_zH6rRWdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zH6rRmdqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="11"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH6rR2dqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//OntModel"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_zH7SUGdqEdyvQYtGy77bzQ" position="348,16" size="186,-1">
+      <property xmi:id="_6TBAAGdqEdyvQYtGy77bzQ" key="backgroundColor" value="255,255,255"/>
+      <anchorage xmi:id="_zJ9SoGdqEdyvQYtGy77bzQ" graphEdge="_zKRbsGdqEdyvQYtGy77bzQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH7SUWdqEdyvQYtGy77bzQ" presentation="default">
+        <element href="Platformkit.ecore#//IOntModelChangeListener"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_zH7SUmdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zH7SU2dqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="21"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH7SVGdqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//IOntModelChangeListener"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_zH7SVWdqEdyvQYtGy77bzQ">
+        <property xmi:id="_zH7SVmdqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="11"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH7SV2dqEdyvQYtGy77bzQ" presentation="default">
+          <element href="Platformkit.ecore#//IOntModelChangeListener"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_zH8gcGdqEdyvQYtGy77bzQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH8gcWdqEdyvQYtGy77bzQ" presentation="default">
+            <element href="Platformkit.ecore#//IOntModelChangeListener/ontModelChanged"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_zJy6kGdqEdyvQYtGy77bzQ" anchor="_zJZR8GdqEdyvQYtGy77bzQ _zJZR8WdqEdyvQYtGy77bzQ">
+      <property xmi:id="_96XhMGdqEdyvQYtGy77bzQ" key="foregroundColor" value="0,0,0"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zJy6kWdqEdyvQYtGy77bzQ" presentation="default">
+        <element href="Platformkit.ecore#//ConstraintSpace/constraintSet"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_zJy6kmdqEdyvQYtGy77bzQ" id="nameLabel" uDistance="8" vDistance="17"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_zJy6k2dqEdyvQYtGy77bzQ" id="cardinalityLabel" uDistance="8" vDistance="-20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_zJzhoGdqEdyvQYtGy77bzQ" anchor="_zJZR8WdqEdyvQYtGy77bzQ _zJZR8GdqEdyvQYtGy77bzQ">
+      <property xmi:id="_7zc4AGdqEdyvQYtGy77bzQ" key="foregroundColor" value="0,0,0"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zJzhoWdqEdyvQYtGy77bzQ" presentation="default">
+        <element href="Platformkit.ecore#//ConstraintSet/space"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_zJzhomdqEdyvQYtGy77bzQ" id="nameLabel" uDistance="8" vDistance="18"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_zJzho2dqEdyvQYtGy77bzQ" id="cardinalityLabel" uDistance="8" vDistance="-19"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_zJ1W0GdqEdyvQYtGy77bzQ" anchor="_zJZR8WdqEdyvQYtGy77bzQ _zJ0IsGdqEdyvQYtGy77bzQ">
+      <property xmi:id="_96W6IGdqEdyvQYtGy77bzQ" key="foregroundColor" value="0,0,0"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zJ1W0WdqEdyvQYtGy77bzQ" presentation="default">
+        <element href="Platformkit.ecore#//ConstraintSet/constraint"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_zJ1W0mdqEdyvQYtGy77bzQ" id="nameLabel" uDistance="5" vDistance="16"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_zJ1W02dqEdyvQYtGy77bzQ" id="cardinalityLabel" uDistance="5" vDistance="-19"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_zJ194GdqEdyvQYtGy77bzQ" anchor="_zJ0IsGdqEdyvQYtGy77bzQ _zJZR8WdqEdyvQYtGy77bzQ">
+      <property xmi:id="_7zdfEGdqEdyvQYtGy77bzQ" key="foregroundColor" value="0,0,0"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zJ194WdqEdyvQYtGy77bzQ" presentation="default">
+        <element href="Platformkit.ecore#//Constraint/set"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_zJ194mdqEdyvQYtGy77bzQ" id="nameLabel" uDistance="6" vDistance="15"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_zJ1942dqEdyvQYtGy77bzQ" id="cardinalityLabel" uDistance="10" vDistance="-20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_zKRbsGdqEdyvQYtGy77bzQ" anchor="_zJ0IsGdqEdyvQYtGy77bzQ _zJ9SoGdqEdyvQYtGy77bzQ">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_zKRbsWdqEdyvQYtGy77bzQ" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>
