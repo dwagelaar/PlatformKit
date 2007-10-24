@@ -11,7 +11,7 @@ uses UML2;
 -- model-specific helpers begin
 -- ======================================================================
 
-helper def : javaLangObject : UML2!uml::Class = 'java::lang::Object'->class();
+helper def : javaLangObject : UML2!"uml::Class" = 'java::lang::Object'->class();
 
 -- ======================================================================
 -- model-specific helpers end
@@ -22,12 +22,12 @@ helper def : javaLangObject : UML2!uml::Class = 'java::lang::Object'->class();
 -- ======================================================================
 
 rule ClassWithoutGeneralization {
-    from s : UML2!uml::Class (
+    from s : UML2!"uml::Class" (
 		if thisModule.inElements->includes(s) then
-			s->oclIsTypeOf(UML2!uml::Class) and
+			s->oclIsTypeOf(UML2!"uml::Class") and
 			s.general->isEmpty() and s <> thisModule.javaLangObject
 		else false endif)
-    to t : UML2!uml::Class mapsTo s (
+    to t : UML2!"uml::Class" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- s.isLeaf,
@@ -60,17 +60,17 @@ rule ClassWithoutGeneralization {
         nestedClassifier <- s.nestedClassifier,
         ownedOperation <- s.ownedOperation,
         ownedReception <- s.ownedReception),
-	   g : UML2!uml::Generalization (
+	   g : UML2!"uml::Generalization" (
 	   	general <- thisModule.javaLangObject)
 }
 
 rule Class {
-    from s : UML2!uml::Class (
+    from s : UML2!"uml::Class" (
 		if thisModule.inElements->includes(s) then
-			s->oclIsTypeOf(UML2!uml::Class) and
+			s->oclIsTypeOf(UML2!"uml::Class") and
 			(s.general->notEmpty() or s = thisModule.javaLangObject)
 		else false endif)
-    to t : UML2!uml::Class mapsTo s (
+    to t : UML2!"uml::Class" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- s.isLeaf,
