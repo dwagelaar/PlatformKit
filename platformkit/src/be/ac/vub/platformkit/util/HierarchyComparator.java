@@ -13,8 +13,9 @@ import com.hp.hpl.jena.ontology.OntClass;
 /**
  * Compares {@link Constraint} objects, such that the more specific (subclass) constraint is
  * considered smaller (MOST_SPECIFIC_FIRST) or greater (LEAST_SPECIFIC_FIRST) than
- * the less specific (superclass) constraint. If both constraints are equivalent or no subclass
- * relationship can be determined, they are considered equally specific.
+ * the less specific (superclass) constraint. If both constraints are equivalent,
+ * they are considered equally specific. Ifno subclass relationship can be determined,
+ * an exception is thrown.
  * @author dennis
  */
 public class HierarchyComparator implements Comparator {
@@ -41,6 +42,7 @@ public class HierarchyComparator implements Comparator {
     /**
      * @see Comparator#compare(T, T)
      * @throws ClassCastException if something else than Constraint objects are compared
+     * or if no order can be determined.
      */
     public int compare(Object arg0, Object arg1)
     throws ClassCastException {
