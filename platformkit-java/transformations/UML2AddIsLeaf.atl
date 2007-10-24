@@ -11,7 +11,7 @@ uses UML2Comparison;
 -- model-specific helpers begin
 -- ======================================================================
 
-helper context UML2!uml::Classifier def : fromPrev() : Sequence(UML2!uml::Classifier) =
+helper context UML2!"uml::Classifier" def : fromPrev() : Sequence(UML2!"uml::Classifier") =
 	let packageName : String = self->getNearestPackage().umlQualifiedName in
 		thisModule.prevPackages
 			->select(p|p.umlQualifiedName = packageName)
@@ -27,15 +27,15 @@ helper context UML2!uml::Classifier def : fromPrev() : Sequence(UML2!uml::Classi
 -- ======================================================================
 
 rule Class {
-    from s : UML2!uml::Class (
+    from s : UML2!"uml::Class" (
 		if thisModule.inElements->includes(s) then
-			s->oclIsTypeOf(UML2!uml::Class)
+			s->oclIsTypeOf(UML2!"uml::Class")
 		else false endif)
 	using {
-    	prev : UML2!uml::Classifier = s->fromPrev()->first()
+    	prev : UML2!"uml::Classifier" = s->fromPrev()->first()
 			->debug(s.qualifiedName + ' from prev');
     }
-    to t : UML2!uml::Class mapsTo s (
+    to t : UML2!"uml::Class" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
@@ -71,12 +71,12 @@ rule Class {
 }
 
 rule Interface {
-    from s : UML2!uml::Interface (thisModule.inElements->includes(s))
+    from s : UML2!"uml::Interface" (thisModule.inElements->includes(s))
 	using {
-    	prev : UML2!uml::Classifier = s->fromPrev()->first()
+    	prev : UML2!"uml::Classifier" = s->fromPrev()->first()
 			->debug(s.qualifiedName + ' from prev');
     }
-	to t : UML2!uml::Interface mapsTo s (
+	to t : UML2!"uml::Interface" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
@@ -108,15 +108,15 @@ rule Interface {
 }
 
 rule DataType {
-    from s : UML2!uml::DataType (
+    from s : UML2!"uml::DataType" (
 		if thisModule.inElements->includes(s) then
-			s->oclIsTypeOf(UML2!uml::DataType)
+			s->oclIsTypeOf(UML2!"uml::DataType")
 		else false endif)
 	using {
-    	prev : UML2!uml::Classifier = s->fromPrev()->first()
+    	prev : UML2!"uml::Classifier" = s->fromPrev()->first()
 			->debug(s.qualifiedName + ' from prev');
     }
-	to t : UML2!uml::DataType mapsTo s (
+	to t : UML2!"uml::DataType" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
@@ -144,17 +144,17 @@ rule DataType {
 }
 
 rule Property {
-    from s : UML2!uml::Property (
+    from s : UML2!"uml::Property" (
 		if thisModule.inElements->includes(s) then
-			s->oclIsTypeOf(UML2!uml::Property)
+			s->oclIsTypeOf(UML2!"uml::Property")
 		else false endif)
 	using {
-    	prevC : UML2!uml::Classifier = s.namespace->fromPrev()->first();
-		prev : UML2!uml::StructuralFeature = if prevC->oclIsUndefined() then OclUndefined
+    	prevC : UML2!"uml::Classifier" = s.namespace->fromPrev()->first();
+		prev : UML2!"uml::StructuralFeature" = if prevC->oclIsUndefined() then OclUndefined
 			else prevC.allFeatures->select(f|s->isCompatibleWith(f))->first() endif
 			->debug(s.qualifiedName + ' from prev');
     }
-	to t : UML2!uml::Property mapsTo s (
+	to t : UML2!"uml::Property" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
@@ -185,14 +185,14 @@ rule Property {
 }
 
 rule Operation {
-    from s : UML2!uml::Operation (thisModule.inElements->includes(s))
+    from s : UML2!"uml::Operation" (thisModule.inElements->includes(s))
 	using {
-    	prevC : UML2!uml::Classifier = s.namespace->fromPrev()->first();
-		prev : UML2!uml::BehavioralFeature = if prevC->oclIsUndefined() then OclUndefined
+    	prevC : UML2!"uml::Classifier" = s.namespace->fromPrev()->first();
+		prev : UML2!"uml::BehavioralFeature" = if prevC->oclIsUndefined() then OclUndefined
 			else prevC.allFeatures->select(f|s->isCompatibleWith(f))->first() endif
 			->debug(s.qualifiedName + ' from prev');
     }
-	to t : UML2!uml::Operation mapsTo s (
+	to t : UML2!"uml::Operation" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,

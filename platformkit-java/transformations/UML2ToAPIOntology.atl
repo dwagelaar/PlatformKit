@@ -14,56 +14,56 @@ uses UML2Comparison;
 helper def : UML2ToAPIOntologyVersionString : String =
 	'$Id$';
 
-helper def : inElements : Set(UML2!ecore::EObject) = UML2!ecore::EObject->allInstancesFrom('IN');
+helper def : inElements : Set(UML2!"ecore::EObject") = UML2!"ecore::EObject"->allInstancesFrom('IN');
 
-helper def : includedPackages : Set(UML2!uml::Package) = UML2!uml::Package->allInstancesFrom('IN')
-	->select(p|p->oclIsTypeOf(UML2!uml::Package) and p.packagedElement
-		->select(c|c->oclIsKindOf(UML2!uml::Class) or c->oclIsKindOf(UML2!uml::Interface))->notEmpty());
+helper def : includedPackages : Set(UML2!"uml::Package") = UML2!"uml::Package"->allInstancesFrom('IN')
+	->select(p|p->oclIsTypeOf(UML2!"uml::Package") and p.packagedElement
+		->select(c|c->oclIsKindOf(UML2!"uml::Class") or c->oclIsKindOf(UML2!"uml::Interface"))->notEmpty());
 
---helper def : includedPackages : Set(UML2!uml::Package) = UML2!uml::Package->allInstancesFrom('IN')
+--helper def : includedPackages : Set(UML2!"uml::Package") = UML2!"uml::Package"->allInstancesFrom('IN')
 --	->select(p|p.name = 'CosNaming');
 
-helper def : platformPlatform : Set(OWL!owl::OWLClass) = OWL!owl::OWLClass->allInstancesFrom('PLATFORM')
+helper def : platformPlatform : Set(OWL!"owl::OWLClass") = OWL!"owl::OWLClass"->allInstancesFrom('PLATFORM')
 	->select(o|o.localName = 'Platform');
 
-helper def : javaLibrary : Set(OWL!owl::OWLClass) = OWL!owl::OWLClass->allInstancesFrom('JAVA')
+helper def : javaLibrary : Set(OWL!"owl::OWLClass") = OWL!"owl::OWLClass"->allInstancesFrom('JAVA')
 	->select(o|o.localName = 'JavaLibrary');
 
-helper def : javaJRE : Set(OWL!owl::OWLClass) = OWL!owl::OWLClass->allInstancesFrom('JAVA')
+helper def : javaJRE : Set(OWL!"owl::OWLClass") = OWL!"owl::OWLClass"->allInstancesFrom('JAVA')
 	->select(o|o.localName = 'JRE');
 
-helper def : platformProvidesFeature : OWL!owl::OWLObjectProperty =
-	OWL!owl::OWLObjectProperty->allInstancesFrom('PLATFORM')
+helper def : platformProvidesFeature : OWL!"owl::OWLObjectProperty" =
+	OWL!"owl::OWLObjectProperty"->allInstancesFrom('PLATFORM')
 		->select(p|p.localName = 'providesFeature')->first();
 
-helper def : jreProvidesBuiltinJavaLibrary : OWL!owl::OWLObjectProperty =
-	OWL!owl::OWLObjectProperty->allInstancesFrom('JAVA')
+helper def : jreProvidesBuiltinJavaLibrary : OWL!"owl::OWLObjectProperty" =
+	OWL!"owl::OWLObjectProperty"->allInstancesFrom('JAVA')
 		->select(p|p.localName = 'providesBuiltinJavaLibrary')->first();
 
-helper def : platformOntology : Set(OWL!owl::OWLOntology) = 
-	OWL!owl::OWLOntology->allInstancesFrom('PLATFORM');
+helper def : platformOntology : Set(OWL!"owl::OWLOntology") = 
+	OWL!"owl::OWLOntology"->allInstancesFrom('PLATFORM');
 
-helper def : javaOntology : Set(OWL!owl::OWLOntology) = 
-	OWL!owl::OWLOntology->allInstancesFrom('JAVA');
+helper def : javaOntology : Set(OWL!"owl::OWLOntology") = 
+	OWL!"owl::OWLOntology"->allInstancesFrom('JAVA');
 
-helper def : importedOntologies : Set(OWL!owl::OWLOntology) = 
-	OWL!owl::OWLOntology->allInstances()->select(o|
-		OWL!owl::OWLOntology->allInstancesFrom('PLATFORM')->excludes(o) and
-		OWL!owl::OWLOntology->allInstancesFrom('JAVA')->excludes(o));
+helper def : importedOntologies : Set(OWL!"owl::OWLOntology") = 
+	OWL!"owl::OWLOntology"->allInstances()->select(o|
+		OWL!"owl::OWLOntology"->allInstancesFrom('PLATFORM')->excludes(o) and
+		OWL!"owl::OWLOntology"->allInstancesFrom('JAVA')->excludes(o));
 
 -- ======================================================================
 -- general context helper attributes begin
 -- ======================================================================
 
-helper context UML2!uml::NamedElement def : javaQualifiedName : String =
-	if self.owner->oclIsTypeOf(UML2!uml::Package) or self.owner->oclIsKindOf(UML2!uml::Classifier) then
+helper context UML2!"uml::NamedElement" def : javaQualifiedName : String =
+	if self.owner->oclIsTypeOf(UML2!"uml::Package") or self.owner->oclIsKindOf(UML2!"uml::Classifier") then
 		self.owner.javaQualifiedName + '.' + self.name
 	else
 		self.name
 	endif;
 
-helper context UML2!uml::NamedElement def : ontClassName : String =
-	if self.owner->oclIsTypeOf(UML2!uml::Package) then
+helper context UML2!"uml::NamedElement" def : ontClassName : String =
+	if self.owner->oclIsTypeOf(UML2!"uml::Package") then
 		self.owner.ontClassName
 	else '' endif
 	+ self.name->firstToUpper();
@@ -72,16 +72,16 @@ helper context UML2!uml::NamedElement def : ontClassName : String =
 -- helper attributes for finding references
 -- ======================================================================
 
-helper context UML2!uml::Package def : references : Set(UML2!uml::Package) =
+helper context UML2!"uml::Package" def : references : Set(UML2!"uml::Package") =
 	self.allOwnedClassifiers
 		->collect(c|c.references)->flatten()->asSet()
 		->collect(r|r->referencesOtherPackageThan(self))->flatten()->asSet()
 		->debug(thisModule.modelName.prefix + self.qualifiedName + ' referenced packages');
 	
 -- Non-transitive references
-helper context UML2!uml::Classifier def : references : Set(UML2!uml::Classifier) =
+helper context UML2!"uml::Classifier" def : references : Set(UML2!"uml::Classifier") =
 	self.general->union(
-		self.suppliers->select(s|s->oclIsKindOf(UML2!uml::Classifier)))->union(
+		self.suppliers->select(s|s->oclIsKindOf(UML2!"uml::Classifier")))->union(
 		self.feature->collect(f|f->referencesOtherThan(self)))
 	->flatten()->asSet();
 
@@ -89,15 +89,15 @@ helper context UML2!uml::Classifier def : references : Set(UML2!uml::Classifier)
 -- helper attributes for determining compatibility
 -- ======================================================================
 
-helper context UML2!uml::NamedElement def : owlClassesInPrev : Sequence(OWL!owl::OWLClass) =
-	OWL!owl::OWLClass->allInstances()
+helper context UML2!"uml::NamedElement" def : owlClassesInPrev : Sequence(OWL!"owl::OWLClass") =
+	OWL!"owl::OWLClass"->allInstances()
 		->select(c|c.localName = self.ontClassName + 'Library')
 		->select(o|o.namespace.name = self->getModel().name);
 
-helper context UML2!uml::Package def : compatibleClasses : Sequence(OWL!owl::OWLClass) =
+helper context UML2!"uml::Package" def : compatibleClasses : Sequence(OWL!"owl::OWLClass") =
 	self.compatibleInPrev->collect(p|p.owlClassesInPrev)->flatten();
 
-helper context UML2!uml::Package def : equivalentClasses : Sequence(OWL!owl::OWLClass) =
+helper context UML2!"uml::Package" def : equivalentClasses : Sequence(OWL!"owl::OWLClass") =
 	self.equivalentInPrev->collect(p|p.owlClassesInPrev)->flatten();
 
 -- ======================================================================
@@ -115,15 +115,15 @@ helper context String def: firstToUpper() : String =
 -- helper methods for finding references
 -- ======================================================================
 
-helper context UML2!uml::PackageableElement def : referencesOtherPackageThan(p : UML2!uml::Package) : Set(UML2!uml::Package) =
-	let np : UML2!uml::Package = self->getNearestPackage() in
+helper context UML2!"uml::PackageableElement" def : referencesOtherPackageThan(p : UML2!"uml::Package") : Set(UML2!"uml::Package") =
+	let np : UML2!"uml::Package" = self->getNearestPackage() in
 		if np <> p then Set{np} else Set{} endif;
 
-helper context UML2!uml::BehavioralFeature def : referencesOtherThan(c : UML2!uml::Classifier) : Sequence(UML2!uml::Classifier) =
+helper context UML2!"uml::BehavioralFeature" def : referencesOtherThan(c : UML2!"uml::Classifier") : Sequence(UML2!"uml::Classifier") =
 	self.ownedParameter->collect(p|p->referencesOtherThan(c))->flatten();
 
-helper context UML2!uml::TypedElement def : referencesOtherThan(c : UML2!uml::Classifier) : Sequence(UML2!uml::Classifier) =
-	if self.type->oclIsKindOf(UML2!uml::Class) or self.type->oclIsKindOf(UML2!uml::Interface) then
+helper context UML2!"uml::TypedElement" def : referencesOtherThan(c : UML2!"uml::Classifier") : Sequence(UML2!"uml::Classifier") =
+	if self.type->oclIsKindOf(UML2!"uml::Class") or self.type->oclIsKindOf(UML2!"uml::Interface") then
 		if self.type->getModel() = c->getModel() and self.type <> c
 		then Sequence{self.type}
 		else Sequence{} endif
@@ -137,8 +137,8 @@ helper context UML2!uml::TypedElement def : referencesOtherThan(c : UML2!uml::Cl
 -- transformation rules begin
 -- ======================================================================
 
-rule PrevNamespace(o : OWL!owl::OWLOntology) {
-	to n : OWL!rdfs::Namespace (
+rule PrevNamespace(o : OWL!"owl::OWLOntology") {
+	to n : OWL!"rdfs::Namespace" (
 		URI <- o.namespace.URI,
 		name <- o.namespace.name)
 	do {
