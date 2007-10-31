@@ -21,7 +21,7 @@
      [am3.atl] INFO: [j2me-midp-1_0] j2me-midp-1_0::javax::microedition::io referenced packages: Set {J2ME-MIDP-1_0!lang, J2ME-MIDP-1_0!io}
      [am3.atl] INFO: [j2me-midp-1_0] Package: 'JavaxMicroeditionLcduiLibrary'
      [am3.atl] INFO: [j2me-midp-1_0] j2me-midp-1_0::javax::microedition::lcdui equivalent packages: Sequence {}
-     [am3.atl] INFO: [j2me-midp-1_0] j2me-midp-1_0::javax::microedition::lcdui referenced packages: Set {J2ME-MIDP-1_0!lang, J2ME-MIDP-1_0!midlet, J2ME-MIDP-1_0!util}
+     [am3.atl] INFO: [j2me-midp-1_0] j2me-midp-1_0::javax::microedition::lcdui referenced packages: Set {J2ME-MIDP-1_0!lang, J2ME-MIDP-1_0!util, J2ME-MIDP-1_0!midlet}
      [am3.atl] INFO: [j2me-midp-1_0] Package: 'JavaxMicroeditionMidletLibrary'
      [am3.atl] INFO: [j2me-midp-1_0] j2me-midp-1_0::javax::microedition::midlet equivalent packages: Sequence {}
      [am3.atl] INFO: [j2me-midp-1_0] j2me-midp-1_0::javax::microedition::midlet referenced packages: Set {J2ME-MIDP-1_0!lang}
