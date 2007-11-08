@@ -49,7 +49,7 @@ rule Model {
 		RDFSLabel <- Sequence{label},
 		RDFSComment <- Sequence{comment},
 		ownedNamespace <- Set{n, xsd, units, platform, java}->union(
-			if prevNotEmpty	then thisModule.importedOntologies->collect(o|thisModule->PrevNamespace(o)) else Set{} endif),
+			if prevNotEmpty	then thisModule.importedOntologies->collect(o|thisModule.PrevNamespace(o)) else Set{} endif),
 -- !!! OWLImports generates bogus namespace !!!
 		OWLImports <- thisModule.platformOntology->union(thisModule.javaOntology)->union(
 			if prevNotEmpty then thisModule.importedOntologies else Set{} endif),
@@ -65,7 +65,7 @@ rule Model {
 			thisModule.UML2ToAPIOntologyVersionString + ' and ' +
 			thisModule.UML2ComparisonVersionString),
 	   apiClass : OWL!"owl::OWLClass" (
-	   	localName <- s.name->firstToUpper() + 'ClassLibrary',
+	   	localName <- s.name.firstToUpper() + 'ClassLibrary',
 		RDFSSubClassOf <- thisModule.includedPackages->union(superClasses),
 		OWLEquivalentClass <- if s.equivalentClasses->isEmpty()
 			then Sequence{} else s.equivalentClasses endif,
@@ -75,7 +75,7 @@ rule Model {
 	   	language <- 'en',
 		lexicalForm <- 'JavaLibrary implementing the entire API for ' + s.name),
 	   jreClass : OWL!"owl::OWLClass" (
-	   	localName <- s.name->firstToUpper(),
+	   	localName <- s.name.firstToUpper(),
 		RDFSSubClassOf <- Sequence{thisModule.javaJRE, builtinJavaLibraryRestriction},
 		RDFSComment <- Sequence{jreComment},
 		namespace <- s),
@@ -94,13 +94,13 @@ rule Package {
 		superClasses : Sequence(OWL!"owl::OWLClass") = s.compatibleClasses->select(c|s.equivalentClasses->excludes(c));
 	}
 	to t : OWL!"owl::OWLClass" mapsTo s (
-		localName <- (s.ontClassName + 'Library')->debug(thisModule.modelName.prefix + 'Package'),
+		localName <- (s.ontClassName + 'Library').debug(thisModule.modelName.prefix + 'Package'),
 		RDFSSubClassOf <- if superClasses->isEmpty()
 			then thisModule.javaLibrary else superClasses endif,
 		OWLEquivalentClass <- s.equivalentClasses,
 		RDFSComment <- Sequence{comment},
 		RDFSSeeAlso <- s.references,
-		namespace <- s->getModel()),
+		namespace <- s.getModel()),
 	   comment : OWL!"rdfs::PlainLiteral" (
 	   	language <- 'en',
 		lexicalForm <- 'JavaLibrary implementing the ' + s.javaQualifiedName + ' package for ' + thisModule.modelName)
