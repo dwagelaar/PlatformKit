@@ -1,8 +1,8 @@
 -- @atlcompiler atl2006
 -- $Id$
 -- Query for determining the compatibility of a UML2 model to other versions of the UML2 model
-query UML2CompatibilityComparison = UML2!"uml::Model"->allInstancesFrom('IN')
+query UML2CompatibilityComparison = UML2!"uml::Model".allInstancesFrom('IN')
 	->collect(m|m.compatibleInPrev)->flatten()->notEmpty()
-	->debug('Model is compatible with previous model');
+	.debug('Model is compatible with previous model');
 
 uses UML2Comparison;

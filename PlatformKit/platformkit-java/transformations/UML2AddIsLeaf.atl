@@ -12,7 +12,7 @@ uses UML2Comparison;
 -- ======================================================================
 
 helper context UML2!"uml::Classifier" def : fromPrev() : Sequence(UML2!"uml::Classifier") =
-	let packageName : String = self->getNearestPackage().umlQualifiedName in
+	let packageName : String = self.getNearestPackage().umlQualifiedName in
 		thisModule.prevPackages
 			->select(p|p.umlQualifiedName = packageName)
 			->collect(p1|p1.allOwnedClassifiers)->flatten()
@@ -29,16 +29,16 @@ helper context UML2!"uml::Classifier" def : fromPrev() : Sequence(UML2!"uml::Cla
 rule Class {
     from s : UML2!"uml::Class" (
 		if thisModule.inElements->includes(s) then
-			s->oclIsTypeOf(UML2!"uml::Class")
+			s.oclIsTypeOf(UML2!"uml::Class")
 		else false endif)
 	using {
-    	prev : UML2!"uml::Classifier" = s->fromPrev()->first()
-			->debug(s.qualifiedName + ' from prev');
+    	prev : UML2!"uml::Classifier" = s.fromPrev()->first()
+			.debug(s.qualifiedName + ' from prev');
     }
     to t : UML2!"uml::Class" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
-        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
         isAbstract <- s.isAbstract,
         isActive <- s.isActive,
         eAnnotations <- s.eAnnotations,
@@ -73,13 +73,13 @@ rule Class {
 rule Interface {
     from s : UML2!"uml::Interface" (thisModule.inElements->includes(s))
 	using {
-    	prev : UML2!"uml::Classifier" = s->fromPrev()->first()
-			->debug(s.qualifiedName + ' from prev');
+    	prev : UML2!"uml::Classifier" = s.fromPrev()->first()
+			.debug(s.qualifiedName + ' from prev');
     }
 	to t : UML2!"uml::Interface" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
-        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
         isAbstract <- s.isAbstract,
         eAnnotations <- s.eAnnotations,
         ownedComment <- s.ownedComment,
@@ -110,16 +110,16 @@ rule Interface {
 rule DataType {
     from s : UML2!"uml::DataType" (
 		if thisModule.inElements->includes(s) then
-			s->oclIsTypeOf(UML2!"uml::DataType")
+			s.oclIsTypeOf(UML2!"uml::DataType")
 		else false endif)
 	using {
-    	prev : UML2!"uml::Classifier" = s->fromPrev()->first()
-			->debug(s.qualifiedName + ' from prev');
+    	prev : UML2!"uml::Classifier" = s.fromPrev()->first()
+			.debug(s.qualifiedName + ' from prev');
     }
 	to t : UML2!"uml::DataType" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
-        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
         isAbstract <- s.isAbstract,
         eAnnotations <- s.eAnnotations,
         ownedComment <- s.ownedComment,
@@ -146,22 +146,22 @@ rule DataType {
 rule Property {
     from s : UML2!"uml::Property" (
 		if thisModule.inElements->includes(s) then
-			s->oclIsTypeOf(UML2!"uml::Property")
+			s.oclIsTypeOf(UML2!"uml::Property")
 		else false endif)
 	using {
-    	prevC : UML2!"uml::Classifier" = s.namespace->fromPrev()->first();
-		prev : UML2!"uml::StructuralFeature" = if prevC->oclIsUndefined() then OclUndefined
-			else prevC.allFeatures->select(f|s->isCompatibleWith(f))->first() endif
-			->debug(s.qualifiedName + ' from prev');
+    	prevC : UML2!"uml::Classifier" = s.namespace.fromPrev()->first();
+		prev : UML2!"uml::StructuralFeature" = if prevC.oclIsUndefined() then OclUndefined
+			else prevC.allFeatures->select(f|s.isCompatibleWith(f))->first() endif
+			.debug(s.qualifiedName + ' from prev');
     }
 	to t : UML2!"uml::Property" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
-        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
         isStatic <- s.isStatic,
         isOrdered <- s.isOrdered,
         isUnique <- s.isUnique,
-        isReadOnly <- if prev->oclIsUndefined() then s.isReadOnly else prev.isReadOnly endif,
+        isReadOnly <- if prev.oclIsUndefined() then s.isReadOnly else prev.isReadOnly endif,
         isDerived <- s.isDerived,
         isDerivedUnion <- s.isDerivedUnion,
         aggregation <- s.aggregation,
@@ -187,15 +187,15 @@ rule Property {
 rule Operation {
     from s : UML2!"uml::Operation" (thisModule.inElements->includes(s))
 	using {
-    	prevC : UML2!"uml::Classifier" = s.namespace->fromPrev()->first();
-		prev : UML2!"uml::BehavioralFeature" = if prevC->oclIsUndefined() then OclUndefined
-			else prevC.allFeatures->select(f|s->isCompatibleWith(f))->first() endif
-			->debug(s.qualifiedName + ' from prev');
+    	prevC : UML2!"uml::Classifier" = s.namespace.fromPrev()->first();
+		prev : UML2!"uml::BehavioralFeature" = if prevC.oclIsUndefined() then OclUndefined
+			else prevC.allFeatures->select(f|s.isCompatibleWith(f))->first() endif
+			.debug(s.qualifiedName + ' from prev');
     }
 	to t : UML2!"uml::Operation" mapsTo s (
         name <- s.name,
         visibility <- s.visibility,
-        isLeaf <- if prev->oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
+        isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
         isStatic <- s.isStatic,
         isAbstract <- s.isAbstract,
         concurrency <- s.concurrency,
