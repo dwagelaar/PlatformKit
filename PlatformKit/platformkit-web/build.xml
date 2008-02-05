@@ -41,7 +41,15 @@
 		<eclipse.refreshLocal resource="${ant.project.name}"/>
 	</target>
 	
-	<target name="invokeBuild" depends="saveModels">
+	<target name="copyCommon">
+		<copy todir="build">
+			<fileset dir="transformation">
+				<include name="common.xml"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="invokeBuild" depends="saveModels, copyCommon">
 		<ant antfile="build/build.xml"></ant>
 	</target>
 	
