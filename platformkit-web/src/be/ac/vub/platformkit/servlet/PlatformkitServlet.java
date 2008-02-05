@@ -47,15 +47,10 @@ public class PlatformkitServlet extends HttpServlet {
     private static Logger logger = Logger.getLogger(Ontologies.LOGGER);
     private Level loglevel = null;
     private Map knownSpaces = new HashMap();
-    private Map urlDates = new HashMap();
-//    private Map urlResources = new HashMap();
     private DateFormat dateFormat = new SimpleDateFormat();
     protected ResourceSet resourceSet = new ResourceSetImpl();
     
     static {
-//    	Handler handler = new ConsoleHandler();
-//    	handler.setFormatter(PlatformkitLogFormatter.INSTANCE);
-//    	logger.addHandler(handler);
         Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
                 "platformkit", new XMIResourceFactoryImpl());
         PlatformkitPackage packageInstance = PlatformkitPackage.eINSTANCE;
@@ -157,7 +152,7 @@ public class PlatformkitServlet extends HttpServlet {
     private ConstraintSpace init(HttpServletRequest req, String baseurl)
     throws FileUploadException, IOException, IllegalArgumentException {
     	logger.info("Request: " + req);
-    	Long date = new Long(getURLDate(baseurl));
+    	Date date = new Date(getURLDate(baseurl));
     	ConstraintSpace space = getConstraintSpace(baseurl, date);
     	if (space.getKnowledgeBase() == null) {
         	Ontologies ont = new Ontologies();
@@ -190,7 +185,7 @@ public class PlatformkitServlet extends HttpServlet {
      * @throws IOException
      * @throws IllegalArgumentException
      */
-    private ConstraintSpace getConstraintSpace(String baseurl, Long date)
+    private ConstraintSpace getConstraintSpace(String baseurl, Date date)
     throws FileUploadException, IOException, IllegalArgumentException {
     	synchronized (this) {
         	ConstraintSpace space = findCachedConstraintSpace(baseurl, date);
@@ -204,7 +199,9 @@ public class PlatformkitServlet extends HttpServlet {
         			knownSpaces.put(baseurl, new ConstraintSpacePool());
         			// don't add space yet, since it isn't free
         		}
-        		urlDates.put(baseurl, date);
+        		ConstraintSpacePool pool = (ConstraintSpacePool) knownSpaces.get(baseurl);
+        		Assert.assertNotNull(pool);
+        		pool.setLastModified(date);
         	}
         	return space;
     	}
@@ -215,35 +212,35 @@ public class PlatformkitServlet extends HttpServlet {
      * @param date The last modification timestamp 
      * @return The cached constraint space from a pool, if any
      */
-    private ConstraintSpace findCachedConstraintSpace(String baseurl, Long date) {
+    private ConstraintSpace findCachedConstraintSpace(String baseurl, Date date) {
         ConstraintSpace space = null;
-        if (urlDates.containsKey(baseurl)) {
-            Long oldDate = (Long) urlDates.get(baseurl);
-            ConstraintSpacePool pool = (ConstraintSpacePool) knownSpaces.get(baseurl);
-            if (date.equals(oldDate)) {
-                logger.info("Checking cached constraint space pool");
-                if (pool.getSpaces().hasMoreElements()) {
-                    logger.info("Using cached constraint space from the pool");
-                    space = (ConstraintSpace) pool.getSpaces().nextElement();
-                    pool.removeSpace(space);
-                }
-            } else {
-                logger.info("Different constraint space detected - purging pool");
-                while (pool.getSpaces().hasMoreElements()) {
-                    space = (ConstraintSpace) pool.getSpaces().nextElement();
-                    pool.removeSpace(space);
-                    resourceSet.getResources().remove(space.eResource());
-                }
-            }
-        }
-        return space;
+		ConstraintSpacePool pool = (ConstraintSpacePool) knownSpaces.get(baseurl);
+		if (pool != null) {
+			if (date.equals(pool.getLastModified())) {
+				logger.info("Checking cached constraint space pool");
+				if (pool.getSpaces().hasMoreElements()) {
+					logger.info("Using cached constraint space from the pool");
+					space = (ConstraintSpace) pool.getSpaces().nextElement();
+					pool.removeSpace(space);
+				}
+			} else {
+				logger.info("Different constraint space detected - purging pool");
+				while (pool.getSpaces().hasMoreElements()) {
+					space = (ConstraintSpace) pool.getSpaces().nextElement();
+					pool.removeSpace(space);
+					resourceSet.getResources().remove(space.eResource());
+				}
+				space = null;
+			}
+		}
+		return space;
     }
     
     /**
-     * @param baseurl
-     * @return the last modified date from the base URL.
-     * @throws IOException
-     */
+	 * @param baseurl
+	 * @return the last modified date from the base URL.
+	 * @throws IOException
+	 */
     private long getURLDate(String baseurl) throws IOException {
         checkBaseURL(baseurl);
         URL baseURL = new URL(baseurl);

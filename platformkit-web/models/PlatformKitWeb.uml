@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Persistence="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xsi:schemaLocation="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2 Persistence.profile.uml#_8oQ3IB6PEdyzWPQ9uYFypQ http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Persistence="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2 Persistence.profile.uml#_8oQ3IB6PEdyzWPQ9uYFypQ http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
   <uml:Model xmi:id="_qb8akM37EdqwVrslYOdUDA" name="PlatformKitWeb">
     <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="be">
       <packagedElement xmi:type="uml:Package" xmi:id="_JwPwIcHBEduKcpNg9SVSYQ" name="ac">
@@ -27,11 +27,11 @@
                   <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z3zsYB5BEdycUoU7n1_rLw"/>
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_N1e1wOKzEducvf06rPkdnw" value="Logger.getLogger(Ontologies.LOGGER)"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:id="_b4XvdOK4Educvf06rPkdnw" name="description" type="_PCGO0MHCEduKcpNg9SVSYQ" association="_b4XvcOK4Educvf06rPkdnw">
+                <ownedAttribute xmi:id="_b4XvdOK4Educvf06rPkdnw" name="description" type="_PCGO0MHCEduKcpNg9SVSYQ" aggregation="shared" association="_b4XvcOK4Educvf06rPkdnw">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b4XvdeK4Educvf06rPkdnw" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b4XvduK4Educvf06rPkdnw" value="1"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:id="_aJIexOkAEduA_bpJs0tPHg" name="store" visibility="protected" type="_L7BQsOj0EduMF8bmKxtVtA" association="_aJIewOkAEduA_bpJs0tPHg">
+                <ownedAttribute xmi:id="_aJIexOkAEduA_bpJs0tPHg" name="store" visibility="protected" type="_L7BQsOj0EduMF8bmKxtVtA" aggregation="shared" association="_aJIewOkAEduA_bpJs0tPHg">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aJIexekAEduA_bpJs0tPHg" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aJIexukAEduA_bpJs0tPHg" value="1"/>
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_gV_NIOkBEduA_bpJs0tPHg" value="new PlatformDescriptionStore()"/>
@@ -89,7 +89,7 @@
                 </ownedOperation>
               </packagedElement>
               <packagedElement xmi:type="uml:Association" xmi:id="_b4XvcOK4Educvf06rPkdnw" name="A_PlatformkitSession_PlatformDescription" memberEnd="_b4XvceK4Educvf06rPkdnw _b4XvdOK4Educvf06rPkdnw">
-                <ownedEnd xmi:id="_b4XvceK4Educvf06rPkdnw" name="session" type="_Cn1osOKfEdusoPrkeXo32Q" aggregation="shared" association="_b4XvcOK4Educvf06rPkdnw">
+                <ownedEnd xmi:id="_b4XvceK4Educvf06rPkdnw" name="session" type="_Cn1osOKfEdusoPrkeXo32Q" association="_b4XvcOK4Educvf06rPkdnw">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b4XvcuK4Educvf06rPkdnw" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b4Xvc-K4Educvf06rPkdnw"/>
                 </ownedEnd>
@@ -149,7 +149,7 @@
               </packagedElement>
               <packagedElement xmi:type="uml:Dependency" xmi:id="_FzKrMOkAEduA_bpJs0tPHg" name="Dependency_PlatformDescriptionStore_be_ac_vub_platformkit_hibernate" supplier="_IXtiAOj0EduMF8bmKxtVtA" client="_L7BQsOj0EduMF8bmKxtVtA"/>
               <packagedElement xmi:type="uml:Association" xmi:id="_aJIewOkAEduA_bpJs0tPHg" name="A_PlatformkitSession_PlatformDescriptionStore" memberEnd="_aJIewekAEduA_bpJs0tPHg _aJIexOkAEduA_bpJs0tPHg">
-                <ownedEnd xmi:id="_aJIewekAEduA_bpJs0tPHg" name="session" visibility="protected" type="_Cn1osOKfEdusoPrkeXo32Q" aggregation="shared" association="_aJIewOkAEduA_bpJs0tPHg">
+                <ownedEnd xmi:id="_aJIewekAEduA_bpJs0tPHg" name="session" visibility="protected" type="_Cn1osOKfEdusoPrkeXo32Q" association="_aJIewOkAEduA_bpJs0tPHg">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aJIewukAEduA_bpJs0tPHg" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aJIew-kAEduA_bpJs0tPHg" value="1"/>
                 </ownedEnd>
@@ -161,14 +161,19 @@
                 <supplier xmi:type="uml:Interface" href="hibernate3.uml#_g2JOIh5aEdyJx7sGKFMuHQ"/>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_kmnHsB5dEdyJx7sGKFMuHQ" name="ConstraintSpacePool">
-                <ownedAttribute xmi:id="_sy07NB5dEdyJx7sGKFMuHQ" name="space" association="_sy07MB5dEdyJx7sGKFMuHQ">
+                <ownedAttribute xmi:id="_sy07NB5dEdyJx7sGKFMuHQ" name="space" aggregation="shared" association="_sy07MB5dEdyJx7sGKFMuHQ">
                   <type xmi:type="uml:Interface" href="Platformkit.uml#_cDYe4eKzEducvf06rPkdnw"/>
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sy07NR5dEdyJx7sGKFMuHQ" value="*"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sy07Nh5dEdyJx7sGKFMuHQ"/>
                 </ownedAttribute>
+                <ownedAttribute xmi:id="_YNeV3NPNEdyCw4PFSyedWA" name="lastModified" aggregation="shared" association="_YNeV2NPNEdyCw4PFSyedWA">
+                  <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z-06Yx5BEdycUoU7n1_rLw"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YNeV3dPNEdyCw4PFSyedWA" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YNeV3tPNEdyCw4PFSyedWA"/>
+                </ownedAttribute>
               </packagedElement>
               <packagedElement xmi:type="uml:Association" xmi:id="_sy07MB5dEdyJx7sGKFMuHQ" name="A_ConstraintSpacePool_ConstraintSpace" memberEnd="_sy07MR5dEdyJx7sGKFMuHQ _sy07NB5dEdyJx7sGKFMuHQ">
-                <ownedEnd xmi:id="_sy07MR5dEdyJx7sGKFMuHQ" name="pool" type="_kmnHsB5dEdyJx7sGKFMuHQ" aggregation="shared" association="_sy07MB5dEdyJx7sGKFMuHQ">
+                <ownedEnd xmi:id="_sy07MR5dEdyJx7sGKFMuHQ" name="pool" type="_kmnHsB5dEdyJx7sGKFMuHQ" association="_sy07MB5dEdyJx7sGKFMuHQ">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sy07Mh5dEdyJx7sGKFMuHQ" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sy07Mx5dEdyJx7sGKFMuHQ"/>
                 </ownedEnd>
@@ -178,6 +183,12 @@
               </packagedElement>
               <packagedElement xmi:type="uml:Dependency" xmi:id="_KN1XMEAJEdyLldlvHDYmBQ" name="Dependency1" client="_L7BQsOj0EduMF8bmKxtVtA">
                 <supplier xmi:type="uml:Package" href="j2se-1_4-headless.uml#_aFmQwB5BEdycUoU7n1_rLw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_YNeV2NPNEdyCw4PFSyedWA" name="A_ConstraintSpacePool_Date" memberEnd="_YNeV2dPNEdyCw4PFSyedWA _YNeV3NPNEdyCw4PFSyedWA">
+                <ownedEnd xmi:id="_YNeV2dPNEdyCw4PFSyedWA" name="pool" type="_kmnHsB5dEdyJx7sGKFMuHQ" association="_YNeV2NPNEdyCw4PFSyedWA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YNeV2tPNEdyCw4PFSyedWA" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YNeV29PNEdyCw4PFSyedWA"/>
+                </ownedEnd>
               </packagedElement>
             </packagedElement>
             <packagedElement xmi:type="uml:Package" xmi:id="_IXtiAOj0EduMF8bmKxtVtA" name="hibernate"/>

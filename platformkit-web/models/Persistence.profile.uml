@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Profile xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_ZE1lcMHKEduY-PgkT4NtFg" name="Persistence" metaclassReference="_8oF4AB6PEdyzWPQ9uYFypQ _8oGfEB6PEdyzWPQ9uYFypQ">
+<uml:Profile xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ZE1lcMHKEduY-PgkT4NtFg" name="Persistence" metaclassReference="_8oF4AB6PEdyzWPQ9uYFypQ _8oGfEB6PEdyzWPQ9uYFypQ">
   <eAnnotations xmi:id="_P3jMgeH1EduyTvOzMjLxxQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
     <contents xmi:type="ecore:EPackage" xmi:id="_8oQ3IB6PEdyzWPQ9uYFypQ" name="Persistence" nsURI="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2" nsPrefix="Persistence">
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_8oQ3IR6PEdyzWPQ9uYFypQ" name="Persistent">
         <eAnnotations xmi:id="_8oQ3Ih6PEdyzWPQ9uYFypQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_e21ZQMHKEduY-PgkT4NtFg"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_8oQ3Ix6PEdyzWPQ9uYFypQ" name="id" ordered="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.0.0/UML#//Property"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_8oQ3JB6PEdyzWPQ9uYFypQ" name="base_Class" ordered="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.0.0/UML#//Class"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Class"/>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_8oQ3JR6PEdyzWPQ9uYFypQ" name="mapped">
@@ -20,7 +20,7 @@
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_8oQ3KR6PEdyzWPQ9uYFypQ" name="base_Property" ordered="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.0.0/UML#//Property"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
         </eStructuralFeatures>
       </eClassifiers>
     </contents>

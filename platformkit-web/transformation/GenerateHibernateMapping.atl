@@ -11,29 +11,29 @@ uses UML2;
 -- helpers begin
 -- ======================================================================
 
-helper def : persistents : Sequence(UML2!Persistence::Persistent) = 
-	UML2!Persistence::Persistent->allInstances();
+helper def : persistents : Sequence(UML2!"Persistence::Persistent") = 
+	UML2!"Persistence::Persistent"->allInstances();
 
-helper def : mappeds : Sequence(UML2!Persistence::mapped) = 
-	UML2!Persistence::mapped->allInstances();
+helper def : mappeds : Sequence(UML2!"Persistence::mapped") = 
+	UML2!"Persistence::mapped"->allInstances();
 
-helper context UML2!uml::Class def : isPersistent() : Boolean =
+helper context UML2!"uml::Class" def : isPersistent() : Boolean =
 	thisModule.persistents->select(o|o.base_Class=self)->notEmpty();
 
-helper context UML2!uml::Class def : getPersistent() : UML2!Persistence::Persistent =
+helper context UML2!"uml::Class" def : getPersistent() : UML2!"Persistence::Persistent" =
 	thisModule.persistents->select(o|o.base_Class=self)->first();
 
-helper context UML2!uml::Property def : isMapped() : Boolean =
+helper context UML2!"uml::Property" def : isMapped() : Boolean =
 	thisModule.mappeds->select(o|o.base_Property=self)->notEmpty();
 
-helper context UML2!uml::Property def : getMapped() : UML2!Persistence::mapped =
+helper context UML2!"uml::Property" def : getMapped() : UML2!"Persistence::mapped" =
 	thisModule.mappeds->select(o|o.base_Property=self)->first();
 
-helper context UML2!uml::PrimitiveType def : getGeneratorClass() : String =
+helper context UML2!"uml::PrimitiveType" def : getGeneratorClass() : String =
 	if self.name = 'Integer' or self.name = 'UnlimitedNatural' or self.name = 'Real'
 	then 'native' else 'assigned' endif;
 
-helper context UML2!uml::Type def : getGeneratorClass() : String =
+helper context UML2!"uml::Type" def : getGeneratorClass() : String =
 	'assigned';
 
 -- ======================================================================
@@ -45,7 +45,7 @@ helper context UML2!uml::Type def : getGeneratorClass() : String =
 -- ======================================================================
 
 rule HibernateMapping {
-	from s : UML2!uml::Model
+	from s : UML2!"uml::Model"
 	to hm : HBM!HibernateMappingType mapsTo s (
 		class <- UML2!Class->allInstances()->select(c|c->isPersistent())),
 	   dr : HBM!DocumentRoot (
@@ -53,8 +53,8 @@ rule HibernateMapping {
 }
 
 rule Class {
-	from s : UML2!uml::Class (s->isPersistent())
-	using { persistent : UML2!Persistence::Persistent = s->getPersistent(); }
+	from s : UML2!"uml::Class" (s->isPersistent())
+	using { persistent : UML2!"Persistence::Persistent" = s->getPersistent(); }
 	to c : HBM!ClassType mapsTo s (
 		name <- s->qualifiedName('.'),
 		table <- s.name,
@@ -69,7 +69,7 @@ rule Class {
 }
 
 rule Property {
-	from s : UML2!uml::Property (
+	from s : UML2!"uml::Property" (
 		if s.class->oclIsUndefined() then false else
 			if s.class->isPersistent() then
 				s.class->getPersistent().id <> s and
@@ -81,7 +81,7 @@ rule Property {
 }
 
 rule MappedProperty {
-	from s : UML2!uml::Property (
+	from s : UML2!"uml::Property" (
 		if s.class->oclIsUndefined() then false else
 			if s.class->isPersistent() then
 				s.class->getPersistent().id <> s and
@@ -96,7 +96,7 @@ rule MappedProperty {
 }
 
 rule MappedPropertyWithLength {
-	from s : UML2!uml::Property (
+	from s : UML2!"uml::Property" (
 		if s.class->oclIsUndefined() then false else
 			if s.class->isPersistent() then
 				s.class->getPersistent().id <> s and

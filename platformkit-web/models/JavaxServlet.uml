@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_d2R6gOKgEduOI6ponYIZJQ" name="JavaxServlet">
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_d2R6gOKgEduOI6ponYIZJQ" name="JavaxServlet">
   <packagedElement xmi:type="uml:Package" xmi:id="_d2R6geKgEduOI6ponYIZJQ" name="javax">
     <packagedElement xmi:type="uml:Package" xmi:id="_d2ShkOKgEduOI6ponYIZJQ" name="servlet">
       <packagedElement xmi:type="uml:Package" xmi:id="_d2WzAeKgEduOI6ponYIZJQ" name="http">
