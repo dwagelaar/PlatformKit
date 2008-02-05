@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="idModel" name="PlatformkitArchitectureModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="PlatformkitArchitecturePackage">
+    <packagedElement xmi:type="uml:Component" xmi:id="idComponent" name="PlatformkitArchitectureComponent">
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_eUUmYHJ0EdyOXcqrwSkHyA" name="PlatformKitEclipsePlugin"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_mWTf0HJ0EdyOXcqrwSkHyA" name="Jena" clientDependency="_-TOL8HJ0EdyOXcqrwSkHyA _VemGY3J1EdyOXcqrwSkHyA">
+        <realization xmi:id="_-TOL8HJ0EdyOXcqrwSkHyA" name="ComponentRealization1" supplier="_eUUmYHJ0EdyOXcqrwSkHyA" client="_mWTf0HJ0EdyOXcqrwSkHyA" realizingClassifier="_eUUmYHJ0EdyOXcqrwSkHyA"/>
+        <realization xmi:id="_VemGY3J1EdyOXcqrwSkHyA" name="ComponentRealization2" supplier="_KIph0HJ1EdyOXcqrwSkHyA" client="_mWTf0HJ0EdyOXcqrwSkHyA" realizingClassifier="_KIph0HJ1EdyOXcqrwSkHyA"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_pzGW0HJ0EdyOXcqrwSkHyA" name="Pellet" clientDependency="_-dvZ43J0EdyOXcqrwSkHyA _R4Hu8HJ1EdyOXcqrwSkHyA">
+        <realization xmi:id="_-dvZ43J0EdyOXcqrwSkHyA" name="ComponentRealization1" supplier="_eUUmYHJ0EdyOXcqrwSkHyA" client="_pzGW0HJ0EdyOXcqrwSkHyA" realizingClassifier="_eUUmYHJ0EdyOXcqrwSkHyA"/>
+        <realization xmi:id="_R4Hu8HJ1EdyOXcqrwSkHyA" name="ComponentRealization2" supplier="_KIph0HJ1EdyOXcqrwSkHyA" client="_pzGW0HJ0EdyOXcqrwSkHyA" realizingClassifier="_KIph0HJ1EdyOXcqrwSkHyA"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_FsYK0HJ1EdyOXcqrwSkHyA" name="Protégé"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_KIph0HJ1EdyOXcqrwSkHyA" name="PlatformKitServlet"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_M11g0HJ1EdyOXcqrwSkHyA" name="MySQL" clientDependency="_RuD0A3J1EdyOXcqrwSkHyA">
+        <realization xmi:id="_RuD0A3J1EdyOXcqrwSkHyA" name="ComponentRealization1" supplier="_KIph0HJ1EdyOXcqrwSkHyA" client="_M11g0HJ1EdyOXcqrwSkHyA" realizingClassifier="_KIph0HJ1EdyOXcqrwSkHyA"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_iu5e0HJ1EdyOXcqrwSkHyA" name="ATL" clientDependency="_qwJYcHJ1EdyOXcqrwSkHyA">
+        <realization xmi:id="_qwJYcHJ1EdyOXcqrwSkHyA" name="ComponentRealization1" supplier="_eUUmYHJ0EdyOXcqrwSkHyA" client="_iu5e0HJ1EdyOXcqrwSkHyA" realizingClassifier="_eUUmYHJ0EdyOXcqrwSkHyA"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_3XtV4HJ1EdyOXcqrwSkHyA" name="Eclipse" clientDependency="_996043J1EdyOXcqrwSkHyA">
+        <realization xmi:id="_996043J1EdyOXcqrwSkHyA" name="ComponentRealization2" supplier="_eUUmYHJ0EdyOXcqrwSkHyA" client="_3XtV4HJ1EdyOXcqrwSkHyA" realizingClassifier="_eUUmYHJ0EdyOXcqrwSkHyA"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_4MzK0HJ1EdyOXcqrwSkHyA" name="EMF" clientDependency="_9vRU43J1EdyOXcqrwSkHyA _-SSF4HJ2EdyOXcqrwSkHyA">
+        <realization xmi:id="_9vRU43J1EdyOXcqrwSkHyA" name="ComponentRealization2" supplier="_eUUmYHJ0EdyOXcqrwSkHyA" client="_4MzK0HJ1EdyOXcqrwSkHyA" realizingClassifier="_eUUmYHJ0EdyOXcqrwSkHyA"/>
+        <realization xmi:id="_-SSF4HJ2EdyOXcqrwSkHyA" name="ComponentRealization3" supplier="_KIph0HJ1EdyOXcqrwSkHyA" client="_4MzK0HJ1EdyOXcqrwSkHyA" realizingClassifier="_KIph0HJ1EdyOXcqrwSkHyA"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_UT5YYHJ2EdyOXcqrwSkHyA" name="Jetty" clientDependency="_aGUC8HJ2EdyOXcqrwSkHyA">
+        <realization xmi:id="_aGUC8HJ2EdyOXcqrwSkHyA" name="ComponentRealization1" supplier="_KIph0HJ1EdyOXcqrwSkHyA" client="_UT5YYHJ2EdyOXcqrwSkHyA" realizingClassifier="_KIph0HJ1EdyOXcqrwSkHyA"/>
+      </nestedClassifier>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
