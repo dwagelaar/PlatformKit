@@ -5,7 +5,10 @@
         <attribute name="out" default="MODEL.OUT" />
         <attribute name="path" default="MODEL.OUT.PATH" />
         <sequential>
-    		<am3.atl path="/${ant.project.name}/UML2ToAPIOntology.atl" allowInterModelReferences="true">
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="EMF-specific VM">
     			<inmodel name="UML2" model="UML2"/>
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
@@ -23,7 +26,10 @@
         <attribute name="out" default="MODEL.OUT" />
         <attribute name="path" default="MODEL.OUT.PATH" />
         <sequential>
-    		<am3.atl path="/${ant.project.name}/UML2ToAPIOntology.atl" allowInterModelReferences="true">
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="EMF-specific VM">
     			<inmodel name="UML2" model="UML2"/>
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
@@ -44,7 +50,10 @@
         <attribute name="out" default="MODEL.OUT" />
         <attribute name="path" default="MODEL.OUT.PATH" />
         <sequential>
-    		<am3.atl path="/${ant.project.name}/UML2ToAPIOntology.atl" allowInterModelReferences="true">
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="EMF-specific VM">
     			<inmodel name="UML2" model="UML2"/>
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
@@ -69,7 +78,10 @@
         <attribute name="out" default="MODEL.OUT" />
         <attribute name="path" default="MODEL.OUT.PATH" />
         <sequential>
-    		<am3.atl path="/${ant.project.name}/UML2ToAPIOntology.atl" allowInterModelReferences="true">
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="EMF-specific VM">
     			<inmodel name="UML2" model="UML2"/>
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
@@ -98,7 +110,10 @@
         <attribute name="out" default="MODEL.OUT" />
         <attribute name="path" default="MODEL.OUT.PATH" />
         <sequential>
-    		<am3.atl path="/${ant.project.name}/UML2ToAPIOntology.atl" allowInterModelReferences="true">
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="EMF-specific VM">
     			<inmodel name="UML2" model="UML2"/>
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
