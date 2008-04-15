@@ -3,9 +3,11 @@ package be.ac.vub.platformkit.editor.preferences;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
+import org.eclipse.m2m.atl.adt.launching.AtlVM;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -50,8 +52,8 @@ public class PlatformkitPreferencePage
 				"OWL DL reasoner",
 				1,
 				new String[][] { 
-						{ "&Built-in Pellet reasoner", "builtin" }, 
-						{ "&DIG reasoner", "dig" } },
+						{ "&Built-in Pellet reasoner", PreferenceConstants.P_BUILTIN }, 
+						{ "&DIG reasoner", PreferenceConstants.P_DIG } },
 				getFieldEditorParent(),
                 true);
         addField(reasoner);
@@ -80,6 +82,18 @@ public class PlatformkitPreferencePage
 		reasonerUrl.setEmptyStringAllowed(false);
 		reasonerUrl.setErrorMessage("Invalid DIG reasoner URL");
 		addField(reasonerUrl);
+		
+		String[] vms = AtlVM.getVMs();
+		String[][] vmss = new String[vms.length][2];
+		for (int i = 0; i < vms.length; i++) {
+			vmss[i][0] = vms[i];
+			vmss[i][1] = vms[i];
+		}
+		ComboFieldEditor atlVM = new ComboFieldEditor(
+				PreferenceConstants.P_ATLVM, "&ATL Virtual Machine:",
+				vmss,
+				getFieldEditorParent());
+		addField(atlVM);
 	}
 
 	/* (non-Javadoc)

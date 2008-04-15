@@ -11,4 +11,6 @@ public class PreferenceConstants {
 
 	public static final String P_DIG_URL  = "digUrlPreference";
 
+	public static final String P_ATLVM    = "atlVMPreference";
+
 }
