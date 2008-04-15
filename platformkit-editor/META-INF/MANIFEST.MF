@@ -21,5 +21,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.ide;visibility:=reexport,
  org.eclipse.ui.console,
  com.hp.hpl.jena;visibility:=reexport,
- org.eclipse.ui
+ org.eclipse.ui,
+ org.eclipse.m2m.atl.adt.debug
 Eclipse-LazyStart: true
