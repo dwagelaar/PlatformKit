@@ -45,12 +45,13 @@
 		<copy todir="build">
 			<fileset dir="transformation">
 				<include name="common.xml"/>
+				<include name="hibernate-tools.jar"/>
 			</fileset>
 		</copy>
 	</target>
 	
 	<target name="invokeBuild" depends="saveModels, copyCommon">
-		<ant antfile="build/build.xml"></ant>
+		<ant dir="build" antfile="build.xml"></ant>
 	</target>
 	
 	<target name="all" depends="clean, invokeBuild"/>

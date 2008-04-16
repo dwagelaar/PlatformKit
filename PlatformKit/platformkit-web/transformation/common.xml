@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="uml2cs-transformations-common">
 
+	<!-- = = = = = taskdefs = = = = = -->
+	
+	<path id="anttasks.path">
+		<fileset dir=".">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	
+	<taskdef name="javaformatter" 
+		classname="org.hibernate.tool.ant.JavaFormatterTask"
+		classpathref="anttasks.path"/>
+
 	<!-- = = = = = properties = =  = = = -->
 
 	<property name="trans.path" value="/uml2cs-transformations"/>
@@ -545,6 +557,17 @@
         	</fileset>
         </delete>
 	    <eclipse.refreshLocal resource = '${ant.project.name}'/>
+	</target>
+
+	<!-- = = = = = = = = = = = = = = = = =
+		  target: prettyPrint
+		 = = = = = = = = = = = = = = = = = -->
+	<target name="prettyPrint">
+		<javaformatter>
+			<fileset dir="../src">
+				<include name="**/*.java"/>
+			</fileset>
+		</javaformatter>
 	</target>
 
 </project>

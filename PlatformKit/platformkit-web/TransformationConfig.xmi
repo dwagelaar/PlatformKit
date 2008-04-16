@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<transformations:TransformationConfig xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:transformations="platform:/resource/uml2cs-transformations/configuration/Transformations.ecore" buildPath="platformkit-web/build" targetPath="platformkit-web/src" saveModels="last">
+<transformations:TransformationConfig xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:transformations="platform:/resource/uml2cs-transformations/configuration/Transformations.ecore" targetProject="platformkit-web" saveModels="last">
   <mapping xsi:type="transformations:JavaMapping">
     <dataTypes xsi:type="transformations:Java2DataTypes"/>
   </mapping>
