@@ -21,7 +21,7 @@ helper def : ModelPath : String = '/platformkit-web/models';
 
 rule ConfigRoot {
 	from s : CFG!"transformations::TransformationConfig"
-	-- <project name="s.buildPath" default="all">
+	-- <project name="s.targetProject/build" default="all">
 	to root : XML!"XML::Root" mapsTo s (
 		name <- thisModule->ConfigHeader(s)),
 	   default : XML!"XML::Attribute" (
@@ -41,7 +41,7 @@ rule ConfigRoot {
 			'inModel',
 			'im',
 			thisModule.ModelPath + '/PlatformKitWeb.uml',
-			'/' + s.targetPath + '/PlatformKitWeb.hibernatemapping30'),
+			'/' + s.targetProject + '/src/PlatformKitWeb.hibernatemapping30'),
 		parent <- root)
 }
 
@@ -53,6 +53,7 @@ rule AllTarget(c : CFG!"instantmessenger::InstantMessengerConfiguration") {
 	   targetDepends : XML!"XML::Attribute"(
 	   	name <- 'depends',
 		value <- Sequence{'PlatformKitWeb'}
+	   		->append('prettyPrint')
 			->iterate(e; acc : String = '' | acc +
 				if acc = '' then e
 				else ', ' + e endif)->debug('All')),
