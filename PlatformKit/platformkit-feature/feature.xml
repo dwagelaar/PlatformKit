@@ -35,17 +35,15 @@ the terms and conditions of the Eclipse Public License Version
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ui.console"/>
-      <import plugin="com.hp.hpl.jena"/>
-      <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.m2m.atl.adt.debug"/>
+      <import plugin="com.hp.hpl.jena"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.mindswap.pellet"/>
       <import plugin="org.junit"/>
       <import plugin="org.eclipse.help"/>
-      <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.m2m.atl.engine"/>
       <import plugin="org.eclipse.uml2.uml"/>
+      <import plugin="org.mindswap.pellet"/>
       <import plugin="org.semanticweb.owl"/>
    </requires>
 

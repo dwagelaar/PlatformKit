@@ -68,6 +68,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <update label="PlatformKit update site" url="http://ssel.vub.ac.be/platformkit/update"/>
    </url>
 
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.junit"/>
+   </requires>
+
    <plugin
          id="com.hp.hpl.jena"
          download-size="13460"

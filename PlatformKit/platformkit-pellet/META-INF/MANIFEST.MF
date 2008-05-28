@@ -35,9 +35,7 @@ Export-Package: com.lre.graph,
  org.mindswap.pellet.utils,
  org.mindswap.pellet.utils.fsm,
  org.mindswap.pellet.utils.progress
-Require-Bundle: com.hp.hpl.jena,
- org.junit,
- org.eclipse.core.runtime,
+Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
  org.semanticweb.owl
 Eclipse-LazyStart: true
