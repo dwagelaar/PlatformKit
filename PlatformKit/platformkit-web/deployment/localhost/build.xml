@@ -2,23 +2,23 @@
 <project name="DeployPlatformKitWeb" default="all">
 	<target name="undeploy">
 		<delete>
-			<fileset dir="/Applications/jetty-6.1.4/contexts/">
+			<fileset dir="${user.home}/jetty-6.1.4/contexts/">
 				<include name="platformkitservlet*/**"/>
 			</fileset>
-			<fileset dir="/Applications/jetty-6.1.4/webapps/">
+			<fileset dir="${user.home}/jetty-6.1.4/webapps/">
 				<include name="platformkitservlet.war"/>
 			</fileset>
 		</delete>
 	</target>
 
 	<target name="deploy" depends="undeploy">
-		<copy todir="/Applications/jetty-6.1.4/webapps/" file="../../web/platformkitservlet.war"/>
-		<copy todir="/Applications/jetty-6.1.4/contexts/">
+		<copy todir="${user.home}/jetty-6.1.4/webapps/" file="../../web/platformkitservlet.war"/>
+		<copy todir="${user.home}/jetty-6.1.4/contexts/">
 			<fileset dir=".">
 				<include name="platformkitservlet*/**"/>
 			</fileset>
 		</copy>
-		<copy todir="/Applications/jetty-6.1.4/contexts/" file="platformkitservlet.xml"/>
+		<copy todir="${user.home}/jetty-6.1.4/contexts/" file="platformkitservlet.xml"/>
 	</target>
 
 	<target name="all" depends="deploy"/>
