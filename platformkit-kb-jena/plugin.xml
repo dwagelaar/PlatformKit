@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="be.ac.vub.platformkit.knowledgebase">
+      <knowledgebase
+            factory="be.ac.vub.platformkit.kb.jena.JenaOntologiesFactory"
+            name="Jena">
+      </knowledgebase>
+   </extension>
+
+</plugin>

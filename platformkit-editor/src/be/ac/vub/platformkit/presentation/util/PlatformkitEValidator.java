@@ -1,6 +1,5 @@
 package be.ac.vub.platformkit.presentation.util;
 
-import java.io.IOException;
 import java.util.Map;
 
 import org.eclipse.core.runtime.Assert;
@@ -12,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSpace;
-import be.ac.vub.platformkit.kb.IOntologiesFactory;
+import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.util.PlatformkitSwitch;
 
 /**
@@ -44,14 +43,14 @@ public class PlatformkitEValidator extends EValidatorWrapper {
 			//these have already been validated (changes reset the knowledge base)
 			if (object.getKnowledgeBase() == null) {
 				try {
-					object.setKnowledgeBase(IOntologiesFactory.INSTANCE.createIOntologies());
+					object.setKnowledgeBase(PreferenceInitializer.getPreferredOntologyFactory().createIOntologies());
 					object.init(false);
-				} catch (IOException ioe) {
+				} catch (Exception e) {
 		            return new BasicDiagnostic
 		                    (Diagnostic.ERROR,
 		                     DIAGNOSTIC_SOURCE,
 		                     0,
-		                     ioe.getLocalizedMessage(),
+		                     e.getLocalizedMessage(),
 		                     new Object [] { object });
 				}
 			}

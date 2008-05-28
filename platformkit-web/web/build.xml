@@ -2,8 +2,11 @@
 <project name="platformkit-web/web" default="all">
 	<property name="platformkit.path" value="../../platformkit"/>
 	<property name="platformkit-java.path" value="../../platformkit-java"/>
+	<property name="platformkit-kb-jena.path" value="../../platformkit-kb-jena"/>
+	<property name="platformkit-kb-owlapi.path" value="../../platformkit-kb-owlapi"/>
 	<property name="jena.path" value="../../platformkit-jena"/>
 	<property name="pellet.path" value="../../platformkit-pellet"/>
+	<property name="owlapi.path" value="../../platformkit-owlapi"/>
 	
 	<target name="clean">
         <delete>
@@ -21,13 +24,13 @@
         	<classes dir="${platformkit.path}/ontology"/>
         	<classes dir="${platformkit-java.path}/bin"/>
         	<classes dir="${platformkit-java.path}/ontology"/>
+        	<classes dir="${platformkit-kb-owlapi.path}/bin"/>
+        	<classes dir="${platformkit-owlapi.path}/bin"/>
         	<lib dir="../lib">
         		<exclude name="*.xml"/>
         		<exclude name="javax.servlet.jar"/>
       		</lib>
-        	<lib dir="${jena.path}/lib" includes="*.jar"/>
         	<lib dir="${pellet.path}/lib" includes="*.jar"/>
-        	<lib dir="${pellet.path}/lib/owlapi" includes="*.jar"/>
         	<lib dir="${pellet.path}/lib/xsdlib" includes="*.jar"/>
        	</war>
     </target>

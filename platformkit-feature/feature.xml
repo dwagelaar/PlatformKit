@@ -90,4 +90,18 @@ the terms and conditions of the Eclipse Public License Version
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="be.ac.vub.platformkit.kb.jena"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="be.ac.vub.platformkit.kb.owlapi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

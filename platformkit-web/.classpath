@@ -26,7 +26,7 @@
 	<classpathentry kind="lib" path="lib/osgi.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-java"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-jena"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-examples"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-kb-owlapi"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
