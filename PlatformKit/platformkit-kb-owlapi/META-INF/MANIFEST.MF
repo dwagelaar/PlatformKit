@@ -5,5 +5,11 @@ Bundle-SymbolicName: be.ac.vub.platformkit.kb.owlapi
 Bundle-Version: 1.0.0
 Bundle-Activator: be.ac.vub.platformkit.kb.owlapi.eclipse.Activator
 Bundle-Vendor: Vrije Universiteit Brussel
-Require-Bundle: org.eclipse.core.runtime
+Require-Bundle: org.eclipse.core.runtime,
+ be.ac.vub.platformkit,
+ org.junit,
+ org.semanticweb.owl,
+ org.mindswap.pellet
 Eclipse-LazyStart: true
+Export-Package: be.ac.vub.platformkit.kb.owlapi,
+ be.ac.vub.platformkit.kb.owlapi.eclipse
