@@ -80,7 +80,9 @@ public class OWLAPIOntologies extends AbstractOntologies {
         try {
 			ontology = new OWLOntologyAdapter(mgr.createOntology(localInfNs), this);
 		} catch (OWLOntologyCreationException e) {
-			throw new IOException(e);
+			IOException ioe = new IOException(e.getLocalizedMessage());
+			ioe.initCause(e);
+			throw ioe;
 		}
         addLocalOntologies();
     }
@@ -96,7 +98,9 @@ public class OWLAPIOntologies extends AbstractOntologies {
 			try {
 				addLocalOntology(streams[k]);
 			} catch (OWLOntologyCreationException e) {
-				throw new IOException(e);
+				IOException ioe = new IOException(e.getLocalizedMessage());
+				ioe.initCause(e);
+				throw ioe;
 			}
 		}
     }
@@ -121,7 +125,9 @@ public class OWLAPIOntologies extends AbstractOntologies {
                     		element.createExecutableExtension("provider");
                     addLocalOntologies(provider);
                 } catch (CoreException e) {
-                    throw new IOException(e);
+        			IOException ioe = new IOException(e.getLocalizedMessage());
+        			ioe.initCause(e);
+        			throw ioe;
                 }
             }
         }
