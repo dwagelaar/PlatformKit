@@ -85,7 +85,13 @@ public class PlatformKitItemProviderAdapter implements
      */
     protected void updateObject(EObject object) {
     	Assert.isNotNull(object);
-    	if (object.eAdapters().size() == 0) {
+    	boolean hasItemProvider = false;
+    	for (Adapter adapter : object.eAdapters()) {
+    		if (adapter instanceof ItemProviderAdapter) {
+    			hasItemProvider = true;
+    		}
+    	}
+    	if (!hasItemProvider) {
         	// Bug #26: Profiling the Instant Messenger configuration editor throws ClassCastException
     		// Solved: use AdapterFactory from editingDomain to pro-actively create underlying adapter
 			logger.info("Creating new adapters using adapter factory " + factory);
