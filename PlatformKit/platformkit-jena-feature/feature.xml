@@ -2,7 +2,7 @@
 <feature
       id="com.hp.hpl.jena"
       label="Jena"
-      version="2.5.3.1"
+      version="2.5.3.2"
       provider-name="Hewlett-Packard Development Company, LP"
       image="jena-logo-small.gif">
 
@@ -70,13 +70,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="com.hp.hpl.jena"
-         download-size="13436"
-         install-size="14661"
+         download-size="13460"
+         install-size="14666"
          version="0.0.0"/>
 
    <plugin
          id="com.hp.hpl.jena.doc"
-         download-size="4868"
+         download-size="4884"
          install-size="5253"
          version="0.0.0"/>
 

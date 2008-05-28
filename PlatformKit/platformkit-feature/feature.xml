@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit"
       label="PlatformKit"
-      version="1.1.7"
+      version="1.1.8"
       provider-name="Vrije Universiteit Brussel"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">
@@ -51,56 +51,56 @@ the terms and conditions of the Eclipse Public License Version
 
    <plugin
          id="be.ac.vub.platformkit.editor"
-         download-size="180"
-         install-size="180"
+         download-size="196"
+         install-size="196"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.edit"
-         download-size="24"
-         install-size="24"
+         download-size="28"
+         install-size="28"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit"
-         download-size="108"
-         install-size="108"
+         download-size="116"
+         install-size="116"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.doc"
-         download-size="5012"
-         install-size="5062"
+         download-size="5136"
+         install-size="5183"
          version="0.0.0"/>
 
    <plugin
          id="be.ac.vub.platformkit.java"
-         download-size="3964"
-         install-size="3964"
+         download-size="3972"
+         install-size="3972"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.examples"
-         download-size="268"
-         install-size="268"
+         download-size="276"
+         install-size="276"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.kb.jena"
-         download-size="0"
-         install-size="0"
+         download-size="28"
+         install-size="28"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.kb.owlapi"
-         download-size="0"
-         install-size="0"
+         download-size="28"
+         install-size="28"
          version="0.0.0"
          unpack="false"/>
 
