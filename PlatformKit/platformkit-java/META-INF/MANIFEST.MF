@@ -16,5 +16,7 @@ Require-Bundle: be.ac.vub.platformkit,
  org.eclipse.uml2.uml,
  org.eclipse.m2m.atl.adt.debug,
  be.ac.vub.platformkit.editor
-Export-Package: be.ac.vub.platformkit.java
+Export-Package: be.ac.vub.platformkit.java,
+ be.ac.vub.platformkit.java.popup.actions,
+ be.ac.vub.platformkit.java.popup.util
 Bundle-Activator: be.ac.vub.platformkit.java.PlatformkitJavaPlugin
