@@ -90,8 +90,7 @@ Pellet includes following software components:
 
    <includes
          id="com.hp.hpl.jena"
-         version="2.5.3.2"
-         optional="true"/>
+         version="2.5.3.2"/>
 
    <includes
          id="be.ac.vub.platformkit"

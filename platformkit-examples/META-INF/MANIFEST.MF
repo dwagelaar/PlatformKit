@@ -7,6 +7,5 @@ Bundle-Localization: plugin
 Bundle-Vendor: Vrije Universiteit Brussel
 Eclipse-LazyStart: true
 Require-Bundle: be.ac.vub.platformkit.editor,
- org.eclipse.osgi,
  org.junit,
  org.eclipse.core.runtime
