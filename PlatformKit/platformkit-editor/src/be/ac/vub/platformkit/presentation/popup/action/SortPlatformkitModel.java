@@ -4,7 +4,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 
 import be.ac.vub.platformkit.ConstraintSet;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.util.PlatformKitException;
 
 /**
@@ -52,10 +53,10 @@ public abstract class SortPlatformkitModel extends ConstraintSpaceAction {
     protected final void runAction(IProgressMonitor monitor)
     throws Exception {
         monitor.beginTask("Sorting PlatformKit model " + title, 5);
-        Ontologies ont = space.getKnowledgeBase();
+        IOntologies ont = space.getKnowledgeBase();
         if (ont == null) {
             monitor.subTask("Loading source ontologies...");
-            ont = new Ontologies();
+            ont = IOntologiesFactory.INSTANCE.createIOntologies();
             space.setKnowledgeBase(ont);
             if (!space.init(true)) {
                 throw new PlatformKitException(
@@ -73,7 +74,7 @@ public abstract class SortPlatformkitModel extends ConstraintSpaceAction {
         ConstraintSet is = space.getIntersectionSet();
         is.getIntersection();
         worked(monitor);
-        EList specific;
+        EList<ConstraintSet> specific;
         switch (mode) {
             case MOST_SPECIFIC:
                 monitor.subTask("Determining most-specific constraint sets...");

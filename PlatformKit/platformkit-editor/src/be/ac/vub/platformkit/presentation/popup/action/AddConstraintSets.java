@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.resource.Resource;
 
+import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.FileDialogRunnable;
@@ -51,7 +52,7 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
             return;
         }
         monitor.subTask("Adding Constraint Sets for selected " + getSourceName() + "s...");
-        List commands = createCommands(sources);
+        List<Command> commands = createCommands(sources);
         Command cmd = new CompoundCommand(commands);
         editingDomain.getCommandStack().execute(cmd);
         worked(monitor);
@@ -87,10 +88,10 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
      * @return A List of Commands to be executed to add new ConstraintSets that reflect the given source models.
      * @param sources
      */
-    private List createCommands(Resource[] sources) {
-    	List commands = new ArrayList();
-    	EList ontologies = new BasicEList();
-    	EList constraintSets = new BasicEList();
+    private List<Command> createCommands(Resource[] sources) {
+    	List<Command> commands = new ArrayList<Command>();
+    	EList<String> ontologies = new BasicEList<String>();
+    	EList<ConstraintSet> constraintSets = new BasicEList<ConstraintSet>();
     	ontologies.addAll(space.getOntology());
         for (int i = 0; i < sources.length; i++) {
         	addOntologies(sources[i], ontologies);
@@ -112,7 +113,7 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
      * @param source
      * @param ontologies
      */
-    protected abstract void addOntologies(Resource source, EList ontologies);
+    protected abstract void addOntologies(Resource source, EList<String> ontologies);
 
     /**
      * Searches source for constraints and adds a constraint set to the list.
@@ -120,7 +121,7 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
      * @param source
      * @param constraintSets
      */
-    protected abstract void addConstraintSet(Resource source, EList constraintSets);
+    protected abstract void addConstraintSet(Resource source, EList<ConstraintSet> constraintSets);
 
     /**
      * @param sourceName The sourceName to set.

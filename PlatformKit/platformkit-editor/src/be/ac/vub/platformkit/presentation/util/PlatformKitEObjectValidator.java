@@ -18,8 +18,8 @@ import be.ac.vub.platformkit.ConstraintSpace;
  *
  */
 public class PlatformKitEObjectValidator implements IEObjectValidator {
-	private Set invalid = new HashSet();
-	private List valid = new ArrayList();
+	private Set<String> invalid = new HashSet<String>();
+	private List<String> valid = new ArrayList<String>();
 	
 	/**
 	 * Creates a new CDDEObjectValidator.
@@ -27,12 +27,12 @@ public class PlatformKitEObjectValidator implements IEObjectValidator {
 	 */
 	public PlatformKitEObjectValidator(ConstraintSpace space) {
 		Assert.isNotNull(space);
-		for (Iterator it = space.getInvalid().iterator(); it.hasNext();) {
-			ConstraintSet set = (ConstraintSet) it.next();
+		for (Iterator<ConstraintSet> it = space.getInvalid().iterator(); it.hasNext();) {
+			ConstraintSet set = it.next();
 			invalid.add(set.getName());
 		}
-		for (Iterator it = space.getValid().iterator(); it.hasNext();) {
-			ConstraintSet set = (ConstraintSet) it.next();
+		for (Iterator<ConstraintSet> it = space.getValid().iterator(); it.hasNext();) {
+			ConstraintSet set = it.next();
 			valid.add(set.getName());
 		}
 	}

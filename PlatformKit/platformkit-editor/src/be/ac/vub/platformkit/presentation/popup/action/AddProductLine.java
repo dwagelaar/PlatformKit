@@ -42,18 +42,18 @@ public class AddProductLine extends AddConstraintSets {
         });
 	}
 
-    protected void addOntologies(Resource source, EList ontologies) {
-        TreeIterator contents = source.getAllContents();
+    protected void addOntologies(Resource source, EList<String> ontologies) {
+        TreeIterator<EObject> contents = source.getAllContents();
         while (contents.hasNext()) {
-            EObject current = (EObject) contents.next();
+            EObject current = contents.next();
             addMetaObjectOntologies(current, ontologies);
         }
     }
     
-    protected void addConstraintSet(Resource source, EList constraintSets) {
-        TreeIterator contents = source.getAllContents();
+    protected void addConstraintSet(Resource source, EList<ConstraintSet> constraintSets) {
+        TreeIterator<EObject> contents = source.getAllContents();
         while (contents.hasNext()) {
-            EObject current = (EObject) contents.next();
+            EObject current = contents.next();
             addMetaObjectConstraintSet(current, constraintSets);
         }
     }
@@ -63,7 +63,7 @@ public class AddProductLine extends AddConstraintSets {
      * @param object The metaobject.
      * @param ontologies The list of ontologies to add to.
      */
-    private void addMetaObjectOntologies(EObject object, EList ontologies) {
+    private void addMetaObjectOntologies(EObject object, EList<String> ontologies) {
         PlatformKitActionUtil.addOntologies(object, space.eResource().getURI(), ontologies);
     }
     
@@ -72,7 +72,7 @@ public class AddProductLine extends AddConstraintSets {
      * @param object The metaobject.
      * @param constraintSets The list of ontologies to add to.
      */
-    private void addMetaObjectConstraintSet(EObject object, EList constraintSets) {
+    private void addMetaObjectConstraintSet(EObject object, EList<ConstraintSet> constraintSets) {
     	ConstraintSet set = PlatformKitActionUtil.createMetaObjectConstraintSet(object);
     	if (set != null) {
     		constraintSets.add(set);

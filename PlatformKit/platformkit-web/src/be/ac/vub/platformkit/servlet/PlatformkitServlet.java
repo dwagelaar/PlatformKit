@@ -34,7 +34,8 @@ import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.hibernate.HibernateUtil;
 import be.ac.vub.platformkit.java.JavaOntologyProvider;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.IOntologiesFactory;
 
 /**
  * Web service interface for PlatformKit.
@@ -44,9 +45,9 @@ public class PlatformkitServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -8587189401115112481L;
 
-	private static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+	private static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	private Level loglevel = null;
-	private Map knownSpaces = new HashMap();
+	private Map<String, ConstraintSpacePool> knownSpaces = new HashMap<String, ConstraintSpacePool>();
 	private DateFormat dateFormat = new SimpleDateFormat();
 	protected ResourceSet resourceSet = new ResourceSetImpl();
 
@@ -77,7 +78,7 @@ public class PlatformkitServlet extends HttpServlet {
 			ConstraintSpace space = init(req, session.getBaseURL());
 			//calculate most/least specific constraint sets
 			logger.info(DateFormat.getDateInstance().format(new Date()));
-			List result = Collections.EMPTY_LIST;
+			List<ConstraintSet> result = Collections.EMPTY_LIST;
 			PlatformDescription pd = session.getDescription();
 			if (pd.getData() != null) {
 				InputStream input = pd.getInputStream();
@@ -155,7 +156,7 @@ public class PlatformkitServlet extends HttpServlet {
 		Date date = new Date(getURLDate(baseurl));
 		ConstraintSpace space = getConstraintSpace(baseurl, date);
 		if (space.getKnowledgeBase() == null) {
-			Ontologies ont = new Ontologies();
+			IOntologies ont = IOntologiesFactory.INSTANCE.createIOntologies();
 			ont.addLocalOntologies(JavaOntologyProvider.INSTANCE);
 			space.setKnowledgeBase(ont);
 			space.init(true);
@@ -172,8 +173,7 @@ public class PlatformkitServlet extends HttpServlet {
 	private void freeConstraintSpace(ConstraintSpace space, String baseurl) {
 		synchronized (this) {
 			logger.info("Returning constraint space to the pool");
-			ConstraintSpacePool pool = (ConstraintSpacePool) knownSpaces
-					.get(baseurl);
+			ConstraintSpacePool pool = knownSpaces.get(baseurl);
 			pool.addSpace(space);
 		}
 	}
@@ -201,8 +201,7 @@ public class PlatformkitServlet extends HttpServlet {
 					knownSpaces.put(baseurl, new ConstraintSpacePool());
 					// don't add space yet, since it isn't free
 				}
-				ConstraintSpacePool pool = (ConstraintSpacePool) knownSpaces
-						.get(baseurl);
+				ConstraintSpacePool pool = knownSpaces.get(baseurl);
 				Assert.assertNotNull(pool);
 				pool.setLastModified(date);
 			}
@@ -217,8 +216,7 @@ public class PlatformkitServlet extends HttpServlet {
 	 */
 	private ConstraintSpace findCachedConstraintSpace(String baseurl, Date date) {
 		ConstraintSpace space = null;
-		ConstraintSpacePool pool = (ConstraintSpacePool) knownSpaces
-				.get(baseurl);
+		ConstraintSpacePool pool = knownSpaces.get(baseurl);
 		if (pool != null) {
 			if (date.equals(pool.getLastModified())) {
 				logger.info("Checking cached constraint space pool");

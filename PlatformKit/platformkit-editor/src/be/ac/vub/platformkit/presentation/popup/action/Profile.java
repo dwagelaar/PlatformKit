@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.WeakHashMap;
 
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -13,7 +14,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.util.Assert;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -21,7 +21,8 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformEValidator;
@@ -42,7 +43,7 @@ public class Profile extends PlatformKitAction {
 	 * Registry of resource validators.
 	 * @author dennis
 	 */
-	public static class Registry extends WeakHashMap {
+	public static class Registry extends WeakHashMap<Resource, IEObjectValidator> {
 		public static Registry INSTANCE = new Registry();
 		
 		private Registry() {
@@ -52,7 +53,9 @@ public class Profile extends PlatformKitAction {
 		/**
 		 * @param resource
 		 * @return The registered validator for resource, if any, null otherwise.
+		 * @deprecated
 		 */
+		@Deprecated
 		public IEObjectValidator getValidator(Resource resource) {
 			Object object = get(resource);
 			if (object instanceof IEObjectValidator) {
@@ -124,7 +127,7 @@ public class Profile extends PlatformKitAction {
             	return;
             }
             space = (ConstraintSpace) platformkit.getContents().get(0);
-            Ontologies ont = new Ontologies();
+            IOntologies ont = IOntologiesFactory.INSTANCE.createIOntologies();
             space.setKnowledgeBase(ont);
             if (!space.init(true)) {
                 throw new PlatformKitException(
@@ -182,12 +185,10 @@ public class Profile extends PlatformKitAction {
      */
     private void updateAllObjects(Resource res) {
     	IEObjectValidator validator = (IEObjectValidator) Registry.INSTANCE.get(res);
-    	for (Iterator it = res.getAllContents(); it.hasNext();) {
-    		Object object = it.next();
-    		if (object instanceof EObject) {
-    			updateObject((EObject) object, validator);
-    			registerEValidator((EObject) object);
-    		}
+    	for (Iterator<EObject> it = res.getAllContents(); it.hasNext();) {
+    		EObject object = it.next();
+   			updateObject((EObject) object, validator);
+   			registerEValidator((EObject) object);
     	}
     }
 

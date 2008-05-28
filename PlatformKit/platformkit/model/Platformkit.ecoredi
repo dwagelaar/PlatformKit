@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_ygNyEGdqEdyvQYtGy77bzQ" activeDiagram="_ygXjEGdqEdyvQYtGy77bzQ">
   <model href="Platformkit.ecore#/"/>
   <diagrams xmi:id="_ygXjEGdqEdyvQYtGy77bzQ" position="0,0" size="100,100" name="PlatformKit" viewport="0,0">
@@ -139,18 +139,18 @@
     <contained xsi:type="di:GraphNode" xmi:id="_zH6rQGdqEdyvQYtGy77bzQ" position="348,108" size="81,-1">
       <property xmi:id="_6S_K0GdqEdyvQYtGy77bzQ" key="backgroundColor" value="255,255,255"/>
       <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH6rQWdqEdyvQYtGy77bzQ" presentation="default">
-        <element href="Platformkit.ecore#//OntModel"/>
+        <element href="Platformkit.ecore#//IOntModel"/>
       </semanticModel>
       <contained xsi:type="di:GraphNode" xmi:id="_zH6rQmdqEdyvQYtGy77bzQ">
         <property xmi:id="_zH6rQ2dqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="21"/>
         <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH6rRGdqEdyvQYtGy77bzQ" presentation="default">
-          <element href="Platformkit.ecore#//OntModel"/>
+          <element href="Platformkit.ecore#//IOntModel"/>
         </semanticModel>
       </contained>
       <contained xsi:type="di:GraphNode" xmi:id="_zH6rRWdqEdyvQYtGy77bzQ">
         <property xmi:id="_zH6rRmdqEdyvQYtGy77bzQ" key="eStructuralFeatureID" value="11"/>
         <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zH6rR2dqEdyvQYtGy77bzQ" presentation="default">
-          <element href="Platformkit.ecore#//OntModel"/>
+          <element href="Platformkit.ecore#//IOntModel"/>
         </semanticModel>
       </contained>
     </contained>

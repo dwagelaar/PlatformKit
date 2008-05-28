@@ -59,4 +59,11 @@ IN THE SOFTWARE.
          install-size="3005"
          version="0.0.0"/>
 
+   <plugin
+         id="org.semanticweb.owl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

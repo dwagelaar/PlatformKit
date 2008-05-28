@@ -30,7 +30,7 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
 
 /**
@@ -53,7 +53,7 @@ public class PlatformKitItemProviderAdapter implements
 	private ItemProviderAdapter inner;
 	private AdapterFactory factory;
 	private IEObjectValidator validator = null;
-	protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	
 	/**
 	 * Creates a new PlatformKitItemProviderAdapter
@@ -106,16 +106,16 @@ public class PlatformKitItemProviderAdapter implements
 	/**
 	 * @return The validated child item options in the optimised order.
 	 */
-	public Collection getNewChildDescriptors(Object object,
+	public Collection<?> getNewChildDescriptors(Object object,
 			EditingDomain editingDomain, Object sibling) {
-		Collection ncds = inner.getNewChildDescriptors(object, editingDomain, sibling);
+		Collection<?> ncds = inner.getNewChildDescriptors(object, editingDomain, sibling);
 		if (getValidator() == null) {
 			return ncds;
 		}
 		//create sorted map of NewChildDescriptors
-		SortedMap sortedncds = new TreeMap();
-		List unsortedncds = new ArrayList();
-		for (Iterator it = ncds.iterator(); it.hasNext();) {
+		SortedMap<Integer, Object> sortedncds = new TreeMap<Integer, Object>();
+		List<Object> unsortedncds = new ArrayList<Object>();
+		for (Iterator<?> it = ncds.iterator(); it.hasNext();) {
 			Object ncd = it.next();
 			if (ncd instanceof CommandParameter) {
 				CommandParameter cp = (CommandParameter) ncd;
@@ -131,7 +131,7 @@ public class PlatformKitItemProviderAdapter implements
 			unsortedncds.add(ncd);
 		}
 		//collect valid NewChildDescriptors
-		Collection validncds = new ArrayList();
+		Collection<Object> validncds = new ArrayList<Object>();
 		while (!sortedncds.isEmpty()) {
 			Object key = sortedncds.firstKey();
 			Object ncd = sortedncds.get(key);
@@ -140,7 +140,7 @@ public class PlatformKitItemProviderAdapter implements
 			}
 			sortedncds.remove(key);
 		}
-		for (Iterator it = unsortedncds.iterator(); it.hasNext();) {
+		for (Iterator<Object> it = unsortedncds.iterator(); it.hasNext();) {
 			Object ncd = it.next();
 			if (isValid(ncd)) {
 				validncds.add(ncd);
@@ -165,11 +165,11 @@ public class PlatformKitItemProviderAdapter implements
 	}
 	
 	public Command createCommand(Object object, EditingDomain editingDomain,
-			Class commandClass, CommandParameter commandParameter) {
+			Class<? extends Command> commandClass, CommandParameter commandParameter) {
 		return inner.createCommand(object, editingDomain, commandClass, commandParameter);
 	}
 
-	public Collection getChildren(Object object) {
+	public Collection<?> getChildren(Object object) {
 		return inner.getChildren(object);
 	}
 
@@ -177,7 +177,7 @@ public class PlatformKitItemProviderAdapter implements
 		return inner.getParent(object);
 	}
 
-	public Collection getElements(Object object) {
+	public Collection<?> getElements(Object object) {
 		return inner.getElements(object);
 	}
 
@@ -202,7 +202,7 @@ public class PlatformKitItemProviderAdapter implements
 		return inner.getPropertyDescriptor(object, propertyID);
 	}
 
-	public List getPropertyDescriptors(Object object) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
 		return inner.getPropertyDescriptors(object);
 	}
 
@@ -230,23 +230,23 @@ public class PlatformKitItemProviderAdapter implements
 		return inner.getBaseURL();
 	}
 
-	public String getCreateChildDescription(Object owner, Object feature, Object child, Collection selection) {
+	public String getCreateChildDescription(Object owner, Object feature, Object child, Collection<?> selection) {
 		return inner.getCreateChildDescription(owner, feature, child, selection);
 	}
 
-	public Object getCreateChildImage(Object owner, Object feature, Object child, Collection selection) {
+	public Object getCreateChildImage(Object owner, Object feature, Object child, Collection<?> selection) {
 		return inner.getCreateChildImage(owner, feature, child, selection);
 	}
 
-	public Collection getCreateChildResult(Object child) {
+	public Collection<?> getCreateChildResult(Object child) {
 		return inner.getCreateChildResult(child);
 	}
 
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection selection) {
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
 		return inner.getCreateChildText(owner, feature, child, selection);
 	}
 
-	public String getCreateChildToolTipText(Object owner, Object feature, Object child, Collection selection) {
+	public String getCreateChildToolTipText(Object owner, Object feature, Object child, Collection<?> selection) {
 		return inner.getCreateChildToolTipText(owner, feature, child, selection);
 	}
 

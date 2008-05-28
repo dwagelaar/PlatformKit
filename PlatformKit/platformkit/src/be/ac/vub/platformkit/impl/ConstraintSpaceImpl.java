@@ -32,15 +32,15 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitFactory;
 import be.ac.vub.platformkit.PlatformkitPackage;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.util.EMFURIPathResolver;
 import be.ac.vub.platformkit.util.PathResolver;
-
-import com.hp.hpl.jena.ontology.OntModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	private class CacheAdapter extends AdapterImpl {
 
@@ -78,10 +78,10 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		
 	}
 	
-    protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
     private static URIConverterImpl converter = new URIConverterImpl();
     
-    private Ontologies knowledgeBase = null;
+    private IOntologies knowledgeBase = null;
     private PathResolver pathResolver = null;
     private ConstraintSet intersectionSet = null;
 
@@ -93,7 +93,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList ontology = null;
+	protected EList<String> ontology;
 
 	/**
 	 * The cached value of the '{@link #getConstraintSet() <em>Constraint Set</em>}' containment reference list.
@@ -103,7 +103,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList constraintSet = null;
+	protected EList<ConstraintSet> constraintSet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,6 +119,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return PlatformkitPackage.Literals.CONSTRAINT_SPACE;
 	}
@@ -128,9 +129,9 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getOntology() {
+	public EList<String> getOntology() {
 		if (ontology == null) {
-			ontology = new EDataTypeUniqueEList(String.class, this, PlatformkitPackage.CONSTRAINT_SPACE__ONTOLOGY);
+			ontology = new EDataTypeUniqueEList<String>(String.class, this, PlatformkitPackage.CONSTRAINT_SPACE__ONTOLOGY);
 		}
 		return ontology;
 	}
@@ -140,9 +141,9 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getConstraintSet() {
+	public EList<ConstraintSet> getConstraintSet() {
 		if (constraintSet == null) {
-			constraintSet = new EObjectContainmentWithInverseEList(ConstraintSet.class, this, PlatformkitPackage.CONSTRAINT_SPACE__CONSTRAINT_SET, PlatformkitPackage.CONSTRAINT_SET__SPACE);
+			constraintSet = new EObjectContainmentWithInverseEList<ConstraintSet>(ConstraintSet.class, this, PlatformkitPackage.CONSTRAINT_SPACE__CONSTRAINT_SET, PlatformkitPackage.CONSTRAINT_SET__SPACE);
 		}
 		return constraintSet;
 	}
@@ -163,13 +164,13 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public EList getLeastSpecific(boolean validate) {
+	public EList<ConstraintSet> getLeastSpecific(boolean validate) {
         logger.info("Calculating least-specific constraint sets");
-        EList optimalClasses = getIntersectionSet().getLeastSpecific();
-        EList optimalLists = new BasicEList();
-        Map im = createIntersectionMap(validate);
-        for (Iterator ocs = optimalClasses.iterator(); ocs.hasNext();) {
-            ConstraintSet set = (ConstraintSet) im.get(ocs.next());
+        EList<Constraint> optimalClasses = getIntersectionSet().getLeastSpecific();
+        EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
+        Map<Constraint, ConstraintSet> im = createIntersectionMap(validate);
+        for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
+            ConstraintSet set = im.get(ocs.next());
             if (set != null) {
                 optimalLists.add(set);
             }
@@ -181,13 +182,13 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public EList getMostSpecific(boolean validate) {
+	public EList<ConstraintSet> getMostSpecific(boolean validate) {
         logger.info("Calculating most-specific constraint sets");
-        EList optimalClasses = getIntersectionSet().getMostSpecific();
-        EList optimalLists = new BasicEList();
-        Map im = createIntersectionMap(validate);
-        for (Iterator ocs = optimalClasses.iterator(); ocs.hasNext();) {
-            ConstraintSet set = (ConstraintSet) im.get(ocs.next());
+        EList<Constraint> optimalClasses = getIntersectionSet().getMostSpecific();
+        EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
+        Map<Constraint, ConstraintSet> im = createIntersectionMap(validate);
+        for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
+            ConstraintSet set = im.get(ocs.next());
             if (set != null) {
                 optimalLists.add(set);
             }
@@ -199,13 +200,13 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public EList getValid() {
+	public EList<ConstraintSet> getValid() {
         logger.info("Calculating valid constraint sets");
-        EList optimalClasses = getIntersectionSet().getConstraint();
-        EList optimalLists = new BasicEList();
-        Map im = createIntersectionMap(true);
-        for (Iterator ocs = optimalClasses.iterator(); ocs.hasNext();) {
-            ConstraintSet set = (ConstraintSet) im.get(ocs.next());
+        EList<Constraint> optimalClasses = getIntersectionSet().getConstraint();
+        EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
+        Map<Constraint, ConstraintSet> im = createIntersectionMap(true);
+        for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
+            ConstraintSet set = im.get(ocs.next());
             if (set != null) {
                 optimalLists.add(set);
             }
@@ -217,13 +218,13 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public EList getInvalid() {
+	public EList<ConstraintSet> getInvalid() {
         logger.info("Calculating invalid constraint sets");
-        EList optimalClasses = getIntersectionSet().getConstraint();
-        EList optimalLists = new BasicEList();
-        Map im = createIntersectionMap(false);
-        for (Iterator ocs = optimalClasses.iterator(); ocs.hasNext();) {
-            ConstraintSet set = (ConstraintSet) im.get(ocs.next());
+        EList<Constraint> optimalClasses = getIntersectionSet().getConstraint();
+        EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
+        Map<Constraint, ConstraintSet> im = createIntersectionMap(false);
+        for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
+            ConstraintSet set = im.get(ocs.next());
             if (!set.isValid()) {
                 optimalLists.add(set);
             }
@@ -236,10 +237,12 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SPACE__CONSTRAINT_SET:
-				return ((InternalEList)getConstraintSet()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraintSet()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -249,10 +252,11 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SPACE__CONSTRAINT_SET:
-				return ((InternalEList)getConstraintSet()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getConstraintSet()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -262,6 +266,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SPACE__ONTOLOGY:
@@ -277,15 +282,17 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SPACE__ONTOLOGY:
 				getOntology().clear();
-				getOntology().addAll((Collection)newValue);
+				getOntology().addAll((Collection<? extends String>)newValue);
 				return;
 			case PlatformkitPackage.CONSTRAINT_SPACE__CONSTRAINT_SET:
 				getConstraintSet().clear();
-				getConstraintSet().addAll((Collection)newValue);
+				getConstraintSet().addAll((Collection<? extends ConstraintSet>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -296,6 +303,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SPACE__ONTOLOGY:
@@ -313,6 +321,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SPACE__ONTOLOGY:
@@ -328,6 +337,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
@@ -338,11 +348,11 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		return result.toString();
 	}
 
-	public Ontologies getKnowledgeBase() {
+	public IOntologies getKnowledgeBase() {
 		return knowledgeBase;
 	}
 
-	public void setKnowledgeBase(Ontologies knowledgeBase) {
+	public void setKnowledgeBase(IOntologies knowledgeBase) {
 		if (this.knowledgeBase != null) {
 			removeAllOntologyChangeListeners(this.knowledgeBase);
 		}
@@ -352,7 +362,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		}
 	}
 	
-	public OntModel getOntModel() {
+	public IOntModel getOntModel() {
 		if (knowledgeBase != null) {
 			return knowledgeBase.getOntModel();
 		} else {
@@ -364,10 +374,10 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * Adds all constraints as listeners to kb.
 	 * @param kb the knowledge base (may not be null).
 	 */
-	private void addAllOntologyChangeListeners(Ontologies kb) {
+	private void addAllOntologyChangeListeners(IOntologies kb) {
 		Assert.assertNotNull(kb);
-		for (Iterator it = getConstraintSet().iterator(); it.hasNext();) {
-			((ConstraintSet) it.next()).addAllOntologyChangeListeners(kb);
+		for (Iterator<ConstraintSet> it = getConstraintSet().iterator(); it.hasNext();) {
+			it.next().addAllOntologyChangeListeners(kb);
 		}
 	}
 
@@ -375,10 +385,10 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * Removes all constraints as listeners from kb and resets cache.
 	 * @param kb the knowledge base (may not be null).
 	 */
-	private void removeAllOntologyChangeListeners(Ontologies kb) {
+	private void removeAllOntologyChangeListeners(IOntologies kb) {
 		Assert.assertNotNull(kb);
-		for (Iterator it = getConstraintSet().iterator(); it.hasNext();) {
-			((ConstraintSet) it.next()).removeAllOntologyChangeListeners(kb);
+		for (Iterator<ConstraintSet> it = getConstraintSet().iterator(); it.hasNext();) {
+			it.next().removeAllOntologyChangeListeners(kb);
 		}
 		resetCache();
 	}
@@ -416,9 +426,9 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
             	//abort
             }
         } else {
-            EList onts = getOntology();
+            EList<String> onts = getOntology();
             for (int i = 0; i < onts.size(); i++) {
-                InputStream in = getPathResolver().getContents((String) onts.get(i));
+                InputStream in = getPathResolver().getContents(onts.get(i));
                 getKnowledgeBase().loadOntology(in);
             }
         }
@@ -429,10 +439,10 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
      * @return A Map of intersection constraints mapped to their constraint sets.
      * @param validate If true, validate each constraint set before including.
      */
-    private Map createIntersectionMap(boolean validate) {
-        Map im = new HashMap();
-        for (Iterator css = getConstraintSet().iterator(); css.hasNext();) {
-            ConstraintSet cs = (ConstraintSet) css.next();
+    private Map<Constraint, ConstraintSet> createIntersectionMap(boolean validate) {
+        Map<Constraint, ConstraintSet> im = new HashMap<Constraint, ConstraintSet>();
+        for (Iterator<ConstraintSet> css = getConstraintSet().iterator(); css.hasNext();) {
+            ConstraintSet cs = css.next();
             if (!validate || cs.isValid()) {
                 im.put(cs.getIntersection(), cs);
             } else {
@@ -450,8 +460,8 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
     private ConstraintSet createIntersectionSet() {
     	ConstraintSet ics = PlatformkitFactory.eINSTANCE.createConstraintSet();
         ics.setName("_intersectionSet_");
-        for (Iterator it = getConstraintSet().iterator(); it.hasNext();) {
-            ConstraintSet cs = (ConstraintSet) it.next();
+        for (Iterator<ConstraintSet> it = getConstraintSet().iterator(); it.hasNext();) {
+            ConstraintSet cs = it.next();
             ics.getConstraint().add(cs.getIntersection());
         }
         return ics;

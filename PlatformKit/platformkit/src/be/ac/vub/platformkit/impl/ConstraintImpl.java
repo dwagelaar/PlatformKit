@@ -22,10 +22,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.PlatformkitPackage;
-import be.ac.vub.platformkit.kb.Ontologies;
-
-import com.hp.hpl.jena.ontology.OntClass;
-import com.hp.hpl.jena.ontology.OntModel;
+import be.ac.vub.platformkit.kb.IOntClass;
+import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.IOntologies;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +46,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 	
 	private class CacheAdapter extends AdapterImpl {
 
@@ -60,8 +59,8 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		
 	}
 
-    protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
-	private OntClass ontClass = null;
+    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
+	private IOntClass ontClass = null;
 	
 	/**
 	 * The default value of the '{@link #getOntClassURI() <em>Ont Class URI</em>}' attribute.
@@ -97,6 +96,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return PlatformkitPackage.Literals.CONSTRAINT;
 	}
@@ -172,8 +172,8 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
         boolean valid;
         //Jena is not thread-safe when communicating to the DIG reasoner,
         //so lock all actions that trigger DIG activity.
-        synchronized (Ontologies.class) {
-            valid = ontClass.listInstances().hasNext();
+        synchronized (IOntologies.class) {
+            valid = ontClass.hasInstances();
         }
         if (valid) {
             logger.fine(ontClass + " is valid");
@@ -189,6 +189,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT__SET:
@@ -204,6 +205,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT__SET:
@@ -217,6 +219,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID) {
 			case PlatformkitPackage.CONSTRAINT__SET:
@@ -230,6 +233,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT__SET:
@@ -245,6 +249,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT__SET:
@@ -262,6 +267,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT__SET:
@@ -279,6 +285,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT__SET:
@@ -294,6 +301,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
@@ -304,7 +312,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		return result.toString();
 	}
 
-	public void ontModelChanged(OntModel ontModel) {
+	public void ontModelChanged(IOntModel ontModel) {
 		if (ontClassURI != null) {
 			if (ontModel == null) {
 				setOntClass(null);
@@ -315,13 +323,13 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		}
 	}
 	
-	protected OntClass findOntClass(OntModel ontModel) {
-		OntClass ontClass = null;
+	protected IOntClass findOntClass(IOntModel ontModel) {
+		IOntClass ontClass = null;
 		if (ontClassURI != null) {
 			if (ontModel != null) {
 	            //Jena is not thread-safe when communicating to the DIG reasoner,
 	            //so lock all actions that trigger DIG activity.
-	            synchronized (Ontologies.class) {
+	            synchronized (IOntologies.class) {
 	            	ontClass = ontModel.getOntClass(ontClassURI);
 	            }
 			}
@@ -329,7 +337,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		return ontClass;
 	}
 
-	public OntClass getOntClass() {
+	public IOntClass getOntClass() {
 		if (ontClass == null) {
 			ontClass = findOntClass(getOntModel());
             logger.info("Refreshed " + this);
@@ -337,11 +345,11 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		return ontClass;
 	}
 
-	public void setOntClass(OntClass ontClass) {
+	public void setOntClass(IOntClass ontClass) {
 		this.ontClass = ontClass;
 	}
 	
-	public OntModel getOntModel() {
+	public IOntModel getOntModel() {
 		ConstraintSet set = getSet();
 		if (set != null) {
 			return set.getOntModel();

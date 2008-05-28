@@ -8,6 +8,7 @@ import java.util.List;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -15,16 +16,15 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.util.Assert;
 
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntClass;
+import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.IOntologiesFactory;
+import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
-
-import com.hp.hpl.jena.ontology.OntClass;
-import com.hp.hpl.jena.shared.NotFoundException;
 
 /**
  * Pre-classifies the taxonomy of ontology classes for a
@@ -40,12 +40,12 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
 	private static final int OUTPUTSIZE = 512*1024; // 512 KB
 	
     private class BuildHierarchyMap extends PlatformKitAction implements Runnable {
-        private Ontologies ont;
+        private IOntologies ont;
         
         /**
          * Constructor for sub-action.
          */
-        public BuildHierarchyMap(Ontologies ont) {
+        public BuildHierarchyMap(IOntologies ont) {
             super();
             Assert.isNotNull(ont);
             this.ont = ont;
@@ -65,14 +65,14 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
          */
         protected void runAction(IProgressMonitor monitor)
         throws Exception {
-            List namedClasses = ont.getLocalNamedClasses();
+            List<IOntClass> namedClasses = ont.getLocalNamedClasses();
             monitor.beginTask("Building Class Hierarchy Map", namedClasses.size());
             for (int i = 0; i < namedClasses.size(); i++) {
                 try {
-                    OntClass c = (OntClass) namedClasses.get(i);
+                    IOntClass c = namedClasses.get(i);
                     monitor.subTask("Building hierarchy map for " + c);
                     ont.buildHierarchyMap(c);
-                } catch (NotFoundException nfe) {
+                } catch (OntException nfe) {
                 	PlatformkitEditorPlugin.INSTANCE.log(
                             nfe.getMessage(), IStatus.WARNING, nfe);
                 } finally {
@@ -83,12 +83,12 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
     }
     
     private class UpdateHierarchy extends PlatformKitAction implements Runnable {
-        private Ontologies ont;
+        private IOntologies ont;
         
         /**
          * Constructor for sub-action.
          */
-        public UpdateHierarchy(Ontologies ont) {
+        public UpdateHierarchy(IOntologies ont) {
             super();
             Assert.isNotNull(ont);
             this.ont = ont;
@@ -108,14 +108,14 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
          */
         protected void runAction(IProgressMonitor monitor)
         throws Exception {
-            List namedClasses = ont.getLocalNamedClasses();
+            List<IOntClass> namedClasses = ont.getLocalNamedClasses();
             monitor.beginTask("Updating Asserted Class Hierarchy", namedClasses.size());
             for (int i = 0; i < namedClasses.size(); i++) {
                 try {
-                    OntClass c = (OntClass) namedClasses.get(i);
+                    IOntClass c = namedClasses.get(i);
                     monitor.subTask("Updating hierarchy for " + c);
                     ont.updateHierarchy(c);
-                } catch (NotFoundException nfe) {
+                } catch (OntException nfe) {
                 	PlatformkitEditorPlugin.INSTANCE.log(
                             nfe.getMessage(), IStatus.WARNING, nfe);
                 } finally {
@@ -126,12 +126,12 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
     }
     
     private class PruneHierarchyMap extends PlatformKitAction implements Runnable {
-        private Ontologies ont;
+        private IOntologies ont;
         
         /**
          * Constructor for sub-action.
          */
-        public PruneHierarchyMap(Ontologies ont) {
+        public PruneHierarchyMap(IOntologies ont) {
             super();
             Assert.isNotNull(ont);
             this.ont = ont;
@@ -151,14 +151,14 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
          */
         protected void runAction(IProgressMonitor monitor)
         throws Exception {
-            List namedClasses = ont.getLocalNamedClasses();
+            List<IOntClass> namedClasses = ont.getLocalNamedClasses();
             monitor.beginTask("Pruning Class Hierarchy Map", namedClasses.size());
             for (int i = 0; i < namedClasses.size(); i++) {
                 try {
-                    OntClass c = (OntClass) namedClasses.get(i);
+                    IOntClass c = namedClasses.get(i);
                     monitor.subTask("Pruning hierarchy map for " + c);
                     ont.pruneHierarchyMap(c);
-                } catch (NotFoundException nfe) {
+                } catch (OntException nfe) {
                 	PlatformkitEditorPlugin.INSTANCE.log(
                             nfe.getMessage(), IStatus.WARNING, nfe);
                 } finally {
@@ -183,10 +183,10 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
     protected void runAction(IProgressMonitor monitor)
     throws Exception {
         monitor.beginTask("Classifying Taxonomy", 9);
-        Ontologies ont = space.getKnowledgeBase();
+        IOntologies ont = space.getKnowledgeBase();
         if (ont == null) {
             monitor.subTask("Loading source ontologies...");
-            ont = new Ontologies();
+            ont = IOntologiesFactory.INSTANCE.createIOntologies();
             space.setKnowledgeBase(ont);
             space.init(false);
             worked(monitor);
@@ -241,7 +241,7 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
      * @throws CoreException
      * @throws IOException
      */
-    private void writeOntology(Ontologies ont, URI uri)
+    private void writeOntology(IOntologies ont, URI uri)
     throws CoreException, IOException {
         IPath platformkitPath = new Path(PlatformKitActionUtil.toPlatformResourcePath(uri));
         Assert.isNotNull(platformkitPath);

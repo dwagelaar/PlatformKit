@@ -42,11 +42,11 @@ public class AddProductConfig extends AddConstraintSets {
 //        });
 	}
 
-    protected void addOntologies(Resource source, EList ontologies) {
+    protected void addOntologies(Resource source, EList<String> ontologies) {
         PlatformKitActionUtil.addOntologies(source, space.eResource().getURI(), ontologies);
     }
     
-    protected void addConstraintSet(Resource source, EList constraintSets) {
+    protected void addConstraintSet(Resource source, EList<ConstraintSet> constraintSets) {
     	ConstraintSet set = PlatformKitActionUtil.createModelConstraintSet(source);
     	if (set != null) {
     		constraintSets.add(set);

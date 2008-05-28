@@ -30,12 +30,11 @@ import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitFactory;
 import be.ac.vub.platformkit.PlatformkitPackage;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntClass;
+import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.util.HierarchyComparator;
 import be.ac.vub.platformkit.util.TreeSorter;
-
-import com.hp.hpl.jena.ontology.OntModel;
-import com.hp.hpl.jena.rdf.model.RDFList;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +58,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * Wrapper iterator that returns the OntClass objects attached to Constraint object.
@@ -67,14 +66,14 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * @author dennis
 	 *
 	 */
-	private class ConstraintIterator implements Iterator {
-		private Iterator inner;
+	private class ConstraintIterator implements Iterator<IOntClass> {
+		private Iterator<Constraint> inner;
 		
 		/**
 		 * Creates a new ConstraintIterator.
 		 * @param inner An Iterator over Constraint objects.
 		 */
-		public ConstraintIterator(Iterator inner) {
+		public ConstraintIterator(Iterator<Constraint> inner) {
 			Assert.assertNotNull(inner);
 			this.inner = inner;
 		}
@@ -83,8 +82,8 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 			return inner.hasNext();
 		}
 
-		public Object next() {
-			return ((Constraint) inner.next()).getOntClass();
+		public IOntClass next() {
+			return inner.next().getOntClass();
 		}
 
 		public void remove() {
@@ -105,16 +104,16 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		
 	}
 	
-    protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
-    private EList mostSpecific = null;
-    private EList leastSpecific = null;
+    private EList<Constraint> mostSpecific = null;
+    private EList<Constraint> leastSpecific = null;
     private Constraint intersection = null;
     private ConstraintSpace transientSpace = null;
 
-    private static TreeSorter msfSorter = new TreeSorter( 
+    private static TreeSorter<Constraint> msfSorter = new TreeSorter<Constraint>( 
             new HierarchyComparator(HierarchyComparator.MOST_SPECIFIC_FIRST)); 
-    private static TreeSorter lsfSorter = new TreeSorter( 
+    private static TreeSorter<Constraint> lsfSorter = new TreeSorter<Constraint>( 
             new HierarchyComparator(HierarchyComparator.LEAST_SPECIFIC_FIRST)); 
 
 	/**
@@ -145,7 +144,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList constraint = null;
+	protected EList<Constraint> constraint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,6 +160,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return PlatformkitPackage.Literals.CONSTRAINT_SET;
 	}
@@ -232,9 +232,9 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getConstraint() {
+	public EList<Constraint> getConstraint() {
 		if (constraint == null) {
-			constraint = new EObjectContainmentWithInverseEList(Constraint.class, this, PlatformkitPackage.CONSTRAINT_SET__CONSTRAINT, PlatformkitPackage.CONSTRAINT__SET);
+			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, PlatformkitPackage.CONSTRAINT_SET__CONSTRAINT, PlatformkitPackage.CONSTRAINT__SET);
 		}
 		return constraint;
 	}
@@ -244,8 +244,8 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 */
 	public boolean isValid() {
-        for (Iterator cs = getConstraint().iterator(); cs.hasNext();) {
-            if (!((Constraint) cs.next()).isValid()) {
+        for (Iterator<Constraint> cs = getConstraint().iterator(); cs.hasNext();) {
+            if (!cs.next().isValid()) {
                 return false;
             }
         }
@@ -256,7 +256,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public EList getMostSpecific() {
+	public EList<Constraint> getMostSpecific() {
         if (mostSpecific == null) {
             mostSpecific = createAllMostSpecific();
         }
@@ -267,9 +267,9 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
      * @return All constraints in this set in order, most-specific first.
      * Requires a reasoner.
      */
-    private EList createAllMostSpecific() {
+    private EList<Constraint> createAllMostSpecific() {
         logger.info("Calculating most-specific constraint order for " + getName());
-        EList mostSpecific = new BasicEList();
+        EList<Constraint> mostSpecific = new BasicEList<Constraint>();
         mostSpecific.addAll(getConstraint());
         msfSorter.sort(mostSpecific);
         return mostSpecific;
@@ -279,7 +279,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public EList getLeastSpecific() {
+	public EList<Constraint> getLeastSpecific() {
         if (leastSpecific == null) {
             leastSpecific = createAllLeastSpecific();
         }
@@ -290,9 +290,9 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
      * @return All constraints in this set in order, least-specific first.
      * Requires a reasoner.
      */
-    private EList createAllLeastSpecific() {
+    private EList<Constraint> createAllLeastSpecific() {
         logger.info("Calculating least-specific constraint order for " + getName());
-        EList leastSpecific = new BasicEList();
+        EList<Constraint> leastSpecific = new BasicEList<Constraint>();
         leastSpecific.addAll(getConstraint());
         lsfSorter.sort(leastSpecific);
         return leastSpecific;
@@ -314,19 +314,18 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
      * @return the intersection constraint.
      */
     private Constraint createIntersection() {
-    	String ontClassURI = Ontologies.LOCAL_INF_NS + "#" + getName() + "Intersection";
-    	OntModel ontology = getOntModel();
+    	String ontClassURI = IOntologies.LOCAL_INF_NS + "#" + getName() + "Intersection";
+    	IOntModel ontology = getOntModel();
     	Assert.assertNotNull(ontology);
         logger.info("creating/retrieving intersection class for " + getName());
         //Jena is not thread-safe when communicating to the DIG reasoner,
         //so lock all actions that trigger DIG activity.
-        synchronized (Ontologies.class) {
+        synchronized (IOntologies.class) {
             //attempt to retrieve existing intersection class
             if (ontology.getOntClass(ontClassURI) == null) {
                 logger.fine("creating intersection class for " + getName());
-                RDFList constraints = ontology.createList(
-                        new ConstraintIterator(getConstraint().iterator()));
-                ontology.createIntersectionClass(ontClassURI, constraints);
+                ontology.createIntersectionClass(ontClassURI, 
+                		new ConstraintIterator(getConstraint().iterator()));
             }
         }
         Constraint intersection = PlatformkitFactory.eINSTANCE.createConstraint();
@@ -340,6 +339,8 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
@@ -347,7 +348,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetSpace((ConstraintSpace)otherEnd, msgs);
 			case PlatformkitPackage.CONSTRAINT_SET__CONSTRAINT:
-				return ((InternalEList)getConstraint()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -357,12 +358,13 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
 				return basicSetSpace(null, msgs);
 			case PlatformkitPackage.CONSTRAINT_SET__CONSTRAINT:
-				return ((InternalEList)getConstraint()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -372,6 +374,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
@@ -385,6 +388,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
@@ -402,6 +406,8 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
@@ -412,7 +418,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 				return;
 			case PlatformkitPackage.CONSTRAINT_SET__CONSTRAINT:
 				getConstraint().clear();
-				getConstraint().addAll((Collection)newValue);
+				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -423,6 +429,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
@@ -443,6 +450,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
@@ -460,6 +468,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
@@ -470,17 +479,17 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		return result.toString();
 	}
 
-	public void addAllOntologyChangeListeners(Ontologies kb) {
+	public void addAllOntologyChangeListeners(IOntologies kb) {
 		Assert.assertNotNull(kb);
-		for (Iterator it = getConstraint().iterator(); it.hasNext();) {
-			kb.addOntModelChangeListener((Constraint) it.next());
+		for (Iterator<Constraint> it = getConstraint().iterator(); it.hasNext();) {
+			kb.addOntModelChangeListener(it.next());
 		}
 	}
 
-	public void removeAllOntologyChangeListeners(Ontologies kb) {
+	public void removeAllOntologyChangeListeners(IOntologies kb) {
 		Assert.assertNotNull(kb);
-		for (Iterator it = getConstraint().iterator(); it.hasNext();) {
-			Constraint constraint = (Constraint) it.next();
+		for (Iterator<Constraint> it = getConstraint().iterator(); it.hasNext();) {
+			Constraint constraint = it.next();
 			kb.removeOntModelChangeListener(constraint);
 			constraint.ontModelChanged(null);
 		}
@@ -495,7 +504,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		this.transientSpace = transientSpace;
 	}
 	
-	public OntModel getOntModel() {
+	public IOntModel getOntModel() {
 		ConstraintSpace space = getSpace();
 		if (space == null) {
 			space = getTransientSpace();

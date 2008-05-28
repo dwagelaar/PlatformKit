@@ -25,12 +25,12 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ListDialog;
 
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 public class PlatformSpecDialog extends ListDialog {
 
-    protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
     
     private boolean builtinSelected = true;
     
@@ -46,8 +46,8 @@ public class PlatformSpecDialog extends ListDialog {
             logger.warning("Eclipse platform extension registry not found. Built-in platform specification ontologies do not work outside Eclipse.");
             return;
         }
-        final List content = new ArrayList();
-        final Map labels = new HashMap();
+        final List<InputStream> content = new ArrayList<InputStream>();
+        final Map<InputStream, String> labels = new HashMap<InputStream, String>();
         IExtensionPoint point = registry.getExtensionPoint(PlatformkitEditorPlugin.PLATFORMSPEC_EXT_POINT);
         IExtension[] extensions = point.getExtensions();
         for (int i = 0 ; i < extensions.length ; i++) {

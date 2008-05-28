@@ -30,7 +30,7 @@ public class PlatformkitFactoryImpl extends EFactoryImpl implements PlatformkitF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * Creates the default factory implementation.
@@ -66,6 +66,7 @@ public class PlatformkitFactoryImpl extends EFactoryImpl implements PlatformkitF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case PlatformkitPackage.CONSTRAINT_SPACE: return createConstraintSpace();
@@ -121,6 +122,7 @@ public class PlatformkitFactoryImpl extends EFactoryImpl implements PlatformkitF
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static PlatformkitPackage getPackage() {
 		return PlatformkitPackage.eINSTANCE;
 	}

@@ -31,7 +31,7 @@ public class BaseOntologyProvider implements IOntologyProvider {
 	};
 	
 	protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit");
-    protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	
 	public static BaseOntologyProvider INSTANCE = new BaseOntologyProvider();
 

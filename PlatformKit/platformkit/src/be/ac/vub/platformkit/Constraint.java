@@ -6,8 +6,8 @@
  */
 package be.ac.vub.platformkit;
 
-import com.hp.hpl.jena.ontology.OntClass;
-import com.hp.hpl.jena.ontology.OntModel;
+import be.ac.vub.platformkit.kb.IOntClass;
+import be.ac.vub.platformkit.kb.IOntModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ public interface Constraint extends IOntModelChangeListener {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * Returns the value of the '<em><b>Set</b></em>' container reference.
@@ -47,7 +47,7 @@ public interface Constraint extends IOntModelChangeListener {
 	 * @see #setSet(ConstraintSet)
 	 * @see be.ac.vub.platformkit.PlatformkitPackage#getConstraint_Set()
 	 * @see be.ac.vub.platformkit.ConstraintSet#getConstraint
-	 * @model opposite="constraint" required="true"
+	 * @model opposite="constraint" required="true" transient="false"
 	 *        annotation="GenModel documentation='The owning constraint set.'"
 	 * @generated
 	 */
@@ -98,16 +98,16 @@ public interface Constraint extends IOntModelChangeListener {
 	 * @generated
 	 */
 	boolean isValid();
-
-	/**
-	 * @return The inner ontology class, if it can be determined. Null otherwise.
-	 */
-	OntClass getOntClass();
 	
-	/**
-	 * @return The OntModel from the constraint set, if any, null otherwise.
-	 * @see #getSet()
-	 */
-	OntModel getOntModel();
+    /**
+     * @return The inner ontology class, if it can be determined. Null otherwise.
+     */
+    IOntClass getOntClass();
+
+    /**
+     * @return The OntModel from the constraint set, if any, null otherwise.
+     * @see #getSet()
+     */
+    IOntModel getOntModel();
 
 } // Constraint

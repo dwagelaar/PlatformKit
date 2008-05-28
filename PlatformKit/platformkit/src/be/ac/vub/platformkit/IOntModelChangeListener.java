@@ -6,9 +6,9 @@
  */
 package be.ac.vub.platformkit;
 
-import com.hp.hpl.jena.ontology.OntModel;
-
 import org.eclipse.emf.ecore.EObject;
+
+import be.ac.vub.platformkit.kb.IOntModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,15 +27,16 @@ public interface IOntModelChangeListener extends EObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ontModelAnnotation="GenModel documentation='the new ontology model.'"
+	 * @model ontModelType="be.ac.vub.platformkit.IOntModel"
+	 *        ontModelAnnotation="GenModel documentation='the new ontology model.'"
 	 *        annotation="GenModel documentation='Invoked when ontology model has changed.'"
 	 * @generated
 	 */
-	void ontModelChanged(OntModel ontModel);
+	void ontModelChanged(IOntModel ontModel);
 
 } // IOntModelChangeListener

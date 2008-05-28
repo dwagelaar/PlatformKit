@@ -6,14 +6,17 @@
  */
 package be.ac.vub.platformkit.util;
 
-import be.ac.vub.platformkit.*;
-
-import com.hp.hpl.jena.ontology.OntModel;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+
+import be.ac.vub.platformkit.Constraint;
+import be.ac.vub.platformkit.ConstraintSet;
+import be.ac.vub.platformkit.ConstraintSpace;
+import be.ac.vub.platformkit.IOntModelChangeListener;
+import be.ac.vub.platformkit.PlatformkitPackage;
+import be.ac.vub.platformkit.kb.IOntModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,13 +31,13 @@ import org.eclipse.emf.ecore.EObject;
  * @see be.ac.vub.platformkit.PlatformkitPackage
  * @generated
  */
-public class PlatformkitSwitch {
+public class PlatformkitSwitch<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * The cached model package
@@ -63,7 +66,7 @@ public class PlatformkitSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	public Object doSwitch(EObject theEObject) {
+	public T doSwitch(EObject theEObject) {
 		return doSwitch(theEObject.eClass(), theEObject);
 	}
 
@@ -74,16 +77,16 @@ public class PlatformkitSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(EClass theEClass, EObject theEObject) {
+	protected T doSwitch(EClass theEClass, EObject theEObject) {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
 		}
 		else {
-			List eSuperTypes = theEClass.getESuperTypes();
+			List<EClass> eSuperTypes = theEClass.getESuperTypes();
 			return
 				eSuperTypes.isEmpty() ?
 					defaultCase(theEObject) :
-					doSwitch((EClass)eSuperTypes.get(0), theEObject);
+					doSwitch(eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -94,30 +97,30 @@ public class PlatformkitSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(int classifierID, EObject theEObject) {
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case PlatformkitPackage.CONSTRAINT_SPACE: {
 				ConstraintSpace constraintSpace = (ConstraintSpace)theEObject;
-				Object result = caseConstraintSpace(constraintSpace);
+				T result = caseConstraintSpace(constraintSpace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PlatformkitPackage.CONSTRAINT_SET: {
 				ConstraintSet constraintSet = (ConstraintSet)theEObject;
-				Object result = caseConstraintSet(constraintSet);
+				T result = caseConstraintSet(constraintSet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PlatformkitPackage.CONSTRAINT: {
 				Constraint constraint = (Constraint)theEObject;
-				Object result = caseConstraint(constraint);
+				T result = caseConstraint(constraint);
 				if (result == null) result = caseIOntModelChangeListener(constraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PlatformkitPackage.IONT_MODEL_CHANGE_LISTENER: {
 				IOntModelChangeListener iOntModelChangeListener = (IOntModelChangeListener)theEObject;
-				Object result = caseIOntModelChangeListener(iOntModelChangeListener);
+				T result = caseIOntModelChangeListener(iOntModelChangeListener);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -126,92 +129,92 @@ public class PlatformkitSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Constraint Space</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Constraint Space</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Constraint Space</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Constraint Space</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseConstraintSpace(ConstraintSpace object) {
+	public T caseConstraintSpace(ConstraintSpace object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Constraint Set</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Constraint Set</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Constraint Set</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Constraint Set</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseConstraintSet(ConstraintSet object) {
+	public T caseConstraintSet(ConstraintSet object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Constraint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Constraint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseConstraint(Constraint object) {
+	public T caseConstraint(Constraint object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Ont Model</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>IOnt Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Ont Model</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>IOnt Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseOntModel(OntModel object) {
+	public T caseIOntModel(IOntModel object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>IOnt Model Change Listener</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>IOnt Model Change Listener</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>IOnt Model Change Listener</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>IOnt Model Change Listener</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIOntModelChangeListener(IOntModelChangeListener object) {
+	public T caseIOntModelChangeListener(IOntModelChangeListener object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>EObject</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>EObject</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public Object defaultCase(EObject object) {
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

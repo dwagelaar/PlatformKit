@@ -6,16 +6,17 @@
  */
 package be.ac.vub.platformkit.util;
 
-import be.ac.vub.platformkit.*;
-
-import com.hp.hpl.jena.ontology.OntModel;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import be.ac.vub.platformkit.Constraint;
+import be.ac.vub.platformkit.ConstraintSet;
+import be.ac.vub.platformkit.ConstraintSpace;
+import be.ac.vub.platformkit.IOntModelChangeListener;
+import be.ac.vub.platformkit.PlatformkitPackage;
+import be.ac.vub.platformkit.kb.IOntModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ public class PlatformkitAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * The cached model package.
@@ -61,6 +62,7 @@ public class PlatformkitAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -77,24 +79,30 @@ public class PlatformkitAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PlatformkitSwitch modelSwitch =
-		new PlatformkitSwitch() {
-			public Object caseConstraintSpace(ConstraintSpace object) {
+	protected PlatformkitSwitch<Adapter> modelSwitch =
+		new PlatformkitSwitch<Adapter>() {
+			@Override
+			public Adapter caseConstraintSpace(ConstraintSpace object) {
 				return createConstraintSpaceAdapter();
 			}
-			public Object caseConstraintSet(ConstraintSet object) {
+			@Override
+			public Adapter caseConstraintSet(ConstraintSet object) {
 				return createConstraintSetAdapter();
 			}
-			public Object caseConstraint(Constraint object) {
+			@Override
+			public Adapter caseConstraint(Constraint object) {
 				return createConstraintAdapter();
 			}
-			public Object caseOntModel(OntModel object) {
-				return createOntModelAdapter();
+			@Override
+			public Adapter caseIOntModel(IOntModel object) {
+				return createIOntModelAdapter();
 			}
-			public Object caseIOntModelChangeListener(IOntModelChangeListener object) {
+			@Override
+			public Adapter caseIOntModelChangeListener(IOntModelChangeListener object) {
 				return createIOntModelChangeListenerAdapter();
 			}
-			public Object defaultCase(EObject object) {
+			@Override
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -107,8 +115,9 @@ public class PlatformkitAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
+	@Override
 	public Adapter createAdapter(Notifier target) {
-		return (Adapter)modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 
@@ -155,16 +164,16 @@ public class PlatformkitAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.hp.hpl.jena.ontology.OntModel <em>Ont Model</em>}'.
+	 * Creates a new adapter for an object of class '{@link be.ac.vub.platformkit.kb.IOntModel <em>IOnt Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.hp.hpl.jena.ontology.OntModel
+	 * @see be.ac.vub.platformkit.kb.IOntModel
 	 * @generated
 	 */
-	public Adapter createOntModelAdapter() {
+	public Adapter createIOntModelAdapter() {
 		return null;
 	}
 

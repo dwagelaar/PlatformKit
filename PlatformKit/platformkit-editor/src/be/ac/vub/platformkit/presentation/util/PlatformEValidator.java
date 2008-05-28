@@ -25,12 +25,14 @@ public class PlatformEValidator extends EValidatorWrapper {
 		super(inner);
 	}
 
-	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map context) {
+	@Override
+	public boolean validate(EClass eClass, EObject eObject, 
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean superValid = super.validate(eClass, eObject, diagnostics, context);
 		boolean valid = true;
 		Resource res = eObject.eResource();
 		Assert.isNotNull(res);
-		IEObjectValidator validator = Profile.Registry.INSTANCE.getValidator(res);
+		IEObjectValidator validator = Profile.Registry.INSTANCE.get(res);
 		if (validator != null) {
 			valid = validator.isValid(eObject);
 		}

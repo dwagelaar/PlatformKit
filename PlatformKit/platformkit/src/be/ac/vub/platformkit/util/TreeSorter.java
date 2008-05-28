@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import junit.framework.Assert;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
 
 /**
  * Sorts the list by repeatedly removing the first smallest element ("root" element).
@@ -22,16 +22,16 @@ import be.ac.vub.platformkit.kb.Ontologies;
  * 
  * @author dennis
  */
-public class TreeSorter {
-    private Logger logger = Logger.getLogger(Ontologies.LOGGER);
-    private Comparator comp;
+public class TreeSorter<T> {
+    private Logger logger = Logger.getLogger(IOntologies.LOGGER);
+    private Comparator<T> comp;
   
     /**
      * Creates a ClusteredSorter.
      * @param comp
      * @throws IllegalArgumentException if comp is null
      */
-    public TreeSorter(Comparator comp)
+    public TreeSorter(Comparator<T> comp)
     throws IllegalArgumentException {
         if (comp == null) {
             throw new IllegalArgumentException("Null comparator");
@@ -43,10 +43,10 @@ public class TreeSorter {
      * Sorts the list by repeatedly removing the smallest elements ("root" elements).
      * @param list
      */
-    public void sort(List list) {
-        List sorted = new ArrayList();
+    public void sort(List<T> list) {
+        List<T> sorted = new ArrayList<T>();
         while (!list.isEmpty()) {
-            Object removed = removeRootElement(list);
+            T removed = removeRootElement(list);
             Assert.assertNotNull("Remove at least one element == false", removed);
             sorted.add(removed);
         }
@@ -58,9 +58,9 @@ public class TreeSorter {
      * @param list
      * @return the root element.
      */
-    private Object removeRootElement(List list) {
-        for (Iterator ls = list.iterator(); ls.hasNext();) {
-            Object element = ls.next();
+    private T removeRootElement(List<T> list) {
+        for (Iterator<T> ls = list.iterator(); ls.hasNext();) {
+            T element = ls.next();
             if (isRootElement(element, list)) {
                 ls.remove();
                 logger.info("Root element removed: " + element);
@@ -75,9 +75,9 @@ public class TreeSorter {
      * @param list
      * @return True if obj is a "root" element in list.
      */
-    private boolean isRootElement(Object obj, List list) {
-        for (Iterator ls = list.iterator(); ls.hasNext();) {
-            Object element = ls.next();
+    private boolean isRootElement(T obj, List<T> list) {
+        for (Iterator<T> ls = list.iterator(); ls.hasNext();) {
+            T element = ls.next();
             try {
                 if (comp.compare(obj, element) > 0) {
                     logger.fine(obj + " not root; greater than " + element);

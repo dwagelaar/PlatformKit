@@ -10,19 +10,20 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.util.Assert;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.MessageDialogRunnable;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
@@ -62,10 +63,10 @@ public class Validate extends ConstraintSpaceAction {
     protected final void runAction(IProgressMonitor monitor)
     throws Exception {
         monitor.beginTask("Validating PlatformKit constraint sets", 7);
-        Ontologies ont = space.getKnowledgeBase();
+        IOntologies ont = space.getKnowledgeBase();
         if (ont == null) {
             monitor.subTask("Loading source ontologies...");
-            ont = new Ontologies();
+            ont = IOntologiesFactory.INSTANCE.createIOntologies();
             space.setKnowledgeBase(ont);
             if (!space.init(true)) {
                 throw new PlatformKitException(
@@ -98,7 +99,7 @@ public class Validate extends ConstraintSpaceAction {
         is.getIntersection();
         worked(monitor);
         monitor.subTask("Determining valid constraint sets...");
-        List valid = space.getValid();
+        List<ConstraintSet> valid = space.getValid();
         worked(monitor);
         monitor.subTask("Detaching reasoner...");
         ont.detachReasoner();
@@ -116,14 +117,14 @@ public class Validate extends ConstraintSpaceAction {
      * @return a report on the valid options.
      * @throws IllegalArgumentException
      */
-    private String createReport(List valid)
+    private String createReport(List<ConstraintSet> valid)
     throws IllegalArgumentException {
         StringBuffer msg = new StringBuffer();
         msg.append("Valid constraint sets: ");
         msg.append('\n'); msg.append('\n');
         Assert.isNotNull(valid);
         for (int i = 0; i < valid.size(); i++) {
-            ConstraintSet list = (ConstraintSet) valid.get(i);
+            ConstraintSet list = valid.get(i);
             msg.append(" - ");
             msg.append(list.getName());
             msg.append('\n');

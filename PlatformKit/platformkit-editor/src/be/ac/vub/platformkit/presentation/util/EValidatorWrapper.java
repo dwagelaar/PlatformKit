@@ -30,12 +30,12 @@ public abstract class EValidatorWrapper implements EValidator {
 	}
 
 	public boolean validate(EObject eObject, DiagnosticChain diagnostics,
-			Map context) {
+			Map<Object, Object> context) {
 		return validate(eObject.eClass(), eObject, diagnostics, context);
 	}
 
 	public boolean validate(EClass eClass, EObject eObject,
-			DiagnosticChain diagnostics, Map context) {
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean innerValid = true;
 		if (inner != null) {
 			innerValid = inner.validate(eClass, eObject, diagnostics, context);
@@ -46,7 +46,7 @@ public abstract class EValidatorWrapper implements EValidator {
 	}
 
 	public boolean validate(EDataType eDataType, Object value,
-			DiagnosticChain diagnostics, Map context) {
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean innerValid = true;
 		if (inner != null) {
 			innerValid = inner.validate(eDataType, value, diagnostics, context);

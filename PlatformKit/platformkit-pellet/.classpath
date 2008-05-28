@@ -7,17 +7,5 @@
 	<classpathentry kind="lib" path="lib/xsdlib/relaxngDatatype.jar"/>
 	<classpathentry kind="lib" path="lib/xsdlib/xsdlib.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/pellet.jar" sourcepath="pellet-1.5-src.zip"/>
-	<classpathentry kind="lib" path="lib/owlapi/commons-lang-2.2.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/rdfapi.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/oboparser-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/krssparser-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/impl-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/functionalrenderer-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/functionalparser-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/examples-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/dig1_1-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/debugging-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/apibinding-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/owlapi/api-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
