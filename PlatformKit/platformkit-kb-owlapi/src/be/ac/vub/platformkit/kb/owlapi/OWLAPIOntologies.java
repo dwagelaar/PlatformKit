@@ -34,6 +34,7 @@ import org.semanticweb.owl.model.OWLAxiom;
 import org.semanticweb.owl.model.OWLClass;
 import org.semanticweb.owl.model.OWLClassAxiom;
 import org.semanticweb.owl.model.OWLDataFactory;
+import org.semanticweb.owl.model.OWLEntity;
 import org.semanticweb.owl.model.OWLEquivalentClassesAxiom;
 import org.semanticweb.owl.model.OWLException;
 import org.semanticweb.owl.model.OWLOntology;
@@ -113,13 +114,11 @@ public class OWLAPIOntologies extends AbstractOntologies {
             return;
         }
         IExtensionPoint point = registry.getExtensionPoint(IOntologies.ONTOLOGY_EXT_POINT);
-        IExtension[] extensions = point.getExtensions();
-        for (int i = 0 ; i < extensions.length ; i++) {
-            IConfigurationElement[] elements = extensions[i].getConfigurationElements();
-            for (int j = 0 ; j < elements.length ; j++) {
+        for (IExtension extension : point.getExtensions()) {
+            for (IConfigurationElement element : extension.getConfigurationElements()) {
                 try {
                     IOntologyProvider provider = (IOntologyProvider)
-                    		elements[j].createExecutableExtension("provider");
+                    		element.createExecutableExtension("provider");
                     addLocalOntologies(provider);
                 } catch (CoreException e) {
                     throw new IOException(e);
@@ -248,9 +247,10 @@ public class OWLAPIOntologies extends AbstractOntologies {
         Iterator<OWLClassAxiom> clsAxs = ontology.model.getClassAxioms().iterator();
         while (clsAxs.hasNext()) {
         	OWLClassAxiom clsAx = clsAxs.next();
-        	if (clsAx instanceof OWLSubClassAxiom) {
-        		OWLClass subClass = ((OWLSubClassAxiom)clsAx).getSubClass().asOWLClass();
-        		namedClasses.add(new OWLClassAdapter(subClass, this));
+        	for (OWLEntity ent : clsAx.getReferencedEntities()) {
+        		if (ent.isOWLClass()) {
+        			namedClasses.add(new OWLClassAdapter(ent.asOWLClass(), this));
+        		}
         	}
         }
         return namedClasses;
