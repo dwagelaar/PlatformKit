@@ -5,5 +5,7 @@ Bundle-SymbolicName: be.ac.vub.platformkit.kb.jena
 Bundle-Version: 1.0.0
 Bundle-Activator: be.ac.vub.platformkit.kb.jena.eclipse.Activator
 Bundle-Vendor: Vrije Universiteit Brussel
-Require-Bundle: org.eclipse.core.runtime
+Require-Bundle: org.eclipse.core.runtime,
+ be.ac.vub.platformkit;visibility:=reexport,
+ org.junit
 Eclipse-LazyStart: true
