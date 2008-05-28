@@ -25,7 +25,7 @@
         	<classes dir="${platformkit-java.path}/bin"/>
         	<classes dir="${platformkit-java.path}/ontology"/>
         	<classes dir="${platformkit-kb-owlapi.path}/bin"/>
-        	<classes dir="${platformkit-owlapi.path}/bin"/>
+        	<classes dir="${owlapi.path}/bin"/>
         	<lib dir="../lib">
         		<exclude name="*.xml"/>
         		<exclude name="javax.servlet.jar"/>
