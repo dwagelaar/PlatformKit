@@ -1,52 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-<plugin
-   id="org.mindswap.pellet"
-   name="Pellet OWL reasoner Plug-in"
-   version="1.5.0"
-   provider-name="Mindswap.org"
-   class="org.mindswap.pellet.eclipse.PelletPlugin">
+<plugin>
 
-   <runtime>
-      <library name="pellet.jar">
-         <export name="*"/>
-      </library>
-      <library name="lib/pellet.jar">
-         <export name="*"/>
-      </library>
-      <library name="lib/aterm-java-1.6.jar"/>
-      <library name="lib/xsdlib/relaxngDatatype.jar"/>
-      <library name="lib/xsdlib/xsdlib.jar"/>
-      <library name="lib/owlapi/rdfapi.jar">
-      </library>
-      <library name="lib/owlapi/commons-lang-2.2.jar">
-      </library>
-      <library name="lib/owlapi/oboparser-1.0.jar">
-      </library>
-      <library name="lib/owlapi/krssparser-1.0.jar">
-      </library>
-      <library name="lib/owlapi/impl-1.0.jar">
-      </library>
-      <library name="lib/owlapi/functionalrenderer-1.0.jar">
-      </library>
-      <library name="lib/owlapi/functionalparser-1.0.jar">
-      </library>
-      <library name="lib/owlapi/examples-1.0.jar">
-      </library>
-      <library name="lib/owlapi/dig1_1-1.0.jar">
-      </library>
-      <library name="lib/owlapi/debugging-1.0.jar">
-      </library>
-      <library name="lib/owlapi/apibinding-1.0.jar">
-      </library>
-      <library name="lib/owlapi/api-1.0.jar">
-      </library>
-   </runtime>
-   <requires>
-      <import plugin="com.hp.hpl.jena"/>
-      <import plugin="org.junit"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.ui"/>
-   </requires>
-
+    
 </plugin>

@@ -26,7 +26,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.WorkbenchException;
 
 import be.ac.vub.platformkit.ConstraintSpace;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
 import be.ac.vub.platformkit.presentation.util.PlatformSpecDialogRunnable;
@@ -38,7 +38,7 @@ import be.ac.vub.platformkit.presentation.util.PlatformSpecDialogRunnable;
  */
 public abstract class PlatformKitAction implements IObjectActionDelegate {
 
-	protected Logger logger = Logger.getLogger(Ontologies.LOGGER);
+	protected Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	protected EditingDomain editingDomain = null;
     protected ISelection selection;
     protected IAction action;
@@ -146,7 +146,8 @@ public abstract class PlatformKitAction implements IObjectActionDelegate {
     throws IllegalArgumentException, RuntimeException {
         URI source = URI.createPlatformResourceURI(
                 file.getProject().getName() + '/' +
-                file.getProjectRelativePath().toString());
+                file.getProjectRelativePath().toString(),
+                true);
         return resourceSet.getResource(source, true);
     }
 

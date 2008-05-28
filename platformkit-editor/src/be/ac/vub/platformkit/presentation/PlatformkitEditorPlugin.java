@@ -27,7 +27,7 @@ import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 
 import be.ac.vub.platformkit.PlatformkitPackage;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.logging.ConsoleStreamHandler;
 import be.ac.vub.platformkit.presentation.util.ErrorDialogRunnable;
 import be.ac.vub.platformkit.presentation.util.PlatformkitEValidator;
@@ -49,7 +49,7 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * Keep track of the singleton.
@@ -80,8 +80,8 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	 */
 	public PlatformkitEditorPlugin() {
 		super
-		  (new ResourceLocator [] {
-		   });
+			(new ResourceLocator [] {
+			});
 	}
 
 	/**
@@ -91,6 +91,7 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	 * @return the singleton instance.
 	 * @generated
 	 */
+	@Override
 	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}
@@ -136,7 +137,7 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	        activateConsole();
 	        consoleStream.println("Platformkit Console initiated");
 	        Handler handler = new ConsoleStreamHandler(consoleStream);
-	        Logger.getLogger(Ontologies.LOGGER).addHandler(handler);
+	        Logger.getLogger(IOntologies.LOGGER).addHandler(handler);
 	        JenaPlugin.getDefault().addLogHandler(handler);
 	    }
 

@@ -70,7 +70,7 @@ public class FileDialogRunnable implements Runnable {
      * @return The file objects in the list.
      */
     private Object[] getFiles(Object[] list) {
-        ArrayList files = new ArrayList();
+        ArrayList<Object> files = new ArrayList<Object>();
         for (int i = 0; i < list.length; i++) {
             if (list[i] instanceof IFile) {
                 files.add(list[i]);

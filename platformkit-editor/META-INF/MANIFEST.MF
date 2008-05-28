@@ -15,6 +15,7 @@ Export-Package: be.ac.vub.platformkit.editor.preferences,
  be.ac.vub.platformkit.presentation.util.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
+ be.ac.vub.platformkit;visibility:=reexport,
  be.ac.vub.platformkit.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
@@ -22,5 +23,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.console,
  com.hp.hpl.jena;visibility:=reexport,
  org.eclipse.ui,
- org.eclipse.m2m.atl.adt.debug
+ org.eclipse.m2m.atl.adt.debug,
+ org.semanticweb.owl;visibility:=reexport
 Eclipse-LazyStart: true

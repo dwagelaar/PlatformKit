@@ -7,12 +7,10 @@
 package be.ac.vub.platformkit;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
-import com.hp.hpl.jena.ontology.OntModel;
-
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.IOntologies;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +36,7 @@ public interface ConstraintSet extends EObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * Returns the value of the '<em><b>Space</b></em>' container reference.
@@ -53,7 +51,7 @@ public interface ConstraintSet extends EObject {
 	 * @see #setSpace(ConstraintSpace)
 	 * @see be.ac.vub.platformkit.PlatformkitPackage#getConstraintSet_Space()
 	 * @see be.ac.vub.platformkit.ConstraintSpace#getConstraintSet
-	 * @model opposite="constraintSet" required="true"
+	 * @model opposite="constraintSet" required="true" transient="false"
 	 *        annotation="GenModel documentation='The owning constraint space.'"
 	 * @generated
 	 */
@@ -109,11 +107,11 @@ public interface ConstraintSet extends EObject {
 	 * @return the value of the '<em>Constraint</em>' containment reference list.
 	 * @see be.ac.vub.platformkit.PlatformkitPackage#getConstraintSet_Constraint()
 	 * @see be.ac.vub.platformkit.Constraint#getSet
-	 * @model type="be.ac.vub.platformkit.Constraint" opposite="set" containment="true"
+	 * @model opposite="set" containment="true"
 	 *        annotation="GenModel documentation='The constraints that are part of this constraint set.'"
 	 * @generated
 	 */
-	EList getConstraint();
+	EList<Constraint> getConstraint();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,20 +125,20 @@ public interface ConstraintSet extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="be.ac.vub.platformkit.Constraint"
+	 * @model kind="operation"
 	 *        annotation="GenModel documentation='Returns all constraints in this set in order, most-specific first. Requires a reasoner.'"
 	 * @generated
 	 */
-	EList getMostSpecific();
+	EList<Constraint> getMostSpecific();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="be.ac.vub.platformkit.Constraint"
+	 * @model kind="operation"
 	 *        annotation="GenModel documentation='Returns all constraints in this set in order, least-specific first. Requires a reasoner.'"
 	 * @generated
 	 */
-	EList getLeastSpecific();
+	EList<Constraint> getLeastSpecific();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,13 +153,13 @@ public interface ConstraintSet extends EObject {
 	 * Adds all constraints as listeners to kb.
 	 * @param kb the knowledge base (may not be null).
 	 */
-	void addAllOntologyChangeListeners(Ontologies kb);
+	void addAllOntologyChangeListeners(IOntologies kb);
 	
 	/**
 	 * Removes all constraints as listeners from kb.
 	 * @param kb the knowledge base (may not be null).
 	 */
-	void removeAllOntologyChangeListeners(Ontologies kb);
+	void removeAllOntologyChangeListeners(IOntologies kb);
 	
 	/**
 	 * Sets the transient constraint space, for if this constraint set is not meant to
@@ -175,6 +173,6 @@ public interface ConstraintSet extends EObject {
 	 * @see #getSpace()
 	 * @see #setTransientSpace(ConstraintSpace)
 	 */
-	OntModel getOntModel();
+	IOntModel getOntModel();
 
 } // ConstraintSet

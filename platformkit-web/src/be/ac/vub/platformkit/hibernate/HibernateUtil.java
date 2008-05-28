@@ -6,11 +6,11 @@ import java.util.logging.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
 
 public class HibernateUtil {
 
-	protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	private static SessionFactory sessionFactory = null;
 

@@ -11,7 +11,7 @@ import junit.framework.Assert;
 import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
 
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.util.INamedOntologyProvider;
 
 public class ExamplesOntologyProvider implements INamedOntologyProvider {
@@ -51,7 +51,7 @@ public class ExamplesOntologyProvider implements INamedOntologyProvider {
     };
     
     protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit.examples");
-    protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
     public static ExamplesOntologyProvider INSTANCE = new ExamplesOntologyProvider();
 

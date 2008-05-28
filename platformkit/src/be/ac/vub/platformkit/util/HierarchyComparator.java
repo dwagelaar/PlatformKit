@@ -4,11 +4,9 @@ import java.util.Comparator;
 import java.util.logging.Logger;
 
 import junit.framework.Assert;
-
 import be.ac.vub.platformkit.Constraint;
-import be.ac.vub.platformkit.kb.Ontologies;
-
-import com.hp.hpl.jena.ontology.OntClass;
+import be.ac.vub.platformkit.kb.IOntClass;
+import be.ac.vub.platformkit.kb.IOntologies;
 
 /**
  * Compares {@link Constraint} objects, such that the more specific (subclass) constraint is
@@ -18,11 +16,11 @@ import com.hp.hpl.jena.ontology.OntClass;
  * an exception is thrown.
  * @author dennis
  */
-public class HierarchyComparator implements Comparator {
+public class HierarchyComparator implements Comparator<Constraint> {
     public static final int MOST_SPECIFIC_FIRST = -1;
     public static final int LEAST_SPECIFIC_FIRST = 1;
     
-    private Logger logger = Logger.getLogger(Ontologies.LOGGER);
+    private Logger logger = Logger.getLogger(IOntologies.LOGGER);
     private int mode;
 
     /**
@@ -41,13 +39,12 @@ public class HierarchyComparator implements Comparator {
     
     /**
      * @see Comparator#compare(T, T)
-     * @throws ClassCastException if something else than Constraint objects are compared
-     * or if no order can be determined.
+     * @throws ClassCastException if no order can be determined.
      */
-    public int compare(Object arg0, Object arg1)
+    public int compare(Constraint arg0, Constraint arg1)
     throws ClassCastException {
-        OntClass c0 = ((Constraint) arg0).getOntClass();
-        OntClass c1 = ((Constraint) arg1).getOntClass();
+        IOntClass c0 = arg0.getOntClass();
+        IOntClass c1 = arg1.getOntClass();
         Assert.assertNotNull(c0);
         Assert.assertNotNull(c1);
         if (c0.equals(c1) || c0.hasEquivalentClass(c1)) {

@@ -32,7 +32,7 @@ public interface PlatformkitPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * The package name.
@@ -160,16 +160,6 @@ public interface PlatformkitPackage extends EPackage {
 	int CONSTRAINT = 2;
 
 	/**
-	 * The meta object id for the '{@link com.hp.hpl.jena.ontology.OntModel <em>Ont Model</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.hp.hpl.jena.ontology.OntModel
-	 * @see be.ac.vub.platformkit.impl.PlatformkitPackageImpl#getOntModel()
-	 * @generated
-	 */
-	int ONT_MODEL = 3;
-
-	/**
 	 * The meta object id for the '{@link be.ac.vub.platformkit.IOntModelChangeListener <em>IOnt Model Change Listener</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,14 +208,23 @@ public interface PlatformkitPackage extends EPackage {
 
 
 	/**
-	 * The number of structural features of the '<em>Ont Model</em>' class.
+	 * The meta object id for the '{@link be.ac.vub.platformkit.kb.IOntModel <em>IOnt Model</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see be.ac.vub.platformkit.kb.IOntModel
+	 * @see be.ac.vub.platformkit.impl.PlatformkitPackageImpl#getIOntModel()
+	 * @generated
+	 */
+	int IONT_MODEL = 3;
+
+	/**
+	 * The number of structural features of the '<em>IOnt Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ONT_MODEL_FEATURE_COUNT = 0;
-
+	int IONT_MODEL_FEATURE_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link be.ac.vub.platformkit.ConstraintSpace <em>Constraint Space</em>}'.
@@ -335,15 +334,15 @@ public interface PlatformkitPackage extends EPackage {
 	EAttribute getConstraint_OntClassURI();
 
 	/**
-	 * Returns the meta object for class '{@link com.hp.hpl.jena.ontology.OntModel <em>Ont Model</em>}'.
+	 * Returns the meta object for class '{@link be.ac.vub.platformkit.kb.IOntModel <em>IOnt Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ont Model</em>'.
-	 * @see com.hp.hpl.jena.ontology.OntModel
-	 * @model instanceClass="com.hp.hpl.jena.ontology.OntModel"
+	 * @return the meta object for class '<em>IOnt Model</em>'.
+	 * @see be.ac.vub.platformkit.kb.IOntModel
+	 * @model instanceClass="be.ac.vub.platformkit.kb.IOntModel"
 	 * @generated
 	 */
-	EClass getOntModel();
+	EClass getIOntModel();
 
 	/**
 	 * Returns the meta object for class '{@link be.ac.vub.platformkit.IOntModelChangeListener <em>IOnt Model Change Listener</em>}'.
@@ -464,14 +463,14 @@ public interface PlatformkitPackage extends EPackage {
 		EAttribute CONSTRAINT__ONT_CLASS_URI = eINSTANCE.getConstraint_OntClassURI();
 
 		/**
-		 * The meta object literal for the '{@link com.hp.hpl.jena.ontology.OntModel <em>Ont Model</em>}' class.
+		 * The meta object literal for the '{@link be.ac.vub.platformkit.kb.IOntModel <em>IOnt Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.hp.hpl.jena.ontology.OntModel
-		 * @see be.ac.vub.platformkit.impl.PlatformkitPackageImpl#getOntModel()
+		 * @see be.ac.vub.platformkit.kb.IOntModel
+		 * @see be.ac.vub.platformkit.impl.PlatformkitPackageImpl#getIOntModel()
 		 * @generated
 		 */
-		EClass ONT_MODEL = eINSTANCE.getOntModel();
+		EClass IONT_MODEL = eINSTANCE.getIOntModel();
 
 		/**
 		 * The meta object literal for the '{@link be.ac.vub.platformkit.IOntModelChangeListener <em>IOnt Model Change Listener</em>}' class.

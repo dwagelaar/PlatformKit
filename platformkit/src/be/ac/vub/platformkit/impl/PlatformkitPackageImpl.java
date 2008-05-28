@@ -6,23 +6,20 @@
  */
 package be.ac.vub.platformkit.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.IOntModelChangeListener;
 import be.ac.vub.platformkit.PlatformkitFactory;
 import be.ac.vub.platformkit.PlatformkitPackage;
-
-import com.hp.hpl.jena.ontology.OntModel;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EParameter;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
+import be.ac.vub.platformkit.kb.IOntModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +33,7 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,7 +61,7 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass ontModelEClass = null;
+	private EClass iOntModelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,8 +233,8 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOntModel() {
-		return ontModelEClass;
+	public EClass getIOntModel() {
+		return iOntModelEClass;
 	}
 
 	/**
@@ -290,7 +287,7 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 		createEReference(constraintEClass, CONSTRAINT__SET);
 		createEAttribute(constraintEClass, CONSTRAINT__ONT_CLASS_URI);
 
-		ontModelEClass = createEClass(ONT_MODEL);
+		iOntModelEClass = createEClass(IONT_MODEL);
 
 		iOntModelChangeListenerEClass = createEClass(IONT_MODEL_CHANGE_LISTENER);
 	}
@@ -318,6 +315,10 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Create type parameters
+
+		// Set bounds for type parameters
+
 		// Add supertypes to classes
 		constraintEClass.getESuperTypes().add(this.getIOntModelChangeListener());
 
@@ -326,43 +327,43 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 		initEAttribute(getConstraintSpace_Ontology(), ecorePackage.getEString(), "ontology", null, 0, -1, ConstraintSpace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConstraintSpace_ConstraintSet(), this.getConstraintSet(), this.getConstraintSet_Space(), "constraintSet", null, 0, -1, ConstraintSpace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getIntersectionSet", 0, 1);
+		addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getIntersectionSet", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		EOperation op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getLeastSpecific", 0, -1);
-		addEParameter(op, ecorePackage.getEBoolean(), "validate", 0, 1);
+		EOperation op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getMostSpecific", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getMostSpecific", 0, -1);
-		addEParameter(op, ecorePackage.getEBoolean(), "validate", 0, 1);
+		op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getLeastSpecific", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getValid", 0, -1);
+		addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getValid", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getInvalid", 0, -1);
+		addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getInvalid", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(constraintSetEClass, ConstraintSet.class, "ConstraintSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstraintSet_Space(), this.getConstraintSpace(), this.getConstraintSpace_ConstraintSet(), "space", null, 1, 1, ConstraintSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstraintSet_Name(), ecorePackage.getEString(), "name", null, 1, 1, ConstraintSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConstraintSet_Constraint(), this.getConstraint(), this.getConstraint_Set(), "constraint", null, 0, -1, ConstraintSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(constraintSetEClass, ecorePackage.getEBoolean(), "isValid", 0, 1);
+		addEOperation(constraintSetEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(constraintSetEClass, this.getConstraint(), "getMostSpecific", 0, -1);
+		addEOperation(constraintSetEClass, this.getConstraint(), "getMostSpecific", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(constraintSetEClass, this.getConstraint(), "getLeastSpecific", 0, -1);
+		addEOperation(constraintSetEClass, this.getConstraint(), "getLeastSpecific", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(constraintSetEClass, this.getConstraint(), "getIntersection", 0, 1);
+		addEOperation(constraintSetEClass, this.getConstraint(), "getIntersection", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstraint_Set(), this.getConstraintSet(), this.getConstraintSet_Constraint(), "set", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstraint_OntClassURI(), ecorePackage.getEString(), "ontClassURI", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(constraintEClass, ecorePackage.getEBoolean(), "isValid", 0, 1);
+		addEOperation(constraintEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(ontModelEClass, OntModel.class, "OntModel", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEClass(iOntModelEClass, IOntModel.class, "IOntModel", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(iOntModelChangeListenerEClass, IOntModelChangeListener.class, "IOntModelChangeListener", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(iOntModelChangeListenerEClass, null, "ontModelChanged");
-		addEParameter(op, this.getOntModel(), "ontModel", 0, 1);
+		op = addEOperation(iOntModelChangeListenerEClass, null, "ontModelChanged", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getIOntModel(), "ontModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -387,31 +388,31 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 			 "documentation", "The total space of platform constraint sets to consider."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintSpaceEClass.getEOperations().get(0), 
+		  (constraintSpaceEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns a constraint set consisting of all the intersection classes of all the constraints. Creates the IntersectionClasses for all ConstraintSets as necessary."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintSpaceEClass.getEOperations().get(1), 
+		  (constraintSpaceEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns all or valid constraint sets in order, most-specific first. Requires a reasoner."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintSpaceEClass.getEOperations().get(2), 
+		  (constraintSpaceEClass.getEOperations().get(2), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns all or valid constraint sets in order, least-specific first. Requires a reasoner."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintSpaceEClass.getEOperations().get(3), 
+		  (constraintSpaceEClass.getEOperations().get(3), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns valid constraint sets. Requires a reasoner."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintSpaceEClass.getEOperations().get(4), 
+		  (constraintSpaceEClass.getEOperations().get(4), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns invalid constraint sets. Requires a reasoner."
@@ -435,25 +436,25 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 			 "documentation", "A set of platform constraints for a targeted entity."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintSetEClass.getEOperations().get(0), 
+		  (constraintSetEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns true if all the constraints hold, false otherwise."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintSetEClass.getEOperations().get(1), 
+		  (constraintSetEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns all constraints in this set in order, most-specific first. Requires a reasoner."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintSetEClass.getEOperations().get(2), 
+		  (constraintSetEClass.getEOperations().get(2), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns all constraints in this set in order, least-specific first. Requires a reasoner."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintSetEClass.getEOperations().get(3), 
+		  (constraintSetEClass.getEOperations().get(3), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns the intersection class constraint of all contained constraints."
@@ -483,7 +484,7 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 			 "documentation", "A single platform constraint. Corresponds to an OntClass."
 		   });		
 		addAnnotation
-		  ((EOperation)constraintEClass.getEOperations().get(0), 
+		  (constraintEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 			 "documentation", "Returns true if this constraint hold, false otherwise."
@@ -507,13 +508,13 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 			 "documentation", "Change listener interface for {@link Ontologies#getOntModel()}"
 		   });		
 		addAnnotation
-		  ((EOperation)iOntModelChangeListenerEClass.getEOperations().get(0), 
+		  (iOntModelChangeListenerEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 			 "documentation", "Invoked when ontology model has changed."
 		   });		
 		addAnnotation
-		  ((EParameter)((EOperation)iOntModelChangeListenerEClass.getEOperations().get(0)).getEParameters().get(0), 
+		  ((iOntModelChangeListenerEClass.getEOperations().get(0)).getEParameters().get(0), 
 		   source, 
 		   new String[] {
 			 "documentation", "the new ontology model."

@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
@@ -23,13 +24,12 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.jface.util.Assert;
 
 import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitFactory;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
 
 /**
  * Static utility functions.
@@ -38,27 +38,27 @@ import be.ac.vub.platformkit.kb.Ontologies;
  */
 public class PlatformKitActionUtil {
 
-	protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	protected static PlatformkitFactory factory = PlatformkitFactory.eINSTANCE;
-    private static Map knownSpaces = new HashMap();
-    private static Map fileDates = new HashMap();
+    private static Map<Object, ConstraintSpace> knownSpaces = new HashMap<Object, ConstraintSpace>();
+    private static Map<Object, Long> fileDates = new HashMap<Object, Long>();
     
 	/**
 	 * @param object The object to search for Ontology EAnnotations.
 	 * @param platformkitURI The URI of the Platformkit model.
 	 * @param ontologies The list of ontologies to augment.
 	 */
-	public static void addOntologies(EObject object, URI platformkitURI, EList ontologies) {
+	public static void addOntologies(EObject object, URI platformkitURI, EList<String> ontologies) {
 		Assert.isNotNull(object);
-        EList annotations = PlatformKitActionUtil.getEAnnotations(object);
+        EList<EAnnotation> annotations = PlatformKitActionUtil.getEAnnotations(object);
 	    if (annotations == null) {
 	        return;
 	    }
 	    Assert.isNotNull(platformkitURI);
 	    for (int i = 0; i < annotations.size(); i++) {
-	        EAnnotation ann = (EAnnotation) annotations.get(i);
+	        EAnnotation ann = annotations.get(i);
 	        if ("PlatformKit".equals(ann.getSource())) {
-	            String ont = (String) ann.getDetails().get("Ontology");
+	            String ont = ann.getDetails().get("Ontology");
 	            if (ont != null) {
 	                StringTokenizer onts = new StringTokenizer(ont, "\n");
 	                while (onts.hasMoreTokens()) {
@@ -79,10 +79,10 @@ public class PlatformKitActionUtil {
 	 * @param platformkitURI The URI of the Platformkit model.
 	 * @param ontologies The list of ontologies to augment.
 	 */
-	public static void addOntologies(Resource product, URI platformkitURI, EList ontologies) {
-        TreeIterator contents = product.getAllContents();
+	public static void addOntologies(Resource product, URI platformkitURI, EList<String> ontologies) {
+        TreeIterator<EObject> contents = product.getAllContents();
         while (contents.hasNext()) {
-            EObject current = (EObject) contents.next();
+            EObject current = contents.next();
             addOntologies(current.eClass().getEPackage(), platformkitURI, ontologies);
         }
 	}
@@ -136,7 +136,7 @@ public class PlatformKitActionUtil {
 	 * @return The EAttribute that is flagged as ID or null.
 	 */
 	private static EAttribute getIDAttribute(EClass metaClass) {
-	    EList contents = metaClass.eContents();
+	    EList<EObject> contents = metaClass.eContents();
 	    for (int i = 0; i < contents.size(); i++) {
 	        if (contents.get(i) instanceof EAttribute) {
 	            EAttribute attr = (EAttribute) contents.get(i);
@@ -152,7 +152,7 @@ public class PlatformKitActionUtil {
 	 * @param object
 	 * @return the annotations for the given object.
 	 */
-	private static EList getEAnnotations(EObject object) {
+	private static EList<EAnnotation> getEAnnotations(EObject object) {
 	    if (object instanceof EModelElement) {
 	        return ((EModelElement) object).getEAnnotations();
 	    }
@@ -182,7 +182,7 @@ public class PlatformKitActionUtil {
      * @param constraints the set of existing constraint strings.
      * @param set the constraint set to augment.
      */
-    private static void addConstraints(EList annotations, Set constraints, ConstraintSet set) {
+    private static void addConstraints(EList<EAnnotation> annotations, Set<String> constraints, ConstraintSet set) {
         if (annotations == null) {
             return;
         }
@@ -200,11 +200,11 @@ public class PlatformKitActionUtil {
      * @param constraints the set of existing constraint strings.
      * @param set the constraint set to augment.
      */
-    private static void addConstraints(EAnnotation ann, Set constraints, ConstraintSet set) {
+    private static void addConstraints(EAnnotation ann, Set<String> constraints, ConstraintSet set) {
         for (int i = 0; i < ann.getDetails().size(); i++) {
-            Entry detail = (Entry) ann.getDetails().get(i);
+            Entry<String, String> detail = ann.getDetails().get(i);
             if ("PlatformConstraint".equals(detail.getKey())) {
-                String constraint = (String) detail.getValue();
+                String constraint = detail.getValue();
                 if (!constraints.contains(constraint) && (constraint != null)) {
                     Constraint c = factory.createConstraint();
                     c.setSet(set);
@@ -220,11 +220,11 @@ public class PlatformKitActionUtil {
      * @param object
      */
     public static ConstraintSet createMetaObjectConstraintSet(EObject object) {
-        EList annotations = PlatformKitActionUtil.getEAnnotations(object);
+        EList<EAnnotation> annotations = PlatformKitActionUtil.getEAnnotations(object);
         if (annotations == null) {
             return null;
         }
-        Set constraints = new HashSet();
+        Set<String> constraints = new HashSet<String>();
         ConstraintSet set = factory.createConstraintSet();
         Object target = PlatformKitActionUtil.getIDFrom(object);
         if (target != null) {
@@ -243,19 +243,19 @@ public class PlatformKitActionUtil {
      * @param product The product configuration
      */
     public static ConstraintSet createModelConstraintSet(Resource product) {
-        Set constraints = new HashSet();
+        Set<String> constraints = new HashSet<String>();
         ConstraintSet set = factory.createConstraintSet();
-        TreeIterator contents = product.getAllContents();
+        TreeIterator<EObject> contents = product.getAllContents();
         EObject previous = null;
         while (contents.hasNext()) {
-            EObject current = (EObject) contents.next();
+            EObject current = contents.next();
             if (previous == null) {
                 Object target = PlatformKitActionUtil.getIDFrom(current);
                 if (target != null) {
                     set.setName(target.toString());
                 }
             }
-            EList annotations = current.eClass().getEAnnotations();
+            EList<EAnnotation> annotations = current.eClass().getEAnnotations();
             addConstraints(annotations, constraints, set);
             previous = current;
         }

@@ -3,16 +3,16 @@ package be.ac.vub.platformkit.presentation.util;
 import java.io.IOException;
 import java.util.Map;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.util.Assert;
 
 import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSpace;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.util.PlatformkitSwitch;
 
 /**
@@ -22,9 +22,9 @@ import be.ac.vub.platformkit.util.PlatformkitSwitch;
  */
 public class PlatformkitEValidator extends EValidatorWrapper {
 	
-	protected class EValidatorPlatformkitSwitch extends PlatformkitSwitch {
+	protected class EValidatorPlatformkitSwitch extends PlatformkitSwitch<Diagnostic> {
 
-		public Object caseConstraint(Constraint object) {
+		public Diagnostic caseConstraint(Constraint object) {
 			//TODO guarantee previous validation of ConstraintSpace?
 			Assert.isNotNull(object.getSet());
 			Assert.isNotNull(object.getSet().getSpace());
@@ -39,12 +39,12 @@ public class PlatformkitEValidator extends EValidatorWrapper {
 			return super.caseConstraint(object);
 		}
 
-		public Object caseConstraintSpace(ConstraintSpace object) {
+		public Diagnostic caseConstraintSpace(ConstraintSpace object) {
 			//don't validate constraint spaces that already have a knowledge base;
 			//these have already been validated (changes reset the knowledge base)
 			if (object.getKnowledgeBase() == null) {
 				try {
-					object.setKnowledgeBase(new Ontologies());
+					object.setKnowledgeBase(IOntologiesFactory.INSTANCE.createIOntologies());
 					object.init(false);
 				} catch (IOException ioe) {
 		            return new BasicDiagnostic
@@ -60,15 +60,16 @@ public class PlatformkitEValidator extends EValidatorWrapper {
 
 	}
 	
-	protected PlatformkitSwitch validatorSwitch = new EValidatorPlatformkitSwitch();
+	protected PlatformkitSwitch<Diagnostic> validatorSwitch = new EValidatorPlatformkitSwitch();
 
 	public PlatformkitEValidator() {
 		super(null);
 	}
 
-	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map context) {
+	public boolean validate(EClass eClass, EObject eObject, 
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean superValid = super.validate(eClass, eObject, diagnostics, context);
-		Diagnostic diag = (Diagnostic) validatorSwitch.doSwitch(eObject);
+		Diagnostic diag = validatorSwitch.doSwitch(eObject);
 		if ((diagnostics != null) && (diag != null)) {
             diagnostics.add(diag);
 		}

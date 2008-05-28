@@ -10,8 +10,8 @@ import junit.framework.Assert;
 import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
 
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologyProvider;
-import be.ac.vub.platformkit.kb.Ontologies;
 
 public class JavaOntologyProvider implements IOntologyProvider {
 
@@ -31,7 +31,7 @@ public class JavaOntologyProvider implements IOntologyProvider {
 	};
 	
 	protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit.java");
-    protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	public static JavaOntologyProvider INSTANCE = new JavaOntologyProvider();
 

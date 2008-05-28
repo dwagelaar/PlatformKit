@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 import junit.framework.Assert;
 import be.ac.vub.platformkit.examples.ExamplesOntologyProvider;
-import be.ac.vub.platformkit.kb.Ontologies;
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.servlet.PlatformDescription;
 import be.ac.vub.platformkit.servlet.PlatformDescriptionStore;
 
@@ -21,7 +21,7 @@ import be.ac.vub.platformkit.servlet.PlatformDescriptionStore;
  */
 public class PopulateDatabase {
 
-	protected static Logger logger = Logger.getLogger(Ontologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	private Properties knownPlatforms = null;
 
@@ -69,7 +69,7 @@ public class PopulateDatabase {
 		Assert.assertNotNull(ontology);
 		pd.setFromInputStream(ontology);
 
-		for (Enumeration e = knownPlatforms.propertyNames(); e
+		for (Enumeration<?> e = knownPlatforms.propertyNames(); e
 				.hasMoreElements();) {
 			String key = (String) e.nextElement();
 			String value = knownPlatforms.getProperty(key);
