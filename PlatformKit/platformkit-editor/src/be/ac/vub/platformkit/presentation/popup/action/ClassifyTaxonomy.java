@@ -19,9 +19,9 @@ import org.eclipse.jface.preference.IPreferenceStore;
 
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
+import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntologies;
-import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
@@ -183,17 +183,12 @@ public class ClassifyTaxonomy extends ConstraintSpaceAction {
     protected void runAction(IProgressMonitor monitor)
     throws Exception {
         monitor.beginTask("Classifying Taxonomy", 9);
-        IOntologies ont = space.getKnowledgeBase();
-        if (ont == null) {
-            monitor.subTask("Loading source ontologies...");
-            ont = IOntologiesFactory.INSTANCE.createIOntologies();
-            space.setKnowledgeBase(ont);
-            space.init(false);
-            worked(monitor);
-        } else {
-        	monitor.subTask("Using pre-loaded source ontologies...");
-        	worked(monitor);
-        }
+        monitor.subTask("Loading source ontologies...");
+        // Don't use existing knowledgebase, since it may be pre-classified
+        IOntologies ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
+        space.setKnowledgeBase(ont);
+        space.init(false);
+        worked(monitor);
         monitor.subTask("Creating intersection and union classes...");
         //create intersection set before reasoning
         ConstraintSet is = space.getIntersectionSet();

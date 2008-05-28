@@ -9,15 +9,10 @@ Bundle-Localization: plugin
 Export-Package: be.ac.vub.platformkit,
  be.ac.vub.platformkit.impl,
  be.ac.vub.platformkit.kb,
- be.ac.vub.platformkit.kb.jena,
- be.ac.vub.platformkit.kb.owlapi,
  be.ac.vub.platformkit.kb.util,
  be.ac.vub.platformkit.logging,
  be.ac.vub.platformkit.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- com.hp.hpl.jena;visibility:=reexport,
- org.mindswap.pellet;visibility:=reexport,
- org.junit,
- org.semanticweb.owl;visibility:=reexport
+ org.junit
 Eclipse-LazyStart: true

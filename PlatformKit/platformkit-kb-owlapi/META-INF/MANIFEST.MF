@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Platformkit OWLAPI Knowledgebase Plug-in
-Bundle-SymbolicName: be.ac.vub.platformkit.kb.owlapi
+Bundle-SymbolicName: be.ac.vub.platformkit.kb.owlapi;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: be.ac.vub.platformkit.kb.owlapi.eclipse.Activator
 Bundle-Vendor: Vrije Universiteit Brussel

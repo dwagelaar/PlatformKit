@@ -21,8 +21,8 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
+import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntologies;
-import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformEValidator;
@@ -127,7 +127,7 @@ public class Profile extends PlatformKitAction {
             	return;
             }
             space = (ConstraintSpace) platformkit.getContents().get(0);
-            IOntologies ont = IOntologiesFactory.INSTANCE.createIOntologies();
+            IOntologies ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
             space.setKnowledgeBase(ont);
             if (!space.init(true)) {
                 throw new PlatformKitException(

@@ -3,6 +3,11 @@ package be.ac.vub.platformkit.editor.preferences;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
@@ -14,6 +19,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
+import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
@@ -82,7 +88,14 @@ public class PlatformkitPreferencePage
 		reasonerUrl.setEmptyStringAllowed(false);
 		reasonerUrl.setErrorMessage("Invalid DIG reasoner URL");
 		addField(reasonerUrl);
-		
+
+		String[][] kbs = getKBs();
+		ComboFieldEditor kb = new ComboFieldEditor(
+				PreferenceConstants.P_KB, "&OWL knowledgebase implementation:",
+				kbs,
+				getFieldEditorParent());
+		addField(kb);
+
 		String[] vms = AtlVM.getVMs();
 		String[][] vmss = new String[vms.length][2];
 		for (int i = 0; i < vms.length; i++) {
@@ -100,6 +113,21 @@ public class PlatformkitPreferencePage
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	public void init(IWorkbench workbench) {
+	}
+	
+	private static String[][] getKBs() {
+		IExtensionRegistry registry = Platform.getExtensionRegistry();		
+		IExtensionPoint point = registry.getExtensionPoint(IOntologiesFactory.KB_EXT_POINT);
+		IExtension[] extensions = point.getExtensions();
+		String[][] kbs = new String[extensions.length][2];
+		for (int i = 0; i < extensions.length; i++) {
+			IExtension extension = extensions[i];
+			for (IConfigurationElement element : extension.getConfigurationElements()) {
+				kbs[i][0] = element.getAttribute("name");//$NON-NLS-1$
+				kbs[i][1] = element.getAttribute("factory");//$NON-NLS-1$
+			}
+		}
+		return kbs;
 	}
 
 }

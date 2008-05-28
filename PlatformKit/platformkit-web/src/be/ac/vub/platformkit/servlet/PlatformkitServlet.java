@@ -36,6 +36,7 @@ import be.ac.vub.platformkit.hibernate.HibernateUtil;
 import be.ac.vub.platformkit.java.JavaOntologyProvider;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologiesFactory;
+import be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory;
 
 /**
  * Web service interface for PlatformKit.
@@ -44,6 +45,8 @@ import be.ac.vub.platformkit.kb.IOntologiesFactory;
 public class PlatformkitServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -8587189401115112481L;
+	
+	private static final IOntologiesFactory FACTORY = new OWLAPIOntologiesFactory();
 
 	private static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	private Level loglevel = null;
@@ -156,7 +159,7 @@ public class PlatformkitServlet extends HttpServlet {
 		Date date = new Date(getURLDate(baseurl));
 		ConstraintSpace space = getConstraintSpace(baseurl, date);
 		if (space.getKnowledgeBase() == null) {
-			IOntologies ont = IOntologiesFactory.INSTANCE.createIOntologies();
+			IOntologies ont = FACTORY.createIOntologies();
 			ont.addLocalOntologies(JavaOntologyProvider.INSTANCE);
 			space.setKnowledgeBase(ont);
 			space.init(true);

@@ -4,8 +4,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 
 import be.ac.vub.platformkit.ConstraintSet;
+import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntologies;
-import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.util.PlatformKitException;
 
 /**
@@ -56,7 +56,7 @@ public abstract class SortPlatformkitModel extends ConstraintSpaceAction {
         IOntologies ont = space.getKnowledgeBase();
         if (ont == null) {
             monitor.subTask("Loading source ontologies...");
-            ont = IOntologiesFactory.INSTANCE.createIOntologies();
+            ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
             space.setKnowledgeBase(ont);
             if (!space.init(true)) {
                 throw new PlatformKitException(

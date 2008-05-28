@@ -10,6 +10,7 @@
 
 <plugin>
    <extension-point id="ontology" name="Ontology" schema="schema/ontology.exsd"/>
+   <extension-point id="knowledgebase" name="Knowledgebase" schema="schema/knowledgebase.exsd"/>
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 

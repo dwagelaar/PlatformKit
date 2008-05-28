@@ -22,8 +22,8 @@ import org.eclipse.jface.viewers.ViewerFilter;
 
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
+import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntologies;
-import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.MessageDialogRunnable;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
@@ -66,7 +66,7 @@ public class Validate extends ConstraintSpaceAction {
         IOntologies ont = space.getKnowledgeBase();
         if (ont == null) {
             monitor.subTask("Loading source ontologies...");
-            ont = IOntologiesFactory.INSTANCE.createIOntologies();
+            ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
             space.setKnowledgeBase(ont);
             if (!space.init(true)) {
                 throw new PlatformKitException(
