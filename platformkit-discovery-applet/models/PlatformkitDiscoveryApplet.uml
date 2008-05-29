@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AbstractFactory="http:///schemas/AbstractFactory/0" xmlns:Applet="http:///schemas/Applet/1" xmlns:Singleton="http:///schemas/Singleton/1" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/AbstractFactory/0 ../../uml2cs-transformations/profiles/AbstractFactory.profile.uml#_-a-lgUPTEdusb52s3APTjA http:///schemas/Applet/1 ../../uml2cs-transformations/profiles/Applet.profile.uml#_i8fxgDgqEduNII1tDKqNvA http:///schemas/Singleton/1 ../../uml2cs-transformations/profiles/Singleton.profile.uml#_eMWcQDgqEduNII1tDKqNvA http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
+  <uml:Model xmi:id="_qb8akM37EdqwVrslYOdUDA" name="PlatformkitDiscoveryApplet">
+    <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="be">
+      <packagedElement xmi:type="uml:Package" xmi:id="_GvuXgC1cEd2KTNOPeUc_7g" name="ac">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Lla7IC1cEd2KTNOPeUc_7g" name="vub">
+          <packagedElement xmi:type="uml:Package" xmi:id="_NUZlcC1cEd2KTNOPeUc_7g" name="platformkit">
+            <packagedElement xmi:type="uml:Package" xmi:id="_O5BZ4C1cEd2KTNOPeUc_7g" name="discovery">
+              <packagedElement xmi:type="uml:Class" xmi:id="_RBdGAC1cEd2KTNOPeUc_7g" name="DiscoveryApplet" clientDependency="_-B99Yy2AEd2e7od4K9wNBA _KUjT4y2CEd2e7od4K9wNBA _7XZwYy2HEd2e7od4K9wNBA">
+                <ownedAttribute xmi:id="_ZKebzC2BEd2e7od4K9wNBA" name="ontology" type="_szP1IC1gEd2e7od4K9wNBA" aggregation="shared" association="_ZKebyC2BEd2e7od4K9wNBA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZKebzS2BEd2e7od4K9wNBA" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZKebzi2BEd2e7od4K9wNBA" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_7_1pbC2HEd2e7od4K9wNBA" name="view" type="_RX_hcC2CEd2e7od4K9wNBA" aggregation="shared" association="_7_1paC2HEd2e7od4K9wNBA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7_1pbS2HEd2e7od4K9wNBA" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7_1pbi2HEd2e7od4K9wNBA" value="1"/>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_nXi-cC2BEd2e7od4K9wNBA" name="PlatformOntology_initBehavior" specification="_OrNAgC2BEd2e7od4K9wNBA">
+                  <language>java</language>
+                  <body>&#x9;&#x9;setView(ViewFactory.getDefault().createMainView());&#xA;&#x9;&#x9;getView().setEnabled(false);&#xA;&#x9;&#x9;getView().addListener(this);</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_n_-3cC2BEd2e7od4K9wNBA" name="PlatformOntology_startBehavior" specification="_RYXKUC2BEd2e7od4K9wNBA">
+                  <language>java</language>
+                  <body>&#x9;&#x9;getView().setEnabled(true);</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_od9M4C2BEd2e7od4K9wNBA" name="PlatformOntology_stopBehavior" specification="_SspcsC2BEd2e7od4K9wNBA">
+                  <language>java</language>
+                  <body>&#x9;&#x9;getView().setEnabled(false);</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aHLQYC2IEd2e7od4K9wNBA" name="DiscoveryApplet_onSubmitBehavior" specification="_V0i9kC2IEd2e7od4K9wNBA">
+                  <language>java</language>
+                  <body>&#x9;&#x9;System.out.println(&quot;Submit clicked&quot;);</body>
+                </ownedBehavior>
+                <interfaceRealization xmi:id="_7XZwYy2HEd2e7od4K9wNBA" name="InterfaceRealization1" supplier="_e4LI8C2CEd2e7od4K9wNBA" client="_RBdGAC1cEd2KTNOPeUc_7g" contract="_e4LI8C2CEd2e7od4K9wNBA"/>
+                <ownedOperation xmi:id="_OrNAgC2BEd2e7od4K9wNBA" name="init" method="_nXi-cC2BEd2e7od4K9wNBA"/>
+                <ownedOperation xmi:id="_RYXKUC2BEd2e7od4K9wNBA" name="start" method="_n_-3cC2BEd2e7od4K9wNBA"/>
+                <ownedOperation xmi:id="_SspcsC2BEd2e7od4K9wNBA" name="stop" method="_od9M4C2BEd2e7od4K9wNBA"/>
+                <ownedOperation xmi:id="_V0i9kC2IEd2e7od4K9wNBA" name="onSubmit" method="_aHLQYC2IEd2e7od4K9wNBA"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Package" xmi:id="_uUurcC1fEd2e7od4K9wNBA" name="model">
+                <packagedElement xmi:type="uml:Class" xmi:id="_szP1IC1gEd2e7od4K9wNBA" name="PlatformOntology" clientDependency="_JhR6Uy12Ed2e7od4K9wNBA _VuyHEy14Ed2e7od4K9wNBA">
+                  <generalization xmi:id="_iKLm4y1vEd2e7od4K9wNBA" general="_yNtm0C1tEd2e7od4K9wNBA"/>
+                  <ownedAttribute xmi:id="_En1PPC1iEd2e7od4K9wNBA" name="individual" type="_uGoIkC1gEd2e7od4K9wNBA" isOrdered="true" aggregation="composite" association="_En1POC1iEd2e7od4K9wNBA">
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_En1PPS1iEd2e7od4K9wNBA" value="*"/>
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_En1PPi1iEd2e7od4K9wNBA"/>
+                  </ownedAttribute>
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_6PyU8C1vEd2e7od4K9wNBA" name="PlatformOntology_toOWLBehavior" specification="_6Py8AC1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_6PyU8S1vEd2e7od4K9wNBA" name="out">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
+                    </ownedParameter>
+                    <language>java</language>
+                    <body>&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;InputStream header = getClass().getResourceAsStream(&quot;PlatformOntologyHeader.txt&quot;);&#xA;&#x9;&#x9;&#x9;int data;&#xA;&#x9;&#x9;&#x9;while ((data = header.read()) > -1) {&#xA;&#x9;&#x9;&#x9;&#x9;out.write(data);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;header.close();&#xA;&#x9;&#x9;&#x9;for (Enumeration e = getIndividuals(); e.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;&#x9;Individual i = (Individual) e.nextElement();&#xA;&#x9;&#x9;&#x9;&#x9;i.toOWL(out);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;InputStream footer = getClass().getResourceAsStream(&quot;PlatformOntologyFooter.txt&quot;);&#xA;&#x9;&#x9;&#x9;while ((data = footer.read()) > -1) {&#xA;&#x9;&#x9;&#x9;&#x9;out.write(data);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;footer.close();&#xA;&#x9;&#x9;&#x9;out.flush();&#xA;&#x9;&#x9;} catch (IOException e) {&#xA;&#x9;&#x9;&#x9;e.printStackTrace();&#xA;&#x9;&#x9;}</body>
+                  </ownedBehavior>
+                  <ownedOperation xmi:id="_6Py8AC1vEd2e7od4K9wNBA" name="toOWL" method="_6PyU8C1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_6Py8AS1vEd2e7od4K9wNBA" name="out">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Class" xmi:id="_uGoIkC1gEd2e7od4K9wNBA" name="Individual" clientDependency="_KTjEwy12Ed2e7od4K9wNBA _WMZQIy14Ed2e7od4K9wNBA">
+                  <generalization xmi:id="_ibk44C1vEd2e7od4K9wNBA" general="_yNtm0C1tEd2e7od4K9wNBA"/>
+                  <ownedAttribute xmi:id="_En1POS1iEd2e7od4K9wNBA" name="ontology" type="_szP1IC1gEd2e7od4K9wNBA" association="_En1POC1iEd2e7od4K9wNBA">
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_En1POi1iEd2e7od4K9wNBA" value="1"/>
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_En1POy1iEd2e7od4K9wNBA"/>
+                  </ownedAttribute>
+                  <ownedAttribute xmi:id="_WOBCzC1iEd2e7od4K9wNBA" name="slot" type="_IQ-VkC1hEd2e7od4K9wNBA" isOrdered="true" aggregation="composite" association="_WOBCyC1iEd2e7od4K9wNBA">
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WOBCzS1iEd2e7od4K9wNBA" value="*"/>
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WOBCzi1iEd2e7od4K9wNBA"/>
+                  </ownedAttribute>
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_6GyJ8C1vEd2e7od4K9wNBA" name="Individual_toOWLBehavior" specification="_6GyxAC1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_6GyJ8S1vEd2e7od4K9wNBA" name="out">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
+                    </ownedParameter>
+                    <language>java</language>
+                    <body>&#x9;&#x9;PrintStream pout = new PrintStream(out);&#xA;&#x9;&#x9;pout.print(&quot;  &lt;&quot;);&#xA;&#x9;&#x9;pout.print(getClassRef());&#xA;&#x9;&#x9;pout.print(&quot; rdf:ID=\&quot;&quot;);&#xA;&#x9;&#x9;pout.print(getName());&#xA;&#x9;&#x9;pout.println(&quot;\&quot;>&quot;);&#xA;&#x9;&#x9;pout.flush();&#xA;&#x9;&#x9;for (Enumeration e = getSlots(); e.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;Slot s = (Slot) e.nextElement();&#xA;&#x9;&#x9;&#x9;s.toOWL(out);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;pout.print(&quot;  &lt;/&quot;);&#xA;&#x9;&#x9;pout.print(getClassRef());&#xA;&#x9;&#x9;pout.println(&quot;>&quot;);&#xA;&#x9;&#x9;pout.flush();</body>
+                  </ownedBehavior>
+                  <ownedOperation xmi:id="_6GyxAC1vEd2e7od4K9wNBA" name="toOWL" method="_6GyJ8C1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_6GyxAS1vEd2e7od4K9wNBA" name="out">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Class" xmi:id="_IQ-VkC1hEd2e7od4K9wNBA" name="Slot" clientDependency="_KqI_0i12Ed2e7od4K9wNBA _WkaHgy14Ed2e7od4K9wNBA">
+                  <generalization xmi:id="_itfvUy1vEd2e7od4K9wNBA" general="_yNtm0C1tEd2e7od4K9wNBA"/>
+                  <ownedAttribute xmi:id="_WOBCyS1iEd2e7od4K9wNBA" name="individual" type="_uGoIkC1gEd2e7od4K9wNBA" association="_WOBCyC1iEd2e7od4K9wNBA">
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WOBCyi1iEd2e7od4K9wNBA" value="1"/>
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WOBCyy1iEd2e7od4K9wNBA" value="1"/>
+                  </ownedAttribute>
+                  <ownedAttribute xmi:id="_BaYH3C16Ed2e7od4K9wNBA" name="value" type="_uGoIkC1gEd2e7od4K9wNBA" association="_BaYH2C16Ed2e7od4K9wNBA">
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BaYH3S16Ed2e7od4K9wNBA" value="1"/>
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BaYH3i16Ed2e7od4K9wNBA" value="1"/>
+                  </ownedAttribute>
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_54--gC1vEd2e7od4K9wNBA" name="Slot_toOWLBehavior" specification="_54--gi1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_54--gS1vEd2e7od4K9wNBA" name="out">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
+                    </ownedParameter>
+                    <language>java</language>
+                    <body>&#x9;&#x9;PrintStream pout = new PrintStream(out);&#xA;&#x9;&#x9;pout.print(&quot;    &lt;&quot;);&#xA;&#x9;&#x9;pout.print(getClassRef());&#xA;&#x9;&#x9;pout.print(&quot; rdf:resource=\&quot;&quot;);&#xA;&#x9;&#x9;if (getValue() != null) {&#xA;&#x9;&#x9;&#x9;pout.print(getValue().getRef());&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;pout.print(&quot;NULL&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;pout.println(&quot;\&quot;/>&quot;);&#xA;&#x9;&#x9;pout.flush();</body>
+                  </ownedBehavior>
+                  <ownedOperation xmi:id="_54--gi1vEd2e7od4K9wNBA" name="toOWL" method="_54--gC1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_54--gy1vEd2e7od4K9wNBA" name="out">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Association" xmi:id="_En1POC1iEd2e7od4K9wNBA" name="Association_PlatformOntology_Individual" memberEnd="_En1POS1iEd2e7od4K9wNBA _En1PPC1iEd2e7od4K9wNBA"/>
+                <packagedElement xmi:type="uml:Association" xmi:id="_WOBCyC1iEd2e7od4K9wNBA" name="Association_Individual_Slot" memberEnd="_WOBCyS1iEd2e7od4K9wNBA _WOBCzC1iEd2e7od4K9wNBA"/>
+                <packagedElement xmi:type="uml:Class" xmi:id="_yNtm0C1tEd2e7od4K9wNBA" name="OntologyElement" isAbstract="true">
+                  <ownedAttribute xmi:id="_4J7kEC1hEd2e7od4K9wNBA" name="classNS">
+                    <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                  </ownedAttribute>
+                  <ownedAttribute xmi:id="_5lh_YC1hEd2e7od4K9wNBA" name="className">
+                    <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                  </ownedAttribute>
+                  <ownedAttribute xmi:id="_A7uJ0C1iEd2e7od4K9wNBA" name="namespace">
+                    <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                  </ownedAttribute>
+                  <ownedAttribute xmi:id="_GFxYkC19Ed2e7od4K9wNBA" name="name">
+                    <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                  </ownedAttribute>
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zFresC1vEd2e7od4K9wNBA" name="OntologyElement_toOWLBehavior" specification="_0cvqMC1tEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_4qkqoC1vEd2e7od4K9wNBA" name="out">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
+                    </ownedParameter>
+                  </ownedBehavior>
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_klfqYC19Ed2e7od4K9wNBA" name="OntologyElement_getRefBehavior" specification="_TFsysi19Ed2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_ur89AC19Ed2e7od4K9wNBA" name="return" direction="return">
+                      <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                    </ownedParameter>
+                    <language>java</language>
+                    <body>&#x9;&#x9;StringBuffer buf = new StringBuffer();&#xD;&#x9;&#x9;if (getNamespace() != null) {&#xD;&#x9;&#x9;&#x9;buf.append('&amp;');&#xD;&#x9;&#x9;&#x9;buf.append(getNamespace());&#xD;&#x9;&#x9;&#x9;buf.append(';');&#xD;&#x9;&#x9;}&#xD;&#x9;&#x9;buf.append('#');&#xD;&#x9;&#x9;buf.append(getName());&#xD;&#x9;&#x9;return buf.toString();</body>
+                  </ownedBehavior>
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_uREiYC1-Ed2e7od4K9wNBA" name="OntologyElement_getClassRefBehavior" specification="_qY1FgC1-Ed2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_AO2WkC1_Ed2e7od4K9wNBA" name="return" direction="return">
+                      <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                    </ownedParameter>
+                    <language>java</language>
+                    <body>&#x9;&#x9;StringBuffer buf = new StringBuffer();&#xD;&#x9;&#x9;buf.append(getClassNS());&#xD;&#x9;&#x9;buf.append(':');&#xD;&#x9;&#x9;buf.append(getClassName());&#xD;&#x9;&#x9;return buf.toString();</body>
+                  </ownedBehavior>
+                  <ownedOperation xmi:id="_0cvqMC1tEd2e7od4K9wNBA" name="toOWL" method="_zFresC1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_jvnJEC1uEd2e7od4K9wNBA" name="out">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:id="_TFsysi19Ed2e7od4K9wNBA" name="getRef" method="_klfqYC19Ed2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_gRthAC19Ed2e7od4K9wNBA" name="return" direction="return">
+                      <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:id="_qY1FgC1-Ed2e7od4K9wNBA" name="getClassRef" method="_uREiYC1-Ed2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_rhqV0C1-Ed2e7od4K9wNBA" name="return" direction="return">
+                      <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Dependency" xmi:id="_JhR6Uy12Ed2e7od4K9wNBA" name="PlatformOntology_JavaIoDependency" client="_szP1IC1gEd2e7od4K9wNBA">
+                  <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_luZBAETFEdutoZk0i5ZyXw"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Dependency" xmi:id="_KTjEwy12Ed2e7od4K9wNBA" name="Individual_JavaIoDependency" client="_uGoIkC1gEd2e7od4K9wNBA">
+                  <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_luZBAETFEdutoZk0i5ZyXw"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Dependency" xmi:id="_KqI_0i12Ed2e7od4K9wNBA" name="Slot_JavaIoDependency" client="_IQ-VkC1hEd2e7od4K9wNBA">
+                  <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_luZBAETFEdutoZk0i5ZyXw"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Dependency" xmi:id="_VuyHEy14Ed2e7od4K9wNBA" name="PlatformOntology_JavaUtilDependency" client="_szP1IC1gEd2e7od4K9wNBA">
+                  <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_6Kkv0PfuEdqaqL9wEVL3aA"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Dependency" xmi:id="_WMZQIy14Ed2e7od4K9wNBA" name="Individual_JavaUtilDependency" client="_uGoIkC1gEd2e7od4K9wNBA">
+                  <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_6Kkv0PfuEdqaqL9wEVL3aA"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Dependency" xmi:id="_WkaHgy14Ed2e7od4K9wNBA" name="Slot_JavaUtilDependency" client="_IQ-VkC1hEd2e7od4K9wNBA">
+                  <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_6Kkv0PfuEdqaqL9wEVL3aA"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Association" xmi:id="_BaYH2C16Ed2e7od4K9wNBA" name="Association_Slot_Individual" memberEnd="_BaYH2S16Ed2e7od4K9wNBA _BaYH3C16Ed2e7od4K9wNBA">
+                  <ownedEnd xmi:id="_BaYH2S16Ed2e7od4K9wNBA" name="slot" type="_IQ-VkC1hEd2e7od4K9wNBA" association="_BaYH2C16Ed2e7od4K9wNBA">
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BaYH2i16Ed2e7od4K9wNBA" value="1"/>
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BaYH2y16Ed2e7od4K9wNBA" value="1"/>
+                  </ownedEnd>
+                </packagedElement>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_-B99Yy2AEd2e7od4K9wNBA" name="DiscoveryApplet_modelDependency" supplier="_uUurcC1fEd2e7od4K9wNBA" client="_RBdGAC1cEd2KTNOPeUc_7g"/>
+              <packagedElement xmi:type="uml:Association" xmi:id="_ZKebyC2BEd2e7od4K9wNBA" name="Association_DiscoveryApplet_PlatformOntology" memberEnd="_ZKebyS2BEd2e7od4K9wNBA _ZKebzC2BEd2e7od4K9wNBA">
+                <ownedEnd xmi:id="_ZKebyS2BEd2e7od4K9wNBA" name="applet" type="_RBdGAC1cEd2KTNOPeUc_7g" association="_ZKebyC2BEd2e7od4K9wNBA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZKebyi2BEd2e7od4K9wNBA" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZKebyy2BEd2e7od4K9wNBA"/>
+                </ownedEnd>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Package" xmi:id="_ICi1AC2CEd2e7od4K9wNBA" name="view">
+                <packagedElement xmi:type="uml:Interface" xmi:id="_RX_hcC2CEd2e7od4K9wNBA" name="MainView">
+                  <ownedOperation xmi:id="_autZMi2CEd2e7od4K9wNBA" name="setEnabled" isAbstract="true">
+                    <ownedParameter xmi:id="_q6-McC2CEd2e7od4K9wNBA" name="enabled">
+                      <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_--NgwPyKEdqlTr7ZXrCGhQ"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:id="_b4ZlIi2CEd2e7od4K9wNBA" name="addListener" isAbstract="true">
+                    <ownedParameter xmi:id="_1TxMQC2CEd2e7od4K9wNBA" name="listener" type="_e4LI8C2CEd2e7od4K9wNBA"/>
+                  </ownedOperation>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Package" xmi:id="_RpXlUi2CEd2e7od4K9wNBA" name="awt">
+                  <packagedElement xmi:type="uml:Class" xmi:id="_C_VkYC2DEd2e7od4K9wNBA" name="AWTMainView" clientDependency="_kBF4oy2EEd2e7od4K9wNBA _6GUqYy2EEd2e7od4K9wNBA __7MMAy2EEd2e7od4K9wNBA _pQWEYy2HEd2e7od4K9wNBA">
+                    <generalization xmi:id="_BQ92sy2GEd2e7od4K9wNBA">
+                      <general xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_cEVFUEVbEdu1R4x2hFmiHQ"/>
+                    </generalization>
+                    <ownedAttribute xmi:id="_cBVXXC2FEd2e7od4K9wNBA" name="listener" type="_e4LI8C2CEd2e7od4K9wNBA" association="_cBVXWC2FEd2e7od4K9wNBA">
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cBVXXS2FEd2e7od4K9wNBA" value="*"/>
+                      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cBVXXi2FEd2e7od4K9wNBA"/>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_gahIoC2GEd2e7od4K9wNBA" name="submitBtn" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_5EfdcEPdEdusb52s3APTjA"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_ttTNUC2GEd2e7od4K9wNBA">
+                        <language>java</language>
+                        <body>new Button(&quot;Submit&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_rrfYgC2EEd2e7od4K9wNBA" name="AWTMainViewBehavior" specification="_lZufgC2EEd2e7od4K9wNBA">
+                      <ownedParameter xmi:id="_vgL8sC2FEd2e7od4K9wNBA" name="return" type="_C_VkYC2DEd2e7od4K9wNBA" direction="return"/>
+                      <language>java</language>
+                      <body>&#x9;&#x9;submitBtn.addActionListener(new ActionListener() {&#xA;&#x9;&#x9;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;notifySubmitClicked();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;&#x9;&#x9;setLayout(new FlowLayout());&#xA;&#x9;&#x9;add(submitBtn);&#xD;&#x9;&#x9;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().setLayout(new BorderLayout());&#xA;&#x9;&#x9;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().add(this, BorderLayout.CENTER);</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_WnhvIC2HEd2e7od4K9wNBA" name="AWTMainView_notifySubmitClickedBehavior" specification="_JYVJ8C2HEd2e7od4K9wNBA">
+                      <language>java</language>
+                      <body>&#x9;&#x9;for (java.util.Enumeration ls = getListeners(); ls.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;((MainViewListener) ls.nextElement()).onSubmit();&#xA;&#x9;&#x9;}</body>
+                    </ownedBehavior>
+                    <interfaceRealization xmi:id="_kBF4oy2EEd2e7od4K9wNBA" name="InterfaceRealization1" supplier="_RX_hcC2CEd2e7od4K9wNBA" client="_C_VkYC2DEd2e7od4K9wNBA" contract="_RX_hcC2CEd2e7od4K9wNBA"/>
+                    <ownedOperation xmi:id="_lZufgC2EEd2e7od4K9wNBA" name="AWTMainView" method="_rrfYgC2EEd2e7od4K9wNBA">
+                      <ownedParameter xmi:id="_mhexwC2EEd2e7od4K9wNBA" name="return" type="_C_VkYC2DEd2e7od4K9wNBA" direction="return"/>
+                    </ownedOperation>
+                    <ownedOperation xmi:id="_JYVJ8C2HEd2e7od4K9wNBA" name="notifySubmitClicked" visibility="private" method="_WnhvIC2HEd2e7od4K9wNBA"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Class" xmi:id="_02_UMC2DEd2e7od4K9wNBA" name="AWTViewFactory" clientDependency="_6aJawy2DEd2e7od4K9wNBA">
+                    <generalization xmi:id="_2sJfAy2DEd2e7od4K9wNBA" general="_KAKi0C2DEd2e7od4K9wNBA"/>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_YEFUEC2EEd2e7od4K9wNBA" name="AWTViewFactoryBehavior" specification="_OHNbQC2EEd2e7od4K9wNBA">
+                      <ownedParameter xmi:id="_hZm5AC2EEd2e7od4K9wNBA" name="return" type="_02_UMC2DEd2e7od4K9wNBA" direction="return"/>
+                      <language>java</language>
+                      <body>    // fail factory creation if AWT not available&#xA;    Class.forName(&quot;java.awt.Toolkit&quot;);</body>
+                    </ownedBehavior>
+                    <ownedOperation xmi:id="_OHNbQC2EEd2e7od4K9wNBA" name="AWTViewFactory" method="_YEFUEC2EEd2e7od4K9wNBA">
+                      <ownedParameter xmi:id="_UWTawC2EEd2e7od4K9wNBA" name="return" type="_02_UMC2DEd2e7od4K9wNBA" direction="return"/>
+                      <raisedException xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_OnuCwET5Edu8hscEjMiyKA"/>
+                    </ownedOperation>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_6aJawy2DEd2e7od4K9wNBA" name="Dependency1" supplier="_C_VkYC2DEd2e7od4K9wNBA" client="_02_UMC2DEd2e7od4K9wNBA"/>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_6GUqYy2EEd2e7od4K9wNBA" name="AWTMainView_JavaAwtDependency" client="_C_VkYC2DEd2e7od4K9wNBA">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_dK7VkEPdEdusb52s3APTjA"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="__7MMAy2EEd2e7od4K9wNBA" name="AWTMainView_JavaAwtEventDependency" client="_C_VkYC2DEd2e7od4K9wNBA">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_yIdwYEPmEdug19jXgM5cew"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Association" xmi:id="_cBVXWC2FEd2e7od4K9wNBA" name="Association_AWTMainView_MainViewListener" memberEnd="_cBVXWS2FEd2e7od4K9wNBA _cBVXXC2FEd2e7od4K9wNBA">
+                    <ownedEnd xmi:id="_cBVXWS2FEd2e7od4K9wNBA" name="view" type="_C_VkYC2DEd2e7od4K9wNBA" association="_cBVXWC2FEd2e7od4K9wNBA">
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cBVXWi2FEd2e7od4K9wNBA" value="1"/>
+                      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cBVXWy2FEd2e7od4K9wNBA"/>
+                    </ownedEnd>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_pQWEYy2HEd2e7od4K9wNBA" name="AWTMainView_viewDependency" supplier="_ICi1AC2CEd2e7od4K9wNBA" client="_C_VkYC2DEd2e7od4K9wNBA"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_e4LI8C2CEd2e7od4K9wNBA" name="MainViewListener">
+                  <ownedOperation xmi:id="_nS8V0i2CEd2e7od4K9wNBA" name="onSubmit" isAbstract="true"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Class" xmi:id="_KAKi0C2DEd2e7od4K9wNBA" name="ViewFactory" clientDependency="_Puzgoy2DEd2e7od4K9wNBA" isAbstract="true">
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f7Ds0C2DEd2e7od4K9wNBA" name="ViewFactory_getDefaultBehavior" specification="_S6VBcC2DEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_tOQBMC2DEd2e7od4K9wNBA" name="return" type="_KAKi0C2DEd2e7od4K9wNBA" direction="return"/>
+                    <language>java</language>
+                    <body>    String[] options = {&#xA;            &quot;be.ac.vub.platformkit.discovery.view.swing.SwingViewFactory&quot;,&#xA;            &quot;be.ac.vub.platformkit.discovery.view.awt.AWTViewFactory&quot;,&#xA;            &quot;be.ac.vub.platformkit.discovery.view.lcdui.LCDUIViewFactory&quot;&#xA;    };&#xA;    ViewFactory factory = null;&#xA;    for (int i = 0; i &lt; options.length &amp;&amp; factory == null; i++) {&#xA;        try {&#xA;            factory = (ViewFactory) Class.forName(options[i]).newInstance();&#xA;        } catch (Exception e) {&#xA;        }&#xA;    }&#xA;    return factory;</body>
+                  </ownedBehavior>
+                  <ownedOperation xmi:id="_S6VBcC2DEd2e7od4K9wNBA" name="getDefault" isStatic="true" method="_f7Ds0C2DEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_UFS_wC2DEd2e7od4K9wNBA" name="return" type="_KAKi0C2DEd2e7od4K9wNBA" direction="return"/>
+                  </ownedOperation>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Dependency" xmi:id="_Puzgoy2DEd2e7od4K9wNBA" name="Dependency1" supplier="_RX_hcC2CEd2e7od4K9wNBA" client="_KAKi0C2DEd2e7od4K9wNBA"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_KUjT4y2CEd2e7od4K9wNBA" name="DiscoveryApplet_viewDependency" supplier="_ICi1AC2CEd2e7od4K9wNBA" client="_RBdGAC1cEd2KTNOPeUc_7g"/>
+              <packagedElement xmi:type="uml:Association" xmi:id="_7_1paC2HEd2e7od4K9wNBA" name="DiscoveryApplet_MainView_Association" memberEnd="_7_1paS2HEd2e7od4K9wNBA _7_1pbC2HEd2e7od4K9wNBA">
+                <ownedEnd xmi:id="_7_1paS2HEd2e7od4K9wNBA" name="applet" type="_RBdGAC1cEd2KTNOPeUc_7g" association="_7_1paC2HEd2e7od4K9wNBA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7_1pai2HEd2e7od4K9wNBA" value="1"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7_1pay2HEd2e7od4K9wNBA"/>
+                </ownedEnd>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_0D-NkC1cEd2e7od4K9wNBA">
+      <eAnnotations xmi:id="_0EB38C1cEd2e7od4K9wNBA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../uml2cs-transformations/profiles/Applet.profile.uml#_i8fxgDgqEduNII1tDKqNvA"/>
+      </eAnnotations>
+      <appliedProfile href="../../uml2cs-transformations/profiles/Applet.profile.uml#_8186IOQoEdqD2ZNp93yIAQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_0EDtIC1cEd2e7od4K9wNBA">
+      <eAnnotations xmi:id="_0EEUMC1cEd2e7od4K9wNBA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_AXaVIC1dEd2e7od4K9wNBA">
+      <eAnnotations xmi:id="_AXaVIS1dEd2e7od4K9wNBA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../uml2cs-transformations/profiles/AbstractFactory.profile.uml#_-a-lgUPTEdusb52s3APTjA"/>
+      </eAnnotations>
+      <appliedProfile href="../../uml2cs-transformations/profiles/AbstractFactory.profile.uml#_j8ZN4EPTEdusb52s3APTjA"/>
+    </profileApplication>
+    <profileApplication xmi:id="_AXa8MC1dEd2e7od4K9wNBA">
+      <eAnnotations xmi:id="_AXa8MS1dEd2e7od4K9wNBA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../uml2cs-transformations/profiles/Async.profile.uml#_5nnlIUSMEduP3ua-vE3IKQ"/>
+      </eAnnotations>
+      <appliedProfile href="../../uml2cs-transformations/profiles/Async.profile.uml#_wPvPwUSMEduP3ua-vE3IKQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_AXcKUC1dEd2e7od4K9wNBA">
+      <eAnnotations xmi:id="_AXcKUS1dEd2e7od4K9wNBA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../uml2cs-transformations/profiles/Final.profile.uml#_4InvEDntEduHCOb_wCU8nA"/>
+      </eAnnotations>
+      <appliedProfile href="../../uml2cs-transformations/profiles/Final.profile.uml#_eb5C0PrOEdq0MPWKkoLgDQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_AXcxYC1dEd2e7od4K9wNBA">
+      <eAnnotations xmi:id="_AXcxYS1dEd2e7od4K9wNBA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../uml2cs-transformations/profiles/Observer.profile.uml#_g6Z98DgqEduNII1tDKqNvA"/>
+      </eAnnotations>
+      <appliedProfile href="../../uml2cs-transformations/profiles/Observer.profile.uml#_jn7CcI8YEdq-Os5Rz1ENIw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_AXcxYi1dEd2e7od4K9wNBA">
+      <eAnnotations xmi:id="_AXdYcC1dEd2e7od4K9wNBA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../uml2cs-transformations/profiles/Singleton.profile.uml#_eMWcQDgqEduNII1tDKqNvA"/>
+      </eAnnotations>
+      <appliedProfile href="../../uml2cs-transformations/profiles/Singleton.profile.uml#_HwwcYI8aEdq-Os5Rz1ENIw"/>
+    </profileApplication>
+  </uml:Model>
+  <Applet:Applet xmi:id="_EgGo0C1dEd2e7od4K9wNBA" appletInfo="(C) 2008, Dennis Wagelaar, System and Software Engineering Lab, Vrije Universiteit Brussel" parameterInfo="{{}}" base_Classifier="_RBdGAC1cEd2KTNOPeUc_7g"/>
+  <Singleton:Singleton xmi:id="_EgH28C1dEd2e7od4K9wNBA" base_Classifier="_RBdGAC1cEd2KTNOPeUc_7g"/>
+  <AbstractFactory:AbstractFactory xmi:id="_Nt9qQC2DEd2e7od4K9wNBA" base_Classifier="_KAKi0C2DEd2e7od4K9wNBA"/>
+  <AbstractFactory:product xmi:id="_QZIQAC2DEd2e7od4K9wNBA" base_Dependency="_Puzgoy2DEd2e7od4K9wNBA"/>
+  <AbstractFactory:ConcreteFactory xmi:id="_4TWGUC2DEd2e7od4K9wNBA" base_Class="_02_UMC2DEd2e7od4K9wNBA"/>
+  <AbstractFactory:product xmi:id="_7GFTsC2DEd2e7od4K9wNBA" base_Dependency="_6aJawy2DEd2e7od4K9wNBA"/>
+  <Standard:Create xmi:id="_P29hoC2EEd2e7od4K9wNBA" base_BehavioralFeature="_OHNbQC2EEd2e7od4K9wNBA"/>
+  <Standard:Create xmi:id="_oJQn4C2EEd2e7od4K9wNBA" base_BehavioralFeature="_lZufgC2EEd2e7od4K9wNBA"/>
+</xmi:XMI>
