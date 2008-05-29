@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<transformations:TransformationConfig xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:transformations="http://ssel.vub.ac.be/uml2cs/Transformations" saveModels="last" targetProject="platformkit-discovery-applet">
+  <mapping xsi:type="transformations:JavaMapping">
+    <dataTypes xsi:type="transformations:Java1DataTypes"/>
+  </mapping>
+  <observer/>
+  <applet/>
+</transformations:TransformationConfig>
