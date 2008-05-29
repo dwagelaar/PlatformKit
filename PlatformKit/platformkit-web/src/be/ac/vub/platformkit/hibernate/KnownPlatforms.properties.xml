@@ -13,6 +13,7 @@
 	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5">JDK 1.5 PC</entry>
 	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6">JDK 1.5 PC</entry>
 	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14">JDK 1.5 PC</entry>
 	
 	<!-- Siemens CX70v mobile phone -->
 	<entry key="SIE-CX7V">Siemens CX70v mobile phone with J2ME MIDP 2.0</entry>
