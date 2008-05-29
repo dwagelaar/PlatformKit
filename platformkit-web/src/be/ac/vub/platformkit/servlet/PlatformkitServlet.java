@@ -45,7 +45,7 @@ import be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory;
 public class PlatformkitServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -8587189401115112481L;
-	
+
 	private static final IOntologiesFactory FACTORY = new OWLAPIOntologiesFactory();
 
 	private static Logger logger = Logger.getLogger(IOntologies.LOGGER);
@@ -81,7 +81,7 @@ public class PlatformkitServlet extends HttpServlet {
 			ConstraintSpace space = init(req, session.getBaseURL());
 			//calculate most/least specific constraint sets
 			logger.info(DateFormat.getDateInstance().format(new Date()));
-			List<ConstraintSet> result = Collections.EMPTY_LIST;
+			List<ConstraintSet> result = Collections.emptyList();
 			PlatformDescription pd = session.getDescription();
 			if (pd.getData() != null) {
 				InputStream input = pd.getInputStream();

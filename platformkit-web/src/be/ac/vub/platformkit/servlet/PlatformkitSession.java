@@ -1,7 +1,5 @@
 package be.ac.vub.platformkit.servlet;
 
-import be.ac.vub.platformkit.kb.IOntologies;
-
 import java.io.*;
 import java.util.logging.*;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -9,6 +7,7 @@ import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.util.Streams;
 import java.util.*;
+import be.ac.vub.platformkit.kb.*;
 
 public class PlatformkitSession {
 	protected java.util.Properties parameters = new Properties();
@@ -50,7 +49,7 @@ public class PlatformkitSession {
 		} else {
 			logger.warning("No platform ontology file uploaded");
 			if (req.getParameterNames().hasMoreElements()) {
-				for (Enumeration<?> ns = req.getParameterNames(); ns
+				for (Enumeration ns = req.getParameterNames(); ns
 						.hasMoreElements();) {
 					String name = (String) ns.nextElement();
 					parameters.setProperty(name, req.getParameter(name));

@@ -12,10 +12,10 @@ uses UML2;
 -- ======================================================================
 
 helper def : persistents : Sequence(UML2!"Persistence::Persistent") = 
-	UML2!"Persistence::Persistent"->allInstances();
+	UML2!"Persistence::Persistent".allInstances();
 
 helper def : mappeds : Sequence(UML2!"Persistence::mapped") = 
-	UML2!"Persistence::mapped"->allInstances();
+	UML2!"Persistence::mapped".allInstances();
 
 helper context UML2!"uml::Class" def : isPersistent() : Boolean =
 	thisModule.persistents->select(o|o.base_Class=self)->notEmpty();
@@ -47,16 +47,16 @@ helper context UML2!"uml::Type" def : getGeneratorClass() : String =
 rule HibernateMapping {
 	from s : UML2!"uml::Model"
 	to hm : HBM!HibernateMappingType mapsTo s (
-		class <- UML2!Class->allInstances()->select(c|c->isPersistent())),
+		class <- UML2!Class.allInstances()->select(c|c.isPersistent())),
 	   dr : HBM!DocumentRoot (
 		hibernateMapping <- hm)
 }
 
 rule Class {
-	from s : UML2!"uml::Class" (s->isPersistent())
-	using { persistent : UML2!"Persistence::Persistent" = s->getPersistent(); }
+	from s : UML2!"uml::Class" (s.isPersistent())
+	using { persistent : UML2!"Persistence::Persistent" = s.getPersistent(); }
 	to c : HBM!ClassType mapsTo s (
-		name <- s->qualifiedName('.'),
+		name <- s.qualifiedName('.').debug('PersistentClass'),
 		table <- s.name,
 		property <- s.attribute->select(a|a <> persistent.id),
 		id <- id),
@@ -65,15 +65,15 @@ rule Class {
 		column1 <- persistent.id.name + '_ID',
 		generator <- gen),
 	   gen : HBM!GeneratorType (
-	   	class <- persistent.id.type->getGeneratorClass())
+	   	class <- persistent.id.type.getGeneratorClass())
 }
 
 rule Property {
 	from s : UML2!"uml::Property" (
-		if s.class->oclIsUndefined() then false else
-			if s.class->isPersistent() then
-				s.class->getPersistent().id <> s and
-				not s->isMapped()
+		if s.class.oclIsUndefined() then false else
+			if s.class.isPersistent() then
+				s.class.getPersistent().id <> s and
+				not s.isMapped()
 			else false endif
 		endif)
 	to t : HBM!PropertyType mapsTo s (
@@ -82,33 +82,33 @@ rule Property {
 
 rule MappedProperty {
 	from s : UML2!"uml::Property" (
-		if s.class->oclIsUndefined() then false else
-			if s.class->isPersistent() then
-				s.class->getPersistent().id <> s and
-				if s->isMapped() then
-					s->getMapped().length <= 0
+		if s.class.oclIsUndefined() then false else
+			if s.class.isPersistent() then
+				s.class.getPersistent().id <> s and
+				if s.isMapped() then
+					s.getMapped().length <= 0
 				else false endif
 			else false endif
 		endif)
 	to t : HBM!PropertyType (
 		name <- s.name,
-		type1 <- s->getMapped().type)
+		type1 <- s.getMapped().type)
 }
 
 rule MappedPropertyWithLength {
 	from s : UML2!"uml::Property" (
-		if s.class->oclIsUndefined() then false else
-			if s.class->isPersistent() then
-				s.class->getPersistent().id <> s and
-				if s->isMapped() then
-					s->getMapped().length > 0
+		if s.class.oclIsUndefined() then false else
+			if s.class.isPersistent() then
+				s.class.getPersistent().id <> s and
+				if s.isMapped() then
+					s.getMapped().length > 0
 				else false endif
 			else false endif
 		endif)
 	to t : HBM!PropertyType (
 		name <- s.name,
-		type1 <- s->getMapped().type,
-		length <- s->getMapped().length)
+		type1 <- s.getMapped().type,
+		length <- s.getMapped().length)
 }
 
 -- ======================================================================
