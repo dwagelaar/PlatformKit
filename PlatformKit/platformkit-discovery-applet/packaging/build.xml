@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="platformkit-discovery-applet/packaging" default="all">
+	<property name="bin.path" value="../bin"/>
+	
+	<target name="clean">
+		<delete file="pkda.jar"/>
+    </target>
+
+    <target name="jar" depends="clean">
+        <jar destfile="pkda.jar" basedir="${bin.path}">
+        	<include name="**"/>
+        	<manifest>
+        		<attribute name="Main-Class" value="sun.applet.AppletViewer"/>
+        	</manifest>
+        </jar>
+    </target>
+	
+	<target name="all" depends="jar"/>
+</project>
