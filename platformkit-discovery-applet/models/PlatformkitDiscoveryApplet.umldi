@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_CqXrsS1cEd2KTNOPeUc_7g" activeDiagram="_NjO2YC2CEd2e7od4K9wNBA">
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_CqXrsS1cEd2KTNOPeUc_7g" activeDiagram="_QAsMkC1cEd2KTNOPeUc_7g">
   <model href="PlatformkitDiscoveryApplet.uml#_w8IxIM37EdqwVrslYOdUDA"/>
   <diagrams xmi:id="_CqbWEC1cEd2KTNOPeUc_7g" position="0,0" size="100,100" name="PlatformkitDiscoveryApplet" viewport="0,0">
     <property xmi:id="_CxdyMC1cEd2KTNOPeUc_7g" key="pageFormatName" value="A4"/>
@@ -515,6 +515,11 @@
                       <element href="PlatformkitDiscoveryApplet.uml#_b4ZlIi2CEd2e7od4K9wNBA"/>
                     </semanticModel>
                   </contained>
+                  <contained xsi:type="di:GraphNode" xmi:id="_XHLoIC2eEd2B-Yp_XuL6wA" position="0,0" size="-1,-1">
+                    <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_XHLoIS2eEd2B-Yp_XuL6wA" presentation="default">
+                      <element href="PlatformkitDiscoveryApplet.uml#_XHgYQC2eEd2B-Yp_XuL6wA"/>
+                    </semanticModel>
+                  </contained>
                 </contained>
               </contained>
               <contained xsi:type="di:GraphNode" xmi:id="_RpXlUC2CEd2e7od4K9wNBA" position="19,17" size="50,50">
@@ -615,6 +620,11 @@
                         <element href="PlatformkitDiscoveryApplet.uml#_b4ZlIi2CEd2e7od4K9wNBA"/>
                       </semanticModel>
                     </contained>
+                    <contained xsi:type="di:GraphNode" xmi:id="_d5Vb8C2fEd2B-Yp_XuL6wA" position="0,0" size="-1,-1">
+                      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_d5Vb8S2fEd2B-Yp_XuL6wA" presentation="default">
+                        <element href="PlatformkitDiscoveryApplet.uml#_XHgYQC2eEd2B-Yp_XuL6wA"/>
+                      </semanticModel>
+                    </contained>
                   </contained>
                 </contained>
                 <contained xsi:type="di:GraphNode" xmi:id="_C_TIIC2DEd2e7od4K9wNBA" position="26,249" size="261,-1">
@@ -632,6 +642,11 @@
                         <element href="PlatformkitDiscoveryApplet.uml#_gahIoC2GEd2e7od4K9wNBA"/>
                       </semanticModel>
                     </contained>
+                    <contained xsi:type="di:GraphNode" xmi:id="_1pLx4C2eEd2B-Yp_XuL6wA" position="0,0" size="-1,-1">
+                      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_1pLx4S2eEd2B-Yp_XuL6wA" presentation="default">
+                        <element href="PlatformkitDiscoveryApplet.uml#_1pNAAC2eEd2B-Yp_XuL6wA"/>
+                      </semanticModel>
+                    </contained>
                   </contained>
                   <contained xsi:type="di:GraphNode" xmi:id="_C_TIJS2DEd2e7od4K9wNBA">
                     <property xmi:id="_C_TIJi2DEd2e7od4K9wNBA" key="eStructuralFeatureID" value="47"/>
@@ -646,6 +661,11 @@
                     <contained xsi:type="di:GraphNode" xmi:id="_JYUi4C2HEd2e7od4K9wNBA" position="0,0" size="-1,-1">
                       <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_JYUi4S2HEd2e7od4K9wNBA" presentation="default">
                         <element href="PlatformkitDiscoveryApplet.uml#_JYVJ8C2HEd2e7od4K9wNBA"/>
+                      </semanticModel>
+                    </contained>
+                    <contained xsi:type="di:GraphNode" xmi:id="_u2nR4C2eEd2B-Yp_XuL6wA" position="0,0" size="-1,-1">
+                      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_u2nR4S2eEd2B-Yp_XuL6wA" presentation="default">
+                        <element href="PlatformkitDiscoveryApplet.uml#_nuQIEC2eEd2B-Yp_XuL6wA"/>
                       </semanticModel>
                     </contained>
                   </contained>
