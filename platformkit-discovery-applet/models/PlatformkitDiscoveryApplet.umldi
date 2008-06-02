@@ -85,10 +85,10 @@
         </diagrams>
         <subdiagrams xmi:id="_QAq-cC1cEd2KTNOPeUc_7g">
           <model href="PlatformkitDiscoveryApplet.uml#_O5BZ4C1cEd2KTNOPeUc_7g"/>
-          <diagrams xmi:id="_QAsMkC1cEd2KTNOPeUc_7g" position="0,0" size="100,100" name="unnamed" viewport="0,0">
-            <property xmi:id="_QAzhUC1cEd2KTNOPeUc_7g" key="pageFormatName" value="A4"/>
-            <property xmi:id="_QAzhUS1cEd2KTNOPeUc_7g" key="diagramWidth" value="840"/>
-            <property xmi:id="_QAzhUi1cEd2KTNOPeUc_7g" key="diagramHeight" value="1188"/>
+          <diagrams xmi:id="_QAsMkC1cEd2KTNOPeUc_7g" position="0,0" size="100,100" name="unnamed" viewport="25,19">
+            <property xmi:id="_QAzhUC1cEd2KTNOPeUc_7g" key="pageFormatName" value="A0"/>
+            <property xmi:id="_QAzhUS1cEd2KTNOPeUc_7g" key="diagramWidth" value="3364"/>
+            <property xmi:id="_QAzhUi1cEd2KTNOPeUc_7g" key="diagramHeight" value="4756"/>
             <property xmi:id="_QAzhUy1cEd2KTNOPeUc_7g" key="pageMarginName" value="Small Margin"/>
             <property xmi:id="_QAzhVC1cEd2KTNOPeUc_7g" key="diagramTopMargin" value="20"/>
             <property xmi:id="_QAzhVS1cEd2KTNOPeUc_7g" key="diagramBottomMargin" value="20"/>
@@ -132,6 +132,11 @@
                 <contained xsi:type="di:GraphNode" xmi:id="_Y9HRAC2IEd2e7od4K9wNBA" position="0,0" size="-1,-1">
                   <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Y9HRAS2IEd2e7od4K9wNBA" presentation="default">
                     <element href="PlatformkitDiscoveryApplet.uml#_V0i9kC2IEd2e7od4K9wNBA"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Tf1nMDCBEd2NeaEjqU5_yA" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Tf1nMTCBEd2NeaEjqU5_yA" presentation="default">
+                    <element href="PlatformkitDiscoveryApplet.uml#_Tf4qgDCBEd2NeaEjqU5_yA"/>
                   </semanticModel>
                 </contained>
               </contained>
@@ -581,7 +586,7 @@
             </diagrams>
             <subdiagrams xmi:id="_8Wb9wC2CEd2e7od4K9wNBA">
               <model href="PlatformkitDiscoveryApplet.uml#_RpXlUi2CEd2e7od4K9wNBA"/>
-              <diagrams xmi:id="_8Wdy8C2CEd2e7od4K9wNBA" position="0,0" size="100,100" name="unnamed" viewport="0,0">
+              <diagrams xmi:id="_8Wdy8C2CEd2e7od4K9wNBA" position="0,0" size="100,100" name="unnamed" viewport="66,22">
                 <property xmi:id="_8WoLAC2CEd2e7od4K9wNBA" key="pageFormatName" value="A0"/>
                 <property xmi:id="_8WoLAS2CEd2e7od4K9wNBA" key="diagramWidth" value="3364"/>
                 <property xmi:id="_8WoLAi2CEd2e7od4K9wNBA" key="diagramHeight" value="4756"/>
@@ -594,7 +599,7 @@
                 <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_8Wdy8S2CEd2e7od4K9wNBA" presentation="org.topcased.modeler.uml.classdiagram">
                   <element href="PlatformkitDiscoveryApplet.uml#_RpXlUi2CEd2e7od4K9wNBA"/>
                 </semanticModel>
-                <contained xsi:type="di:GraphNode" xmi:id="_BdMcMC2DEd2e7od4K9wNBA" position="39,29" size="236,-1">
+                <contained xsi:type="di:GraphNode" xmi:id="_BdMcMC2DEd2e7od4K9wNBA" position="64,21" size="236,-1">
                   <anchorage xmi:id="_zN3aQS2DEd2e7od4K9wNBA" graphEdge="_zN4BUC2DEd2e7od4K9wNBA _kBF4oC2EEd2e7od4K9wNBA"/>
                   <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_BdMcMS2DEd2e7od4K9wNBA" presentation="default">
                     <element href="PlatformkitDiscoveryApplet.uml#_RX_hcC2CEd2e7od4K9wNBA"/>
@@ -627,7 +632,7 @@
                     </contained>
                   </contained>
                 </contained>
-                <contained xsi:type="di:GraphNode" xmi:id="_C_TIIC2DEd2e7od4K9wNBA" position="26,249" size="261,-1">
+                <contained xsi:type="di:GraphNode" xmi:id="_C_TIIC2DEd2e7od4K9wNBA" position="28,218" size="308,-1">
                   <anchorage xmi:id="_6aIzsC2DEd2e7od4K9wNBA" graphEdge="_6aJawC2DEd2e7od4K9wNBA _kBF4oC2EEd2e7od4K9wNBA _cBVXUC2FEd2e7od4K9wNBA _BQ92sC2GEd2e7od4K9wNBA"/>
                   <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_C_TIIS2DEd2e7od4K9wNBA" presentation="default">
                     <element href="PlatformkitDiscoveryApplet.uml#_C_VkYC2DEd2e7od4K9wNBA"/>
@@ -670,7 +675,7 @@
                     </contained>
                   </contained>
                 </contained>
-                <contained xsi:type="di:GraphNode" xmi:id="_zNwFgC2DEd2e7od4K9wNBA" position="452,36" size="163,-1">
+                <contained xsi:type="di:GraphNode" xmi:id="_zNwFgC2DEd2e7od4K9wNBA" position="525,36" size="163,-1">
                   <anchorage xmi:id="_zN3aQC2DEd2e7od4K9wNBA" graphEdge="_zN4BUC2DEd2e7od4K9wNBA _2sJfAC2DEd2e7od4K9wNBA"/>
                   <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zNwFgS2DEd2e7od4K9wNBA" presentation="default">
                     <element href="PlatformkitDiscoveryApplet.uml#_KAKi0C2DEd2e7od4K9wNBA"/>
@@ -699,7 +704,7 @@
                   </semanticModel>
                   <contained xsi:type="di:EdgeObjectOffset" xmi:id="_zN4BUi2DEd2e7od4K9wNBA" id="stereotypeEdgeObject"/>
                 </contained>
-                <contained xsi:type="di:GraphNode" xmi:id="_02838C2DEd2e7od4K9wNBA" position="390,237" size="287,-1">
+                <contained xsi:type="di:GraphNode" xmi:id="_02838C2DEd2e7od4K9wNBA" position="463,237" size="287,-1">
                   <anchorage xmi:id="_2sI38C2DEd2e7od4K9wNBA" graphEdge="_2sJfAC2DEd2e7od4K9wNBA _6aJawC2DEd2e7od4K9wNBA"/>
                   <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_02838S2DEd2e7od4K9wNBA" presentation="default">
                     <element href="PlatformkitDiscoveryApplet.uml#_02_UMC2DEd2e7od4K9wNBA"/>
@@ -740,7 +745,7 @@
                   </semanticModel>
                   <contained xsi:type="di:EdgeObjectOffset" xmi:id="_kBF4oi2EEd2e7od4K9wNBA" id="stereotypeEdgeObject"/>
                 </contained>
-                <contained xsi:type="di:GraphNode" xmi:id="_bcfk4C2FEd2e7od4K9wNBA" position="100,405" size="112,-1">
+                <contained xsi:type="di:GraphNode" xmi:id="_bcfk4C2FEd2e7od4K9wNBA" position="126,400" size="112,-1">
                   <anchorage xmi:id="_cBUwQC2FEd2e7od4K9wNBA" graphEdge="_cBVXUC2FEd2e7od4K9wNBA"/>
                   <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_bcfk4S2FEd2e7od4K9wNBA" presentation="default">
                     <element href="PlatformkitDiscoveryApplet.uml#_e4LI8C2CEd2e7od4K9wNBA"/>
