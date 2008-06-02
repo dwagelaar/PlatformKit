@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="platformkit-discovery-applet/packaging" default="all">
 	<property name="bin.path" value="../bin"/>
-	
+	<property name="certificate.path" value="${user.home}/certificate"/>
+	<property file="${certificate.path}/certificate.properties"/>
+
 	<target name="clean">
 		<delete file="pkda.jar"/>
     </target>
@@ -15,5 +17,13 @@
         </jar>
     </target>
 	
-	<target name="all" depends="jar"/>
+	<target name="jar-sign" depends="jar">
+		<signjar jar="pkda.jar"
+			alias="${certificate.alias}"
+			keystore="${certificate.path}/${certificate.name}"
+			storetype="pkcs12"
+			storepass="${certificate.passphrase}"/>
+	</target>
+
+	<target name="all" depends="jar-sign"/>
 </project>
