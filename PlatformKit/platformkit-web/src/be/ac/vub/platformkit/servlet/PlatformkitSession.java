@@ -40,10 +40,19 @@ public class PlatformkitSession {
 				FileItemStream item = fileItems.next();
 				InputStream stream = item.openStream();
 				if (item.isFormField()) {
-					parameters.setProperty(item.getFieldName(), Streams
-							.asString(stream));
-				} else {
+					if ("context".equals(item.getFieldName())
+							&& (description.getData() == null)) {
+						description.setFromInputStream(stream);
+						logger
+								.info("platform description data set from context");
+					} else {
+						parameters.setProperty(item.getFieldName(), Streams
+								.asString(stream));
+					}
+				} else if (description.getData() == null) {
 					description.setFromInputStream(stream);
+					logger
+							.info("platform description data set from context file");
 				}
 			}
 		} else {
