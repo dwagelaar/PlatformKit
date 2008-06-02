@@ -36,23 +36,26 @@ public class PlatformkitSession {
 			logger.info("Retrieving uploaded ontology file");
 			ServletFileUpload upload = new ServletFileUpload();
 			FileItemIterator fileItems = upload.getItemIterator(req);
+			description.setData(new byte[0]);
 			while (fileItems.hasNext()) {
 				FileItemStream item = fileItems.next();
 				InputStream stream = item.openStream();
 				if (item.isFormField()) {
 					if ("context".equals(item.getFieldName())
-							&& (description.getData() == null)) {
+							&& (description.getData().length == 0)) {
 						description.setFromInputStream(stream);
 						logger
-								.info("platform description data set from context");
+								.info("platform description data set from context (length = "
+										+ description.getData().length + ")");
 					} else {
 						parameters.setProperty(item.getFieldName(), Streams
 								.asString(stream));
 					}
-				} else if (description.getData() == null) {
+				} else if (description.getData().length == 0) {
 					description.setFromInputStream(stream);
 					logger
-							.info("platform description data set from context file");
+							.info("platform description data set from context file (length = "
+									+ description.getData().length + ")");
 				}
 			}
 		} else {
