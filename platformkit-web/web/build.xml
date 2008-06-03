@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="platformkit-web/web" default="all">
 	<property name="platformkit.path" value="../../platformkit"/>
+	<property name="platformkit-examples.path" value="../../platformkit-examples/codamos_2007_01"/>
 	<property name="platformkit-java.path" value="../../platformkit-java"/>
 	<property name="platformkit-kb-jena.path" value="../../platformkit-kb-jena"/>
 	<property name="platformkit-kb-owlapi.path" value="../../platformkit-kb-owlapi"/>
 	<property name="jena.path" value="../../platformkit-jena"/>
 	<property name="pellet.path" value="../../platformkit-pellet"/>
 	<property name="owlapi.path" value="../../platformkit-owlapi"/>
+	<property name="pkda.jar.path" value="../../platformkit-discovery-applet/packaging/pkda.jar"/>
 	
 	<target name="clean">
         <delete>
@@ -19,6 +21,8 @@
     <target name="war" depends="clean">
         <war destfile="platformkitservlet.war" webxml="resources/WEB-INF/web.xml">
         	<fileset dir="resources/" excludes="WEB-INF/*"/>
+        	<fileset dir="${platformkit-examples.path}/"/>
+        	<fileset file="${pkda.jar.path}"/>
         	<classes dir="../bin"/>
         	<classes dir="${platformkit.path}/bin"/>
         	<classes dir="${platformkit.path}/ontology"/>
