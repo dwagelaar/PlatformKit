@@ -52,7 +52,6 @@ public class PlatformkitServlet extends HttpServlet {
 	private Level loglevel = null;
 	private Map<String, ConstraintSpacePool> knownSpaces = new HashMap<String, ConstraintSpacePool>();
 	private DateFormat dateFormat = new SimpleDateFormat();
-	protected ResourceSet resourceSet = new ResourceSetImpl();
 
 	static {
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
@@ -194,6 +193,7 @@ public class PlatformkitServlet extends HttpServlet {
 		synchronized (this) {
 			ConstraintSpace space = findCachedConstraintSpace(baseurl, date);
 			if (space == null) {
+				logger.info("Loading new constraint space");
 				Resource resource = loadModel(baseurl);
 				if (resource.getContents().size() == 0) {
 					throw new IOException("Resource at " + baseurl
@@ -234,6 +234,8 @@ public class PlatformkitServlet extends HttpServlet {
 				while (pool.getSpaces().hasMoreElements()) {
 					space = (ConstraintSpace) pool.getSpaces().nextElement();
 					pool.removeSpace(space);
+					ResourceSet resourceSet = space.eResource()
+							.getResourceSet();
 					resourceSet.getResources().remove(space.eResource());
 				}
 				space = null;
@@ -266,6 +268,7 @@ public class PlatformkitServlet extends HttpServlet {
 	private Resource loadModel(String baseurl) throws IOException {
 		checkBaseURL(baseurl);
 		URI source = URI.createURI(baseurl);
+		ResourceSet resourceSet = new ResourceSetImpl();
 		return resourceSet.getResource(source, true);
 	}
 

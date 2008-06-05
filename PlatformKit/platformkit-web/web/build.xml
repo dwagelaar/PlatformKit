@@ -36,6 +36,10 @@
       		</lib>
         	<lib dir="${pellet.path}/lib" includes="*.jar"/>
         	<lib dir="${pellet.path}/lib/xsdlib" includes="*.jar"/>
+        	<lib dir="${jena.path}/lib">
+        		<include name="commons-logging*"/>
+        		<include name="log4j*"/>
+        	</lib>
        	</war>
     </target>
 	
