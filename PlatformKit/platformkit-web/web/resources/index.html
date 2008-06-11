@@ -4,11 +4,13 @@
 	<title>PlatformKit Servlet</title>
 	<link rel="stylesheet" media="all" type="text/css" href="style.css" />
 </head>
-<body>
+<body onload="onPageLoad()">
 	<div class="pagebody">
 	
-	<div class="tlc">&nbsp;</div>
-	<div class="trc">&nbsp;</div>
+	<div class="top">
+		<div class="tlc">&nbsp;</div>
+		<div class="trc">&nbsp;</div>
+	</div>
 	
 	<div class="greenbox">
 	
@@ -18,9 +20,7 @@
 	</div>	
 	<div class="whitebox">
 
-	<div class="head">
-		<h2>Automatic platform description</h2>
-	</div>
+	<h2>Automatic platform description</h2>
 	
 	<div class="applet"><applet 
 		code="be.ac.vub.platformkit.discovery.DiscoveryApplet" 
@@ -31,19 +31,18 @@
 		title="PlatformKit Discovery Applet"
 		mayscript="mayscript">
 		<param name="Color" value="#FFFFFF" />
+		Automatic discovery not supported
 	</applet></div>
 	
 	</div>
 	<div class="greenbox">
 
-	<div class="head">
-		<div class="floatright">
-			<a href="javascript:toggleManual()">
-				<img id="toggleManual" src="collapse_tcat.gif">
-			</a>
-		</div>
-		<h2>Manual platform description</h2>
+	<div class="floatright">
+		<a href="javascript:toggleManual()">
+			<img id="toggleManual" src="collapse_tcat.gif">
+		</a>
 	</div>
+	<h2>Manual platform description</h2>
 	
 	<div id="manual">
 		<label for="context">Platform ontology:</label>
@@ -52,7 +51,11 @@
 			class="edit"
 			name="context"
 			title="Specify your OWL platform description here"></textarea>
-		<div class="floatright">
+			
+		<div class="headright">
+			<div class="floatleft">
+				<label for="contextfile">...or platform ontology file:</label>
+			</div>
 			<input 
 				id="contextfile" 
 				name="contextfile" 
@@ -60,90 +63,86 @@
 				class="fileedit" 
 				alt="Specify your OWL platform description here" />
 		</div>
-		<label for="contextfile">...or platform ontology file:<br/><br/>
-		</label>
 	</div>
 	
 	</div>
 	<div class="whitebox">
 
-	<div id="baseurlSection" class="head">
-		<div class="floatright">
-			<input 
-				id="baseurl" 
-				class="edit" 
-				name="baseurl" 
-				type="text" 
-				alt="Specify your \".platformkit\" file base URL" />
+	<div id="baseurlSection" class="headright">
+		<div class="floatleft">
+			<label for="baseurl">Base URL: </label>
 		</div>
-		<label for="baseurl"><p>Base URL: </p></label>
+		<input 
+			id="baseurl" 
+			class="edit" 
+			name="baseurl" 
+			type="text" 
+			alt="Specify your \".platformkit\" file base URL" />
 	</div>
 
-	<div id="resultSection" class="head">
-		<div class="floatright">
-			<select id="result" class="edit" name="result">
-				<option value="mostspecific">most specific</option>
-				<option value="leastspecific">least specific</option>
-			</select>
+	<div id="resultSection" class="headright">
+		<div class="floatleft">
+			<label for="result">Desired result: </label>
 		</div>
-		<label for="result"><p>Desired result: </p></label>
+		<select id="result" class="edit" name="result">
+			<option value="mostspecific">most specific</option>
+			<option value="leastspecific">least specific</option>
+		</select>
 	</div>
 
-	<div id="noValidateSection" class="head">
-		<div class="floatright">
-			<select id="noValidate" class="edit" name="noValidate">
-				<option value="false">no</option>
-				<option value="true">yes</option>
-			</select>
+	<div id="noValidateSection" class="headright">
+		<div class="floatleft">
+			<label for="noValidate">Skip validation: </label>
 		</div>
-		<label for="noValidate"><p>Skip validation: </p></label>
+		<select id="noValidate" class="edit" name="noValidate">
+			<option value="false">no</option>
+			<option value="true">yes</option>
+		</select>
 	</div>
 
-	<div class="head">
-		<div class="floatright">
-			<input class="counter" name="counter" type="text" value="0" />	
-			<input type="submit" class="button" alt="Send your request to the reasoner" value="Submit platform description" />
+	<div class="headright">
+		<div class="floatleft">
+			<a href="javascript:serverdetect()">Let the server auto-detect your platform</a>
 		</div>
-		<p><a href="javascript:serverdetect()">Let the server auto-detect your platform</a>.</p>
+		<input class="counter" name="counter" type="text" value="0" />	
+		<input type="submit" class="button" alt="Send your request to the reasoner" value="Submit platform description" />
 	</div>
-
+	
 	</form>
 
 	</div>
 	<div class="greenbox">
 	
-	<div class="head">
-		<div class="floatright">
-			<a href="javascript:toggleExamples()">
-				<img id="toggleExamples" src="collapse_tcat.gif">
-			</a>
-		</div>
-		<h2>Example platform descriptions</h2>
+	<div class="floatright">
+		<a href="javascript:toggleExamples()">
+			<img id="toggleExamples" src="collapse_tcat.gif">
+		</a>
 	</div>
+	<h2>Example platform descriptions</h2>
 		
-	<div class="bottomdrawerBody" id="examples">
-		<ul>
-		<li><a href="Generic/JDK1.1PC.owl">Generic PC with JDK 1.1</a></li>
-		<li><a href="Generic/JDK1.2PC.owl">Generic PC with JDK 1.2</a></li>
-		<li><a href="Generic/JDK1.3PC.owl">Generic PC with JDK 1.3</a></li>
-		<li><a href="Generic/JDK1.4PC.owl">Generic PC with JDK 1.4</a></li>
-		<li><a href="Generic/JDK1.5PC.owl">Generic PC with JDK 1.5</a></li>
-		<li><a href="Generic/JDK1.6PC.owl">Generic PC with JDK 1.6</a></li>
-		<li><a href="Generic/PersonalJava1.1PocketPC.owl">Microsoft PocketPC with Personal Java 1.1</a></li>
-		<li><a href="Generic/J2MEPP1.0PocketPC.owl">Microsoft PocketPC with J2ME PP 1.0</a></li>
-		<li><a href="Generic/J2MEPP1.1PocketPC.owl">Microsoft PocketPC with J2ME PP 1.1</a></li>
-		<li><a href="Generic/J2MEMIDP1.0Phone.owl">Mobile phone with J2ME MIDP 1.0</a></li>
-		<li><a href="Generic/J2MEMIDP2.0Phone.owl">Mobile phone with J2ME MIDP 2.0</a></li>
-		<li><a href="Sharp/ZaurusSL-C1000PP.owl">Sharp Zaurus SL-C1000 PDA with J2ME PP</a></li>
-		<li><a href="Sharp/ZaurusSL-C1000Jeode.owl">Sharp Zaurus SL-C1000 PDA with Jeode Personal Java</a></li>
-		<li><a href="Siemens/CX70v.owl">Siemens CX70v mobile phone with MIDP 2.0</a></li>
-		</ul>
+	<div class="list" id="examples">
+		<div class="li"><a href="Generic/JDK1.1PC.owl">Generic PC with JDK 1.1</a></div>
+		<div class="li"><a href="Generic/JDK1.2PC.owl">Generic PC with JDK 1.2</a></div>
+		<div class="li"><a href="Generic/JDK1.3PC.owl">Generic PC with JDK 1.3</a></div>
+		<div class="li"><a href="Generic/JDK1.4PC.owl">Generic PC with JDK 1.4</a></div>
+		<div class="li"><a href="Generic/JDK1.5PC.owl">Generic PC with JDK 1.5</a></div>
+		<div class="li"><a href="Generic/JDK1.6PC.owl">Generic PC with JDK 1.6</a></div>
+		<div class="li"><a href="Generic/PersonalJava1.1PocketPC.owl">Microsoft PocketPC with Personal Java 1.1</a></div>
+		<div class="li"><a href="Generic/J2MEPP1.0PocketPC.owl">Microsoft PocketPC with J2ME PP 1.0</a></div>
+		<div class="li"><a href="Generic/J2MEPP1.1PocketPC.owl">Microsoft PocketPC with J2ME PP 1.1</a></div>
+		<div class="li"><a href="Generic/J2MEMIDP1.0Phone.owl">Mobile phone with J2ME MIDP 1.0</a></div>
+		<div class="li"><a href="Generic/J2MEMIDP2.0Phone.owl">Mobile phone with J2ME MIDP 2.0</a></div>
+		<div class="li"><a href="Sharp/ZaurusSL-C1000PP.owl">Sharp Zaurus SL-C1000 PDA with J2ME PP</a></div>
+		<div class="li"><a href="Sharp/ZaurusSL-C1000Jeode.owl">Sharp Zaurus SL-C1000 PDA with Jeode Personal Java</a></div>
+		<div class="li"><a href="Siemens/CX70v.owl">Siemens CX70v mobile phone with MIDP 2.0</a></div>
 	</div>
 
 	</div>
 
-	<div class="blc">&nbsp;</div>
-	<div class="brc">&nbsp;</div>
+	<div class="bottom">
+		<div class="blc">&nbsp;</div>
+		<div class="brc">&nbsp;</div>
+	</div>
 	
 	</div>
 	
@@ -157,7 +156,7 @@
 <script language="JavaScript">
 <!-- //
 	function startCounter() {
-		document.config.counter.type = "text";
+		document.config.counter.style.display = '';
 		setTimeout("doCount(0)", 1000);
 	}
 
@@ -167,8 +166,6 @@
 		setTimeout("doCount(" + count + ")", 1000);
 	}
 
-	document.config.counter.type = "hidden";
-	
 	function toggleManual() {
 		var t = document.getElementById('toggleManual');
 		var e = document.getElementById('manual');
@@ -190,8 +187,6 @@
 		}		
 	}
 	
-	setTimeout("setOWL()", 100);
-	
 	function toggleExamples() {
 		var t = document.getElementById('toggleExamples');
 		var e = document.getElementById('examples');
@@ -203,8 +198,6 @@
 			t.src = 'collapse_tcat_collapsed.gif';
 		}
 	}
-	
-	toggleExamples();
 	
 	function serverdetect() {
 		document.configautodetect.baseurl.value    = document.config.baseurl.value;
@@ -260,7 +253,12 @@
 		}
 	}
 	
-	setFieldsFromURLParams();
+	function onPageLoad() {
+		document.config.counter.style.display = 'none';
+		setTimeout("setOWL()", 100);
+		toggleExamples();
+		setFieldsFromURLParams();
+	}
 //-->
 </script>
 </html>
