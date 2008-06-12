@@ -363,6 +363,147 @@
                   </ownedOperation>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Dependency" xmi:id="_dzXLkzh7Ed2LtPiPcfHlaQ" name="CopyToClipboardViewProductDependency" supplier="_N6yJUDh7Ed2LtPiPcfHlaQ" client="_KAKi0C2DEd2e7od4K9wNBA"/>
+                <packagedElement xmi:type="uml:Package" xmi:id="_fOTsUDiLEd2dy_l0QkGsYA" name="swing">
+                  <packagedElement xmi:type="uml:Class" xmi:id="_pfMtUDiLEd2dy_l0QkGsYA" name="SwingMainView" clientDependency="_pfMtXjiLEd2dy_l0QkGsYA _pfOigDiLEd2dy_l0QkGsYA _pfPJkDiLEd2dy_l0QkGsYA _pfPwpDiLEd2dy_l0QkGsYA _X_HsUziMEd2dy_l0QkGsYA">
+                    <generalization xmi:id="_dBidUziMEd2dy_l0QkGsYA">
+                      <general xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_C-Cq4ETuEdum9Mv7WaUBHw"/>
+                    </generalization>
+                    <ownedAttribute xmi:id="_pfMtUjiLEd2dy_l0QkGsYA" name="listener" type="_e4LI8C2CEd2e7od4K9wNBA" association="_pfPwoDiLEd2dy_l0QkGsYA">
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pfMtUziLEd2dy_l0QkGsYA" value="*"/>
+                      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pfMtVDiLEd2dy_l0QkGsYA"/>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_pfMtVTiLEd2dy_l0QkGsYA" name="submitBtn" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_FF8LgETuEdum9Mv7WaUBHw"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_pfMtVjiLEd2dy_l0QkGsYA">
+                        <language>java</language>
+                        <body>new JButton(&quot;Copy to Clipboard&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_pfMtVziLEd2dy_l0QkGsYA" name="status" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_Z7rrUETuEdum9Mv7WaUBHw"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_pfMtWDiLEd2dy_l0QkGsYA">
+                        <language>java</language>
+                        <body>new JLabel(&quot;Discovery Applet&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfMtWTiLEd2dy_l0QkGsYA" name="SwingMainViewBehavior" specification="_pfMtXziLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfMtWjiLEd2dy_l0QkGsYA" name="return" type="_pfMtUDiLEd2dy_l0QkGsYA" direction="return"/>
+                      <language>java</language>
+                      <body>&#x9;&#x9;submitBtn.addActionListener(new ActionListener() {&#xA;&#x9;&#x9;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;notifySubmitClicked();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;&#x9;&#x9;setLayout(new FlowLayout());&#xD;&#x9;&#x9;add(status);&#xA;&#x9;&#x9;add(submitBtn);&#xD;&#x9;&#x9;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().setLayout(new BorderLayout());&#xA;&#x9;&#x9;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().add(this, BorderLayout.CENTER);&#xA;&#x9;&#x9;setBackground(be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().getBackground());</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfMtWziLEd2dy_l0QkGsYA" name="SwingMainView_notifySubmitClickedBehavior" specification="_pfMtYTiLEd2dy_l0QkGsYA">
+                      <language>java</language>
+                      <body>&#x9;&#x9;for (java.util.Enumeration ls = getListeners(); ls.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;((MainViewListener) ls.nextElement()).onSubmit();&#xA;&#x9;&#x9;}</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfMtXDiLEd2dy_l0QkGsYA" name="SwingMainView_setStatusBehaviour" specification="_pfMtYjiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfMtXTiLEd2dy_l0QkGsYA" name="status">
+                        <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                      </ownedParameter>
+                      <language>java</language>
+                      <body>&#x9;&#x9;this.status.setText(status);</body>
+                    </ownedBehavior>
+                    <interfaceRealization xmi:id="_pfMtXjiLEd2dy_l0QkGsYA" name="InterfaceRealization1" supplier="_RX_hcC2CEd2e7od4K9wNBA" client="_pfMtUDiLEd2dy_l0QkGsYA" contract="_RX_hcC2CEd2e7od4K9wNBA"/>
+                    <ownedOperation xmi:id="_pfMtXziLEd2dy_l0QkGsYA" name="SwingMainView" method="_pfMtWTiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfMtYDiLEd2dy_l0QkGsYA" name="return" type="_pfMtUDiLEd2dy_l0QkGsYA" direction="return"/>
+                    </ownedOperation>
+                    <ownedOperation xmi:id="_pfMtYTiLEd2dy_l0QkGsYA" name="notifySubmitClicked" visibility="private" method="_pfMtWziLEd2dy_l0QkGsYA"/>
+                    <ownedOperation xmi:id="_pfMtYjiLEd2dy_l0QkGsYA" name="setStatus" method="_pfMtXDiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfMtYziLEd2dy_l0QkGsYA" name="status">
+                        <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Class" xmi:id="_pfN7cDiLEd2dy_l0QkGsYA" name="SwingViewFactory" clientDependency="_pfN7djiLEd2dy_l0QkGsYA _pfQXsjiLEd2dy_l0QkGsYA">
+                    <generalization xmi:id="_pfN7cTiLEd2dy_l0QkGsYA" general="_KAKi0C2DEd2e7od4K9wNBA"/>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfN7cjiLEd2dy_l0QkGsYA" name="SwingViewFactoryBehavior" specification="_pfN7dDiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfN7cziLEd2dy_l0QkGsYA" name="return" type="_pfN7cDiLEd2dy_l0QkGsYA" direction="return"/>
+                      <language>java</language>
+                      <body>// fail factory creation if Swing not available&#xA;Class.forName(&quot;javax.swing.UIManager&quot;);</body>
+                    </ownedBehavior>
+                    <ownedOperation xmi:id="_pfN7dDiLEd2dy_l0QkGsYA" name="SwingViewFactory" method="_pfN7cjiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfN7dTiLEd2dy_l0QkGsYA" name="return" type="_pfN7cDiLEd2dy_l0QkGsYA" direction="return"/>
+                      <raisedException xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_OnuCwET5Edu8hscEjMiyKA"/>
+                    </ownedOperation>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_pfN7djiLEd2dy_l0QkGsYA" name="SwingMainViewProductDependency" supplier="_pfMtUDiLEd2dy_l0QkGsYA" client="_pfN7cDiLEd2dy_l0QkGsYA"/>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_pfOigDiLEd2dy_l0QkGsYA" name="SwingMainView_JavaAwtDependency" client="_pfMtUDiLEd2dy_l0QkGsYA">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_dK7VkEPdEdusb52s3APTjA"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_pfPJkDiLEd2dy_l0QkGsYA" name="SwingMainView_JavaAwtEventDependency" client="_pfMtUDiLEd2dy_l0QkGsYA">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_yIdwYEPmEdug19jXgM5cew"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Association" xmi:id="_pfPwoDiLEd2dy_l0QkGsYA" name="Association_SwingMainView_MainViewListener" memberEnd="_pfPwoTiLEd2dy_l0QkGsYA _pfMtUjiLEd2dy_l0QkGsYA">
+                    <ownedEnd xmi:id="_pfPwoTiLEd2dy_l0QkGsYA" name="view" type="_pfMtUDiLEd2dy_l0QkGsYA" association="_pfPwoDiLEd2dy_l0QkGsYA">
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pfPwojiLEd2dy_l0QkGsYA" value="1"/>
+                      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pfPwoziLEd2dy_l0QkGsYA"/>
+                    </ownedEnd>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_pfPwpDiLEd2dy_l0QkGsYA" name="SwingMainView_viewDependency" supplier="_ICi1AC2CEd2e7od4K9wNBA" client="_pfMtUDiLEd2dy_l0QkGsYA"/>
+                  <packagedElement xmi:type="uml:Class" xmi:id="_pfPwpTiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView" clientDependency="_pfPwsDiLEd2dy_l0QkGsYA _pfQXsDiLEd2dy_l0QkGsYA _pfQXsTiLEd2dy_l0QkGsYA _tFVboziNEd2dy_l0QkGsYA">
+                    <generalization xmi:id="_JwfN8ziNEd2dy_l0QkGsYA">
+                      <general xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_N1xCYETuEdum9Mv7WaUBHw"/>
+                    </generalization>
+                    <ownedAttribute xmi:id="_pfPwpziLEd2dy_l0QkGsYA" name="textField" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_Sq2iAETuEdum9Mv7WaUBHw"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_pfPwqDiLEd2dy_l0QkGsYA">
+                        <language>java</language>
+                        <body>new JTextPane()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_pfPwqTiLEd2dy_l0QkGsYA" name="bottomPanel" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_C-Cq4ETuEdum9Mv7WaUBHw"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_pfPwqjiLEd2dy_l0QkGsYA">
+                        <language>java</language>
+                        <body>new JPanel()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_pfPwqziLEd2dy_l0QkGsYA" name="instructionsLabel" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_Z7rrUETuEdum9Mv7WaUBHw"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_pfPwrDiLEd2dy_l0QkGsYA">
+                        <language>java</language>
+                        <body>new JLabel(&quot;Use your standard keyboard shortcut (e.g. Ctrl-C) to copy the above platform description to your clipboard&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_WIQb4DiNEd2dy_l0QkGsYA" name="textScroll" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_HBEbcETuEdum9Mv7WaUBHw"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_ZFDkMDiNEd2dy_l0QkGsYA">
+                        <language>java</language>
+                        <body>new JScrollPane()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfPwrTiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView_setCopyTextBehavior" specification="_pfPwsTiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfPwrjiLEd2dy_l0QkGsYA" name="text">
+                        <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                      </ownedParameter>
+                      <language>java</language>
+                      <body>&#x9;&#x9;textField.setText(text);&#xA;&#x9;&#x9;textField.setSelectionStart(0);&#xA;&#x9;&#x9;textField.setSelectionEnd(text.length());&#xA;&#x9;&#x9;textField.requestFocus();</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfPwrziLEd2dy_l0QkGsYA" name="SwingCopyToClipboardBehavior" specification="_pfPwsziLEd2dy_l0QkGsYA">
+                      <language>java</language>
+                      <body>&#x9;&#x9;addWindowListener(new WindowAdapter() {&#xA;&#x9;&#x9;&#x9;public void windowClosing(WindowEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;setVisible(false);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;&#x9;&#x9;setTitle(&quot;Platform description&quot;);&#xA;&#x9;&#x9;setLayout(new BorderLayout());&#xA;&#x9;&#x9;textField.setEditable(false);&#xA;&#x9;&#x9;textScroll.getViewport().setView(textField);&#xA;&#x9;&#x9;textScroll.setPreferredSize(new Dimension(500, 300));&#xA;&#x9;&#x9;add(textScroll, BorderLayout.CENTER);&#xA;&#x9;&#x9;bottomPanel.setLayout(new FlowLayout());&#xA;&#x9;&#x9;bottomPanel.add(instructionsLabel);&#xA;&#x9;&#x9;add(bottomPanel, BorderLayout.SOUTH);&#xA;&#x9;&#x9;pack();&#xA;&#x9;&#x9;setVisible(true);</body>
+                    </ownedBehavior>
+                    <interfaceRealization xmi:id="_pfPwsDiLEd2dy_l0QkGsYA" name="InterfaceRealization1" supplier="_N6yJUDh7Ed2LtPiPcfHlaQ" client="_pfPwpTiLEd2dy_l0QkGsYA" contract="_N6yJUDh7Ed2LtPiPcfHlaQ"/>
+                    <ownedOperation xmi:id="_pfPwsTiLEd2dy_l0QkGsYA" name="setCopyText" method="_pfPwrTiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfPwsjiLEd2dy_l0QkGsYA" name="text">
+                        <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:id="_pfPwsziLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView" method="_pfPwrziLEd2dy_l0QkGsYA"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_pfQXsDiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView_JavaAwtDependency" client="_pfPwpTiLEd2dy_l0QkGsYA">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_dK7VkEPdEdusb52s3APTjA"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_pfQXsTiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView_JavaAwtEventDependency" client="_pfPwpTiLEd2dy_l0QkGsYA">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_yIdwYEPmEdug19jXgM5cew"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_pfQXsjiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardViewProductDependency" supplier="_pfPwpTiLEd2dy_l0QkGsYA" client="_pfN7cDiLEd2dy_l0QkGsYA"/>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_X_HsUziMEd2dy_l0QkGsYA" name="SwingMainView_JavaxSwingDependency" client="_pfMtUDiLEd2dy_l0QkGsYA">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_-GCaIETtEdum9Mv7WaUBHw"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_tFVboziNEd2dy_l0QkGsYA" name="SwingCopyToClipboardView_JavaxSwingDependency" client="_pfPwpTiLEd2dy_l0QkGsYA">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_-GCaIETtEdum9Mv7WaUBHw"/>
+                  </packagedElement>
+                </packagedElement>
               </packagedElement>
               <packagedElement xmi:type="uml:Dependency" xmi:id="_KUjT4y2CEd2e7od4K9wNBA" name="DiscoveryApplet_viewDependency" supplier="_ICi1AC2CEd2e7od4K9wNBA" client="_RBdGAC1cEd2KTNOPeUc_7g"/>
               <packagedElement xmi:type="uml:Association" xmi:id="_7_1paC2HEd2e7od4K9wNBA" name="DiscoveryApplet_MainView_Association" memberEnd="_7_1paS2HEd2e7od4K9wNBA _7_1pbC2HEd2e7od4K9wNBA">
@@ -439,4 +580,10 @@
   <AbstractFactory:product xmi:id="_ezdWoDh7Ed2LtPiPcfHlaQ" base_Dependency="_dzXLkzh7Ed2LtPiPcfHlaQ"/>
   <Standard:Create xmi:id="_p-pAMDh8Ed2LtPiPcfHlaQ" base_BehavioralFeature="_jntTUjh8Ed2LtPiPcfHlaQ"/>
   <AbstractFactory:product xmi:id="_3SH9kDh-Ed2LtPiPcfHlaQ" base_Dependency="_0GquMzh-Ed2LtPiPcfHlaQ"/>
+  <AbstractFactory:product xmi:id="_hpzo8DiMEd2dy_l0QkGsYA" base_Dependency="_pfN7djiLEd2dy_l0QkGsYA"/>
+  <AbstractFactory:ConcreteFactory xmi:id="_pETroDiMEd2dy_l0QkGsYA" base_Class="_pfN7cDiLEd2dy_l0QkGsYA"/>
+  <AbstractFactory:product xmi:id="_CIrIADiNEd2dy_l0QkGsYA" base_Dependency="_pfQXsjiLEd2dy_l0QkGsYA"/>
+  <Standard:Create xmi:id="_CAEJIDiOEd2dy_l0QkGsYA" base_BehavioralFeature="_pfN7dDiLEd2dy_l0QkGsYA"/>
+  <Standard:Create xmi:id="_VSKE4DiOEd2dy_l0QkGsYA" base_BehavioralFeature="_pfMtXziLEd2dy_l0QkGsYA"/>
+  <Standard:Create xmi:id="_WQNBgDiOEd2dy_l0QkGsYA" base_BehavioralFeature="_pfPwsziLEd2dy_l0QkGsYA"/>
 </xmi:XMI>
