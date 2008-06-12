@@ -29,7 +29,7 @@
                 </ownedBehavior>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aHLQYC2IEd2e7od4K9wNBA" name="DiscoveryApplet_onSubmitBehavior" specification="_V0i9kC2IEd2e7od4K9wNBA">
                   <language>java</language>
-                  <body>&#x9;&#x9;System.out.println(&quot;Submit clicked&quot;);&#xA;&#x9;&#x9;if (getOntology() != null) {&#xA;&#x9;&#x9;&#x9;final String owl = getOWL();&#xA;&#x9;&#x9;&#x9;Toolkit tk = Toolkit.getDefaultToolkit();&#xA;&#x9;&#x9;&#x9;Clipboard cb = tk.getSystemClipboard();&#xA;&#x9;&#x9;&#x9;cb.setContents(new Transferable() {&#xA;&#x9;&#x9;&#x9;&#x9;public Object getTransferData(DataFlavor flavor)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throws UnsupportedFlavorException, IOException {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (DataFlavor.stringFlavor.equals(flavor)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return owl;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;public DataFlavor[] getTransferDataFlavors() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DataFlavor[] df = {DataFlavor.stringFlavor};&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return df;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;public boolean isDataFlavorSupported(DataFlavor flavor) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return (DataFlavor.stringFlavor.equals(flavor));&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}, new ClipboardOwner() {&#xA;&#x9;&#x9;&#x9;&#x9;public void lostOwnership(Clipboard clipboard,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Transferable contents) {&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;}</body>
+                  <body>&#x9;&#x9;System.out.println(&quot;Submit clicked&quot;);&#xA;&#x9;&#x9;if (getOntology() != null) {&#xA;&#x9;&#x9;&#x9;final String owl = getOWL();&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;Toolkit tk = Toolkit.getDefaultToolkit();&#xA;&#x9;&#x9;&#x9;&#x9;Clipboard cb = tk.getSystemClipboard();&#xA;&#x9;&#x9;&#x9;&#x9;cb.setContents(new Transferable() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public Object getTransferData(DataFlavor flavor)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throws UnsupportedFlavorException, IOException {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (DataFlavor.stringFlavor.equals(flavor)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return owl;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public DataFlavor[] getTransferDataFlavors() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;DataFlavor[] df = {DataFlavor.stringFlavor};&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return df;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public boolean isDataFlavorSupported(DataFlavor flavor) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return (DataFlavor.stringFlavor.equals(flavor));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}, new ClipboardOwner() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public void lostOwnership(Clipboard clipboard,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Transferable contents) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;&#x9;&#x9;getView().setStatus(&quot;Platform copied&quot;);&#xA;&#x9;&#x9;&#x9;} catch (java.security.AccessControlException e) {&#xA;&#x9;&#x9;&#x9;&#x9;CopyToClipboardView ctcbView = ViewFactory.getDefault().createCopyToClipboardView();&#xA;&#x9;&#x9;&#x9;&#x9;ctcbView.setCopyText(owl);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}</body>
                 </ownedBehavior>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_b8_ZsDCBEd2NeaEjqU5_yA" name="DiscoveryApplet_getOWLBehavior" specification="_Tf4qgDCBEd2NeaEjqU5_yA">
                   <ownedParameter xmi:id="_qU23IDCBEd2NeaEjqU5_yA" name="return" direction="return">
@@ -263,7 +263,7 @@
                       </ownedParameter>
                     </ownedOperation>
                   </packagedElement>
-                  <packagedElement xmi:type="uml:Class" xmi:id="_02_UMC2DEd2e7od4K9wNBA" name="AWTViewFactory" clientDependency="_6aJawy2DEd2e7od4K9wNBA">
+                  <packagedElement xmi:type="uml:Class" xmi:id="_02_UMC2DEd2e7od4K9wNBA" name="AWTViewFactory" clientDependency="_6aJawy2DEd2e7od4K9wNBA _0GquMzh-Ed2LtPiPcfHlaQ">
                     <generalization xmi:id="_2sJfAy2DEd2e7od4K9wNBA" general="_KAKi0C2DEd2e7od4K9wNBA"/>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_YEFUEC2EEd2e7od4K9wNBA" name="AWTViewFactoryBehavior" specification="_OHNbQC2EEd2e7od4K9wNBA">
                       <ownedParameter xmi:id="_hZm5AC2EEd2e7od4K9wNBA" name="return" type="_02_UMC2DEd2e7od4K9wNBA" direction="return"/>
@@ -289,11 +289,62 @@
                     </ownedEnd>
                   </packagedElement>
                   <packagedElement xmi:type="uml:Dependency" xmi:id="_pQWEYy2HEd2e7od4K9wNBA" name="AWTMainView_viewDependency" supplier="_ICi1AC2CEd2e7od4K9wNBA" client="_C_VkYC2DEd2e7od4K9wNBA"/>
+                  <packagedElement xmi:type="uml:Class" xmi:id="_FFGsoDh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView" clientDependency="_IpOTozh8Ed2LtPiPcfHlaQ _bB1Xwzh-Ed2LtPiPcfHlaQ _hBjegzh-Ed2LtPiPcfHlaQ">
+                    <generalization xmi:id="_8LyGEzh8Ed2LtPiPcfHlaQ">
+                      <general xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_yfVHUEPdEdusb52s3APTjA"/>
+                    </generalization>
+                    <ownedAttribute xmi:id="_SDc88Dh9Ed2LtPiPcfHlaQ" name="textField" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#__P8TEEPdEdusb52s3APTjA"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_drWNIDh9Ed2LtPiPcfHlaQ">
+                        <language>java</language>
+                        <body>new TextArea()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_TnQSADh9Ed2LtPiPcfHlaQ" name="bottomPanel" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_cEVFUEVbEdu1R4x2hFmiHQ"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_j6aXcDh9Ed2LtPiPcfHlaQ">
+                        <language>java</language>
+                        <body>new Panel()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_WCPtwDh9Ed2LtPiPcfHlaQ" name="instructionsLabel" visibility="private">
+                      <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_7OyKwEPdEdusb52s3APTjA"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oUxp8Dh9Ed2LtPiPcfHlaQ">
+                        <language>java</language>
+                        <body>new Label(&quot;Use your standard keyboard shortcut (e.g. Ctrl-C) to copy the above platform description to your clipboard&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_cgcVsDh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView_setCopyTextBehavior" specification="_SKDwsDh8Ed2LtPiPcfHlaQ">
+                      <ownedParameter xmi:id="_LQ1kMDh-Ed2LtPiPcfHlaQ" name="text">
+                        <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                      </ownedParameter>
+                      <language>java</language>
+                      <body>&#x9;&#x9;textField.setText(text);&#xA;&#x9;&#x9;textField.setSelectionStart(0);&#xA;&#x9;&#x9;textField.setSelectionEnd(text.length());&#xA;&#x9;&#x9;textField.requestFocus();</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_upRjUDh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardBehavior" specification="_jntTUjh8Ed2LtPiPcfHlaQ">
+                      <language>java</language>
+                      <body>&#x9;&#x9;addWindowListener(new WindowAdapter() {&#xA;&#x9;&#x9;&#x9;public void windowClosing(WindowEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;setVisible(false);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;&#x9;&#x9;setTitle(&quot;Platform description&quot;);&#xA;&#x9;&#x9;setLayout(new BorderLayout());&#xA;&#x9;&#x9;textField.setEditable(false);&#xA;&#x9;&#x9;add(textField, BorderLayout.CENTER);&#xA;&#x9;&#x9;bottomPanel.setLayout(new FlowLayout());&#xA;&#x9;&#x9;bottomPanel.add(instructionsLabel);&#xA;&#x9;&#x9;add(bottomPanel, BorderLayout.SOUTH);&#xA;&#x9;&#x9;pack();&#xA;&#x9;&#x9;setVisible(true);</body>
+                    </ownedBehavior>
+                    <interfaceRealization xmi:id="_IpOTozh8Ed2LtPiPcfHlaQ" name="InterfaceRealization1" supplier="_N6yJUDh7Ed2LtPiPcfHlaQ" client="_FFGsoDh8Ed2LtPiPcfHlaQ" contract="_N6yJUDh7Ed2LtPiPcfHlaQ"/>
+                    <ownedOperation xmi:id="_SKDwsDh8Ed2LtPiPcfHlaQ" name="setCopyText" method="_cgcVsDh8Ed2LtPiPcfHlaQ">
+                      <ownedParameter xmi:id="_SKDwsTh8Ed2LtPiPcfHlaQ" name="text">
+                        <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:id="_jntTUjh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView" method="_upRjUDh8Ed2LtPiPcfHlaQ"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_bB1Xwzh-Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView_JavaAwtDependency" client="_FFGsoDh8Ed2LtPiPcfHlaQ">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_dK7VkEPdEdusb52s3APTjA"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_hBjegzh-Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView_JavaAwtEventDependency" client="_FFGsoDh8Ed2LtPiPcfHlaQ">
+                    <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_yIdwYEPmEdug19jXgM5cew"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_0GquMzh-Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardViewProductDependency" supplier="_FFGsoDh8Ed2LtPiPcfHlaQ" client="_02_UMC2DEd2e7od4K9wNBA"/>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Interface" xmi:id="_e4LI8C2CEd2e7od4K9wNBA" name="MainViewListener">
                   <ownedOperation xmi:id="_nS8V0i2CEd2e7od4K9wNBA" name="onSubmit" isAbstract="true"/>
                 </packagedElement>
-                <packagedElement xmi:type="uml:Class" xmi:id="_KAKi0C2DEd2e7od4K9wNBA" name="ViewFactory" clientDependency="_Puzgoy2DEd2e7od4K9wNBA" isAbstract="true">
+                <packagedElement xmi:type="uml:Class" xmi:id="_KAKi0C2DEd2e7od4K9wNBA" name="ViewFactory" clientDependency="_Puzgoy2DEd2e7od4K9wNBA _dzXLkzh7Ed2LtPiPcfHlaQ" isAbstract="true">
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f7Ds0C2DEd2e7od4K9wNBA" name="ViewFactory_getDefaultBehavior" specification="_S6VBcC2DEd2e7od4K9wNBA">
                     <ownedParameter xmi:id="_tOQBMC2DEd2e7od4K9wNBA" name="return" type="_KAKi0C2DEd2e7od4K9wNBA" direction="return"/>
                     <language>java</language>
@@ -303,7 +354,15 @@
                     <ownedParameter xmi:id="_UFS_wC2DEd2e7od4K9wNBA" name="return" type="_KAKi0C2DEd2e7od4K9wNBA" direction="return"/>
                   </ownedOperation>
                 </packagedElement>
-                <packagedElement xmi:type="uml:Dependency" xmi:id="_Puzgoy2DEd2e7od4K9wNBA" name="Dependency1" supplier="_RX_hcC2CEd2e7od4K9wNBA" client="_KAKi0C2DEd2e7od4K9wNBA"/>
+                <packagedElement xmi:type="uml:Dependency" xmi:id="_Puzgoy2DEd2e7od4K9wNBA" name="MainViewProductDependency" supplier="_RX_hcC2CEd2e7od4K9wNBA" client="_KAKi0C2DEd2e7od4K9wNBA"/>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_N6yJUDh7Ed2LtPiPcfHlaQ" name="CopyToClipboardView">
+                  <ownedOperation xmi:id="_VAF_IDh7Ed2LtPiPcfHlaQ" name="setCopyText" isAbstract="true">
+                    <ownedParameter xmi:id="_YxjekDh7Ed2LtPiPcfHlaQ" name="text">
+                      <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Dependency" xmi:id="_dzXLkzh7Ed2LtPiPcfHlaQ" name="CopyToClipboardViewProductDependency" supplier="_N6yJUDh7Ed2LtPiPcfHlaQ" client="_KAKi0C2DEd2e7od4K9wNBA"/>
               </packagedElement>
               <packagedElement xmi:type="uml:Dependency" xmi:id="_KUjT4y2CEd2e7od4K9wNBA" name="DiscoveryApplet_viewDependency" supplier="_ICi1AC2CEd2e7od4K9wNBA" client="_RBdGAC1cEd2KTNOPeUc_7g"/>
               <packagedElement xmi:type="uml:Association" xmi:id="_7_1paC2HEd2e7od4K9wNBA" name="DiscoveryApplet_MainView_Association" memberEnd="_7_1paS2HEd2e7od4K9wNBA _7_1pbC2HEd2e7od4K9wNBA">
@@ -377,4 +436,7 @@
   <AbstractFactory:product xmi:id="_7GFTsC2DEd2e7od4K9wNBA" base_Dependency="_6aJawy2DEd2e7od4K9wNBA"/>
   <Standard:Create xmi:id="_oJQn4C2EEd2e7od4K9wNBA" base_BehavioralFeature="_lZufgC2EEd2e7od4K9wNBA"/>
   <Standard:Create xmi:id="_GG8jYC4kEd2wms9OZLfx4Q" base_BehavioralFeature="_OHNbQC2EEd2e7od4K9wNBA"/>
+  <AbstractFactory:product xmi:id="_ezdWoDh7Ed2LtPiPcfHlaQ" base_Dependency="_dzXLkzh7Ed2LtPiPcfHlaQ"/>
+  <Standard:Create xmi:id="_p-pAMDh8Ed2LtPiPcfHlaQ" base_BehavioralFeature="_jntTUjh8Ed2LtPiPcfHlaQ"/>
+  <AbstractFactory:product xmi:id="_3SH9kDh-Ed2LtPiPcfHlaQ" base_Dependency="_0GquMzh-Ed2LtPiPcfHlaQ"/>
 </xmi:XMI>
