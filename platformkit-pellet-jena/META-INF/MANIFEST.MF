@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pellet OWL reasoner Jena interface Plug-in
+Bundle-SymbolicName: org.mindswap.pellet.jena
+Bundle-Version: 1.5.0
+Bundle-Activator: org.mindswap.pellet.jena.eclipse.Activator
+Bundle-Vendor: Mindswap.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.mindswap.pellet,
+ com.hp.hpl.jena,
+ aterm,
+ org.mortbay.jetty
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Export-Package: org.mindswap.pellet,
+ org.mindswap.pellet.dig,
+ org.mindswap.pellet.jena,
+ org.mindswap.pellet.jena.eclipse,
+ org.mindswap.pellet.jena.vocabulary,
+ org.mindswap.pellet.query,
+ org.mindswap.pellet.query.impl,
+ org.mindswap.pellet.utils
