@@ -135,8 +135,8 @@ public abstract class CompatAction implements IObjectActionDelegate {
         ASMModel in = amh.loadModel("IN", uml2, apiResource.openStream());
         worked(monitor);
         monitor.subTask("Running ATL query...");
-        Map params = Collections.EMPTY_MAP;
-        Map models = new HashMap();
+        Map<String, String> params = Collections.emptyMap();
+        Map<String, ASMModel> models = new HashMap<String, ASMModel>();
         models.put(uml2.getName(), uml2);
         models.put(previn.getName(), previn);
         models.put(in.getName(), in);
@@ -144,8 +144,8 @@ public abstract class CompatAction implements IObjectActionDelegate {
         	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityComparison.asm");
         URL uml2Comparison = 
         	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2Comparison.asm");
-        List superimpose = Collections.EMPTY_LIST;
-        Map libs = new HashMap();
+        List<URL> superimpose = Collections.emptyList();
+        Map<String, URL> libs = new HashMap<String, URL>();
         libs.put("UML2Comparison", uml2Comparison);
 		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
 				.getPreferenceStore();

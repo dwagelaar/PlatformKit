@@ -2,14 +2,16 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Platformkit Jena Knowledgebase Plug-in
 Bundle-SymbolicName: be.ac.vub.platformkit.kb.jena;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1
 Bundle-Activator: be.ac.vub.platformkit.kb.jena.eclipse.Activator
 Bundle-Vendor: Vrije Universiteit Brussel
 Require-Bundle: org.eclipse.core.runtime,
  be.ac.vub.platformkit,
  org.junit,
  com.hp.hpl.jena,
- org.mindswap.pellet
-Eclipse-LazyStart: true
+ org.mindswap.pellet,
+ org.mindswap.pellet.jena
+Bundle-ActivationPolicy: lazy
 Export-Package: be.ac.vub.platformkit.kb.jena,
  be.ac.vub.platformkit.kb.jena.eclipse
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

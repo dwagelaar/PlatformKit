@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Pellet OWL reasoner Plug-in
-Bundle-SymbolicName: org.mindswap.pellet
-Bundle-Version: 1.5.0.1
+Bundle-SymbolicName: org.mindswap.pellet;singleton:=true
+Bundle-Version: 1.5.0.2
 Bundle-ClassPath: pellet.jar,
  lib/pellet.jar,
  lib/aterm-java-1.6.jar,
@@ -15,28 +15,24 @@ Export-Package: com.lre.graph,
  com.lre.utils,
  org.mindswap.pellet,
  org.mindswap.pellet.datatypes,
- org.mindswap.pellet.dig,
  org.mindswap.pellet.eclipse,
- org.mindswap.pellet.examples,
  org.mindswap.pellet.exceptions,
- org.mindswap.pellet.jena,
- org.mindswap.pellet.jena.vocabulary,
  org.mindswap.pellet.output,
  org.mindswap.pellet.owlapi,
- org.mindswap.pellet.query,
- org.mindswap.pellet.query.impl,
  org.mindswap.pellet.rete,
  org.mindswap.pellet.taxonomy,
  org.mindswap.pellet.tbox,
  org.mindswap.pellet.tbox.impl,
- org.mindswap.pellet.test,
- org.mindswap.pellet.test.inctest,
- org.mindswap.pellet.test.utils,
  org.mindswap.pellet.utils,
  org.mindswap.pellet.utils.fsm,
  org.mindswap.pellet.utils.progress
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
  org.semanticweb.owl,
- com.hp.hpl.jena
-Eclipse-LazyStart: true
+ aterm,
+ org.apache.commons.logging,
+ org.apache.xerces,
+ org.relaxng,
+ com.sun.xsdlib
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

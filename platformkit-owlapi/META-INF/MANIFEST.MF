@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: OWLAPI Plug-in
-Bundle-SymbolicName: org.semanticweb.owl
-Bundle-Version: 2.2.0
+Bundle-SymbolicName: org.semanticweb.owl;singleton:=true
+Bundle-Version: 2.2.0.1
 Bundle-Vendor: CO-ODE project
 Export-Package: com.clarkparsia.explanation,
  com.clarkparsia.explanation.io,
@@ -48,3 +48,4 @@ Export-Package: com.clarkparsia.explanation,
  uk.ac.manchester.cs.owl.turtle.parser
 Bundle-Activator: org.semanticweb.owl.eclipse.OWLAPIPlugin
 Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

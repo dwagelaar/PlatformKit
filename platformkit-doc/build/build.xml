@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="zip">
+<project default="javadoc">
 
 	<target name="clean">
-		<delete dir="doc/javadoc"/>
-		<delete file="../doc.zip"/>
+		<delete dir="../doc/javadoc"/>
 	</target>
 	
 	<target name="javadoc" depends="clean">
 		<javadoc 
 			access="protected" 
 			author="true"
-			destdir="doc/javadoc" 
+			destdir="../doc/javadoc" 
 			nodeprecated="false" 
 			nodeprecatedlist="false" 
 			noindex="false" 
@@ -72,14 +71,6 @@
 				</fileset>
 			</classpath>
 		</javadoc>
-	</target>
-	
-	<target name="zip" depends="javadoc">
-		<zip destfile="../doc.zip">
-			<fileset dir=".">
-				<include name="doc/**"/>
-			</fileset>
-		</zip>
 	</target>
 	
 </project>

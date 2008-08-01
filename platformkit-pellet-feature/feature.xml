@@ -2,7 +2,7 @@
 <feature
       id="org.mindswap.pellet"
       label="Pellet OWL reasoner"
-      version="1.5.0.1"
+      version="1.5.0.2"
       provider-name="Mindswap.org"
       image="jimsLogo.gif">
 
@@ -49,14 +49,18 @@ IN THE SOFTWARE.
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="com.hp.hpl.jena"/>
+      <import plugin="be.ac.vub.platformkit"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.apache.commons.logging"/>
+      <import plugin="org.apache.xerces"/>
    </requires>
 
    <plugin
          id="org.mindswap.pellet"
          download-size="1620"
          install-size="2056"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.semanticweb.owl"
@@ -69,6 +73,34 @@ IN THE SOFTWARE.
          id="org.semanticweb.owl.doc"
          download-size="5468"
          install-size="5468"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="be.ac.vub.platformkit.kb.owlapi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="aterm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.relaxng"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sun.xsdlib"
+         download-size="0"
+         install-size="0"
          version="0.0.0"
          unpack="false"/>
 

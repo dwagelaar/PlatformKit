@@ -32,8 +32,6 @@ import be.ac.vub.platformkit.presentation.logging.ConsoleStreamHandler;
 import be.ac.vub.platformkit.presentation.util.ErrorDialogRunnable;
 import be.ac.vub.platformkit.presentation.util.PlatformkitEValidator;
 
-import com.hp.hpl.jena.eclipse.JenaPlugin;
-
 /**
  * This is the central singleton for the Platformkit editor plugin.
  * <!-- begin-user-doc -->
@@ -138,7 +136,8 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	        consoleStream.println("Platformkit Console initiated");
 	        Handler handler = new ConsoleStreamHandler(consoleStream);
 	        Logger.getLogger(IOntologies.LOGGER).addHandler(handler);
-	        JenaPlugin.getDefault().addLogHandler(handler);
+	        // Disable Jena logging on our console to remove dependency
+//	        JenaPlugin.getDefault().addLogHandler(handler);
 	    }
 
 	    private MessageConsole findConsole(String name) {

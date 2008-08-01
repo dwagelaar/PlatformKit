@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: be.ac.vub.platformkit.editor; singleton:=true
-Bundle-Version: 1.1.6
+Bundle-Version: 1.1.7
 Bundle-ClassPath: .
 Bundle-Activator: be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin$Implementation
 Bundle-Vendor: %providerName
@@ -20,6 +20,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
  org.eclipse.ui.console,
- org.eclipse.m2m.atl.adt.debug,
- com.hp.hpl.jena
-Eclipse-LazyStart: true
+ org.eclipse.m2m.atl.adt.debug
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
