@@ -6,9 +6,7 @@ import java.io.InputStream;
 import junit.framework.Assert;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.impl.URIConverterImpl;
-
-import be.ac.vub.platformkit.util.PathResolver;
+import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 
 /**
  * Resolves relative paths using an EMF URI base.
@@ -16,7 +14,7 @@ import be.ac.vub.platformkit.util.PathResolver;
  *
  */
 public class EMFURIPathResolver implements PathResolver {
-	private URIConverterImpl converter = new URIConverterImpl();
+	private ExtensibleURIConverterImpl converter = new ExtensibleURIConverterImpl();
     private URI base;
 
     /**

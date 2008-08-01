@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit"
       label="PlatformKit"
-      version="1.1.8"
+      version="1.1.9"
       provider-name="Vrije Universiteit Brussel"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">
@@ -36,15 +36,13 @@ the terms and conditions of the Eclipse Public License Version
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ui.console"/>
       <import plugin="org.eclipse.m2m.atl.adt.debug"/>
-      <import plugin="com.hp.hpl.jena"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.junit"/>
       <import plugin="org.eclipse.help"/>
       <import plugin="org.eclipse.m2m.atl.engine"/>
       <import plugin="org.eclipse.uml2.uml"/>
-      <import plugin="org.mindswap.pellet"/>
-      <import plugin="org.semanticweb.owl"/>
+      <import plugin="org.eclipse.debug.core" version="3.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -72,7 +70,8 @@ the terms and conditions of the Eclipse Public License Version
          id="be.ac.vub.platformkit.doc"
          download-size="5136"
          install-size="5183"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.java"
@@ -85,20 +84,6 @@ the terms and conditions of the Eclipse Public License Version
          id="be.ac.vub.platformkit.examples"
          download-size="276"
          install-size="276"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="be.ac.vub.platformkit.kb.jena"
-         download-size="28"
-         install-size="28"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="be.ac.vub.platformkit.kb.owlapi"
-         download-size="28"
-         install-size="28"
          version="0.0.0"
          unpack="false"/>
 

@@ -2,7 +2,7 @@
 <feature
       id="com.hp.hpl.jena"
       label="Jena"
-      version="2.5.3.2"
+      version="2.5.3.3"
       provider-name="Hewlett-Packard Development Company, LP"
       image="jena-logo-small.gif">
 
@@ -72,6 +72,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.junit"/>
+      <import plugin="be.ac.vub.platformkit"/>
+      <import plugin="org.mindswap.pellet"/>
+      <import plugin="aterm"/>
+      <import plugin="org.mortbay.jetty"/>
    </requires>
 
    <plugin
@@ -85,5 +89,19 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          download-size="4884"
          install-size="5253"
          version="0.0.0"/>
+
+   <plugin
+         id="be.ac.vub.platformkit.kb.jena"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.mindswap.pellet.jena"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

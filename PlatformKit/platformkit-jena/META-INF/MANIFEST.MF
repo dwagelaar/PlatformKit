@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Jena Plug-in
-Bundle-SymbolicName: com.hp.hpl.jena
-Bundle-Version: 2.5.3.2
+Bundle-SymbolicName: com.hp.hpl.jena;singleton:=true
+Bundle-Version: 2.5.3.3
 Bundle-ClassPath: jena.jar,
  lib/antlr-2.7.5.jar,
  lib/arq.jar,
@@ -226,4 +226,5 @@ Export-Package: arq,
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.junit
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

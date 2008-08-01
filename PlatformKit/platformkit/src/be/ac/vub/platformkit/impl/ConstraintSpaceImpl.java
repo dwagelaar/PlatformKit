@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Internal;
-import org.eclipse.emf.ecore.resource.impl.URIConverterImpl;
+import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -79,7 +79,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	}
 	
     protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
-    private static URIConverterImpl converter = new URIConverterImpl();
+    private static ExtensibleURIConverterImpl converter = new ExtensibleURIConverterImpl();
     
     private IOntologies knowledgeBase = null;
     private PathResolver pathResolver = null;
@@ -237,8 +237,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SPACE__CONSTRAINT_SET:
@@ -282,8 +281,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SPACE__ONTOLOGY:

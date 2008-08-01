@@ -430,75 +430,70 @@ public class PlatformkitEditor
 	protected IResourceChangeListener resourceChangeListener =
 		new IResourceChangeListener() {
 			public void resourceChanged(IResourceChangeEvent event) {
-				// Only listening to these.
-				// if (event.getType() == IResourceDelta.POST_CHANGE)
-				{
-					IResourceDelta delta = event.getDelta();
-					try {
-						class ResourceDeltaVisitor implements IResourceDeltaVisitor {
-							protected ResourceSet resourceSet = editingDomain.getResourceSet();
-							protected Collection<Resource> changedResources = new ArrayList<Resource>();
-							protected Collection<Resource> removedResources = new ArrayList<Resource>();
+				IResourceDelta delta = event.getDelta();
+				try {
+					class ResourceDeltaVisitor implements IResourceDeltaVisitor {
+						protected ResourceSet resourceSet = editingDomain.getResourceSet();
+						protected Collection<Resource> changedResources = new ArrayList<Resource>();
+						protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
-							public boolean visit(IResourceDelta delta) {
-								if (delta.getFlags() != IResourceDelta.MARKERS &&
-								    delta.getResource().getType() == IResource.FILE) {
-									if ((delta.getKind() & (IResourceDelta.CHANGED | IResourceDelta.REMOVED)) != 0) {
-										Resource resource = resourceSet.getResource(URI.createURI(delta.getFullPath().toString()), false);
-										if (resource != null) {
-											if ((delta.getKind() & IResourceDelta.REMOVED) != 0) {
-												removedResources.add(resource);
-											}
-											else if (!savedResources.remove(resource)) {
-												changedResources.add(resource);
-											}
+						public boolean visit(IResourceDelta delta) {
+							if (delta.getResource().getType() == IResource.FILE) {
+								if (delta.getKind() == IResourceDelta.REMOVED ||
+								    delta.getKind() == IResourceDelta.CHANGED && delta.getFlags() != IResourceDelta.MARKERS) {
+									Resource resource = resourceSet.getResource(URI.createURI(delta.getFullPath().toString()), false);
+									if (resource != null) {
+										if (delta.getKind() == IResourceDelta.REMOVED) {
+											removedResources.add(resource);
+										}
+										else if (!savedResources.remove(resource)) {
+											changedResources.add(resource);
 										}
 									}
 								}
-
-								return true;
 							}
 
-							public Collection<Resource> getChangedResources() {
-								return changedResources;
-							}
-
-							public Collection<Resource> getRemovedResources() {
-								return removedResources;
-							}
+							return true;
 						}
 
-						ResourceDeltaVisitor visitor = new ResourceDeltaVisitor();
-						delta.accept(visitor);
-
-						if (!visitor.getRemovedResources().isEmpty()) {
-							removedResources.addAll(visitor.getRemovedResources());
-							if (!isDirty()) {
-								getSite().getShell().getDisplay().asyncExec
-									(new Runnable() {
-										 public void run() {
-											 getSite().getPage().closeEditor(PlatformkitEditor.this, false);
-											 PlatformkitEditor.this.dispose();
-										 }
-									 });
-							}
+						public Collection<Resource> getChangedResources() {
+							return changedResources;
 						}
 
-						if (!visitor.getChangedResources().isEmpty()) {
-							changedResources.addAll(visitor.getChangedResources());
-							if (getSite().getPage().getActiveEditor() == PlatformkitEditor.this) {
-								getSite().getShell().getDisplay().asyncExec
-									(new Runnable() {
-										 public void run() {
-											 handleActivate();
-										 }
-									 });
-							}
+						public Collection<Resource> getRemovedResources() {
+							return removedResources;
 						}
 					}
-					catch (CoreException exception) {
-						PlatformkitEditorPlugin.INSTANCE.log(exception);
+
+					ResourceDeltaVisitor visitor = new ResourceDeltaVisitor();
+					delta.accept(visitor);
+
+					if (!visitor.getRemovedResources().isEmpty()) {
+						removedResources.addAll(visitor.getRemovedResources());
+						if (!isDirty()) {
+							getSite().getShell().getDisplay().asyncExec
+								(new Runnable() {
+									 public void run() {
+										 getSite().getPage().closeEditor(PlatformkitEditor.this, false);
+									 }
+								 });
+						}
 					}
+
+					if (!visitor.getChangedResources().isEmpty()) {
+						changedResources.addAll(visitor.getChangedResources());
+						if (getSite().getPage().getActiveEditor() == PlatformkitEditor.this) {
+							getSite().getShell().getDisplay().asyncExec
+								(new Runnable() {
+									 public void run() {
+										 handleActivate();
+									 }
+								 });
+						}
+					}
+				}
+				catch (CoreException exception) {
+					PlatformkitEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -523,7 +518,6 @@ public class PlatformkitEditor
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
 				getSite().getPage().closeEditor(PlatformkitEditor.this, false);
-				PlatformkitEditor.this.dispose();
 			}
 			else {
 				removedResources.clear();
@@ -547,6 +541,9 @@ public class PlatformkitEditor
 	 */
 	protected void handleChangedResources() {
 		if (!changedResources.isEmpty() && (!isDirty() || handleDirtyConflict())) {
+			if (isDirty()) {
+				changedResources.addAll(editingDomain.getResourceSet().getResources());
+			}
 			editingDomain.getCommandStack().flush();
 
 			updateProblemIndication = false;
@@ -563,6 +560,11 @@ public class PlatformkitEditor
 					}
 				}
 			}
+
+			if (AdapterFactoryEditingDomain.isStale(editorSelection)) {
+				setSelection(StructuredSelection.EMPTY);
+			}
+
 			updateProblemIndication = true;
 			updateProblemIndication();
 		}
@@ -947,8 +949,7 @@ public class PlatformkitEditor
 
 		// Only creates the other pages if there is something that can be edited
 		//
-		if (!getEditingDomain().getResourceSet().getResources().isEmpty() &&
-		    !(getEditingDomain().getResourceSet().getResources().get(0)).getContents().isEmpty()) {
+		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
 			// Create a page for the selection tree view.
 			//
 			{
@@ -1425,8 +1426,11 @@ public class PlatformkitEditor
 					for (Resource resource : editingDomain.getResourceSet().getResources()) {
 						if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
 							try {
-								savedResources.add(resource);
+								long timeStamp = resource.getTimeStamp();
 								resource.save(saveOptions);
+								if (resource.getTimeStamp() != timeStamp) {
+									savedResources.add(resource);
+								}
 							}
 							catch (Exception exception) {
 								resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));

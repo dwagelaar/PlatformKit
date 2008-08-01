@@ -339,8 +339,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
@@ -406,8 +405,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
