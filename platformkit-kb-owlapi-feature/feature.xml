@@ -188,49 +188,50 @@ nuclear facility.
 
    <plugin
          id="be.ac.vub.platformkit.kb.owlapi"
-         download-size="0"
-         install-size="0"
+         download-size="28"
+         install-size="28"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.semanticweb.owl"
-         download-size="0"
-         install-size="0"
+         download-size="2944"
+         install-size="2944"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.semanticweb.owl.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+         download-size="5632"
+         install-size="5632"
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.mindswap.pellet"
-         download-size="0"
-         install-size="0"
+         download-size="932"
+         install-size="932"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="aterm"
-         download-size="0"
-         install-size="0"
+         download-size="348"
+         install-size="348"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="com.sun.xsdlib"
-         download-size="0"
-         install-size="0"
+         download-size="472"
+         install-size="472"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.relaxng"
-         download-size="0"
-         install-size="0"
+         download-size="32"
+         install-size="32"
          version="0.0.0"
          unpack="false"/>
 
