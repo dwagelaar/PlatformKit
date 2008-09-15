@@ -20,7 +20,7 @@ Bundle-ClassPath: jena.jar,
  lib/lucene-core-2.0.0.jar,
  lib/wstx-asl-3.0.0.jar
 Bundle-Activator: com.hp.hpl.jena.eclipse.JenaPlugin
-Bundle-Vendor: Hewlett-Packard Development Company, LP
+Bundle-Vendor: Vrije Universiteit Brussel
 Bundle-Localization: plugin
 Export-Package: arq,
  arq.cmd,

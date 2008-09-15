@@ -4,7 +4,7 @@ Bundle-Name: RelaxNG Plug-in
 Bundle-SymbolicName: org.relaxng
 Bundle-Version: 1.0.0
 Bundle-Activator: org.relaxng.eclipse.Activator
-Bundle-Vendor: Thai Open Source Software Center Ltd, Sun Microsystems
+Bundle-Vendor: Vrije Universiteit Brussel
 Require-Bundle: org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy

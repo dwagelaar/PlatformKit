@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jena Documentation Plug-in
+Bundle-SymbolicName: com.hp.hpl.jena.doc; singleton:=true
+Bundle-Version: 2.5.3.1
+Bundle-Vendor: Vrije Universiteit Brussel
+Bundle-ActivationPolicy: lazy

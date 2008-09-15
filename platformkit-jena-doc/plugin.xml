@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-<plugin
-   id="com.hp.hpl.jena.doc"
-   name="Jena Documentation Plug-in"
-   version="2.5.3.0"
-   provider-name="Hewlett-Packard Development Company, LP">
+<plugin>
 
    <extension point="org.eclipse.help.toc">
       <toc file="toc.xml" primary="true"/>

@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="javadoc">
+	
+	<macrodef name="copyRef">
+		<attribute name="dir" default="com.hp.hpl.jena.doc"/>
+		<sequential>
+			<delete dir="../../@{dir}"/>
+			<copy todir="../../">
+				<fileset dir="../">
+					<include name="@{dir}/**"/>
+				</fileset>
+			</copy>
+		</sequential>
+	</macrodef>
 
 	<target name="clean">
 		<delete dir="../doc/javadoc"/>
 	</target>
 	
-	<target name="javadoc" depends="clean">
+	<target name="copyRefs">
+		<copyRef dir="com.hp.hpl.jena.doc"/>
+		<copyRef dir="org.eclipse.emf.doc"/>
+		<copyRef dir="org.eclipse.platform.doc.isv"/>
+		<copyRef dir="org.semanticweb.owl.doc"/>
+	</target>
+	
+	<target name="javadoc" depends="clean, copyRefs">
 		<javadoc 
 			access="protected" 
 			author="true"
@@ -47,7 +66,11 @@
 				../../platformkit-kb-jena/src:
 				../../platformkit-kb-owlapi/src:
 				../../platformkit-owlapi/src:
-				../../platformkit-pellet/src"
+				../../platformkit-pellet/src:
+				../../platformkit-pellet-aterm/src:
+				../../platformkit-pellet-jena/src:
+				../../platformkit-pellet-relaxng/src:
+				../../platformkit-pellet-xsdlib/src"
 			splitindex="true" 
 			use="true" 
 			version="true">
@@ -59,10 +82,12 @@
 			<link href="http://logging.apache.org/log4j/docs/api/"/>
 			<classpath>
 				<pathelement path="../../platformkit-owlapi/bin"/>
+				<pathelement path="../../platformkit-pellet/bin"/>
+				<pathelement path="../../platformkit-pellet-aterm/bin"/>
+				<pathelement path="../../platformkit-pellet-jena/bin"/>
+				<pathelement path="../../platformkit-pellet-relaxng/bin"/>
+				<pathelement path="../../platformkit-pellet-xsdlib/bin"/>
 				<fileset dir="../../platformkit-jena/lib">
-					<include name="**/*.jar"/>
-				</fileset>
-				<fileset dir="../../platformkit-pellet/lib">
 					<include name="**/*.jar"/>
 				</fileset>
 				<fileset dir="${eclipse.home}/plugins">

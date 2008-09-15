@@ -4,7 +4,7 @@ Bundle-Name: Sun xsdlib Plug-in
 Bundle-SymbolicName: com.sun.xsdlib
 Bundle-Version: 1.0.0
 Bundle-Activator: com.sun.xsdlib.Activator
-Bundle-Vendor: Sun Microsystems, Inc.
+Bundle-Vendor: Vrije Universiteit Brussel
 Require-Bundle: org.eclipse.core.runtime,
  org.relaxng,
  org.apache.xerces

@@ -3,13 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Pellet OWL reasoner Plug-in
 Bundle-SymbolicName: org.mindswap.pellet;singleton:=true
 Bundle-Version: 1.5.0.2
-Bundle-ClassPath: pellet.jar,
- lib/pellet.jar,
- lib/aterm-java-1.6.jar,
- lib/xsdlib/relaxngDatatype.jar,
- lib/xsdlib/xsdlib.jar
 Bundle-Activator: org.mindswap.pellet.eclipse.PelletPlugin
-Bundle-Vendor: Mindswap.org
+Bundle-Vendor: Vrije Universiteit Brussel
 Bundle-Localization: plugin
 Export-Package: com.lre.graph,
  com.lre.utils,

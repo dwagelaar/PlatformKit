@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: OWLAPI Plug-in
 Bundle-SymbolicName: org.semanticweb.owl;singleton:=true
 Bundle-Version: 2.2.0.1
-Bundle-Vendor: CO-ODE project
+Bundle-Vendor: Vrije Universiteit Brussel
 Export-Package: com.clarkparsia.explanation,
  com.clarkparsia.explanation.io,
  com.clarkparsia.explanation.util,
