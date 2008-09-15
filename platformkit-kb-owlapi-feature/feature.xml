@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="be.ac.vub.platformkit.kb.owlapi"
+      label="PlatformKit OWLAPI Adapter"
+      version="1.0.1"
+      provider-name="Vrije Universiteit Brussel">
+
+   <description>
+      PlatformKit adapter for the OWLAPI framework.
+
+The OWL API is a Java interface and implementation for the W3C
+Web Ontology Language OWL. The latest version of the API is focused
+towards OWL 2 which encompasses, OWL-Lite, OWL-DL and some elements
+of OWL-Full.
+   </description>
+
+   <copyright>
+      © Copyright 2005, 2006, 2007, 2008 Dennis Wagelaar, Vrije Universiteit
+Brussel.
+
+* OWLAPI (http://sourceforge.net/projects/owlapi) *
+
+© Copyright 2006, 2007, University of Manchester.
+© Copyright 2007, Clark &amp; Parsia.
+© Copyright 2007, Ulm University.
+
+* Pellet (http://www.mindswap.org/2003/pellet/) *
+
+© Copyright 2003 Ron Alford, Mike Grove, Bijan Parsia, Evren Sirin.
+
+* ATerm (http://www.cwi.nl/htbin/sen1/twiki/bin/view/SEN1/ATermLibrary) *
+
+© Copyright 2002-2007, CWI and INRIA.
+All rights reserved.
+
+* RELAX NG *
+
+© Copyright (c) 2001, Thai Open Source Software Center Ltd, Sun Microsystems.
+All rights reserved.
+
+* SUN XML DATATYPES LIBRARY (xsdlib) *
+
+© Copyright 2001-2006 Sun Microsystems, Inc. 901 San Antonio Road, Palo Alto,
+California, 94303, U.S.A. All rights reserved.
+   </copyright>
+
+   <license>
+      Vrije Universiteit Brussel makes available all content in this
+plug-in. The Content in this plug-in is provided to you under
+the terms and conditions of the Eclipse Public License Version
+1.0 (&quot;EPL&quot;). A copy of the EPL is available at http://www.eclipse.org/legal/epl-v10.html.
+
+Applicable Licenses
+
+PlatformKit is built upon a number of other open source technologies and products. Here is a list of those products with their licenses.
+
+* OWLAPI (http://sourceforge.net/projects/owlapi) *
+
+Modifications to the initial code base are copyright of their
+respective authors, or their employers as appropriate.  Authorship
+of the modifications may be determined from the ChangeLog placed
+at the end of this file.
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301
+USA
+
+* Pellet (http://www.mindswap.org/2003/pellet/) *
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+* ATerm (http://www.cwi.nl/htbin/sen1/twiki/bin/view/SEN1/ATermLibrary) *
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+* Neither the name of the University of California, Berkeley nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS&apos;&apos; AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE REGENTS AND CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+* RELAX NG *
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+
+    Neither the names of the copyright holders nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+&quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+* SUN XML DATATYPES LIBRARY (xsdlib) *
+
+Redistribution and  use in  source and binary  forms, with  or without
+modification, are permitted provided that the following conditions are
+met:
+
+- Redistributions  of  source code  must  retain  the above  copyright
+  notice, this list of conditions and the following disclaimer.
+
+- Redistribution  in binary  form must  reproduct the  above copyright
+  notice, this list of conditions  and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+Neither  the  name   of  Sun  Microsystems,  Inc.  or   the  names  of
+contributors may be  used to endorse or promote  products derived from
+this software without specific prior written permission.
+
+This software is provided &quot;AS IS,&quot; without a warranty of any kind. ALL
+EXPRESS  OR   IMPLIED  CONDITIONS,  REPRESENTATIONS   AND  WARRANTIES,
+INCLUDING  ANY  IMPLIED WARRANTY  OF  MERCHANTABILITY,  FITNESS FOR  A
+PARTICULAR PURPOSE  OR NON-INFRINGEMENT, ARE HEREBY  EXCLUDED. SUN AND
+ITS  LICENSORS SHALL  NOT BE  LIABLE  FOR ANY  DAMAGES OR  LIABILITIES
+SUFFERED BY LICENSEE  AS A RESULT OF OR  RELATING TO USE, MODIFICATION
+OR DISTRIBUTION OF  THE SOFTWARE OR ITS DERIVATIVES.  IN NO EVENT WILL
+SUN OR ITS  LICENSORS BE LIABLE FOR ANY LOST  REVENUE, PROFIT OR DATA,
+OR  FOR  DIRECT,   INDIRECT,  SPECIAL,  CONSEQUENTIAL,  INCIDENTAL  OR
+PUNITIVE  DAMAGES, HOWEVER  CAUSED  AND REGARDLESS  OF  THE THEORY  OF
+LIABILITY, ARISING  OUT OF  THE USE OF  OR INABILITY TO  USE SOFTWARE,
+EVEN IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+You acknowledge that Software is not designed,licensed or intended for
+use  in the  design,  construction, operation  or  maintenance of  any
+nuclear facility.
+   </license>
+
+   <url>
+      <update label="SSEL update site" url="http://ssel.vub.ac.be/eclipse/update"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="be.ac.vub.platformkit"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.apache.commons.logging"/>
+      <import plugin="org.apache.xerces"/>
+   </requires>
+
+   <plugin
+         id="be.ac.vub.platformkit.kb.owlapi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.semanticweb.owl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.semanticweb.owl.doc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.mindswap.pellet"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="aterm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sun.xsdlib"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.relaxng"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
