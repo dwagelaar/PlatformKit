@@ -10,6 +10,7 @@
 				<include name="equinox.common.jar"/>
 				<include name="osgi.jar"/>
 				<include name="resources.jar"/>
+				<include name="xerces.jar"/>
 				<!--include name="platformkit.jar"/>
 				<include name="platformkit-java.jar"/-->
 			</fileset>
@@ -39,7 +40,7 @@
 		</copy>
 		<copy tofile="equinox.registry.jar" verbose="true">
 			<fileset dir="${eclipse.home}/plugins">
-				<include name="org.eclipse.equinox.registry_3.3.1*.jar"/>
+				<include name="org.eclipse.equinox.registry_*.jar"/>
 			</fileset>
 		</copy>
 		<copy tofile="equinox.common.jar" verbose="true">
@@ -49,12 +50,17 @@
 		</copy>
 		<copy tofile="resources.jar" verbose="true">
 			<fileset dir="${eclipse.home}/plugins">
-				<include name="org.eclipse.core.resources_3.3.1*.jar"/>
+				<include name="org.eclipse.core.resources_*.jar"/>
 			</fileset>
 		</copy>
 		<copy tofile="osgi.jar" verbose="true">
 			<fileset dir="${eclipse.home}/plugins">
-				<include name="org.eclipse.osgi_3.3.2*.jar"/>
+				<include name="org.eclipse.osgi_*.jar"/>
+			</fileset>
+		</copy>
+		<copy tofile="xerces.jar" verbose="true">
+			<fileset dir="${eclipse.home}/plugins">
+				<include name="org.apache.xerces_*.jar"/>
 			</fileset>
 		</copy>
 		<!--copy tofile="platformkit.jar" verbose="true">
