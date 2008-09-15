@@ -20,6 +20,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2m.atl.adt.launching.AtlVM;
 import org.eclipse.m2m.atl.engine.AtlEMFModelHandler;
 import org.eclipse.m2m.atl.engine.AtlModelHandler;
+import org.eclipse.m2m.atl.engine.vm.ModelLoader;
 import org.eclipse.m2m.atl.engine.vm.nativelib.ASMBoolean;
 import org.eclipse.m2m.atl.engine.vm.nativelib.ASMModel;
 import org.eclipse.ui.IActionDelegate;
@@ -39,8 +40,6 @@ public abstract class CompatAction implements IObjectActionDelegate {
 	
     protected ISelection selection;
     protected IAction action;
-    protected static AtlEMFModelHandler amh = (AtlEMFModelHandler) AtlModelHandler.getDefault(AtlModelHandler.AMH_EMF);
-    protected static ASMModel uml2 = amh.loadModel("UML2", amh.getMof(), "uri:" + UMLPackage.eINSTANCE.getNsURI());
 
     private boolean cancelled = false;
     private URL apiResource = null;
@@ -126,32 +125,37 @@ public abstract class CompatAction implements IObjectActionDelegate {
     protected void runAction(IProgressMonitor monitor) throws Exception {
         monitor.beginTask("Determining compatibility with " + apiName, 5);
         monitor.subTask("Loading models...");
-        IFile file =
+        final AtlEMFModelHandler amh = (AtlEMFModelHandler) AtlModelHandler.getDefault(AtlModelHandler.AMH_EMF);
+        final ModelLoader ml = amh.createModelLoader();
+        final ASMModel uml2 = ml.loadModel("UML2", ml.getMOF(), "uri:" + UMLPackage.eINSTANCE.getNsURI());
+        final IFile file =
         	(IFile) ((IStructuredSelection) selection).getFirstElement();
         Assert.isNotNull(file);
         worked(monitor);
-        ASMModel previn = amh.loadModel("PREVIN", uml2, file.getContents());
+        final ASMModel previn = ml.loadModel("PREVIN", uml2, file.getContents());
         worked(monitor);
-        ASMModel in = amh.loadModel("IN", uml2, apiResource.openStream());
+        final ASMModel in = ml.loadModel("IN", uml2, apiResource.openStream());
         worked(monitor);
         monitor.subTask("Running ATL query...");
-        Map<String, String> params = Collections.emptyMap();
-        Map<String, ASMModel> models = new HashMap<String, ASMModel>();
+        final Map<String, String> params = Collections.emptyMap();
+        final Map<String, ASMModel> models = new HashMap<String, ASMModel>();
         models.put(uml2.getName(), uml2);
         models.put(previn.getName(), previn);
         models.put(in.getName(), in);
-        URL uml2CompatibilityComparison = 
+        final URL uml2CompatibilityComparison = 
         	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityComparison.asm");
-        URL uml2Comparison = 
+        final URL uml2Comparison = 
         	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2Comparison.asm");
-        List<URL> superimpose = Collections.emptyList();
-        Map<String, URL> libs = new HashMap<String, URL>();
+        final List<URL> superimpose = Collections.emptyList();
+        final Map<String, URL> libs = new HashMap<String, URL>();
         libs.put("UML2Comparison", uml2Comparison);
-		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
+        final Map<String, String> options = new HashMap<String, String>();
+        options.put("printExecutionTime", "true");
+		final IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
 				.getPreferenceStore();
-		String atlVMName = store.getString(PreferenceConstants.P_ATLVM);
-		AtlVM atlVM = AtlVM.getVM(atlVMName);
-		Object result = atlVM.launch(uml2CompatibilityComparison, libs, models, params, superimpose, Collections.EMPTY_MAP);
+		final String atlVMName = store.getString(PreferenceConstants.P_ATLVM);
+		final AtlVM atlVM = AtlVM.getVM(atlVMName);
+		final Object result = atlVM.launch(uml2CompatibilityComparison, libs, models, params, superimpose, options);
 		boolean compatible;
 		if (result instanceof ASMBoolean) {
 			compatible = ((ASMBoolean)result).getSymbol();
@@ -161,7 +165,7 @@ public abstract class CompatAction implements IObjectActionDelegate {
 		}
         worked(monitor);
         monitor.subTask("Showing result...");
-        StringBuffer report = new StringBuffer();
+        final StringBuffer report = new StringBuffer();
         report.append(file.getName());
         if (compatible) {
         	report.append(" is compatible with ");
@@ -170,7 +174,7 @@ public abstract class CompatAction implements IObjectActionDelegate {
         }
         report.append(apiName);
         report.append(".\nCheck the ATL console log for details.");
-        MessageDialogRunnable dlg = new MessageDialogRunnable(
+        final MessageDialogRunnable dlg = new MessageDialogRunnable(
                 "Compatible with " + apiName, report.toString());
         if (compatible) {
         	dlg.setMode(MessageDialogRunnable.MODE_INFORMATION);

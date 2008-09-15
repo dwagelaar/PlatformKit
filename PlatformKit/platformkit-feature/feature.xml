@@ -25,7 +25,7 @@ the terms and conditions of the Eclipse Public License Version
    </license>
 
    <url>
-      <update label="PlatformKit update site" url="http://ssel.vub.ac.be/platformkit/update"/>
+      <update label="SSEL update site" url="http://ssel.vub.ac.be/eclipse/update"/>
    </url>
 
    <requires>

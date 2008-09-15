@@ -4,7 +4,7 @@ Bundle-Name: Pellet OWL reasoner Jena interface Plug-in
 Bundle-SymbolicName: org.mindswap.pellet.jena
 Bundle-Version: 1.5.0
 Bundle-Activator: org.mindswap.pellet.jena.eclipse.Activator
-Bundle-Vendor: Mindswap.org
+Bundle-Vendor: Vrije Universiteit Brussel
 Require-Bundle: org.eclipse.core.runtime,
  org.mindswap.pellet,
  com.hp.hpl.jena,
