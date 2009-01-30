@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.Assert;
@@ -34,9 +35,12 @@ import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 import be.ac.vub.platformkit.java.popup.util.ErrorDialogRunnable;
 import be.ac.vub.platformkit.java.popup.util.MessageDialogRunnable;
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 public abstract class CompatAction implements IObjectActionDelegate {
+	
+	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	
     protected ISelection selection;
     protected IAction action;
@@ -125,7 +129,13 @@ public abstract class CompatAction implements IObjectActionDelegate {
     protected void runAction(IProgressMonitor monitor) throws Exception {
         monitor.beginTask("Determining compatibility with " + apiName, 5);
         monitor.subTask("Loading models...");
-        final AtlEMFModelHandler amh = (AtlEMFModelHandler) AtlModelHandler.getDefault(AtlModelHandler.AMH_EMF);
+        AtlEMFModelHandler amh;
+        try {
+        	amh = (AtlEMFModelHandler) AtlModelHandler.getDefault("UML2");
+        } catch (RuntimeException e) {
+        	logger.warning("UML2 model handler not available; falling back to EMF model handler");
+            amh = (AtlEMFModelHandler) AtlModelHandler.getDefault(AtlModelHandler.AMH_EMF);
+        }
         final ModelLoader ml = amh.createModelLoader();
         final ASMModel uml2 = ml.loadModel("UML2", ml.getMOF(), "uri:" + UMLPackage.eINSTANCE.getNsURI());
         final IFile file =
