@@ -15477,10 +15477,6 @@
             <ownedOperation xmi:id="_kszUUxkyEd6WJ8gws_yupQ" name="getMessage" visibility="public">
               <ownedParameter xmi:id="_kszUVBkyEd6WJ8gws_yupQ" name="return" type="_kZogsBkyEd6WJ8gws_yupQ" direction="return"/>
             </ownedOperation>
-            <ownedOperation xmi:id="_kszUVRkyEd6WJ8gws_yupQ" name="getPosition" visibility="public">
-              <ownedParameter xmi:id="_kszUVhkyEd6WJ8gws_yupQ" name="arg0" type="_kWAk8BkyEd6WJ8gws_yupQ"/>
-              <ownedParameter xmi:id="_kszUVxkyEd6WJ8gws_yupQ" name="return" type="_kYMWQBkyEd6WJ8gws_yupQ" direction="return"/>
-            </ownedOperation>
             <ownedOperation xmi:id="_kszUWBkyEd6WJ8gws_yupQ" name="getSelection" visibility="public">
               <ownedParameter xmi:id="_kszUWRkyEd6WJ8gws_yupQ" name="return" type="_kWAk8BkyEd6WJ8gws_yupQ" direction="return"/>
             </ownedOperation>
