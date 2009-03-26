@@ -540,10 +540,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_rlr1gBkjEd6uE8Uh7mFB-A" name="Accessible">
             <generalization xmi:id="_rlr1gRkjEd6uE8Uh7mFB-A" general="_rlqnZhkjEd6uE8Uh7mFB-A"/>
-            <ownedOperation xmi:id="_roVg4BkjEd6uE8Uh7mFB-A" name="internal_new_Accessible" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_roVg4RkjEd6uE8Uh7mFB-A" name="arg0" type="_rnfzZBkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roVg4hkjEd6uE8Uh7mFB-A" name="return" type="_rlr1gBkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
             <ownedOperation xmi:id="_roVg4xkjEd6uE8Uh7mFB-A" name="addAccessibleListener" visibility="public">
               <ownedParameter xmi:id="_roVg5BkjEd6uE8Uh7mFB-A" name="arg0" type="_rlsckRkjEd6uE8Uh7mFB-A"/>
             </ownedOperation>
@@ -555,31 +551,6 @@
             </ownedOperation>
             <ownedOperation xmi:id="_roVg6RkjEd6uE8Uh7mFB-A" name="getControl" visibility="public">
               <ownedParameter xmi:id="_roVg6hkjEd6uE8Uh7mFB-A" name="return" type="_rnfzZBkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_roVg6xkjEd6uE8Uh7mFB-A" name="internal_dispose_Accessible" visibility="public"/>
-            <ownedOperation xmi:id="_roVg7BkjEd6uE8Uh7mFB-A" name="internal_kEventAccessibleGetChildAtPoint" visibility="public">
-              <ownedParameter xmi:id="_roWH8BkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWH8RkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWH8hkjEd6uE8Uh7mFB-A" name="arg2" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWH8xkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_roWH9BkjEd6uE8Uh7mFB-A" name="internal_kEventAccessibleGetFocusedChild" visibility="public">
-              <ownedParameter xmi:id="_roWH9RkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWH9hkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWH9xkjEd6uE8Uh7mFB-A" name="arg2" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWH-BkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_roWH-RkjEd6uE8Uh7mFB-A" name="internal_kEventAccessibleGetAllAttributeNames" visibility="public">
-              <ownedParameter xmi:id="_roWH-hkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWH-xkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWH_BkjEd6uE8Uh7mFB-A" name="arg2" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWH_RkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_roWH_hkjEd6uE8Uh7mFB-A" name="internal_kEventAccessibleGetNamedAttribute" visibility="public">
-              <ownedParameter xmi:id="_roWH_xkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWIABkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWIARkjEd6uE8Uh7mFB-A" name="arg2" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_roWIAhkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_roWvABkjEd6uE8Uh7mFB-A" name="removeAccessibleListener" visibility="public">
               <ownedParameter xmi:id="_roWvARkjEd6uE8Uh7mFB-A" name="arg0" type="_rlsckRkjEd6uE8Uh7mFB-A"/>
@@ -1284,10 +1255,9 @@
               <ownedParameter xmi:id="_r5LZTRkjEd6uE8Uh7mFB-A" name="arg0" type="_roRPchkjEd6uE8Uh7mFB-A"/>
             </ownedOperation>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_rnfzZBkjEd6uE8Uh7mFB-A" name="Control" clientDependency="_rni2sBkjEd6uE8Uh7mFB-A" isAbstract="true">
+          <packagedElement xmi:type="uml:Class" xmi:id="_rnfzZBkjEd6uE8Uh7mFB-A" name="Control" isAbstract="true">
             <generalization xmi:id="_rni2sRkjEd6uE8Uh7mFB-A" general="_rmP2MRkjEd6uE8Uh7mFB-A"/>
             <ownedAttribute xmi:id="_r5YNkBkjEd6uE8Uh7mFB-A" name="handle" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <interfaceRealization xmi:id="_rni2sBkjEd6uE8Uh7mFB-A" supplier="_rmdRkxkjEd6uE8Uh7mFB-A" client="_rnfzZBkjEd6uE8Uh7mFB-A" contract="_rmdRkxkjEd6uE8Uh7mFB-A"/>
             <ownedOperation xmi:id="_r5YNkRkjEd6uE8Uh7mFB-A" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_r5Y0oBkjEd6uE8Uh7mFB-A" name="arg0" type="_rlu40xkjEd6uE8Uh7mFB-A"/>
               <ownedParameter xmi:id="_r5Y0oRkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
@@ -1409,14 +1379,6 @@
             </ownedOperation>
             <ownedOperation xmi:id="_r5b38BkjEd6uE8Uh7mFB-A" name="getVisible" visibility="public">
               <ownedParameter xmi:id="_r5b38RkjEd6uE8Uh7mFB-A" name="return" type="_roc1qhkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_r5b38hkjEd6uE8Uh7mFB-A" name="internal_new_GC" visibility="public">
-              <ownedParameter xmi:id="_r5b38xkjEd6uE8Uh7mFB-A" name="arg0" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_r5b39BkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_r5b39RkjEd6uE8Uh7mFB-A" name="internal_dispose_GC" visibility="public">
-              <ownedParameter xmi:id="_r5b39hkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_r5b39xkjEd6uE8Uh7mFB-A" name="arg1" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
             </ownedOperation>
             <ownedOperation xmi:id="_r5b3-BkjEd6uE8Uh7mFB-A" name="isEnabled" visibility="public">
               <ownedParameter xmi:id="_r5b3-RkjEd6uE8Uh7mFB-A" name="return" type="_roc1qhkjEd6uE8Uh7mFB-A" direction="return"/>
@@ -2231,14 +2193,6 @@
               <ownedParameter xmi:id="_r5x2MhkjEd6uE8Uh7mFB-A" name="return" type="_rqnY3BkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_r5x2MxkjEd6uE8Uh7mFB-A" name="init" visibility="protected"/>
-            <ownedOperation xmi:id="_r5x2NBkjEd6uE8Uh7mFB-A" name="internal_new_GC" visibility="public">
-              <ownedParameter xmi:id="_r5x2NRkjEd6uE8Uh7mFB-A" name="arg0" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_r5x2NhkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_r5x2NxkjEd6uE8Uh7mFB-A" name="internal_dispose_GC" visibility="public">
-              <ownedParameter xmi:id="_r5x2OBkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_r5x2ORkjEd6uE8Uh7mFB-A" name="arg1" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-            </ownedOperation>
             <ownedOperation xmi:id="_r5x2OhkjEd6uE8Uh7mFB-A" name="post" visibility="public">
               <ownedParameter xmi:id="_r5x2OxkjEd6uE8Uh7mFB-A" name="arg0" type="_rnmhEhkjEd6uE8Uh7mFB-A"/>
               <ownedParameter xmi:id="_r5x2PBkjEd6uE8Uh7mFB-A" name="return" type="_roc1qhkjEd6uE8Uh7mFB-A" direction="return"/>
@@ -3173,11 +3127,6 @@
             <ownedOperation xmi:id="_r6YTKhkjEd6uE8Uh7mFB-A" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_r6YTKxkjEd6uE8Uh7mFB-A" name="arg0" type="_rntOwBkjEd6uE8Uh7mFB-A"/>
               <ownedParameter xmi:id="_r6YTLBkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_r6Y6MBkjEd6uE8Uh7mFB-A" name="internal_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_r6Y6MRkjEd6uE8Uh7mFB-A" name="arg0" type="_rnmhEBkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_r6Y6MhkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_r6Y6MxkjEd6uE8Uh7mFB-A" name="return" type="_rntOwBkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_r6Y6NBkjEd6uE8Uh7mFB-A" name="addShellListener" visibility="public">
               <ownedParameter xmi:id="_r6Y6NRkjEd6uE8Uh7mFB-A" name="arg0" type="_rma1UxkjEd6uE8Uh7mFB-A"/>
@@ -7330,11 +7279,6 @@
             <ownedOperation xmi:id="_rqUd8RkjEd6uE8Uh7mFB-A" name="getRGB" visibility="public">
               <ownedParameter xmi:id="_rqUd8hkjEd6uE8Uh7mFB-A" name="return" type="_rmiKFhkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
-            <ownedOperation xmi:id="_rqVE8BkjEd6uE8Uh7mFB-A" name="carbon_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_rqVE8RkjEd6uE8Uh7mFB-A" name="arg0" type="_rmdRkhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqVE8hkjEd6uE8Uh7mFB-A" name="arg1" type="_rqT22BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqVE8xkjEd6uE8Uh7mFB-A" name="return" type="_rmcqgxkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
             <ownedOperation xmi:id="_rqVE9BkjEd6uE8Uh7mFB-A" name="isDisposed" visibility="public">
               <ownedParameter xmi:id="_rqVE9RkjEd6uE8Uh7mFB-A" name="return" type="_roc1qhkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
@@ -7386,18 +7330,12 @@
             <ownedOperation xmi:id="_rqVsERkjEd6uE8Uh7mFB-A" name="toString" visibility="public">
               <ownedParameter xmi:id="_rqVsEhkjEd6uE8Uh7mFB-A" name="return" type="_roRPchkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
-            <ownedOperation xmi:id="_rqVsExkjEd6uE8Uh7mFB-A" name="carbon_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_rqVsFBkjEd6uE8Uh7mFB-A" name="arg0" type="_rmdRkhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqWTEBkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqWTERkjEd6uE8Uh7mFB-A" name="return" type="_rmdRkBkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_rmdRkhkjEd6uE8Uh7mFB-A" name="Device" clientDependency="_rmdRlBkjEd6uE8Uh7mFB-A" isAbstract="true">
+          <packagedElement xmi:type="uml:Class" xmi:id="_rmdRkhkjEd6uE8Uh7mFB-A" name="Device" isAbstract="true">
             <generalization xmi:id="_rmdRlRkjEd6uE8Uh7mFB-A" general="_rlqnZhkjEd6uE8Uh7mFB-A"/>
             <ownedAttribute xmi:id="_rqWTEhkjEd6uE8Uh7mFB-A" name="DEBUG" visibility="public" isStatic="true" type="_roc1qhkjEd6uE8Uh7mFB-A"/>
             <ownedAttribute xmi:id="_rqWTExkjEd6uE8Uh7mFB-A" name="CurrentDevice" visibility="protected" isStatic="true" type="_rmdRkhkjEd6uE8Uh7mFB-A"/>
             <ownedAttribute xmi:id="_rqWTFBkjEd6uE8Uh7mFB-A" name="DeviceFinder" visibility="protected" isStatic="true" type="_rosGMBkjEd6uE8Uh7mFB-A"/>
-            <interfaceRealization xmi:id="_rmdRlBkjEd6uE8Uh7mFB-A" supplier="_rmdRkxkjEd6uE8Uh7mFB-A" client="_rmdRkhkjEd6uE8Uh7mFB-A" contract="_rmdRkxkjEd6uE8Uh7mFB-A"/>
             <ownedOperation xmi:id="_rqWTFRkjEd6uE8Uh7mFB-A" name="&lt;init>" visibility="public"/>
             <ownedOperation xmi:id="_rqWTFhkjEd6uE8Uh7mFB-A" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_rqWTFxkjEd6uE8Uh7mFB-A" name="arg0" type="_rmd4oBkjEd6uE8Uh7mFB-A"/>
@@ -7439,14 +7377,6 @@
               <ownedParameter xmi:id="_rqXhNhkjEd6uE8Uh7mFB-A" name="return" type="_roc1qhkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_rqXhNxkjEd6uE8Uh7mFB-A" name="init" visibility="protected"/>
-            <ownedOperation xmi:id="_rqXhOBkjEd6uE8Uh7mFB-A" name="internal_new_GC" visibility="public" isAbstract="true">
-              <ownedParameter xmi:id="_rqXhORkjEd6uE8Uh7mFB-A" name="arg0" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqXhOhkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_rqXhOxkjEd6uE8Uh7mFB-A" name="internal_dispose_GC" visibility="public" isAbstract="true">
-              <ownedParameter xmi:id="_rqXhPBkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqXhPRkjEd6uE8Uh7mFB-A" name="arg1" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-            </ownedOperation>
             <ownedOperation xmi:id="_rqXhPhkjEd6uE8Uh7mFB-A" name="isDisposed" visibility="public">
               <ownedParameter xmi:id="_rqXhPxkjEd6uE8Uh7mFB-A" name="return" type="_roc1qhkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
@@ -7457,16 +7387,6 @@
             <ownedOperation xmi:id="_rqYIQRkjEd6uE8Uh7mFB-A" name="release" visibility="protected"/>
             <ownedOperation xmi:id="_rqYIQhkjEd6uE8Uh7mFB-A" name="setWarnings" visibility="public">
               <ownedParameter xmi:id="_rqYIQxkjEd6uE8Uh7mFB-A" name="arg0" type="_roc1qhkjEd6uE8Uh7mFB-A"/>
-            </ownedOperation>
-          </packagedElement>
-          <packagedElement xmi:type="uml:Interface" xmi:id="_rmdRkxkjEd6uE8Uh7mFB-A" name="Drawable" isAbstract="true">
-            <ownedOperation xmi:id="_rqYIShkjEd6uE8Uh7mFB-A" name="internal_new_GC" visibility="public" isAbstract="true">
-              <ownedParameter xmi:id="_rqYISxkjEd6uE8Uh7mFB-A" name="arg0" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqYITBkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_rqYITRkjEd6uE8Uh7mFB-A" name="internal_dispose_GC" visibility="public" isAbstract="true">
-              <ownedParameter xmi:id="_rqYvUBkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqYvURkjEd6uE8Uh7mFB-A" name="arg1" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_rmd4oBkjEd6uE8Uh7mFB-A" name="DeviceData">
@@ -7563,14 +7483,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_rmefsBkjEd6uE8Uh7mFB-A" name="FontMetrics" isLeaf="true">
             <generalization xmi:id="_rmefsRkjEd6uE8Uh7mFB-A" general="_rlqnZhkjEd6uE8Uh7mFB-A"/>
-            <ownedOperation xmi:id="_rqbLkBkjEd6uE8Uh7mFB-A" name="carbon_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_rqbLkRkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqbLkhkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqbLkxkjEd6uE8Uh7mFB-A" name="arg2" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqbLlBkjEd6uE8Uh7mFB-A" name="arg3" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqbLlRkjEd6uE8Uh7mFB-A" name="arg4" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqbLlhkjEd6uE8Uh7mFB-A" name="return" type="_rmefsBkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
             <ownedOperation xmi:id="_rqbLlxkjEd6uE8Uh7mFB-A" name="equals" visibility="public">
               <ownedParameter xmi:id="_rqbLmBkjEd6uE8Uh7mFB-A" name="arg0" type="_rlqnZhkjEd6uE8Uh7mFB-A"/>
               <ownedParameter xmi:id="_rqbLmRkjEd6uE8Uh7mFB-A" name="return" type="_roc1qhkjEd6uE8Uh7mFB-A" direction="return"/>
@@ -7598,21 +7510,11 @@
             <generalization xmi:id="_rmfGwRkjEd6uE8Uh7mFB-A" general="_rmcqhBkjEd6uE8Uh7mFB-A"/>
             <ownedAttribute xmi:id="_rqcZsBkjEd6uE8Uh7mFB-A" name="handle" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
             <ownedOperation xmi:id="_rqcZsRkjEd6uE8Uh7mFB-A" name="&lt;init>" visibility="public">
-              <ownedParameter xmi:id="_rqcZshkjEd6uE8Uh7mFB-A" name="arg0" type="_rmdRkxkjEd6uE8Uh7mFB-A"/>
+              <ownedParameter xmi:id="_rqcZshkjEd6uE8Uh7mFB-A" name="arg0"/>
             </ownedOperation>
             <ownedOperation xmi:id="_rqcZsxkjEd6uE8Uh7mFB-A" name="&lt;init>" visibility="public">
-              <ownedParameter xmi:id="_rqcZtBkjEd6uE8Uh7mFB-A" name="arg0" type="_rmdRkxkjEd6uE8Uh7mFB-A"/>
+              <ownedParameter xmi:id="_rqcZtBkjEd6uE8Uh7mFB-A" name="arg0"/>
               <ownedParameter xmi:id="_rqcZtRkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_rqcZthkjEd6uE8Uh7mFB-A" name="carbon_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_rqcZtxkjEd6uE8Uh7mFB-A" name="arg0" type="_rmdRkxkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqcZuBkjEd6uE8Uh7mFB-A" name="arg1" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqcZuRkjEd6uE8Uh7mFB-A" name="return" type="_rmfGwBkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_rqdAwBkjEd6uE8Uh7mFB-A" name="carbon_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_rqdAwRkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqdAwhkjEd6uE8Uh7mFB-A" name="arg1" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqdAwxkjEd6uE8Uh7mFB-A" name="return" type="_rmfGwBkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_rqdAxBkjEd6uE8Uh7mFB-A" name="copyArea" visibility="public">
               <ownedParameter xmi:id="_rqdAxRkjEd6uE8Uh7mFB-A" name="arg0" type="_rmft0hkjEd6uE8Uh7mFB-A"/>
@@ -7829,7 +7731,7 @@
               <ownedParameter xmi:id="_rqigWxkjEd6uE8Uh7mFB-A" name="return" type="_rmiKEBkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_rqigXBkjEd6uE8Uh7mFB-A" name="getGCData" visibility="public">
-              <ownedParameter xmi:id="_rqigXRkjEd6uE8Uh7mFB-A" name="return" type="_rmfGwhkjEd6uE8Uh7mFB-A" direction="return"/>
+              <ownedParameter xmi:id="_rqigXRkjEd6uE8Uh7mFB-A" name="return" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_rqigXhkjEd6uE8Uh7mFB-A" name="getInterpolation" visibility="public">
               <ownedParameter xmi:id="_rqigXxkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
@@ -7962,60 +7864,6 @@
               <ownedParameter xmi:id="_rqljrxkjEd6uE8Uh7mFB-A" name="return" type="_roRPchkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_rmfGwhkjEd6uE8Uh7mFB-A" name="GCData" isLeaf="true">
-            <generalization xmi:id="_rmfGwxkjEd6uE8Uh7mFB-A" general="_rlqnZhkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKsBkjEd6uE8Uh7mFB-A" name="device" visibility="public" type="_rmdRkhkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKsRkjEd6uE8Uh7mFB-A" name="style" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKshkjEd6uE8Uh7mFB-A" name="state" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKsxkjEd6uE8Uh7mFB-A" name="foreground" visibility="public" type="_rqT22BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKtBkjEd6uE8Uh7mFB-A" name="background" visibility="public" type="_rqT22BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKtRkjEd6uE8Uh7mFB-A" name="foregroundPattern" visibility="public" type="_rmiKEBkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKthkjEd6uE8Uh7mFB-A" name="backgroundPattern" visibility="public" type="_rmiKEBkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKtxkjEd6uE8Uh7mFB-A" name="font" visibility="public" type="_rmd4ohkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKuBkjEd6uE8Uh7mFB-A" name="alpha" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKuRkjEd6uE8Uh7mFB-A" name="transform" visibility="public" type="_rqT22BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKuhkjEd6uE8Uh7mFB-A" name="inverseTransform" visibility="public" type="_rqT22BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKuxkjEd6uE8Uh7mFB-A" name="clippingTransform" visibility="public" type="_rqT22BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmKvBkjEd6uE8Uh7mFB-A" name="clipRgn" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxwBkjEd6uE8Uh7mFB-A" name="lineWidth" visibility="public" type="_rqT21xkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxwRkjEd6uE8Uh7mFB-A" name="lineStyle" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxwhkjEd6uE8Uh7mFB-A" name="lineCap" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxwxkjEd6uE8Uh7mFB-A" name="lineJoin" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxxBkjEd6uE8Uh7mFB-A" name="lineDashesOffset" visibility="public" type="_rqT21xkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxxRkjEd6uE8Uh7mFB-A" name="lineDashes" visibility="public" type="_rqT22BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxxhkjEd6uE8Uh7mFB-A" name="lineMiterLimit" visibility="public" type="_rqT21xkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxxxkjEd6uE8Uh7mFB-A" name="xorMode" visibility="public" type="_roc1qhkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxyBkjEd6uE8Uh7mFB-A" name="antialias" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxyRkjEd6uE8Uh7mFB-A" name="textAntialias" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxyhkjEd6uE8Uh7mFB-A" name="fillRule" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxyxkjEd6uE8Uh7mFB-A" name="drawXOffset" visibility="public" type="_rqT21xkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxzBkjEd6uE8Uh7mFB-A" name="drawYOffset" visibility="public" type="_rqT21xkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxzRkjEd6uE8Uh7mFB-A" name="forePattern" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqmxzhkjEd6uE8Uh7mFB-A" name="backPattern" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY0BkjEd6uE8Uh7mFB-A" name="image" visibility="public" type="_rmft0hkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY0RkjEd6uE8Uh7mFB-A" name="fontAscent" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY0hkjEd6uE8Uh7mFB-A" name="fontDescent" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY0xkjEd6uE8Uh7mFB-A" name="layout" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY1BkjEd6uE8Uh7mFB-A" name="atsuiStyle" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY1RkjEd6uE8Uh7mFB-A" name="tabs" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY1hkjEd6uE8Uh7mFB-A" name="string" visibility="public" type="_roRPchkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY1xkjEd6uE8Uh7mFB-A" name="stringLength" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY2BkjEd6uE8Uh7mFB-A" name="stringWidth" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY2RkjEd6uE8Uh7mFB-A" name="stringHeight" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY2hkjEd6uE8Uh7mFB-A" name="drawFlags" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY2xkjEd6uE8Uh7mFB-A" name="stringPtr" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqnY3RkjEd6uE8Uh7mFB-A" name="thread" visibility="public" type="_rqnY3BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqn_4BkjEd6uE8Uh7mFB-A" name="window" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqn_4RkjEd6uE8Uh7mFB-A" name="paintEvent" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqn_4hkjEd6uE8Uh7mFB-A" name="visibleRgn" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqn_4xkjEd6uE8Uh7mFB-A" name="control" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqn_5BkjEd6uE8Uh7mFB-A" name="port" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <ownedAttribute xmi:id="_rqn_5RkjEd6uE8Uh7mFB-A" name="portRect" visibility="public"/>
-            <ownedAttribute xmi:id="_rqn_5hkjEd6uE8Uh7mFB-A" name="controlRect" visibility="public"/>
-            <ownedAttribute xmi:id="_rqn_5xkjEd6uE8Uh7mFB-A" name="insetRect" visibility="public"/>
-            <ownedAttribute xmi:id="_rqn_6BkjEd6uE8Uh7mFB-A" name="updateClip" visibility="public" type="_roc1qhkjEd6uE8Uh7mFB-A"/>
-            <ownedOperation xmi:id="_rqn_6RkjEd6uE8Uh7mFB-A" name="&lt;init>" visibility="public"/>
-          </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_rmft0BkjEd6uE8Uh7mFB-A" name="GlyphMetrics" isLeaf="true">
             <generalization xmi:id="_rmft0RkjEd6uE8Uh7mFB-A" general="_rlqnZhkjEd6uE8Uh7mFB-A"/>
             <ownedAttribute xmi:id="_rqom8BkjEd6uE8Uh7mFB-A" name="ascent" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
@@ -8037,12 +7885,11 @@
               <ownedParameter xmi:id="_rqom_RkjEd6uE8Uh7mFB-A" name="return" type="_roRPchkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_rmft0hkjEd6uE8Uh7mFB-A" name="Image" clientDependency="_rmft0xkjEd6uE8Uh7mFB-A" isLeaf="true">
+          <packagedElement xmi:type="uml:Class" xmi:id="_rmft0hkjEd6uE8Uh7mFB-A" name="Image" isLeaf="true">
             <generalization xmi:id="_rmft1BkjEd6uE8Uh7mFB-A" general="_rmcqhBkjEd6uE8Uh7mFB-A"/>
             <ownedAttribute xmi:id="_rqpOABkjEd6uE8Uh7mFB-A" name="type" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
             <ownedAttribute xmi:id="_rqpOARkjEd6uE8Uh7mFB-A" name="handle" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
             <ownedAttribute xmi:id="_rqpOAhkjEd6uE8Uh7mFB-A" name="data" visibility="public" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-            <interfaceRealization xmi:id="_rmft0xkjEd6uE8Uh7mFB-A" supplier="_rmdRkxkjEd6uE8Uh7mFB-A" client="_rmft0hkjEd6uE8Uh7mFB-A" contract="_rmdRkxkjEd6uE8Uh7mFB-A"/>
             <ownedOperation xmi:id="_rqpOAxkjEd6uE8Uh7mFB-A" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_rqpOBBkjEd6uE8Uh7mFB-A" name="arg0" type="_rmdRkhkjEd6uE8Uh7mFB-A"/>
               <ownedParameter xmi:id="_rqpOBRkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
@@ -8087,23 +7934,8 @@
             <ownedOperation xmi:id="_rqqcIxkjEd6uE8Uh7mFB-A" name="getImageData" visibility="public">
               <ownedParameter xmi:id="_rqqcJBkjEd6uE8Uh7mFB-A" name="return" type="_rmgU4BkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
-            <ownedOperation xmi:id="_rqqcJRkjEd6uE8Uh7mFB-A" name="carbon_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_rqqcJhkjEd6uE8Uh7mFB-A" name="arg0" type="_rmdRkhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqqcJxkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqqcKBkjEd6uE8Uh7mFB-A" name="arg2" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqqcKRkjEd6uE8Uh7mFB-A" name="arg3" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqqcKhkjEd6uE8Uh7mFB-A" name="return" type="_rmft0hkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
             <ownedOperation xmi:id="_rqqcKxkjEd6uE8Uh7mFB-A" name="hashCode" visibility="public">
               <ownedParameter xmi:id="_rqqcLBkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_rqqcLRkjEd6uE8Uh7mFB-A" name="internal_new_GC" visibility="public">
-              <ownedParameter xmi:id="_rqqcLhkjEd6uE8Uh7mFB-A" name="arg0" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqqcLxkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_rqqcMBkjEd6uE8Uh7mFB-A" name="internal_dispose_GC" visibility="public">
-              <ownedParameter xmi:id="_rqrDMBkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqrDMRkjEd6uE8Uh7mFB-A" name="arg1" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
             </ownedOperation>
             <ownedOperation xmi:id="_rqrDMhkjEd6uE8Uh7mFB-A" name="isDisposed" visibility="public">
               <ownedParameter xmi:id="_rqrDMxkjEd6uE8Uh7mFB-A" name="return" type="_roc1qhkjEd6uE8Uh7mFB-A" direction="return"/>
@@ -8154,25 +7986,6 @@
             </ownedOperation>
             <ownedOperation xmi:id="_rqs4YhkjEd6uE8Uh7mFB-A" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_rqs4YxkjEd6uE8Uh7mFB-A" name="arg0" type="_roRPchkjEd6uE8Uh7mFB-A"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_rqs4ZBkjEd6uE8Uh7mFB-A" name="internal_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_rqs4ZRkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4ZhkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4ZxkjEd6uE8Uh7mFB-A" name="arg2" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4aBkjEd6uE8Uh7mFB-A" name="arg3" type="_rmhjABkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4aRkjEd6uE8Uh7mFB-A" name="arg4" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4ahkjEd6uE8Uh7mFB-A" name="arg5" type="_rqHpmRkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4axkjEd6uE8Uh7mFB-A" name="arg6" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4bBkjEd6uE8Uh7mFB-A" name="arg7" type="_rqHpmRkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4bRkjEd6uE8Uh7mFB-A" name="arg8" type="_rqHpmRkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4bhkjEd6uE8Uh7mFB-A" name="arg9" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4bxkjEd6uE8Uh7mFB-A" name="arg10" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4cBkjEd6uE8Uh7mFB-A" name="arg11" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqs4cRkjEd6uE8Uh7mFB-A" name="arg12" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqtfcBkjEd6uE8Uh7mFB-A" name="arg13" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqtfcRkjEd6uE8Uh7mFB-A" name="arg14" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqtfchkjEd6uE8Uh7mFB-A" name="arg15" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rqtfcxkjEd6uE8Uh7mFB-A" name="return" type="_rmgU4BkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_rqtfdBkjEd6uE8Uh7mFB-A" name="clone" visibility="public">
               <ownedParameter xmi:id="_rqtfdRkjEd6uE8Uh7mFB-A" name="return" type="_rlqnZhkjEd6uE8Uh7mFB-A" direction="return"/>
@@ -8638,11 +8451,6 @@
             </ownedOperation>
             <ownedOperation xmi:id="_rq661RkjEd6uE8Uh7mFB-A" name="getBounds" visibility="public">
               <ownedParameter xmi:id="_rq661hkjEd6uE8Uh7mFB-A" name="return" type="_rmixIhkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_rq661xkjEd6uE8Uh7mFB-A" name="carbon_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_rq662BkjEd6uE8Uh7mFB-A" name="arg0" type="_rmdRkhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rq662RkjEd6uE8Uh7mFB-A" name="arg1" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_rq662hkjEd6uE8Uh7mFB-A" name="return" type="_rmixJRkjEd6uE8Uh7mFB-A" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_rq662xkjEd6uE8Uh7mFB-A" name="hashCode" visibility="public">
               <ownedParameter xmi:id="_rq663BkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
@@ -9839,15 +9647,7 @@
               <ownedParameter xmi:id="_r5GgwhkjEd6uE8Uh7mFB-A" name="arg0" type="_rmd4oBkjEd6uE8Uh7mFB-A"/>
             </ownedOperation>
             <ownedOperation xmi:id="_r5GgwxkjEd6uE8Uh7mFB-A" name="destroy" visibility="protected"/>
-            <ownedOperation xmi:id="_r5GgxBkjEd6uE8Uh7mFB-A" name="internal_new_GC" visibility="public">
-              <ownedParameter xmi:id="_r5GgxRkjEd6uE8Uh7mFB-A" name="arg0" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_r5GgxhkjEd6uE8Uh7mFB-A" name="return" type="_rn3m0BkjEd6uE8Uh7mFB-A" direction="return"/>
-            </ownedOperation>
             <ownedOperation xmi:id="_r5GgxxkjEd6uE8Uh7mFB-A" name="init" visibility="protected"/>
-            <ownedOperation xmi:id="_r5GgyBkjEd6uE8Uh7mFB-A" name="internal_dispose_GC" visibility="public">
-              <ownedParameter xmi:id="_r5GgyRkjEd6uE8Uh7mFB-A" name="arg0" type="_rn3m0BkjEd6uE8Uh7mFB-A"/>
-              <ownedParameter xmi:id="_r5GgyhkjEd6uE8Uh7mFB-A" name="arg1" type="_rmfGwhkjEd6uE8Uh7mFB-A"/>
-            </ownedOperation>
             <ownedOperation xmi:id="_r5GgyxkjEd6uE8Uh7mFB-A" name="release" visibility="protected"/>
             <ownedOperation xmi:id="_r5GgzBkjEd6uE8Uh7mFB-A" name="startJob" visibility="public">
               <ownedParameter xmi:id="_r5GgzRkjEd6uE8Uh7mFB-A" name="arg0" type="_roRPchkjEd6uE8Uh7mFB-A"/>
