@@ -6717,9 +6717,6 @@
           <packagedElement xmi:type="uml:Class" xmi:id="_xWNr4RkyEd6WJ8gws_yupQ" name="Font" isLeaf="true">
             <generalization xmi:id="_xWNr4hkyEd6WJ8gws_yupQ" general="_xVEcZBkyEd6WJ8gws_yupQ"/>
             <ownedAttribute xmi:id="_xZj60BkyEd6WJ8gws_yupQ" name="handle" visibility="public" type="_xXUfIBkyEd6WJ8gws_yupQ"/>
-            <ownedAttribute xmi:id="_xZj60hkyEd6WJ8gws_yupQ" name="id" visibility="public" type="_xZj60RkyEd6WJ8gws_yupQ"/>
-            <ownedAttribute xmi:id="_xZj60xkyEd6WJ8gws_yupQ" name="style" visibility="public" type="_xZj60RkyEd6WJ8gws_yupQ"/>
-            <ownedAttribute xmi:id="_xZj61BkyEd6WJ8gws_yupQ" name="size" visibility="public" type="_xZj60RkyEd6WJ8gws_yupQ"/>
             <ownedOperation xmi:id="_xZj61RkyEd6WJ8gws_yupQ" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_xZj61hkyEd6WJ8gws_yupQ" name="arg0" type="_xWNE0BkyEd6WJ8gws_yupQ"/>
               <ownedParameter xmi:id="_xZj61xkyEd6WJ8gws_yupQ" name="arg1" type="_xWOS8BkyEd6WJ8gws_yupQ"/>
@@ -6741,14 +6738,6 @@
             </ownedOperation>
             <ownedOperation xmi:id="_xZkh5xkyEd6WJ8gws_yupQ" name="getFontData" visibility="public">
               <ownedParameter xmi:id="_xZkh6BkyEd6WJ8gws_yupQ" name="return" type="_xZiFrhkyEd6WJ8gws_yupQ" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_xZkh6RkyEd6WJ8gws_yupQ" name="carbon_new" visibility="public" isStatic="true">
-              <ownedParameter xmi:id="_xZkh6hkyEd6WJ8gws_yupQ" name="arg0" type="_xWNE0BkyEd6WJ8gws_yupQ"/>
-              <ownedParameter xmi:id="_xZkh6xkyEd6WJ8gws_yupQ" name="arg1" type="_xXUfIBkyEd6WJ8gws_yupQ"/>
-              <ownedParameter xmi:id="_xZkh7BkyEd6WJ8gws_yupQ" name="arg2" type="_xZj60RkyEd6WJ8gws_yupQ"/>
-              <ownedParameter xmi:id="_xZkh7RkyEd6WJ8gws_yupQ" name="arg3" type="_xZj60RkyEd6WJ8gws_yupQ"/>
-              <ownedParameter xmi:id="_xZkh7hkyEd6WJ8gws_yupQ" name="arg4" type="_xZj60RkyEd6WJ8gws_yupQ"/>
-              <ownedParameter xmi:id="_xZkh7xkyEd6WJ8gws_yupQ" name="return" type="_xWNr4RkyEd6WJ8gws_yupQ" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_xZkh8BkyEd6WJ8gws_yupQ" name="hashCode" visibility="public">
               <ownedParameter xmi:id="_xZkh8RkyEd6WJ8gws_yupQ" name="return" type="_xXUfIBkyEd6WJ8gws_yupQ" direction="return"/>
