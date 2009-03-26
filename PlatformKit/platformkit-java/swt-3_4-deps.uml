@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_rlpZQBkjEd6uE8Uh7mFB-A" name="swt-3_4">
+  <packagedElement xmi:type="uml:Package" xmi:id="_rlqnZBkjEd6uE8Uh7mFB-A" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_rlqnZRkjEd6uE8Uh7mFB-A" name="lang">
+      <packagedElement xmi:type="uml:Class" xmi:id="_rlqnZhkjEd6uE8Uh7mFB-A" name="Object" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_rlrOcRkjEd6uE8Uh7mFB-A" name="Error" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_rlrOdBkjEd6uE8Uh7mFB-A" name="RuntimeException" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_rmlNYBkjEd6uE8Uh7mFB-A" name="Cloneable" isAbstract="true"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rn3m0BkjEd6uE8Uh7mFB-A" name="int"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rn-UgxkjEd6uE8Uh7mFB-A" name="char"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_roRPchkjEd6uE8Uh7mFB-A" name="String" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_roRPfBkjEd6uE8Uh7mFB-A" name="Throwable" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_roYkOBkjEd6uE8Uh7mFB-A" name="Object[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_roc1qhkjEd6uE8Uh7mFB-A" name="boolean"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_roq4HRkjEd6uE8Uh7mFB-A" name="int[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rosGMBkjEd6uE8Uh7mFB-A" name="Runnable" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rovwmRkjEd6uE8Uh7mFB-A" name="String[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rqHpmBkjEd6uE8Uh7mFB-A" name="byte"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rqHpmRkjEd6uE8Uh7mFB-A" name="byte[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rqHpmhkjEd6uE8Uh7mFB-A" name="byte[][]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rqT21xkjEd6uE8Uh7mFB-A" name="float"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rqT22BkjEd6uE8Uh7mFB-A" name="float[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rqYIRhkjEd6uE8Uh7mFB-A" name="Error[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rqYvUxkjEd6uE8Uh7mFB-A" name="short"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rqnY3BkjEd6uE8Uh7mFB-A" name="Thread" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rrFS7RkjEd6uE8Uh7mFB-A" name="char[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rrHvKRkjEd6uE8Uh7mFB-A" name="double"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rrHvKhkjEd6uE8Uh7mFB-A" name="double[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rrIWNxkjEd6uE8Uh7mFB-A" name="long"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rrIWOBkjEd6uE8Uh7mFB-A" name="long[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rrIWPRkjEd6uE8Uh7mFB-A" name="short[]" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_ru6C-BkjEd6uE8Uh7mFB-A" name="boolean[]" isLeaf="true" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_rml0dBkjEd6uE8Uh7mFB-A" name="util">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_rml0dRkjEd6uE8Uh7mFB-A" name="EventListener" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_rml0dxkjEd6uE8Uh7mFB-A" name="EventObject" isLeaf="true" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_rml0eRkjEd6uE8Uh7mFB-A" name="io">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_rmmbgBkjEd6uE8Uh7mFB-A" name="Serializable" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_rnEVkhkjEd6uE8Uh7mFB-A" name="InputStream" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rqwiwBkjEd6uE8Uh7mFB-A" name="OutputStream" isLeaf="true" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_robngBkjEd6uE8Uh7mFB-A" name="awt">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_robngRkjEd6uE8Uh7mFB-A" name="Frame" isLeaf="true" isAbstract="true"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_robniBkjEd6uE8Uh7mFB-A" name="Canvas" isLeaf="true" isAbstract="true"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
