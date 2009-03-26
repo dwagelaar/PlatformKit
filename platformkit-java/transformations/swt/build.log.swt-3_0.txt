@@ -1,0 +1,62 @@
+     [am3.atl] INFO: [swt-3_0] swt-3_0 compatible models: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::accessibility compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::awt compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::browser compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::widgets compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::events compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::custom compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::dnd compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::graphics compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::layout compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::printing compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::program compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::java::lang compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::java::util compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::java::io compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0 equivalent models: Sequence {}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt referenced packages: Set {SWT-3_0!lang}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtAccessibilityLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::accessibility equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::accessibility referenced packages: Set {SWT-3_0!widgets, SWT-3_0!lang}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtAwtLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::awt equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::awt referenced packages: Set {SWT-3_0!widgets, SWT-3_0!lang}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtBrowserLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::browser equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::browser referenced packages: Set {SWT-3_0!widgets, SWT-3_0!events, SWT-3_0!lang, SWT-3_0!graphics}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtWidgetsLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::widgets equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::widgets referenced packages: Set {SWT-3_0!graphics, SWT-3_0!events, SWT-3_0!lang, SWT-3_0!accessibility}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtEventsLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::events equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::events referenced packages: Set {SWT-3_0!widgets, SWT-3_0!lang, SWT-3_0!graphics}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtCustomLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::custom equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::custom referenced packages: Set {SWT-3_0!graphics, SWT-3_0!printing, SWT-3_0!widgets, SWT-3_0!events, SWT-3_0!lang}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtDndLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::dnd equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::dnd referenced packages: Set {SWT-3_0!widgets, SWT-3_0!events, SWT-3_0!lang}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtGraphicsLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::graphics equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::graphics referenced packages: Set {SWT-3_0!lang, SWT-3_0!io}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtLayoutLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::layout equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::layout referenced packages: Set {SWT-3_0!widgets, SWT-3_0!lang, SWT-3_0!graphics}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtPrintingLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::printing equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::printing referenced packages: Set {SWT-3_0!widgets, SWT-3_0!graphics}
+     [am3.atl] INFO: [swt-3_0] Package: 'OrgEclipseSwtProgramLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::program equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::org::eclipse::swt::program referenced packages: Set {SWT-3_0!lang, SWT-3_0!graphics}
+     [am3.atl] INFO: [swt-3_0] Package: 'JavaLangLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::java::lang equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::java::lang referenced packages: Set {}
+     [am3.atl] INFO: [swt-3_0] Package: 'JavaUtilLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::java::util equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::java::util referenced packages: Set {}
+     [am3.atl] INFO: [swt-3_0] Package: 'JavaIoLibrary'
+     [am3.atl] INFO: [swt-3_0] swt-3_0::java::io equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_0] swt-3_0::java::io referenced packages: Set {}
