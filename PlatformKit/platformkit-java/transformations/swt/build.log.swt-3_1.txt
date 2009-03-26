@@ -1,0 +1,228 @@
+     [am3.atl] INFO: [swt-3_1] swt-3_1 compatible models: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::accessibility compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::awt compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::browser compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::widgets compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::events compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::custom compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::dnd compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::graphics compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::layout compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::printing compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::program compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::lang compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::util compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::io compatible packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1 equivalent models: Sequence {}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt referenced packages: Set {SWT-3_1!lang}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtAccessibilityLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::accessibility equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::accessibility referenced packages: Set {SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtAwtLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::awt equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::awt referenced packages: Set {SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtBrowserLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::browser equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::browser referenced packages: Set {SWT-3_1!graphics, SWT-3_1!events, SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtWidgetsLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::widgets equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::widgets referenced packages: Set {SWT-3_1!lang, SWT-3_1!accessibility, SWT-3_1!graphics, SWT-3_1!events}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtEventsLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::events equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::events referenced packages: Set {SWT-3_1!graphics, SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtCustomLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::custom equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::custom referenced packages: Set {SWT-3_1!widgets, SWT-3_1!lang, SWT-3_1!graphics, SWT-3_1!events, SWT-3_1!printing}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtDndLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::dnd equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::dnd referenced packages: Set {SWT-3_1!events, SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtGraphicsLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::graphics equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::graphics referenced packages: Set {SWT-3_1!io, SWT-3_1!lang}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtLayoutLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::layout equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::layout referenced packages: Set {SWT-3_1!graphics, SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtPrintingLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::printing equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::printing referenced packages: Set {SWT-3_1!graphics, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtProgramLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::program equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::program referenced packages: Set {SWT-3_1!graphics, SWT-3_1!lang}
+     [am3.atl] INFO: [swt-3_1] Package: 'JavaLangLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::lang equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::lang referenced packages: Set {}
+     [am3.atl] INFO: [swt-3_1] Package: 'JavaUtilLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::util equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::util referenced packages: Set {}
+     [am3.atl] INFO: [swt-3_1] Package: 'JavaIoLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::io equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::io referenced packages: Set {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org compatible packages: Sequence {SWT-3_0!org}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse compatible packages: Sequence {SWT-3_0!eclipse}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt compatible packages: Sequence {SWT-3_0!swt}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::accessibility compatible packages: Sequence {SWT-3_0!accessibility}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::awt compatible packages: Sequence {SWT-3_0!awt}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::browser compatible packages: Sequence {SWT-3_0!browser}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::widgets compatible packages: Sequence {SWT-3_0!widgets}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::events compatible packages: Sequence {SWT-3_0!events}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::custom compatible packages: Sequence {SWT-3_0!custom}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::dnd compatible packages: Sequence {SWT-3_0!dnd}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::graphics compatible packages: Sequence {SWT-3_0!graphics}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::layout compatible packages: Sequence {SWT-3_0!layout}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::printing compatible packages: Sequence {SWT-3_0!printing}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::program compatible packages: Sequence {SWT-3_0!program}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java compatible packages: Sequence {SWT-3_0!java}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::lang compatible packages: Sequence {SWT-3_0!lang}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::util compatible packages: Sequence {SWT-3_0!util}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::io compatible packages: Sequence {SWT-3_0!io}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::awt compatible packages: Sequence {SWT-3_0!awt}
+     [am3.atl] INFO: [swt-3_1] swt-3_1 compatible models: Sequence {SWT-3_0!swt-3_0}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::SWT misses features compatible with : Sequence {SWT-3_1!MouseWheel, SWT-3_1!OFF, SWT-3_1!ON, SWT-3_1!LOW, SWT-3_1!HIGH, SWT-3_1!DOUBLE_BUFFERED, SWT-3_1!BUTTON4, SWT-3_1!BUTTON5, SWT-3_1!SCROLL_LINE, SWT-3_1!SCROLL_PAGE, SWT-3_1!ERROR_CANNOT_INVERT_MATRIX, SWT-3_1!ERROR_NO_GRAPHICS_LIBRARY, SWT-3_1!ERROR_INVALID_FONT, SWT-3_1!CAP_FLAT, SWT-3_1!CAP_ROUND, SWT-3_1!CAP_SQUARE, SWT-3_1!JOIN_MITER, SWT-3_1!JOIN_ROUND, SWT-3_1!JOIN_BEVEL, SWT-3_1!LINE_CUSTOM, SWT-3_1!PATH_MOVE_TO, SWT-3_1!PATH_LINE_TO, SWT-3_1!PATH_QUAD_TO, SWT-3_1!PATH_CUBIC_TO, SWT-3_1!PATH_CLOSE, SWT-3_1!FILL_EVEN_ODD, SWT-3_1!FILL_WINDING, SWT-3_1!IMAGE_OS2_BMP}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::SWTError misses features compatible with : Sequence {SWT-3_1!getCause}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::SWTException misses features compatible with : Sequence {SWT-3_1!getCause}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt misses classifiers compatible with : Sequence {SWT-3_1!SWT, SWT-3_1!SWTError, SWT-3_1!SWTException}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::accessibility equivalent packages: Sequence {SWT-3_0!accessibility}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::awt equivalent packages: Sequence {SWT-3_0!awt}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {SWT-3_1!execute, SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::browser::WindowEvent misses features compatible with : Sequence {SWT-3_1!required, SWT-3_1!addressBar, SWT-3_1!menuBar, SWT-3_1!statusBar, SWT-3_1!toolBar}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::browser misses classifiers compatible with : Sequence {SWT-3_1!Browser, SWT-3_1!WindowEvent}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::browser equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Composite misses features compatible with : Sequence {SWT-3_1!changed, SWT-3_1!getLayoutDeferred, SWT-3_1!isLayoutDeferred, SWT-3_1!layout, SWT-3_1!layout, SWT-3_1!setLayoutDeferred, SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Canvas misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Item misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Layout misses features compatible with : Sequence {SWT-3_1!flushCache}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Widget misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Button misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Control misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Caret misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {SWT-3_1!addVerifyListener, SWT-3_1!removeVerifyListener, SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::CoolItem misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Display misses features compatible with : Sequence {SWT-3_1!findWidget}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::List misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Menu misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::MenuItem misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::ScrollBar misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {SWT-3_1!getMinimumSize, SWT-3_1!isLayoutDeferred, SWT-3_1!setMinimumSize, SWT-3_1!setMinimumSize, SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::TabItem misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Table misses features compatible with : Sequence {SWT-3_1!getColumnOrder, SWT-3_1!setColumnOrder, SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::TableColumn misses features compatible with : Sequence {SWT-3_1!getMoveable, SWT-3_1!setMoveable, SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::TableItem misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Text misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::ToolBar misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::ToolItem misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Tracker misses features compatible with : Sequence {SWT-3_1!addKeyListener, SWT-3_1!removeKeyListener, SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Tray misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::TrayItem misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::Tree misses features compatible with : Sequence {SWT-3_1!getColumn, SWT-3_1!getColumnCount, SWT-3_1!getColumns, SWT-3_1!getGridLineWidth, SWT-3_1!getHeaderHeight, SWT-3_1!getHeaderVisible, SWT-3_1!getItem, SWT-3_1!getLinesVisible, SWT-3_1!indexOf, SWT-3_1!indexOf, SWT-3_1!setHeaderVisible, SWT-3_1!setLinesVisible, SWT-3_1!showColumn, SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets::TreeItem misses features compatible with : Sequence {SWT-3_1!getBackground, SWT-3_1!getBounds, SWT-3_1!getFont, SWT-3_1!getForeground, SWT-3_1!getImage, SWT-3_1!getImageBounds, SWT-3_1!getItem, SWT-3_1!getText, SWT-3_1!indexOf, SWT-3_1!removeAll, SWT-3_1!setBackground, SWT-3_1!setFont, SWT-3_1!setForeground, SWT-3_1!setImage, SWT-3_1!setImage, SWT-3_1!setText, SWT-3_1!setText, SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {SWT-3_1!Composite, SWT-3_1!Canvas, SWT-3_1!Item, SWT-3_1!Layout, SWT-3_1!Widget, SWT-3_1!Button, SWT-3_1!Control, SWT-3_1!Caret, SWT-3_1!Combo, SWT-3_1!Scrollable, SWT-3_1!CoolBar, SWT-3_1!CoolItem, SWT-3_1!Decorations, SWT-3_1!Display, SWT-3_1!Group, SWT-3_1!Label, SWT-3_1!Link, SWT-3_1!List, SWT-3_1!Menu, SWT-3_1!MenuItem, SWT-3_1!ProgressBar, SWT-3_1!Sash, SWT-3_1!Scale, SWT-3_1!ScrollBar, SWT-3_1!Shell, SWT-3_1!Slider, SWT-3_1!Spinner, SWT-3_1!TabFolder, SWT-3_1!TabItem, SWT-3_1!Table, SWT-3_1!TableColumn, SWT-3_1!TableItem, SWT-3_1!Text, SWT-3_1!ToolBar, SWT-3_1!ToolItem, SWT-3_1!Tracker, SWT-3_1!Tray, SWT-3_1!TrayItem, SWT-3_1!Tree, SWT-3_1!TreeColumn, SWT-3_1!TreeItem}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::widgets equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::events::SelectionEvent misses features compatible with : Sequence {SWT-3_1!text}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::events::TreeEvent misses features compatible with : Sequence {SWT-3_1!text}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::events misses classifiers compatible with : Sequence {SWT-3_1!SelectionEvent, SWT-3_1!TreeEvent}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::events equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {SWT-3_1!getRightMinimumSize, SWT-3_1!setRightMinimumSize, SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {SWT-3_1!getMRUVisible, SWT-3_1!setMRUVisible, SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::CTabItem misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::ST misses features compatible with : Sequence {SWT-3_1!SELECT_ALL}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::StackLayout misses features compatible with : Sequence {SWT-3_1!flushCache, SWT-3_1!toString, SWT-3_1!flushCache}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::StyleRange misses features compatible with : Sequence {SWT-3_1!underline, SWT-3_1!strikeout}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {SWT-3_1!copy, SWT-3_1!getTextBounds, SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {SWT-3_1!getItem, SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::TableTreeItem misses features compatible with : Sequence {SWT-3_1!getItem, SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::TreeEditor misses features compatible with : Sequence {SWT-3_1!getColumn, SWT-3_1!setColumn, SWT-3_1!setEditor}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {SWT-3_1!isListening, SWT-3_1!getLayoutDeferred, SWT-3_1!layout, SWT-3_1!isLayoutDeferred, SWT-3_1!setLayoutDeferred, SWT-3_1!layout, SWT-3_1!changed}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::custom misses classifiers compatible with : Sequence {SWT-3_1!AnimatedProgress, SWT-3_1!CBanner, SWT-3_1!CCombo, SWT-3_1!CLabel, SWT-3_1!CTabFolder, SWT-3_1!CTabItem, SWT-3_1!ST, SWT-3_1!SashForm, SWT-3_1!ScrolledComposite, SWT-3_1!StackLayout, SWT-3_1!StyleRange, SWT-3_1!StyledText, SWT-3_1!TableCursor, SWT-3_1!TableTree, SWT-3_1!TableTreeItem, SWT-3_1!TreeEditor, SWT-3_1!ViewForm}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::custom equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd::ByteArrayTransfer misses features compatible with : Sequence {SWT-3_1!validate}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd::Transfer misses features compatible with : Sequence {SWT-3_1!validate}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd::Clipboard misses features compatible with : Sequence {SWT-3_1!clearContents, SWT-3_1!clearContents, SWT-3_1!getContents, SWT-3_1!setContents, SWT-3_1!getAvailableTypes}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd::DND misses features compatible with : Sequence {SWT-3_1!CLIPBOARD, SWT-3_1!SELECTION_CLIPBOARD, SWT-3_1!ERROR_INVALID_DATA}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd::DragSource misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd::DropTarget misses features compatible with : Sequence {SWT-3_1!isListening}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd::FileTransfer misses features compatible with : Sequence {SWT-3_1!validate, SWT-3_1!validate}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd::RTFTransfer misses features compatible with : Sequence {SWT-3_1!validate, SWT-3_1!validate}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd::TextTransfer misses features compatible with : Sequence {SWT-3_1!validate, SWT-3_1!validate}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {SWT-3_1!ByteArrayTransfer, SWT-3_1!Transfer, SWT-3_1!Clipboard, SWT-3_1!DND, SWT-3_1!DragSource, SWT-3_1!DropTarget, SWT-3_1!FileTransfer, SWT-3_1!HTMLTransfer, SWT-3_1!RTFTransfer, SWT-3_1!TextTransfer}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::dnd equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics::Color misses generals compatible with : Sequence {SWT-3_1!Resource}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics::Cursor misses generals compatible with : Sequence {SWT-3_1!Resource}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics::Device misses features compatible with : Sequence {SWT-3_1!<init>}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics::Font misses generals compatible with : Sequence {SWT-3_1!Resource}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics::GC misses generals compatible with : Sequence {SWT-3_1!Resource}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics::Image misses generals compatible with : Sequence {SWT-3_1!Resource}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics::Region misses generals compatible with : Sequence {SWT-3_1!Resource}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics::TextLayout misses generals compatible with : Sequence {SWT-3_1!Resource}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics::TextStyle misses features compatible with : Sequence {SWT-3_1!underline, SWT-3_1!strikeout, SWT-3_1!toString}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {SWT-3_1!Color, SWT-3_1!Resource, SWT-3_1!Cursor, SWT-3_1!Device, SWT-3_1!Font, SWT-3_1!GC, SWT-3_1!Image, SWT-3_1!Path, SWT-3_1!PathData, SWT-3_1!Pattern, SWT-3_1!Region, SWT-3_1!TextLayout, SWT-3_1!TextStyle, SWT-3_1!Transform}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::graphics equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::layout::FillLayout misses features compatible with : Sequence {SWT-3_1!flushCache, SWT-3_1!toString, SWT-3_1!flushCache}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::layout::FormData misses features compatible with : Sequence {SWT-3_1!toString}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::layout::FormLayout misses features compatible with : Sequence {SWT-3_1!marginLeft, SWT-3_1!marginTop, SWT-3_1!marginRight, SWT-3_1!marginBottom, SWT-3_1!flushCache, SWT-3_1!toString, SWT-3_1!flushCache}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::layout::GridData misses features compatible with : Sequence {SWT-3_1!verticalIndent, SWT-3_1!minimumWidth, SWT-3_1!minimumHeight, SWT-3_1!exclude, SWT-3_1!toString}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::layout::GridLayout misses features compatible with : Sequence {SWT-3_1!marginLeft, SWT-3_1!marginTop, SWT-3_1!marginRight, SWT-3_1!marginBottom, SWT-3_1!flushCache, SWT-3_1!toString, SWT-3_1!flushCache}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::layout::RowData misses features compatible with : Sequence {SWT-3_1!exclude, SWT-3_1!toString}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::layout::RowLayout misses features compatible with : Sequence {SWT-3_1!flushCache, SWT-3_1!toString, SWT-3_1!flushCache}
+     [am3.atl] INFO: [swt-3_1] swt-3_0::org::eclipse::swt::layout misses classifiers compatible with : Sequence {SWT-3_1!FillLayout, SWT-3_1!FormData, SWT-3_1!FormLayout, SWT-3_1!GridData, SWT-3_1!GridLayout, SWT-3_1!RowData, SWT-3_1!RowLayout}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::layout equivalent packages: Sequence {}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::printing equivalent packages: Sequence {SWT-3_0!printing}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::program equivalent packages: Sequence {SWT-3_0!program}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::lang equivalent packages: Sequence {SWT-3_0!lang}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::util equivalent packages: Sequence {SWT-3_0!util}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::io equivalent packages: Sequence {SWT-3_0!io}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org equivalent packages: Sequence {SWT-3_0!org}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse equivalent packages: Sequence {SWT-3_0!eclipse}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java equivalent packages: Sequence {SWT-3_0!java}
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::awt equivalent packages: Sequence {SWT-3_0!awt}
+     [am3.atl] INFO: [swt-3_1] swt-3_1 misses packages equivalent with : Sequence {SWT-3_0!swt, SWT-3_0!browser, SWT-3_0!widgets, SWT-3_0!events, SWT-3_0!custom, SWT-3_0!dnd, SWT-3_0!graphics, SWT-3_0!layout}
+     [am3.atl] INFO: [swt-3_1] swt-3_1 equivalent models: Sequence {}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt referenced packages: Set {SWT-3_1!lang}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtAccessibilityLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::accessibility referenced packages: Set {SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtAwtLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::awt referenced packages: Set {SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtBrowserLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::browser referenced packages: Set {SWT-3_1!graphics, SWT-3_1!events, SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtWidgetsLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::widgets referenced packages: Set {SWT-3_1!lang, SWT-3_1!accessibility, SWT-3_1!graphics, SWT-3_1!events}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtEventsLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::events referenced packages: Set {SWT-3_1!graphics, SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtCustomLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::custom referenced packages: Set {SWT-3_1!widgets, SWT-3_1!lang, SWT-3_1!graphics, SWT-3_1!events, SWT-3_1!printing}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtDndLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::dnd referenced packages: Set {SWT-3_1!events, SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtGraphicsLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::graphics referenced packages: Set {SWT-3_1!io, SWT-3_1!lang}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtLayoutLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::layout referenced packages: Set {SWT-3_1!graphics, SWT-3_1!lang, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtPrintingLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::printing referenced packages: Set {SWT-3_1!graphics, SWT-3_1!widgets}
+     [am3.atl] INFO: [swt-3_1] Package: 'OrgEclipseSwtProgramLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::org::eclipse::swt::program referenced packages: Set {SWT-3_1!graphics, SWT-3_1!lang}
+     [am3.atl] INFO: [swt-3_1] Package: 'JavaLangLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::lang referenced packages: Set {}
+     [am3.atl] INFO: [swt-3_1] Package: 'JavaUtilLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::util referenced packages: Set {}
+     [am3.atl] INFO: [swt-3_1] Package: 'JavaIoLibrary'
+     [am3.atl] INFO: [swt-3_1] swt-3_1::java::io referenced packages: Set {}

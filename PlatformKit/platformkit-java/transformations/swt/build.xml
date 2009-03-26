@@ -1,0 +1,175 @@
+<project name="platformkit-java/transformations" basedir="." default="transform">
+	
+	<property name="atl.vm" value="Regular VM (with debugger)"/>
+
+    <macrodef name="preUML2ToAPIOntology">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="path" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="${atl.vm}">
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
+    			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
+    		</am3.atl>
+        </sequential>
+    </macrodef>
+	
+    <macrodef name="UML2ToAPIOntology">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="path" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="${atl.vm}">
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
+    			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
+    		</am3.atl>
+        	<am3.saveModel model="@{out}" path="@{path}"/>
+        </sequential>
+    </macrodef>
+	
+    <macrodef name="UML2ToAPIOntology1">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="prevout" default="MODEL.PREV.OUT" />
+        <attribute name="previn" default="MODEL.PREV.IN" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="path" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="${atl.vm}">
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<inmodel name="PREVOUT" model="@{prevout}"/>
+    			<inmodel name="PREVIN" model="@{previn}"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
+    			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
+    		</am3.atl>
+        	<am3.saveModel model="@{out}" path="@{path}"/>
+        </sequential>
+    </macrodef>
+	
+    <macrodef name="UML2ToAPIOntology2">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="prevout" default="MODEL.PREV.OUT" />
+        <attribute name="previn" default="MODEL.PREV.IN" />
+        <attribute name="prevout2" default="MODEL.PREV.OUT2" />
+        <attribute name="previn2" default="MODEL.PREV.IN2" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="path" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="${atl.vm}">
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<inmodel name="PREVOUT" model="@{prevout}"/>
+    			<inmodel name="PREVIN" model="@{previn}"/>
+    			<inmodel name="PREVOUT2" model="@{prevout2}"/>
+    			<inmodel name="PREVIN2" model="@{previn2}"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
+    			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
+    		</am3.atl>
+        	<am3.saveModel model="@{out}" path="@{path}"/>
+        </sequential>
+    </macrodef>
+	
+    <macrodef name="UML2ToAPIOntology3">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="prevout" default="MODEL.PREV.OUT" />
+        <attribute name="previn" default="MODEL.PREV.IN" />
+        <attribute name="prevout2" default="MODEL.PREV.OUT2" />
+        <attribute name="previn2" default="MODEL.PREV.IN2" />
+        <attribute name="prevout3" default="MODEL.PREV.OUT3" />
+        <attribute name="previn3" default="MODEL.PREV.IN3" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="path" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<am3.atl 
+    				path="/${ant.project.name}/UML2ToAPIOntology.atl" 
+    				allowInterModelReferences="true"
+    				vm="${atl.vm}">
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<inmodel name="PREVOUT" model="@{prevout}"/>
+    			<inmodel name="PREVIN" model="@{previn}"/>
+    			<inmodel name="PREVOUT2" model="@{prevout2}"/>
+    			<inmodel name="PREVIN2" model="@{previn2}"/>
+    			<inmodel name="PREVOUT3" model="@{prevout3}"/>
+    			<inmodel name="PREVIN3" model="@{previn3}"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{path}"/>
+    			<superimpose path="/${ant.project.name}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="/${ant.project.name}/UML2Comparison.asm"/>
+    		</am3.atl>
+        	<am3.saveModel model="@{out}" path="@{path}"/>
+        </sequential>
+    </macrodef>
+	
+	<target name="loadModels">
+		<am3.loadModel modelHandler="EMF" name="OWL"           metamodel="MOF"  nsuri="http:///org/eclipse/owl.ecore"/>
+		<am3.loadModel modelHandler="EMF" name="Platform"      metamodel="OWL"  path="/platformkit-java/Platform.owl"/>
+		<am3.loadModel modelHandler="EMF" name="Java"          metamodel="OWL"  path="/platformkit-java/Java.owl"/>
+		<am3.loadModel modelHandler="EMF" name="EmptyOWL"      metamodel="OWL"  path="/platformkit-java/empty.owl"/>
+		<am3.loadModel modelHandler="EMF" name="UML2"          metamodel="MOF"  nsuri="http://www.eclipse.org/uml2/2.0.0/UML"/>
+		<am3.loadModel modelHandler="EMF" name="EmptyUML"      metamodel="UML2" path="/platformkit-java/empty.uml"/>
+		<am3.loadModel modelHandler="EMF" name="SWT-3_0"       metamodel="UML2" path="/platformkit-java/swt-3_0.uml"/>
+		<am3.loadModel modelHandler="EMF" name="SWT-3_1"       metamodel="UML2" path="/platformkit-java/swt-3_1.uml"/>
+		<am3.loadModel modelHandler="EMF" name="SWT-3_2"       metamodel="UML2" path="/platformkit-java/swt-3_2.uml"/>
+		<am3.loadModel modelHandler="EMF" name="SWT-3_3"       metamodel="UML2" path="/platformkit-java/swt-3_3.uml"/>
+		<am3.loadModel modelHandler="EMF" name="SWT-3_4"       metamodel="UML2" path="/platformkit-java/swt-3_4.uml"/>
+	</target>
+	
+	<target name="pre-transform" depends="loadModels">
+		<nice currentpriority="curpri" newpriority="1"/>
+		<parallel threadCount="8"><!-- start heaviest task first -->
+			<preUML2ToAPIOntology in="SWT-3_4"       out="preSWT-3_4_OWL"       path="/platformkit-java/swt-3_4.owl"/>
+			<preUML2ToAPIOntology in="SWT-3_3"       out="preSWT-3_3_OWL"       path="/platformkit-java/swt-3_3.owl"/>
+			<preUML2ToAPIOntology in="SWT-3_2"       out="preSWT-3_2_OWL"       path="/platformkit-java/swt-3_2.owl"/>
+			<preUML2ToAPIOntology in="SWT-3_1"       out="preSWT-3_1_OWL"       path="/platformkit-java/swt-3_1.owl"/>
+			<UML2ToAPIOntology    in="SWT-3_0"       out="SWT-3_0_OWL"          path="/platformkit-java/swt-3_0.owl"/>
+		</parallel>
+		<nice newpriority="${curpri}"/>
+	</target>
+	
+	<target name="transform" depends="pre-transform">
+		<nice currentpriority="curpri" newpriority="1"/>
+		<parallel threadCount="8"><!-- start heaviest task first -->
+			<UML2ToAPIOntology1 in="SWT-3_4"       prevout="preSWT-3_3_OWL"       previn="SWT-3_3"       out="SWT-3_4_OWL"               path="/platformkit-java/swt-3_4.owl"/>
+			<UML2ToAPIOntology1 in="SWT-3_3"       prevout="preSWT-3_2_OWL"       previn="SWT-3_2"       out="SWT-3_3_OWL"               path="/platformkit-java/swt-3_3.owl"/>
+			<UML2ToAPIOntology1 in="SWT-3_2"       prevout="preSWT-3_1_OWL"       previn="SWT-3_1"       out="SWT-3_2_OWL"               path="/platformkit-java/swt-3_2.owl"/>
+			<UML2ToAPIOntology1 in="SWT-3_1"       prevout="SWT-3_0_OWL"       previn="SWT-3_0"       out="SWT-3_1_OWL"               path="/platformkit-java/swt-3_1.owl"/>
+		</parallel>
+		<nice newpriority="${curpri}"/>
+	</target>
+	
+</project>
