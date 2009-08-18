@@ -9741,6 +9741,7 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_rlqnZBkjEd6uE8Uh7mFB-A" name="java">
+    <eAnnotations xmi:id="_Th9qQH2eEd6ZuPM5TspYjQ" source="PlatformKit#Derived"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_rlqnZRkjEd6uE8Uh7mFB-A" name="lang">
       <packagedElement xmi:type="uml:Class" xmi:id="_rlqnZhkjEd6uE8Uh7mFB-A" name="Object" isLeaf="true" isAbstract="true"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_rlrOcRkjEd6uE8Uh7mFB-A" name="Error" isLeaf="true" isAbstract="true"/>

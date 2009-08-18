@@ -1,0 +1,122 @@
+-- @atlcompiler atl2006
+-- $Id$
+-- Merges API from MERGE with IN, where classifiers from MERGE that exist in IN are replaced by the classifiers from IN.
+module UML2MergeAPI; --extends UML2Copy
+
+create OUT : UML2 from IN : UML2, MERGE : UML2;
+
+uses UML2Comparison;
+
+-- ======================================================================
+-- helper attributes begin
+-- ======================================================================
+
+helper def : inPackages : Set(UML2!"uml::Package") =
+	UML2!"uml::Package".allInstancesFrom('IN')->debug('inPackages');
+
+helper def : inClassifiers : Set(UML2!"uml::Classifier") =
+	UML2!"uml::Classifier".allInstancesFrom('IN')->debug('inClassifiers');
+
+helper def : inElements : Set(UML2!"ecore::EObject") =
+	UML2!"ecore::EObject".allInstancesFrom('IN')->union(
+	UML2!"ecore::EObject".allInstancesFrom('MERGE')
+	->reject(e|thisModule.prevModels->includes(e) or e.existsInIN()))
+	->debug('inElements');
+
+helper context UML2!"uml::Package" def : selfInIN : UML2!"uml::Package" =
+	thisModule.inPackages->any(p|p.umlQualifiedName=self.umlQualifiedName);
+
+helper context UML2!"uml::Classifier" def : selfInIN : UML2!"uml::Classifier" =
+	thisModule.inClassifiers->any(c|c.umlQualifiedName=self.umlQualifiedName);
+
+helper context UML2!"uml::Package" def : selfOutsideIN : UML2!"uml::Package" =
+	thisModule.prevPackages->any(p|p.umlQualifiedName=self.umlQualifiedName);
+
+-- ======================================================================
+-- helper attributes end
+-- ======================================================================
+
+-- ======================================================================
+-- helper methods begin
+-- ======================================================================
+
+helper context UML2!"ecore::EObject" def : existsInIN() : Boolean =
+	let container : UML2!"ecore::EObject" = self.refImmediateComposite()
+	in if container.oclIsUndefined() then false else container.existsInIN() endif;
+
+helper context UML2!"uml::Package" def : existsInIN() : Boolean =
+	thisModule.inPackages->exists(p|p.umlQualifiedName=self.umlQualifiedName);
+
+helper context UML2!"uml::Classifier" def : existsInIN() : Boolean =
+	thisModule.inClassifiers->exists(c|c.umlQualifiedName=self.umlQualifiedName);
+
+-- ======================================================================
+-- helper methods end
+-- ======================================================================
+
+-- ======================================================================
+-- transformation rules begin
+-- ======================================================================
+
+rule Package {
+    from s : UML2!"uml::Package" (
+		if thisModule.inElements->includes(s) then
+			s.oclIsTypeOf(UML2!"uml::Package")
+		else false endif)
+	using {
+    	p : UML2!"uml::Package" = s.selfOutsideIn;
+		pe : Sequence(UML2!"uml::PackageableElement") =
+			if p.oclIsUndefined() then Sequence{}
+			else
+				p.packagedElement->select(e|
+					thisModule.inElements->includes(e))
+			endif;
+    }
+    to t : UML2!"uml::Package" (
+        name <- s.name,
+        visibility <- s.visibility,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        packageMerge <- s.packageMerge,
+        packagedElement <- s.packagedElement->union(pe),
+        profileApplication <- s.profileApplication)
+}
+
+rule Model {
+    from s : UML2!"uml::Model" (thisModule.inElements->includes(s))
+	using {
+		pe : Sequence(UML2!"uml::PackageableElement") =
+			thisModule.prevModels->collect(p|
+				p.packagedElement->select(e|
+					thisModule.inElements->includes(e)))->flatten();
+    }
+	to t : UML2!"uml::Model" (
+        name <- s.name,
+        visibility <- s.visibility,
+        viewpoint <- s.viewpoint,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        packageMerge <- s.packageMerge,
+        packagedElement <- s.packagedElement->union(pe),
+        profileApplication <- s.profileApplication)
+}
+
+-- ======================================================================
+-- transformation rules end
+-- ======================================================================

@@ -1,0 +1,380 @@
+-- @atlcompiler atl2006
+-- $Id:UML2Comparison.atl 7084 2007-07-10 13:19:05Z dwagelaa $
+-- Creates a report of the compatibility of a UML2 model
+-- with a reference version of the UML2 model.
+module UML2CompatibilityReport;
+
+create REPORT : UML2	-- The compatibility report model, containing any missing elements
+from IN : UML2, 		-- The reference model to compare against the dependencies model
+     DEPS : UML2, 		-- The dependencies model that should be satisfied by the reference model
+	 CR : UML2;			-- The CompatibilityReport profile
+
+uses UML2;
+uses UML2Comparison;
+
+-- ======================================================================
+-- helper attributes begin
+-- ======================================================================
+
+helper def : UML2CompatibilityReportVersionString : String =
+	'$Id$';
+
+helper def : inElements : Set(UML2!"ecore::EObject") =
+	UML2!"ecore::EObject".allInstancesFrom('IN');
+
+helper def : depsElements : Set(UML2!"ecore::EObject") =
+	UML2!"ecore::EObject".allInstancesFrom('DEPS');
+
+helper def : crProfile : UML2!"uml::Profile" = 
+	'CompatibilityReport'.profile();
+
+helper def : crPackages : Sequence(UML2!"ecore::EPackage") =
+	UML2!"ecore::EPackage".allInstancesFrom('CR')->select(p|p.name='CompatibilityReport');
+
+helper context UML2!"uml::Model" def : locallyIncompPacks : Sequence(UML2!"uml::Package") = 
+	UML2!"uml::Model".allInstancesFrom('IN')
+		->collect(m|m.allPackagesLocallyIncompatibleWith(self))
+		->flatten();
+
+helper context UML2!"uml::Model" def : incompPacks : Sequence(UML2!"uml::Package") = 
+	UML2!"uml::Model".allInstancesFrom('IN')
+		->collect(m|m.allPackagesIncompatibleWith(self))
+		->flatten();
+
+helper context UML2!"uml::Package" def : locallyIncompClasses : Sequence(UML2!"uml::Classifier") = 
+	UML2!"uml::Package".allInstancesFrom('IN')
+		->select(e|e.umlQualifiedName=self.umlQualifiedName)
+		->collect(p|p.allOwnedClassifiersLocallyIncompatibleWith(self))
+		->flatten();
+
+helper context UML2!"uml::Package" def : incompClasses : Sequence(UML2!"uml::Classifier") = 
+	UML2!"uml::Package".allInstancesFrom('IN')
+		->select(e|e.umlQualifiedName=self.umlQualifiedName)
+		->collect(p|p.allOwnedClassifiersIncompatibleWith(self))
+		->flatten();
+
+helper context UML2!"uml::Classifier" def : incompGenerals : Sequence(UML2!"uml::Classifier") = 
+	UML2!"uml::Classifier".allInstancesFrom('IN')
+		->select(e|e.umlQualifiedName=self.umlQualifiedName)
+		->collect(p|p.allGeneralsIncompatibleWith(self))
+		->flatten();
+
+helper context UML2!"uml::Classifier" def : incompFeatures : Sequence(UML2!"uml::Feature") = 
+	UML2!"uml::Classifier".allInstancesFrom('IN')
+		->select(e|e.umlQualifiedName=self.umlQualifiedName)
+		->collect(p|p.allFeaturesIncompatibleWith(self))
+		->flatten();
+
+helper context UML2!"uml::NamedElement" def : incompSuppliers : Sequence(UML2!"uml::NamedElement") = 
+	UML2!"uml::NamedElement".allInstancesFrom('IN')
+		->select(e|e.umlQualifiedName=self.umlQualifiedName)
+		->collect(p|p.allSuppliersIncompatibleWith(self))
+		->flatten();
+
+helper context UML2!"uml::NamedElement" def : compatibleNameAndTypeFromIn : Sequence(UML!"uml::NamedElement") =
+	UML2!"uml::NamedElement".allInstancesFrom('IN')
+		->select(n|n.umlQualifiedName=self.umlQualifiedName and n.myOclType.conformsTo(self.myOclType));
+
+helper context UML2!"uml::Element" def : isMissing : Boolean =
+	false;
+
+helper context UML2!"uml::Package" def : isMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		self.oclIsTypeOf(UML2!"uml::Package") and
+		self.getModel().locallyIncompPacks->includes(self)
+	else false endif;
+
+helper context UML2!"uml::Class" def : isMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		self.oclIsTypeOf(UML2!"uml::Class") and
+		self.getNearestPackage().locallyIncompClasses->includes(self)
+	else false endif;
+
+helper context UML2!"uml::Interface" def : isMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		self.getNearestPackage().locallyIncompClasses->includes(self)
+	else false endif;
+
+helper context UML2!"uml::Generalization" def : isMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+			self.specific.incompGenerals->includes(self.general)
+	else false endif;
+
+helper context UML2!"uml::InterfaceRealization" def : isMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		self.implementingClassifier.incompSuppliers->exists(i|self.supplier->includes(i))
+	else false endif;
+
+helper context UML2!"uml::Property" def : isMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		self.oclIsTypeOf(UML2!"uml::Property") and
+		if self.class.oclIsUndefined() then false else
+			self.class.incompFeatures->includes(self)
+		endif
+	else false endif;
+
+helper context UML2!"uml::Operation" def : isMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		if self.class.oclIsUndefined() then
+			if self.interface.oclIsUndefined() then false else
+				self.interface.incompFeatures->includes(self)
+			endif
+		else
+			self.class.incompFeatures->includes(self)
+		endif
+	else false endif;
+
+helper context UML2!"uml::Parameter" def : isMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		if self.operation.oclIsUndefined() then false else
+			self.operation.isMissing
+		endif
+	else false endif;
+
+helper context UML2!"uml::Element" def : hasElementsMissing : Boolean =
+	false;
+
+helper context UML2!"uml::Package" def : hasElementsMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		self.oclIsTypeOf(UML2!"uml::Package") and
+		self.getModel().locallyIncompPacks->excludes(self) and
+		(self.getModel().incompPacks->includes(self) or
+		 self.getModel().incompPacks->exists(p|self.allOwnedPackages->includes(p)))
+	else false endif;
+
+helper context UML2!"uml::Class" def : hasElementsMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		self.oclIsTypeOf(UML2!"uml::Class") and
+		self.getNearestPackage().locallyIncompClasses->excludes(self) and
+		(self.getNearestPackage().incompClasses->includes(self) or
+		 self.getNearestPackage().incompClasses->exists(c|self.allOwnedClassifiers->includes(c)))
+	else false endif;
+
+helper context UML2!"uml::Interface" def : hasElementsMissing : Boolean =
+	if thisModule.depsElements->includes(self) then
+		self.getNearestPackage().locallyIncompClasses->excludes(self) and
+		(self.getNearestPackage().incompClasses->includes(self) or
+		 self.getNearestPackage().incompClasses->exists(c|self.allOwnedClassifiers->includes(c)))
+	else false endif;
+
+-- ======================================================================
+-- helper attributes end
+-- ======================================================================
+
+-- ======================================================================
+-- helper methods begin
+-- ======================================================================
+
+helper context OclAny def : join(separator : String) : String =
+	if self.oclIsKindOf(Sequence(OclAny)) then
+		self->iterate(e; acc : String = '' |
+			if acc = '' then acc + e.toString()
+			else acc + separator + e endif)
+	else '' endif;
+
+-- ======================================================================
+-- helper methods end
+-- ======================================================================
+
+-- ======================================================================
+-- transformation rules begin
+-- ======================================================================
+
+rule Model {
+	from s : UML2!"uml::Model" (thisModule.depsElements->includes(s))
+	using {
+		provides : String = UML2!"uml::Model".allInstancesFrom('IN')
+			->collect(m|m.name)
+			->join(', ');
+	}
+    to t : UML2!"uml::Model" (
+        name <- (provides + ' provides ' + s.name.toString()).debug('Creating compatibility report'),
+        packagedElement <- s.packagedElement),
+	   pa : UML2!"uml::ProfileApplication" (
+	   	applyingPackage <- s,
+		appliedProfile <- thisModule.crProfile),
+	   ref : UML2!"ecore::EAnnotation" (
+	   	eModelElement <- pa,
+		source <- s.oclType().ePackage.nsURI,
+		references <- thisModule.crPackages),
+	   crST : UML2!"CompatibilityReport::CompatibilityReport" (
+	   	base_Model <- s)
+}
+
+rule Package {
+	from s : UML2!"uml::Package" (s.hasElementsMissing)
+    to t : UML2!"uml::Package" (
+        name <- s.name,
+        visibility <- s.visibility,
+        packagedElement <- s.packagedElement)
+}
+
+rule MissingPackage {
+	from s : UML2!"uml::Package" (s.isMissing)
+    to t : UML2!"uml::Package" (
+        name <- s.name,
+        visibility <- s.visibility,
+        packagedElement <- s.packagedElement),
+	   missingST : UML2!"CompatibilityReport::Missing" (
+	   	base_Element <- s)
+}
+
+rule Class {
+    from s : UML2!"uml::Class" (s.hasElementsMissing)
+    to t : UML2!"uml::Class" (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- s.isLeaf,
+        isAbstract <- s.isAbstract,
+        isActive <- s.isActive,
+        generalization <- s.generalization,
+		ownedAttribute <- s.ownedAttribute,
+        interfaceRealization <- s.interfaceRealization,
+		nestedClassifier <- s.nestedClassifier,
+        ownedOperation <- s.ownedOperation)
+}
+
+rule MissingClass {
+    from s : UML2!"uml::Class" (s.isMissing)
+    to t : UML2!"uml::Class" (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- s.isLeaf,
+        isAbstract <- s.isAbstract,
+        isActive <- s.isActive,
+        generalization <- s.generalization,
+		ownedAttribute <- s.ownedAttribute,
+        interfaceRealization <- s.interfaceRealization,
+		nestedClassifier <- s.nestedClassifier,
+        ownedOperation <- s.ownedOperation),
+	   missingST : UML2!"CompatibilityReport::Missing" (
+	   	base_Element <- s)
+}
+
+rule Interface {
+    from s : UML2!"uml::Interface" (s.hasElementsMissing)
+	to t : UML2!"uml::Interface" (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- s.isLeaf,
+        isAbstract <- s.isAbstract,
+        generalization <- s.generalization,
+        ownedOperation <- s.ownedOperation,
+        nestedClassifier <- s.nestedClassifier)
+}
+
+rule MissingInterface {
+    from s : UML2!"uml::Interface" (s.isMissing)
+	to t : UML2!"uml::Interface" (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- s.isLeaf,
+        isAbstract <- s.isAbstract,
+        generalization <- s.generalization,
+        ownedOperation <- s.ownedOperation,
+        nestedClassifier <- s.nestedClassifier),
+	   missingST : UML2!"CompatibilityReport::Missing" (
+	   	base_Element <- s)
+}
+
+rule MissingGeneralization {
+    from s : UML2!"uml::Generalization" (s.isMissing)
+    to t : UML2!"uml::Generalization" (
+        general <- s.general),
+	   missingST : UML2!"CompatibilityReport::Missing" (
+	   	base_Element <- s)
+}
+
+rule MissingInterfaceRealization {
+    from s : UML2!"uml::InterfaceRealization" (s.isMissing)
+    to t : UML2!"uml::InterfaceRealization" (
+        name <- s.name,
+        visibility <- s.visibility,
+		supplier <- s.supplier,
+        client <- s.client,
+        contract <- s.contract),
+	   missingST : UML2!"CompatibilityReport::Missing" (
+	   	base_Element <- s)
+}
+
+rule MissingProperty {
+    from s : UML2!"uml::Property" (s.isMissing)
+    to t : UML2!"uml::Property" (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- s.isLeaf,
+        isStatic <- s.isStatic,
+        isOrdered <- s.isOrdered,
+        isUnique <- s.isUnique,
+        isReadOnly <- s.isReadOnly,
+        type <- s.type,
+        upperValue <- s.upperValue,
+        lowerValue <- s.lowerValue),
+	   missingST : UML2!"CompatibilityReport::Missing" (
+	   	base_Element <- s)
+}
+
+rule LiteralUnlimitedNatural {
+    from s : UML2!"uml::LiteralUnlimitedNatural" (
+    	if thisModule.depsElements->includes(s) then
+			s.refImmediateComposite().isMissing
+		else false endif)
+    to t : UML2!"uml::LiteralUnlimitedNatural" (
+        name <- s.name,
+        visibility <- s.visibility,
+        value <- s.value)
+}
+
+rule LiteralInteger {
+    from s : UML2!"uml::LiteralInteger" (
+    	if thisModule.inElements->includes(s) then
+			s.refImmediateComposite().isMissing
+		else false endif)
+    to t : UML2!"uml::LiteralInteger" (
+        name <- s.name,
+        visibility <- s.visibility,
+        value <- s.value)
+}
+
+rule MissingOperation {
+    from s : UML2!"uml::Operation" (s.isMissing)
+    to t : UML2!"uml::Operation" (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- s.isLeaf,
+        isStatic <- s.isStatic,
+        isAbstract <- s.isAbstract,
+        concurrency <- s.concurrency,
+        isQuery <- s.isQuery,
+        ownedParameter <- s.ownedParameter,
+        raisedException <- s.raisedException),
+	   missingST : UML2!"CompatibilityReport::Missing" (
+	   	base_Element <- s)
+}
+
+rule Parameter {
+    from s : UML2!"uml::Parameter" (s.isMissing)
+    to t : UML2!"uml::Parameter" (
+        name <- s.name,
+        visibility <- s.visibility,
+        isOrdered <- s.isOrdered,
+        isUnique <- s.isUnique,
+        direction <- s.direction,
+        isException <- s.isException,
+        isStream <- s.isStream,
+        type <- s.type,
+        upperValue <- s.upperValue,
+        lowerValue <- s.lowerValue)
+}
+
+endpoint rule UML2CompatibilityComparison() {
+	do {
+		UML2!"uml::Model".allInstancesFrom('IN')
+			->collect(m|m.compatibleInPrev)->flatten()->notEmpty()
+			.debug('Model is compatible with previous model');
+	}
+}
+
+-- ======================================================================
+-- transformation rules end
+-- ======================================================================

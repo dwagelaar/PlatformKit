@@ -85,5 +85,14 @@
                menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
       </objectContribution>
    </extension>
+  <extension
+        point="org.eclipse.emf.ecore.uri_mapping">
+     <mapping
+           source="http://soft.vub.ac.be/platformkit-java/UMLProfiles.ecore"
+           target="platform:/plugin/be.ac.vub.platformkit.java/metamodels/UMLProfiles.ecore"/>
+     <mapping
+           source="http://soft.vub.ac.be/platformkit-java/CompatibilityReport.uml"
+           target="platform:/plugin/be.ac.vub.platformkit.java/profiles/CompatibilityReport.uml"/>
+  </extension>
 
 </plugin>

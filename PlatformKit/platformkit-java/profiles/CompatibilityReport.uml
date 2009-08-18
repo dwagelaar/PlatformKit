@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_qgBIIH2jEd6LzqIqzRhtXg" name="CompatibilityReport" metaclassReference="_UTYRYH2kEd6LzqIqzRhtXg _ocAo8IgrEd6USPppbvpcng">
+  <eAnnotations xmi:id="_tuoZIIgrEd6USPppbvpcng" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_tuoZIYgrEd6USPppbvpcng" name="CompatibilityReport" nsURI="http:///schemas/CompatibilityReport/_tul84IgrEd6USPppbvpcng/0" nsPrefix="CompatibilityReport">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tuoZIogrEd6USPppbvpcng" name="Missing">
+        <eAnnotations xmi:id="_tuoZI4grEd6USPppbvpcng" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_-3v2QH2jEd6LzqIqzRhtXg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tuoZJIgrEd6USPppbvpcng" name="base_Element" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Element"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tuoZJogrEd6USPppbvpcng" name="CompatibilityReport">
+        <eAnnotations xmi:id="_tuoZJ4grEd6USPppbvpcng" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_A4RjkH2kEd6LzqIqzRhtXg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tuoZKIgrEd6USPppbvpcng" name="base_Model" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Model"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:id="_UTYRYH2kEd6LzqIqzRhtXg">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Model"/>
+  </elementImport>
+  <elementImport xmi:id="_ocAo8IgrEd6USPppbvpcng">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_-3v2QH2jEd6LzqIqzRhtXg" name="Missing">
+    <ownedAttribute xmi:id="_p_9vAIgrEd6USPppbvpcng" name="base_Element" association="_p_9H8IgrEd6USPppbvpcng">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_A4RjkH2kEd6LzqIqzRhtXg" name="CompatibilityReport">
+    <ownedAttribute xmi:id="_Z8ZvYH2kEd6LzqIqzRhtXg" name="base_Model" association="_Z8ZIUH2kEd6LzqIqzRhtXg">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Model"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_Z8ZIUH2kEd6LzqIqzRhtXg" name="Model_CompatibilityReport" memberEnd="_Z8ZIUX2kEd6LzqIqzRhtXg _Z8ZvYH2kEd6LzqIqzRhtXg">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_Z8ZIUX2kEd6LzqIqzRhtXg" name="extension_CompatibilityReport" type="_A4RjkH2kEd6LzqIqzRhtXg" aggregation="composite" association="_Z8ZIUH2kEd6LzqIqzRhtXg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_p_9H8IgrEd6USPppbvpcng" name="Element_Missing" memberEnd="_p_9H8YgrEd6USPppbvpcng _p_9vAIgrEd6USPppbvpcng">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_p_9H8YgrEd6USPppbvpcng" name="extension_Missing" type="_-3v2QH2jEd6LzqIqzRhtXg" aggregation="composite" association="_p_9H8IgrEd6USPppbvpcng"/>
+  </packagedElement>
+</uml:Profile>
