@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
+<stringAttribute key="ATL File Name" value="/platformkit-java/transformations/UML2CompatibilityReport.atl"/>
+<stringAttribute key="ATL VM" value="EMF-specific VM"/>
+<booleanAttribute key="AllowInterModelReferences" value="false"/>
+<mapAttribute key="Input">
+<mapEntry key="CR" value="UML2"/>
+<mapEntry key="DEPS" value="UML2"/>
+<mapEntry key="IN" value="UML2"/>
+</mapAttribute>
+<mapAttribute key="Libs">
+<mapEntry key="UML2" value="/platformkit-java/transformations/UML2.asm"/>
+<mapEntry key="UML2Comparison" value="/platformkit-java/transformations/UML2Comparison.asm"/>
+</mapAttribute>
+<booleanAttribute key="Mode Debug" value="false"/>
+<mapAttribute key="Model Handler">
+<mapEntry key="UML2" value="UML2"/>
+</mapAttribute>
+<mapAttribute key="ModelType">
+<mapEntry key="CR" value="MODELINPUT"/>
+<mapEntry key="DEPS" value="MODELINPUT"/>
+<mapEntry key="REPORT" value="MODELOUTPUT"/>
+<mapEntry key="UML2" value="METAMODELOUTPUT"/>
+<mapEntry key="IN" value="MODELINPUT"/>
+</mapAttribute>
+<mapAttribute key="Output">
+<mapEntry key="REPORT" value="UML2"/>
+</mapAttribute>
+<mapAttribute key="Path">
+<mapEntry key="CR" value="/platformkit-java/profiles/CompatibilityReport.uml"/>
+<mapEntry key="DEPS" value="/platformkit-java/j2se-1_2-api.uml"/>
+<mapEntry key="REPORT" value="/platformkit-java/cr.uml"/>
+<mapEntry key="UML2" value="/platformkit-java/metamodels/UMLProfiles.ecore"/>
+<mapEntry key="IN" value="/platformkit-java/jdk-1_1-api.uml"/>
+</mapAttribute>
+<stringAttribute key="Project Name" value="platformkit-java"/>
+<listAttribute key="Superimpose"/>
+<booleanAttribute key="continueAfterError" value="false"/>
+<booleanAttribute key="disableAttributeHelperCache" value="false"/>
+<booleanAttribute key="printExecutionTime" value="true"/>
+<booleanAttribute key="profile" value="false"/>
+<booleanAttribute key="saveTraceModel" value="false"/>
+<booleanAttribute key="showSummary" value="false"/>
+<booleanAttribute key="step" value="false"/>
+</launchConfiguration>

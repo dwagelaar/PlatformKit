@@ -9,7 +9,10 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.jface.action.IAction;
@@ -25,11 +28,18 @@ import org.eclipse.m2m.atl.engine.vm.ModelLoader;
 import org.eclipse.m2m.atl.engine.vm.nativelib.ASMBoolean;
 import org.eclipse.m2m.atl.engine.vm.nativelib.ASMModel;
 import org.eclipse.ui.IActionDelegate;
+import org.eclipse.ui.IEditorDescriptor;
+import org.eclipse.ui.IEditorRegistry;
 import org.eclipse.ui.IObjectActionDelegate;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.WorkbenchException;
-import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.ui.internal.WorkbenchPlugin;
+import org.eclipse.ui.internal.dialogs.DialogUtil;
+import org.eclipse.ui.part.FileEditorInput;
 
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
@@ -38,12 +48,17 @@ import be.ac.vub.platformkit.java.popup.util.MessageDialogRunnable;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
+@SuppressWarnings("restriction")
 public abstract class CompatAction implements IObjectActionDelegate {
+
+	private static final URL UML_MM  = PlatformkitJavaPlugin.getPlugin().getBundle().getResource("metamodels/UMLProfiles.ecore");
+	private static final URL CR_PROF = PlatformkitJavaPlugin.getPlugin().getBundle().getResource("profiles/CompatibilityReport.uml");
 	
 	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	
     protected ISelection selection;
     protected IAction action;
+    protected IFile outputFile;
 
     private boolean cancelled = false;
     private URL apiResource = null;
@@ -91,9 +106,14 @@ public abstract class CompatAction implements IObjectActionDelegate {
         try {
             cancelled = false;
             dlg.run(true, true, op);
+            if (outputFile != null) {
+                openFileInEditor(outputFile);
+            }
         } catch (InvocationTargetException e) {
             Throwable t = e.getCause();
             PlatformkitJavaPlugin.getPlugin().report(t);
+        } catch (CoreException ce) {
+        	PlatformkitJavaPlugin.getPlugin().report(ce);
         } catch (InterruptedException ie) {
         	PlatformkitJavaPlugin.getPlugin().report(ie);
         }
@@ -137,27 +157,45 @@ public abstract class CompatAction implements IObjectActionDelegate {
             amh = (AtlEMFModelHandler) AtlModelHandler.getDefault(AtlModelHandler.AMH_EMF);
         }
         final ModelLoader ml = amh.createModelLoader();
-        final ASMModel uml2 = ml.loadModel("UML2", ml.getMOF(), "uri:" + UMLPackage.eINSTANCE.getNsURI());
+        final ASMModel uml2 = ml.loadModel("UML2", ml.getMOF(), UML_MM.openStream());
+        final ASMModel crProf = ml.loadModel("CR", uml2, CR_PROF.openStream());
         final IFile file =
         	(IFile) ((IStructuredSelection) selection).getFirstElement();
         Assert.isNotNull(file);
+        final IPath crPath = file.getParent().getProjectRelativePath().append("pkCompatReport.uml");
+        final String crLocation = "/" + file.getProject().getName() + "/" + crPath.toString();
+        final ASMModel report = ml.newModel("REPORT", crPath.toString(), uml2);
+        //
+        // 1
+        //
         worked(monitor);
-        final ASMModel previn = ml.loadModel("PREVIN", uml2, file.getContents());
+        final ASMModel deps = ml.loadModel("DEPS", uml2, file.getContents());
+        //
+        // 2
+        //
         worked(monitor);
         final ASMModel in = ml.loadModel("IN", uml2, apiResource.openStream());
+        //
+        // 3
+        //
         worked(monitor);
-        monitor.subTask("Running ATL query...");
+        monitor.subTask("Running ATL transformation...");
         final Map<String, String> params = Collections.emptyMap();
         final Map<String, ASMModel> models = new HashMap<String, ASMModel>();
         models.put(uml2.getName(), uml2);
-        models.put(previn.getName(), previn);
+        models.put(crProf.getName(), crProf);
+        models.put(deps.getName(), deps);
         models.put(in.getName(), in);
-        final URL uml2CompatibilityComparison = 
-        	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityComparison.asm");
+        models.put(report.getName(), report);
+        final URL uml2CompatibilityReport = 
+        	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityReport.asm");
         final URL uml2Comparison = 
         	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2Comparison.asm");
+        final URL uml2Lib = 
+        	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2.asm");
         final List<URL> superimpose = Collections.emptyList();
         final Map<String, URL> libs = new HashMap<String, URL>();
+        libs.put("UML2", uml2Lib);
         libs.put("UML2Comparison", uml2Comparison);
         final Map<String, String> options = new HashMap<String, String>();
         options.put("printExecutionTime", "true");
@@ -165,7 +203,7 @@ public abstract class CompatAction implements IObjectActionDelegate {
 				.getPreferenceStore();
 		final String atlVMName = store.getString(PreferenceConstants.P_ATLVM);
 		final AtlVM atlVM = AtlVM.getVM(atlVMName);
-		final Object result = atlVM.launch(uml2CompatibilityComparison, libs, models, params, superimpose, options);
+		final Object result = atlVM.launch(uml2CompatibilityReport, libs, models, params, superimpose, options);
 		boolean compatible;
 		if (result instanceof ASMBoolean) {
 			compatible = ((ASMBoolean)result).getSymbol();
@@ -173,27 +211,70 @@ public abstract class CompatAction implements IObjectActionDelegate {
 			Assert.isTrue(result instanceof Boolean);
 			compatible = ((Boolean)result).booleanValue();
 		}
+        //
+        // 4
+        //
+        worked(monitor);
+        if (!compatible) {
+            monitor.subTask("Saving compatibility report...");
+    		ml.save(report, crLocation);
+    		file.getParent().refreshLocal(IResource.DEPTH_INFINITE, null);
+        }
+		//
+		// 5
+		//
         worked(monitor);
         monitor.subTask("Showing result...");
-        final StringBuffer report = new StringBuffer();
-        report.append(file.getName());
+        int mode;
+        final StringBuffer summary = new StringBuffer();
+        summary.append(file.getName());
         if (compatible) {
-        	report.append(" is compatible with ");
+        	summary.append(" is compatible with ");
+            summary.append(apiName);
+            mode = MessageDialogRunnable.MODE_INFORMATION;
+            outputFile = null;
         } else {
-        	report.append(" is not compatible with ");
+        	summary.append(" is not compatible with ");
+            summary.append(apiName);
+            summary.append(".\nCheck \"" + crLocation + "\" for details.");
+            mode = MessageDialogRunnable.MODE_ERROR;
+            outputFile = file.getProject().getFile(crPath);
         }
-        report.append(apiName);
-        report.append(".\nCheck the ATL console log for details.");
         final MessageDialogRunnable dlg = new MessageDialogRunnable(
-                "Compatible with " + apiName, report.toString());
-        if (compatible) {
-        	dlg.setMode(MessageDialogRunnable.MODE_INFORMATION);
-        } else {
-        	dlg.setMode(MessageDialogRunnable.MODE_ERROR);
-        }
+                "Compatible with " + apiName, summary.toString());
+    	dlg.setMode(mode);
         PlatformkitJavaPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
-        worked(monitor);
     }
+    
+    private void openFileInEditor(IFile file) throws CoreException {
+		//
+		// get default editor descriptor
+		//
+		IEditorRegistry editorRegistry = WorkbenchPlugin.getDefault()
+				.getEditorRegistry();
+		//TODO getting editor does not work
+		IEditorDescriptor defaultEditorDescriptor = editorRegistry
+				.getDefaultEditor(file.getName(), file.getContentDescription().getContentType());
+		if (defaultEditorDescriptor == null) {
+			defaultEditorDescriptor = editorRegistry.findEditor(IEditorRegistry.SYSTEM_EXTERNAL_EDITOR_ID);
+		}
+		//
+		// Open new file in editor
+		//
+		IWorkbenchWindow dw = PlatformkitJavaPlugin.getPlugin().getWorkbench()
+				.getActiveWorkbenchWindow();
+		Assert.isNotNull(dw);
+		FileEditorInput fileEditorInput = new FileEditorInput(file);
+		try {
+			IWorkbenchPage page = dw.getActivePage();
+			if (page != null)
+				page.openEditor(fileEditorInput, defaultEditorDescriptor
+						.getId());
+		} catch (PartInitException e) {
+			DialogUtil.openError(dw.getShell(), "Could not open new file", e
+					.getMessage(), e);
+		}
+	}
 
     /**
      * Increases the progressmonitor by 1.

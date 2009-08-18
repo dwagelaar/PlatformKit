@@ -7715,6 +7715,7 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_xVEcYhkyEd6WJ8gws_yupQ" name="java">
+    <eAnnotations xmi:id="_vSg1gH2dEd6ZuPM5TspYjQ" source="PlatformKit#Derived"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_xVEcYxkyEd6WJ8gws_yupQ" name="lang">
       <packagedElement xmi:type="uml:Class" xmi:id="_xVEcZBkyEd6WJ8gws_yupQ" name="Object" isLeaf="true" isAbstract="true"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_xVEcZxkyEd6WJ8gws_yupQ" name="Error" isLeaf="true" isAbstract="true"/>
