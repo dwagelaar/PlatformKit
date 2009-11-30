@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.bundle"
       label="PlatformKit Bundle"
-      version="1.1.10"
+      version="1.1.11"
       provider-name="Vrije Universiteit Brussel"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">
@@ -81,7 +81,7 @@ Pellet includes following software components:
    </license>
 
    <url>
-      <update label="SSEL update site" url="http://ssel.vub.ac.be/eclipse/update"/>
+      <update label="SOFT update site" url="http://soft.vub.ac.be/eclipse/update-3.5"/>
    </url>
 
    <includes

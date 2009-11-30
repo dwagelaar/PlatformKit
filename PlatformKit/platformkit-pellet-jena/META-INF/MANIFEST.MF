@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Pellet OWL reasoner Jena interface Plug-in
 Bundle-SymbolicName: org.mindswap.pellet.jena
-Bundle-Version: 1.5.0
+Bundle-Version: 1.5.0.1
 Bundle-Activator: org.mindswap.pellet.jena.eclipse.Activator
 Bundle-Vendor: Vrije Universiteit Brussel
 Require-Bundle: org.eclipse.core.runtime,
