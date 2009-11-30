@@ -8,11 +8,10 @@ Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.runtime,
  org.junit,
- org.eclipse.m2m.atl.engine,
  org.eclipse.uml2.uml,
- org.eclipse.m2m.atl.adt.debug,
  be.ac.vub.platformkit.editor,
- org.eclipse.debug.core
+ org.eclipse.debug.core,
+ org.eclipse.m2m.atl.core;bundle-version="3.0.0"
 Export-Package: be.ac.vub.platformkit.java,
  be.ac.vub.platformkit.java.popup.actions,
  be.ac.vub.platformkit.java.popup.util
