@@ -1,10 +1,9 @@
 package be.ac.vub.platformkit.java.popup.actions;
 
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URL;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -21,12 +20,9 @@ import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.m2m.atl.adt.launching.AtlVM;
-import org.eclipse.m2m.atl.engine.AtlEMFModelHandler;
-import org.eclipse.m2m.atl.engine.AtlModelHandler;
-import org.eclipse.m2m.atl.engine.vm.ModelLoader;
-import org.eclipse.m2m.atl.engine.vm.nativelib.ASMBoolean;
-import org.eclipse.m2m.atl.engine.vm.nativelib.ASMModel;
+import org.eclipse.m2m.atl.core.IModel;
+import org.eclipse.m2m.atl.core.IReferenceModel;
+import org.eclipse.m2m.atl.core.launch.ILauncher;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorRegistry;
@@ -43,6 +39,7 @@ import org.eclipse.ui.part.FileEditorInput;
 
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
+import be.ac.vub.platformkit.java.popup.util.ATLUtil;
 import be.ac.vub.platformkit.java.popup.util.ErrorDialogRunnable;
 import be.ac.vub.platformkit.java.popup.util.MessageDialogRunnable;
 import be.ac.vub.platformkit.kb.IOntologies;
@@ -53,6 +50,7 @@ public abstract class CompatAction implements IObjectActionDelegate {
 
 	private static final URL UML_MM  = PlatformkitJavaPlugin.getPlugin().getBundle().getResource("metamodels/UMLProfiles.ecore");
 	private static final URL CR_PROF = PlatformkitJavaPlugin.getPlugin().getBundle().getResource("profiles/CompatibilityReport.uml");
+	private static final String MODEL_HANDLER = "UML2";
 	
 	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	
@@ -149,75 +147,63 @@ public abstract class CompatAction implements IObjectActionDelegate {
     protected void runAction(IProgressMonitor monitor) throws Exception {
         monitor.beginTask("Determining compatibility with " + apiName, 5);
         monitor.subTask("Loading models...");
-        AtlEMFModelHandler amh;
-        try {
-        	amh = (AtlEMFModelHandler) AtlModelHandler.getDefault("UML2");
-        } catch (RuntimeException e) {
-        	logger.warning("UML2 model handler not available; falling back to EMF model handler");
-            amh = (AtlEMFModelHandler) AtlModelHandler.getDefault(AtlModelHandler.AMH_EMF);
-        }
-        final ModelLoader ml = amh.createModelLoader();
-        final ASMModel uml2 = ml.loadModel("UML2", ml.getMOF(), UML_MM.openStream());
-        final ASMModel crProf = ml.loadModel("CR", uml2, CR_PROF.openStream());
+		final IPreferenceStore store = PlatformkitEditorPlugin.getPlugin().getPreferenceStore();
+		final String atlVMName = store.getString(PreferenceConstants.P_ATLVM);
+		final ATLUtil atlUtil = new ATLUtil(atlVMName);
+        final IReferenceModel uml2 = atlUtil.loadRefModel(UML_MM.openStream(), "UML2", UML_MM.toString(), MODEL_HANDLER);
+        final IModel crProf = atlUtil.loadModel(uml2, CR_PROF.openStream(), "CR", CR_PROF.toString());
         final IFile file =
         	(IFile) ((IStructuredSelection) selection).getFirstElement();
         Assert.isNotNull(file);
+        final String fileLocation = "/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toString();
         final IPath crPath = file.getParent().getProjectRelativePath().append("pkCompatReport.uml");
         final String crLocation = "/" + file.getProject().getName() + "/" + crPath.toString();
-        final ASMModel report = ml.newModel("REPORT", crPath.toString(), uml2);
+        IModel report = atlUtil.newModel(uml2, "REPORT", crLocation);
         //
         // 1
         //
         worked(monitor);
-        final ASMModel deps = ml.loadModel("DEPS", uml2, file.getContents());
+        IModel deps = atlUtil.loadModel(uml2, file.getContents(), "DEPS", fileLocation);
         //
         // 2
         //
         worked(monitor);
-        final ASMModel in = ml.loadModel("IN", uml2, apiResource.openStream());
+        IModel in = atlUtil.loadModel(uml2, apiResource.openStream(), "IN", apiResource.toString());
         //
         // 3
         //
         worked(monitor);
         monitor.subTask("Running ATL transformation...");
-        final Map<String, String> params = Collections.emptyMap();
-        final Map<String, ASMModel> models = new HashMap<String, ASMModel>();
-        models.put(uml2.getName(), uml2);
-        models.put(crProf.getName(), crProf);
-        models.put(deps.getName(), deps);
-        models.put(in.getName(), in);
-        models.put(report.getName(), report);
         final URL uml2CompatibilityReport = 
         	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityReport.asm");
         final URL uml2Comparison = 
         	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2Comparison.asm");
         final URL uml2Lib = 
         	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2.asm");
-        final List<URL> superimpose = Collections.emptyList();
-        final Map<String, URL> libs = new HashMap<String, URL>();
-        libs.put("UML2", uml2Lib);
-        libs.put("UML2Comparison", uml2Comparison);
-        final Map<String, String> options = new HashMap<String, String>();
-        options.put("printExecutionTime", "true");
-		final IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
-				.getPreferenceStore();
-		final String atlVMName = store.getString(PreferenceConstants.P_ATLVM);
-		final AtlVM atlVM = AtlVM.getVM(atlVMName);
-		final Object result = atlVM.launch(uml2CompatibilityReport, libs, models, params, superimpose, options);
-		boolean compatible;
-		if (result instanceof ASMBoolean) {
-			compatible = ((ASMBoolean)result).getSymbol();
-		} else {
-			Assert.isTrue(result instanceof Boolean);
-			compatible = ((Boolean)result).booleanValue();
+        final Map<String, Object> vmoptions = new HashMap<String, Object>();
+        vmoptions.put("printExecutionTime", "true");
+        final ILauncher launcher = atlUtil.getLauncher();
+		launcher.addInModel(crProf, "CR", "UML2");
+		launcher.addInModel(deps, "DEPS", "UML2");
+		launcher.addInModel(in, "IN", "UML2");
+		launcher.addOutModel(report, "REPORT", "UML2");
+		launcher.addLibrary("UML2", uml2Lib.openStream());
+		launcher.addLibrary("UML2Comparison", uml2Comparison.openStream());
+		Object result = launcher.launch(ILauncher.RUN_MODE, monitor, vmoptions, uml2CompatibilityReport.openStream());
+		Assert.isNotNull(result);
+		if ("ASMBoolean".equals(result.getClass().getName())) {
+			final Method getSymbol = result.getClass().getDeclaredMethod("getSymbol");
+			result = (Boolean)getSymbol.invoke(result);
 		}
+		Assert.isTrue(result instanceof Boolean);
+		boolean compatible = ((Boolean)result).booleanValue();
         //
         // 4
         //
         worked(monitor);
         if (!compatible) {
             monitor.subTask("Saving compatibility report...");
-    		ml.save(report, crLocation);
+            atlUtil.getExtractor().extract(report, crLocation);
     		file.getParent().refreshLocal(IResource.DEPTH_INFINITE, null);
         }
 		//
@@ -245,14 +231,13 @@ public abstract class CompatAction implements IObjectActionDelegate {
     	dlg.setMode(mode);
         PlatformkitJavaPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
     }
-    
+
     private void openFileInEditor(IFile file) throws CoreException {
 		//
 		// get default editor descriptor
 		//
 		IEditorRegistry editorRegistry = WorkbenchPlugin.getDefault()
 				.getEditorRegistry();
-		//TODO getting editor does not work
 		IEditorDescriptor defaultEditorDescriptor = editorRegistry
 				.getDefaultEditor(file.getName(), file.getContentDescription().getContentType());
 		if (defaultEditorDescriptor == null) {
