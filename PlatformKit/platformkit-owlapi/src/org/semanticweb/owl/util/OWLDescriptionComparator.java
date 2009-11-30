@@ -166,6 +166,15 @@ public class OWLDescriptionComparator implements Comparator<OWLDescription> {
 
 
         protected int compareObjects(R o1, R o2) {
+        	return compareObjectsInternal(o1, o2);
+        }
+
+
+        /**
+         * Method added to work around Eclipse compiler problem
+         * @author dennis
+         */
+        protected int compareObjectsInternal(R o1, R o2) {
             // Compare properties
             OWLPropertyExpression prop1 = o1.getProperty();
             OWLPropertyExpression prop2 = o2.getProperty();
@@ -382,7 +391,7 @@ public class OWLDescriptionComparator implements Comparator<OWLDescription> {
 
         protected int compareObjects(OWLQuantifiedRestriction<OWLObjectPropertyExpression, OWLDescription> o1,
                                      OWLQuantifiedRestriction<OWLObjectPropertyExpression, OWLDescription> o2) {
-            int delta = super.compareObjects(o1, o2);
+            int delta = super.compareObjectsInternal(o1, o2);
             if(delta != 0) {
                 return delta;
             }
@@ -426,7 +435,7 @@ public class OWLDescriptionComparator implements Comparator<OWLDescription> {
 
         protected int compareObjects(OWLQuantifiedRestriction<OWLDataPropertyExpression, OWLDataRange> o1,
                                      OWLQuantifiedRestriction<OWLDataPropertyExpression, OWLDataRange> o2) {
-            int delta = super.compareObjects(o1, o2);
+            int delta = super.compareObjectsInternal(o1, o2);
             if(delta != 0) {
                 return delta;
             }
