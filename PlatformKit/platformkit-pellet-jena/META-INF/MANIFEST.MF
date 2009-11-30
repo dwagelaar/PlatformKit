@@ -8,12 +8,10 @@ Bundle-Vendor: Vrije Universiteit Brussel
 Require-Bundle: org.eclipse.core.runtime,
  org.mindswap.pellet,
  com.hp.hpl.jena,
- aterm,
- org.mortbay.jetty
+ aterm
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Export-Package: org.mindswap.pellet,
- org.mindswap.pellet.dig,
  org.mindswap.pellet.jena,
  org.mindswap.pellet.jena.eclipse,
  org.mindswap.pellet.jena.vocabulary,
