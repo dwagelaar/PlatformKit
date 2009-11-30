@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.kb.owlapi"
       label="PlatformKit OWLAPI Adapter"
-      version="1.0.1"
+      version="1.0.2"
       provider-name="Vrije Universiteit Brussel">
 
    <description>
@@ -174,7 +174,7 @@ nuclear facility.
    </license>
 
    <url>
-      <update label="SSEL update site" url="http://ssel.vub.ac.be/eclipse/update"/>
+      <update label="SOFT update site" url="http://soft.vub.ac.be/eclipse/update-3.5"/>
    </url>
 
    <requires>
@@ -188,50 +188,50 @@ nuclear facility.
 
    <plugin
          id="be.ac.vub.platformkit.kb.owlapi"
-         download-size="28"
-         install-size="28"
+         download-size="32"
+         install-size="32"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.semanticweb.owl"
-         download-size="2944"
-         install-size="2944"
+         download-size="2940"
+         install-size="2940"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.semanticweb.owl.doc"
-         download-size="5632"
-         install-size="5632"
+         download-size="5636"
+         install-size="5636"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.mindswap.pellet"
-         download-size="932"
-         install-size="932"
+         download-size="936"
+         install-size="936"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="aterm"
-         download-size="348"
-         install-size="348"
+         download-size="352"
+         install-size="352"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="com.sun.xsdlib"
-         download-size="472"
-         install-size="472"
+         download-size="476"
+         install-size="476"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.relaxng"
-         download-size="32"
-         install-size="32"
+         download-size="40"
+         install-size="40"
          version="0.0.0"
          unpack="false"/>
 

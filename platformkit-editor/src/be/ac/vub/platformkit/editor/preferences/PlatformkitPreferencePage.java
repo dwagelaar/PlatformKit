@@ -12,7 +12,7 @@ import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
-import org.eclipse.m2m.atl.adt.launching.AtlVM;
+import org.eclipse.m2m.atl.core.service.CoreService;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -96,7 +96,7 @@ public class PlatformkitPreferencePage
 				getFieldEditorParent());
 		addField(kb);
 
-		String[] vms = AtlVM.getVMs();
+		String[] vms = CoreService.getLaunchersNames();
 		String[][] vmss = new String[vms.length][2];
 		for (int i = 0; i < vms.length; i++) {
 			vmss[i][0] = vms[i];

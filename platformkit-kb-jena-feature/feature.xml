@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.kb.jena"
       label="PlatformKit Jena Adapter"
-      version="1.0.1"
+      version="1.0.2"
       provider-name="Vrije Universiteit Brussel">
 
    <description>
@@ -105,7 +105,7 @@ of the copyright holder.
    </license>
 
    <url>
-      <update label="SSEL update site" url="http://ssel.vub.ac.be/eclipse/update"/>
+      <update label="SOFT update site" url="http://soft.vub.ac.be/eclipse/update-3.5"/>
    </url>
 
    <requires>
@@ -120,28 +120,28 @@ of the copyright holder.
 
    <plugin
          id="be.ac.vub.platformkit.kb.jena"
-         download-size="28"
-         install-size="28"
+         download-size="36"
+         install-size="36"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.mindswap.pellet.jena"
-         download-size="368"
-         install-size="368"
+         download-size="328"
+         install-size="328"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="com.hp.hpl.jena"
-         download-size="13892"
+         download-size="13896"
          install-size="15211"
          version="0.0.0"/>
 
    <plugin
          id="com.hp.hpl.jena.doc"
-         download-size="5316"
-         install-size="5316"
+         download-size="5320"
+         install-size="5320"
          version="0.0.0"
          unpack="false"/>
 

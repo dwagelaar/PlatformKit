@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit"
       label="PlatformKit"
-      version="1.1.10"
+      version="1.1.11"
       provider-name="Vrije Universiteit Brussel"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">
@@ -25,7 +25,7 @@ the terms and conditions of the Eclipse Public License Version
    </license>
 
    <url>
-      <update label="SSEL update site" url="http://ssel.vub.ac.be/eclipse/update"/>
+      <update label="SOFT update site" url="http://soft.vub.ac.be/eclipse/update-3.5"/>
    </url>
 
    <requires>
@@ -54,15 +54,15 @@ the terms and conditions of the Eclipse Public License Version
 
    <plugin
          id="be.ac.vub.platformkit.edit"
-         download-size="28"
-         install-size="28"
+         download-size="31"
+         install-size="31"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit"
-         download-size="116"
-         install-size="116"
+         download-size="121"
+         install-size="121"
          version="0.0.0"
          unpack="false"/>
 
@@ -75,15 +75,15 @@ the terms and conditions of the Eclipse Public License Version
 
    <plugin
          id="be.ac.vub.platformkit.java"
-         download-size="3972"
-         install-size="3972"
+         download-size="3992"
+         install-size="3992"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.examples"
-         download-size="276"
-         install-size="276"
+         download-size="277"
+         install-size="277"
          version="0.0.0"
          unpack="false"/>
 

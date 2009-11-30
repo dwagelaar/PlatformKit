@@ -2,6 +2,6 @@
 <?NLS TYPE="org.eclipse.help.toc"?>
 
 <toc label="PlatformKit Documentation">
-	<topic label="Introduction" href="http://ssel.vub.ac.be/ssel/research/mdd/platformkit"/> 
+	<topic label="Introduction" href="http://soft.vub.ac.be/soft/research/mdd/platformkit"/> 
 	<topic label="API reference" href="doc/javadoc/index.html"/> 
 </toc>
