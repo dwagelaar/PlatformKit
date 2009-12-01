@@ -30,6 +30,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.P_REASONER, "builtin");
 		store.setDefault(PreferenceConstants.P_DIG_URL, "http://localhost:8081");
 		store.setDefault(PreferenceConstants.P_KB, "be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory");
+		store.setDefault(PreferenceConstants.P_CACHE_API, true);
 	}
 	
 	public static IOntologiesFactory getPreferredOntologyFactory() throws CoreException {
