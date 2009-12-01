@@ -8,6 +8,7 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
@@ -107,6 +108,13 @@ public class PlatformkitPreferencePage
 				vmss,
 				getFieldEditorParent());
 		addField(atlVM);
+
+		BooleanFieldEditor cacheAPI = new BooleanFieldEditor(
+				PreferenceConstants.P_CACHE_API,
+				"Cache API models",
+				BooleanFieldEditor.SEPARATE_LABEL,
+				getFieldEditorParent());
+        addField(cacheAPI);
 	}
 
 	/* (non-Javadoc)

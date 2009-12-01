@@ -1,5 +1,6 @@
 package be.ac.vub.platformkit.java.popup.actions;
 
+import java.lang.ref.SoftReference;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -20,6 +21,7 @@ import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.m2m.atl.common.ATLLogger;
 import org.eclipse.m2m.atl.core.IModel;
 import org.eclipse.m2m.atl.core.IReferenceModel;
 import org.eclipse.m2m.atl.core.launch.ILauncher;
@@ -57,6 +59,7 @@ public abstract class CompatAction implements IObjectActionDelegate {
     protected ISelection selection;
     protected IAction action;
     protected IFile outputFile;
+    protected Map<URL,SoftReference<IModel>> apiModelCache = new HashMap<URL,SoftReference<IModel>>();
 
     private boolean cancelled = false;
     private URL apiResource = null;
@@ -145,8 +148,12 @@ public abstract class CompatAction implements IObjectActionDelegate {
      * @throws Exception
      */
     protected void runAction(IProgressMonitor monitor) throws Exception {
+    	final long startTime = System.currentTimeMillis();
+        logger.info("Determining compatibility with " + apiName);
         monitor.beginTask("Determining compatibility with " + apiName, 5);
-        monitor.subTask("Loading models...");
+    	ATLLogger.getLogger().addHandler(PlatformkitEditorPlugin.getHandler());
+        logger.info("Loading meta-models...");
+        monitor.subTask("Loading meta-models...");
 		final IPreferenceStore store = PlatformkitEditorPlugin.getPlugin().getPreferenceStore();
 		final String atlVMName = store.getString(PreferenceConstants.P_ATLVM);
 		final ATLUtil atlUtil = new ATLUtil(atlVMName);
@@ -163,16 +170,38 @@ public abstract class CompatAction implements IObjectActionDelegate {
         // 1
         //
         worked(monitor);
+    	long currentTime = System.currentTimeMillis();
+        logger.info("Loaded meta-models at " + formatTime(currentTime-startTime));
+        logger.info("Loading dependency model...");
+        monitor.subTask("Loading dependency model...");
         IModel deps = atlUtil.loadModel(uml2, file.getContents(), "DEPS", fileLocation);
         //
         // 2
         //
         worked(monitor);
-        IModel in = atlUtil.loadModel(uml2, apiResource.openStream(), "IN", apiResource.toString());
+    	currentTime = System.currentTimeMillis();
+        logger.info("Loaded dependency model at " + formatTime(currentTime-startTime));
+        logger.info("Loading API model...");
+        monitor.subTask("Loading API model...");
+        IModel in = null;
+        if (store.getBoolean(PreferenceConstants.P_CACHE_API)) {
+        	if (apiModelCache.containsKey(apiResource)) {
+        		in = apiModelCache.get(apiResource).get();
+        	}
+        	if (in == null) {
+                in = atlUtil.loadModel(uml2, apiResource.openStream(), "IN", apiResource.toString());
+                apiModelCache.put(apiResource, new SoftReference<IModel>(in));
+        	}
+        } else {
+            in = atlUtil.loadModel(uml2, apiResource.openStream(), "IN", apiResource.toString());
+        }
         //
         // 3
         //
         worked(monitor);
+    	currentTime = System.currentTimeMillis();
+        logger.info("Loaded API model at " + formatTime(currentTime-startTime));
+        logger.info("Running ATL transformation...");
         monitor.subTask("Running ATL transformation...");
         final URL uml2CompatibilityReport = 
         	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityReport.asm");
@@ -201,15 +230,21 @@ public abstract class CompatAction implements IObjectActionDelegate {
         // 4
         //
         worked(monitor);
+    	currentTime = System.currentTimeMillis();
+        logger.info("Ran ATL transformation at " + formatTime(currentTime-startTime));
         if (!compatible) {
+            logger.info("Saving compatibility report...");
             monitor.subTask("Saving compatibility report...");
             atlUtil.getExtractor().extract(report, crLocation);
     		file.getParent().refreshLocal(IResource.DEPTH_INFINITE, null);
+        	currentTime = System.currentTimeMillis();
+            logger.info("Saved compatibility report at " + formatTime(currentTime-startTime));
         }
 		//
 		// 5
 		//
         worked(monitor);
+        logger.info("Showing result...");
         monitor.subTask("Showing result...");
         int mode;
         final StringBuffer summary = new StringBuffer();
@@ -229,7 +264,24 @@ public abstract class CompatAction implements IObjectActionDelegate {
         final MessageDialogRunnable dlg = new MessageDialogRunnable(
                 "Compatible with " + apiName, summary.toString());
     	dlg.setMode(mode);
+    	ATLLogger.getLogger().removeHandler(PlatformkitEditorPlugin.getHandler());
+    	currentTime = System.currentTimeMillis();
+        logger.info("Finished at " + formatTime(currentTime-startTime));
         PlatformkitJavaPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
+    }
+    
+    private String formatTime(long millis) {
+    	long seconds = millis / 1000;
+    	long minutes = seconds / 60;
+    	seconds = seconds % 60;
+    	StringBuffer s = new StringBuffer();
+    	s.append(minutes);
+    	s.append(':');
+    	if (seconds < 10) {
+    		s.append('0');
+    	}
+    	s.append(seconds);
+    	return s.toString();
     }
 
     private void openFileInEditor(IFile file) throws CoreException {

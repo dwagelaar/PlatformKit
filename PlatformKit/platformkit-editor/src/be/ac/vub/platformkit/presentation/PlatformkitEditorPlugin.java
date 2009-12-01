@@ -70,6 +70,8 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
     private static IConsoleManager consoleMgr = null; 
     private static final String PLATFORMKIT_CONSOLE = "be.ac.vub.platformkit.presentation.console"; 
 
+	private static Handler handler;
+	
 	/**
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
@@ -134,7 +136,7 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	        consoleStream = console.newMessageStream();
 	        activateConsole();
 	        consoleStream.println("Platformkit Console initiated");
-	        Handler handler = new ConsoleStreamHandler(consoleStream);
+	        handler = new ConsoleStreamHandler(consoleStream);
 	        Logger.getLogger(IOntologies.LOGGER).addHandler(handler);
 	        // Disable Jena logging on our console to remove dependency
 //	        JenaPlugin.getDefault().addLogHandler(handler);
@@ -168,7 +170,7 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	        } catch (org.eclipse.ui.PartInitException pex) {
 	            pex.printStackTrace();
 	        }
-	    }   
+	    }
 	}
 	
     /**
@@ -203,4 +205,10 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
         return st;
     }
 
+	/**
+	 * @return the log handler that outputs to the PlatformKit console.
+	 */
+	public static Handler getHandler() {
+		return handler;
+	}   
 }
