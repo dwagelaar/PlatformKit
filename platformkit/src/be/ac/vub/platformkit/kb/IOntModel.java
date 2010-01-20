@@ -2,6 +2,10 @@ package be.ac.vub.platformkit.kb;
 
 import java.util.Iterator;
 
+/**
+ * Interface for ontology models
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public interface IOntModel {
 
     /**

@@ -10,8 +10,7 @@ import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 
 /**
  * Resolves relative paths using an EMF URI base.
- * @author dennis
- *
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class EMFURIPathResolver implements PathResolver {
 	private ExtensibleURIConverterImpl converter = new ExtensibleURIConverterImpl();

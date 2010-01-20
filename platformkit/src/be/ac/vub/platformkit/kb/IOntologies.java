@@ -8,6 +8,10 @@ import java.util.List;
 import be.ac.vub.platformkit.IOntModelChangeListener;
 import be.ac.vub.platformkit.kb.util.OntException;
 
+/**
+ * Interface for ontology repositories 
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public interface IOntologies {
 
 	public static final String LOGGER = "be.ac.vub.platformkit";

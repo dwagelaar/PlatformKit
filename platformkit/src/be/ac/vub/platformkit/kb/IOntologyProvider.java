@@ -5,8 +5,7 @@ import java.io.InputStream;
 
 /**
  * Interface for Eclipse plugins that provide PlatformKit ontologies.
- * @author dennis
- *
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public interface IOntologyProvider {
 

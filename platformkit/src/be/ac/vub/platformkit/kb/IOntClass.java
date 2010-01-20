@@ -1,6 +1,9 @@
 package be.ac.vub.platformkit.kb;
 
-
+/**
+ * Interface for ontology classes 
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public interface IOntClass {
 
     /**

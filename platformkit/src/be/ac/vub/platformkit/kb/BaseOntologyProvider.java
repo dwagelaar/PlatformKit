@@ -10,6 +10,10 @@ import junit.framework.Assert;
 import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
 
+/**
+ * Provider for default PlatformKit ontologies
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public class BaseOntologyProvider implements IOntologyProvider {
 	
 	private static final String[] ontologies = new String[] {

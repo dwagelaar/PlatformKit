@@ -8,6 +8,10 @@ import java.util.logging.Logger;
 import be.ac.vub.platformkit.IOntModelChangeListener;
 import be.ac.vub.platformkit.kb.util.OntException;
 
+/**
+ * Shared functionality for ontology providers
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public abstract class AbstractOntologies implements IOntologies {
 
 	protected static Logger logger = Logger.getLogger(LOGGER);
