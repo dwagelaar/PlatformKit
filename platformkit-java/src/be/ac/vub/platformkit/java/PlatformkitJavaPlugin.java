@@ -7,7 +7,13 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 import be.ac.vub.platformkit.java.popup.util.ErrorDialogRunnable;
 
+/**
+ * PlatformKit for Java platforms plug-in class 
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public class PlatformkitJavaPlugin extends AbstractUIPlugin {
+	
+	public static final String PLATFORMAPI_EXT_POINT = "be.ac.vub.platformkit.java.apimodel";
 	
 	private static PlatformkitJavaPlugin plugin = null;
 	

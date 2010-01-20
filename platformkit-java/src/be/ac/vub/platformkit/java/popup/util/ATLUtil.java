@@ -1,6 +1,8 @@
 package be.ac.vub.platformkit.java.popup.util;
 
 import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +24,7 @@ import org.eclipse.m2m.atl.core.service.CoreService;
  */
 public class ATLUtil {
 	
-	private ILauncher launcher;
+	private String atlVMName;
     private ModelFactory factory;
     private IInjector injector;
     private IExtractor extractor;
@@ -34,13 +36,8 @@ public class ATLUtil {
      */
 	public ATLUtil(String atlVMName) throws ATLCoreException {
 		Assert.assertNotNull(atlVMName);
-		launcher = CoreService.getLauncher(atlVMName);
-		if (launcher == null) {
-			throw new ATLCoreException("ATL VM \"" + atlVMName + "\" not found");
-		}
-		final Map<String,Object> options = Collections.emptyMap();
-		launcher.initialize(options);
-		factory = CoreService.getModelFactory(launcher.getDefaultModelFactoryName());
+		this.atlVMName = atlVMName;
+		factory = CoreService.getModelFactory(getLauncher().getDefaultModelFactoryName());
 		injector = CoreService.getInjector(factory.getDefaultInjectorName());
 		extractor = CoreService.getExtractor(factory.getDefaultExtractorName());
 	}
@@ -60,8 +57,28 @@ public class ATLUtil {
 		options.put("modelName", name);
 		options.put("path", path);
 		options.put("newModel", "false");
-		final IModel model = factory.newModel(refModel, options);
-		injector.inject(model, source, options);
+		final IModel model = getFactory().newModel(refModel, options);
+		getInjector().inject(model, source, options);
+		return model;
+	}
+    
+	/**
+	 * Loads a model from an input stream.
+	 * @param refModel The meta-model.
+	 * @param source The path to the model.
+	 * @param name The model name in the transformation module.
+	 * @param path The (descriptive) path to the model (file extension matters most here).
+	 * @return The loaded model.
+	 * @throws ATLCoreException
+	 */
+	public IModel loadModel(IReferenceModel refModel, String source,
+			String name, String path) throws ATLCoreException {
+		final Map<String, Object> options = new HashMap<String, Object>();
+		options.put("modelName", name);
+		options.put("path", path);
+		options.put("newModel", "false");
+		final IModel model = getFactory().newModel(refModel, options);
+		getInjector().inject(model, source, options);
 		return model;
 	}
     
@@ -81,8 +98,8 @@ public class ATLUtil {
 		options.put("modelName", name);
 		options.put("path", path);
 		options.put("newModel", "false");
-		final IReferenceModel model = factory.newReferenceModel(options);
-		injector.inject(model, source, options);
+		final IReferenceModel model = getFactory().newReferenceModel(options);
+		getInjector().inject(model, source, options);
 		return model;
 	}
     
@@ -100,14 +117,21 @@ public class ATLUtil {
 		options.put("modelName", name);
 		options.put("path", path);
 		options.put("newModel", "true");
-		final IModel model = factory.newModel(refModel, options);
+		final IModel model = getFactory().newModel(refModel, options);
 		return model;
 	}
 	
 	/**
-	 * @return the launcher
+	 * @return a new launcher
+	 * @throws ATLCoreException 
 	 */
-	public ILauncher getLauncher() {
+	public ILauncher getLauncher() throws ATLCoreException {
+		final ILauncher launcher = CoreService.getLauncher(atlVMName);
+		if (launcher == null) {
+			throw new ATLCoreException("ATL VM \"" + atlVMName + "\" not found");
+		}
+		final Map<String,Object> options = Collections.emptyMap();
+		launcher.initialize(options);
 		return launcher;
 	}
 
@@ -130,6 +154,26 @@ public class ATLUtil {
 	 */
 	public IExtractor getExtractor() {
 		return extractor;
+	}
+	
+	/**
+	 * Converts an ATL VM value to a boolean, if possible
+	 * @param value
+	 * @return the converted value
+	 * @throws ClassCastException if the value was not a boolean
+	 * @throws NoSuchMethodException 
+	 * @throws SecurityException 
+	 * @throws InvocationTargetException 
+	 * @throws IllegalAccessException 
+	 * @throws IllegalArgumentException 
+	 */
+	public static boolean getBooleanValue(Object value) throws ClassCastException, SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException {
+        Assert.assertNotNull(value);
+		if ("org.eclipse.m2m.atl.engine.vm.nativelib.ASMBoolean".equals(value.getClass().getName())) {
+			final Method getSymbol = value.getClass().getDeclaredMethod("getSymbol");
+			value = (Boolean)getSymbol.invoke(value);
+		}
+		return ((Boolean)value).booleanValue();
 	}
     
 }

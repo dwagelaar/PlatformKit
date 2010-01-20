@@ -38,10 +38,10 @@
 </mapAttribute>
 <mapAttribute key="Path">
 <mapEntry key="IN" value="/platformkit-java/jdk-1_1-api.uml"/>
-<mapEntry key="REPORT" value="/platformkit-java/cr.uml"/>
+<mapEntry key="REPORT" value="/ExampleModels/pkCompatReportJDK1_1.uml"/>
 <mapEntry key="UML2" value="/platformkit-java/metamodels/UMLProfiles.ecore"/>
 <mapEntry key="CR" value="/platformkit-java/profiles/CompatibilityReport.profile.uml"/>
-<mapEntry key="DEPS" value="/platformkit-java/j2se-1_2-api.uml"/>
+<mapEntry key="DEPS" value="/uml2cs-instantmessenger-maemo/instantmessengerDeps.uml"/>
 </mapAttribute>
 <stringAttribute key="Project Name" value="platformkit-java"/>
 <listAttribute key="Superimpose"/>

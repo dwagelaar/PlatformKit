@@ -1,0 +1,169 @@
+-- @atlcompiler atl2006
+-- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
+-- $Id$
+-- Merges two CompatibilityReport UML2 models.
+--
+-- * Requires the input compatibility reports to be generated 
+--   from the same dependency model.
+-- * Requires the input compatibility reports to be unpruned.
+--
+module UML2CRIntersection; -- extends UML2Copy
+
+create OUT : UML2		-- The merged compatibility report model
+from IN : UML2, 		-- The first input compatibility report model
+     MERGE : UML2; 		-- The second input compatibility report model
+
+uses UML2;
+
+-- ======================================================================
+-- helper attributes begin
+-- ======================================================================
+
+helper context UML2!"uml::Feature" def : inMerge : Sequence(UML2!"uml::Feature") =
+	self.owner.inMerge->collect(c|c.ownedElement)->flatten()->select(n|self.sameAs(n));
+
+helper context UML2!"uml::Classifier" def : inMerge : Sequence(UML2!"uml::Classifier") =
+	UML2!"uml::Classifier".allInstancesFrom('MERGE')->select(n|self.sameAs(n));
+
+helper context UML2!"uml::Package" def : inMerge : Sequence(UML2!"uml::Package") =
+	UML2!"uml::Package".allInstancesFrom('MERGE')->select(n|self.sameAs(n));
+
+helper context UML2!"uml::Element" def : isIncompatibleInMerge : Boolean =
+	self.inMerge->exists(e|e.isIncompatible);
+
+helper context UML2!"uml::Element" def : isMissingInMerge : Boolean =
+	self.inMerge->exists(e|e.isMissing);
+
+helper context UML2!"uml::Element" def : isMissing : Boolean =
+	(not self.getAppliedStereotype('CompatibilityReport::Missing').oclIsUndefined());
+
+helper context UML2!"uml::Element" def : isIncompatible : Boolean =
+	(not self.getAppliedStereotype('CompatibilityReport::Incompatible').oclIsUndefined());
+
+helper context UML2!"uml::Model" def : mergedName : String =
+	let suffixStart : Integer = self.name.indexOf(' provides ') in
+	let suffix : String = self.name.substring(suffixStart + 1, self.name.size()) in
+	let suffixLength : Integer = suffix.size() in
+	UML2!"uml::Model".allInstancesFrom('MERGE')->iterate(e; acc : String = self.name |
+		let ePrefix : String = e.name.substring(1, e.name.size() - suffixLength) in
+		ePrefix + ' + ' + acc).debug('mergedName');
+
+-- ======================================================================
+-- helper attributes end
+-- ======================================================================
+
+-- ======================================================================
+-- helper methods begin
+-- ======================================================================
+
+helper context UML2!"uml::Operation" def : sameAs(f : UML2!"uml::Operation") : Boolean =
+	if self.namedElementSameAs(f) then
+		if (self.ownedParameter->size() = f.ownedParameter->size())
+		then thisModule.sameParameters(self.ownedParameter, f.ownedParameter)
+		else false endif
+	else false endif;
+
+helper def : sameParameters(selfpars : Sequence(UML2!"uml::Parameter"), otherpars : Sequence(UML2!"uml::Parameter")) : Boolean =
+	let selfpar : UML2!"uml::Parameter" = selfpars->first() in
+	let otherpar : UML2!"uml::Parameter" = otherpars->first() in
+	if selfpar.oclIsUndefined() then otherpar.oclIsUndefined()
+	else
+		if selfpar.sameAs(otherpar) then
+			thisModule.sameParameters(
+				selfpars->excluding(selfpar), 
+				otherpars->excluding(otherpar))
+		else false endif
+	endif;
+
+helper context UML2!"uml::Property" def : sameAs(t : UML2!"uml::TypedElement") : Boolean =
+	self.typedElementSameAs(t);
+
+helper context UML2!"uml::Parameter" def : sameAs(t : UML2!"uml::TypedElement") : Boolean =
+	self.typedElementSameAs(t);
+
+helper context UML2!"uml::TypedElement" def : typedElementSameAs(t : UML2!"uml::TypedElement") : Boolean =
+	if self.namedElementSameAs(t)
+	then if self.type.oclIsUndefined()
+		 then t.type.oclIsUndefined()
+		 else if t.type.oclIsUndefined()
+		 	  then false
+			  else (self.type.umlQualifiedName = t.type.umlQualifiedName)
+			  endif
+		 endif
+	else false endif;
+
+helper context UML2!"uml::NamedElement" def : sameAs(n : UML2!"uml::NamedElement") : Boolean =
+	self.namedElementSameAs(n);
+
+helper context UML2!"uml::NamedElement" def : namedElementSameAs(n : UML2!"uml::NamedElement") : Boolean =
+	n.umlQualifiedName = self.umlQualifiedName and
+	n.oclType() = self.oclType();
+
+-- ======================================================================
+-- helper methods end
+-- ======================================================================
+
+-- ======================================================================
+-- transformation rules begin
+-- ======================================================================
+
+rule Model {
+    from s : UML2!"uml::Model" (thisModule.inElements->includes(s))
+    to t : UML2!"uml::Model" (
+        name <- s.mergedName,
+        visibility <- s.visibility,
+        viewpoint <- s.viewpoint,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        packageMerge <- s.packageMerge,
+        packagedElement <- s.packagedElement,
+        profileApplication <- s.profileApplication)
+}
+
+rule CompatibilityReport {
+	from s : UML2!"CompatibilityReport::CompatibilityReport" (
+		thisModule.inElements->includes(s))
+	to t : UML2!"CompatibilityReport::CompatibilityReport" (
+		base_Model <- s.base_Model)
+}
+
+rule Incompatible {
+	from s : UML2!"CompatibilityReport::Incompatible" (
+		if thisModule.inElements->includes(s) then
+			if s.oclIsTypeOf(UML2!"CompatibilityReport::Incompatible") then
+				s.base_Element.isIncompatibleInMerge
+			else false endif
+		else false endif)
+	to t : UML2!"CompatibilityReport::Incompatible" (
+		base_Element <- s.base_Element.debug('Incompatible'))
+}
+
+rule Missing {
+	from s : UML2!"CompatibilityReport::Missing" (
+		if thisModule.inElements->includes(s) then
+			s.base_Element.isMissingInMerge
+		else false endif)
+	to t : UML2!"CompatibilityReport::Missing" (
+		base_Element <- s.base_Element.debug('Missing'))
+}
+
+rule MissingToIncompatible {
+	from s : UML2!"CompatibilityReport::Missing" (
+		if thisModule.inElements->includes(s) then
+			s.base_Element.isIncompatibleInMerge
+		else false endif)
+	to t : UML2!"CompatibilityReport::Incompatible" (
+		base_Element <- s.base_Element.debug('MissingToIncompatible'))
+}
+
+-- ======================================================================
+-- transformation rules end
+-- ======================================================================

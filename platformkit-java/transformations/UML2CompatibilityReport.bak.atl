@@ -1,5 +1,4 @@
 -- @atlcompiler atl2006
--- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id$
 -- Creates a report of the compatibility of a UML2 model
 -- with a reference version of the UML2 model.
@@ -18,7 +17,7 @@ uses UML2Comparison;
 -- ======================================================================
 
 helper def : UML2CompatibilityReportVersionString : String =
-	'$Id$';
+	'$Id: UML2CompatibilityReport.atl 7786 2009-08-18 07:24:48Z dwagelaa $';
 
 helper def : inElements : Set(UML2!"ecore::EObject") =
 	UML2!"ecore::EObject".allInstancesFrom('IN');
@@ -88,6 +87,11 @@ helper context UML2!"uml::NamedElement" def : incompSuppliers : Sequence(UML2!"u
 		->collect(p|p.allSuppliersIncompatibleWith(self))
 		->flatten();
 
+helper context UML2!"uml::NamedElement" def : compatibleNameAndTypeFromIn : Sequence(UML!"uml::NamedElement") =
+	UML2!"uml::NamedElement".allInstancesFrom('IN')
+		->reject(e|e.isDerived)
+		->select(n|n.umlQualifiedName=self.umlQualifiedName and n.myOclType.conformsTo(self.myOclType));
+
 helper context UML2!"ecore::EObject" def : isMissing : Boolean =
 	false;
 
@@ -95,81 +99,107 @@ helper context UML2!"ecore::EStringToStringMapEntry" def : isMissing : Boolean =
 	false;
 
 helper context UML2!"uml::Package" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		self.getModel().locallyIncompPacks->includes(self)
-	endif;
+	if thisModule.depsElements->includes(self) then
+		if self.hasMissingOwner then true else
+			self.getModel().locallyIncompPacks->includes(self)
+		endif
+	else false endif;
 
 helper context UML2!"uml::Class" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		self.getNearestPackage().locallyIncompClasses->includes(self)
-	endif;
+	if thisModule.depsElements->includes(self) then
+		if self.hasMissingOwner then true else
+			self.getNearestPackage().locallyIncompClasses->includes(self)
+		endif
+	else false endif;
 
 helper context UML2!"uml::Interface" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		self.getNearestPackage().locallyIncompClasses->includes(self)
-	endif;
+	if thisModule.depsElements->includes(self) then
+		if self.hasMissingOwner then true else
+			self.getNearestPackage().locallyIncompClasses->includes(self)
+		endif
+	else false endif;
 
 helper context UML2!"uml::Generalization" def : isMissing : Boolean =
-	if self.specific.isMissing then true else
-		self.specific.incompGenerals->includes(self.general)
-	endif;
+	if thisModule.depsElements->includes(self) then
+		if self.specific.isMissing then true else
+			self.specific.incompGenerals->includes(self.general)
+		endif
+	else false endif;
 
 helper context UML2!"uml::InterfaceRealization" def : isMissing : Boolean =
-	if self.implementingClassifier.isMissing then true else
-		self.implementingClassifier.incompSuppliers->exists(i|self.supplier->includes(i))
-	endif;
+	if thisModule.depsElements->includes(self) then
+		if self.implementingClassifier.isMissing then true else
+			self.implementingClassifier.incompSuppliers->exists(i|self.supplier->includes(i))
+		endif
+	else false endif;
 
 helper context UML2!"uml::Property" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		if self.class.oclIsUndefined() then false else
-			self.class.incompFeatures->includes(self)
+	if thisModule.depsElements->includes(self) then
+		if self.hasMissingOwner then true else
+			if self.class.oclIsUndefined() then false else
+				self.class.incompFeatures->includes(self)
+			endif
 		endif
-	endif;
+	else false endif;
 
 helper context UML2!"uml::Operation" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		if self.class.oclIsUndefined() then
-			if self.interface.oclIsUndefined() then false else
-				self.interface.incompFeatures->includes(self)
+	if thisModule.depsElements->includes(self) then
+		if self.hasMissingOwner then true else
+			if self.class.oclIsUndefined() then
+				if self.interface.oclIsUndefined() then false else
+					self.interface.incompFeatures->includes(self)
+				endif
+			else
+				self.class.incompFeatures->includes(self)
 			endif
-		else
-			self.class.incompFeatures->includes(self)
 		endif
-	endif;
+	else false endif;
 
 helper context UML2!"uml::Parameter" def : isMissing : Boolean =
-	if self.operation.oclIsUndefined() then false else
-		self.operation.isMissing
-	endif;
+	if thisModule.depsElements->includes(self) then
+		if self.operation.oclIsUndefined() then false else
+			self.operation.isMissing
+		endif
+	else false endif;
 
 helper context UML2!"uml::LiteralUnlimitedNatural" def : isMissing : Boolean =
-	self.refImmediateComposite().isMissing;
+	if thisModule.depsElements->includes(self) then
+		self.refImmediateComposite().isMissing
+	else false endif;
 
 helper context UML2!"uml::LiteralInteger" def : isMissing : Boolean =
-	self.refImmediateComposite().isMissing;
+	if thisModule.depsElements->includes(self) then
+		self.refImmediateComposite().isMissing
+	else false endif;
 
 helper context UML2!"uml::Element" def : hasElementsMissing : Boolean =
 	false;
 
 helper context UML2!"uml::Package" def : hasElementsMissing : Boolean =
-	if self.hasMissingOwner then false else
-		(self.getModel().incompPacks->includes(self) or
-	 	self.getModel().incompPacks->exists(p|self.allOwnedPackages->includes(p)))
-	endif;
+	if thisModule.depsElements->includes(self) then
+		if self.hasMissingOwner then false else
+			(self.getModel().incompPacks->includes(self) or
+		 	self.getModel().incompPacks->exists(p|self.allOwnedPackages->includes(p)))
+		endif
+	else false endif;
 
 helper context UML2!"uml::Class" def : hasElementsMissing : Boolean =
-	if self.hasMissingOwner then false else
-		let pack : UML2!"uml::Package" = self.getNearestPackage() in
-		(pack.incompClasses->includes(self) or
-	 	pack.incompClasses->exists(c|self.allOwnedClassifiers->includes(c)))
-	endif;
+	if thisModule.depsElements->includes(self) then
+		if self.hasMissingOwner then false else
+			let pack : UML2!"uml::Package" = self.getNearestPackage() in
+			(pack.incompClasses->includes(self) or
+		 	pack.incompClasses->exists(c|self.allOwnedClassifiers->includes(c)))
+		endif
+	else false endif;
 
 helper context UML2!"uml::Interface" def : hasElementsMissing : Boolean =
-	if self.hasMissingOwner then false else
-		let pack : UML2!"uml::Package" = self.getNearestPackage() in
-		(pack.incompClasses->includes(self) or
-	 	pack.incompClasses->exists(c|self.allOwnedClassifiers->includes(c)))
-	endif;
+	if thisModule.depsElements->includes(self) then
+		if self.hasMissingOwner then false else
+			let pack : UML2!"uml::Package" = self.getNearestPackage() in
+			(pack.incompClasses->includes(self) or
+		 	pack.incompClasses->exists(c|self.allOwnedClassifiers->includes(c)))
+		endif
+	else false endif;
 
 helper context UML2!"uml::Element" def : hasMissingOwner : Boolean =
 	if self.owner.oclIsUndefined() then false else
@@ -177,6 +207,37 @@ helper context UML2!"uml::Element" def : hasMissingOwner : Boolean =
 			self.owner.hasMissingOwner
 		endif
 	endif;
+
+helper context UML2!"uml::Element" def : isReferred : Boolean =
+	false;
+
+helper context UML2!"uml::Classifier" def : isReferred : Boolean =
+	thisModule.depsElements
+	->exists(e|
+		if e.isMissing then
+			e.refersToType(self)
+		else false endif);
+
+helper context UML2!"uml::Element" def : hasReferredTypes : Boolean =
+	false;
+
+helper context UML2!"uml::Package" def : hasReferredTypes : Boolean =
+	self.packagedElement
+	->exists(e|e.isReferred or e.hasReferredTypes);
+
+helper context UML2!"uml::Class" def : hasReferredTypes : Boolean =
+	self.nestedClassifier
+	->exists(e|e.isReferred);
+
+helper context UML2!"uml::Interface" def : hasReferredTypes : Boolean =
+	self.nestedClassifier
+	->exists(e|e.isReferred);
+
+helper context UML2!"uml::Classifier" def : isIncludedInReport : Boolean =
+	self.isMissing or
+	self.hasElementsMissing or
+	self.isReferred or
+	self.hasReferredTypes;
 
 -- ======================================================================
 -- helper attributes end
@@ -193,6 +254,21 @@ helper context OclAny def : join(separator : String) : String =
 			else acc + separator + e endif)
 	else '' endif;
 
+helper context UML2!"uml::Element" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	false;
+
+helper context UML2!"uml::Property" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.type=type;
+
+helper context UML2!"uml::Parameter" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.type=type;
+
+helper context UML2!"uml::Generalization" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.general=type;
+
+helper context UML2!"uml::InterfaceRealization" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.contract=type;
+
 -- ======================================================================
 -- helper methods end
 -- ======================================================================
@@ -202,8 +278,7 @@ helper context OclAny def : join(separator : String) : String =
 -- ======================================================================
 
 rule Model {
-	from s : UML2!"uml::Model" (
-		thisModule.depsElements->includes(s))
+	from s : UML2!"uml::Model" (thisModule.depsElements->includes(s))
 	using {
 		provides : String = UML2!"uml::Model".allInstancesFrom('IN')
 			->collect(m|m.name)
@@ -212,14 +287,7 @@ rule Model {
     to t : UML2!"uml::Model" (
         name <- (provides + ' provides ' + s.name.toString()).debug('Creating compatibility report'),
 		eAnnotations <- s.eAnnotations,
-        packagedElement <- s.packagedElement),
-	   a : UML2!"ecore::EAnnotation" (
-	   	eModelElement <- s,
-		source <- 'PlatformKit',
-		details <- Sequence{vi}),
-	   vi : UML2!"ecore::EStringToStringMapEntry" (
-	   	key <- 'versionInfo',
-		value <- thisModule.UML2CompatibilityReportVersionString)
+        packagedElement <- s.packagedElement)
 	do {
 		t.applyProfile(thisModule.crProfile);
 		t.applyStereotype(thisModule.stCompatibilityReport);
@@ -227,8 +295,7 @@ rule Model {
 }
 
 rule EAnnotation {
-    from s : UML2!"ecore::EAnnotation" (
-    	thisModule.depsElements->includes(s))
+    from s : UML2!"ecore::EAnnotation" (thisModule.depsElements->includes(s))
     to t : UML2!"ecore::EAnnotation" (
         source <- s.source,
         eAnnotations <- s.eAnnotations,
@@ -238,8 +305,7 @@ rule EAnnotation {
 }
 
 rule EStringToStringMapEntry {
-    from s : UML2!"ecore::EStringToStringMapEntry" (
-    	thisModule.depsElements->includes(s))
+    from s : UML2!"ecore::EStringToStringMapEntry" (thisModule.depsElements->includes(s))
     to t : UML2!"ecore::EStringToStringMapEntry" (
         key <- s.key,
         value <- s.value)
@@ -247,12 +313,12 @@ rule EStringToStringMapEntry {
 
 rule Package {
 	from s : UML2!"uml::Package" (
-		if thisModule.depsElements->includes(s) then
-			if s.oclIsTypeOf(UML2!"uml::Package") then
-				if s.isMissing then false else
-					not s.hasElementsMissing
+		if s.oclIsTypeOf(UML2!"uml::Package") then
+			if s.isMissing then false else
+				if s.hasElementsMissing then false else
+					s.hasReferredTypes
 				endif
-			else false endif
+			endif
 		else false endif)
     to t : UML2!"uml::Package" (
         name <- s.name,
@@ -263,12 +329,10 @@ rule Package {
 
 rule IncompatiblePackage {
 	from s : UML2!"uml::Package" (
-		if thisModule.depsElements->includes(s) then
-			if s.oclIsTypeOf(UML2!"uml::Package") then
-				if s.isMissing then false else
-					s.hasElementsMissing
-				endif
-			else false endif
+		if s.oclIsTypeOf(UML2!"uml::Package") then
+			if s.isMissing then false else
+				s.hasElementsMissing
+			endif
 		else false endif)
     to t : UML2!"uml::Package" (
         name <- s.name,
@@ -282,10 +346,8 @@ rule IncompatiblePackage {
 
 rule MissingPackage {
 	from s : UML2!"uml::Package" (
-		if thisModule.depsElements->includes(s) then
-			if s.oclIsTypeOf(UML2!"uml::Package") then
-				s.isMissing
-			else false endif
+		if s.oclIsTypeOf(UML2!"uml::Package") then
+			s.isMissing
 		else false endif)
     to t : UML2!"uml::Package" (
         name <- s.name,
@@ -299,12 +361,13 @@ rule MissingPackage {
 
 rule Class {
     from s : UML2!"uml::Class" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Class") then
-				if s.isMissing then false else
-					not s.hasElementsMissing
+    	if s.oclIsTypeOf(UML2!"uml::Class") then
+			if s.isMissing then false else
+				if s.hasElementsMissing then false else
+					s.hasReferredTypes or
+					s.isReferred
 				endif
-			else false endif
+			endif
 		else false endif)
     to t : UML2!"uml::Class" (
         name <- s.name.debug('>>Class<< ' + s.qualifiedName),
@@ -322,12 +385,10 @@ rule Class {
 
 rule IncompatibleClass {
     from s : UML2!"uml::Class" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Class") then
-				if s.isMissing then false else
-					s.hasElementsMissing
-				endif
-			else false endif
+    	if s.oclIsTypeOf(UML2!"uml::Class") then
+			if s.isMissing then false else
+				s.hasElementsMissing
+			endif
 		else false endif)
     to t : UML2!"uml::Class" (
         name <- s.name.debug('>>IncompatibleClass<< ' + s.qualifiedName),
@@ -348,10 +409,8 @@ rule IncompatibleClass {
 
 rule MissingClass {
     from s : UML2!"uml::Class" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Class") then
-				s.isMissing
-			else false endif
+    	if s.oclIsTypeOf(UML2!"uml::Class") then
+			s.isMissing
 		else false endif)
     to t : UML2!"uml::Class" (
         name <- s.name.debug('>>MissingClass<< ' + s.qualifiedName),
@@ -372,11 +431,12 @@ rule MissingClass {
 
 rule Interface {
     from s : UML2!"uml::Interface" (
-		if thisModule.depsElements->includes(s) then
-    		if s.isMissing then false else
-    			not s.hasElementsMissing
+    	if s.isMissing then false else
+    		if s.hasElementsMissing then false else
+				s.hasReferredTypes or
+				s.isReferred
 			endif
-		else false endif)
+		endif)
 	to t : UML2!"uml::Interface" (
         name <- s.name.debug('>>Interface<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -390,11 +450,9 @@ rule Interface {
 
 rule IncompatibleInterface {
     from s : UML2!"uml::Interface" (
-		if thisModule.depsElements->includes(s) then
-    		if s.isMissing then false else
-    			s.hasElementsMissing
-			endif
-		else false endif)
+    	if s.isMissing then false else
+    		s.hasElementsMissing
+		endif)
 	to t : UML2!"uml::Interface" (
         name <- s.name.debug('>>IncompatibleInterface<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -410,10 +468,7 @@ rule IncompatibleInterface {
 }
 
 rule MissingInterface {
-    from s : UML2!"uml::Interface" (
-    	if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::Interface" (s.isMissing)
 	to t : UML2!"uml::Interface" (
         name <- s.name.debug('>>MissingInterface<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -430,10 +485,10 @@ rule MissingInterface {
 
 rule DataType {
     from s : UML2!"uml::DataType" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::DataType") then
-		   		not s.isMissing
-			else false endif
+    	if s.oclIsTypeOf(UML2!"uml::DataType") then
+		   	if s.isMissing then false else
+				s.isReferred
+			endif
 		else false endif)
 	to t : UML2!"uml::DataType" (
         name <- s.name.debug('>>DataType<< ' + s.qualifiedName),
@@ -445,10 +500,8 @@ rule DataType {
 
 rule MissingDataType {
     from s : UML2!"uml::DataType" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::DataType") then
-    			s.isMissing
-			else false endif
+    	if s.oclIsTypeOf(UML2!"uml::DataType") then
+    		s.isMissing
 		else false endif)
 	to t : UML2!"uml::DataType" (
         name <- s.name.debug('>>MissingDataType<< ' + s.qualifiedName),
@@ -464,9 +517,9 @@ rule MissingDataType {
 
 rule PrimitiveType {
     from s : UML2!"uml::PrimitiveType" (
-		if thisModule.depsElements->includes(s) then
-    		not s.isMissing
-		else false endif)
+    	if s.isMissing then false else
+			s.isReferred
+		endif)
 	to t : UML2!"uml::PrimitiveType" (
         name <- s.name.debug('>>PrimitiveType<< ' + s.qualifiedName),
         visibility <- s.visibility,
@@ -476,10 +529,7 @@ rule PrimitiveType {
 }
 
 rule MissingPrimitiveType {
-    from s : UML2!"uml::PrimitiveType" (
-		if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::PrimitiveType" (s.isMissing)
 	to t : UML2!"uml::PrimitiveType" (
         name <- s.name.debug('>>MissingPrimitiveType<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -494,19 +544,17 @@ rule MissingPrimitiveType {
 
 rule Generalization {
     from s : UML2!"uml::Generalization" (
-		if thisModule.depsElements->includes(s) then
-    		not s.isMissing
-		else false endif)
+    	if s.isMissing then false else
+    		s.specific.isIncludedInReport and
+			s.general.isIncludedInReport
+    	endif)
     to t : UML2!"uml::Generalization" (
 		eAnnotations <- s.eAnnotations,
     	general <- s.general)
 }
 
 rule MissingGeneralization {
-    from s : UML2!"uml::Generalization" (
-		if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::Generalization" (s.isMissing)
     to t : UML2!"uml::Generalization" (
 		eAnnotations <- s.eAnnotations,
     	general <- s.general)
@@ -517,9 +565,10 @@ rule MissingGeneralization {
 
 rule InterfaceRealization {
     from s : UML2!"uml::InterfaceRealization" (
-		if thisModule.depsElements->includes(s) then
-    		not s.isMissing
-		else false endif)
+    	if s.isMissing then false else
+    		s.contract.isIncludedInReport and
+			s.implementingClassifier.isIncludedInReport
+    	endif)
     to t : UML2!"uml::InterfaceRealization" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -530,10 +579,7 @@ rule InterfaceRealization {
 }
 
 rule MissingInterfaceRealization {
-    from s : UML2!"uml::InterfaceRealization" (
-		if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::InterfaceRealization" (s.isMissing)
     to t : UML2!"uml::InterfaceRealization" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -546,33 +592,10 @@ rule MissingInterfaceRealization {
 	}
 }
 
-rule Property {
-    from s : UML2!"uml::Property" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Property") then
-				not s.isMissing
-			else false endif
-		else false endif)
-    to t : UML2!"uml::Property" (
-        name <- s.name,
-		eAnnotations <- s.eAnnotations,
-		visibility <- s.visibility,
-        isLeaf <- s.isLeaf,
-        isStatic <- s.isStatic,
-        isOrdered <- s.isOrdered,
-        isUnique <- s.isUnique,
-        isReadOnly <- s.isReadOnly,
-        type <- s.type,
-        upperValue <- s.upperValue,
-        lowerValue <- s.lowerValue)
-}
-
 rule MissingProperty {
     from s : UML2!"uml::Property" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Property") then
-				s.isMissing
-			else false endif
+    	if s.oclIsTypeOf(UML2!"uml::Property") then
+			s.isMissing
 		else false endif)
     to t : UML2!"uml::Property" (
         name <- s.name,
@@ -592,8 +615,7 @@ rule MissingProperty {
 }
 
 rule LiteralUnlimitedNatural {
-    from s : UML2!"uml::LiteralUnlimitedNatural" (
-    	thisModule.depsElements->includes(self))
+    from s : UML2!"uml::LiteralUnlimitedNatural" (s.isMissing)
     to t : UML2!"uml::LiteralUnlimitedNatural" (
         name <- s.name,
         visibility <- s.visibility,
@@ -601,37 +623,15 @@ rule LiteralUnlimitedNatural {
 }
 
 rule LiteralInteger {
-    from s : UML2!"uml::LiteralInteger" (
-		thisModule.depsElements->includes(self))
+    from s : UML2!"uml::LiteralInteger" (s.isMissing)
     to t : UML2!"uml::LiteralInteger" (
         name <- s.name,
         visibility <- s.visibility,
         value <- s.value)
 }
 
-rule Operation {
-    from s : UML2!"uml::Operation" (
-		if thisModule.depsElements->includes(s) then
-    		not s.isMissing
-		else false endif)
-    to t : UML2!"uml::Operation" (
-        name <- s.name,
-		eAnnotations <- s.eAnnotations,
-		visibility <- s.visibility,
-        isLeaf <- s.isLeaf,
-        isStatic <- s.isStatic,
-        isAbstract <- s.isAbstract,
-        concurrency <- s.concurrency,
-        isQuery <- s.isQuery,
-        ownedParameter <- s.ownedParameter,
-        raisedException <- s.raisedException)
-}
-
 rule MissingOperation {
-    from s : UML2!"uml::Operation" (
-		if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::Operation" (s.isMissing)
     to t : UML2!"uml::Operation" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -649,8 +649,7 @@ rule MissingOperation {
 }
 
 rule Parameter {
-    from s : UML2!"uml::Parameter" (
-    	thisModule.depsElements->includes(s))
+    from s : UML2!"uml::Parameter" (s.isMissing)
     to t : UML2!"uml::Parameter" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,

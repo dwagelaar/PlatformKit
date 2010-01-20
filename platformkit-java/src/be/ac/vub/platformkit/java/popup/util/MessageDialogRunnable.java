@@ -4,6 +4,10 @@ import org.eclipse.jface.dialogs.MessageDialog;
 
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 
+/**
+ * Wraps the displaying of a message dialog in a Runnable 
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public class MessageDialogRunnable implements Runnable {
 	
 	public static final int MODE_ERROR       = 1;
