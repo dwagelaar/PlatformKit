@@ -10,6 +10,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.m2m.atl.core.service.CoreService;
 
 import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
@@ -30,6 +31,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.P_REASONER, "builtin");
 		store.setDefault(PreferenceConstants.P_DIG_URL, "http://localhost:8081");
 		store.setDefault(PreferenceConstants.P_KB, "be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory");
+		store.setDefault(PreferenceConstants.P_ATLVM, CoreService.getLaunchersNames()[0]);
 		store.setDefault(PreferenceConstants.P_CACHE_API, true);
 	}
 	
