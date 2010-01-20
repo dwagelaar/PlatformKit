@@ -149,9 +149,28 @@
     </owl:disjointWith>
   </owl:Class>
 
+  <owl:DatatypeProperty rdf:ID="majorVersionNumber">
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+    <rdfs:range rdf:resource="&xsd;#nonNegativeInteger" />
+    <rdfs:domain rdf:resource="#JavaBytecodeFormat" />
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="minorVersionNumber">
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+    <rdfs:range rdf:resource="&xsd;#nonNegativeInteger" />
+    <rdfs:domain rdf:resource="#JavaBytecodeFormat" />
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:ID="Java1.1PreverifiedBytecodeFormat">
+    <rdfs:subClassOf rdf:resource="#JavaBytecodeFormat"/>
+    <owl:disjointWith rdf:resource="#Java1.1BytecodeFormat"/>
+    <owl:equivalentClass rdf:resource="#Java1.1Preverified1.0BytecodeFormat"/>
+  </owl:Class>
+
   <owl:Class rdf:ID="Java1.1Preverified1.0BytecodeFormat">
     <rdfs:subClassOf rdf:resource="#JavaBytecodeFormat"/>
     <owl:disjointWith rdf:resource="#Java1.1BytecodeFormat"/>
+    <owl:equivalentClass rdf:resource="#Java1.1PreverifiedBytecodeFormat"/>
   </owl:Class>
 
   <owl:Class rdf:ID="Java1.1Preverified1.1BytecodeFormat">
@@ -183,14 +202,37 @@
     <rdfs:subClassOf rdf:resource="#Java5BytecodeFormat"/>
   </owl:Class>
 
-  <Java1.1Preverified1.0BytecodeFormat rdf:ID="theJava1.1Preverified1.0BytecodeFormat"/>
-  <Java1.1Preverified1.1BytecodeFormat rdf:ID="theJava1.1Preverified1.1BytecodeFormat"/>
-  <Java1.1BytecodeFormat rdf:ID="theJava1.1BytecodeFormat"/>
-  <Java1.2BytecodeFormat rdf:ID="theJava1.2BytecodeFormat"/>
-  <Java1.3BytecodeFormat rdf:ID="theJava1.3BytecodeFormat"/>
-  <Java1.4BytecodeFormat rdf:ID="theJava1.4BytecodeFormat"/>
-  <Java5BytecodeFormat rdf:ID="theJava5BytecodeFormat"/>
-  <Java6BytecodeFormat rdf:ID="theJava6BytecodeFormat"/>
+  <Java1.1Preverified1.0BytecodeFormat rdf:ID="theJava1.1Preverified1.0BytecodeFormat">
+    <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">45</majorVersionNumber>
+  </Java1.1Preverified1.0BytecodeFormat>
+
+  <Java1.1Preverified1.1BytecodeFormat rdf:ID="theJava1.1Preverified1.1BytecodeFormat">
+    <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">45</majorVersionNumber>
+  </Java1.1Preverified1.1BytecodeFormat>
+
+  <Java1.1BytecodeFormat rdf:ID="theJava1.1BytecodeFormat">
+    <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">45</majorVersionNumber>
+  </Java1.1BytecodeFormat>
+
+  <Java1.2BytecodeFormat rdf:ID="theJava1.2BytecodeFormat">
+    <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">46</majorVersionNumber>
+  </Java1.2BytecodeFormat>
+
+  <Java1.3BytecodeFormat rdf:ID="theJava1.3BytecodeFormat">
+    <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">47</majorVersionNumber>
+  </Java1.3BytecodeFormat>
+
+  <Java1.4BytecodeFormat rdf:ID="theJava1.4BytecodeFormat">
+    <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">48</majorVersionNumber>
+  </Java1.4BytecodeFormat>
+
+  <Java5BytecodeFormat rdf:ID="theJava5BytecodeFormat">
+    <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">49</majorVersionNumber>
+  </Java5BytecodeFormat>
+
+  <Java6BytecodeFormat rdf:ID="theJava6BytecodeFormat">
+    <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">50</majorVersionNumber>
+  </Java6BytecodeFormat>
 
 <!--   ############ ########### ############ ############ ########### -->
 <!--   ############                                       ########### -->
