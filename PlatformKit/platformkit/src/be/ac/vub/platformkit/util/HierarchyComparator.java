@@ -14,7 +14,7 @@ import be.ac.vub.platformkit.kb.IOntologies;
  * the less specific (superclass) constraint. If both constraints are equivalent,
  * they are considered equally specific. Ifno subclass relationship can be determined,
  * an exception is thrown.
- * @author dennis
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class HierarchyComparator implements Comparator<Constraint> {
     public static final int MOST_SPECIFIC_FIRST = -1;

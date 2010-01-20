@@ -5,8 +5,7 @@ import java.io.InputStream;
 
 /**
  * Resolves relative paths to input streams pointing at file contents.
- * @author dennis
- *
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public interface PathResolver {
     
