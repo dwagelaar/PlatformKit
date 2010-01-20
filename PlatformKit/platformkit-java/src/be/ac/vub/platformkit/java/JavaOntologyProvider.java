@@ -13,6 +13,10 @@ import org.osgi.framework.Bundle;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologyProvider;
 
+/**
+ * Java ontology provider
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public class JavaOntologyProvider implements IOntologyProvider {
 
 	private static final String[] ontologies = new String[] {
@@ -33,6 +37,7 @@ public class JavaOntologyProvider implements IOntologyProvider {
 		"platformkit_2009_01/swt-3_2.owl",
 		"platformkit_2009_01/swt-3_3.owl",
 		"platformkit_2009_01/swt-3_4.owl",
+		"platformkit_2009_01/swt-3_5.owl",
 		"platformkit_2009_01/SWTAPI.owl"
 	};
 	
