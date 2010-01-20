@@ -5,6 +5,10 @@ import org.eclipse.jface.dialogs.ErrorDialog;
 
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 
+/**
+ * Wraps the displaying of an error dialog in a Runnable 
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public class ErrorDialogRunnable implements Runnable {
     private IStatus st;
 

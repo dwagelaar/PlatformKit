@@ -1,0 +1,140 @@
+-- @atlcompiler atl2006
+-- $Id:UML2Comparison.atl 7084 2007-07-10 13:19:05Z dwagelaa $
+-- Prunes superfluous elements from a CompatibilityReport UML2 model.
+--
+module UML2CRPrune; -- extends UML2Copy
+
+create OUT : UML2		-- The pruned compatibility report model
+from IN : UML2; 		-- The input compatibility report model
+
+-- ======================================================================
+-- helper attributes begin
+-- ======================================================================
+
+helper def : inElements : Set(UML2!"ecore::EObject") =
+	thisModule.filterInElements(
+	UML2!"ecore::EObject".allInstancesFrom('IN'));
+
+-- ======================================================================
+-- helper attributes end
+-- ======================================================================
+
+-- ======================================================================
+-- helper methods begin
+-- ======================================================================
+
+-- work around superimposition bug where amount of local vars in main is not updated
+helper def : filterInElements(inElements : Set(UML2!"ecore::EObject")) : Set(UML2!"ecore::EObject") =
+	inElements->reject(e|
+		if e.oclIsKindOf(UML2!"uml::Element") then
+			if e.isPrunableElement() then
+				if e.isMissing() then false else
+				if e.isIncompatible() then false else
+				if e.isReferred() then false else
+				if e.hasReferredTypes() then false else true.debug('Pruned ' + e.toString())
+				endif endif endif endif
+			else false endif
+		else false endif);
+
+helper context UML2!"uml::Element" def : isPrunableElement() : Boolean =
+	if self.oclIsTypeOf(UML2!"uml::Package") then true else
+	if self.oclIsKindOf(UML2!"uml::Classifier") then true else
+	if self.oclIsKindOf(UML2!"uml::Feature") then true else
+	if self.oclIsKindOf(UML2!"uml::Parameter") then true else
+	false endif endif endif endif;
+
+helper context UML2!"uml::Element" def : isMissing() : Boolean =
+	(not self.getAppliedStereotype('CompatibilityReport::Missing').oclIsUndefined());
+
+helper context UML2!"uml::Element" def : isIncompatible() : Boolean =
+	(not self.getAppliedStereotype('CompatibilityReport::Incompatible').oclIsUndefined());
+
+helper context UML2!"uml::Parameter" def : isMissing() : Boolean =
+	self.owner.isMissing();
+
+helper context UML2!"uml::Parameter" def : isIncompatible() : Boolean =
+	self.owner.isIncompatible();
+
+helper context UML2!"uml::Element" def : isReferred() : Boolean =
+	false;
+
+helper context UML2!"uml::Classifier" def : isReferred() : Boolean =
+	UML2!"uml::Element".allInstances()
+	->exists(e|
+		if e.isMissing() then
+			e.refersToType(self)
+		else false endif);
+
+helper context UML2!"uml::Element" def : hasReferredTypes() : Boolean =
+	false;
+
+helper context UML2!"uml::Package" def : hasReferredTypes() : Boolean =
+	self.packagedElement
+	->exists(e|if e.isReferred() then true else e.hasReferredTypes() endif);
+
+helper context UML2!"uml::Class" def : hasReferredTypes() : Boolean =
+	self.nestedClassifier
+	->exists(e|e.isReferred());
+
+helper context UML2!"uml::Interface" def : hasReferredTypes() : Boolean =
+	self.nestedClassifier
+	->exists(e|e.isReferred());
+
+helper context UML2!"uml::Element" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	false;
+
+helper context UML2!"uml::Property" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.type=type;
+
+helper context UML2!"uml::Parameter" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.type=type;
+
+helper context UML2!"uml::Generalization" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.general=type;
+
+helper context UML2!"uml::InterfaceRealization" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.contract=type;
+
+-- ======================================================================
+-- helper methods end
+-- ======================================================================
+
+-- ======================================================================
+-- transformation rules begin
+-- ======================================================================
+
+rule CompatibilityReport {
+	from s : UML2!"CompatibilityReport::CompatibilityReport" (
+		thisModule.inElements->includes(s))
+	to t : UML2!"CompatibilityReport::CompatibilityReport" (
+		base_Model <- s.base_Model)
+}
+
+rule Incompatible {
+	from s : UML2!"CompatibilityReport::Incompatible" (
+		if thisModule.inElements->includes(s) then
+			s.oclIsTypeOf(UML2!"CompatibilityReport::Incompatible")
+		else false endif)
+	to t : UML2!"CompatibilityReport::Incompatible" (
+		base_Element <- s.base_Element)
+}
+
+rule Missing {
+	from s : UML2!"CompatibilityReport::Missing" (
+		thisModule.inElements->includes(s))
+	to t : UML2!"CompatibilityReport::Missing" (
+		base_Element <- s.base_Element)
+}
+
+endpoint rule End() {
+	do {
+		thisModule.inElements
+			->select(e|e.oclIsKindOf(UML2!"uml::PackageableElement"))
+			->reject(p|p.owner.oclIsUndefined())
+			->isEmpty().debug('Empty pruned model');
+	}
+}
+
+-- ======================================================================
+-- transformation rules end
+-- ======================================================================
