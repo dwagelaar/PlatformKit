@@ -4,7 +4,7 @@
 	<!ENTITY owl "http://www.w3.org/2002/07/owl">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
-	<!ENTITY swt-3_4 "http://ssel.vub.ac.be/platformkit/2009/01/swt-3_4">
+	<!ENTITY swt-3_5 "http://ssel.vub.ac.be/platformkit/2009/01/swt-3_5">
 	<!ENTITY DEFAULT "http://ssel.vub.ac.be/platformkit/2009/01/SWTAPI">
 ]>
 <rdf:RDF
@@ -12,7 +12,7 @@
 	 xmlns:owl="&owl;#"
 	 xmlns:rdfs="&rdfs;#"
 	 xmlns:rdf="&rdf;#"
-	 xmlns:swt-3_4="&swt-3_4;#"
+	 xmlns:swt-3_4="&swt-3_5;#"
 	 xmlns = "&DEFAULT;#"
 	 xml:base = "&DEFAULT;"
 >
@@ -27,7 +27,7 @@
 	      Created by:
 	        Dennis Wagelaar
 	    </rdfs:comment>
-		<owl:imports rdf:resource="&swt-3_4;"/>
+		<owl:imports rdf:resource="&swt-3_5;"/>
 	</owl:Ontology>
 
 </rdf:RDF>

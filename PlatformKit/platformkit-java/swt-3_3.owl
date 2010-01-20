@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE rdf:RDF [
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-	<!ENTITY swt-3_2 "http://ssel.vub.ac.be/platformkit/swt-3_2#">
 	<!ENTITY platform "http://localhost/~dennis/Platform.owl#">
 	<!ENTITY java "http://localhost/~dennis/Java.owl#">
+	<!ENTITY swt-3_2 "http://ssel.vub.ac.be/platformkit/swt-3_2#">
 	<!ENTITY swt-3_3 "http://ssel.vub.ac.be/platformkit/swt-3_3#">
 	<!ENTITY units "http://localhost/~dennis/Units.owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -12,9 +12,9 @@
 ]>
 <rdf:RDF
 	 xmlns:xsd="&xsd;"
-	 xmlns:swt-3_2="&swt-3_2;"
 	 xmlns:platform="&platform;"
 	 xmlns:java="&java;"
+	 xmlns:swt-3_2="&swt-3_2;"
 	 xmlns:swt-3_3="&swt-3_3;"
 	 xmlns:units="&units;"
 	 xmlns:rdf="&rdf;"
@@ -66,76 +66,76 @@
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtAccessibilityLibrary">
 		<owl:equivalentClass rdf:resource="&swt-3_2;OrgEclipseSwtAccessibilityLibrary"/>
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.accessibility package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtAwtLibrary">
 		<owl:equivalentClass rdf:resource="&swt-3_2;OrgEclipseSwtAwtLibrary"/>
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.awt package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtBrowserLibrary">
 		<rdfs:subClassOf rdf:resource="&swt-3_2;OrgEclipseSwtBrowserLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtEventsLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtGraphicsLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtEventsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtGraphicsLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.browser package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtWidgetsLibrary">
 		<rdfs:subClassOf rdf:resource="&swt-3_2;OrgEclipseSwtWidgetsLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtEventsLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtAccessibilityLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtEventsLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtGraphicsLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.widgets package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtEventsLibrary">
 		<rdfs:subClassOf rdf:resource="&swt-3_2;OrgEclipseSwtEventsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtGraphicsLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.events package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtCustomLibrary">
 		<rdfs:subClassOf rdf:resource="&swt-3_2;OrgEclipseSwtCustomLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtDndLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtEventsLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtPrintingLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtGraphicsLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtDndLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtEventsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtGraphicsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtPrintingLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.custom package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtGraphicsLibrary">
 		<rdfs:subClassOf rdf:resource="&swt-3_2;OrgEclipseSwtGraphicsLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaIoLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.graphics package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtDndLibrary">
 		<rdfs:subClassOf rdf:resource="&swt-3_2;OrgEclipseSwtDndLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtEventsLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtGraphicsLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.dnd package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtLayoutLibrary">
 		<owl:equivalentClass rdf:resource="&swt-3_2;OrgEclipseSwtLayoutLibrary"/>
 		<rdfs:subClassOf rdf:resource="&java;JavaLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtGraphicsLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtGraphicsLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.layout package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtOpenglLibrary">
 		<rdfs:subClassOf rdf:resource="&swt-3_2;OrgEclipseSwtOpenglLibrary"/>
-		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:seeAlso rdf:resource="&swt-3_3;OrgEclipseSwtWidgetsLibrary"/>
+		<rdfs:seeAlso rdf:resource="&swt-3_3;JavaLangLibrary"/>
 		<rdfs:comment xml:lang="en">JavaLibrary implementing the org.eclipse.swt.opengl package for swt-3_3</rdfs:comment>
 	</owl:Class>
 	<owl:Class rdf:about="&swt-3_3;OrgEclipseSwtPrintingLibrary">
