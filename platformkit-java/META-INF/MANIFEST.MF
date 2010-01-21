@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.debug.core,
  org.eclipse.m2m.atl.core;bundle-version="3.0.0",
  org.eclipse.m2m.atl.common;bundle-version="3.0.0",
- be.ac.vub.jar2uml;bundle-version="1.0.12"
+ be.ac.vub.jar2uml;bundle-version="1.1.0",
+ org.eclipse.jdt.core
 Export-Package: be.ac.vub.platformkit.java,
  be.ac.vub.platformkit.java.popup.actions,
  be.ac.vub.platformkit.java.popup.util

@@ -1,13 +1,11 @@
 package be.ac.vub.platformkit.java.popup.actions;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.ref.SoftReference;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -15,13 +13,10 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.dialogs.ProgressMonitorDialog;
-import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2m.atl.common.ATLLogger;
 import org.eclipse.m2m.atl.core.ATLCoreException;
@@ -29,16 +24,11 @@ import org.eclipse.m2m.atl.core.IExtractor;
 import org.eclipse.m2m.atl.core.IModel;
 import org.eclipse.m2m.atl.core.IReferenceModel;
 import org.eclipse.m2m.atl.core.launch.ILauncher;
-import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorRegistry;
-import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.WorkbenchException;
 import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.internal.dialogs.DialogUtil;
 import org.eclipse.ui.part.FileEditorInput;
@@ -46,10 +36,8 @@ import org.eclipse.ui.part.FileEditorInput;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 import be.ac.vub.platformkit.java.popup.util.ATLUtil;
-import be.ac.vub.platformkit.java.popup.util.ErrorDialogRunnable;
 import be.ac.vub.platformkit.java.popup.util.MessageDialogRunnable;
 import be.ac.vub.platformkit.java.popup.util.PlatformAPIDialogRunnable;
-import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
@@ -57,7 +45,7 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 @SuppressWarnings("restriction")
-public class CompatAction implements IObjectActionDelegate {
+public class CompatAction extends ProgressMonitorAction {
 	
 	/**
 	 * Defines model loading strategy interface and behaviour
@@ -107,14 +95,24 @@ public class CompatAction implements IObjectActionDelegate {
 		
 		/**
 		 * @param uml2 The UML2 metamodel
-		 * @param source The source input stream to load from
 		 * @param path The path to the source model
 		 * @return the loaded 'DEPS' model
 		 * @throws ATLCoreException 
 		 */
-		public IModel loadDEPSModel(IReferenceModel uml2, InputStream source,
+		public IModel loadDEPSModel(IReferenceModel uml2,
 				String path) throws ATLCoreException {
-			return atlUtil.loadModel(uml2, /*source*/ path, "DEPS", path);
+			return atlUtil.loadModel(uml2, path, "DEPS", path);
+		}
+		
+		/**
+		 * @param uml2 The UML2 metamodel
+		 * @param resource The resource containing the source model
+		 * @return the loaded 'DEPS' model
+		 * @throws ATLCoreException 
+		 */
+		public IModel loadDEPSModel(IReferenceModel uml2,
+				Resource resource) throws ATLCoreException {
+			return atlUtil.loadModel(uml2, resource, "DEPS");
 		}
 		
 		/**
@@ -348,13 +346,14 @@ public class CompatAction implements IObjectActionDelegate {
 		 * @throws IOException 
 		 * @throws ATLCoreException 
 		 */
-		public void loadDepsModel(IProgressMonitor monitor) throws ATLCoreException, CoreException {
+		public void loadDepsModel(IProgressMonitor monitor) 
+				throws ATLCoreException, CoreException, IOException {
 			subTask(monitor, "Loading dependency model...");
 	        setFile((IFile) ((IStructuredSelection) selection).getFirstElement());
 	        final IFile file = getFile();
 	        Assert.isNotNull(file);
 	        final String fileLocation = "platform:/resource/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toString();
-	        setDeps(modelLoader.loadDEPSModel(getUml2(), file.getContents(), fileLocation));
+	        setDeps(modelLoader.loadDEPSModel(getUml2(), fileLocation));
 	        setCrPath(file.getParent().getProjectRelativePath().append("pkCompatReport.uml"));
 	        worked(monitor, "Loaded dependency model");
 		}
@@ -489,8 +488,6 @@ public class CompatAction implements IObjectActionDelegate {
 	private static final String CR_PROF = "http://soft.vub.ac.be/platformkit-java/CompatibilityReport.profile.uml";
 	private static final String MODEL_HANDLER = "UML2";
 	
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
-
 	protected final URL uml2CompatibilityReport = 
     	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityReport.asm");
     protected final URL uml2Comparison = 
@@ -505,15 +502,10 @@ public class CompatAction implements IObjectActionDelegate {
     	PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CRPrune.asm");
     protected final Map<String, Object> vmoptions = new HashMap<String, Object>();
 
-    protected ISelection selection;
-    protected IAction action;
     protected IFile outputFile;
     protected IPreferenceStore store = PlatformkitEditorPlugin.getPlugin().getPreferenceStore();
     protected ModelLoadingStrategy modelLoader = null;
     
-    private long startTime;
-    private boolean cancelled = false;
-
     /**
      * Creates a CompatAction
      * @param apiResource The URL to the UML model of the API to compare against
@@ -526,88 +518,26 @@ public class CompatAction implements IObjectActionDelegate {
 	    vmoptions.put("supportUML2Stereotypes", "true");
 	}
 
-	/**
-	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
-	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-	}
-
-	/**
-	 * @see IActionDelegate#run(IAction)
-	 */
-	public void run(IAction action) {
-        this.action = action;
-        IRunnableWithProgress op = new IRunnableWithProgress() {
-            public void run(IProgressMonitor monitor) {
-                try {
-                    runAction(monitor);
-                } catch (Exception e) {
-                	PlatformkitJavaPlugin.getPlugin().report(e);
-                	catchCleanup();
-                } finally {
-                    monitor.done();
-                    finallyCleanup();
-                }
-            }
-        };
-        ProgressMonitorDialog dlg = new ProgressMonitorDialog(
-        		PlatformkitJavaPlugin.getPlugin().getShell());
-        try {
-            cancelled = false;
-            dlg.run(true, true, op);
-            if (outputFile != null) {
-                openFileInEditor(outputFile);
-            }
-        } catch (InvocationTargetException e) {
-            Throwable t = e.getCause();
-            PlatformkitJavaPlugin.getPlugin().report(t);
-        } catch (CoreException ce) {
-        	PlatformkitJavaPlugin.getPlugin().report(ce);
-        } catch (InterruptedException ie) {
-        	PlatformkitJavaPlugin.getPlugin().report(ie);
-        }
-	}
-
-	/**
-	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
-	 */
-	public void selectionChanged(IAction action, ISelection selection) {
-        this.selection = selection;
-	}
-	
-    /**
-     * @return True if last run was cancelled.
-     */
-    public boolean isCancelled() {
-        return cancelled;
-    }
-    
-    /**
-     * Reports an exception/error in the log and on the screen.
-     * @param e the exception to report.
-     */
-    public void report(Throwable e) {
-        PlatformUI.getWorkbench().getDisplay().syncExec(new ErrorDialogRunnable(e));
-    }
-
     /**
      * Invoked when the action is executed.
      * @param monitor
      * @throws Exception
      */
+    @Override
     protected void runAction(IProgressMonitor monitor) throws Exception {
         checkAndSwitchStrategy();
         CompatActionRunner runner = new CompatActionRunner();
-        runActionWithRunner(monitor, runner);
+        runActionWithRunner(monitor, runner, 6);
     }
     
     /**
      * Runs the main action using the given runner object
      * @param monitor
      * @param runner
+     * @param steps
      * @throws Exception
      */
-    protected void runActionWithRunner(IProgressMonitor monitor, CompatActionRunner runner)
+    protected void runActionWithRunner(IProgressMonitor monitor, CompatActionRunner runner, int steps)
     		throws Exception {
         outputFile = null;
 	    PlatformAPIDialogRunnable paDlg = new PlatformAPIDialogRunnable("Select platform API model(s)");
@@ -616,7 +546,7 @@ public class CompatAction implements IObjectActionDelegate {
 	    if (emf_uris == null || emf_uris.length == 0) {
 	    	return; //cancel
 	    }
-	    beginTask(monitor, "Determining compatibility", 6 + emf_uris.length * 3);
+	    beginTask(monitor, "Determining compatibility", steps + emf_uris.length * 3);
     	ATLLogger.getLogger().addHandler(PlatformkitEditorPlugin.getHandler());
     	//
     	// Step 1
@@ -708,6 +638,17 @@ public class CompatAction implements IObjectActionDelegate {
     }
     
     /**
+     * Runs after {@link #runAction(IProgressMonitor)} inside main thread.
+     * @throws Exception
+     */
+    @Override
+    protected void runWithMainThread() throws Exception {
+        if (outputFile != null) {
+            openFileInEditor(outputFile);
+        }
+    }
+    
+    /**
      * Checks the current model loading strategy and updates it if necessary
      * @throws ATLCoreException
      */
@@ -728,20 +669,6 @@ public class CompatAction implements IObjectActionDelegate {
 		Assert.isNotNull(modelLoader);
     }
     
-    private String formatTime(long millis) {
-    	long seconds = millis / 1000;
-    	long minutes = seconds / 60;
-    	seconds = seconds % 60;
-    	StringBuffer s = new StringBuffer();
-    	s.append(minutes);
-    	s.append(':');
-    	if (seconds < 10) {
-    		s.append('0');
-    	}
-    	s.append(seconds);
-    	return s.toString();
-    }
-
     private void openFileInEditor(IFile file) throws CoreException {
 		//
 		// get default editor descriptor
@@ -771,72 +698,10 @@ public class CompatAction implements IObjectActionDelegate {
 		}
 	}
 
-    /**
-     * Increases the progressmonitor by 1.
-     * @param monitor
-     * @throws WorkbenchException if user pressed cancel button.
-     */
-    protected void worked(IProgressMonitor monitor, String message) 
-    throws OperationCanceledException {
-        worked(monitor, null, message);
-    }
-
-    /**
-     * Increases the progressmonitor by 1.
-     * @param monitor
-     * @param subTask The subtask, or null if none.
-     * @throws WorkbenchException if user pressed cancel button.
-     */
-    protected void worked(IProgressMonitor monitor, CompatAction subTask, String message) 
-    throws OperationCanceledException {
-        monitor.worked(1);
-        if (message != null) {
-        	long currentTime = System.currentTimeMillis();
-            logger.info(message + " at " + formatTime(currentTime-startTime));
-        }
-        if (subTask != null) {
-            if (subTask.isCancelled()) {
-                monitor.setCanceled(true);
-            }
-        }
-        if (monitor.isCanceled()) {
-            cancelled = true;
-            throw new OperationCanceledException("Operation cancelled by user");
-        }
-    }
-    
-    /**
-     * Logs and starts a new task on the progress monitor
-     * @param monitor
-     * @param message
-     */
-    protected void subTask(IProgressMonitor monitor, String message) {
-        logger.info(message);
-        monitor.subTask(message);
-    }
-    
-    /**
-     * Logs and starts a series of tasks, and sets the start time.
-     * @param monitor
-     * @param message
-     * @param totalWork The amount of subtasks
-     */
-    protected void beginTask(IProgressMonitor monitor, String message, int totalWork) {
-    	setStartTime(System.currentTimeMillis());
-        monitor.beginTask(message, totalWork);
-        logger.info(message);
-    }
-    
-	/**
-	 * Invoked after an Exception is caught in {@link #run(IAction)}
-	 */
-	protected void catchCleanup() {
-		//stub
-	}
-	
 	/**
 	 * Invoked in "finally" block after {@link #run(IAction)}
 	 */
+    @Override
 	protected void finallyCleanup() {
 		try {
         	ATLLogger.getLogger().removeHandler(PlatformkitEditorPlugin.getHandler());
@@ -844,19 +709,5 @@ public class CompatAction implements IObjectActionDelegate {
 		} catch (ATLCoreException e) {
 			PlatformkitJavaPlugin.getPlugin().report(e);
 		}
-	}
-
-	/**
-	 * @return the startTime
-	 */
-	public long getStartTime() {
-		return startTime;
-	}
-
-	/**
-	 * @param startTime the startTime to set
-	 */
-	protected void setStartTime(long startTime) {
-		this.startTime = startTime;
 	}
 }

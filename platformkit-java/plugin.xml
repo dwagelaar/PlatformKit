@@ -26,6 +26,41 @@
                label="Determine compatibility with built-in API"
                menubarPath="be.ac.vub.platformkit.java.menu1/group1"/>
       </objectContribution>
+      <objectContribution
+            id="be.ac.vub.platformkit.java.contribution2"
+            objectClass="org.eclipse.jdt.core.IJavaProject">
+         <menu
+               icon="PlatformKitLogo16.png"
+               id="be.ac.vub.platformkit.java.menu2"
+               label="PlatformKit"
+               path="additions">
+            <separator name="group2"/>
+         </menu>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.JavaProjectCompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.javaProjectCompatAction"
+               label="Determine compatibility with built-in API"
+               menubarPath="be.ac.vub.platformkit.java.menu2/group2"/>
+      </objectContribution>
+      <objectContribution
+            id="be.ac.vub.platformkit.java.contribution3"
+            nameFilter="*.jar"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="PlatformKitLogo16.png"
+               id="be.ac.vub.platformkit.java.menu3"
+               label="PlatformKit"
+               path="additions">
+            <separator name="group3"/>
+         </menu>
+         <action
+               class="be.ac.vub.platformkit.java.popup.actions.JarFileCompatAction"
+               enablesFor="1"
+               id="be.ac.vub.platformkit.java.jarFileCompatAction"
+               label="Determine compatibility with built-in API"
+               menubarPath="be.ac.vub.platformkit.java.menu3/group3"/>
+      </objectContribution>
    </extension>
   <extension
         point="org.eclipse.emf.ecore.uri_mapping">
