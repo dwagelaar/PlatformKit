@@ -9,6 +9,7 @@ import java.util.Map;
 
 import junit.framework.Assert;
 
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.m2m.atl.core.ATLCoreException;
 import org.eclipse.m2m.atl.core.IExtractor;
 import org.eclipse.m2m.atl.core.IInjector;
@@ -79,6 +80,31 @@ public class ATLUtil {
 		options.put("newModel", "false");
 		final IModel model = getFactory().newModel(refModel, options);
 		getInjector().inject(model, source, options);
+		return model;
+	}
+    
+	/**
+	 * Loads a model from an input stream.
+	 * @param refModel The meta-model.
+	 * @param resource The resource containing the model.
+	 * @param name The model name in the transformation module.
+	 * @return The loaded model.
+	 * @throws ATLCoreException
+	 */
+	public IModel loadModel(IReferenceModel refModel, Resource resource,
+			String name) throws ATLCoreException {
+		final Map<String, Object> options = new HashMap<String, Object>();
+		options.put("modelName", name);
+		options.put("path", resource.getURI().toString());
+		options.put("newModel", "false");
+		final IModel model = getFactory().newModel(refModel, options);
+		final IInjector injector = getInjector();
+		try {
+			Method inject = injector.getClass().getMethod("inject", IModel.class, Resource.class);
+			inject.invoke(injector, model, resource);
+		} catch (Exception e) {
+			throw new ATLCoreException("Injector does not support loading from EMF Resource", e);
+		}
 		return model;
 	}
     
