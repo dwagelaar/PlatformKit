@@ -384,7 +384,8 @@ rule Interface {
         isLeaf <- s.isLeaf,
         isAbstract <- s.isAbstract,
         generalization <- s.generalization,
-        ownedOperation <- s.ownedOperation,
+        ownedAttribute <- s.ownedAttribute,
+		ownedOperation <- s.ownedOperation,
         nestedClassifier <- s.nestedClassifier)
 }
 
@@ -402,7 +403,8 @@ rule IncompatibleInterface {
         isLeaf <- s.isLeaf,
         isAbstract <- s.isAbstract,
         generalization <- s.generalization,
-        ownedOperation <- s.ownedOperation,
+        ownedAttribute <- s.ownedAttribute,
+		ownedOperation <- s.ownedOperation,
         nestedClassifier <- s.nestedClassifier)
 	do {
 		t.applyStereotype(thisModule.stIncompatible);
@@ -421,7 +423,8 @@ rule MissingInterface {
         isLeaf <- s.isLeaf,
         isAbstract <- s.isAbstract,
         generalization <- s.generalization,
-        ownedOperation <- s.ownedOperation,
+        ownedAttribute <- s.ownedAttribute,
+		ownedOperation <- s.ownedOperation,
         nestedClassifier <- s.nestedClassifier)
 	do {
 		t.applyStereotype(thisModule.stMissing);
@@ -440,7 +443,9 @@ rule DataType {
         visibility <- s.visibility,
         isLeaf <- s.isLeaf,
         isAbstract <- s.isAbstract,
-        generalization <- s.generalization)
+        ownedAttribute <- s.ownedAttribute,
+        ownedOperation <- s.ownedOperation,
+		generalization <- s.generalization)
 }
 
 rule MissingDataType {
@@ -456,7 +461,9 @@ rule MissingDataType {
 		visibility <- s.visibility,
         isLeaf <- s.isLeaf,
         isAbstract <- s.isAbstract,
-        generalization <- s.generalization)
+        ownedAttribute <- s.ownedAttribute,
+        ownedOperation <- s.ownedOperation,
+		generalization <- s.generalization)
 	do {
 		t.applyStereotype(thisModule.stMissing);
 	}
@@ -593,7 +600,11 @@ rule MissingProperty {
 
 rule LiteralUnlimitedNatural {
     from s : UML2!"uml::LiteralUnlimitedNatural" (
-    	thisModule.depsElements->includes(self))
+    	if thisModule.depsElements->includes(self) then
+			let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
+			if p.oclIsTypeOf(UML2!"uml::Property") then true
+			else p.oclIsKindOf(UML2!"uml::Parameter") endif
+		else false endif)
     to t : UML2!"uml::LiteralUnlimitedNatural" (
         name <- s.name,
         visibility <- s.visibility,
@@ -602,7 +613,11 @@ rule LiteralUnlimitedNatural {
 
 rule LiteralInteger {
     from s : UML2!"uml::LiteralInteger" (
-		thisModule.depsElements->includes(self))
+    	if thisModule.depsElements->includes(self) then
+			let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
+			if p.oclIsTypeOf(UML2!"uml::Property") then true
+			else p.oclIsKindOf(UML2!"uml::Parameter") endif
+		else false endif)
     to t : UML2!"uml::LiteralInteger" (
         name <- s.name,
         visibility <- s.visibility,
