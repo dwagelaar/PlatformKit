@@ -22,7 +22,6 @@ Bundle-ClassPath: lib/aterm-java-1.6.jar,
  lib/pellet-rules.jar,
  lib/relaxngDatatype.jar,
  lib/xsdlib.jar,
- .,
  lib/jgrapht-jdk1.5.jar
 Export-Package: aterm;x-friends:="be.ac.vub.platformkit.kb.jena,be.ac.vub.platformkit.kb.owlapi",
  aterm.pure;x-friends:="be.ac.vub.platformkit.kb.jena,be.ac.vub.platformkit.kb.owlapi",
