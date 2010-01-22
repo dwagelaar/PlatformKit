@@ -5,12 +5,7 @@
 	<property name="platformkit-java.path" value="../../platformkit-java"/>
 	<property name="platformkit-kb-jena.path" value="../../platformkit-kb-jena"/>
 	<property name="platformkit-kb-owlapi.path" value="../../platformkit-kb-owlapi"/>
-	<property name="jena.path" value="../../platformkit-jena"/>
-	<property name="owlapi.path" value="../../platformkit-owlapi"/>
-	<property name="pellet.path" value="../../platformkit-pellet"/>
-	<property name="pellet.aterm.path" value="../../platformkit-pellet-aterm"/>
-	<property name="pellet.relaxng.path" value="../../platformkit-pellet-relaxng"/>
-	<property name="pellet.xsdlib.path" value="../../platformkit-pellet-xsdlib"/>
+	<property name="platformkit-pellet.path" value="../../platformkit-pellet"/>
 	<property name="pkda.jar.path" value="../../platformkit-discovery-applet/packaging/pkda.jar"/>
 	
 	<target name="clean">
@@ -32,19 +27,12 @@
         	<classes dir="${platformkit-java.path}/bin"/>
         	<classes dir="${platformkit-java.path}/ontology"/>
         	<classes dir="${platformkit-kb-owlapi.path}/bin"/>
-        	<classes dir="${owlapi.path}/bin"/>
-        	<classes dir="${pellet.path}/bin"/>
-        	<classes dir="${pellet.aterm.path}/bin"/>
-        	<classes dir="${pellet.relaxng.path}/bin"/>
-        	<classes dir="${pellet.xsdlib.path}/bin"/>
         	<lib dir="../lib">
         		<exclude name="*.xml"/>
         		<exclude name="javax.servlet.jar"/>
       		</lib>
-        	<lib dir="${jena.path}/lib">
-        		<include name="commons-logging*"/>
-        		<include name="log4j*"/>
-        	</lib>
+        	<lib dir="${platformkit-kb-owlapi.path}/lib"/>
+        	<lib dir="${platformkit-pellet.path}/lib"/>
        	</war>
     </target>
 	
