@@ -24,7 +24,7 @@ public interface IOntClass {
     
     /**
      * <p>Answer true if the given class is a super-class of this class.</p>
-     * @param cls A class to test.
+     * @param c A class to test.
      * @return True if the given class is a super-class of this class.
      * @throws ClassCastException if c implementation is not compatible with self.
      */

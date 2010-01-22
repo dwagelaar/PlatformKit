@@ -9,13 +9,12 @@ import com.hp.hpl.jena.vocabulary.OWL;
  * @author dennis
  *
  */
-public class NamedClassFilter extends Filter {
+public class NamedClassFilter extends Filter<OntClass> {
 
     /**
      * @see Filter#accept(java.lang.Object)
      */
-    public boolean accept(Object o) {
-        if (!(o instanceof OntClass)) { return false; }
+    public boolean accept(OntClass o) {
         return isNamedClass((OntClass) o);
     }
     
@@ -23,7 +22,7 @@ public class NamedClassFilter extends Filter {
      * @param c
      * @return True if c is a named class.
      */
-    public static boolean isNamedClass(OntClass c) {
+    public final static boolean isNamedClass(OntClass c) {
         String uri = c.getURI();
         if (uri == null) { return false; }
         if (uri.equals(OWL.Thing.getURI())) { return false; }

@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.kb.jena"
       label="PlatformKit Jena Adapter"
-      version="1.0.2"
+      version="1.2.0"
       provider-name="Vrije Universiteit Brussel">
 
    <description>
@@ -112,10 +112,6 @@ of the copyright holder.
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="be.ac.vub.platformkit"/>
       <import plugin="org.junit"/>
-      <import plugin="org.mindswap.pellet"/>
-      <import plugin="aterm"/>
-      <import plugin="org.mortbay.jetty"/>
-      <import plugin="org.eclipse.ui"/>
    </requires>
 
    <plugin
@@ -126,22 +122,9 @@ of the copyright holder.
          unpack="false"/>
 
    <plugin
-         id="org.mindswap.pellet.jena"
-         download-size="328"
-         install-size="328"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.hp.hpl.jena"
-         download-size="13896"
-         install-size="15211"
-         version="0.0.0"/>
-
-   <plugin
-         id="com.hp.hpl.jena.doc"
-         download-size="5320"
-         install-size="5320"
+         id="be.ac.vub.platformkit.kb.jena.doc"
+         download-size="0"
+         install-size="0"
          version="0.0.0"
          unpack="false"/>
 

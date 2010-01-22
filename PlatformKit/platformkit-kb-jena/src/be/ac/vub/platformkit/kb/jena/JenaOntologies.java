@@ -39,22 +39,18 @@ import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntDocumentManager;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
-import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.RDFWriter;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.reasoner.Reasoner;
 import com.hp.hpl.jena.reasoner.ReasonerRegistry;
-import com.hp.hpl.jena.reasoner.dig.DIGReasoner;
-import com.hp.hpl.jena.reasoner.dig.DIGReasonerFactory;
 import com.hp.hpl.jena.reasoner.rulesys.OWLMicroReasoner;
 import com.hp.hpl.jena.reasoner.transitiveReasoner.TransitiveReasoner;
 import com.hp.hpl.jena.shared.NotFoundException;
 import com.hp.hpl.jena.util.FileUtils;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 import com.hp.hpl.jena.vocabulary.OWL;
-import com.hp.hpl.jena.vocabulary.ReasonerVocabulary;
 
 /**
  * The ontology repository for the PlatformKit.
@@ -88,31 +84,7 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#attachDIGReasoner()
 	 */
     public void attachDIGReasoner() {
-        if (ontology.model.getSpecification().getReasoner() != null) {
-        	if (ontology.model.getSpecification().getReasoner() instanceof DIGReasoner) {
-                logger.warning("DIG reasoner already attached");
-                return;
-        	}
-        	detachReasoner();
-        }
-        logger.info("Attaching DIG reasoner at " + getReasonerUrl());
-        Model cModel = ModelFactory.createDefaultModel();
-        Resource conf = cModel.createResource();
-        conf.addProperty(ReasonerVocabulary.EXT_REASONER_URL, cModel
-                .createResource(getReasonerUrl()));
-        DIGReasonerFactory drf = (DIGReasonerFactory) ReasonerRegistry
-                .theRegistry().getFactory(DIGReasonerFactory.URI);
-        DIGReasoner r = (DIGReasoner) drf.create(conf);
-        OntModelSpec spec = new OntModelSpec(OntModelSpec.OWL_DL_MEM);
-        spec.setReasoner(r);
-        //Jena is not thread-safe when communicating to the DIG reasoner,
-        //so lock all actions that trigger DIG activity.
-        synchronized (JenaOntologies.class) {
-            OntModel ont = ModelFactory.createOntologyModel(spec, baseOntology.model);
-            ont.setNsPrefix("", LOCAL_INF_NS);
-            ontology = new OntModelAdapter(ont);
-        }
-        notifyOntologyChanged();
+    	throw new UnsupportedOperationException("DIG reasoner no longer available in Jena 2.6.2");
     }
     
     /* (non-Javadoc)
@@ -410,9 +382,9 @@ public class JenaOntologies extends AbstractOntologies {
     public List<IOntClass> getLocalNamedClasses() {
         List<IOntClass> namedClasses = new ArrayList<IOntClass>();
         synchronized (JenaOntologies.class) {
-            ExtendedIterator ncs = ontology.model.listNamedClasses().filterKeep(ncFilter);
+            ExtendedIterator<OntClass> ncs = ontology.model.listNamedClasses().filterKeep(ncFilter);
             while (ncs.hasNext()) {
-                OntClass c = (OntClass) ncs.next();
+                OntClass c = ncs.next();
                 if (hasLocalPrefix(c)) {
                     namedClasses.add(new OntClassAdapter(c));
                 }

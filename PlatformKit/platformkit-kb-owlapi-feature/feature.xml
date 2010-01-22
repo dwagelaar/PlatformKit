@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.kb.owlapi"
       label="PlatformKit OWLAPI Adapter"
-      version="1.0.2"
+      version="1.2.0"
       provider-name="Vrije Universiteit Brussel">
 
    <description>
@@ -181,9 +181,7 @@ nuclear facility.
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="be.ac.vub.platformkit"/>
       <import plugin="org.junit"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.apache.commons.logging"/>
-      <import plugin="org.apache.xerces"/>
+      <import plugin="be.ac.vub.platformkit.pellet" version="2.0.1" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -194,44 +192,9 @@ nuclear facility.
          unpack="false"/>
 
    <plugin
-         id="org.semanticweb.owl"
-         download-size="2940"
-         install-size="2940"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.semanticweb.owl.doc"
-         download-size="5636"
-         install-size="5636"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.mindswap.pellet"
-         download-size="936"
-         install-size="936"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="aterm"
-         download-size="352"
-         install-size="352"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.sun.xsdlib"
-         download-size="476"
-         install-size="476"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.relaxng"
-         download-size="40"
-         install-size="40"
+         id="be.ac.vub.platformkit.kb.owlapi.doc"
+         download-size="0"
+         install-size="0"
          version="0.0.0"
          unpack="false"/>
 
