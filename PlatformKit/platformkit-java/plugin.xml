@@ -13,7 +13,7 @@
             nameFilter="*.uml"
             objectClass="org.eclipse.core.resources.IFile">
          <menu
-               icon="PlatformKitLogo16.png"
+               icon="icons/full/obj16/PlatformKitLogo16.png"
                id="be.ac.vub.platformkit.java.menu1"
                label="PlatformKit"
                path="additions">
@@ -30,7 +30,7 @@
             id="be.ac.vub.platformkit.java.contribution2"
             objectClass="org.eclipse.jdt.core.IJavaProject">
          <menu
-               icon="PlatformKitLogo16.png"
+               icon="icons/full/obj16/PlatformKitLogo16.png"
                id="be.ac.vub.platformkit.java.menu2"
                label="PlatformKit"
                path="additions">
@@ -48,7 +48,7 @@
             nameFilter="*.jar"
             objectClass="org.eclipse.core.resources.IFile">
          <menu
-               icon="PlatformKitLogo16.png"
+               icon="icons/full/obj16/PlatformKitLogo16.png"
                id="be.ac.vub.platformkit.java.menu3"
                label="PlatformKit"
                path="additions">

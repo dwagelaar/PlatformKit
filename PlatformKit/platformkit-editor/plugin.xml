@@ -9,8 +9,7 @@
 -->
 
 <plugin>
-   <extension-point id="platformSpec" name="Platform Specification" schema="schema/platformSpec.exsd"/>
-
+  <extension-point id="platformSpec" name="Platform Specification" schema="schema/platformSpec.exsd"/>
 
   <extension
     point = "org.eclipse.ui.newWizards">
@@ -63,6 +62,7 @@
            </enablement>
         </action>
         <menu
+              icon="icons/full/obj16/PlatformKitLogo16.png"
               id="be.ac.vub.platformkit.editor.menu"
               label="PlatformKit"
               path="additions">
