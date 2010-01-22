@@ -135,21 +135,21 @@ public interface IOntologies {
 
 	/**
 	 * Updates the asserted class hierarchy with the inferred hierarchy for the local named classes.
-	 * Requires @see #buildHierarchyMap() to be invoked first.
+	 * Requires {@link #buildHierarchyMap()} to be invoked first.
 	 */
 	public abstract void updateHierarchy();
 
 	/**
 	 * Builds an internal map of the superclasses and equivalent classes of all local named classes in the base ontology.
 	 * Requires DIG reasoner.
-	 * Required for invocation of @see #augmentHierarchy(OntClass) and @see #pruneHierarchy(OntClass)
+	 * Required for invocation of {@link #updateHierarchy()} and {@link #pruneHierarchyMap(IOntClass)}.
 	 */
 	public abstract void buildHierarchyMap();
 
 	/**
 	 * Updates the asserted class hierarchy with the inferred hierarchy for the given class.
-	 * Requires pre-built and pruned hierarchy map by @see #buildHierarchyMap(OntClass) and
-	 * @see #pruneHierarchyMap(OntClass).
+	 * Requires pre-built and pruned hierarchy map by {@link #buildHierarchyMap(IOntClass)} and
+	 * {@link #pruneHierarchyMap(IOntClass)}.
 	 * @param forClass
 	 * @throws OntException if the class cannot be found in the base ontology.
 	 */
@@ -167,7 +167,7 @@ public interface IOntologies {
 
 	/**
 	 * Builds an internal map of the superclasses and equivalent classes of forClass in the base ontology.
-	 * Required for invocation of @see #augmentHierarchy(OntClass) and @see #pruneHierarchy(OntClass)
+	 * Required for invocation of {@link #updateHierarchy(IOntClass)} and {@link #pruneHierarchyMap(IOntClass)}
 	 * @param forClass
 	 * @throws OntException if the class cannot be found in the base ontology.
 	 */

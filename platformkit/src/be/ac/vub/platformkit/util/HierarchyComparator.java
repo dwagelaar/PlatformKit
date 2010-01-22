@@ -38,7 +38,7 @@ public class HierarchyComparator implements Comparator<Constraint> {
     }
     
     /**
-     * @see Comparator#compare(T, T)
+     * @see Comparator#compare(Object, Object)
      * @throws ClassCastException if no order can be determined.
      */
     public int compare(Constraint arg0, Constraint arg1)

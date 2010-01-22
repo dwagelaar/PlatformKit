@@ -35,14 +35,18 @@ the terms and conditions of the Eclipse Public License Version
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ui.console"/>
+      <import plugin="org.eclipse.m2m.atl.core" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.junit"/>
       <import plugin="org.eclipse.help"/>
       <import plugin="org.eclipse.uml2.uml"/>
       <import plugin="org.eclipse.debug.core" version="3.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.atl.core" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.atl.common" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="be.ac.vub.jar2uml" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.apache.xerces"/>
    </requires>
 
    <plugin
@@ -84,6 +88,13 @@ the terms and conditions of the Eclipse Public License Version
          id="be.ac.vub.platformkit.examples"
          download-size="277"
          install-size="277"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="be.ac.vub.platformkit.pellet"
+         download-size="0"
+         install-size="0"
          version="0.0.0"
          unpack="false"/>
 
