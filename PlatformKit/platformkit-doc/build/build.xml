@@ -18,10 +18,8 @@
 	</target>
 	
 	<target name="copyRefs">
-		<copyRef dir="com.hp.hpl.jena.doc"/>
 		<copyRef dir="org.eclipse.emf.doc"/>
 		<copyRef dir="org.eclipse.platform.doc.isv"/>
-		<copyRef dir="org.semanticweb.owl.doc"/>
 	</target>
 	
 	<target name="javadoc" depends="clean, copyRefs">
@@ -38,10 +36,6 @@
 				be.ac.vub.platformkit,
 				be.ac.vub.platformkit.impl,
 				be.ac.vub.platformkit.kb,
-				be.ac.vub.platformkit.kb.jena,
-				be.ac.vub.platformkit.kb.jena.eclipse,
-				be.ac.vub.platformkit.kb.owlapi,
-				be.ac.vub.platformkit.kb.owlapi.eclipse,
 				be.ac.vub.platformkit.kb.util,
 				be.ac.vub.platformkit.logging,
 				be.ac.vub.platformkit.util,
@@ -52,44 +46,22 @@
 				be.ac.vub.platformkit.presentation.popup.action,
 				be.ac.vub.platformkit.presentation.util,
 				be.ac.vub.platformkit.presentation.util.provider,
-				be.ac.vub.platformkit.java,
-				org.mindswap.pellet.eclipse,
-				com.hp.hpl.jena.eclipse,
-				com.hp.hpl.jena.eclipse.logging" 
+				be.ac.vub.platformkit.java" 
 			source="1.5" 
 			sourcepath="
 				../../platformkit/src:
 				../../platformkit-edit/src:
 				../../platformkit-editor/src:
-				../../platformkit-java/src:
-				../../platformkit-jena/src:
-				../../platformkit-kb-jena/src:
-				../../platformkit-kb-owlapi/src:
-				../../platformkit-owlapi/src:
-				../../platformkit-pellet/src:
-				../../platformkit-pellet-aterm/src:
-				../../platformkit-pellet-jena/src:
-				../../platformkit-pellet-relaxng/src:
-				../../platformkit-pellet-xsdlib/src"
+				../../platformkit-java/src"
 			splitindex="true" 
 			use="true" 
 			version="true">
 			<link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>
-			<link href="../../../com.hp.hpl.jena.doc/doc/javadoc"/>
+			<link href="http://www.osgi.org/javadoc/r4v42/"/>
 			<link href="../../../org.eclipse.emf.doc/references/javadoc"/>
 			<link href="../../../org.eclipse.platform.doc.isv/reference/api"/>
-			<link href="../../../org.semanticweb.owl.doc/html/javadoc"/>
 			<link href="http://logging.apache.org/log4j/docs/api/"/>
 			<classpath>
-				<pathelement path="../../platformkit-owlapi/bin"/>
-				<pathelement path="../../platformkit-pellet/bin"/>
-				<pathelement path="../../platformkit-pellet-aterm/bin"/>
-				<pathelement path="../../platformkit-pellet-jena/bin"/>
-				<pathelement path="../../platformkit-pellet-relaxng/bin"/>
-				<pathelement path="../../platformkit-pellet-xsdlib/bin"/>
-				<fileset dir="../../platformkit-jena/lib">
-					<include name="**/*.jar"/>
-				</fileset>
 				<fileset dir="${eclipse.home}/plugins">
 					<include name="**/org.eclipse.*.jar"/>
 					<include name="**/org.junit*/*.jar"/>
