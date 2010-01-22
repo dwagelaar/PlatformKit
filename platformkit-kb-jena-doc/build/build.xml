@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="javadoc">
+	
+	<macrodef name="copyRef">
+		<attribute name="dir" default="com.hp.hpl.jena.doc"/>
+		<sequential>
+			<delete dir="../../@{dir}"/>
+			<copy todir="../../">
+				<fileset dir="../">
+					<include name="@{dir}/**"/>
+				</fileset>
+			</copy>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="copyWorkspaceRef">
+		<attribute name="fromdir" default="../../platformkit-doc"/>
+		<attribute name="todir" default="be.ac.vub.platformkit.doc"/>
+		<sequential>
+			<delete dir="../../@{todir}"/>
+			<mkdir dir="../../@{todir}"/>
+			<copy todir="../../@{todir}/">
+				<fileset dir="@{fromdir}">
+					<include name="**/package-list"/>
+				</fileset>
+			</copy>
+		</sequential>
+	</macrodef>
+
+	<target name="clean">
+		<delete dir="../doc/javadoc"/>
+	</target>
+	
+	<target name="copyRefs">
+		<copyRef dir="org.eclipse.platform.doc.isv"/>
+		<copyWorkspaceRef fromdir="../../platformkit-doc" todir="be.ac.vub.platformkit.doc"/>
+	</target>
+	
+	<target name="javadoc" depends="clean, copyRefs">
+		<javadoc 
+			access="protected" 
+			author="true"
+			destdir="../doc/javadoc" 
+			nodeprecated="false" 
+			nodeprecatedlist="false" 
+			noindex="false" 
+			nonavbar="false" 
+			notree="false" 
+			packagenames="
+				be.ac.vub.platformkit.kb.jena,
+				be.ac.vub.platformkit.kb.jena.eclipse" 
+			source="1.5" 
+			sourcepath="
+				../../platformkit-kb-jena/src"
+			splitindex="true" 
+			use="true" 
+			version="true">
+			<link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>
+			<link href="http://www.osgi.org/javadoc/r4v42/"/>
+			<link href="../jena/javadoc"/>
+			<link href="../../../be.ac.vub.platformkit.doc/doc/javadoc"/>
+			<link href="../../../org.eclipse.platform.doc.isv/reference/api"/>
+			<link href="http://logging.apache.org/log4j/docs/api/"/>
+			<classpath>
+				<pathelement path="../../platformkit/bin"/>
+				<fileset dir="../../platformkit-kb-jena/lib">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="../../platformkit-pellet/lib">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="${eclipse.home}/plugins">
+					<include name="**/org.eclipse.*.jar"/>
+					<include name="**/org.junit*/*.jar"/>
+				</fileset>
+			</classpath>
+		</javadoc>
+	</target>
+	
+</project>
