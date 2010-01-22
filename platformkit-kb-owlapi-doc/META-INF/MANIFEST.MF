@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Platformkit OWLAPI Knowledgebase Documentation
+Bundle-SymbolicName: be.ac.vub.platformkit.kb.owlapi.doc;singleton:=true
+Bundle-Version: 1.2.0
+Bundle-Vendor: Vrije Universiteit Brussel
