@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: OWLAPI Documentation Plug-in
-Bundle-SymbolicName: org.semanticweb.owl.doc;singleton:=true
-Bundle-Version: 2.2.0.1
-Bundle-Vendor: Vrije Universiteit Brussel
-Require-Bundle: org.eclipse.core.runtime
-Bundle-ActivationPolicy: lazy
