@@ -112,6 +112,10 @@ of the copyright holder.
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="be.ac.vub.platformkit"/>
       <import plugin="org.junit"/>
+      <import plugin="org.apache.xerces"/>
+      <import plugin="com.ibm.icu"/>
+      <import plugin="org.apache.lucene"/>
+      <import plugin="be.ac.vub.platformkit.pellet" version="2.0.1" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -123,6 +127,13 @@ of the copyright holder.
 
    <plugin
          id="be.ac.vub.platformkit.kb.jena.doc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.log4j"
          download-size="0"
          install-size="0"
          version="0.0.0"
