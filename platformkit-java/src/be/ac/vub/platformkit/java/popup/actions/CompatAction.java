@@ -36,9 +36,9 @@ import org.eclipse.ui.part.FileEditorInput;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 import be.ac.vub.platformkit.java.popup.util.ATLUtil;
-import be.ac.vub.platformkit.java.popup.util.MessageDialogRunnable;
-import be.ac.vub.platformkit.java.popup.util.PlatformAPIDialogRunnable;
+import be.ac.vub.platformkit.java.ui.util.PlatformAPIDialogRunnable;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
+import be.ac.vub.platformkit.ui.util.MessageDialogRunnable;
 
 /**
  * Context menu action for creating compatibility reports for UML dependency models 

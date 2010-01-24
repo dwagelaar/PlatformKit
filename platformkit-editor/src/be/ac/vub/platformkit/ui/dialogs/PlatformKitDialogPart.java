@@ -1,17 +1,16 @@
-package be.ac.vub.platformkit.java.ui;
+package be.ac.vub.platformkit.ui.dialogs;
 
+import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.JFaceColors;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
-import org.eclipse.jface.viewers.CheckboxTreeViewer;
-import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.ICheckable;
-import org.eclipse.jface.viewers.ILabelProvider;
-import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.TreeNode;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.FontMetrics;
+import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
@@ -19,65 +18,61 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.dialogs.CheckedTreeSelectionDialog;
 
-import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
- * Platform API selection dialog 
+ * Provides basic dialog functionality for PlatformKit dialogs.
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
-public class PlatformAPISelectionDialog extends CheckedTreeSelectionDialog {
-	
+public class PlatformKitDialogPart {
+
 	public static final String WIZ_IMAGE = "icons/full/wizban/PlatformKitWizard.png";
 
 	private Label titleAreaLabel;
 	private Label titleAreaMessageLabel;
 	private String titleAreaText;
 	private String titleAreaMessage;
+	
+	protected Control titleArea;
 
 	/**
-	 * Creates a new PlatformAPISelectionDialog
-	 * @param parent
-	 * @param labelProvider
-	 * @param contentProvider
+	 * Creates a new PlatformKitDialogPart.
 	 */
-	public PlatformAPISelectionDialog(Shell parent, ILabelProvider labelProvider,
-			ITreeContentProvider contentProvider) {
-		super(parent, labelProvider, contentProvider);
+	public PlatformKitDialogPart() {
+		super();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.dialogs.CheckedTreeSelectionDialog#createDialogArea(org.eclipse.swt.widgets.Composite)
+	/**
+	 * Creates the main dialog area
+	 * @param parent
+	 * @return The main dialog area
 	 */
-	@Override
-	protected Control createDialogArea(Composite parent) {
+	public Composite createDialogArea(Composite parent) {
 		// create the top level composite for the dialog area
 		Composite composite = new Composite(parent, SWT.NONE);
 		FormLayout layout = new FormLayout();
 		composite.setLayout(layout);
 		composite.setLayoutData(new GridData(GridData.FILL_BOTH));
-		applyDialogFont(composite);
+		Dialog.applyDialogFont(composite);
 		// add the title area
-		Control titleArea = createTitleArea(composite);
-		// build the separator line
-		Label titleBarSeparator = new Label(composite, SWT.HORIZONTAL
-				| SWT.SEPARATOR);
-		FormData titleBarData = new FormData();
-		titleBarData.top = new FormAttachment(titleArea);
-		titleBarData.left = new FormAttachment(0, 0);
-		titleBarData.right = new FormAttachment(100, 0);
-		titleBarSeparator.setLayoutData(titleBarData);
-		// create the dialog working area
-		Control dlgArea = super.createDialogArea(composite);
-		FormData dlgAreaData = new FormData();
-		dlgAreaData.top = new FormAttachment(titleBarSeparator);
-		dlgAreaData.right = new FormAttachment(100, 0);
-		dlgAreaData.left = new FormAttachment(0, 0);
-		dlgAreaData.bottom = new FormAttachment(100, 0);
-		dlgArea.setLayoutData(dlgAreaData);
-		return dlgArea;
+		titleArea = createTitleArea(composite);
+		return composite;
+	}
+	
+	/**
+	 * Sets the FormData layout data for the containedArea
+	 * @param containedArea
+	 */
+	public void setContainedAreaLayoutData(Control containedArea) {
+		if (titleArea != null) {
+			FormData dlgAreaData = new FormData();
+			dlgAreaData.top = new FormAttachment(titleArea);
+			dlgAreaData.right = new FormAttachment(100, 0);
+			dlgAreaData.left = new FormAttachment(0, 0);
+			dlgAreaData.bottom = new FormAttachment(100, 0);
+			containedArea.setLayoutData(dlgAreaData);
+		}
 	}
 	
 	/**
@@ -86,6 +81,11 @@ public class PlatformAPISelectionDialog extends CheckedTreeSelectionDialog {
 	 * @return The title area control.
 	 */
 	protected Control createTitleArea(Composite parent) {
+		// Compute and store a font metric
+		GC gc = new GC(parent);
+		gc.setFont(JFaceResources.getDialogFont());
+		FontMetrics fm = gc.getFontMetrics();
+		gc.dispose();
 		Composite titleArea = new Composite(parent, SWT.NO_FOCUS | SWT.EMBEDDED);
 		titleArea.setLayout(new FormLayout());
 		FormData titleAreaData = new FormData();
@@ -94,15 +94,15 @@ public class PlatformAPISelectionDialog extends CheckedTreeSelectionDialog {
 		titleAreaData.right = new FormAttachment(100, 0);
 		titleArea.setLayoutData(titleAreaData);
 		titleArea.setBackground(JFaceColors.getBannerBackground(parent.getDisplay()));
-		int verticalSpacing = convertVerticalDLUsToPixels(IDialogConstants.VERTICAL_SPACING);
-		int horizontalSpacing = convertHorizontalDLUsToPixels(IDialogConstants.HORIZONTAL_SPACING);
+		int verticalSpacing = Dialog.convertVerticalDLUsToPixels(fm, IDialogConstants.VERTICAL_SPACING);
+		int horizontalSpacing = Dialog.convertHorizontalDLUsToPixels(fm, IDialogConstants.HORIZONTAL_SPACING);
 		// image
 		Label titleImageLabel = new Label(titleArea, SWT.NONE);
-        ImageDescriptor img = PlatformkitJavaPlugin.getPlugin().getImageDescriptor(WIZ_IMAGE);
+        ImageDescriptor img = PlatformkitEditorPlugin.getImageDescriptor(WIZ_IMAGE);
         titleImageLabel.setImage(img.createImage());
 		FormData imageData = new FormData();
 		imageData.top = new FormAttachment(0, 0);
-		imageData.right = new FormAttachment(100, 0); // horizontalSpacing
+		imageData.right = new FormAttachment(100, 0);
 		titleImageLabel.setLayoutData(imageData);
 		// title
 		titleAreaLabel = new Label(titleArea, SWT.LEFT);
@@ -122,15 +122,24 @@ public class PlatformAPISelectionDialog extends CheckedTreeSelectionDialog {
 		messageData.right = new FormAttachment(titleImageLabel);
 		messageData.left = new FormAttachment(0, horizontalSpacing * 2);
 		titleAreaMessageLabel.setLayoutData(messageData);
-        return titleArea;
+		// build the separator line
+		Label titleBarSeparator = new Label(parent, SWT.HORIZONTAL
+				| SWT.SEPARATOR);
+		FormData titleBarData = new FormData();
+		titleBarData.top = new FormAttachment(titleArea);
+		titleBarData.left = new FormAttachment(0, 0);
+		titleBarData.right = new FormAttachment(100, 0);
+		titleBarSeparator.setLayoutData(titleBarData);
+        return titleBarSeparator;
 	}
 	
 	/**
-	 * Fires when the selection of API models changes. Applies the dialog
-	 * selection rules.
+	 * Fire this when a tree viewer selection changes. Applies the dialog
+	 * selection rules of selecting only leaf nodes in a tree, and only
+	 * up to one leaf under every parent node.
 	 * @param event
 	 */
-	protected void checkSelectionStateChanged(CheckStateChangedEvent event) {
+	public void checkSingleLeafOnly(CheckStateChangedEvent event) {
 		final Object element = event.getElement();
 		if (element instanceof TreeNode) {
 			final TreeNode node = (TreeNode) element;
@@ -152,30 +161,15 @@ public class PlatformAPISelectionDialog extends CheckedTreeSelectionDialog {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.dialogs.CheckedTreeSelectionDialog#createTreeViewer(org.eclipse.swt.widgets.Composite)
+	/**
+	 * @param parent
+	 * @return An empty composite of size 0.
 	 */
-	@Override
-	protected CheckboxTreeViewer createTreeViewer(Composite parent) {
-		CheckboxTreeViewer treeViewer = super.createTreeViewer(parent);
-		treeViewer.addCheckStateListener(new ICheckStateListener() {
-			public void checkStateChanged(CheckStateChangedEvent event) {
-				checkSelectionStateChanged(event);
-			}
-		});
-		return treeViewer;
-	}
-
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.dialogs.CheckedTreeSelectionDialog#createSelectionButtons(org.eclipse.swt.widgets.Composite)
-	 */
-	@Override
-	protected Composite createSelectionButtons(Composite composite) {
-        Composite btnControl = new Composite(composite, SWT.RIGHT);
-        btnControl.setBackground(JFaceColors.getBannerForeground(composite.getDisplay()));
-//        buttonComposite.setLayout(new FormLayout());
+	public Composite createEmptyComposite(Composite parent) {
+        Composite btnControl = new Composite(parent, SWT.RIGHT);
         GridData btnControlData = new GridData();
         btnControlData.heightHint = 0;
+        btnControlData.widthHint = 0;
         btnControl.setLayoutData(btnControlData);
         return btnControl;
 	}

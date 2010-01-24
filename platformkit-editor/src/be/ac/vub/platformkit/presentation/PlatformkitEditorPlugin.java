@@ -15,6 +15,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -25,12 +26,13 @@ import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.logging.ConsoleStreamHandler;
-import be.ac.vub.platformkit.presentation.util.ErrorDialogRunnable;
 import be.ac.vub.platformkit.presentation.util.PlatformkitEValidator;
+import be.ac.vub.platformkit.ui.util.ErrorDialogRunnable;
 
 /**
  * This is the central singleton for the Platformkit editor plugin.
@@ -210,5 +212,15 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	 */
 	public static Handler getHandler() {
 		return handler;
-	}   
+	}
+
+    /**
+     * @param imageFilePath
+     * @return The ImageDescriptor object for imageFilePath
+     * @see #imageDescriptorFromPlugin(String, String)
+     */
+    public static ImageDescriptor getImageDescriptor(String imageFilePath) {
+    	return AbstractUIPlugin.imageDescriptorFromPlugin(getPlugin().getBundle().getSymbolicName(), imageFilePath);
+    }
+
 }

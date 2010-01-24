@@ -29,7 +29,7 @@ import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
-import be.ac.vub.platformkit.presentation.util.PlatformSpecDialogRunnable;
+import be.ac.vub.platformkit.ui.util.PlatformSpecDialogRunnable;
 
 /**
  * Abstract right-click action with progress monitor class.
@@ -167,7 +167,7 @@ public abstract class PlatformKitAction implements IObjectActionDelegate {
 	 */
 	protected boolean getPlatform(ConstraintSpace space) throws CoreException {
 	    boolean loaded = false;
-	    PlatformSpecDialogRunnable dlg = new PlatformSpecDialogRunnable("Load platform specification");
+	    PlatformSpecDialogRunnable dlg = new PlatformSpecDialogRunnable();
         if (filter != null) {
             dlg.setFilter(filter);
         }

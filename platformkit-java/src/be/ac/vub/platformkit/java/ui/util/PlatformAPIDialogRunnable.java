@@ -1,4 +1,4 @@
-package be.ac.vub.platformkit.java.popup.util;
+package be.ac.vub.platformkit.java.ui.util;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
-import be.ac.vub.platformkit.java.ui.PlatformAPISelectionDialog;
+import be.ac.vub.platformkit.java.ui.dialogs.PlatformAPISelectionDialog;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**

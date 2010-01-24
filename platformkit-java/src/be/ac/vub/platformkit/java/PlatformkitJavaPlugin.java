@@ -6,7 +6,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
-import be.ac.vub.platformkit.java.popup.util.ErrorDialogRunnable;
+import be.ac.vub.platformkit.ui.util.ErrorDialogRunnable;
 
 /**
  * PlatformKit for Java platforms plug-in class 
