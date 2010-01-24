@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
-import be.ac.vub.platformkit.presentation.util.FileDialogRunnable;
+import be.ac.vub.platformkit.ui.util.FileDialogRunnable;
 
 /**
  * Abstract action for adding new ConstraintSets to a ConstraintSpace.
@@ -67,7 +67,10 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
      */
     protected Resource[] getSourceModels() 
     throws IllegalArgumentException, RuntimeException {
-        FileDialogRunnable dlg = new FileDialogRunnable("Load " + getSourceName() + "(s)");
+        FileDialogRunnable dlg = new FileDialogRunnable();
+        dlg.setTitle("Load " + getSourceName() + "(s)");
+        dlg.setMessage("Select " + getSourceName() + "(s)");
+        dlg.setInstruction("Select resources:");
         if (filter != null) {
             dlg.setFilter(filter);
         }

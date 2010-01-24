@@ -25,9 +25,9 @@ import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
-import be.ac.vub.platformkit.presentation.util.MessageDialogRunnable;
 import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
 import be.ac.vub.platformkit.presentation.util.PlatformKitException;
+import be.ac.vub.platformkit.ui.util.MessageDialogRunnable;
 
 /**
  * Validates the options in a CDD configuration

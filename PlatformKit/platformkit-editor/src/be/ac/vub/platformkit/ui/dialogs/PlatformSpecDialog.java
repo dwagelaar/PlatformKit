@@ -1,4 +1,4 @@
-package be.ac.vub.platformkit.presentation.util;
+package be.ac.vub.platformkit.ui.dialogs;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,12 +27,15 @@ import org.eclipse.ui.dialogs.ListDialog;
 
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
+import be.ac.vub.platformkit.presentation.util.INamedOntologyProvider;
 
 public class PlatformSpecDialog extends ListDialog {
 
     protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
     
     private boolean builtinSelected = true;
+    
+    protected PlatformKitDialogPart dlgPart = new PlatformKitDialogPart();
     
     public PlatformSpecDialog(Shell parentShell) throws IOException {
         super(parentShell);
@@ -83,7 +86,9 @@ public class PlatformSpecDialog extends ListDialog {
     }
 
     protected Control createDialogArea(Composite parent) {
-        Composite panel = (Composite) super.createDialogArea(parent);
+    	Composite composite = dlgPart.createDialogArea(parent);
+        Composite panel = (Composite) super.createDialogArea(composite);
+        dlgPart.setContainedAreaLayoutData(panel);
         
         Button builtinBtn = new Button(panel, SWT.RADIO);
         builtinBtn.setText("Built-in platform specification");
@@ -123,4 +128,34 @@ public class PlatformSpecDialog extends ListDialog {
         return !builtinSelected;
     }
 
+	/**
+	 * Sets the title area text
+	 * @param title
+	 */
+	public void setTitleAreaText(String title) {
+		dlgPart.setTitleAreaText(title);
+	}
+
+	/**
+	 * Sets the title area message
+	 * @param message
+	 */
+	public void setTitleAreaMessage(String message) {
+		dlgPart.setTitleAreaMessage(message);
+	}
+
+	/**
+	 * @return the title area text
+	 */
+	public String getTitleAreaText() {
+		return dlgPart.getTitleAreaText();
+	}
+
+	/**
+	 * @return the title area message
+	 */
+	public String getTitleAreaMessage() {
+		return dlgPart.getTitleAreaMessage();
+	}
+	
 }

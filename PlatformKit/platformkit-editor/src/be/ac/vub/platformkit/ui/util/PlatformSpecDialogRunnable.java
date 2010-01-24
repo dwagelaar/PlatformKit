@@ -1,25 +1,30 @@
-package be.ac.vub.platformkit.presentation.util;
+package be.ac.vub.platformkit.ui.util;
 
 import java.io.IOException;
 
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
+import be.ac.vub.platformkit.ui.dialogs.PlatformSpecDialog;
 
 public class PlatformSpecDialogRunnable extends FileDialogRunnable {
 
     /**
      * Creates a new PlatformSpecDialogRunnable.
-     * @param message The dialog message.
      */
-    public PlatformSpecDialogRunnable(String message) {
-        super(message);
+    public PlatformSpecDialogRunnable() {
+        super();
+	    setTitle("Load platform specification");
+	    setMessage("Select a built-in platform specification, or \nload a platform specification from a file");
+	    setInstruction("Select a platform specification:");
     }
 
     public void run() {
         try {
             PlatformSpecDialog dlg = new PlatformSpecDialog(
                     PlatformkitEditorPlugin.INSTANCE.getShell());
-            dlg.setTitle(title);
-            dlg.setMessage(message);
+            dlg.setTitle("PlatformKit");
+            dlg.setTitleAreaText(getTitle());
+            dlg.setTitleAreaMessage(getMessage());
+            dlg.setMessage(getInstruction());
             dlg.open();
             if (dlg.getReturnCode() == PlatformSpecDialog.OK) {
                 if (dlg.isFromFileSelected()) {
@@ -32,4 +37,5 @@ public class PlatformSpecDialogRunnable extends FileDialogRunnable {
             PlatformkitEditorPlugin.INSTANCE.report(e);
         }
     }
+
 }

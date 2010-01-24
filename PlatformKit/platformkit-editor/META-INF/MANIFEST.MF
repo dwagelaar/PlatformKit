@@ -12,7 +12,9 @@ Export-Package: be.ac.vub.platformkit.editor.preferences,
  be.ac.vub.platformkit.presentation.logging,
  be.ac.vub.platformkit.presentation.popup.action,
  be.ac.vub.platformkit.presentation.util,
- be.ac.vub.platformkit.presentation.util.provider
+ be.ac.vub.platformkit.presentation.util.provider,
+ be.ac.vub.platformkit.ui.dialogs,
+ be.ac.vub.platformkit.ui.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  be.ac.vub.platformkit.edit;visibility:=reexport,

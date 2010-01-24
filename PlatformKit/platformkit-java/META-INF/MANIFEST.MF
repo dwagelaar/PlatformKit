@@ -18,6 +18,7 @@ Require-Bundle: org.eclipse.core.runtime,
 Export-Package: be.ac.vub.platformkit.java,
  be.ac.vub.platformkit.java.popup.actions,
  be.ac.vub.platformkit.java.popup.util,
- be.ac.vub.platformkit.java.ui
+ be.ac.vub.platformkit.java.ui.dialogs,
+ be.ac.vub.platformkit.java.ui.util
 Bundle-Activator: be.ac.vub.platformkit.java.PlatformkitJavaPlugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

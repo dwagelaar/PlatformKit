@@ -1,8 +1,8 @@
-package be.ac.vub.platformkit.java.popup.util;
+package be.ac.vub.platformkit.ui.util;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 
-import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
  * Wraps the displaying of a message dialog in a Runnable 
@@ -44,17 +44,17 @@ public class MessageDialogRunnable implements Runnable {
     	switch (mode) {
     	case MODE_ERROR:
             MessageDialog.openError(
-            		PlatformkitJavaPlugin.getPlugin().getShell(), 
+            		PlatformkitEditorPlugin.INSTANCE.getShell(), 
                     getTitle(), getMessage());
     		break;
     	case MODE_INFORMATION:
             MessageDialog.openInformation(
-            		PlatformkitJavaPlugin.getPlugin().getShell(), 
+            		PlatformkitEditorPlugin.INSTANCE.getShell(), 
                     getTitle(), getMessage());
     		break;
     	case MODE_WARNING:
             MessageDialog.openWarning(
-            		PlatformkitJavaPlugin.getPlugin().getShell(), 
+            		PlatformkitEditorPlugin.INSTANCE.getShell(), 
                     getTitle(), getMessage());
     		break;
     	}

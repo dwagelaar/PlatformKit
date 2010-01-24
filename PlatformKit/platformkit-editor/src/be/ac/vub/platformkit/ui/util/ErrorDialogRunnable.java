@@ -1,14 +1,10 @@
-package be.ac.vub.platformkit.java.popup.util;
+package be.ac.vub.platformkit.ui.util;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.dialogs.ErrorDialog;
 
-import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
-/**
- * Wraps the displaying of an error dialog in a Runnable 
- * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
- */
 public class ErrorDialogRunnable implements Runnable {
     private IStatus st;
 
@@ -23,12 +19,12 @@ public class ErrorDialogRunnable implements Runnable {
         } else {
             message = e.getMessage();
         }
-        st = PlatformkitJavaPlugin.getPlugin().log(message, IStatus.ERROR, e);
+        st = PlatformkitEditorPlugin.INSTANCE.log(message, IStatus.ERROR, e);
     }
     
     public void run() {
         ErrorDialog dlg = new ErrorDialog(
-        		PlatformkitJavaPlugin.getPlugin().getShell(),
+        		PlatformkitEditorPlugin.INSTANCE.getShell(),
                 "Error",
                 st.getMessage(),
                 st,

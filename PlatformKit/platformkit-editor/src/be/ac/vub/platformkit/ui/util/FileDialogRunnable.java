@@ -1,20 +1,23 @@
-package be.ac.vub.platformkit.presentation.util;
+package be.ac.vub.platformkit.ui.util;
 
 import java.util.ArrayList;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.ui.dialogs.CheckedTreeSelectionDialog;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
+import be.ac.vub.platformkit.ui.dialogs.PlatformKitTreeSelectionDialog;
 
 
 public class FileDialogRunnable implements Runnable {
-    protected String title = "Select Resources";
-    protected String message;
+
+    private String title = "Select Resources";
+    private String message = "Select Resources";
+    private String instruction;
+
     protected Object[] result = null;
     private ViewerFilter filter = null;
 
@@ -22,8 +25,8 @@ public class FileDialogRunnable implements Runnable {
      * Creates a new FileDialogRunnable.
      * @param message The dialog message.
      */
-    public FileDialogRunnable(String message) {
-        setMessage(message);
+    public FileDialogRunnable() {
+    	super();
     }
     
     /**
@@ -32,16 +35,13 @@ public class FileDialogRunnable implements Runnable {
     public Object[] getFiles() {
         return result;
     }
-    
-    /**
-     * @param message The message to set.
-     */
-    public void setMessage(String message) {
-        this.message = message;
-    }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Runnable#run()
+     */
     public void run() {
-        CheckedTreeSelectionDialog dlg = new CheckedTreeSelectionDialog(
+        PlatformKitTreeSelectionDialog dlg = new PlatformKitTreeSelectionDialog(
         		PlatformkitEditorPlugin.INSTANCE.getShell(),
                 new WorkbenchLabelProvider(),
                 new WorkbenchContentProvider());
@@ -50,8 +50,10 @@ public class FileDialogRunnable implements Runnable {
         if (filter != null) {
             dlg.addFilter(filter);
         }
-        dlg.setTitle(title);
-        dlg.setMessage(message);
+        dlg.setTitle("PlatformKit");
+        dlg.setTitleAreaText(getTitle());
+        dlg.setTitleAreaMessage(getMessage());
+        dlg.setMessage(getInstruction());
         dlg.open();
         if (dlg.getResult() != null) {
             result = getFiles(dlg.getResult());
@@ -78,4 +80,46 @@ public class FileDialogRunnable implements Runnable {
         }
         return files.toArray();
     }
+
+	/**
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * @param title the title to set
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	/**
+	 * @return the message
+	 */
+	public String getMessage() {
+		return message;
+	}
+
+	/**
+	 * @param message the message to set
+	 */
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	/**
+	 * @return the instruction
+	 */
+	public String getInstruction() {
+		return instruction;
+	}
+
+	/**
+	 * @param instruction the instruction to set
+	 */
+	public void setInstruction(String instruction) {
+		this.instruction = instruction;
+	}
 }
