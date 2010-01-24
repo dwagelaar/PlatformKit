@@ -2,6 +2,7 @@ package be.ac.vub.platformkit.java;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
@@ -57,6 +58,15 @@ public class PlatformkitJavaPlugin extends AbstractUIPlugin {
                 exception);
         getPlugin().getLog().log(st);
         return st;
+    }
+    
+    /**
+     * @param imageFilePath
+     * @return The ImageDescriptor object for imageFilePath
+     * @see #imageDescriptorFromPlugin(String, String)
+     */
+    public ImageDescriptor getImageDescriptor(String imageFilePath) {
+    	return imageDescriptorFromPlugin(getBundle().getSymbolicName(), imageFilePath);
     }
 
 }

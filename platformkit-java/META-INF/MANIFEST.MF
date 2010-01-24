@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Platformkit Java Ontologies Plug-in
 Bundle-SymbolicName: be.ac.vub.platformkit.java;singleton:=true
-Bundle-Version: 1.1.6
+Bundle-Version: 1.2.0
 Bundle-Vendor: Vrije Universiteit Brussel
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
@@ -17,6 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.core
 Export-Package: be.ac.vub.platformkit.java,
  be.ac.vub.platformkit.java.popup.actions,
- be.ac.vub.platformkit.java.popup.util
+ be.ac.vub.platformkit.java.popup.util,
+ be.ac.vub.platformkit.java.ui
 Bundle-Activator: be.ac.vub.platformkit.java.PlatformkitJavaPlugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

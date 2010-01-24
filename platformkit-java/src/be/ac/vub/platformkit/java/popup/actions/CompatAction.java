@@ -540,7 +540,10 @@ public class CompatAction extends ProgressMonitorAction {
     protected void runActionWithRunner(IProgressMonitor monitor, CompatActionRunner runner, int steps)
     		throws Exception {
         outputFile = null;
-	    PlatformAPIDialogRunnable paDlg = new PlatformAPIDialogRunnable("Select platform API model(s)");
+	    PlatformAPIDialogRunnable paDlg = new PlatformAPIDialogRunnable();
+	    paDlg.setTitle("Select API models");
+	    paDlg.setMessage("Select platform API models to check against");
+	    paDlg.setInstruction("Select up to one API model from each category:");
 	    PlatformkitJavaPlugin.getPlugin().getWorkbench().getDisplay().syncExec(paDlg);
 	    Object[] emf_uris = paDlg.getResult();
 	    if (emf_uris == null || emf_uris.length == 0) {
