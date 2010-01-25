@@ -86,7 +86,10 @@ public class PlatformKitDialogPart {
 		gc.setFont(JFaceResources.getDialogFont());
 		FontMetrics fm = gc.getFontMetrics();
 		gc.dispose();
-		Composite titleArea = new Composite(parent, SWT.NO_FOCUS | SWT.EMBEDDED);
+		int verticalSpacing = Dialog.convertVerticalDLUsToPixels(fm, IDialogConstants.VERTICAL_SPACING);
+		int horizontalSpacing = Dialog.convertHorizontalDLUsToPixels(fm, IDialogConstants.HORIZONTAL_SPACING);
+		// title area composite
+		Composite titleArea = new Composite(parent, SWT.NO_FOCUS);
 		titleArea.setLayout(new FormLayout());
 		FormData titleAreaData = new FormData();
 		titleAreaData.top = new FormAttachment(0, 0);
@@ -94,8 +97,6 @@ public class PlatformKitDialogPart {
 		titleAreaData.right = new FormAttachment(100, 0);
 		titleArea.setLayoutData(titleAreaData);
 		titleArea.setBackground(JFaceColors.getBannerBackground(parent.getDisplay()));
-		int verticalSpacing = Dialog.convertVerticalDLUsToPixels(fm, IDialogConstants.VERTICAL_SPACING);
-		int horizontalSpacing = Dialog.convertHorizontalDLUsToPixels(fm, IDialogConstants.HORIZONTAL_SPACING);
 		// image
 		Label titleImageLabel = new Label(titleArea, SWT.NONE);
         ImageDescriptor img = PlatformkitEditorPlugin.getImageDescriptor(WIZ_IMAGE);
@@ -108,6 +109,7 @@ public class PlatformKitDialogPart {
 		titleAreaLabel = new Label(titleArea, SWT.LEFT);
 		titleAreaLabel.setFont(JFaceResources.getBannerFont());
 		titleAreaLabel.setText(getTitleAreaText());
+		titleAreaLabel.setBackground(titleArea.getBackground());
 		FormData titleData = new FormData();
 		titleData.top = new FormAttachment(0, verticalSpacing);
 		titleData.right = new FormAttachment(titleImageLabel);
@@ -117,6 +119,7 @@ public class PlatformKitDialogPart {
 		titleAreaMessageLabel = new Label(titleArea, SWT.LEFT);
 		titleAreaMessageLabel.setText(getTitleAreaMessage());
 		titleAreaMessageLabel.setFont(JFaceResources.getDialogFont());
+		titleAreaMessageLabel.setBackground(titleArea.getBackground());
 		FormData messageData = new FormData();
 		messageData.top = new FormAttachment(titleAreaLabel);
 		messageData.right = new FormAttachment(titleImageLabel);
