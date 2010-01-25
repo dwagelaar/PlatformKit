@@ -1,6 +1,5 @@
 package be.ac.vub.platformkit.java.popup.actions;
 
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.common.util.URI;
@@ -17,7 +16,7 @@ import be.ac.vub.platformkit.java.ui.util.PlatformAPIDialogRunnable;
  * Context menu action for creating compatibility reports for UML dependency models 
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
-public class CompatAction extends ProgressMonitorAction {
+public class CompatAction extends SelectionAction {
 	
 	protected CompatJob job;
 	protected ShowCompatResultAction showResultAction;
@@ -50,20 +49,10 @@ public class CompatAction extends ProgressMonitorAction {
 	    });
 	}
 
-    /**
-     * Invoked when the action is executed.
-     * @param monitor
-     * @throws Exception
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
      */
-    @Override
-    protected void runAction(IProgressMonitor monitor) throws Exception {
-    	//TODO refactor out
-    }
-    
-	/* (non-Javadoc)
-	 * @see be.ac.vub.platformkit.java.popup.actions.ProgressMonitorAction#run(org.eclipse.jface.action.IAction)
-	 */
-	@Override
 	public void run(IAction action) {
 		// Select platform API dialog
 	    PlatformAPIDialogRunnable paDlg = new PlatformAPIDialogRunnable();
