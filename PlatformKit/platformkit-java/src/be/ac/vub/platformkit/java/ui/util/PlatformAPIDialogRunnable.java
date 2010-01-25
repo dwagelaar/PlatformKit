@@ -32,7 +32,7 @@ public class PlatformAPIDialogRunnable implements Runnable {
     private String title;
     private String message;
     private String instruction;
-    private Object[] result = null;
+    private URI[] result = null;
     private ILabelProvider labelProv;
 
     /**
@@ -63,19 +63,19 @@ public class PlatformAPIDialogRunnable implements Runnable {
      * @param results
      * @return The filtered dialog results
      */
-    private Object[] filterResults(Object[] results) {
-    	List<Object> filteredResults = new ArrayList<Object>();
+    private URI[] filterResults(Object[] results) {
+    	List<URI> filteredResults = new ArrayList<URI>();
     	for (Object res : results) {
     		if (res instanceof TreeNode) {
     			Object value = ((TreeNode)res).getValue();
     			if (value instanceof URI) {
-    				filteredResults.add(value);
+    				filteredResults.add((URI) value);
     			}
     		} else if (res instanceof URI) {
-    			filteredResults.add(res);
+    			filteredResults.add((URI) res);
     		}
     	}
-    	return filteredResults.toArray();
+    	return filteredResults.toArray(new URI[filteredResults.size()]);
     }
 
     protected PlatformAPISelectionDialog createPlatformAPIDialog(Shell parentShell) throws IOException {
@@ -164,19 +164,23 @@ public class PlatformAPIDialogRunnable implements Runnable {
 	/**
 	 * @return the result
 	 */
-	public Object[] getResult() {
+	public URI[] getResult() {
 		return result;
 	}
 
 	/**
 	 * @param result the result to set
 	 */
-	protected void setResult(Object[] result) {
+	protected void setResult(URI[] result) {
 		this.result = result;
 	}
 	
 	public String getLabelFor(Object value) {
 		return labelProv.getText(value);
+	}
+
+	public ILabelProvider getLabels() {
+		return labelProv;
 	}
 
 	/**
