@@ -83,6 +83,7 @@ public abstract class ProgressMonitorAction implements IActionDelegate, Runnable
      * @param monitor
      * @throws Exception
      */
+	@Deprecated
     protected abstract void runAction(IProgressMonitor monitor) throws Exception;
 
     /**
