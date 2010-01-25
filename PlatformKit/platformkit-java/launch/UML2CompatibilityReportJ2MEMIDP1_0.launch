@@ -37,8 +37,8 @@
 <mapEntry key="REPORT" value="UML2"/>
 </mapAttribute>
 <mapAttribute key="Path">
-<mapEntry key="IN" value="/platformkit-java/j2me-midp-1_0-api.uml"/>
-<mapEntry key="REPORT" value="/ExampleModels/pkCompatReportJ2MEMIDP1_0.uml"/>
+<mapEntry key="IN" value="/platformkit-java/model/jre/j2me-midp-1_0-api.uml"/>
+<mapEntry key="REPORT" value="/platformkit-java/pkCompatReportJ2MEMIDP1_0.uml"/>
 <mapEntry key="UML2" value="/platformkit-java/metamodels/UMLProfiles.ecore"/>
 <mapEntry key="CR" value="/platformkit-java/profiles/CompatibilityReport.profile.uml"/>
 <mapEntry key="DEPS" value="/uml2cs-instantmessenger-default/uml2cs-instantmessenger-default.deps.uml"/>

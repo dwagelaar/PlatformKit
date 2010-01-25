@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
-<stringAttribute key="ATL File Name" value="/platformkit-java/transformations/UML2TestCompatibilityReport.atl"/>
+<stringAttribute key="ATL File Name" value="/platformkit-java/transformations/UML2Copy.atl"/>
 <stringAttribute key="ATL VM" value="EMF-specific VM"/>
 <stringAttribute key="ATL_COMPILER" value="atl2006"/>
 <booleanAttribute key="IS_REFINING" value="false"/>
 <mapAttribute key="Input">
 <mapEntry key="IN" value="UML2"/>
+<mapEntry key="MERGE" value="UML2"/>
 </mapAttribute>
-<mapAttribute key="Libs"/>
+<mapAttribute key="Libs">
+<mapEntry key="UML2" value="/platformkit-java/transformations/UML2.asm"/>
+</mapAttribute>
 <mapAttribute key="Model Handler">
-<mapEntry key="UML2" value="EMF"/>
+<mapEntry key="UML2" value="UML2"/>
 </mapAttribute>
 <mapAttribute key="ModelType">
 <mapEntry key="IN" value="MODELINPUT"/>
-<mapEntry key="UML2" value="METAMODELINPUT"/>
+<mapEntry key="UML2" value="METAMODELOUTPUT"/>
+<mapEntry key="OUT" value="MODELOUTPUT"/>
+<mapEntry key="MERGE" value="MODELINPUT"/>
 </mapAttribute>
 <mapAttribute key="Options">
 <mapEntry key="supportUML2Stereotypes" value="true"/>
@@ -23,10 +28,17 @@
 <mapEntry key="allowInterModelReferences" value="true"/>
 <mapEntry key="step" value="false"/>
 </mapAttribute>
-<mapAttribute key="Output"/>
-<mapAttribute key="Path">
-<mapEntry key="IN" value="/platformkit-java/pkCompatReportPruned.uml"/>
-<mapEntry key="UML2" value="/platformkit-java/metamodels/UMLProfiles.ecore"/>
+<mapAttribute key="Output">
+<mapEntry key="OUT" value="UML2"/>
 </mapAttribute>
-<listAttribute key="Superimpose"/>
+<mapAttribute key="Path">
+<mapEntry key="IN" value="/platformkit-java/pkCompatReportSWT3_0.uml"/>
+<mapEntry key="UML2" value="/platformkit-java/metamodels/UMLProfiles.ecore"/>
+<mapEntry key="OUT" value="/platformkit-java/pkCompatReportMerge.uml"/>
+<mapEntry key="MERGE" value="/platformkit-java/pkCompatReportJDK1_1.uml"/>
+</mapAttribute>
+<stringAttribute key="Port" value="6060"/>
+<listAttribute key="Superimpose">
+<listEntry value="/platformkit-java/transformations/UML2CRMerge.asm"/>
+</listAttribute>
 </launchConfiguration>

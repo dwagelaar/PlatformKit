@@ -1,0 +1,136 @@
+<project name="platformkit-java/build-ontology" basedir=".">
+
+	<!-- atl.vm = "Regular VM (with debugger)" | "EMF-specific VM" -->
+	<!--property name="atl.launcher" value="Regular VM (with debugger)"/-->
+	<property name="atl.launcher" value="EMF-specific VM"/>
+
+	<eclipse.convertPath resourcepath="/platformkit-java/transformations" property="trans.path"/>
+	
+	<property name="build.uri" value="platform:/resource/platformkit-java/build-ontology"/>
+	<property name="umlmodel.uri" value="platform:/resource/platformkit-java/model"/>
+	<property name="owlmodel.uri" value="${build.uri}"/>
+
+    <macrodef name="preUML2ToAPIOntology">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="uri" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<atl.launch path="${trans.path}/UML2ToAPIOntology.asm"> 
+				<option name="allowInterModelReferences" value="true"/>
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
+    			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
+    		</atl.launch>
+        </sequential>
+    </macrodef>
+	
+    <macrodef name="UML2ToAPIOntology">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="uri" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<atl.launch path="${trans.path}/UML2ToAPIOntology.asm"> 
+				<option name="allowInterModelReferences" value="true"/>
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
+    			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
+    		</atl.launch>
+        	<atl.saveModel model="@{out}" uri="@{uri}"/>
+        </sequential>
+    </macrodef>
+	
+    <macrodef name="UML2ToAPIOntology1">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="prevout" default="MODEL.PREV.OUT" />
+        <attribute name="previn" default="MODEL.PREV.IN" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="uri" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<atl.launch	path="${trans.path}/UML2ToAPIOntology.asm"> 
+				<option name="allowInterModelReferences" value="true"/>
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<inmodel name="PREVOUT" model="@{prevout}"/>
+    			<inmodel name="PREVIN" model="@{previn}"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
+    			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
+    		</atl.launch>
+        	<atl.saveModel model="@{out}" uri="@{uri}"/>
+        </sequential>
+    </macrodef>
+	
+    <macrodef name="UML2ToAPIOntology2">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="prevout" default="MODEL.PREV.OUT" />
+        <attribute name="previn" default="MODEL.PREV.IN" />
+        <attribute name="prevout2" default="MODEL.PREV.OUT2" />
+        <attribute name="previn2" default="MODEL.PREV.IN2" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="uri" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<atl.launch	path="${trans.path}/UML2ToAPIOntology.asm"> 
+				<option name="allowInterModelReferences" value="true"/>
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<inmodel name="PREVOUT" model="@{prevout}"/>
+    			<inmodel name="PREVIN" model="@{previn}"/>
+    			<inmodel name="PREVOUT2" model="@{prevout2}"/>
+    			<inmodel name="PREVIN2" model="@{previn2}"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
+    			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
+    		</atl.launch>
+        	<atl.saveModel model="@{out}" uri="@{uri}"/>
+        </sequential>
+    </macrodef>
+	
+    <macrodef name="UML2ToAPIOntology3">
+        <attribute name="in" default="MODEL.IN" />
+        <attribute name="prevout" default="MODEL.PREV.OUT" />
+        <attribute name="previn" default="MODEL.PREV.IN" />
+        <attribute name="prevout2" default="MODEL.PREV.OUT2" />
+        <attribute name="previn2" default="MODEL.PREV.IN2" />
+        <attribute name="prevout3" default="MODEL.PREV.OUT3" />
+        <attribute name="previn3" default="MODEL.PREV.IN3" />
+        <attribute name="out" default="MODEL.OUT" />
+        <attribute name="uri" default="MODEL.OUT.PATH" />
+        <sequential>
+    		<atl.launch path="${trans.path}/UML2ToAPIOntology.asm"> 
+				<option name="allowInterModelReferences" value="true"/>
+    			<inmodel name="UML2" model="UML2"/>
+    			<inmodel name="OWL" model="OWL"/>
+    			<inmodel name="IN" model="@{in}"/>
+    			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="JAVA" model="Java"/>
+    			<inmodel name="PREVOUT" model="@{prevout}"/>
+    			<inmodel name="PREVIN" model="@{previn}"/>
+    			<inmodel name="PREVOUT2" model="@{prevout2}"/>
+    			<inmodel name="PREVIN2" model="@{previn2}"/>
+    			<inmodel name="PREVOUT3" model="@{prevout3}"/>
+    			<inmodel name="PREVIN3" model="@{previn3}"/>
+    			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
+    			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
+    		</atl.launch>
+        	<atl.saveModel model="@{out}" uri="@{uri}"/>
+        </sequential>
+    </macrodef>
+	
+</project>
