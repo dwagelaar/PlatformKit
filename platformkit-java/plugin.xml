@@ -74,87 +74,87 @@
   <extension
         point="be.ac.vub.platformkit.java.apimodel">
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/jdk-1_1-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/jdk-1_1-api.uml"
            category="Java Runtime Environment"
            name="JDK 1.1">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/j2se-1_2-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_2-api.uml"
            category="Java Runtime Environment"
            name="J2SE 1.2">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/j2se-1_3-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_3-api.uml"
            category="Java Runtime Environment"
            name="J2SE 1.3">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/j2se-1_4-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_4-api.uml"
            category="Java Runtime Environment"
            name="J2SE 1.4">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/j2se-1_5-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_5-api.uml"
            category="Java Runtime Environment"
            name="J2SE 5.0">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/j2se-1_6-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_6-api.uml"
            category="Java Runtime Environment"
            name="Java SE 6">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/personaljava-1_1-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/personaljava-1_1-api.uml"
            category="Java Runtime Environment"
            name="Personal Java 1.1">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/j2me-pp-1_0-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2me-pp-1_0-api.uml"
            category="Java Runtime Environment"
            name="J2ME Personal Profile 1.0">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/j2me-pp-1_1-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2me-pp-1_1-api.uml"
            category="Java Runtime Environment"
            name="J2ME Personal Profile 1.1">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/j2me-midp-1_0-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2me-midp-1_0-api.uml"
            category="Java Runtime Environment"
            name="J2ME MIDP 1.0">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/j2me-midp-2_0-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2me-midp-2_0-api.uml"
            category="Java Runtime Environment"
            name="J2ME MIDP 2.0">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/swt-3_0.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_0.uml"
            category="SWT"
            name="SWT 3.0">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/swt-3_1.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_1.uml"
            category="SWT"
            name="SWT 3.1">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/swt-3_2.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_2.uml"
            category="SWT"
            name="SWT 3.2">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/swt-3_3.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_3.uml"
            category="SWT"
            name="SWT 3.3">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/swt-3_4.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_4.uml"
            category="SWT"
            name="SWT 3.4">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/swt-3_5.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_5.uml"
            category="SWT"
            name="SWT 3.5">
      </apiModel>
