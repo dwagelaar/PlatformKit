@@ -34,7 +34,7 @@ public class PlatformSpecDialogRunnable extends FileDialogRunnable {
                 }
             }
         } catch (IOException e) {
-            PlatformkitEditorPlugin.INSTANCE.report(e);
+            PlatformkitEditorPlugin.report(e);
         }
     }
 

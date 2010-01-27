@@ -1,15 +1,18 @@
 package be.ac.vub.platformkit.presentation.popup.action;
 
+import be.ac.vub.platformkit.presentation.jobs.SortPlatformkitModelJob;
+
 /**
- * Sorts the options in a CDD configuration most-specific first.
- * @author dennis
- *
+ * Sorts the options in a PlatformKit model most-specific first.
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class SortMostSpecificFirst extends SortPlatformkitModel {
+
 	/**
-	 * Constructor for Action1.
+	 * Creates a new {@link SortMostSpecificFirst}.
 	 */
 	public SortMostSpecificFirst() {
-		super(SortPlatformkitModel.MOST_SPECIFIC);
+		super(SortPlatformkitModelJob.MOST_SPECIFIC);
 	}
+
 }

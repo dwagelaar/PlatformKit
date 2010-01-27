@@ -1,4 +1,4 @@
-package be.ac.vub.platformkit.java.popup.actions;
+package be.ac.vub.platformkit.presentation.popup.action;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
@@ -25,8 +25,8 @@ public abstract class SelectionAction implements IActionDelegate {
 	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-	    this.selection = selection;
-	    this.action = action;
+		this.selection = selection;
+		this.action = action;
 	}
 
 }
