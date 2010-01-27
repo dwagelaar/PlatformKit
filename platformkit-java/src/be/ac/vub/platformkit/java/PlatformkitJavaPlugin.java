@@ -40,7 +40,7 @@ public class PlatformkitJavaPlugin extends AbstractUIPlugin {
      * @param e the exception to report.
      */
     public void report(Throwable e) {
-        getWorkbench().getDisplay().syncExec(new ErrorDialogRunnable(e));
+        getWorkbench().getDisplay().syncExec(new ErrorDialogRunnable(e, getLog()));
     }
 
     /**

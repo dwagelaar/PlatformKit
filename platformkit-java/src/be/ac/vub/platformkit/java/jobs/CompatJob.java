@@ -27,6 +27,7 @@ import org.eclipse.m2m.atl.core.launch.ILauncher;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 import be.ac.vub.platformkit.java.popup.util.ATLUtil;
+import be.ac.vub.platformkit.jobs.ProgressMonitorJob;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**

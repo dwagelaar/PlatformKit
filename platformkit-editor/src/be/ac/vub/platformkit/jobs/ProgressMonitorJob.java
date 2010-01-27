@@ -1,4 +1,4 @@
-package be.ac.vub.platformkit.java.jobs;
+package be.ac.vub.platformkit.jobs;
 
 import java.util.logging.Logger;
 
@@ -9,8 +9,8 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.ui.WorkbenchException;
 
-import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
  * General superclass for jobs with a progress monitor.
@@ -18,6 +18,10 @@ import be.ac.vub.platformkit.kb.IOntologies;
  */
 public abstract class ProgressMonitorJob extends Job {
 
+	/**
+	 * Creates a new {@link ProgressMonitorJob}
+	 * @param name the name of the job.
+	 */
 	public ProgressMonitorJob(String name) {
 		super(name);
 	}
@@ -62,6 +66,11 @@ public abstract class ProgressMonitorJob extends Job {
                 monitor.setCanceled(true);
             }
         }
+        checkCanceled(monitor);
+    }
+    
+    protected void checkCanceled(IProgressMonitor monitor)
+    throws OperationCanceledException {
         if (monitor.isCanceled()) {
             cancelled = true;
             throw new OperationCanceledException("Operation cancelled by user");
@@ -132,13 +141,13 @@ public abstract class ProgressMonitorJob extends Job {
 	        runAction(monitor);
 	        st = new Status(
 	                IStatus.OK, 
-	                PlatformkitJavaPlugin.getPlugin().getBundle().getSymbolicName(), 
+	                PlatformkitEditorPlugin.getPlugin().getBundle().getSymbolicName(), 
 	                getName() + " completed successfully");
 		} catch (Exception e) {
-			PlatformkitJavaPlugin.getPlugin().report(e);
+			PlatformkitEditorPlugin.report(e);
 	        st = new Status(
 	                IStatus.ERROR, 
-	                PlatformkitJavaPlugin.getPlugin().getBundle().getSymbolicName(), 
+	                PlatformkitEditorPlugin.getPlugin().getBundle().getSymbolicName(), 
 	                e.getLocalizedMessage(),
 	                e);
 	        catchCleanup();

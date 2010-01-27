@@ -186,8 +186,8 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
      * Reports an exception/error in the log and on the screen.
      * @param e the exception to report.
      */
-    public void report(Throwable e) {
-        getPlugin().getWorkbench().getDisplay().syncExec(new ErrorDialogRunnable(e));
+    public static void report(Throwable e) {
+        getPlugin().getWorkbench().getDisplay().syncExec(new ErrorDialogRunnable(e, getPlugin().getLog()));
     }
 
     /**

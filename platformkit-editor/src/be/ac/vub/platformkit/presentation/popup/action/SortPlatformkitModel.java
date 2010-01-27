@@ -1,96 +1,43 @@
 package be.ac.vub.platformkit.presentation.popup.action;
 
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
 
-import be.ac.vub.platformkit.ConstraintSet;
-import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
-import be.ac.vub.platformkit.kb.IOntologies;
-import be.ac.vub.platformkit.presentation.util.PlatformKitException;
+import be.ac.vub.platformkit.ConstraintSpace;
+import be.ac.vub.platformkit.presentation.jobs.ConstraintSpaceJob;
+import be.ac.vub.platformkit.presentation.jobs.SortPlatformkitModelJob;
 
 /**
  * Abstract action for sorting the constraint sets in a PlatformKit model.
- * @author dennis
- *
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
-public abstract class SortPlatformkitModel extends ConstraintSpaceAction {
-    /**
-     * Most-specific first mode.
-     */
-    public static final int MOST_SPECIFIC = 0;
-    /**
-     * Least-specific first mode.
-     */
-    public static final int LEAST_SPECIFIC = 1;
-    
-    private int mode;
-    private String title;
-    
+public abstract class SortPlatformkitModel extends ObjectSelectionAction {
+
+	protected ConstraintSpaceJob job;
+
 	/**
-	 * Constructor for Action1.
-     * @throws IllegalArgumentException
+	 * Creates a new {@link SortPlatformkitModel}
+	 * @param mode {@link SortPlatformkitModelJob#MOST_SPECIFIC} or {@link SortPlatformkitModelJob#LEAST_SPECIFIC}.
+	 * @throws IllegalArgumentException
 	 */
 	public SortPlatformkitModel(int mode) throws IllegalArgumentException {
 		super();
-        this.mode = mode;
-        StringBuffer buf = new StringBuffer();
-        switch (mode) {
-            case MOST_SPECIFIC:  buf.append("Most");
-            break;
-            case LEAST_SPECIFIC: buf.append("Least");
-            break;
-            default: throw new IllegalArgumentException("Invalid mode");
-        }
-        buf.append(" Specific First");
-        title = buf.toString();
+		job = new SortPlatformkitModelJob(mode);
 	}
 
-    /**
-     * Invoked when the action is executed.
-     * @param monitor
-     * @throws Exception
-     */
-    protected final void runAction(IProgressMonitor monitor)
-    throws Exception {
-        monitor.beginTask("Sorting PlatformKit model " + title, 5);
-        IOntologies ont = space.getKnowledgeBase();
-        if (ont == null) {
-            monitor.subTask("Loading source ontologies...");
-            ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
-            space.setKnowledgeBase(ont);
-            if (!space.init(true)) {
-                throw new PlatformKitException(
-                        "Ontologies not pre-classified - Choose 'Classify Taxonomy' first");
-            }
-            worked(monitor);
-        } else {
-        	monitor.subTask("Using pre-loaded source ontologies...");
-        	worked(monitor);
-        }
-        monitor.subTask("Attaching transitive reasoner...");
-        ont.attachTransitiveReasoner();
-        worked(monitor);
-        monitor.subTask("Retrieving intersection set...");
-        ConstraintSet is = space.getIntersectionSet();
-        is.getIntersection();
-        worked(monitor);
-        EList<ConstraintSet> specific;
-        switch (mode) {
-            case MOST_SPECIFIC:
-                monitor.subTask("Determining most-specific constraint sets...");
-                specific = space.getMostSpecific(false);
-            break;
-            case LEAST_SPECIFIC:
-                monitor.subTask("Determining least-specific constraint sets...");
-                specific = space.getLeastSpecific(false);
-            break;
-            default: throw new IllegalArgumentException("Invalid mode");
-        }
-        worked(monitor);
-        monitor.subTask("Sorting CDD configuration options...");
-        //cannot run in compound command
-        editingDomain.getCommandStack().execute(createRemoveConstraintSetCommand(space.getConstraintSet()));
-        editingDomain.getCommandStack().execute(createAddConstraintSetCommand(specific));
-        worked(monitor);
-    }
+	/*
+	 * (non-Javadoc)
+	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
+	 */
+	public void run(IAction action) {
+		// run operation
+		job.setEditingDomain(editingDomain);
+		job.setSpace((ConstraintSpace) ((IStructuredSelection) selection).getFirstElement());
+		job.setUser(true);
+		// lock editor
+		IWorkbenchSiteProgressService siteService = (IWorkbenchSiteProgressService) 
+		part.getSite().getAdapter(IWorkbenchSiteProgressService.class);
+		siteService.schedule(job);
+	}
 }

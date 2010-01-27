@@ -11,6 +11,7 @@ import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 import be.ac.vub.platformkit.java.actions.ShowCompatResultAction;
 import be.ac.vub.platformkit.java.jobs.CompatJob;
 import be.ac.vub.platformkit.java.ui.util.PlatformAPIDialogRunnable;
+import be.ac.vub.platformkit.presentation.popup.action.SelectionAction;
 
 /**
  * Context menu action for creating compatibility reports for UML dependency models 
@@ -22,9 +23,7 @@ public class CompatAction extends SelectionAction {
 	protected ShowCompatResultAction showResultAction;
     
     /**
-     * Creates a CompatAction
-     * @param apiResource The URL to the UML model of the API to compare against
-     * @param apiName The name of the API to compare against
+     * Creates a {@link CompatAction}.
      */
 	public CompatAction() {
 		super();

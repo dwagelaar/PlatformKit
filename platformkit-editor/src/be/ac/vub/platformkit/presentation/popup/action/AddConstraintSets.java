@@ -1,34 +1,31 @@
 package be.ac.vub.platformkit.presentation.popup.action;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
 
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
+import be.ac.vub.platformkit.presentation.jobs.AddConstraintSetsJob;
 import be.ac.vub.platformkit.ui.util.FileDialogRunnable;
 
 /**
- * Abstract action for adding new ConstraintSets to a ConstraintSpace.
- * Each context-constrained element should have an EAnnotation with
- * source set to 'CDDToolkit' and containing a DetailsEntry with the key
- * set to 'ContextConstraint' and the value set to the ontology constraint.
- * @author dennis
- * @see EAnnotation
+ * Abstract action for adding new {@link ConstraintSet}s to a {@link ConstraintSpace}.
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
-public abstract class AddConstraintSets extends ConstraintSpaceAction {
+public abstract class AddConstraintSets extends ViewerFilterAction {
+
     private String sourceName;
+	protected AddConstraintSetsJob job;
+
     /**
-	 * Constructor for Action1.
+	 * Creates a new {@link AddConstraintSets}.
      * @param sourceName The description of the source model type,
      * e.g. "Product Line" or "Product Configuration".
 	 */
@@ -37,25 +34,25 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
         setSourceName(sourceName);
 	}
 
-    /**
-     * Invoked when the action is executed.
-     * @param monitor
-     * @throws Exception
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
      */
-    protected final void runAction(IProgressMonitor monitor)
-    throws Exception {
-        monitor.beginTask("Adding " + getSourceName() + "s", 2);
-        monitor.subTask("Getting " + getSourceName() + "(s)...");
+	public void run(IAction action) {
         Resource[] sources = getSourceModels();
-        worked(monitor);
         if (sources == null) {
             return;
         }
-        monitor.subTask("Adding Constraint Sets for selected " + getSourceName() + "s...");
-        List<Command> commands = createCommands(sources);
-        Command cmd = new CompoundCommand(commands);
-        editingDomain.getCommandStack().execute(cmd);
-        worked(monitor);
+	    // run operation
+        job.setSourceName(getSourceName());
+        job.setEditingDomain(editingDomain);
+        job.setSources(sources);
+    	job.setSpace((ConstraintSpace) ((IStructuredSelection) selection).getFirstElement());
+    	job.setUser(true);
+	    // lock editor
+	    IWorkbenchSiteProgressService siteService = (IWorkbenchSiteProgressService) 
+	    	part.getSite().getAdapter(IWorkbenchSiteProgressService.class);
+	    siteService.schedule(job);
     }
     
     /**
@@ -71,15 +68,16 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
         dlg.setTitle("Load " + getSourceName() + "(s)");
         dlg.setMessage("Select " + getSourceName() + "(s)");
         dlg.setInstruction("Select resources:");
-        if (filter != null) {
-            dlg.setFilter(filter);
+        if (getFilter() != null) {
+            dlg.setFilter(getFilter());
         }
         PlatformkitEditorPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
         Object[] files = dlg.getFiles();
         if (files != null) {
+    		ResourceSet resourceSet = new ResourceSetImpl();
             Resource[] models = new Resource[files.length];
             for (int i = 0; i < models.length; i++) {
-                models[i] = loadModel((IResource) files[i]);
+                models[i] = loadModel((IResource) files[i], resourceSet);
             }
             return models;
         } else {
@@ -87,44 +85,22 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
         }
     }
     
-    /**
-     * @return A List of Commands to be executed to add new ConstraintSets that reflect the given source models.
-     * @param sources
-     */
-    private List<Command> createCommands(Resource[] sources) {
-    	List<Command> commands = new ArrayList<Command>();
-    	EList<String> ontologies = new BasicEList<String>();
-    	EList<ConstraintSet> constraintSets = new BasicEList<ConstraintSet>();
-    	ontologies.addAll(space.getOntology());
-        for (int i = 0; i < sources.length; i++) {
-        	addOntologies(sources[i], ontologies);
-        	addConstraintSet(sources[i], constraintSets);
-        }
-        ontologies.removeAll(space.getOntology());
-        if (!ontologies.isEmpty()) {
-            commands.add(createAddOntologyCommand(ontologies));
-        }
-        if (!constraintSets.isEmpty()) {
-            commands.add(createAddConstraintSetCommand(constraintSets));
-        }
-        return commands;
-    }
-
-    /**
-     * Searches source for ontologies and adds them to the list.
-     * @see ConstraintSpace#getOntology()
-     * @param source
-     * @param ontologies
-     */
-    protected abstract void addOntologies(Resource source, EList<String> ontologies);
-
-    /**
-     * Searches source for constraints and adds a constraint set to the list.
-     * @see ConstraintSpace#getConstraintSet()
-     * @param source
-     * @param constraintSets
-     */
-    protected abstract void addConstraintSet(Resource source, EList<ConstraintSet> constraintSets);
+	/**
+	 * Loads a registered Ecore model from the given file.
+	 * @param file
+	 * @param resourceSet
+	 * @return The Ecore resource containing the model.
+	 * @throws IllegalArgumentException
+	 * @throws RuntimeException
+	 */
+	protected Resource loadModel(IResource file, ResourceSet resourceSet) 
+	throws IllegalArgumentException, RuntimeException {
+		URI source = URI.createPlatformResourceURI(
+				file.getProject().getName() + '/' +
+				file.getProjectRelativePath().toString(),
+				true);
+		return resourceSet.getResource(source, true);
+	}
 
     /**
      * @param sourceName The sourceName to set.
@@ -139,4 +115,5 @@ public abstract class AddConstraintSets extends ConstraintSpaceAction {
     public String getSourceName() {
         return sourceName;
     }
+
 }
