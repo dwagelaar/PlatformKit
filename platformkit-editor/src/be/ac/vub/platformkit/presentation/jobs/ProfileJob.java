@@ -38,7 +38,6 @@ import be.ac.vub.platformkit.presentation.util.provider.PlatformKitItemProviderA
 public class ProfileJob extends ConstraintSpaceJob {
 
 	private EObject selectedObject;
-
 	/**
 	 * Creates a new {@link ProfileJob}.
 	 */
@@ -232,9 +231,6 @@ public class ProfileJob extends ConstraintSpaceJob {
 					logger.info("Attached new validator to wrapper " + pkAdapter.toString());
 				}
 			}
-		}
-		if (validator == null) {
-			return;
 		}
 	}
 

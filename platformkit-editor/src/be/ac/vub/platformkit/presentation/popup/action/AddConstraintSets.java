@@ -72,7 +72,7 @@ public abstract class AddConstraintSets extends ViewerFilterAction {
             dlg.setFilter(getFilter());
         }
         PlatformkitEditorPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
-        Object[] files = dlg.getFiles();
+        Object[] files = dlg.getSelection();
         if (files != null) {
     		ResourceSet resourceSet = new ResourceSetImpl();
             Resource[] models = new Resource[files.length];

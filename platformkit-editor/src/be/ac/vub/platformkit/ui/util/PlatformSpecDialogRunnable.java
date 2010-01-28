@@ -2,6 +2,8 @@ package be.ac.vub.platformkit.ui.util;
 
 import java.io.IOException;
 
+import org.eclipse.jface.window.Window;
+
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.ui.dialogs.PlatformSpecDialog;
 
@@ -26,11 +28,12 @@ public class PlatformSpecDialogRunnable extends FileDialogRunnable {
             dlg.setTitleAreaMessage(getMessage());
             dlg.setMessage(getInstruction());
             dlg.open();
-            if (dlg.getReturnCode() == PlatformSpecDialog.OK) {
+    	    setReturnCode(dlg.getReturnCode());
+            if (dlg.getReturnCode() == Window.OK) {
                 if (dlg.isFromFileSelected()) {
                     super.run();
                 } else {
-                    result = dlg.getResult();
+                    setSelection(dlg.getResult());
                 }
             }
         } catch (IOException e) {
