@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Compile be.ac.vub.platformkit.bundle" default="main">
+	<target name="main">
+		<ant antfile="build.xml" dir="../org.apache.log4j" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-kb-jena-doc" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-kb-owlapi-doc" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-doc" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-pellet" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-kb-owlapi" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-kb-jena" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-edit" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-editor" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-examples" target="build.jars"/>
+		<ant antfile="build.xml" dir="../platformkit-java" target="build.jars"/>
+	</target>
+</project>

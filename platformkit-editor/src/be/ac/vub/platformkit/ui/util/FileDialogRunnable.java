@@ -12,7 +12,10 @@ import org.eclipse.ui.model.WorkbenchLabelProvider;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.ui.dialogs.PlatformKitTreeSelectionDialog;
 
-
+/**
+ * Wraps a {@link PlatformKitTreeSelectionDialog} for workspace resources in a {@link Runnable}. 
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public class FileDialogRunnable implements Runnable {
 
     private String title = "Select Resources";
@@ -23,8 +26,7 @@ public class FileDialogRunnable implements Runnable {
     private int returnCode;
 
     /**
-     * Creates a new FileDialogRunnable.
-     * @param message The dialog message.
+     * Creates a new {@link FileDialogRunnable}.
      */
     public FileDialogRunnable() {
     	super();

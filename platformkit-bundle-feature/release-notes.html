@@ -7,7 +7,28 @@
 <body lang="EN-US">
 <h2>Release Notes</h2>
 
-<h3>PlatformKit 1.1.11 ($Rev$ - $Date$)</h3>
+<h3>PlatformKit 1.2.0 ($Rev$ - $Date$)</h3>
+
+<ul>
+	<li>Added Nokia N800 example platform.</li>
+	<li>Use OWL 2.0 datatype restrictions for JavaBytecodeFormat.</li>
+	<li>Add Maemo package manager to platform ontology.</li>
+	<li>Use variable file name for compatibility report instead of 'pkCompatReport.uml'.</li>
+	<li>Force refresh of EMF tree editor context menu after profiling by re-setting the current selection.</li>
+	<li>Refactor PlatformKit context menu actions into Jobs that can be run in the background.</li>
+	<li>Refactored class hierarchy and file locations.</li>
+	<li>Added <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=41">support checking Java dependencies against multiple APIs</a>.</li>
+	<li>Add 16x16 PlatformKit logo to context menus.</li>
+	<li>Restructure Knowledgebase Plug-ins and upgrade to Jena 2.6.2, Pellet 2.0.1, with support for OWL 2.0.</li>
+	<li>Added <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=44">support for directly determining compatibility of Java projects and Jar files</a>.</li>
+	<li>Fix bug where owned attributes/operations of DataTypes were not copied into the compatibility report; also copy only Literal* if they are owned by Properties or Parameters, as other kinds of owners will not be copied into the report.</li>
+	<li>Add knowledge on bytecode format: major/minor version numbers for each Java runtime version and preverification looks the same in binaries for preverify1.0 (against CLDC 1.0) and preverify1.1 (against CLDC 1.1).</li>
+	<li><a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=41">First implementation of multiple API support</a>; no dependency checking is done amongst the APIs themselves (i.e. you have to check for yourself of SWT 3.0 and JDK 1.1 actually combine).</li>
+	<li>Added SWT 3.5 API.</li>
+	<li>Fix <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=38">bug 38</a>: When determining compatibility with a Java API, the error: "org.eclipse.m2m.atl.core.launcher  not found, check the spelling or register it manually" is given.</li>
+</ul>
+
+<h3>PlatformKit 1.1.11 (Rev: 7826 - Date: 2009-12-01 16:52:58 +0100 (Tue, 01 Dec 2009))</h3>
 
 <ul>
     <li>Added caching option for built-in API models.</li>

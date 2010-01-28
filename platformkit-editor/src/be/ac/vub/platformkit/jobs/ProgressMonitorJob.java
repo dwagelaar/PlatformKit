@@ -166,14 +166,14 @@ public abstract class ProgressMonitorJob extends Job {
     protected abstract void runAction(IProgressMonitor monitor) throws Exception;
 
 	/**
-	 * Invoked after an Exception is caught in {@link #runAction(IProgressMonitor))}
+	 * Invoked after an Exception is caught in {@link #run(IProgressMonitor)}.
 	 */
 	protected void catchCleanup() {
 		//stub
 	}
 
 	/**
-	 * Invoked in "finally" block after {@link #runAction(IProgressMonitor)}
+	 * Invoked in "finally" block after {@link #run(IProgressMonitor)}.
 	 */
 	protected void finallyCleanup() {
 		//stub
