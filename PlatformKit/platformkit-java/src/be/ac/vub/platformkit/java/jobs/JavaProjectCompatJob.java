@@ -71,7 +71,10 @@ public class JavaProjectCompatJob extends CompatJob {
 			worked(monitor, "Created dependency model");
 			subTask(monitor, "Loading dependency model...");
 			setDeps(modelLoader.loadDEPSModel(getUml2(), jarToUML.getModel().eResource()));
-			setCrPath(file.getParent().getProjectRelativePath().append("pkCompatReport.uml"));
+			setCrPath(file.getProjectRelativePath()
+					.removeFileExtension()
+					.removeFileExtension()
+					.addFileExtension("cr.uml"));
 			worked(monitor, "Loaded dependency model");
 		}
 
