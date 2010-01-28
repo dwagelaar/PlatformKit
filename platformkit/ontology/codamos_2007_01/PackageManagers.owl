@@ -70,6 +70,10 @@
     <rdfs:subClassOf rdf:resource="#Dpkg"/>
   </owl:Class>
 
+  <owl:Class rdf:ID="Maemo">
+    <rdfs:subClassOf rdf:resource="#Dpkg"/>
+  </owl:Class>
+
   <owl:Class rdf:ID="Ipkg">
     <rdfs:subClassOf rdf:resource="&platform;#PackageManager"/>
     <owl:disjointWith rdf:resource="#DMG"/>
