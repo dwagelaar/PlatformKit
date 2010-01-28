@@ -217,7 +217,7 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
     /**
      * @param imageFilePath
      * @return The ImageDescriptor object for imageFilePath
-     * @see #imageDescriptorFromPlugin(String, String)
+     * @see AbstractUIPlugin#imageDescriptorFromPlugin(String, String)
      */
     public static ImageDescriptor getImageDescriptor(String imageFilePath) {
     	return AbstractUIPlugin.imageDescriptorFromPlugin(getPlugin().getBundle().getSymbolicName(), imageFilePath);

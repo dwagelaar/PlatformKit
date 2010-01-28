@@ -5,103 +5,23 @@
       version="1.2.0"
       provider-name="Vrije Universiteit Brussel">
 
-   <description>
+   <description url="about.html">
       PlatformKit adapter for the Jena framework.
-
-Jena is a Java framework for building Semantic Web applications. It provides a programmatic environment for RDF, RDFS and OWL, including a rule-based inference engine.
-
-Jena is open source and grown out of work with the HP Labs Semantic Web Programme.
-
-The Jena Framework includes:
-
-    * A RDF API
-    * Reading and writing RDF in RDF/XML, N3 and N-Triples
-    * An OWL API
-    * In-memory and persistent storage
-    * RDQL – a query language for RDF
    </description>
 
-   <copyright>
-      © Copyright 2005, 2006, 2007, 2008 Dennis Wagelaar, Vrije Universiteit
-Brussel
-
-* Jena (http://jena.sourceforge.net/) *
-
-© Copyright 2000, 2001, 2002, 2003, 2004, 2005 2006, 2007 Hewlett-Packard Development Company, LP
-
-Jena includes software developed by the Apache Software Foundation (http://www.apache.org/).
-Jena is built on top of other sub-systems which we gratefully acknowledge:
-* Xerces
-* JUnit
-* Jakarta ORO
-* ICU4J
-* util.concurrent from Doug Lea
+   <copyright url="about.html">
+      © Copyright 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+      
+      PlatformKit includes third-party software. Copyrights for the included third-party are available in the full copyright notice.
    </copyright>
 
-   <license>
+   <license url="about.html">
       Vrije Universiteit Brussel makes available all content in this
 plug-in. The Content in this plug-in is provided to you under
 the terms and conditions of the Eclipse Public License Version
-1.0 (&quot;EPL&quot;). A copy of the EPL is available at http://www.eclipse.org/legal/epl-v10.html.
-
-Applicable Licenses
-
-PlatformKit is built upon a number of other open source technologies and products. Here is a list of those products with their licenses.
-
-* Jena (http://jena.sourceforge.net/) *
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions
-are met:
-
-1. Redistributions of source code must retain the above copyright
-notice, this list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright
-notice, this list of conditions and the following disclaimer
-in the documentation and/or other materials provided with the
-distribution.
-3. The name of the author may not be used to endorse or promote
-products derived from this software without specific prior written
-permission.
-
-THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS&apos;&apos; AND ANY EXPRESS
-OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
-DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-* ICU4J *
-
-ICU 1.8.1 and later COPYRIGHT AND PERMISSION NOTICE Copyright
-(c) 1995-2003 International Business Machines Corporation and others All
-rights reserved. Permission is hereby granted, free of charge, to any
-person obtaining a copy of this software and associated documentation files
-(the &quot;Software&quot;), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, and/or sell copies of the Software, and to permit persons to
-whom the Software is furnished to do so, provided that the above copyright
-notice(s) and this permission notice appear in all copies of the Software
-and that both the above copyright notice(s) and this permission notice
-appear in supporting documentation.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY
-RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS
-NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL
-DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
-PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
-ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
-SOFTWARE. Except as contained in this notice, the name of a copyright
-holder shall not be used in advertising or otherwise to promote the sale,
-use or other dealings in this Software without prior written authorization
-of the copyright holder.
+1.0 (&quot;EPL&quot;), with the exception of the included third-party
+software, for which the applicable licenses are available in the full
+license notice. A copy of the EPL is available at http://www.eclipse.org/legal/epl-v10.html.
    </license>
 
    <url>
@@ -120,22 +40,22 @@ of the copyright holder.
 
    <plugin
          id="be.ac.vub.platformkit.kb.jena"
-         download-size="36"
-         install-size="36"
+         download-size="6336"
+         install-size="6336"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.kb.jena.doc"
-         download-size="0"
-         install-size="0"
+         download-size="9032"
+         install-size="9032"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.apache.log4j"
-         download-size="0"
-         install-size="0"
+         download-size="392"
+         install-size="392"
          version="0.0.0"
          unpack="false"/>
 

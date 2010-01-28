@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit"
       label="PlatformKit"
-      version="1.1.11"
+      version="1.2.0"
       provider-name="Vrije Universiteit Brussel"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">
@@ -51,50 +51,50 @@ the terms and conditions of the Eclipse Public License Version
 
    <plugin
          id="be.ac.vub.platformkit.editor"
-         download-size="204"
-         install-size="204"
+         download-size="228"
+         install-size="228"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.edit"
-         download-size="31"
-         install-size="31"
+         download-size="36"
+         install-size="36"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit"
-         download-size="121"
-         install-size="121"
+         download-size="128"
+         install-size="128"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.doc"
-         download-size="728"
-         install-size="728"
+         download-size="876"
+         install-size="876"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.java"
-         download-size="4268"
-         install-size="4268"
+         download-size="4568"
+         install-size="4568"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.examples"
-         download-size="277"
-         install-size="277"
+         download-size="288"
+         install-size="288"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.pellet"
-         download-size="0"
-         install-size="0"
+         download-size="2452"
+         install-size="2452"
          version="0.0.0"
          unpack="false"/>
 

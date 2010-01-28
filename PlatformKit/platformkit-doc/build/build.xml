@@ -13,6 +13,20 @@
 		</sequential>
 	</macrodef>
 
+	<macrodef name="copyWorkspaceRef">
+		<attribute name="fromdir" default="../../platformkit-doc"/>
+		<attribute name="todir" default="be.ac.vub.platformkit.doc"/>
+		<sequential>
+			<delete dir="../../@{todir}"/>
+			<mkdir dir="../../@{todir}"/>
+			<copy todir="../../@{todir}/">
+				<fileset dir="@{fromdir}">
+					<include name="**/package-list"/>
+				</fileset>
+			</copy>
+		</sequential>
+	</macrodef>
+
 	<target name="clean">
 		<delete dir="../doc/javadoc"/>
 	</target>
@@ -20,6 +34,7 @@
 	<target name="copyRefs">
 		<copyRef dir="org.eclipse.emf.doc"/>
 		<copyRef dir="org.eclipse.platform.doc.isv"/>
+		<copyWorkspaceRef fromdir="../../../JarToUML/jar2uml-doc" todir="be.ac.vub.jar2uml.doc"/>
 	</target>
 	
 	<target name="javadoc" depends="clean, copyRefs">
@@ -41,12 +56,22 @@
 				be.ac.vub.platformkit.util,
 				be.ac.vub.platformkit.provider,
 				be.ac.vub.platformkit.editor.preferences,
+				be.ac.vub.platformkit.jobs,
 				be.ac.vub.platformkit.presentation,
+				be.ac.vub.platformkit.presentation.jobs,
 				be.ac.vub.platformkit.presentation.logging,
 				be.ac.vub.platformkit.presentation.popup.action,
 				be.ac.vub.platformkit.presentation.util,
 				be.ac.vub.platformkit.presentation.util.provider,
-				be.ac.vub.platformkit.java" 
+				be.ac.vub.platformkit.ui.dialogs,
+				be.ac.vub.platformkit.ui.util,
+				be.ac.vub.platformkit.java,
+				be.ac.vub.platformkit.java.actions,
+				be.ac.vub.platformkit.java.jobs,
+				be.ac.vub.platformkit.java.popup.actions,
+				be.ac.vub.platformkit.java.popup.util,
+				be.ac.vub.platformkit.java.ui.dialogs,
+				be.ac.vub.platformkit.java.ui.util"
 			source="1.5" 
 			sourcepath="
 				../../platformkit/src:
@@ -60,12 +85,14 @@
 			<link href="http://www.osgi.org/javadoc/r4v42/"/>
 			<link href="../../../org.eclipse.emf.doc/references/javadoc"/>
 			<link href="../../../org.eclipse.platform.doc.isv/reference/api"/>
+			<link href="../../../be.ac.vub.jar2uml.doc/doc/javadoc"/>
 			<link href="http://logging.apache.org/log4j/docs/api/"/>
 			<classpath>
 				<fileset dir="${eclipse.home}/plugins">
 					<include name="**/org.eclipse.*.jar"/>
 					<include name="**/org.junit*/*.jar"/>
 				</fileset>
+				<pathelement path="../../../JarToUML/jar2uml/bin"/>
 			</classpath>
 		</javadoc>
 	</target>
