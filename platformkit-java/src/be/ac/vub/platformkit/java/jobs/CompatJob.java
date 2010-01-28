@@ -317,7 +317,7 @@ public class CompatJob extends ProgressMonitorJob {
 		 */
 		protected void setCrPath(IPath crPath) {
 			this.crPath = crPath;
-			setCrLocation("platform:/resource/" + file.getProject().getName() + "/" + crPath.toString());
+			setCrLocation("platform:/resource/" + getFile().getProject().getName() + "/" + crPath.toString());
 		}
 		/**
 		 * @return the crLocation
@@ -370,7 +370,10 @@ public class CompatJob extends ProgressMonitorJob {
 			Assert.isNotNull(file);
 			final String fileLocation = "platform:/resource/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toString();
 			setDeps(modelLoader.loadDEPSModel(getUml2(), fileLocation));
-			setCrPath(file.getParent().getProjectRelativePath().append("pkCompatReport.uml"));
+			setCrPath(file.getProjectRelativePath()
+					.removeFileExtension()
+					.removeFileExtension()
+					.addFileExtension("cr.uml"));
 			worked(monitor, "Loaded dependency model");
 		}
 
