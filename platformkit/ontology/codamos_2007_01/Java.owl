@@ -161,15 +161,47 @@
     <rdfs:domain rdf:resource="#JavaBytecodeFormat" />
   </owl:DatatypeProperty>
 
+  <owl:DatatypeProperty rdf:ID="preverified">
+    <rdf:type rdf:resource="&owl;#FunctionalProperty" />
+    <rdfs:range rdf:resource="&xsd;#boolean" />
+    <rdfs:domain rdf:resource="#JavaBytecodeFormat" />
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:ID="JavaPreverifiedBytecodeFormat">
+    <rdfs:subClassOf rdf:resource="#JavaBytecodeFormat"/>
+    <owl:equivalentClass>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#preverified"/>
+            <owl:hasValue rdf:datatype="&xsd;#boolean">true</owl:hasValue>
+        </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+
   <owl:Class rdf:ID="Java1.1PreverifiedBytecodeFormat">
     <rdfs:subClassOf rdf:resource="#JavaBytecodeFormat"/>
-    <owl:disjointWith rdf:resource="#Java1.1BytecodeFormat"/>
-    <owl:equivalentClass rdf:resource="#Java1.1Preverified1.0BytecodeFormat"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="#JavaPreverifiedBytecodeFormat"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#majorVersionNumber"/>
+            <owl:someValuesFrom>
+              <rdf:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;#nonNegativeInteger"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                  <rdf:Description>
+                    <xsd:minInclusive rdf:datatype="&xsd;#nonNegativeInteger">45</xsd:minInclusive>
+                  </rdf:Description>
+                </owl:withRestrictions>
+              </rdf:Datatype>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:ID="Java1.1Preverified1.0BytecodeFormat">
-    <rdfs:subClassOf rdf:resource="#JavaBytecodeFormat"/>
-    <owl:disjointWith rdf:resource="#Java1.1BytecodeFormat"/>
     <owl:equivalentClass rdf:resource="#Java1.1PreverifiedBytecodeFormat"/>
   </owl:Class>
 
@@ -179,35 +211,126 @@
 
   <owl:Class rdf:ID="Java1.1BytecodeFormat">
     <rdfs:subClassOf rdf:resource="#JavaBytecodeFormat"/>
-    <owl:disjointWith rdf:resource="#Java1.1Preverified1.0BytecodeFormat"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#majorVersionNumber"/>
+        <owl:someValuesFrom>
+          <rdfs:Datatype>
+            <owl:onDatatype rdf:resource="&xsd;#nonNegativeInteger"/>
+            <owl:withRestrictions rdf:parseType="Collection">
+              <rdf:Description>
+                <xsd:minInclusive rdf:datatype="&xsd;#nonNegativeInteger">45</xsd:minInclusive>
+              </rdf:Description>
+            </owl:withRestrictions>
+          </rdfs:Datatype>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:ID="Java1.2BytecodeFormat">
     <rdfs:subClassOf rdf:resource="#Java1.1BytecodeFormat"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#majorVersionNumber"/>
+        <owl:someValuesFrom>
+          <rdfs:Datatype>
+            <owl:onDatatype rdf:resource="&xsd;#nonNegativeInteger"/>
+            <owl:withRestrictions rdf:parseType="Collection">
+              <rdf:Description>
+                <xsd:minInclusive rdf:datatype="&xsd;#nonNegativeInteger">46</xsd:minInclusive>
+              </rdf:Description>
+            </owl:withRestrictions>
+          </rdfs:Datatype>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:ID="Java1.3BytecodeFormat">
     <rdfs:subClassOf rdf:resource="#Java1.2BytecodeFormat"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#majorVersionNumber"/>
+        <owl:someValuesFrom>
+          <rdfs:Datatype>
+            <owl:onDatatype rdf:resource="&xsd;#nonNegativeInteger"/>
+            <owl:withRestrictions rdf:parseType="Collection">
+              <rdf:Description>
+                <xsd:minInclusive rdf:datatype="&xsd;#nonNegativeInteger">47</xsd:minInclusive>
+              </rdf:Description>
+            </owl:withRestrictions>
+          </rdfs:Datatype>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:ID="Java1.4BytecodeFormat">
     <rdfs:subClassOf rdf:resource="#Java1.3BytecodeFormat"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#majorVersionNumber"/>
+        <owl:someValuesFrom>
+          <rdfs:Datatype>
+            <owl:onDatatype rdf:resource="&xsd;#nonNegativeInteger"/>
+            <owl:withRestrictions rdf:parseType="Collection">
+              <rdf:Description>
+                <xsd:minInclusive rdf:datatype="&xsd;#nonNegativeInteger">48</xsd:minInclusive>
+              </rdf:Description>
+            </owl:withRestrictions>
+          </rdfs:Datatype>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:ID="Java5BytecodeFormat">
     <rdfs:subClassOf rdf:resource="#Java1.4BytecodeFormat"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#majorVersionNumber"/>
+        <owl:someValuesFrom>
+          <rdfs:Datatype>
+            <owl:onDatatype rdf:resource="&xsd;#nonNegativeInteger"/>
+            <owl:withRestrictions rdf:parseType="Collection">
+              <rdf:Description>
+                <xsd:minInclusive rdf:datatype="&xsd;#nonNegativeInteger">49</xsd:minInclusive>
+              </rdf:Description>
+            </owl:withRestrictions>
+          </rdfs:Datatype>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:ID="Java6BytecodeFormat">
     <rdfs:subClassOf rdf:resource="#Java5BytecodeFormat"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#majorVersionNumber"/>
+        <owl:someValuesFrom>
+          <rdfs:Datatype>
+            <owl:onDatatype rdf:resource="&xsd;#nonNegativeInteger"/>
+            <owl:withRestrictions rdf:parseType="Collection">
+              <rdf:Description>
+                <xsd:minInclusive rdf:datatype="&xsd;#nonNegativeInteger">50</xsd:minInclusive>
+              </rdf:Description>
+            </owl:withRestrictions>
+          </rdfs:Datatype>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
   </owl:Class>
 
   <Java1.1Preverified1.0BytecodeFormat rdf:ID="theJava1.1Preverified1.0BytecodeFormat">
     <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">45</majorVersionNumber>
+    <preverified rdf:datatype="&xsd;#boolean">true</preverified>
   </Java1.1Preverified1.0BytecodeFormat>
 
   <Java1.1Preverified1.1BytecodeFormat rdf:ID="theJava1.1Preverified1.1BytecodeFormat">
     <majorVersionNumber rdf:datatype="&xsd;#nonNegativeInteger">45</majorVersionNumber>
+    <preverified rdf:datatype="&xsd;#boolean">true</preverified>
   </Java1.1Preverified1.1BytecodeFormat>
 
   <Java1.1BytecodeFormat rdf:ID="theJava1.1BytecodeFormat">
