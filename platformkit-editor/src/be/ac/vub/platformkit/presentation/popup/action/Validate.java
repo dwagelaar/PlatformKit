@@ -7,6 +7,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
+import org.eclipse.jface.window.Window;
 import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
 
 import be.ac.vub.platformkit.ConstraintSpace;
@@ -63,8 +64,11 @@ public class Validate extends ViewerFilterAction {
 			dlg.setFilter(getFilter());
 		}
 		PlatformkitEditorPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
+		if (dlg.getReturnCode() != Window.OK) {
+			return;
+		}
 		// run operation
-		job.setPlatformInstanceSources(dlg.getFiles());
+		job.setPlatformInstanceSources(dlg.getSelection());
 		job.setSpace((ConstraintSpace) ((IStructuredSelection) selection).getFirstElement());
 		job.setUser(true);
 		// lock editor
