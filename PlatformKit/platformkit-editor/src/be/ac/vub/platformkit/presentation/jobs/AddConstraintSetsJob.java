@@ -2,17 +2,29 @@ package be.ac.vub.platformkit.presentation.jobs;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.StringTokenizer;
+import java.util.Map.Entry;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
+import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
+import be.ac.vub.platformkit.PlatformkitFactory;
 
 /**
  * Abstract job for adding new {@link ConstraintSet}s to a {@link ConstraintSpace}.
@@ -25,8 +37,81 @@ import be.ac.vub.platformkit.ConstraintSpace;
  */
 public abstract class AddConstraintSetsJob extends ConstraintSpaceJob {
 
+	/**
+	 * Translates a path from the source URI location
+	 * to the target URI location
+	 * @param path The ontology path to translate
+	 * @param source The URI on which the path is based
+	 * @param target The URI to translate the path to
+	 * @return The translated ontology path
+	 */
+	protected static String translatePath(String path, URI source, URI target) {
+		URI pathURI = URI.createURI(path);
+		URI absURI = pathURI.resolve(source);
+		return absURI.deresolve(target, true, true ,true).toString();
+	}
+
+	/**
+	 * @param object
+	 * @return the annotations for the given object.
+	 */
+	protected static EList<EAnnotation> getEAnnotations(EObject object) {
+		if (object instanceof EModelElement) {
+			return ((EModelElement) object).getEAnnotations();
+		}
+		return null;
+	}
+
+	/**
+	 * @param object
+	 * @return Returns the ID attribute for the given EObject
+	 * or the qualified name for an ENamedElement.
+	 */
+	protected static Object getIDFrom(EObject object) {
+		EAttribute attr = getIDAttribute(object.eClass());
+		if (attr != null) {
+			return object.eGet(attr);
+		}
+		//Ecore does not specify 'name' as an ID for its meta-objects.
+		if (object instanceof ENamedElement) {
+			return getLabel((ENamedElement) object);
+		}
+		return null;
+	}
+
+	/**
+	 * @param metaClass
+	 * @return The EAttribute that is flagged as ID or null.
+	 */
+	protected static EAttribute getIDAttribute(EClass metaClass) {
+		EList<EObject> contents = metaClass.eContents();
+		for (int i = 0; i < contents.size(); i++) {
+			if (contents.get(i) instanceof EAttribute) {
+				EAttribute attr = (EAttribute) contents.get(i);
+				if (attr.isID()) {
+					return attr;
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * @param type
+	 * @return The qualified name of type.
+	 */
+	protected static String getLabel(ENamedElement type) {
+		EObject container = type.eContainer();
+		if (container instanceof ENamedElement) {
+			return getLabel((ENamedElement)container) + "::" + type.getName();
+		} else {
+			return type.getName();                
+		}
+	}
+
 	private String sourceName;
 	private Resource[] sources;
+	protected PlatformkitFactory factory = PlatformkitFactory.eINSTANCE;
 
 	/**
 	 * Creates a new {@link AddConstraintSetsJob}
@@ -89,6 +174,77 @@ public abstract class AddConstraintSetsJob extends ConstraintSpaceJob {
 	 * @param constraintSets
 	 */
 	protected abstract void addConstraintSet(Resource source, EList<ConstraintSet> constraintSets);
+
+	/**
+	 * Searches the metaobject for ontology annotations and adds them to the list.
+	 * @param object The metaobject.
+	 * @param ontologies The list of ontologies to add to.
+	 */
+	protected void addMetaObjectOntologies(EObject object, EList<String> ontologies) {
+		URI platformkitURI = getSpace().eResource().getURI();
+		Assert.isNotNull(object);
+		EList<EAnnotation> annotations = getEAnnotations(object);
+		if (annotations == null) {
+			return;
+		}
+		Assert.isNotNull(platformkitURI);
+		for (int i = 0; i < annotations.size(); i++) {
+			EAnnotation ann = annotations.get(i);
+			if ("PlatformKit".equals(ann.getSource())) {
+				String ont = ann.getDetails().get("Ontology");
+				if (ont != null) {
+					StringTokenizer onts = new StringTokenizer(ont, "\n");
+					while (onts.hasMoreTokens()) {
+						ont = onts.nextToken();
+						ont = translatePath(ont, ann.eResource().getURI(), platformkitURI);
+						if (!ontologies.contains(ont)) {
+							ontologies.add(ont);
+							logger.info("Added ontology " + ont);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Adds constraints to the given constraint set.
+	 * @param annotations the annotations to search for context constraints.
+	 * @param constraints the set of existing constraint strings.
+	 * @param set the constraint set to augment.
+	 */
+	protected void addConstraints(EList<EAnnotation> annotations, Set<String> constraints, ConstraintSet set) {
+		if (annotations == null) {
+			return;
+		}
+		for (int i = 0; i < annotations.size(); i++) {
+			EAnnotation ann = (EAnnotation) annotations.get(i);
+			if ("PlatformKit".equals(ann.getSource())) {
+				addConstraints(ann, constraints, set);
+			}
+		}
+	}
+
+	/**
+	 * Adds constraints to the given constraint set.
+	 * @param ann the annotation to search for context constraints.
+	 * @param constraints the set of existing constraint strings.
+	 * @param set the constraint set to augment.
+	 */
+	protected void addConstraints(EAnnotation ann, Set<String> constraints, ConstraintSet set) {
+		for (int i = 0; i < ann.getDetails().size(); i++) {
+			Entry<String, String> detail = ann.getDetails().get(i);
+			if ("PlatformConstraint".equals(detail.getKey())) {
+				String constraint = detail.getValue();
+				if (!constraints.contains(constraint) && (constraint != null)) {
+					Constraint c = factory.createConstraint();
+					c.setSet(set);
+					c.setOntClassURI(constraint);
+					constraints.add(constraint);
+				}
+			}
+		}
+	}
 
 	/**
 	 * @return the sourceName

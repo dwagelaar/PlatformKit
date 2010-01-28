@@ -23,7 +23,6 @@ import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
-import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
 
 /**
  * Operation for pre-classifying the taxonomy of ontology classes for a
@@ -179,7 +178,7 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 	  */
 	 protected void writeOntology(IOntologies ont, URI uri)
 	 throws CoreException, IOException {
-		 IPath platformkitPath = new Path(PlatformKitActionUtil.toPlatformResourcePath(uri));
+		 IPath platformkitPath = new Path(uri.toPlatformString(true));
 		 Assert.isNotNull(platformkitPath);
 		 IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(platformkitPath);
 		 Assert.isNotNull(file);
