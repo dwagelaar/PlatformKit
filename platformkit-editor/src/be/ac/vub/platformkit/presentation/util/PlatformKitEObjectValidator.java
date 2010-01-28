@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 import be.ac.vub.platformkit.ConstraintSet;
@@ -14,13 +15,13 @@ import be.ac.vub.platformkit.ConstraintSpace;
 
 /**
  * Validates EObjects against an internal ConstraintSpace copy.
- * @author dennis
- *
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class PlatformKitEObjectValidator implements IEObjectValidator {
+
 	private Set<String> invalid = new HashSet<String>();
 	private List<String> valid = new ArrayList<String>();
-	
+
 	/**
 	 * Creates a new CDDEObjectValidator.
 	 * @param space The ConstraintSpace to validate against.
@@ -36,21 +37,33 @@ public class PlatformKitEObjectValidator implements IEObjectValidator {
 			valid.add(set.getName());
 		}
 	}
-	
+
 	/**
 	 * @param value The object to validate.
 	 * @return True if the object's EClass is valid according to the ConstraintSpace.
 	 */
 	public boolean isValid(EObject value) {
-		return ! invalid.contains(PlatformKitActionUtil.qName(value.eClass(), "::"));
+		return ! invalid.contains(qName(value.eClass(), "::"));
 	}
-	
+
 	/**
 	 * @param value The object to validate.
 	 * @return The optimisation index of the object in the list of valid objects, or -1 if no index exists.
 	 */
 	public int indexOf(EObject value) {
-		return valid.indexOf(PlatformKitActionUtil.qName(value.eClass(), "::"));
+		return valid.indexOf(qName(value.eClass(), "::"));
 	}
 
+	/**
+	 * @param o
+	 * @param delim qualifier delimiter, e.g. "::"
+	 * @return The qualified name for o separated by delim
+	 */
+	public static String qName(ENamedElement o, String delim) {
+		if (o.eContainer() instanceof ENamedElement) {
+			return qName((ENamedElement) o.eContainer(), delim) + delim + o.getName();
+		} else {
+			return o.getName();
+		}
+	}
 }

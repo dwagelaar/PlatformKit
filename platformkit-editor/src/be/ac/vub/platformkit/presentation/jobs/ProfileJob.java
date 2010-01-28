@@ -22,9 +22,9 @@ import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.presentation.util.ConstraintSpaceCache;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformEValidator;
-import be.ac.vub.platformkit.presentation.util.PlatformKitActionUtil;
 import be.ac.vub.platformkit.presentation.util.PlatformKitEObjectValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformKitException;
 import be.ac.vub.platformkit.presentation.util.PlatformEValidator.Registry;
@@ -38,6 +38,9 @@ import be.ac.vub.platformkit.presentation.util.provider.PlatformKitItemProviderA
 public class ProfileJob extends ConstraintSpaceJob {
 
 	private EObject selectedObject;
+
+	protected ConstraintSpaceCache cache = new ConstraintSpaceCache();
+	
 	/**
 	 * Creates a new {@link ProfileJob}.
 	 */
@@ -56,7 +59,8 @@ public class ProfileJob extends ConstraintSpaceJob {
 		//
 		subTask(monitor, "Searching for constraint space...");
 		URI platformkitURI = findPlatformKitURI();
-		ConstraintSpace space = PlatformKitActionUtil.getCachedConstraintSpace(platformkitURI);
+		URI inferredOwlURI = platformkitURI.trimFileExtension().appendFileExtension("inferred.owl");
+		ConstraintSpace space = cache.get(inferredOwlURI);
 		worked(monitor, "Searched for constraint space");
 		if (space == null) {
 			//
@@ -69,7 +73,7 @@ public class ProfileJob extends ConstraintSpaceJob {
 			//
 			// 3
 			//
-			monitor.subTask("Loading source ontologies...");
+			subTask(monitor, "Loading source ontologies...");
 			if (platformkit.getContents().size() == 0) {
 				throw new PlatformKitException("Resource " + platformkit + " is empty");
 			}
@@ -80,7 +84,7 @@ public class ProfileJob extends ConstraintSpaceJob {
 				throw new PlatformKitException(
 				"Ontologies not pre-classified - Choose 'Classify Taxonomy' first");
 			}
-			PlatformKitActionUtil.setCachedConstraintSpace(platformkitURI, space);
+			cache.put(inferredOwlURI, space);
 			worked(monitor, "Loaded source ontologies");
 			//
 			// 4
@@ -92,7 +96,7 @@ public class ProfileJob extends ConstraintSpaceJob {
 			//
 			// 2, 3, 4
 			//
-			monitor.subTask("Using cached constraint space");
+			subTask(monitor, "Using cached constraint space");
 			worked(monitor, null);
 			worked(monitor, null);
 			worked(monitor, null);
@@ -152,14 +156,10 @@ public class ProfileJob extends ConstraintSpaceJob {
 	 */
 	protected URI findPlatformKitURI() {
 		EObject object = getSelectedObject();
-		Assert.isNotNull(object);
 		logger.info(object.eAdapters().toString());
 		Resource res = object.eResource();
-		Assert.isNotNull(res);
 		EObject root = (EObject) res.getContents().get(0);
-		Assert.isNotNull(root);
 		Resource rootRes = root.eClass().eResource();
-		Assert.isNotNull(rootRes);
 		URI resURI = rootRes.getURI();
 		URI platformkitURI = resURI.trimFileExtension().appendFileExtension("platformkit");
 		logger.info("Platformkit URI = " + platformkitURI.toString());
