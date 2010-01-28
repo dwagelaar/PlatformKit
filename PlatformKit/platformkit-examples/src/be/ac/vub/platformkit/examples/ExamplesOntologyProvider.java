@@ -30,7 +30,8 @@ public class ExamplesOntologyProvider implements INamedOntologyProvider {
         "codamos_2007_01/Generic/J2MEMIDP2.0Phone.owl",
         "codamos_2007_01/Sharp/ZaurusSL-C1000PP.owl",
         "codamos_2007_01/Sharp/ZaurusSL-C1000Jeode.owl",
-        "codamos_2007_01/Siemens/CX70v.owl"
+        "codamos_2007_01/Siemens/CX70v.owl",
+        "codamos_2007_01/Nokia/NokiaN800Jalimo.owl"
     };
     
     private static final String[] names = new String[] {
@@ -47,7 +48,8 @@ public class ExamplesOntologyProvider implements INamedOntologyProvider {
         "Mobile phone with J2ME MIDP 2.0",
         "Sharp Zaurus SL-C1000 PDA with J2ME PP 1.0",
         "Sharp Zaurus SL-C1000 PDA with Jeode Personal Java 1.1",
-        "Siemens CX70v mobile phone with J2ME MIDP 2.0"
+        "Siemens CX70v mobile phone with J2ME MIDP 2.0",
+        "Nokia N800 internet tablet with Jalimo Java 1.4 + SWT 3.0"
     };
     
     protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit.examples");
