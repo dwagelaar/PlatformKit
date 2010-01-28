@@ -1,11 +1,15 @@
 package be.ac.vub.platformkit.presentation.popup.action;
 
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.jobs.IJobChangeEvent;
+import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
 
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
@@ -39,6 +43,23 @@ public class Profile extends ViewerFilterAction {
 			}
 		});
 		job = new ProfileJob();
+		job.addJobChangeListener(new JobChangeAdapter() {
+			/* (non-Javadoc)
+			 * @see org.eclipse.core.runtime.jobs.JobChangeAdapter#done(org.eclipse.core.runtime.jobs.IJobChangeEvent)
+			 */
+			@Override
+			public void done(IJobChangeEvent event) {
+				// force editor to refresh new child/sibling menu
+				if (part instanceof ISelectionProvider) {
+					PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+						public void run() {
+							final ISelectionProvider sp = (ISelectionProvider) part;
+							sp.setSelection(sp.getSelection());
+						}
+					});
+				}
+			}
+		});
 	}
 
 	/*
@@ -47,12 +68,13 @@ public class Profile extends ViewerFilterAction {
 	 */
 	public void run(IAction action) {
 		PlatformSpecDialogRunnable dlg = new PlatformSpecDialogRunnable();
+	    dlg.setInstruction("Select a platform specification, or click 'Cancel' \nto remove platform constraint checking:");
 		if (getFilter() != null) {
 			dlg.setFilter(getFilter());
 		}
 		PlatformkitEditorPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
 		// run operation
-		job.setPlatformInstanceSources(dlg.getFiles());
+		job.setPlatformInstanceSources(dlg.getSelection());
 		job.setSelectedObject((EObject) ((IStructuredSelection) selection).getFirstElement());
 		job.setEditingDomain(editingDomain);
 		job.setUser(true);
