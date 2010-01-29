@@ -49,7 +49,7 @@ public class ExamplesOntologyProvider implements INamedOntologyProvider {
         "Sharp Zaurus SL-C1000 PDA with J2ME PP 1.0",
         "Sharp Zaurus SL-C1000 PDA with Jeode Personal Java 1.1",
         "Siemens CX70v mobile phone with J2ME MIDP 2.0",
-        "Nokia N800 internet tablet with Jalimo Java 1.4 + SWT 3.0"
+        "Nokia N800 internet tablet with Jalimo Java 1.4 + SWT 3.4"
     };
     
     protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit.examples");
