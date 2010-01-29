@@ -23,7 +23,7 @@
 	<entry key="SIE-CX7V">Siemens CX70v mobile phone with J2ME MIDP 2.0</entry>
 	
 	<!-- Nokia N800 -->
-	<entry key="Mozilla/5.0 (X11; U; Linux armv6l; rv 1.8.1.5pre) Gecko/20070619 Minimo/0.020">Nokia N800 internet tablet with Jalimo Java 1.4 + SWT 3.0</entry>
+	<entry key="Mozilla/5.0 (X11; U; Linux armv6l; rv 1.8.1.5pre) Gecko/20070619 Minimo/0.020">Nokia N800 internet tablet with Jalimo Java 1.4 + SWT 3.4</entry>
 	
 	<!-- Emulator -->
 	<entry key="Profile/MIDP-2.0 Configuration/CLDC-1.1">Mobile phone with J2ME MIDP 2.0</entry>
