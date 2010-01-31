@@ -1,5 +1,7 @@
 -- @atlcompiler atl2006
+-- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id$
+-- Performs a number of tests on generated compatibility reports
 query UML2TestCompatibilityReport = ( 
 	UML2!"uml::Model".allInstances()->forAll(m|m.hasCRProfile).debug('Model.hasCRProfile') and
 	UML2!"uml::TypedElement".allInstances()->forAll(t|t.hasType).debug('TypedElement.hasType') and

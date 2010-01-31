@@ -10,13 +10,8 @@ library UML2Comparison;
 helper def : UML2ComparisonVersionString : String =
 	'$Id:UML2Comparison.atl 7084 2007-07-10 13:19:05Z dwagelaa $';
 
-helper def : prevModels : Set(UML2!"uml::Model") = 
-	UML2!"uml::Model".allInstances()->select(m|
-		UML2!"uml::Model".allInstancesFrom('IN')->excludes(m));
-
-helper def : prevPackages : Set(UML2!"uml::Package") = 
-	UML2!"uml::Package".allInstances()->select(p|
-		UML2!"uml::Package".allInstancesFrom('IN')->excludes(p));
+helper def : allPackages : Set(UML2!"uml::Package") = 
+	UML2!"uml::Package".allInstances();
 
 helper def : modelName : String =
 	UML2!"uml::Model".allInstancesFrom('IN')->asSequence()->first().name;
@@ -100,18 +95,27 @@ helper context UML2!"uml::NamedElement" def : owlClassesInPrev : Sequence(OWL!"o
 		->select(c|c.localName = self.ontClassName + 'Library')
 		->select(o|o.namespace.name = self.getModel().name);
 
+helper context UML2!"uml::Model" def : allOther : Sequence(UML2!"uml::Model") =
+	thisModule.allPackages
+		->reject(p|p=self)
+		->select(p|p.oclIsKindOf(UML2!"uml::Model"));
+
+helper context UML2!"uml::Package" def : allOther : Sequence(UML2!"uml::Package") =
+	thisModule.allPackages
+		->reject(p|p=self);
+
 helper context UML2!"uml::Model" def : compatibleInPrev : Sequence(UML2!"uml::Model") =
-	thisModule.prevModels
+	self.allOther
 		->select(m|self.hasAllPackagesCompatibleWith(m))
 		.debug(thisModule.modelName.prefix + self.qualifiedName + ' compatible models');
 
 helper context UML2!"uml::Model" def : equivalentInPrev : Sequence(UML2!"uml::Model") =
-	thisModule.prevModels
+	self.allOther
 		->select(m|self.hasAllPackagesEquivalentWith(m))
 		.debug(thisModule.modelName.prefix + self.qualifiedName + ' equivalent models');
 
 helper context UML2!"uml::Package" def : locallyCompatibleInPrev : Sequence(UML2!"uml::Package") =
-	thisModule.prevPackages
+	self.allOther
 		->reject(e|e.isDerived)
 		->select(p|self.isLocallyCompatibleWith(p));
 
@@ -125,12 +129,9 @@ helper context UML2!"uml::Package" def : equivalentInPrev : Sequence(UML2!"uml::
 		.debug(thisModule.modelName.prefix + self.qualifiedName + ' equivalent packages');
 
 helper context UML2!"uml::Classifier" def : locallyCompatibleInPrev : Sequence(UML2!"uml::Classifier") =
-	let packageName : String = self.getNearestPackage().umlQualifiedName in
-		thisModule.prevPackages
-			->reject(e|e.isDerived)
-			->select(p|p.umlQualifiedName = packageName)
-			->collect(p1|p1.allOwnedClassifiers)->flatten()
-			->select(c|self.isLocallyCompatibleWith(c));
+	self.getNearestPackage().locallyCompatibleInPrev
+		->collect(p1|p1.allOwnedClassifiers)->flatten()
+		->select(c|self.isLocallyCompatibleWith(c));
 
 helper context UML2!"uml::Classifier" def : compatibleInPrev : Sequence(UML2!"uml::Classifier") =
 	self.locallyCompatibleInPrev
@@ -168,11 +169,11 @@ helper context UML2!"uml::Model" def : hasAllPackagesCompatibleWith(m : UML2!"um
 		
 helper context UML2!"uml::Model" def : hasPackageLocallyCompatibleWith(p : UML2!"uml::Package") : Boolean =
 	self.allOwnedPackages
-			->exists(sp|sp.locallyCompatibleInPrev->includes(p));
+		->exists(sp|sp.locallyCompatibleInPrev->includes(p));
 		
 helper context UML2!"uml::Model" def : hasPackageCompatibleWith(p : UML2!"uml::Package") : Boolean =
 	self.allOwnedPackages
-			->exists(sp|sp.compatibleInPrev->includes(p));
+		->exists(sp|sp.compatibleInPrev->includes(p));
 		
 helper context UML2!"uml::Model" def : hasAllPackagesEquivalentWith(m : UML2!"uml::Model") : Boolean =
 	let equivPackages : Sequence(UML2!"uml::Package") = m.allOwnedPackages

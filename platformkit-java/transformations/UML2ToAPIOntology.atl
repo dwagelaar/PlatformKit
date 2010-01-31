@@ -20,9 +20,6 @@ helper def : includedPackages : Set(UML2!"uml::Package") = UML2!"uml::Package".a
 	->select(p|p.oclIsTypeOf(UML2!"uml::Package") and p.packagedElement
 		->select(c|c.oclIsKindOf(UML2!"uml::Class") or c.oclIsKindOf(UML2!"uml::Interface"))->notEmpty());
 
---helper def : includedPackages : Set(UML2!"uml::Package") = UML2!"uml::Package".allInstancesFrom('IN')
---	->select(p|p.name = 'CosNaming');
-
 helper def : platformPlatform : Set(OWL!"owl::OWLClass") = OWL!"owl::OWLClass".allInstancesFrom('PLATFORM')
 	->select(o|o.localName = 'Platform');
 

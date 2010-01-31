@@ -10,23 +10,44 @@ uses Strings;
 helper context String def : primitiveType() : UML2!"uml::PrimitiveType" =
 	UML2!"uml::PrimitiveType".allInstances()->any(s|s.name=self);
 
+helper context String def : primitiveTypeFrom(model : String) : UML2!"uml::PrimitiveType" =
+	UML2!"uml::PrimitiveType".allInstancesFrom(model)->any(s|s.name=self);
+
 helper context String def : profile() : UML2!"uml::Profile" =
 	UML2!"uml::Profile".allInstances()->any(p|p.name=self);
+
+helper context String def : profileFrom(model : String) : UML2!"uml::Profile" =
+	UML2!"uml::Profile".allInstancesFrom(model)->any(p|p.name=self);
 
 helper context String def : stereotype() : UML2!"uml::Stereotype" =
 	UML2!"uml::Stereotype".allInstances()->any(s|s.name=self);
 
+helper context String def : stereotypeFrom(model : String) : UML2!"uml::Stereotype" =
+	UML2!"uml::Stereotype".allInstancesFrom(model)->any(s|s.name=self);
+
 helper context String def : dataType() : UML2!"uml::DataType" =
 	UML2!"uml::DataType".allInstances()->any(c|c.umlQualifiedName=self);
+
+helper context String def : dataTypeFrom(model : String) : UML2!"uml::DataType" =
+	UML2!"uml::DataType".allInstancesFrom(model)->any(c|c.umlQualifiedName=self);
 
 helper context String def : type() : UML2!"uml::Type" =
 	UML2!"uml::Type".allInstances()->any(c|c.umlQualifiedName=self);
 
+helper context String def : typeFrom(model : String) : UML2!"uml::Type" =
+	UML2!"uml::Type".allInstancesFrom(model)->any(c|c.umlQualifiedName=self);
+
 helper context String def : interface() : UML2!"uml::Interface" =
 	UML2!"uml::Interface".allInstances()->any(c|c.umlQualifiedName=self);
 
+helper context String def : interfaceFrom(model : String) : UML2!"uml::Interface" =
+	UML2!"uml::Interface".allInstancesFrom(model)->any(c|c.umlQualifiedName=self);
+
 helper context String def : class() : UML2!"uml::Class" =
 	UML2!"uml::Class".allInstances()->any(c|c.umlQualifiedName=self);
+
+helper context String def : classFrom(model : String) : UML2!"uml::Class" =
+	UML2!"uml::Class".allInstancesFrom(model)->any(c|c.umlQualifiedName=self);
 
 ------------------------------- BehavioredClassifier -----------------------------------
 
