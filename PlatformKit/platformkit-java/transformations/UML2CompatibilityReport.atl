@@ -20,71 +20,88 @@ uses UML2Comparison;
 helper def : UML2CompatibilityReportVersionString : String =
 	'$Id$';
 
-helper def : inElements : Set(UML2!"ecore::EObject") =
-	UML2!"ecore::EObject".allInstancesFrom('IN');
-
 helper def : depsElements : Set(UML2!"ecore::EObject") =
 	UML2!"ecore::EObject".allInstancesFrom('DEPS');
 
 helper def : crProfile : UML2!"uml::Profile" = 
-	'CompatibilityReport'.profile();
+	'CompatibilityReport'.profileFrom('CR');
 
 helper def : stCompatibilityReport : UML2!"uml::Stereotype" =
-	'CompatibilityReport'.stereotype();
+	'CompatibilityReport'.stereotypeFrom('CR');
 
 helper def : stIncompatible : UML2!"uml::Stereotype" =
-	'Incompatible'.stereotype();
+	'Incompatible'.stereotypeFrom('CR');
 
 helper def : stMissing : UML2!"uml::Stereotype" =
-	'Missing'.stereotype();
+	'Missing'.stereotypeFrom('CR');
 
-helper def : crPackages : Sequence(UML2!"ecore::EPackage") =
-	UML2!"ecore::EPackage".allInstancesFrom('CR')->select(p|p.name='CompatibilityReport');
+helper def : allModelsFromIn : Sequence(UML2!"uml::Model") =
+	UML2!"uml::Model".allInstancesFrom('IN');
 
-helper context UML2!"uml::Model" def : locallyIncompPacks : Sequence(UML2!"uml::Package") = 
-	UML2!"uml::Model".allInstancesFrom('IN')
+helper def : allPackagesFromIn : Sequence(UML2!"uml::Model") =
+	UML2!"uml::Package".allInstancesFrom('IN');
+
+helper def : allClassifiersFromIn : Sequence(UML2!"uml::Model") =
+	UML2!"uml::Classifier".allInstancesFrom('IN');
+
+helper def : allNamedElementsFromIn : Sequence(UML2!"uml::Model") =
+	UML2!"uml::NamedElement".allInstancesFrom('IN');
+
+helper context UML2!"uml::Model" def : hasAllCompatible : Boolean =
+	self.allOwnedPackages
 		->reject(e|e.isDerived)
-		->collect(m|m.allPackagesLocallyIncompatibleWith(self))
-		->flatten();
+		->forAll(p|p.compatibleWithSelf->notEmpty())
+		.debug(thisModule.modelName.prefix + self.qualifiedName + ' has all elements compatible');
 
-helper context UML2!"uml::Model" def : incompPacks : Sequence(UML2!"uml::Package") = 
-	UML2!"uml::Model".allInstancesFrom('IN')
+helper context UML2!"uml::Package" def : locallyCompatibleWithSelf : Sequence(UML2!"uml::Package") =
+	self.allOther
 		->reject(e|e.isDerived)
-		->collect(m|m.allPackagesIncompatibleWith(self))
-		->flatten();
+		->select(p|p.isLocallyCompatibleWith(self));
 
-helper context UML2!"uml::Package" def : locallyIncompClasses : Sequence(UML2!"uml::Classifier") = 
-	UML2!"uml::Package".allInstancesFrom('IN')
-		->reject(e|e.isDerived)
-		->select(e|e.umlQualifiedName=self.umlQualifiedName)
-		->collect(p|p.allOwnedClassifiersLocallyIncompatibleWith(self))
-		->flatten();
+helper context UML2!"uml::Package" def : compatibleWithSelf : Sequence(UML2!"uml::Package") =
+	self.locallyCompatibleWithSelf
+		->select(p|p.hasElementsCompatibleWith(self))
+		.debug(thisModule.modelName.prefix + self.qualifiedName + ' compatible packages');
 
-helper context UML2!"uml::Package" def : incompClasses : Sequence(UML2!"uml::Classifier") = 
-	UML2!"uml::Package".allInstancesFrom('IN')
-		->reject(e|e.isDerived)
-		->select(e|e.umlQualifiedName=self.umlQualifiedName)
-		->collect(p|p.allOwnedClassifiersIncompatibleWith(self))
-		->flatten();
+helper context UML2!"uml::Classifier" def : locallyCompatibleWithSelf : Sequence(UML2!"uml::Classifier") =
+	self.getNearestPackage().locallyCompatibleWithSelf
+		->collect(p|p.allOwnedClassifiers
+			->reject(e|e.isDerived)
+			->select(c|c.isLocallyCompatibleWith(self))
+		)->flatten();
+
+helper context UML2!"uml::Classifier" def : compatibleWithSelf : Sequence(UML2!"uml::Classifier") =
+	self.locallyCompatibleWithSelf
+		->select(c|c.hasElementsCompatibleWith(self));
+
+--helper context UML2!"uml::Model" def : locallyIncompPacks : Sequence(UML2!"uml::Package") =
+--	self.allOwnedPackages
+--		->collect(p|p.locallyCompatibleWithSelf->isEmpty());
+
+--helper context UML2!"uml::Model" def : incompPacks : Sequence(UML2!"uml::Package") = 
+--	self.allOwnedPackages
+--		->collect(p|p.compatibleWithSelf->isEmpty());
+
+--helper context UML2!"uml::Package" def : locallyIncompClasses : Sequence(UML2!"uml::Classifier") = 
+--	self.allOwnedClassifiers
+--		->collect(c|c.locallyCompatibleWithSelf->isEmpty());
+
+--helper context UML2!"uml::Package" def : incompClasses : Sequence(UML2!"uml::Classifier") = 
+--	self.allOwnedClassifiers
+--		->collect(c|c.compatibleWithSelf->isEmpty());
 
 helper context UML2!"uml::Classifier" def : incompGenerals : Sequence(UML2!"uml::Classifier") = 
-	UML2!"uml::Classifier".allInstancesFrom('IN')
-		->reject(e|e.isDerived)
-		->select(e|e.umlQualifiedName=self.umlQualifiedName)
-		->collect(p|p.allGeneralsIncompatibleWith(self))
+	self.locallyCompatibleWithSelf
+		->collect(c|c.allGeneralsIncompatibleWith(self))
 		->flatten();
 
 helper context UML2!"uml::Classifier" def : incompFeatures : Sequence(UML2!"uml::Feature") = 
-	UML2!"uml::Classifier".allInstancesFrom('IN')
-		->reject(e|e.isDerived)
-		->select(e|e.umlQualifiedName=self.umlQualifiedName)
-		->collect(p|p.allFeaturesIncompatibleWith(self))
+	self.locallyCompatibleWithSelf
+		->collect(c|c.allFeaturesIncompatibleWith(self))
 		->flatten();
 
-helper context UML2!"uml::NamedElement" def : incompSuppliers : Sequence(UML2!"uml::NamedElement") = 
-	UML2!"uml::NamedElement".allInstancesFrom('IN')
-		->reject(e|e.isDerived)
-		->select(e|e.umlQualifiedName=self.umlQualifiedName)
+helper context UML2!"uml::Classifier" def : incompSuppliers : Sequence(UML2!"uml::NamedElement") = 
+	self.locallyCompatibleWithSelf
 		->collect(p|p.allSuppliersIncompatibleWith(self))
 		->flatten();
 
@@ -94,19 +111,24 @@ helper context UML2!"ecore::EObject" def : isMissing : Boolean =
 helper context UML2!"ecore::EStringToStringMapEntry" def : isMissing : Boolean =
 	false;
 
+helper context UML2!"uml::Model" def : isMissing : Boolean =
+	if self.hasMissingOwner then true else
+		false
+	endif;
+
 helper context UML2!"uml::Package" def : isMissing : Boolean =
 	if self.hasMissingOwner then true else
-		self.getModel().locallyIncompPacks->includes(self)
+		self.locallyCompatibleWithSelf->isEmpty()
 	endif;
 
 helper context UML2!"uml::Class" def : isMissing : Boolean =
 	if self.hasMissingOwner then true else
-		self.getNearestPackage().locallyIncompClasses->includes(self)
+		self.locallyCompatibleWithSelf->isEmpty()
 	endif;
 
 helper context UML2!"uml::Interface" def : isMissing : Boolean =
 	if self.hasMissingOwner then true else
-		self.getNearestPackage().locallyIncompClasses->includes(self)
+		self.locallyCompatibleWithSelf->isEmpty()
 	endif;
 
 helper context UML2!"uml::Generalization" def : isMissing : Boolean =
@@ -153,28 +175,27 @@ helper context UML2!"uml::Element" def : hasElementsMissing : Boolean =
 
 helper context UML2!"uml::Package" def : hasElementsMissing : Boolean =
 	if self.hasMissingOwner then false else
-		(self.getModel().incompPacks->includes(self) or
-	 	self.getModel().incompPacks->exists(p|self.allOwnedPackages->includes(p)))
+		if self.compatibleWithSelf->isEmpty() then true
+	 	else self.allOwnedPackages->exists(p|p.compatibleWithSelf->isEmpty()) endif
 	endif;
 
 helper context UML2!"uml::Class" def : hasElementsMissing : Boolean =
 	if self.hasMissingOwner then false else
-		let pack : UML2!"uml::Package" = self.getNearestPackage() in
-		(pack.incompClasses->includes(self) or
-	 	pack.incompClasses->exists(c|self.allOwnedClassifiers->includes(c)))
+		if self.compatibleWithSelf->isEmpty() then true
+	 	else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
 	endif;
 
 helper context UML2!"uml::Interface" def : hasElementsMissing : Boolean =
 	if self.hasMissingOwner then false else
-		let pack : UML2!"uml::Package" = self.getNearestPackage() in
-		(pack.incompClasses->includes(self) or
-	 	pack.incompClasses->exists(c|self.allOwnedClassifiers->includes(c)))
+		if self.compatibleWithSelf->isEmpty() then true
+	 	else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
 	endif;
 
 helper context UML2!"uml::Element" def : hasMissingOwner : Boolean =
-	if self.owner.oclIsUndefined() then false else
-		if self.owner.isMissing then true else
-			self.owner.hasMissingOwner
+	let owner : UML2!"uml::Element" = self.owner in
+	if owner.oclIsUndefined() then false else
+		if owner.isMissing then true else
+			owner.hasMissingOwner
 		endif
 	endif;
 
@@ -205,7 +226,7 @@ rule Model {
 	from s : UML2!"uml::Model" (
 		thisModule.depsElements->includes(s))
 	using {
-		provides : String = UML2!"uml::Model".allInstancesFrom('IN')
+		provides : String = thisModule.allModelsFromIn
 			->collect(m|m.name)
 			->join(', ');
 	}
@@ -255,7 +276,7 @@ rule Package {
 			else false endif
 		else false endif)
     to t : UML2!"uml::Package" (
-        name <- s.name,
+        name <- s.name.debug('>>Package<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
 		visibility <- s.visibility,
         packagedElement <- s.packagedElement)
@@ -271,7 +292,7 @@ rule IncompatiblePackage {
 			else false endif
 		else false endif)
     to t : UML2!"uml::Package" (
-        name <- s.name,
+        name <- s.name.debug('>>IncompatiblePackage<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
 		visibility <- s.visibility,
         packagedElement <- s.packagedElement)
@@ -288,7 +309,7 @@ rule MissingPackage {
 			else false endif
 		else false endif)
     to t : UML2!"uml::Package" (
-        name <- s.name,
+        name <- s.name.debug('>>MissingPackage<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
 		visibility <- s.visibility,
         packagedElement <- s.packagedElement)
@@ -682,8 +703,8 @@ rule Parameter {
 
 endpoint rule UML2CompatibilityComparison() {
 	do {
-		UML2!"uml::Model".allInstancesFrom('IN')
-			->collect(m|m.compatibleInPrev)->flatten()->notEmpty()
+		UML2!"uml::Model".allInstancesFrom('DEPS')
+			->forAll(m|m.hasAllCompatible)
 			.debug('Model is compatible with previous model');
 	}
 }
