@@ -20,49 +20,67 @@ uses UML2Comparison;
 helper def : UML2CompatibilityReportVersionString : String =
 	'$Id$';
 
+-- All elements from DEPS
 helper def : depsElements : Set(UML2!"ecore::EObject") =
 	UML2!"ecore::EObject".allInstancesFrom('DEPS');
 
+-- CompatibilityReport Profile
 helper def : crProfile : UML2!"uml::Profile" = 
 	'CompatibilityReport'.profileFrom('CR');
 
+-- CompatibilityReport Stereotype
 helper def : stCompatibilityReport : UML2!"uml::Stereotype" =
 	'CompatibilityReport'.stereotypeFrom('CR');
 
+-- Incampatible Stereotype
 helper def : stIncompatible : UML2!"uml::Stereotype" =
 	'Incompatible'.stereotypeFrom('CR');
 
+-- Missing Stereotype
 helper def : stMissing : UML2!"uml::Stereotype" =
 	'Missing'.stereotypeFrom('CR');
 
+-- All Models from IN
 helper def : allModelsFromIn : Sequence(UML2!"uml::Model") =
 	UML2!"uml::Model".allInstancesFrom('IN');
 
+-- All Packages from IN
 helper def : allPackagesFromIn : Sequence(UML2!"uml::Model") =
 	UML2!"uml::Package".allInstancesFrom('IN');
 
+-- All Classifiers from IN
 helper def : allClassifiersFromIn : Sequence(UML2!"uml::Model") =
 	UML2!"uml::Classifier".allInstancesFrom('IN');
 
+-- All NamedElements from IN
 helper def : allNamedElementsFromIn : Sequence(UML2!"uml::Model") =
 	UML2!"uml::NamedElement".allInstancesFrom('IN');
 
+-- ======================================================================
+-- helper attributes for determining compatibility
+-- ======================================================================
+
+-- ------------------------ hasAllCompatible ----------------------------
+
+-- True iff for all Packages X (transitively) contained by self,
+-- there exists a Package Y that is compatible with X.
 helper context UML2!"uml::Model" def : hasAllCompatible : Boolean =
 	self.allOwnedPackages
 		->reject(e|e.isInferred)
 		->forAll(p|p.compatibleWithSelf->notEmpty())
 		.debug(thisModule.modelName.prefix + self.qualifiedName + ' has all elements compatible');
 
+-- ------------------------ locallyCompatibleWithSelf -------------------
+
+-- All Packages other than self that are locally compatible with self,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Package" def : locallyCompatibleWithSelf : Sequence(UML2!"uml::Package") =
 	self.allOther
 		->reject(e|e.isInferred)
 		->select(p|p.isLocallyCompatibleWith(self));
 
-helper context UML2!"uml::Package" def : compatibleWithSelf : Sequence(UML2!"uml::Package") =
-	self.locallyCompatibleWithSelf
-		->select(p|p.hasElementsCompatibleWith(self))
-		.debug(thisModule.modelName.prefix + self.qualifiedName + ' compatible packages');
-
+-- All Classifiers other than self that are locally compatible with self,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Classifier" def : locallyCompatibleWithSelf : Sequence(UML2!"uml::Classifier") =
 	self.getNearestPackage().locallyCompatibleWithSelf
 		->collect(p|p.allOwnedClassifiers
@@ -70,61 +88,115 @@ helper context UML2!"uml::Classifier" def : locallyCompatibleWithSelf : Sequence
 			->select(c|c.isLocallyCompatibleWith(self))
 		)->flatten();
 
+-- ------------------------ compatibleWithSelf --------------------------
+
+-- All Packages other than self that are compatible with self.
+helper context UML2!"uml::Package" def : compatibleWithSelf : Sequence(UML2!"uml::Package") =
+	self.locallyCompatibleWithSelf
+		->select(p|p.hasElementsCompatibleWith(self))
+		.debug(thisModule.modelName.prefix + self.qualifiedName + ' compatible packages');
+
+-- All Classifiers other than self that are compatible with self.
 helper context UML2!"uml::Classifier" def : compatibleWithSelf : Sequence(UML2!"uml::Classifier") =
 	self.locallyCompatibleWithSelf
 		->select(c|c.hasElementsCompatibleWith(self));
 
+-- ------------------------ incompGenerals ------------------------------
+
+-- All generals X of all Classifiers that are locally compatible with self
+-- for which X is not compatible with any general of self,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Classifier" def : incompGenerals : Sequence(UML2!"uml::Classifier") = 
 	self.locallyCompatibleWithSelf
 		->collect(c|c.allGeneralsIncompatibleWith(self))
 		->flatten();
 
+-- ------------------------ incompFeatures ------------------------------
+
+-- All Features X of all Classifiers that are locally compatible with self
+-- for which X is not compatible with any Feature of self,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Classifier" def : incompFeatures : Sequence(UML2!"uml::Feature") = 
 	self.locallyCompatibleWithSelf
 		->collect(c|c.allFeaturesIncompatibleWith(self))
 		->flatten();
 
+-- ------------------------ incompSuppliers -----------------------------
+
+-- All suppliers X of all Classifiers that are locally compatible with self
+-- for which X is not compatible with any supplier of self,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Classifier" def : incompSuppliers : Sequence(UML2!"uml::NamedElement") = 
 	self.locallyCompatibleWithSelf
 		->collect(p|p.allSuppliersIncompatibleWith(self))
 		->flatten();
 
+-- ------------------------ isMissing -----------------------------------
+
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"ecore::EObject" def : isMissing : Boolean =
 	false;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"ecore::EStringToStringMapEntry" def : isMissing : Boolean =
 	false;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
+-- The root Model is never missing.
 helper context UML2!"uml::Model" def : isMissing : Boolean =
 	if self.hasMissingOwner then true else
 		false
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Package" def : isMissing : Boolean =
 	if self.hasMissingOwner then true else
 		self.locallyCompatibleWithSelf->isEmpty()
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Class" def : isMissing : Boolean =
 	if self.hasMissingOwner then true else
 		self.locallyCompatibleWithSelf->isEmpty()
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Interface" def : isMissing : Boolean =
 	if self.hasMissingOwner then true else
 		self.locallyCompatibleWithSelf->isEmpty()
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Generalization" def : isMissing : Boolean =
 	if self.specific.isMissing then true else
 		self.specific.incompGenerals->includes(self.general)
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::InterfaceRealization" def : isMissing : Boolean =
 	if self.implementingClassifier.isMissing then true else
 		self.implementingClassifier.incompSuppliers->exists(i|self.supplier->includes(i))
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Property" def : isMissing : Boolean =
 	if self.hasMissingOwner then true else
 		if self.class.oclIsUndefined() then false else
@@ -132,6 +204,9 @@ helper context UML2!"uml::Property" def : isMissing : Boolean =
 		endif
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Operation" def : isMissing : Boolean =
 	if self.hasMissingOwner then true else
 		if self.class.oclIsUndefined() then
@@ -143,38 +218,64 @@ helper context UML2!"uml::Operation" def : isMissing : Boolean =
 		endif
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Parameter" def : isMissing : Boolean =
 	if self.operation.oclIsUndefined() then false else
 		self.operation.isMissing
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::LiteralUnlimitedNatural" def : isMissing : Boolean =
 	self.refImmediateComposite().isMissing;
 
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::LiteralInteger" def : isMissing : Boolean =
 	self.refImmediateComposite().isMissing;
 
+-- ------------------------ hasElementsMissing --------------------------
+
+-- True iff there are no elements X other than self,
+-- for which X contains all elements A such that
+-- there exists an element B contained in self that is compatible with A.
 helper context UML2!"uml::Element" def : hasElementsMissing : Boolean =
 	false;
 
+-- True iff there are no elements X other than self,
+-- for which X contains all elements A such that
+-- there exists an element B contained in self that is compatible with A.
 helper context UML2!"uml::Package" def : hasElementsMissing : Boolean =
 	if self.hasMissingOwner then false else
 		if self.compatibleWithSelf->isEmpty() then true
 	 	else self.allOwnedPackages->exists(p|p.compatibleWithSelf->isEmpty()) endif
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which X contains all elements A such that
+-- there exists an element B contained in self that is compatible with A.
 helper context UML2!"uml::Class" def : hasElementsMissing : Boolean =
 	if self.hasMissingOwner then false else
 		if self.compatibleWithSelf->isEmpty() then true
 	 	else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
 	endif;
 
+-- True iff there are no elements X other than self,
+-- for which X contains all elements A such that
+-- there exists an element B contained in self that is compatible with A.
 helper context UML2!"uml::Interface" def : hasElementsMissing : Boolean =
 	if self.hasMissingOwner then false else
 		if self.compatibleWithSelf->isEmpty() then true
 	 	else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
 	endif;
 
+-- ------------------------ hasMissingOwner -----------------------------
+
+-- True iff an element that transitively contains self is missing.
 helper context UML2!"uml::Element" def : hasMissingOwner : Boolean =
 	let owner : UML2!"uml::Element" = self.owner in
 	if owner.oclIsUndefined() then false else
@@ -191,6 +292,10 @@ helper context UML2!"uml::Element" def : hasMissingOwner : Boolean =
 -- helper methods begin
 -- ======================================================================
 
+-- ------------------------ join ----------------------------------------
+
+-- If self is a Sequence, a comma-separated list of the entries,
+-- otherwise, the empty string.
 helper context OclAny def : join(separator : String) : String =
 	if self.oclIsKindOf(Sequence(OclAny)) then
 		self->iterate(e; acc : String = '' |
@@ -206,6 +311,7 @@ helper context OclAny def : join(separator : String) : String =
 -- transformation rules begin
 -- ======================================================================
 
+-- The root element of the compatibility report.
 rule Model {
 	from s : UML2!"uml::Model" (
 		thisModule.depsElements->includes(s))
@@ -231,6 +337,7 @@ rule Model {
 	}
 }
 
+-- Copy all EAnnotations in DEPS.
 rule EAnnotation {
     from s : UML2!"ecore::EAnnotation" (
     	thisModule.depsElements->includes(s))
@@ -242,6 +349,7 @@ rule EAnnotation {
         references <- s.references)
 }
 
+-- Copy all EStringToMapEntries in DEPS.
 rule EStringToStringMapEntry {
     from s : UML2!"ecore::EStringToStringMapEntry" (
     	thisModule.depsElements->includes(s))
@@ -250,6 +358,7 @@ rule EStringToStringMapEntry {
         value <- s.value)
 }
 
+-- Copy all Packages in DEPS that are not missing or have missing elements.
 rule Package {
 	from s : UML2!"uml::Package" (
 		if thisModule.depsElements->includes(s) then
@@ -266,6 +375,7 @@ rule Package {
         packagedElement <- s.packagedElement)
 }
 
+-- Mark all Packages in DEPS that are not missing, but have missing elements, as <<Incompatible>>.
 rule IncompatiblePackage {
 	from s : UML2!"uml::Package" (
 		if thisModule.depsElements->includes(s) then
@@ -285,6 +395,7 @@ rule IncompatiblePackage {
 	}
 }
 
+-- Mark all Packages in DEPS that are missing as <<Missing>>.
 rule MissingPackage {
 	from s : UML2!"uml::Package" (
 		if thisModule.depsElements->includes(s) then
@@ -302,6 +413,7 @@ rule MissingPackage {
 	}
 }
 
+-- Copy all Classes in DEPS that are not missing or have missing elements.
 rule Class {
     from s : UML2!"uml::Class" (
 		if thisModule.depsElements->includes(s) then
@@ -325,6 +437,7 @@ rule Class {
         ownedOperation <- s.ownedOperation)
 }
 
+-- Mark all Classes in DEPS that are not missing, but have missing elements, as <<Incompatible>>.
 rule IncompatibleClass {
     from s : UML2!"uml::Class" (
 		if thisModule.depsElements->includes(s) then
@@ -351,6 +464,7 @@ rule IncompatibleClass {
 	}
 }
 
+-- Mark all Classes in DEPS that are missing as <<Missing>>.
 rule MissingClass {
     from s : UML2!"uml::Class" (
 		if thisModule.depsElements->includes(s) then
@@ -375,6 +489,7 @@ rule MissingClass {
 	}
 }
 
+-- Copy all Interfaces in DEPS that are not missing or have missing elements.
 rule Interface {
     from s : UML2!"uml::Interface" (
 		if thisModule.depsElements->includes(s) then
@@ -394,6 +509,7 @@ rule Interface {
         nestedClassifier <- s.nestedClassifier)
 }
 
+-- Mark all Interfaces in DEPS that are not missing, but have missing elements, as <<Incompatible>>.
 rule IncompatibleInterface {
     from s : UML2!"uml::Interface" (
 		if thisModule.depsElements->includes(s) then
@@ -416,6 +532,7 @@ rule IncompatibleInterface {
 	}
 }
 
+-- Mark all Interfaces in DEPS that are missing as <<Missing>>.
 rule MissingInterface {
     from s : UML2!"uml::Interface" (
     	if thisModule.depsElements->includes(s) then
@@ -436,6 +553,7 @@ rule MissingInterface {
 	}
 }
 
+-- Copy all DataTypes in DEPS that are not missing.
 rule DataType {
     from s : UML2!"uml::DataType" (
 		if thisModule.depsElements->includes(s) then
@@ -453,6 +571,7 @@ rule DataType {
 		generalization <- s.generalization)
 }
 
+-- Mark all DataTypes in DEPS that are missing as <<Missing>>.
 rule MissingDataType {
     from s : UML2!"uml::DataType" (
 		if thisModule.depsElements->includes(s) then
@@ -474,6 +593,7 @@ rule MissingDataType {
 	}
 }
 
+-- Copy all PrimitiveTypes in DEPS that are not missing.
 rule PrimitiveType {
     from s : UML2!"uml::PrimitiveType" (
 		if thisModule.depsElements->includes(s) then
@@ -487,6 +607,7 @@ rule PrimitiveType {
         generalization <- s.generalization)
 }
 
+-- Mark all PrimitiveTypes in DEPS that are missing as <<Missing>>.
 rule MissingPrimitiveType {
     from s : UML2!"uml::PrimitiveType" (
 		if thisModule.depsElements->includes(s) then
@@ -504,6 +625,7 @@ rule MissingPrimitiveType {
 	}
 }
 
+-- Copy all Generalizations in DEPS that are not missing.
 rule Generalization {
     from s : UML2!"uml::Generalization" (
 		if thisModule.depsElements->includes(s) then
@@ -514,6 +636,7 @@ rule Generalization {
     	general <- s.general)
 }
 
+-- Mark all Generalizations in DEPS that are missing as <<Missing>>.
 rule MissingGeneralization {
     from s : UML2!"uml::Generalization" (
 		if thisModule.depsElements->includes(s) then
@@ -527,6 +650,7 @@ rule MissingGeneralization {
 	}
 }
 
+-- Copy all InterfaceRealizations in DEPS that are not missing.
 rule InterfaceRealization {
     from s : UML2!"uml::InterfaceRealization" (
 		if thisModule.depsElements->includes(s) then
@@ -541,6 +665,7 @@ rule InterfaceRealization {
         contract <- s.contract)
 }
 
+-- Mark all InterfaceRealizations in DEPS that are missing as <<Missing>>.
 rule MissingInterfaceRealization {
     from s : UML2!"uml::InterfaceRealization" (
 		if thisModule.depsElements->includes(s) then
@@ -558,6 +683,7 @@ rule MissingInterfaceRealization {
 	}
 }
 
+-- Copy all Properties in DEPS that are not missing.
 rule Property {
     from s : UML2!"uml::Property" (
 		if thisModule.depsElements->includes(s) then
@@ -579,6 +705,7 @@ rule Property {
         lowerValue <- s.lowerValue)
 }
 
+-- Mark all Properties in DEPS that are missing as <<Missing>>.
 rule MissingProperty {
     from s : UML2!"uml::Property" (
 		if thisModule.depsElements->includes(s) then
@@ -603,6 +730,7 @@ rule MissingProperty {
 	}
 }
 
+-- Copy all LiteralUnlimitedNaturals in DEPS that are contained in a Property or Parameter.
 rule LiteralUnlimitedNatural {
     from s : UML2!"uml::LiteralUnlimitedNatural" (
     	if thisModule.depsElements->includes(self) then
@@ -616,6 +744,7 @@ rule LiteralUnlimitedNatural {
         value <- s.value)
 }
 
+-- Copy all LiteralIntegers in DEPS that are contained in a Property or Parameter.
 rule LiteralInteger {
     from s : UML2!"uml::LiteralInteger" (
     	if thisModule.depsElements->includes(self) then
@@ -629,6 +758,7 @@ rule LiteralInteger {
         value <- s.value)
 }
 
+-- Copy all Operations in DEPS that are not missing.
 rule Operation {
     from s : UML2!"uml::Operation" (
 		if thisModule.depsElements->includes(s) then
@@ -647,6 +777,7 @@ rule Operation {
         raisedException <- s.raisedException)
 }
 
+-- Mark all Operations in DEPS that are missing as <<Missing>>.
 rule MissingOperation {
     from s : UML2!"uml::Operation" (
 		if thisModule.depsElements->includes(s) then
@@ -668,6 +799,7 @@ rule MissingOperation {
 	}
 }
 
+-- Copy all Parameters in DEPS.
 rule Parameter {
     from s : UML2!"uml::Parameter" (
     	thisModule.depsElements->includes(s))
@@ -685,6 +817,9 @@ rule Parameter {
         lowerValue <- s.lowerValue)
 }
 
+-- Transformations returns true iff
+-- there exists a model other than the model in DEPS
+-- that is compatible with the model in DEPS.
 endpoint rule UML2CompatibilityComparison() {
 	do {
 		UML2!"uml::Model".allInstancesFrom('DEPS')
