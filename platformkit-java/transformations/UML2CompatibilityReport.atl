@@ -49,13 +49,13 @@ helper def : allNamedElementsFromIn : Sequence(UML2!"uml::Model") =
 
 helper context UML2!"uml::Model" def : hasAllCompatible : Boolean =
 	self.allOwnedPackages
-		->reject(e|e.isDerived)
+		->reject(e|e.isInferred)
 		->forAll(p|p.compatibleWithSelf->notEmpty())
 		.debug(thisModule.modelName.prefix + self.qualifiedName + ' has all elements compatible');
 
 helper context UML2!"uml::Package" def : locallyCompatibleWithSelf : Sequence(UML2!"uml::Package") =
 	self.allOther
-		->reject(e|e.isDerived)
+		->reject(e|e.isInferred)
 		->select(p|p.isLocallyCompatibleWith(self));
 
 helper context UML2!"uml::Package" def : compatibleWithSelf : Sequence(UML2!"uml::Package") =
@@ -66,29 +66,13 @@ helper context UML2!"uml::Package" def : compatibleWithSelf : Sequence(UML2!"uml
 helper context UML2!"uml::Classifier" def : locallyCompatibleWithSelf : Sequence(UML2!"uml::Classifier") =
 	self.getNearestPackage().locallyCompatibleWithSelf
 		->collect(p|p.allOwnedClassifiers
-			->reject(e|e.isDerived)
+			->reject(e|e.isInferred)
 			->select(c|c.isLocallyCompatibleWith(self))
 		)->flatten();
 
 helper context UML2!"uml::Classifier" def : compatibleWithSelf : Sequence(UML2!"uml::Classifier") =
 	self.locallyCompatibleWithSelf
 		->select(c|c.hasElementsCompatibleWith(self));
-
---helper context UML2!"uml::Model" def : locallyIncompPacks : Sequence(UML2!"uml::Package") =
---	self.allOwnedPackages
---		->collect(p|p.locallyCompatibleWithSelf->isEmpty());
-
---helper context UML2!"uml::Model" def : incompPacks : Sequence(UML2!"uml::Package") = 
---	self.allOwnedPackages
---		->collect(p|p.compatibleWithSelf->isEmpty());
-
---helper context UML2!"uml::Package" def : locallyIncompClasses : Sequence(UML2!"uml::Classifier") = 
---	self.allOwnedClassifiers
---		->collect(c|c.locallyCompatibleWithSelf->isEmpty());
-
---helper context UML2!"uml::Package" def : incompClasses : Sequence(UML2!"uml::Classifier") = 
---	self.allOwnedClassifiers
---		->collect(c|c.compatibleWithSelf->isEmpty());
 
 helper context UML2!"uml::Classifier" def : incompGenerals : Sequence(UML2!"uml::Classifier") = 
 	self.locallyCompatibleWithSelf

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_xUw6YBkyEd6WJ8gws_yupQ" name="swt-3_0">
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_xUw6YBkyEd6WJ8gws_yupQ" name="swt-3_0">
   <packagedElement xmi:type="uml:Package" xmi:id="_xVD1UBkyEd6WJ8gws_yupQ" name="org">
     <packagedElement xmi:type="uml:Package" xmi:id="_xVD1URkyEd6WJ8gws_yupQ" name="eclipse">
       <packagedElement xmi:type="uml:Package" xmi:id="_xVEcYBkyEd6WJ8gws_yupQ" name="swt">
@@ -7715,7 +7715,9 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_xVEcYhkyEd6WJ8gws_yupQ" name="java">
-    <eAnnotations xmi:id="_vSg1gH2dEd6ZuPM5TspYjQ" source="PlatformKit#Derived"/>
+    <eAnnotations xmi:id="_vSg1gH2dEd6ZuPM5TspYjQ" source="Jar2UML">
+      <details xmi:id="_qmTGQQ8iEd-uh8oAfzhhyg" key="inferred" value="true"/>
+    </eAnnotations>
     <packagedElement xmi:type="uml:Package" xmi:id="_xVEcYxkyEd6WJ8gws_yupQ" name="lang">
       <packagedElement xmi:type="uml:Class" xmi:id="_xVEcZBkyEd6WJ8gws_yupQ" name="Object" isLeaf="true" isAbstract="true"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_xVEcZxkyEd6WJ8gws_yupQ" name="Error" isLeaf="true" isAbstract="true"/>
