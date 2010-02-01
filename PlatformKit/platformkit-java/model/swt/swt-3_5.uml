@@ -7530,8 +7530,7 @@
               <ownedParameter xmi:id="_P0CDpOpBEd6W54Bguqf7oQ" name="arg0" type="_PwCUd-pBEd6W54Bguqf7oQ"/>
             </ownedOperation>
           </packagedElement>
-          <packagedElement xmi:type="uml:Interface" xmi:id="_Pqz2MOpBEd6W54Bguqf7oQ" name="Drawable" isAbstract="true">
-          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_Pqz2MOpBEd6W54Bguqf7oQ" name="Drawable" isAbstract="true"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_Pqz2M-pBEd6W54Bguqf7oQ" name="DeviceData">
             <generalization xmi:id="_Pqz2NOpBEd6W54Bguqf7oQ" general="_PnQy9upBEd6W54Bguqf7oQ"/>
             <ownedAttribute xmi:id="_P0CDpepBEd6W54Bguqf7oQ" name="debug" visibility="public" type="_PwCUd-pBEd6W54Bguqf7oQ"/>
@@ -9949,7 +9948,9 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_PnQy9OpBEd6W54Bguqf7oQ" name="java">
-    <eAnnotations xmi:id="_WH6cgOpBEd6W54Bguqf7oQ" source="PlatformKit#Derived"/>
+    <eAnnotations xmi:id="_WH6cgOpBEd6W54Bguqf7oQ" source="Jar2UML">
+      <details xmi:id="_Er6kQA8jEd-uh8oAfzhhyg" key="inferred" value="true"/>
+    </eAnnotations>
     <packagedElement xmi:type="uml:Package" xmi:id="_PnQy9epBEd6W54Bguqf7oQ" name="lang">
       <packagedElement xmi:type="uml:Class" xmi:id="_PnQy9upBEd6W54Bguqf7oQ" name="Object" isLeaf="true" isAbstract="true"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_PnSBEOpBEd6W54Bguqf7oQ" name="Error" isLeaf="true" isAbstract="true"/>
