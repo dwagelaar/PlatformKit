@@ -7,7 +7,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.ui.WorkbenchException;
 
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
@@ -35,69 +34,74 @@ public abstract class ProgressMonitorJob extends Job {
 	 * @return True if last run was cancelled.
 	 */
 	public boolean isCancelled() {
-	    return cancelled;
+		return cancelled;
 	}
 
-    /**
-     * Increases the progressmonitor by 1.
-     * @param monitor
-     * @throws WorkbenchException if user pressed cancel button.
-     */
-    protected void worked(IProgressMonitor monitor, String message) 
-    throws OperationCanceledException {
-        worked(monitor, null, message);
-    }
+	/**
+	 * Increases the progressmonitor by 1.
+	 * @param monitor
+	 * @throws OperationCanceledException if user pressed cancel button.
+	 */
+	protected void worked(IProgressMonitor monitor, String message) 
+	throws OperationCanceledException {
+		worked(monitor, null, message);
+	}
 
-    /**
-     * Increases the progressmonitor by 1.
-     * @param monitor
-     * @param subTask The subtask, or null if none.
-     * @throws WorkbenchException if user pressed cancel button.
-     */
-    protected void worked(IProgressMonitor monitor, ProgressMonitorJob subTask, String message) 
-    throws OperationCanceledException {
-        monitor.worked(1);
-        if (message != null) {
-        	long currentTime = System.currentTimeMillis();
-            logger.info(message + " at " + formatTime(currentTime-getJobStartTime()));
-        }
-        if (subTask != null) {
-            if (subTask.isCancelled()) {
-                monitor.setCanceled(true);
-            }
-        }
-        checkCanceled(monitor);
-    }
-    
-    protected void checkCanceled(IProgressMonitor monitor)
-    throws OperationCanceledException {
-        if (monitor.isCanceled()) {
-            cancelled = true;
-            throw new OperationCanceledException("Operation cancelled by user");
-        }
-    }
-    
-    /**
-     * Logs and starts a new task on the progress monitor
-     * @param monitor
-     * @param message
-     */
-    protected void subTask(IProgressMonitor monitor, String message) {
-        logger.info(message);
-        monitor.subTask(message);
-    }
-    
-    /**
-     * Logs and starts a series of tasks, and sets the start time.
-     * @param monitor
-     * @param message
-     * @param totalWork The amount of subtasks
-     */
-    protected void beginTask(IProgressMonitor monitor, String message, int totalWork) {
-    	setJobStartTime(System.currentTimeMillis());
-        monitor.beginTask(message, totalWork);
-        logger.info(message);
-    }
+	/**
+	 * Increases the progressmonitor by 1.
+	 * @param monitor
+	 * @param subTask The subtask, or null if none.
+	 * @throws OperationCanceledException if user pressed cancel button.
+	 */
+	protected void worked(IProgressMonitor monitor, ProgressMonitorJob subTask, String message) 
+	throws OperationCanceledException {
+		monitor.worked(1);
+		if (message != null) {
+			long currentTime = System.currentTimeMillis();
+			logger.info(message + " at " + formatTime(currentTime-getJobStartTime()));
+		}
+		if (subTask != null) {
+			if (subTask.isCancelled()) {
+				monitor.setCanceled(true);
+			}
+		}
+		checkCanceled(monitor);
+	}
+
+	/**
+	 * Checks if the monitor was cancelled.
+	 * @param monitor
+	 * @throws OperationCanceledException if the monitor was cancelled.
+	 */
+	protected void checkCanceled(IProgressMonitor monitor)
+	throws OperationCanceledException {
+		if (monitor.isCanceled()) {
+			cancelled = true;
+			throw new OperationCanceledException("Operation cancelled by user");
+		}
+	}
+
+	/**
+	 * Logs and starts a new task on the progress monitor
+	 * @param monitor
+	 * @param message
+	 */
+	protected void subTask(IProgressMonitor monitor, String message) {
+		logger.info(message);
+		monitor.subTask(message);
+	}
+
+	/**
+	 * Logs and starts a series of tasks, and sets the start time.
+	 * @param monitor
+	 * @param message
+	 * @param totalWork The amount of subtasks
+	 */
+	protected void beginTask(IProgressMonitor monitor, String message, int totalWork) {
+		setJobStartTime(System.currentTimeMillis());
+		monitor.beginTask(message, totalWork);
+		logger.info(message);
+	}
 
 	/**
 	 * @return the job start time
@@ -136,34 +140,34 @@ public abstract class ProgressMonitorJob extends Job {
 	 */
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
-        IStatus st;
-        try {
-	        runAction(monitor);
-	        st = new Status(
-	                IStatus.OK, 
-	                PlatformkitEditorPlugin.getPlugin().getBundle().getSymbolicName(), 
-	                getName() + " completed successfully");
+		IStatus st;
+		try {
+			runAction(monitor);
+			st = new Status(
+					IStatus.OK, 
+					PlatformkitEditorPlugin.getPlugin().getBundle().getSymbolicName(), 
+					getName() + " completed successfully");
 		} catch (Exception e) {
 			PlatformkitEditorPlugin.report(e);
-	        st = new Status(
-	                IStatus.ERROR, 
-	                PlatformkitEditorPlugin.getPlugin().getBundle().getSymbolicName(), 
-	                e.getLocalizedMessage(),
-	                e);
-	        catchCleanup();
+			st = new Status(
+					IStatus.ERROR, 
+					PlatformkitEditorPlugin.getPlugin().getBundle().getSymbolicName(), 
+					e.getLocalizedMessage(),
+					e);
+			catchCleanup();
 		} finally {
-            monitor.done();
+			monitor.done();
 			finallyCleanup();
 		}
 		return st;
 	}
 
-    /**
-     * Invoked when the action is executed.
-     * @param monitor
-     * @throws Exception
-     */
-    protected abstract void runAction(IProgressMonitor monitor) throws Exception;
+	/**
+	 * Invoked when the action is executed.
+	 * @param monitor
+	 * @throws Exception
+	 */
+	protected abstract void runAction(IProgressMonitor monitor) throws Exception;
 
 	/**
 	 * Invoked after an Exception is caught in {@link #run(IProgressMonitor)}.
