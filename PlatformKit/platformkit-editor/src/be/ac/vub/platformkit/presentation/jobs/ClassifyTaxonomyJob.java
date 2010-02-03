@@ -98,7 +98,7 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 		// 8
 		//
 		subTask(monitor, "Updating asserted class hierarchy...");
-		pruneHierarchyMap(monitor, ont);
+		updateHierarchy(monitor, ont);
 		worked(monitor, "Updated asserted class hierarchy");
 		//
 		// 9
@@ -155,7 +155,6 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 	 */
 	protected void updateHierarchy(IProgressMonitor monitor, IOntologies ont) {
 		List<IOntClass> namedClasses = ont.getLocalNamedClasses();
-		beginTask(monitor, getName(), namedClasses.size());
 		for (int i = 0; i < namedClasses.size(); i++) {
 			try {
 				IOntClass c = namedClasses.get(i);
