@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.impl;
 
 import java.util.logging.Logger;
@@ -22,6 +26,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.PlatformkitPackage;
+import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
@@ -46,8 +51,8 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
-	
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
+
 	private class CacheAdapter extends AdapterImpl {
 
 		public void notifyChanged(Notification msg) {
@@ -56,12 +61,12 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 				setOntClass(null);
 			}
 		}
-		
+
 	}
 
-    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	private IOntClass ontClass = null;
-	
+
 	/**
 	 * The default value of the '{@link #getOntClassURI() <em>Ont Class URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -107,7 +112,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * @generated
 	 */
 	public ConstraintSet getSet() {
-		if (eContainerFeatureID != PlatformkitPackage.CONSTRAINT__SET) return null;
+		if (eContainerFeatureID() != PlatformkitPackage.CONSTRAINT__SET) return null;
 		return (ConstraintSet)eContainer();
 	}
 
@@ -127,9 +132,9 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * @generated
 	 */
 	public void setSet(ConstraintSet newSet) {
-		if (newSet != eInternalContainer() || (eContainerFeatureID != PlatformkitPackage.CONSTRAINT__SET && newSet != null)) {
+		if (newSet != eInternalContainer() || (eContainerFeatureID() != PlatformkitPackage.CONSTRAINT__SET && newSet != null)) {
 			if (EcoreUtil.isAncestor(this, newSet))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString()); //$NON-NLS-1$
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
@@ -169,19 +174,23 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 */
 	public boolean isValid() {
 		Assert.assertNotNull(ontClass);
-        boolean valid;
-        //Jena is not thread-safe when communicating to the DIG reasoner,
-        //so lock all actions that trigger DIG activity.
-        synchronized (IOntologies.class) {
-            valid = ontClass.hasInstances();
-        }
-        if (valid) {
-            logger.fine(ontClass + " is valid");
-            return true;
-        } else {
-            logger.info(ontClass + " is invalid");
-            return false;
-        }
+		boolean valid;
+		//Jena is not thread-safe when communicating to the DIG reasoner,
+		//so lock all actions that trigger DIG activity.
+		synchronized (IOntologies.class) {
+			valid = ontClass.hasInstances();
+		}
+		if (valid) {
+			logger.fine(String.format(
+					PlatformkitResources.getString("ConstraintImpl.isValid"), 
+					ontClass)); //$NON-NLS-1$
+			return true;
+		} else {
+			logger.fine(String.format(
+					PlatformkitResources.getString("ConstraintImpl.isInvalid"), 
+					ontClass)); //$NON-NLS-1$
+			return false;
+		}
 	}
 
 	/**
@@ -221,7 +230,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID) {
+		switch (eContainerFeatureID()) {
 			case PlatformkitPackage.CONSTRAINT__SET:
 				return eInternalContainer().eInverseRemove(this, PlatformkitPackage.CONSTRAINT_SET__CONSTRAINT, ConstraintSet.class, msgs);
 		}
@@ -306,12 +315,16 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ontClassURI: ");
+		result.append(" (ontClassURI: "); //$NON-NLS-1$
 		result.append(ontClassURI);
 		result.append(')');
 		return result.toString();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.IOntModelChangeListener#ontModelChanged(be.ac.vub.platformkit.kb.IOntModel)
+	 */
 	public void ontModelChanged(IOntModel ontModel) {
 		if (ontClassURI != null) {
 			if (ontModel == null) {
@@ -319,36 +332,57 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 			} else {
 				setOntClass(findOntClass(ontModel));
 			}
-            logger.info("OntModel changed; refreshed " + this);
+			logger.info(String.format(
+					PlatformkitResources.getString("ConstraintImpl.ontModelChanged"), 
+					this)); //$NON-NLS-1$
 		}
 	}
-	
+
+	/**
+	 * Finds the {@link IOntClass} that represents this {@link Constraint}.
+	 * @param ontModel
+	 * @return the {@link IOntClass} that represents this {@link Constraint}, or <code>null</code>.
+	 */
 	protected IOntClass findOntClass(IOntModel ontModel) {
 		IOntClass ontClass = null;
 		if (ontClassURI != null) {
 			if (ontModel != null) {
-	            //Jena is not thread-safe when communicating to the DIG reasoner,
-	            //so lock all actions that trigger DIG activity.
-	            synchronized (IOntologies.class) {
-	            	ontClass = ontModel.getOntClass(ontClassURI);
-	            }
+				//Jena is not thread-safe when communicating to the DIG reasoner,
+				//so lock all actions that trigger DIG activity.
+				synchronized (IOntologies.class) {
+					ontClass = ontModel.getOntClass(ontClassURI);
+				}
 			}
 		}
 		return ontClass;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.Constraint#getOntClass()
+	 */
 	public IOntClass getOntClass() {
 		if (ontClass == null) {
 			ontClass = findOntClass(getOntModel());
-            logger.info("Refreshed " + this);
+			logger.info(String.format(
+					PlatformkitResources.getString("ConstraintImpl.refreshed"), 
+					this)); //$NON-NLS-1$
 		}
 		return ontClass;
 	}
 
+	/**
+	 * Sets the {@link IOntClass} that represents this {@link Constraint}.
+	 * @param ontClass
+	 */
 	public void setOntClass(IOntClass ontClass) {
 		this.ontClass = ontClass;
 	}
-	
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.Constraint#getOntModel()
+	 */
 	public IOntModel getOntModel() {
 		ConstraintSet set = getSet();
 		if (set != null) {

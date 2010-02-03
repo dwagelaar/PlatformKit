@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.impl;
 
 import java.util.Collection;
@@ -30,6 +34,7 @@ import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitFactory;
 import be.ac.vub.platformkit.PlatformkitPackage;
+import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
@@ -52,13 +57,13 @@ import be.ac.vub.platformkit.util.TreeSorter;
  * @generated
  */
 public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * Wrapper iterator that returns the OntClass objects attached to Constraint object.
@@ -68,7 +73,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 */
 	private class ConstraintIterator implements Iterator<IOntClass> {
 		private Iterator<Constraint> inner;
-		
+
 		/**
 		 * Creates a new ConstraintIterator.
 		 * @param inner An Iterator over Constraint objects.
@@ -89,32 +94,32 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		public void remove() {
 			inner.remove();
 		}
-		
+
 	}
-	
+
 	private class CacheAdapter extends AdapterImpl {
 
 		public void notifyChanged(Notification msg) {
 			super.notifyChanged(msg);
 			if ((msg.getFeature().equals(PlatformkitPackage.eINSTANCE.getConstraintSet_Constraint())) ||
-			    (msg.getFeature().equals(PlatformkitPackage.eINSTANCE.getConstraintSet_Name()))) {
+					(msg.getFeature().equals(PlatformkitPackage.eINSTANCE.getConstraintSet_Name()))) {
 				resetCache();
 			}
 		}
-		
+
 	}
-	
-    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
-    private EList<Constraint> mostSpecific = null;
-    private EList<Constraint> leastSpecific = null;
-    private Constraint intersection = null;
-    private ConstraintSpace transientSpace = null;
+	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
-    private static TreeSorter<Constraint> msfSorter = new TreeSorter<Constraint>( 
-            new HierarchyComparator(HierarchyComparator.MOST_SPECIFIC_FIRST)); 
-    private static TreeSorter<Constraint> lsfSorter = new TreeSorter<Constraint>( 
-            new HierarchyComparator(HierarchyComparator.LEAST_SPECIFIC_FIRST)); 
+	private EList<Constraint> mostSpecific = null;
+	private EList<Constraint> leastSpecific = null;
+	private Constraint intersection = null;
+	private ConstraintSpace transientSpace = null;
+
+	private static TreeSorter<Constraint> msfSorter = new TreeSorter<Constraint>( 
+			new HierarchyComparator(HierarchyComparator.MOST_SPECIFIC_FIRST)); 
+	private static TreeSorter<Constraint> lsfSorter = new TreeSorter<Constraint>( 
+			new HierarchyComparator(HierarchyComparator.LEAST_SPECIFIC_FIRST)); 
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -171,7 +176,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * @generated
 	 */
 	public ConstraintSpace getSpace() {
-		if (eContainerFeatureID != PlatformkitPackage.CONSTRAINT_SET__SPACE) return null;
+		if (eContainerFeatureID() != PlatformkitPackage.CONSTRAINT_SET__SPACE) return null;
 		return (ConstraintSpace)eContainer();
 	}
 
@@ -191,9 +196,9 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * @generated
 	 */
 	public void setSpace(ConstraintSpace newSpace) {
-		if (newSpace != eInternalContainer() || (eContainerFeatureID != PlatformkitPackage.CONSTRAINT_SET__SPACE && newSpace != null)) {
+		if (newSpace != eInternalContainer() || (eContainerFeatureID() != PlatformkitPackage.CONSTRAINT_SET__SPACE && newSpace != null)) {
 			if (EcoreUtil.isAncestor(this, newSpace))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString()); //$NON-NLS-1$
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
@@ -244,12 +249,12 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 */
 	public boolean isValid() {
-        for (Iterator<Constraint> cs = getConstraint().iterator(); cs.hasNext();) {
-            if (!cs.next().isValid()) {
-                return false;
-            }
-        }
-        return true;
+		for (Iterator<Constraint> cs = getConstraint().iterator(); cs.hasNext();) {
+			if (!cs.next().isValid()) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/**
@@ -257,82 +262,90 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 */
 	public EList<Constraint> getMostSpecific() {
-        if (mostSpecific == null) {
-            mostSpecific = createAllMostSpecific();
-        }
-        return mostSpecific;
+		if (mostSpecific == null) {
+			mostSpecific = createAllMostSpecific();
+		}
+		return mostSpecific;
 	}
 
-    /**
-     * @return All constraints in this set in order, most-specific first.
-     * Requires a reasoner.
-     */
-    private EList<Constraint> createAllMostSpecific() {
-        logger.info("Calculating most-specific constraint order for " + getName());
-        EList<Constraint> mostSpecific = new BasicEList<Constraint>();
-        mostSpecific.addAll(getConstraint());
-        msfSorter.sort(mostSpecific);
-        return mostSpecific;
-    }
+	/**
+	 * @return All constraints in this set in order, most-specific first.
+	 * Requires a reasoner.
+	 */
+	private EList<Constraint> createAllMostSpecific() {
+		logger.info(String.format(
+				PlatformkitResources.getString("ConstraintSetImpl.calculatingMostSpecific"), 
+				getName())); //$NON-NLS-1$
+		EList<Constraint> mostSpecific = new BasicEList<Constraint>();
+		mostSpecific.addAll(getConstraint());
+		msfSorter.sort(mostSpecific);
+		return mostSpecific;
+	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
 	public EList<Constraint> getLeastSpecific() {
-        if (leastSpecific == null) {
-            leastSpecific = createAllLeastSpecific();
-        }
-        return leastSpecific;
+		if (leastSpecific == null) {
+			leastSpecific = createAllLeastSpecific();
+		}
+		return leastSpecific;
 	}
 
-    /**
-     * @return All constraints in this set in order, least-specific first.
-     * Requires a reasoner.
-     */
-    private EList<Constraint> createAllLeastSpecific() {
-        logger.info("Calculating least-specific constraint order for " + getName());
-        EList<Constraint> leastSpecific = new BasicEList<Constraint>();
-        leastSpecific.addAll(getConstraint());
-        lsfSorter.sort(leastSpecific);
-        return leastSpecific;
-    }
+	/**
+	 * @return All constraints in this set in order, least-specific first.
+	 * Requires a reasoner.
+	 */
+	private EList<Constraint> createAllLeastSpecific() {
+		logger.info(String.format(
+				PlatformkitResources.getString("ConstraintSetImpl.calculatingLeastSpecific"), 
+				getName())); //$NON-NLS-1$
+		EList<Constraint> leastSpecific = new BasicEList<Constraint>();
+		leastSpecific.addAll(getConstraint());
+		lsfSorter.sort(leastSpecific);
+		return leastSpecific;
+	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
 	public Constraint getIntersection() {
-        if (intersection == null) {
-            intersection = createIntersection();
-        }
-        return intersection;
+		if (intersection == null) {
+			intersection = createIntersection();
+		}
+		return intersection;
 	}
 
-    /**
-     * Creates the intersection constraint of all contained constraints.
-     * @return the intersection constraint.
-     */
-    private Constraint createIntersection() {
-    	String ontClassURI = IOntologies.LOCAL_INF_NS + "#" + getName() + "Intersection";
-    	IOntModel ontology = getOntModel();
-    	Assert.assertNotNull(ontology);
-        logger.info("creating/retrieving intersection class for " + getName());
-        //Jena is not thread-safe when communicating to the DIG reasoner,
-        //so lock all actions that trigger DIG activity.
-        synchronized (IOntologies.class) {
-            //attempt to retrieve existing intersection class
-            if (ontology.getOntClass(ontClassURI) == null) {
-                logger.fine("creating intersection class for " + getName());
-                ontology.createIntersectionClass(ontClassURI, 
-                		new ConstraintIterator(getConstraint().iterator()));
-            }
-        }
-        Constraint intersection = PlatformkitFactory.eINSTANCE.createConstraint();
-        intersection.setOntClassURI(ontClassURI);
-        intersection.ontModelChanged(ontology);
-        return intersection;
-    }
+	/**
+	 * Creates the intersection constraint of all contained constraints.
+	 * @return the intersection constraint.
+	 */
+	private Constraint createIntersection() {
+		String ontClassURI = IOntologies.LOCAL_INF_NS + "#" + getName() + "Intersection"; //$NON-NLS-1$ //$NON-NLS-2$
+		IOntModel ontology = getOntModel();
+		Assert.assertNotNull(ontology);
+		logger.info(String.format(
+				PlatformkitResources.getString("ConstraintSetImpl.createRetrieveIntersection"), 
+				getName())); //$NON-NLS-1$
+		//Jena is not thread-safe when communicating to the DIG reasoner,
+		//so lock all actions that trigger DIG activity.
+		synchronized (IOntologies.class) {
+			//attempt to retrieve existing intersection class
+			if (ontology.getOntClass(ontClassURI) == null) {
+				logger.fine(String.format(
+						PlatformkitResources.getString("ConstraintSetImpl.createIntersection"), 
+						getName())); //$NON-NLS-1$
+				ontology.createIntersectionClass(ontClassURI, 
+						new ConstraintIterator(getConstraint().iterator()));
+			}
+		}
+		Constraint intersection = PlatformkitFactory.eINSTANCE.createConstraint();
+		intersection.setOntClassURI(ontClassURI);
+		intersection.ontModelChanged(ontology);
+		return intersection;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -375,7 +388,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID) {
+		switch (eContainerFeatureID()) {
 			case PlatformkitPackage.CONSTRAINT_SET__SPACE:
 				return eInternalContainer().eInverseRemove(this, PlatformkitPackage.CONSTRAINT_SPACE__CONSTRAINT_SET, ConstraintSpace.class, msgs);
 		}
@@ -471,12 +484,16 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
+		result.append(" (name: "); //$NON-NLS-1$
 		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSet#addAllOntologyChangeListeners(be.ac.vub.platformkit.kb.IOntologies)
+	 */
 	public void addAllOntologyChangeListeners(IOntologies kb) {
 		Assert.assertNotNull(kb);
 		for (Iterator<Constraint> it = getConstraint().iterator(); it.hasNext();) {
@@ -484,6 +501,10 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSet#removeAllOntologyChangeListeners(be.ac.vub.platformkit.kb.IOntologies)
+	 */
 	public void removeAllOntologyChangeListeners(IOntologies kb) {
 		Assert.assertNotNull(kb);
 		for (Iterator<Constraint> it = getConstraint().iterator(); it.hasNext();) {
@@ -494,14 +515,25 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		resetCache();
 	}
 
+	/**
+	 * @see ConstraintSet#setTransientSpace(ConstraintSpace)
+	 */
 	public ConstraintSpace getTransientSpace() {
 		return transientSpace;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSet#setTransientSpace(be.ac.vub.platformkit.ConstraintSpace)
+	 */
 	public void setTransientSpace(ConstraintSpace transientSpace) {
 		this.transientSpace = transientSpace;
 	}
-	
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSet#getOntModel()
+	 */
 	public IOntModel getOntModel() {
 		ConstraintSpace space = getSpace();
 		if (space == null) {
@@ -513,23 +545,29 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 			return null;
 		}
 	}
-	
-    /**
-     * Resets cached volatile constraints.
-     */
-    protected void resetCache() {
-        if (intersection != null) {
-            intersection = null;
-            logger.fine("intersection class reset for " + getName());
-        }
-        if (mostSpecific != null) {
-            mostSpecific = null;
-            logger.fine("most-specific cache reset for " + getName());
-        }
-        if (leastSpecific != null) {
-            leastSpecific = null;
-            logger.fine("least-specific cache reset for " + getName());
-        }
-    }
+
+	/**
+	 * Resets cached volatile constraints.
+	 */
+	protected void resetCache() {
+		if (intersection != null) {
+			intersection = null;
+			logger.fine(String.format(
+					PlatformkitResources.getString("ConstraintSetImpl.resetIntersection"), 
+					getName())); //$NON-NLS-1$
+		}
+		if (mostSpecific != null) {
+			mostSpecific = null;
+			logger.fine(String.format(
+					PlatformkitResources.getString("ConstraintSetImpl.resetMostSpecific"), 
+					getName())); //$NON-NLS-1$
+		}
+		if (leastSpecific != null) {
+			leastSpecific = null;
+			logger.fine(String.format(
+					PlatformkitResources.getString("ConstraintSetImpl.resetLeastSpecific"), 
+					getName())); //$NON-NLS-1$
+		}
+	}
 
 } //ConstraintSetImpl

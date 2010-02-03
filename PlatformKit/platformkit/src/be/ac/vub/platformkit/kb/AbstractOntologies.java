@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.kb;
 
 import java.util.ArrayList;
@@ -16,7 +26,7 @@ public abstract class AbstractOntologies implements IOntologies {
 
 	protected static Logger logger = Logger.getLogger(LOGGER);
 	protected List<IOntModelChangeListener> ontologyChangeListeners = new ArrayList<IOntModelChangeListener>();
-	private String reasonerUrl = "http://localhost:8081";
+	private String reasonerUrl = "http://localhost:8081"; //$NON-NLS-1$
 
 	public AbstractOntologies() {
 		super();
@@ -30,52 +40,52 @@ public abstract class AbstractOntologies implements IOntologies {
 		ontologyChangeListeners.remove(listener);
 	}
 
-    /**
-     * Notifies all ontology change listeners of the new ontology model.
-     * @see #addOntModelChangeListener(IOntModelChangeListener)
-     */
-    protected void notifyOntologyChanged() {
-    	IOntModel ontology = getOntModel();
-    	for (Iterator<IOntModelChangeListener> it = ontologyChangeListeners.iterator(); it.hasNext();) {
-    		it.next().ontModelChanged(ontology);
-    	}
-    }
+	/**
+	 * Notifies all ontology change listeners of the new ontology model.
+	 * @see #addOntModelChangeListener(IOntModelChangeListener)
+	 */
+	protected void notifyOntologyChanged() {
+		IOntModel ontology = getOntModel();
+		for (Iterator<IOntModelChangeListener> it = ontologyChangeListeners.iterator(); it.hasNext();) {
+			it.next().ontModelChanged(ontology);
+		}
+	}
 
 	public void buildHierarchyMap() {
-	    List<IOntClass> forClasses = getLocalNamedClasses();
-	    for (int i = 0; i < forClasses.size(); i++) {
-	        try {
-	            buildHierarchyMap(forClasses.get(i));
-	        } catch (OntException nfe) {
-	            logger.warning(nfe.getMessage());
-	        }
-	    }
+		List<IOntClass> forClasses = getLocalNamedClasses();
+		for (int i = 0; i < forClasses.size(); i++) {
+			try {
+				buildHierarchyMap(forClasses.get(i));
+			} catch (OntException nfe) {
+				logger.warning(nfe.getMessage());
+			}
+		}
 	}
 
 	public void updateHierarchy() {
-	    List<IOntClass> forClasses = getLocalNamedClasses();
-	    for (int i = 0; i < forClasses.size(); i++) {
-	        try {
-	            pruneHierarchyMap(forClasses.get(i));
-	        } catch (OntException nfe) {
-	            logger.warning(nfe.getMessage());
-	        }
-	    }
-	    for (int i = 0; i < forClasses.size(); i++) {
-	        try {
-	            updateHierarchy(forClasses.get(i));
-	        } catch (OntException nfe) {
-	            logger.warning(nfe.getMessage());
-	        }
-	    }
+		List<IOntClass> forClasses = getLocalNamedClasses();
+		for (int i = 0; i < forClasses.size(); i++) {
+			try {
+				pruneHierarchyMap(forClasses.get(i));
+			} catch (OntException nfe) {
+				logger.warning(nfe.getMessage());
+			}
+		}
+		for (int i = 0; i < forClasses.size(); i++) {
+			try {
+				updateHierarchy(forClasses.get(i));
+			} catch (OntException nfe) {
+				logger.warning(nfe.getMessage());
+			}
+		}
 	}
 
 	public void setReasonerUrl(String reasonerUrl) {
-	    this.reasonerUrl = reasonerUrl;
+		this.reasonerUrl = reasonerUrl;
 	}
 
 	public String getReasonerUrl() {
-	    return reasonerUrl;
+		return reasonerUrl;
 	}
 
 }

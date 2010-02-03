@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.util;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -32,7 +36,7 @@ public class PlatformkitAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * The cached model package.
@@ -81,31 +85,31 @@ public class PlatformkitAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected PlatformkitSwitch<Adapter> modelSwitch =
 		new PlatformkitSwitch<Adapter>() {
-			@Override
-			public Adapter caseConstraintSpace(ConstraintSpace object) {
-				return createConstraintSpaceAdapter();
-			}
-			@Override
-			public Adapter caseConstraintSet(ConstraintSet object) {
-				return createConstraintSetAdapter();
-			}
-			@Override
-			public Adapter caseConstraint(Constraint object) {
-				return createConstraintAdapter();
-			}
-			@Override
-			public Adapter caseIOntModel(IOntModel object) {
-				return createIOntModelAdapter();
-			}
-			@Override
-			public Adapter caseIOntModelChangeListener(IOntModelChangeListener object) {
-				return createIOntModelChangeListenerAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+		@Override
+		public Adapter caseConstraintSpace(ConstraintSpace object) {
+			return createConstraintSpaceAdapter();
+		}
+		@Override
+		public Adapter caseConstraintSet(ConstraintSet object) {
+			return createConstraintSetAdapter();
+		}
+		@Override
+		public Adapter caseConstraint(Constraint object) {
+			return createConstraintAdapter();
+		}
+		@Override
+		public Adapter caseIOntModel(IOntModel object) {
+			return createIOntModelAdapter();
+		}
+		@Override
+		public Adapter caseIOntModelChangeListener(IOntModelChangeListener object) {
+			return createIOntModelChangeListenerAdapter();
+		}
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
