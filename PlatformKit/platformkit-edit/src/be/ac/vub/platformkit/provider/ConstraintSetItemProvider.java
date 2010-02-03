@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.provider;
 
 
@@ -50,7 +54,7 @@ public class ConstraintSetItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -89,8 +93,8 @@ public class ConstraintSetItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ConstraintSet_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstraintSet_name_feature", "_UI_ConstraintSet_type"),
+				 getString("_UI_ConstraintSet_name_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConstraintSet_name_feature", "_UI_ConstraintSet_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				 PlatformkitPackage.Literals.CONSTRAINT_SET__NAME,
 				 true,
 				 false,
@@ -138,7 +142,7 @@ public class ConstraintSetItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConstraintSet"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConstraintSet")); //$NON-NLS-1$
 	}
 
 	/**
@@ -151,8 +155,8 @@ public class ConstraintSetItemProvider
 	public String getText(Object object) {
 		String label = ((ConstraintSet)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ConstraintSet_type") :
-			getString("_UI_ConstraintSet_type") + " " + label;
+			getString("_UI_ConstraintSet_type") : //$NON-NLS-1$
+			getString("_UI_ConstraintSet_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

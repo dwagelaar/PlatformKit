@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.provider;
 
 
@@ -48,7 +52,7 @@ public class ConstraintItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -87,8 +91,8 @@ public class ConstraintItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Constraint_ontClassURI_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Constraint_ontClassURI_feature", "_UI_Constraint_type"),
+				 getString("_UI_Constraint_ontClassURI_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Constraint_ontClassURI_feature", "_UI_Constraint_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				 PlatformkitPackage.Literals.CONSTRAINT__ONT_CLASS_URI,
 				 true,
 				 false,
@@ -106,7 +110,7 @@ public class ConstraintItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Constraint"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Constraint")); //$NON-NLS-1$
 	}
 
 	/**
@@ -119,8 +123,8 @@ public class ConstraintItemProvider
 	public String getText(Object object) {
 		String label = ((Constraint)object).getOntClassURI();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Constraint_type") :
-			getString("_UI_Constraint_type") + " " + label;
+			getString("_UI_Constraint_type") : //$NON-NLS-1$
+			getString("_UI_Constraint_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
