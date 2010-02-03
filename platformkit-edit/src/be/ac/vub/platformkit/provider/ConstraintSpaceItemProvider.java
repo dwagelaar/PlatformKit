@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.provider;
 
 
@@ -50,7 +54,7 @@ public class ConstraintSpaceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -89,8 +93,8 @@ public class ConstraintSpaceItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ConstraintSpace_ontology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstraintSpace_ontology_feature", "_UI_ConstraintSpace_type"),
+				 getString("_UI_ConstraintSpace_ontology_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConstraintSpace_ontology_feature", "_UI_ConstraintSpace_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				 PlatformkitPackage.Literals.CONSTRAINT_SPACE__ONTOLOGY,
 				 true,
 				 false,
@@ -138,7 +142,7 @@ public class ConstraintSpaceItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConstraintSpace"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConstraintSpace")); //$NON-NLS-1$
 	}
 
 	/**
@@ -149,7 +153,7 @@ public class ConstraintSpaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ConstraintSpace_type");
+		return getString("_UI_ConstraintSpace_type"); //$NON-NLS-1$
 	}
 
 	/**
