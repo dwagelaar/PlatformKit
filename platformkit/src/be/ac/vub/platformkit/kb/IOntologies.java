@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.kb;
 
 import java.io.IOException;
@@ -14,10 +24,10 @@ import be.ac.vub.platformkit.kb.util.OntException;
  */
 public interface IOntologies {
 
-	public static final String LOGGER = "be.ac.vub.platformkit";
-	public static final String ONTOLOGY_EXT_POINT = "be.ac.vub.platformkit.ontology";
-	public static final String LOCAL_INF_NS = "http://local/platformkit/inferred.owl";
-	
+	public static final String LOGGER = "be.ac.vub.platformkit"; //$NON-NLS-1$
+	public static final String ONTOLOGY_EXT_POINT = "be.ac.vub.platformkit.ontology"; //$NON-NLS-1$
+	public static final String LOCAL_INF_NS = "http://local/platformkit/inferred.owl"; //$NON-NLS-1$
+
 	/**
 	 * Adds listener for changes to {@link #getOntModel()}.
 	 * @param listener
@@ -116,7 +126,7 @@ public interface IOntologies {
 	 * @throws IOException if the local ontology mapping could not be read.
 	 */
 	public abstract void addLocalOntologies(IOntologyProvider provider)
-			throws IOException;
+	throws IOException;
 
 	/**
 	 * @param reasonerUrl The reasonerUrl to set.
@@ -154,7 +164,7 @@ public interface IOntologies {
 	 * @throws OntException if the class cannot be found in the base ontology.
 	 */
 	public abstract void updateHierarchy(IOntClass forClass)
-			throws OntException;
+	throws OntException;
 
 	/**
 	 * Prunes the class hierarchy map for the given class.
@@ -163,7 +173,7 @@ public interface IOntologies {
 	 * @throws OntException if the class cannot be found in the hierarchy map.
 	 */
 	public abstract void pruneHierarchyMap(IOntClass forClass)
-			throws OntException;
+	throws OntException;
 
 	/**
 	 * Builds an internal map of the superclasses and equivalent classes of forClass in the base ontology.
@@ -172,6 +182,6 @@ public interface IOntologies {
 	 * @throws OntException if the class cannot be found in the base ontology.
 	 */
 	public abstract void buildHierarchyMap(IOntClass forClass)
-			throws OntException;
+	throws OntException;
 
 }

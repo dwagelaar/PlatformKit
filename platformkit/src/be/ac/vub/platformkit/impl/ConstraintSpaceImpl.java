@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.impl;
 
 import java.io.IOException;
@@ -37,6 +41,7 @@ import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitFactory;
 import be.ac.vub.platformkit.PlatformkitPackage;
+import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.util.EMFURIPathResolver;
@@ -63,7 +68,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	private class CacheAdapter extends AdapterImpl {
 
@@ -165,7 +170,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 */
 	public EList<ConstraintSet> getLeastSpecific(boolean validate) {
-        logger.info("Calculating least-specific constraint sets");
+        logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcLeastSpecific")); //$NON-NLS-1$
         EList<Constraint> optimalClasses = getIntersectionSet().getLeastSpecific();
         EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
         Map<Constraint, ConstraintSet> im = createIntersectionMap(validate);
@@ -183,7 +188,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 */
 	public EList<ConstraintSet> getMostSpecific(boolean validate) {
-        logger.info("Calculating most-specific constraint sets");
+        logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcLeastSpecific")); //$NON-NLS-1$
         EList<Constraint> optimalClasses = getIntersectionSet().getMostSpecific();
         EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
         Map<Constraint, ConstraintSet> im = createIntersectionMap(validate);
@@ -201,7 +206,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 */
 	public EList<ConstraintSet> getValid() {
-        logger.info("Calculating valid constraint sets");
+        logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcValid")); //$NON-NLS-1$
         EList<Constraint> optimalClasses = getIntersectionSet().getConstraint();
         EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
         Map<Constraint, ConstraintSet> im = createIntersectionMap(true);
@@ -219,7 +224,8 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 */
 	public EList<ConstraintSet> getInvalid() {
-        logger.info("Calculating invalid constraint sets");
+        logger.info(String.format(
+        		PlatformkitResources.getString("ConstraintSpaceImpl.calcInvalid"))); //$NON-NLS-1$
         EList<Constraint> optimalClasses = getIntersectionSet().getConstraint();
         EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
         Map<Constraint, ConstraintSet> im = createIntersectionMap(false);
@@ -340,7 +346,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ontology: ");
+		result.append(" (ontology: "); //$NON-NLS-1$
 		result.append(ontology);
 		result.append(')');
 		return result.toString();
@@ -444,7 +450,9 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
             if (!validate || cs.isValid()) {
                 im.put(cs.getIntersection(), cs);
             } else {
-                logger.info(cs.getName() + " is invalid - removed");
+                logger.info(String.format(
+                		PlatformkitResources.getString("ConstraintSpaceImpl.invalidRemoved"), 
+                		cs.getName())); //$NON-NLS-1$
             }
         }
         return im;
@@ -471,7 +479,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
     protected void resetCache() {
         if (intersectionSet != null) {
             intersectionSet = null;
-            logger.fine("intersection set reset for constraint space");
+            logger.fine(PlatformkitResources.getString("ConstraintSpaceImpl.resetIntersection")); //$NON-NLS-1$
         }
     }
     
@@ -481,7 +489,9 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 */
 	private InputStream getPreClassifiedOntology() throws IOException {
 		URI uri = eResource().getURI().trimFileExtension().appendFileExtension("inferred.owl");
-        logger.info("Searching pre-classified ontology at: " + uri.toString());
+        logger.info(String.format(
+        		PlatformkitResources.getString("ConstraintSpaceImpl.searchPreclassified"), 
+        		uri)); //$NON-NLS-1$
 		return converter.createInputStream(uri);
 	}
 

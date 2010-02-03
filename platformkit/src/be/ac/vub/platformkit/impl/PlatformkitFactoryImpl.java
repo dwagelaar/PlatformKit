@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -30,7 +34,7 @@ public class PlatformkitFactoryImpl extends EFactoryImpl implements PlatformkitF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * Creates the default factory implementation.
@@ -40,7 +44,7 @@ public class PlatformkitFactoryImpl extends EFactoryImpl implements PlatformkitF
 	 */
 	public static PlatformkitFactory init() {
 		try {
-			PlatformkitFactory thePlatformkitFactory = (PlatformkitFactory)EPackage.Registry.INSTANCE.getEFactory("http://ssel.vub.ac.be/platformkit"); 
+			PlatformkitFactory thePlatformkitFactory = (PlatformkitFactory)EPackage.Registry.INSTANCE.getEFactory("http://ssel.vub.ac.be/platformkit"); //$NON-NLS-1$ 
 			if (thePlatformkitFactory != null) {
 				return thePlatformkitFactory;
 			}
@@ -73,7 +77,7 @@ public class PlatformkitFactoryImpl extends EFactoryImpl implements PlatformkitF
 			case PlatformkitPackage.CONSTRAINT_SET: return createConstraintSet();
 			case PlatformkitPackage.CONSTRAINT: return createConstraint();
 			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

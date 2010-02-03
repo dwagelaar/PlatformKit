@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.util;
 
 import java.util.List;
@@ -37,7 +41,7 @@ public class PlatformkitSwitch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * The cached model package
@@ -84,9 +88,9 @@ public class PlatformkitSwitch<T> {
 		else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
 			return
-				eSuperTypes.isEmpty() ?
+			eSuperTypes.isEmpty() ?
 					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
+						doSwitch(eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -99,32 +103,32 @@ public class PlatformkitSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case PlatformkitPackage.CONSTRAINT_SPACE: {
-				ConstraintSpace constraintSpace = (ConstraintSpace)theEObject;
-				T result = caseConstraintSpace(constraintSpace);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PlatformkitPackage.CONSTRAINT_SET: {
-				ConstraintSet constraintSet = (ConstraintSet)theEObject;
-				T result = caseConstraintSet(constraintSet);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PlatformkitPackage.CONSTRAINT: {
-				Constraint constraint = (Constraint)theEObject;
-				T result = caseConstraint(constraint);
-				if (result == null) result = caseIOntModelChangeListener(constraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PlatformkitPackage.IONT_MODEL_CHANGE_LISTENER: {
-				IOntModelChangeListener iOntModelChangeListener = (IOntModelChangeListener)theEObject;
-				T result = caseIOntModelChangeListener(iOntModelChangeListener);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case PlatformkitPackage.CONSTRAINT_SPACE: {
+			ConstraintSpace constraintSpace = (ConstraintSpace)theEObject;
+			T result = caseConstraintSpace(constraintSpace);
+			if (result == null) result = defaultCase(theEObject);
+			return result;
+		}
+		case PlatformkitPackage.CONSTRAINT_SET: {
+			ConstraintSet constraintSet = (ConstraintSet)theEObject;
+			T result = caseConstraintSet(constraintSet);
+			if (result == null) result = defaultCase(theEObject);
+			return result;
+		}
+		case PlatformkitPackage.CONSTRAINT: {
+			Constraint constraint = (Constraint)theEObject;
+			T result = caseConstraint(constraint);
+			if (result == null) result = caseIOntModelChangeListener(constraint);
+			if (result == null) result = defaultCase(theEObject);
+			return result;
+		}
+		case PlatformkitPackage.IONT_MODEL_CHANGE_LISTENER: {
+			IOntModelChangeListener iOntModelChangeListener = (IOntModelChangeListener)theEObject;
+			T result = caseIOntModelChangeListener(iOntModelChangeListener);
+			if (result == null) result = defaultCase(theEObject);
+			return result;
+		}
+		default: return defaultCase(theEObject);
 		}
 	}
 
