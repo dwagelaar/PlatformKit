@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.util;
 
 import java.lang.ref.Reference;
@@ -52,52 +62,52 @@ public class ConstraintSpaceCache {
 		cache.put(key, new SoftReference<CacheEntry>(entry));
 	}
 
-    /**
-     * @param resource The resource that is used as a cache entry key.
-     * @return The cached {@link ConstraintSpace}, if available, null otherwise.
-     */
-    public ConstraintSpace get(IResource resource) {
-        return get(resource, resource.getModificationStamp());
-    }
+	/**
+	 * @param resource The resource that is used as a cache entry key.
+	 * @return The cached {@link ConstraintSpace}, if available, null otherwise.
+	 */
+	public ConstraintSpace get(IResource resource) {
+		return get(resource, resource.getModificationStamp());
+	}
 
-    /**
-     * @param resource The resource that is used as a cache entry key.
-     * @param space The {@link ConstraintSpace} to add to the cache.
-     */
-    public void put(IResource resource, ConstraintSpace space) {
-        put(resource, space, resource.getModificationStamp());
-    }
-    
-    /**
-     * @param resource The resource that is used as a cache entry key.
-     * @return The cached constraint space, if available, null otherwise.
-     */
-    public ConstraintSpace get(URI resource) {
-    	if (resource.isPlatformResource()) {
-    		IPath resourcePath = new Path(resource.toPlatformString(true));
-            IFile resourceFile = ResourcesPlugin.getWorkspace().getRoot().getFile(resourcePath);
-            Assert.isNotNull(resourceFile);
-            return get(resourceFile);
-    	} else {
-    		return get(resource, IResource.NULL_STAMP);
-    	}
-    }
+	/**
+	 * @param resource The resource that is used as a cache entry key.
+	 * @param space The {@link ConstraintSpace} to add to the cache.
+	 */
+	public void put(IResource resource, ConstraintSpace space) {
+		put(resource, space, resource.getModificationStamp());
+	}
 
-    /**
-     * @param resource The resource that is used as a cache entry key.
-     * @param space The {@link ConstraintSpace} to add to the cache.
-     */
-    public void put(URI resource, ConstraintSpace space) {
-    	if (resource.isPlatformResource()) {
-    		IPath resourcePath = new Path(resource.toPlatformString(true));
-            IFile resourceFile = ResourcesPlugin.getWorkspace().getRoot().getFile(resourcePath);
-            Assert.isNotNull(resourceFile);
-            put(resourceFile, space);
-    	} else {
-    		put(resource, space, IResource.NULL_STAMP);
-    	}
-    }
-    
+	/**
+	 * @param resource The resource that is used as a cache entry key.
+	 * @return The cached constraint space, if available, null otherwise.
+	 */
+	public ConstraintSpace get(URI resource) {
+		if (resource.isPlatformResource()) {
+			IPath resourcePath = new Path(resource.toPlatformString(true));
+			IFile resourceFile = ResourcesPlugin.getWorkspace().getRoot().getFile(resourcePath);
+			Assert.isNotNull(resourceFile);
+			return get(resourceFile);
+		} else {
+			return get(resource, IResource.NULL_STAMP);
+		}
+	}
+
+	/**
+	 * @param resource The resource that is used as a cache entry key.
+	 * @param space The {@link ConstraintSpace} to add to the cache.
+	 */
+	public void put(URI resource, ConstraintSpace space) {
+		if (resource.isPlatformResource()) {
+			IPath resourcePath = new Path(resource.toPlatformString(true));
+			IFile resourceFile = ResourcesPlugin.getWorkspace().getRoot().getFile(resourcePath);
+			Assert.isNotNull(resourceFile);
+			put(resourceFile, space);
+		} else {
+			put(resource, space, IResource.NULL_STAMP);
+		}
+	}
+
 	/**
 	 * Class for cached objects. 
 	 * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>

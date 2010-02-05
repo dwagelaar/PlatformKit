@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.util.provider;
 
 import java.net.URL;
@@ -31,13 +41,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
 
 /**
  * Adapter that can change the available child items and their order
  * in an EMF-based editor.
- * @author dennis
- *
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class PlatformKitItemProviderAdapter implements
 		Adapter.Internal, 
@@ -46,15 +56,16 @@ public class PlatformKitItemProviderAdapter implements
 		IItemLabelProvider, 
 		IItemPropertySource, 
 		IChangeNotifier,
-	    IDisposable,
-	    CreateChildCommand.Helper,
-	    ResourceLocator {
+		IDisposable,
+		CreateChildCommand.Helper,
+		ResourceLocator {
 
 	private ItemProviderAdapter inner;
 	private AdapterFactory factory;
 	private IEObjectValidator validator = null;
+
 	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
-	
+
 	/**
 	 * Creates a new PlatformKitItemProviderAdapter
 	 * @param inner The wrapped ItemProviderAdapter
@@ -66,7 +77,7 @@ public class PlatformKitItemProviderAdapter implements
 		this.inner = inner;
 		this.factory = factory;
 	}
-	
+
 	/**
 	 * Attach wrapper and validator if msg is an EObject.
 	 * @param msg
@@ -79,36 +90,40 @@ public class PlatformKitItemProviderAdapter implements
 		}
 	}
 
-    /**
-     * Updates the given EObject with wrappers and validators.
-     * @param object
-     */
-    protected void updateObject(EObject object) {
-    	Assert.isNotNull(object);
-    	boolean hasItemProvider = false;
-    	for (Adapter adapter : object.eAdapters()) {
-    		if (adapter instanceof ItemProviderAdapter) {
-    			hasItemProvider = true;
-    		}
-    	}
-    	if (!hasItemProvider) {
-        	// Bug #26: Profiling the Instant Messenger configuration editor throws ClassCastException
-    		// Solved: use AdapterFactory from editingDomain to pro-actively create underlying adapter
-			logger.info("Creating new adapters using adapter factory " + factory);
+	/**
+	 * Updates the given EObject with wrappers and validators.
+	 * @param object
+	 */
+	protected void updateObject(EObject object) {
+		Assert.isNotNull(object);
+		boolean hasItemProvider = false;
+		for (Adapter adapter : object.eAdapters()) {
+			if (adapter instanceof ItemProviderAdapter) {
+				hasItemProvider = true;
+			}
+		}
+		if (!hasItemProvider) {
+			// Bug #26: Profiling the Instant Messenger configuration editor throws ClassCastException
+			// Solved: use AdapterFactory from editingDomain to pro-actively create underlying adapter
+			logger.info(String.format(
+					PlatformkitEditorPlugin.getPlugin().getString("PlatformKitItemProviderAdapter.creatingNewAdaptersUsing"), 
+					factory)); //$NON-NLS-1$
 			factory.adaptAllNew(object);
-    	}
+		}
 		for (int i = 0; i < object.eAdapters().size(); i++) {
 			Object adapter = object.eAdapters().get(i);
 			if (adapter instanceof ItemProviderAdapter) {
 				PlatformKitItemProviderAdapter wrapper =
 					new PlatformKitItemProviderAdapter((ItemProviderAdapter) adapter, factory);
 				wrapper.setValidator(getValidator());
-				logger.info("Created wrapper adapter for new child " + object.toString());
+				logger.info(String.format(
+						PlatformkitEditorPlugin.getPlugin().getString("PlatformKitItemProviderAdapter.createdWrapperAdapterFor"), 
+						object)); //$NON-NLS-1$
 				object.eAdapters().set(i, wrapper);
 			}
 		}
-    }
-    
+	}
+
 	/**
 	 * @return The validated child item options in the optimised order.
 	 */
@@ -154,7 +169,7 @@ public class PlatformKitItemProviderAdapter implements
 		}
 		return validncds;
 	}
-	
+
 	/**
 	 * @param ncd NewChildDescriptor
 	 * @return True if the NewChildDescriptor is valid, false otherwise.
@@ -169,7 +184,7 @@ public class PlatformKitItemProviderAdapter implements
 		}
 		return true;
 	}
-	
+
 	public Command createCommand(Object object, EditingDomain editingDomain,
 			Class<? extends Command> commandClass, CommandParameter commandParameter) {
 		return inner.createCommand(object, editingDomain, commandClass, commandParameter);

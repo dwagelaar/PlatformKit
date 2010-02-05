@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.jobs;
 
 import java.util.ArrayList;
@@ -25,6 +35,7 @@ import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitFactory;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
  * Abstract job for adding new {@link ConstraintSet}s to a {@link ConstraintSpace}.
@@ -33,7 +44,6 @@ import be.ac.vub.platformkit.PlatformkitFactory;
  * set to 'PlatformConstraint' and the value set to the ontology class that
  * expressed the platform dependency constraint.
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
- *
  */
 public abstract class AddConstraintSetsJob extends ConstraintSpaceJob {
 
@@ -103,7 +113,7 @@ public abstract class AddConstraintSetsJob extends ConstraintSpaceJob {
 	protected static String getLabel(ENamedElement type) {
 		EObject container = type.eContainer();
 		if (container instanceof ENamedElement) {
-			return getLabel((ENamedElement)container) + "::" + type.getName();
+			return getLabel((ENamedElement)container) + "::" + type.getName(); //$NON-NLS-1$
 		} else {
 			return type.getName();                
 		}
@@ -126,13 +136,17 @@ public abstract class AddConstraintSetsJob extends ConstraintSpaceJob {
 	 */
 	@Override
 	protected void runAction(IProgressMonitor monitor) throws Exception {
-		beginTask(monitor, "Adding " + getSourceName() + "s", 1);
-		subTask(monitor, "Adding Constraint Sets for selected " + getSourceName() + "s...");
+		beginTask(monitor, String.format(
+				PlatformkitEditorPlugin.getPlugin().getString("AddConstraintSetsJob.beginTask"), 
+				getSourceName()), 1); //$NON-NLS-1$
+		subTask(monitor, String.format(
+				PlatformkitEditorPlugin.getPlugin().getString("AddConstraintSetsJob.addingCS"), 
+				getSourceName())); //$NON-NLS-1$
 		Resource[] sources = getSources();
 		List<Command> commands = createCommands(sources);
 		Command cmd = new CompoundCommand(commands);
 		getEditingDomain().getCommandStack().execute(cmd);
-		worked(monitor, "Added Constraint Sets");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("AddConstraintSetsJob.addedCS")); //$NON-NLS-1$
 	}
 
 	/**
@@ -190,16 +204,18 @@ public abstract class AddConstraintSetsJob extends ConstraintSpaceJob {
 		Assert.isNotNull(platformkitURI);
 		for (int i = 0; i < annotations.size(); i++) {
 			EAnnotation ann = annotations.get(i);
-			if ("PlatformKit".equals(ann.getSource())) {
-				String ont = ann.getDetails().get("Ontology");
+			if ("PlatformKit".equals(ann.getSource())) { //$NON-NLS-1$
+				String ont = ann.getDetails().get("Ontology"); //$NON-NLS-1$
 				if (ont != null) {
-					StringTokenizer onts = new StringTokenizer(ont, "\n");
+					StringTokenizer onts = new StringTokenizer(ont, "\n"); //$NON-NLS-1$
 					while (onts.hasMoreTokens()) {
 						ont = onts.nextToken();
 						ont = translatePath(ont, ann.eResource().getURI(), platformkitURI);
 						if (!ontologies.contains(ont)) {
 							ontologies.add(ont);
-							logger.info("Added ontology " + ont);
+							logger.info(String.format(
+									PlatformkitEditorPlugin.getPlugin().getString("AddConstraintSetsJob.addedOnt"), 
+									ont)); //$NON-NLS-1$
 						}
 					}
 				}
@@ -219,7 +235,7 @@ public abstract class AddConstraintSetsJob extends ConstraintSpaceJob {
 		}
 		for (int i = 0; i < annotations.size(); i++) {
 			EAnnotation ann = (EAnnotation) annotations.get(i);
-			if ("PlatformKit".equals(ann.getSource())) {
+			if ("PlatformKit".equals(ann.getSource())) { //$NON-NLS-1$
 				addConstraints(ann, constraints, set);
 			}
 		}
@@ -234,7 +250,7 @@ public abstract class AddConstraintSetsJob extends ConstraintSpaceJob {
 	protected void addConstraints(EAnnotation ann, Set<String> constraints, ConstraintSet set) {
 		for (int i = 0; i < ann.getDetails().size(); i++) {
 			Entry<String, String> detail = ann.getDetails().get(i);
-			if ("PlatformConstraint".equals(detail.getKey())) {
+			if ("PlatformConstraint".equals(detail.getKey())) { //$NON-NLS-1$
 				String constraint = detail.getValue();
 				if (!constraints.contains(constraint) && (constraint != null)) {
 					Constraint c = factory.createConstraint();

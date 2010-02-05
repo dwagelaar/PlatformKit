@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.bundle"
       label="PlatformKit Bundle"
-      version="1.2.0"
+      version="1.2.1"
       provider-name="Vrije Universiteit Brussel"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">

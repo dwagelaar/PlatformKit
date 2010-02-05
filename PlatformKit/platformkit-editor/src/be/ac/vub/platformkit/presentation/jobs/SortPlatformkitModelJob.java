@@ -1,6 +1,13 @@
-/**
- * 
- */
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.jobs;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -10,6 +17,7 @@ import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.PlatformKitException;
 
 /**
@@ -36,7 +44,7 @@ public class SortPlatformkitModelJob extends ConstraintSpaceJob {
 	 * @throws IllegalArgumentException 
 	 */
 	public SortPlatformkitModelJob(int mode) throws IllegalArgumentException {
-		super("Sorting Platformkit Model");
+		super(PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.name")); //$NON-NLS-1$
 		setMode(mode);
 	}
 
@@ -45,68 +53,70 @@ public class SortPlatformkitModelJob extends ConstraintSpaceJob {
 	 */
 	@Override
 	protected void runAction(IProgressMonitor monitor) throws Exception {
-		beginTask(monitor, getName() + " " + getTitle(), 6);
+		beginTask(monitor, PlatformkitEditorPlugin.getPlugin().getString(
+				"SortPlatformkitModelJob.beginTask", 
+				new Object[]{getName(), getTitle()}), 6); //$NON-NLS-1$
 		ConstraintSpace space = getSpace();
 		IOntologies ont = space.getKnowledgeBase();
 		//
 		// 1
 		//
 		if (ont == null) {
-			subTask(monitor, "Loading source ontologies...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("loadingSourceOnt")); //$NON-NLS-1$
 			ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
 			space.setKnowledgeBase(ont);
 			if (!space.init(true)) {
 				throw new PlatformKitException(
-						"Ontologies not pre-classified - Choose 'Classify Taxonomy' first");
+						PlatformkitEditorPlugin.getPlugin().getString("ontNotPreclassified")); //$NON-NLS-1$
 			}
-			worked(monitor, "Loaded source ontologies");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("loadedSourceOnt")); //$NON-NLS-1$
 		} else {
-			subTask(monitor, "Using pre-loaded source ontologies...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("usingPreloadedOnt")); //$NON-NLS-1$
 			worked(monitor, null);
 		}
 		//
 		// 2
 		//
-		subTask(monitor, "Attaching transitive reasoner...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.attachingTransReasoner")); //$NON-NLS-1$
 		ont.attachTransitiveReasoner();
-		worked(monitor, "Attached transitive reasoner");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.attachedTransReasoner")); //$NON-NLS-1$
 		//
 		// 3
 		//
-		subTask(monitor, "Retrieving intersection set...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("retrievingIS")); //$NON-NLS-1$
 		ConstraintSet is = space.getIntersectionSet();
 		is.getIntersection();
-		worked(monitor, "Retrieved intersection set");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("retrievedIS")); //$NON-NLS-1$
 		//
 		// 4
 		//
 		EList<ConstraintSet> specific;
 		switch (getMode()) {
 		case MOST_SPECIFIC:
-			subTask(monitor, "Determining most-specific constraint sets...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.determiningMostSpecific")); //$NON-NLS-1$
 			specific = space.getMostSpecific(false);
 			break;
 		case LEAST_SPECIFIC:
-			subTask(monitor, "Determining least-specific constraint sets...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.determiningLeastSpecific")); //$NON-NLS-1$
 			specific = space.getLeastSpecific(false);
 			break;
-		default: throw new IllegalArgumentException("Invalid mode");
+		default: throw new IllegalArgumentException(PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.invalidMode")); //$NON-NLS-1$
 		}
-		worked(monitor, "Determined most/least specific");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.determinedLeastOrMost")); //$NON-NLS-1$
 		//
 		// 5
 		//
-		subTask(monitor, "Detaching reasoner...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("detachingReasoner")); //$NON-NLS-1$
 		ont.detachReasoner();
-		worked(monitor, "Detached reasoner");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("detachedReasoner")); //$NON-NLS-1$
 		//
 		// 6
 		//
-		subTask(monitor, "Sorting constraint sets...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.sortingCS")); //$NON-NLS-1$
 		//cannot run in compound command
 		getEditingDomain().getCommandStack().execute(createRemoveConstraintSetCommand(space.getConstraintSet()));
 		getEditingDomain().getCommandStack().execute(createAddConstraintSetCommand(specific));
-		worked(monitor, "Sorted constraint sets");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.sortedCS")); //$NON-NLS-1$
 	}
 
 	/**
@@ -122,17 +132,16 @@ public class SortPlatformkitModelJob extends ConstraintSpaceJob {
 	 */
 	public void setMode(int mode) throws IllegalArgumentException {
 		this.mode = mode;
-		this.mode = mode;
-		StringBuffer buf = new StringBuffer();
 		switch (mode) {
-		case MOST_SPECIFIC:  buf.append("Most");
-		break;
-		case LEAST_SPECIFIC: buf.append("Least");
-		break;
-		default: throw new IllegalArgumentException("Invalid mode");
+		case MOST_SPECIFIC:
+			setTitle(PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.mostSpecificFirst")); //$NON-NLS-1$
+			break;
+		case LEAST_SPECIFIC:
+			setTitle(PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.leastSpecificFirst")); //$NON-NLS-1$
+			break;
+		default: throw new IllegalArgumentException(
+				PlatformkitEditorPlugin.getPlugin().getString("SortPlatformkitModelJob.invalidMode")); //$NON-NLS-1$
 		}
-		buf.append(" Specific First");
-		setTitle(buf.toString());
 	}
 
 	/**

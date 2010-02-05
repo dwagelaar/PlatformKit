@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.ui.util;
 
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -19,7 +29,7 @@ public class MessageDialogRunnable implements Runnable {
     private int mode = MODE_INFORMATION;
 
     /**
-     * Creates a new ConstraintListsDialogRunnable.
+     * Creates a new {@link MessageDialogRunnable}.
      * @param title The dialog title.
      * @param message The dialog message.
      */
@@ -40,6 +50,10 @@ public class MessageDialogRunnable implements Runnable {
         setMode(mode);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Runnable#run()
+     */
     public void run() {
     	switch (mode) {
     	case MODE_ERROR:

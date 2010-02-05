@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Platformkit Examples
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: be.ac.vub.platformkit.examples;singleton:=true
-Bundle-Version: 1.2.0
+Bundle-Version: 1.2.1
 Bundle-Localization: plugin
-Bundle-Vendor: Vrije Universiteit Brussel
+Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Require-Bundle: be.ac.vub.platformkit.editor,
  org.junit,

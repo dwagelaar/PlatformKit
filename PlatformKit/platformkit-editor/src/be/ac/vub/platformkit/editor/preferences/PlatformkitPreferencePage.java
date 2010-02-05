@@ -1,7 +1,19 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.editor.preferences;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
@@ -20,33 +32,35 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
+import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
+ * <p>
  * This class represents a preference page that
  * is contributed to the Preferences dialog. By 
  * subclassing <samp>FieldEditorPreferencePage</samp>, we
  * can use the field support built into JFace that allows
  * us to create a page that is small and knows how to 
  * save, restore and apply itself.
- * <p>
+ * </p><p>
  * This page is used to modify preferences only. They
  * are stored in the preference store that belongs to
  * the main plug-in class. That way, preferences can
  * be accessed directly via the preference store.
+ * </p>
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
+public class PlatformkitPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
-public class PlatformkitPreferencePage
-	extends FieldEditorPreferencePage
-	implements IWorkbenchPreferencePage {
-	
 	public PlatformkitPreferencePage() {
 		super(GRID);
 		setPreferenceStore(PlatformkitEditorPlugin.getPlugin().getPreferenceStore());
-		setDescription("PlatformKit preferences:\n");
+		setDescription(
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.description")); //$NON-NLS-1$
 	}
-	
+
 	/**
 	 * Creates the field editors. Field editors are abstractions of
 	 * the common GUI blocks needed to manipulate various types
@@ -56,45 +70,50 @@ public class PlatformkitPreferencePage
 	public void createFieldEditors() {
 		RadioGroupFieldEditor reasoner = new RadioGroupFieldEditor(
 				PreferenceConstants.P_REASONER,
-				"OWL DL reasoner",
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.owlReasoner"),
 				1,
 				new String[][] { 
-						{ "&Built-in Pellet reasoner", PreferenceConstants.P_BUILTIN }, 
-						{ "&DIG reasoner", PreferenceConstants.P_DIG } },
-				getFieldEditorParent(),
-                true);
-        addField(reasoner);
+						{ PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.pelletReasoner"), 
+							PreferenceConstants.P_BUILTIN }, 
+						{ PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.digReasoner"), 
+								PreferenceConstants.P_DIG } },
+						getFieldEditorParent(),
+						true); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		addField(reasoner);
 
-        Composite reasonerUrlContainer = new Composite(
-                reasoner.getRadioBoxControl(getFieldEditorParent()), 
-                SWT.NONE);
-        reasonerUrlContainer.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-        
+		Composite reasonerUrlContainer = new Composite(
+				reasoner.getRadioBoxControl(getFieldEditorParent()), 
+				SWT.NONE);
+		reasonerUrlContainer.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
+
 		StringFieldEditor reasonerUrl = new StringFieldEditor(
-				PreferenceConstants.P_DIG_URL, "\tDIG reasoner &URL:",
+				PreferenceConstants.P_DIG_URL, 
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.digUrl"),
 				reasonerUrlContainer) {
 
-					/* (non-Javadoc)
-					 * @see org.eclipse.jface.preference.StringFieldEditor#doCheckState()
-					 */
-					protected boolean doCheckState() {
-						try {
-							new URL(getStringValue());
-						} catch (MalformedURLException e) {
-							return false;
-						}
-						return true;
-					}
-		};
+			/* (non-Javadoc)
+			 * @see org.eclipse.jface.preference.StringFieldEditor#doCheckState()
+			 */
+			protected boolean doCheckState() {
+				try {
+					new URL(getStringValue());
+				} catch (MalformedURLException e) {
+					return false;
+				}
+				return true;
+			}
+		}; //$NON-NLS-1$
 		reasonerUrl.setEmptyStringAllowed(false);
-		reasonerUrl.setErrorMessage("Invalid DIG reasoner URL");
+		reasonerUrl.setErrorMessage(
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.digUrlError")); //$NON-NLS-1$
 		addField(reasonerUrl);
 
 		String[][] kbs = getKBs();
 		ComboFieldEditor kb = new ComboFieldEditor(
-				PreferenceConstants.P_KB, "&OWL knowledgebase implementation:",
+				PreferenceConstants.P_KB, 
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.kbImpl"),
 				kbs,
-				getFieldEditorParent());
+				getFieldEditorParent()); //$NON-NLS-1$
 		addField(kb);
 
 		String[] vms = CoreService.getLaunchersNames();
@@ -104,17 +123,43 @@ public class PlatformkitPreferencePage
 			vmss[i][1] = vms[i];
 		}
 		ComboFieldEditor atlVM = new ComboFieldEditor(
-				PreferenceConstants.P_ATLVM, "&ATL Virtual Machine:",
+				PreferenceConstants.P_ATLVM, 
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.atlVm"),
 				vmss,
-				getFieldEditorParent());
+				getFieldEditorParent()); //$NON-NLS-1$
 		addField(atlVM);
 
 		BooleanFieldEditor cacheAPI = new BooleanFieldEditor(
 				PreferenceConstants.P_CACHE_API,
-				"Cache API models",
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.cacheApi"),
 				BooleanFieldEditor.SEPARATE_LABEL,
-				getFieldEditorParent());
-        addField(cacheAPI);
+				getFieldEditorParent()); //$NON-NLS-1$
+		addField(cacheAPI);
+
+		String[][] lvls = new String[][] {
+				createComboEntry(Level.OFF),
+				createComboEntry(Level.SEVERE),
+				createComboEntry(Level.WARNING),
+				createComboEntry(Level.INFO),
+				createComboEntry(Level.FINE),
+				createComboEntry(Level.FINER),
+				createComboEntry(Level.FINEST),
+				createComboEntry(Level.ALL)
+		};
+		ComboFieldEditor logLevel = new ComboFieldEditor(
+				PreferenceConstants.P_LOG_LEVEL, 
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.logLevel"),
+				lvls,
+				getFieldEditorParent()); //$NON-NLS-1$
+		addField(logLevel);
+	}
+	
+	/**
+	 * @param level
+	 * @return A preference combo field entry for level.
+	 */
+	private String[] createComboEntry(Level level) {
+		return new String[] { level.getLocalizedName(), level.toString() };
 	}
 
 	/* (non-Javadoc)
@@ -122,7 +167,10 @@ public class PlatformkitPreferencePage
 	 */
 	public void init(IWorkbench workbench) {
 	}
-	
+
+	/**
+	 * @return A {@link ComboFieldEditor} string array with the registered knowledgebases.
+	 */
 	private static String[][] getKBs() {
 		IExtensionRegistry registry = Platform.getExtensionRegistry();		
 		IExtensionPoint point = registry.getExtensionPoint(IOntologiesFactory.KB_EXT_POINT);
@@ -131,11 +179,29 @@ public class PlatformkitPreferencePage
 		for (int i = 0; i < extensions.length; i++) {
 			IExtension extension = extensions[i];
 			for (IConfigurationElement element : extension.getConfigurationElements()) {
-				kbs[i][0] = element.getAttribute("name");//$NON-NLS-1$
-				kbs[i][1] = element.getAttribute("factory");//$NON-NLS-1$
+				kbs[i][0] = element.getAttribute("name"); //$NON-NLS-1$
+				kbs[i][1] = element.getAttribute("factory"); //$NON-NLS-1$
 			}
 		}
 		return kbs;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.jface.preference.FieldEditorPreferencePage#performOk()
+	 */
+	@Override
+	public boolean performOk() {
+		boolean ok = super.performOk();
+		if (ok) {
+			// Directly apply new log level
+			String logLevel = getPreferenceStore().getString(PreferenceConstants.P_LOG_LEVEL);
+			Logger logger = Logger.getLogger(IOntologies.LOGGER);
+			logger.setLevel(Level.parse(logLevel));
+			logger.info(String.format(
+					PlatformkitEditorPlugin.getPlugin().getString("logLevelSetTo"), 
+					logLevel)); //$NON-NLS-1$
+		}
+		return ok;
 	}
 
 }

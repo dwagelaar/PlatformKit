@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Platformkit Jena Knowledgebase Documentation
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: be.ac.vub.platformkit.kb.jena.doc; singleton:=true
-Bundle-Version: 1.2.0
-Bundle-Vendor: Vrije Universiteit Brussel
+Bundle-Version: 1.2.1
+Bundle-Vendor: %Bundle-Vendor

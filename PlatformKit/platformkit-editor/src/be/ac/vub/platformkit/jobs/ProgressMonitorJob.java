@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.jobs;
 
 import java.util.logging.Logger;
@@ -57,8 +67,13 @@ public abstract class ProgressMonitorJob extends Job {
 	throws OperationCanceledException {
 		monitor.worked(1);
 		if (message != null) {
-			long currentTime = System.currentTimeMillis();
-			logger.info(message + " at " + formatTime(currentTime-getJobStartTime()));
+			long time = System.currentTimeMillis() - getJobStartTime();
+			logger.info(String.format(
+					PlatformkitEditorPlugin.getPlugin().getString("ProgressMonitorJob.logAt"), 
+					message,
+					time,
+					time,
+					time)); //$NON-NLS-1$
 		}
 		if (subTask != null) {
 			if (subTask.isCancelled()) {
@@ -77,7 +92,8 @@ public abstract class ProgressMonitorJob extends Job {
 	throws OperationCanceledException {
 		if (monitor.isCanceled()) {
 			cancelled = true;
-			throw new OperationCanceledException("Operation cancelled by user");
+			throw new OperationCanceledException(
+					PlatformkitEditorPlugin.getPlugin().getString("operationCancelled")); //$NON-NLS-1$
 		}
 	}
 
@@ -117,24 +133,6 @@ public abstract class ProgressMonitorJob extends Job {
 		this.jobStartTime = startTime;
 	}
 
-	/**
-	 * @param millis
-	 * @return String formatted as "m:ss"
-	 */
-	private String formatTime(long millis) {
-		long seconds = millis / 1000;
-		long minutes = seconds / 60;
-		seconds = seconds % 60;
-		StringBuffer s = new StringBuffer();
-		s.append(minutes);
-		s.append(':');
-		if (seconds < 10) {
-			s.append('0');
-		}
-		s.append(seconds);
-		return s.toString();
-	}
-
 	/* (non-Javadoc)
 	 * @see org.eclipse.core.runtime.jobs.Job#run(org.eclipse.core.runtime.IProgressMonitor)
 	 */
@@ -146,7 +144,9 @@ public abstract class ProgressMonitorJob extends Job {
 			st = new Status(
 					IStatus.OK, 
 					PlatformkitEditorPlugin.getPlugin().getBundle().getSymbolicName(), 
-					getName() + " completed successfully");
+					String.format(
+							PlatformkitEditorPlugin.getPlugin().getString("ProgressMonitorJob.completedSuccesfully"), 
+							getName())); //$NON-NLS-1$
 		} catch (Exception e) {
 			PlatformkitEditorPlugin.report(e);
 			st = new Status(

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.java.jobs;
 
 import java.io.IOException;
@@ -26,6 +36,7 @@ import org.eclipse.m2m.atl.core.launch.ILauncher;
 
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
+import be.ac.vub.platformkit.java.PlatformkitJavaResources;
 import be.ac.vub.platformkit.java.popup.util.ATLUtil;
 import be.ac.vub.platformkit.jobs.ProgressMonitorJob;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
@@ -40,10 +51,10 @@ public class CompatJob extends ProgressMonitorJob {
 	 * Creates a new {@link CompatJob}.
 	 */
 	public CompatJob() {
-		super("Determining compatibility");
-		vmoptions.put("printExecutionTime", "true");
-		vmoptions.put("allowInterModelReferences", "true");
-		vmoptions.put("supportUML2Stereotypes", "true");
+		super(PlatformkitJavaResources.getString("CompatJob.name")); //$NON-NLS-1$
+		vmoptions.put("printExecutionTime", "true"); //$NON-NLS-1$
+		vmoptions.put("allowInterModelReferences", "true"); //$NON-NLS-1$
+		vmoptions.put("supportUML2Stereotypes", "true"); //$NON-NLS-1$
 	}
 
 	/*
@@ -82,7 +93,7 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws ATLCoreException 
 		 */
 		public IReferenceModel getUML2() throws ATLCoreException, IOException {
-			return atlUtil.loadRefModel(UML_MM.openStream(), "UML2", UML_MM.toString(), MODEL_HANDLER);
+			return atlUtil.loadRefModel(UML_MM.openStream(), "UML2", UML_MM.toString(), MODEL_HANDLER); //$NON-NLS-1$
 		}
 
 		/**
@@ -92,7 +103,7 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws ATLCoreException 
 		 */
 		public IModel getCRProfile(IReferenceModel uml2) throws ATLCoreException, IOException {
-			return atlUtil.loadModel(uml2, CR_PROF, "CR", CR_PROF);
+			return atlUtil.loadModel(uml2, CR_PROF, "CR", CR_PROF); //$NON-NLS-1$
 		}
 
 		/**
@@ -111,7 +122,7 @@ public class CompatJob extends ProgressMonitorJob {
 		 */
 		public IModel loadDEPSModel(IReferenceModel uml2,
 				String path) throws ATLCoreException {
-			return atlUtil.loadModel(uml2, path, "DEPS", path);
+			return atlUtil.loadModel(uml2, path, "DEPS", path); //$NON-NLS-1$
 		}
 
 		/**
@@ -122,7 +133,7 @@ public class CompatJob extends ProgressMonitorJob {
 		 */
 		public IModel loadDEPSModel(IReferenceModel uml2,
 				Resource resource) throws ATLCoreException {
-			return atlUtil.loadModel(uml2, resource, "DEPS");
+			return atlUtil.loadModel(uml2, resource, "DEPS"); //$NON-NLS-1$
 		}
 
 		/**
@@ -132,7 +143,7 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws ATLCoreException 
 		 */
 		public IModel createOUTModel(IReferenceModel uml2, String path) throws ATLCoreException {
-			return atlUtil.newModel(uml2, "REPORT", path);
+			return atlUtil.newModel(uml2, "REPORT", path); //$NON-NLS-1$
 		}
 
 		/**
@@ -175,7 +186,7 @@ public class CompatJob extends ProgressMonitorJob {
 
 		@Override
 		public IModel loadINModel(IReferenceModel uml2, URI emfUri) throws ATLCoreException {
-			return atlUtil.loadModel(uml2, emfUri.toString(), "IN", emfUri.toString());
+			return atlUtil.loadModel(uml2, emfUri.toString(), "IN", emfUri.toString()); //$NON-NLS-1$
 		}
 
 		/* (non-Javadoc)
@@ -202,7 +213,7 @@ public class CompatJob extends ProgressMonitorJob {
 				in = inModelCache.get(emfUri).get();
 			}
 			if (in == null) {
-				in = atlUtil.loadModel(uml2, emfUri.toString(), "IN", emfUri.toString());
+				in = atlUtil.loadModel(uml2, emfUri.toString(), "IN", emfUri.toString()); //$NON-NLS-1$
 				inModelCache.put(emfUri, new SoftReference<IModel>(in));
 			}
 			return in;
@@ -317,7 +328,7 @@ public class CompatJob extends ProgressMonitorJob {
 		 */
 		protected void setCrPath(IPath crPath) {
 			this.crPath = crPath;
-			setCrLocation("platform:/resource/" + getFile().getProject().getName() + "/" + crPath.toString());
+			setCrLocation("platform:/resource/" + getFile().getProject().getName() + "/" + crPath.toString()); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		/**
 		 * @return the crLocation
@@ -339,9 +350,9 @@ public class CompatJob extends ProgressMonitorJob {
 		 */
 
 		public void loadUml2(IProgressMonitor monitor) throws ATLCoreException, IOException {
-			subTask(monitor, "Loading UML2 meta-model...");
+			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.loadingUml2")); //$NON-NLS-1$
 			setUml2(modelLoader.getUML2());
-			worked(monitor, "Loaded UML2 meta-model");
+			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedUml2")); //$NON-NLS-1$
 		}
 
 		/**
@@ -351,9 +362,9 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws ATLCoreException 
 		 */
 		public void loadCRProfile(IProgressMonitor monitor) throws ATLCoreException, IOException {
-			subTask(monitor, "Loading CompatiblityReport profile...");
+			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.loadingCRProfile")); //$NON-NLS-1$
 			setCrProfile(modelLoader.getCRProfile(getUml2()));
-			worked(monitor, "Loaded CompatiblityReport profile");
+			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedCRProfile")); //$NON-NLS-1$
 		}
 
 		/**
@@ -364,17 +375,17 @@ public class CompatJob extends ProgressMonitorJob {
 		 */
 		public void loadDepsModel(IProgressMonitor monitor) 
 		throws ATLCoreException, CoreException, IOException {
-			subTask(monitor, "Loading dependency model...");
+			subTask(monitor, PlatformkitJavaResources.getString("loadingDepsModel")); //$NON-NLS-1$
 			setFile((IFile) getInput());
 			final IFile file = getFile();
 			Assert.isNotNull(file);
-			final String fileLocation = "platform:/resource/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toString();
+			final String fileLocation = "platform:/resource/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toString(); //$NON-NLS-1$ //$NON-NLS-2$
 			setDeps(modelLoader.loadDEPSModel(getUml2(), fileLocation));
 			setCrPath(file.getProjectRelativePath()
 					.removeFileExtension()
 					.removeFileExtension()
-					.addFileExtension("cr.uml"));
-			worked(monitor, "Loaded dependency model");
+					.addFileExtension("cr.uml")); //$NON-NLS-1$
+			worked(monitor, PlatformkitJavaResources.getString("loadedDepsModel")); //$NON-NLS-1$
 		}
 
 		/**
@@ -386,9 +397,11 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws ATLCoreException 
 		 */
 		public void loadAPIModel(IProgressMonitor monitor, String apiName, URI emf_uri) throws ATLCoreException, CoreException {
-			subTask(monitor, "Loading API model: " + apiName);
+			subTask(monitor, String.format(
+					PlatformkitJavaResources.getString("CompatJob.loadingApiModel"), 
+					apiName)); //$NON-NLS-1$
 			setIn(modelLoader.loadINModel(getUml2(), emf_uri));
-			worked(monitor, "Loaded API model");
+			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedApiModel")); //$NON-NLS-1$
 		}
 
 		/**
@@ -406,18 +419,18 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws ClassCastException 
 		 */
 		public boolean run(IProgressMonitor monitor) throws ATLCoreException, CoreException, IOException, ClassCastException, SecurityException, IllegalArgumentException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-			subTask(monitor, "Creating compatibility report...");
+			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.creatingCR")); //$NON-NLS-1$
 			modelLoader.flush(); // report must be in new resource set
 			setReport(modelLoader.createOUTModel(getUml2(), getCrLocation()));
 			final ILauncher launcher = modelLoader.getAtlLauncher();
-			launcher.addInModel(getCrProfile(), "CR", "UML2");
-			launcher.addInModel(getDeps(), "DEPS", "UML2");
-			launcher.addInModel(getIn(), "IN", "UML2");
-			launcher.addOutModel(getReport(), "REPORT", "UML2");
-			launcher.addLibrary("UML2", uml2Lib.openStream());
-			launcher.addLibrary("UML2Comparison", uml2Comparison.openStream());
+			launcher.addInModel(getCrProfile(), "CR", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
+			launcher.addInModel(getDeps(), "DEPS", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
+			launcher.addInModel(getIn(), "IN", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
+			launcher.addOutModel(getReport(), "REPORT", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
+			launcher.addLibrary("UML2", uml2Lib.openStream()); //$NON-NLS-1$
+			launcher.addLibrary("UML2Comparison", uml2Comparison.openStream()); //$NON-NLS-1$
 			Object result = launcher.launch(ILauncher.RUN_MODE, monitor, vmoptions, uml2CompatibilityReport.openStream());
-			worked(monitor, "Created compatibility report");
+			worked(monitor, PlatformkitJavaResources.getString("CompatJob.createdCR")); //$NON-NLS-1$
 			return ATLUtil.getBooleanValue(result);
 		}
 
@@ -436,20 +449,21 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws InvocationTargetException
 		 */
 		public void mergeReport(IProgressMonitor monitor, IModel otherReport) throws ATLCoreException, CoreException, IOException, ClassCastException, SecurityException, IllegalArgumentException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-			subTask(monitor, "Merging compatibility reports...");
+			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.mergingCRs")); //$NON-NLS-1$
 			IModel report = getReport();
 			if ((otherReport == null) || (report == null)) {
-				throw new IllegalArgumentException("Cannot merge null reports");
+				throw new IllegalArgumentException(
+						PlatformkitJavaResources.getString("CompatJob.cannotMergeNull")); //$NON-NLS-1$
 			}
 			modelLoader.flush(); // report must be in new resource set
 			setReport(modelLoader.createOUTModel(getUml2(), getCrLocation()));
 			final ILauncher launcher = modelLoader.getAtlLauncher();
-			launcher.addInModel(report, "IN", "UML2");
-			launcher.addInModel(otherReport, "MERGE", "UML2");
-			launcher.addOutModel(getReport(), "OUT", "UML2");
-			launcher.addLibrary("UML2", uml2Lib.openStream());
+			launcher.addInModel(report, "IN", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
+			launcher.addInModel(otherReport, "MERGE", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
+			launcher.addOutModel(getReport(), "OUT", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
+			launcher.addLibrary("UML2", uml2Lib.openStream()); //$NON-NLS-1$
 			launcher.launch(ILauncher.RUN_MODE, monitor, vmoptions, uml2Copy.openStream(), uml2CRMerge.openStream());
-			worked(monitor, "Merged compatibility reports");
+			worked(monitor, PlatformkitJavaResources.getString("CompatJob.mergedCRs"));
 		}
 
 		/**
@@ -467,18 +481,19 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws InvocationTargetException
 		 */
 		public boolean pruneReport(IProgressMonitor monitor) throws ATLCoreException, CoreException, IOException, ClassCastException, SecurityException, IllegalArgumentException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-			subTask(monitor, "Pruning compatibility report...");
+			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.pruningCR")); //$NON-NLS-1$
 			IModel report = getReport();
 			if (report == null) {
-				throw new IllegalArgumentException("Cannot prune null report");
+				throw new IllegalArgumentException(
+						PlatformkitJavaResources.getString("CompatJob.cannotPruneNull")); //$NON-NLS-1$
 			}
 			modelLoader.flush(); // report must be in new resource set
 			setReport(modelLoader.createOUTModel(getUml2(), getCrLocation()));
 			final ILauncher launcher = modelLoader.getAtlLauncher();
-			launcher.addInModel(report, "IN", "UML2");
-			launcher.addOutModel(getReport(), "OUT", "UML2");
+			launcher.addInModel(report, "IN", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
+			launcher.addOutModel(getReport(), "OUT", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
 			Object result = launcher.launch(ILauncher.RUN_MODE, monitor, vmoptions, uml2Copy.openStream(), uml2CRPrune.openStream());
-			worked(monitor, "Pruned compatibility report");
+			worked(monitor, PlatformkitJavaResources.getString("CompatJob.prunedCR")); //$NON-NLS-1$
 			return ATLUtil.getBooleanValue(result);
 		}
 
@@ -489,10 +504,10 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws CoreException 
 		 */
 		public void saveReport(IProgressMonitor monitor) throws ATLCoreException, CoreException {
-			subTask(monitor, "Saving compatibility report...");
+			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.savingCR")); //$NON-NLS-1$
 			modelLoader.getAtlExtractor().extract(getReport(), getCrLocation());
 			getFile().getParent().refreshLocal(IResource.DEPTH_INFINITE, null);
-			worked(monitor, "Saved compatibility report");
+			worked(monitor, PlatformkitJavaResources.getString("CompatJob.savedCR")); //$NON-NLS-1$
 		}
 
 		/**
@@ -503,22 +518,22 @@ public class CompatJob extends ProgressMonitorJob {
 		}
 	}
 
-	private static final URL UML_MM  = PlatformkitJavaPlugin.getPlugin().getBundle().getResource("metamodels/UMLProfiles.ecore");
-	private static final String CR_PROF = "http://soft.vub.ac.be/platformkit-java/CompatibilityReport.profile.uml";
-	private static final String MODEL_HANDLER = "UML2";
+	private static final URL UML_MM  = PlatformkitJavaPlugin.getPlugin().getBundle().getResource("metamodels/UMLProfiles.ecore"); //$NON-NLS-1$
+	private static final String CR_PROF = "http://soft.vub.ac.be/platformkit-java/CompatibilityReport.profile.uml"; //$NON-NLS-1$
+	private static final String MODEL_HANDLER = "UML2"; //$NON-NLS-1$
 
 	protected final URL uml2CompatibilityReport = 
-		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityReport.asm");
+		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityReport.asm"); //$NON-NLS-1$
 	protected final URL uml2Comparison = 
-		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2Comparison.asm");
+		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2Comparison.asm"); //$NON-NLS-1$
 	protected final URL uml2Lib = 
-		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2.asm");
+		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2.asm"); //$NON-NLS-1$
 	protected final URL uml2Copy = 
-		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2Copy.asm");
+		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2Copy.asm"); //$NON-NLS-1$
 	protected final URL uml2CRMerge = 
-		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CRMerge.asm");
+		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CRMerge.asm"); //$NON-NLS-1$
 	protected final URL uml2CRPrune = 
-		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CRPrune.asm");
+		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CRPrune.asm"); //$NON-NLS-1$
 	protected final Map<String, Object> vmoptions = new HashMap<String, Object>();
 
 	private Object input;
@@ -591,7 +606,7 @@ public class CompatJob extends ProgressMonitorJob {
 				apiList = new StringBuffer();
 				apiList.append(apiName);
 			} else {
-				apiList.append(", ");
+				apiList.append(", "); //$NON-NLS-1$
 				apiList.append(apiName);
 			}
 		}
@@ -613,7 +628,7 @@ public class CompatJob extends ProgressMonitorJob {
 		} else {
 			worked(monitor, null);
 		}
-		worked(monitor, "Finished");
+		worked(monitor, PlatformkitJavaResources.getString("CompatJob.finished")); //$NON-NLS-1$
 	}
 
 	/**
@@ -624,7 +639,8 @@ public class CompatJob extends ProgressMonitorJob {
 		final boolean useCache = store.getBoolean(PreferenceConstants.P_CACHE_API);
 		final String atlVMName = store.getString(PreferenceConstants.P_ATLVM);
 		if (atlVMName == null || atlVMName.equals("")) {
-			throw new ATLCoreException("No ATL VM chosen; select one in the PlatformKit preferences page");
+			throw new ATLCoreException(
+					PlatformkitJavaResources.getString("CompatJob.noAtlVmChosen")); //$NON-NLS-1$
 		}
 		if (modelLoader != null && modelLoader.isValidFor(atlVMName, useCache)) {
 			return;

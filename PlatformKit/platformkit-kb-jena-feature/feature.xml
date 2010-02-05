@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.kb.jena"
       label="PlatformKit Jena Adapter"
-      version="1.2.0"
+      version="1.2.1"
       provider-name="Vrije Universiteit Brussel">
 
    <description url="about.html">

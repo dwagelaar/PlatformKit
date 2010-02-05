@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.jobs;
 
 import java.io.InputStream;
@@ -22,6 +32,7 @@ import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.ConstraintSpaceCache;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
 import be.ac.vub.platformkit.presentation.util.PlatformEValidator;
@@ -57,46 +68,48 @@ public class ProfileJob extends ConstraintSpaceJob {
 		//
 		// 1
 		//
-		subTask(monitor, "Searching for constraint space...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.searchingCS")); //$NON-NLS-1$
 		URI platformkitURI = findPlatformKitURI();
-		URI inferredOwlURI = platformkitURI.trimFileExtension().appendFileExtension("inferred.owl");
+		URI inferredOwlURI = platformkitURI.trimFileExtension().appendFileExtension("inferred.owl"); //$NON-NLS-1$
 		ConstraintSpace space = cache.get(inferredOwlURI);
-		worked(monitor, "Searched for constraint space");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.searchedCS")); //$NON-NLS-1$
 		if (space == null) {
 			//
 			// 2
 			//
-			subTask(monitor, "Loading Platformkit model...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.loadingPKmodel")); //$NON-NLS-1$
 			ResourceSet resourceSet = new ResourceSetImpl();
 			Resource platformkit = resourceSet.getResource(platformkitURI, true);
-			worked(monitor, "Loaded Platformkit model");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.loadedPKmodel")); //$NON-NLS-1$
 			//
 			// 3
 			//
-			subTask(monitor, "Loading source ontologies...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("loadingSourceOnt")); //$NON-NLS-1$
 			if (platformkit.getContents().size() == 0) {
-				throw new PlatformKitException("Resource " + platformkit + " is empty");
+				throw new PlatformKitException(String.format(
+						PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.resourceEmpty"), 
+						platformkit)); //$NON-NLS-1$
 			}
 			space = (ConstraintSpace) platformkit.getContents().get(0);
 			IOntologies ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
 			space.setKnowledgeBase(ont);
 			if (!space.init(true)) {
 				throw new PlatformKitException(
-				"Ontologies not pre-classified - Choose 'Classify Taxonomy' first");
+				PlatformkitEditorPlugin.getPlugin().getString("ontNotPreclassified")); //$NON-NLS-1$
 			}
 			cache.put(inferredOwlURI, space);
-			worked(monitor, "Loaded source ontologies");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("loadedSourceOnt")); //$NON-NLS-1$
 			//
 			// 4
 			//
-			subTask(monitor, "Attaching DL reasoner...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachingDlReasoner")); //$NON-NLS-1$
 			attachDLReasoner(monitor, ont);
-			worked(monitor, "Attached DL reasoner");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachedDlReasoner")); //$NON-NLS-1$
 		} else {
 			//
 			// 2, 3, 4
 			//
-			subTask(monitor, "Using cached constraint space");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.usingCachedCS")); //$NON-NLS-1$
 			worked(monitor, null);
 			worked(monitor, null);
 			worked(monitor, null);
@@ -104,49 +117,49 @@ public class ProfileJob extends ConstraintSpaceJob {
 		//
 		// 5
 		//
-		subTask(monitor, "Retrieving platform instance specifications...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("retrievingPlatformInstance")); //$NON-NLS-1$
 		Resource res = getSelectedObject().eResource();
 		if (loadPlatformInstances(space)) {
-			worked(monitor, "Retrieved platform instance specifications");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("retrievedPlatformInstance")); //$NON-NLS-1$
 			//
 			// 6
 			//
-			subTask(monitor, "Retrieving intersection set...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("retrievingIS")); //$NON-NLS-1$
 			ConstraintSet is = space.getIntersectionSet();
 			is.getIntersection();
-			worked(monitor, "Retrieved intersection set");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("retrievedIS")); //$NON-NLS-1$
 			//
 			// 7
 			//
-			subTask(monitor, "Determining (in-)valid constraint sets...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.determiningInValidCS")); //$NON-NLS-1$
 			IEObjectValidator validator = new PlatformKitEObjectValidator(space);
 			Registry.INSTANCE.put(res, validator);
-			worked(monitor, "Determined (in-)valid constraint sets");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.determinedInValidCS")); //$NON-NLS-1$
 			//
 			// 8
 			//
-			subTask(monitor, "Profiling editor...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.profiling")); //$NON-NLS-1$
 			updateAllObjects(res);
-			worked(monitor, "Profiled editor");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.profiled")); //$NON-NLS-1$
 		} else {
-			worked(monitor, "No platform instance specifications found");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.noPlatformInstanceFound")); //$NON-NLS-1$
 			//
 			// 6
 			//
-			subTask(monitor, "Removing platform instance specifications...");
-			worked(monitor, "Removed platform instance specifcations");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.removingPlatformInstance")); //$NON-NLS-1$
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.removedPlatformInstance")); //$NON-NLS-1$
 			//
 			// 7
 			//
-			monitor.subTask("Determining (in-)valid constraint sets...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.determiningInValidCS")); //$NON-NLS-1$
 			Registry.INSTANCE.remove(res);
-			worked(monitor, "Determined (in-)valid constraint sets");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.determinedInValidCS")); //$NON-NLS-1$
 			//
 			// 8
 			//
-			monitor.subTask("Profiling editor...");
+			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.profiling")); //$NON-NLS-1$
 			updateAllObjects(res);
-			worked(monitor, "Profiled editor");
+			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.profiled")); //$NON-NLS-1$
 		}
 	}
 
@@ -161,8 +174,10 @@ public class ProfileJob extends ConstraintSpaceJob {
 		EObject root = (EObject) res.getContents().get(0);
 		Resource rootRes = root.eClass().eResource();
 		URI resURI = rootRes.getURI();
-		URI platformkitURI = resURI.trimFileExtension().appendFileExtension("platformkit");
-		logger.info("Platformkit URI = " + platformkitURI.toString());
+		URI platformkitURI = resURI.trimFileExtension().appendFileExtension("platformkit"); //$NON-NLS-1$
+		logger.info(String.format(
+				PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.pkUriIs"), 
+				platformkitURI)); //$NON-NLS-1$
 		return platformkitURI;
 	}
 
@@ -220,7 +235,9 @@ public class ProfileJob extends ConstraintSpaceJob {
 					new PlatformKitItemProviderAdapter(
 							(ItemProviderAdapter) adapter, 
 							((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory());
-				logger.info("Created wrapper adapter for " + object.toString());
+				logger.info(String.format(
+						PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.createdWrapperFor"), 
+						object)); //$NON-NLS-1$
 				object.eAdapters().set(i, wrapper);
 				adapter = wrapper;
 			}
@@ -228,7 +245,9 @@ public class ProfileJob extends ConstraintSpaceJob {
 				PlatformKitItemProviderAdapter pkAdapter = (PlatformKitItemProviderAdapter) adapter;
 				if ((pkAdapter.getValidator() != validator)) {
 					pkAdapter.setValidator(validator);
-					logger.info("Attached new validator to wrapper " + pkAdapter.toString());
+					logger.info(String.format(
+							PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.attachedNewValidatorTo"), 
+							pkAdapter)); //$NON-NLS-1$
 				}
 			}
 		}
@@ -246,7 +265,9 @@ public class ProfileJob extends ConstraintSpaceJob {
 		if (!(orig instanceof PlatformEValidator)) {
 			EValidator eValidator = new PlatformEValidator(orig);
 			EValidator.Registry.INSTANCE.put(pack, eValidator);
-			logger.info("Registered new PlatformEValidator for " + pack.getNsURI());
+			logger.info(String.format(
+					PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.registeredNewEValidatorFor"), 
+					pack.getNsURI())); //$NON-NLS-1$
 		}
 	}
 

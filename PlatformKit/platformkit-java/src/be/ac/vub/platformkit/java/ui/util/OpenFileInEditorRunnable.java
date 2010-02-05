@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.java.ui.util;
 
 import org.eclipse.core.resources.IFile;
@@ -16,7 +26,7 @@ import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class OpenFileInEditorRunnable implements Runnable {
-	
+
 	private IFile file;
 
 	/**
@@ -38,9 +48,9 @@ public class OpenFileInEditorRunnable implements Runnable {
 			// get default editor descriptor
 			//
 			IEditorRegistry editorRegistry = PlatformUI.getWorkbench()
-					.getEditorRegistry();
+			.getEditorRegistry();
 			IEditorDescriptor defaultEditorDescriptor = editorRegistry
-					.getDefaultEditor(file.getName(), file.getContentDescription().getContentType());
+			.getDefaultEditor(file.getName(), file.getContentDescription().getContentType());
 			if (defaultEditorDescriptor == null) {
 				defaultEditorDescriptor = editorRegistry.findEditor(IEditorRegistry.SYSTEM_EXTERNAL_EDITOR_ID);
 			}
@@ -48,7 +58,7 @@ public class OpenFileInEditorRunnable implements Runnable {
 			// Open new file in editor
 			//
 			IWorkbenchWindow dw = PlatformUI.getWorkbench()
-					.getActiveWorkbenchWindow();
+			.getActiveWorkbenchWindow();
 			Assert.isNotNull(dw);
 			FileEditorInput fileEditorInput = new FileEditorInput(file);
 			IWorkbenchPage page = dw.getActivePage();

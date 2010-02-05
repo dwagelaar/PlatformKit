@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.popup.action;
 
 import org.eclipse.core.resources.IResource;
@@ -21,70 +31,74 @@ import be.ac.vub.platformkit.ui.util.FileDialogRunnable;
  */
 public abstract class AddConstraintSets extends ViewerFilterAction {
 
-    private String sourceName;
+	private String sourceName;
 	protected AddConstraintSetsJob job;
 
-    /**
+	/**
 	 * Creates a new {@link AddConstraintSets}.
-     * @param sourceName The description of the source model type,
-     * e.g. "Product Line" or "Product Configuration".
+	 * @param sourceName The description of the source model type,
+	 * e.g. "Product Line" or "Product Configuration".
 	 */
 	public AddConstraintSets(String sourceName) {
 		super();
-        setSourceName(sourceName);
+		setSourceName(sourceName);
 	}
 
-    /*
-     * (non-Javadoc)
-     * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
-     */
+	/*
+	 * (non-Javadoc)
+	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
+	 */
 	public void run(IAction action) {
-        Resource[] sources = getSourceModels();
-        if (sources == null) {
-            return;
-        }
-	    // run operation
-        job.setSourceName(getSourceName());
-        job.setEditingDomain(editingDomain);
-        job.setSources(sources);
-    	job.setSpace((ConstraintSpace) ((IStructuredSelection) selection).getFirstElement());
-    	job.setUser(true);
-	    // lock editor
-	    IWorkbenchSiteProgressService siteService = (IWorkbenchSiteProgressService) 
-	    	part.getSite().getAdapter(IWorkbenchSiteProgressService.class);
-	    siteService.schedule(job);
-    }
-    
-    /**
-     * Loads the source model chosen via
-     * a FileDialog.
-     * @return The Ecore resource containing the model.
-     * @throws IllegalArgumentException
-     * @throws RuntimeException
-     */
-    protected Resource[] getSourceModels() 
-    throws IllegalArgumentException, RuntimeException {
-        FileDialogRunnable dlg = new FileDialogRunnable();
-        dlg.setTitle("Load " + getSourceName() + "(s)");
-        dlg.setMessage("Select " + getSourceName() + "(s)");
-        dlg.setInstruction("Select resources:");
-        if (getFilter() != null) {
-            dlg.setFilter(getFilter());
-        }
-        PlatformkitEditorPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
-        Object[] files = dlg.getSelection();
-        if (files != null) {
-    		ResourceSet resourceSet = new ResourceSetImpl();
-            Resource[] models = new Resource[files.length];
-            for (int i = 0; i < models.length; i++) {
-                models[i] = loadModel((IResource) files[i], resourceSet);
-            }
-            return models;
-        } else {
-            return null;
-        }
-    }
-    
+		Resource[] sources = getSourceModels();
+		if (sources == null) {
+			return;
+		}
+		// run operation
+		job.setSourceName(getSourceName());
+		job.setEditingDomain(editingDomain);
+		job.setSources(sources);
+		job.setSpace((ConstraintSpace) ((IStructuredSelection) selection).getFirstElement());
+		job.setUser(true);
+		// lock editor
+		IWorkbenchSiteProgressService siteService = (IWorkbenchSiteProgressService) 
+		part.getSite().getAdapter(IWorkbenchSiteProgressService.class);
+		siteService.schedule(job);
+	}
+
+	/**
+	 * Loads the source model chosen via
+	 * a FileDialog.
+	 * @return The Ecore resource containing the model.
+	 * @throws IllegalArgumentException
+	 * @throws RuntimeException
+	 */
+	protected Resource[] getSourceModels() 
+	throws IllegalArgumentException, RuntimeException {
+		FileDialogRunnable dlg = new FileDialogRunnable();
+		dlg.setTitle(String.format(
+				PlatformkitEditorPlugin.getPlugin().getString("AddConstraintSets.dlgTitle"), 
+				getSourceName())); //$NON-NLS-1$
+		dlg.setMessage(String.format(
+				PlatformkitEditorPlugin.getPlugin().getString("AddConstraintSets.dlgMessage"), 
+				getSourceName())); //$NON-NLS-1$
+		dlg.setInstruction(PlatformkitEditorPlugin.getPlugin().getString("AddConstraintSets.dlgInstruction")); //$NON-NLS-1$
+		if (getFilter() != null) {
+			dlg.setFilter(getFilter());
+		}
+		PlatformkitEditorPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
+		Object[] files = dlg.getSelection();
+		if (files != null) {
+			ResourceSet resourceSet = new ResourceSetImpl();
+			Resource[] models = new Resource[files.length];
+			for (int i = 0; i < models.length; i++) {
+				models[i] = loadModel((IResource) files[i], resourceSet);
+			}
+			return models;
+		} else {
+			return null;
+		}
+	}
+
 	/**
 	 * Loads a registered Ecore model from the given file.
 	 * @param file
@@ -102,18 +116,18 @@ public abstract class AddConstraintSets extends ViewerFilterAction {
 		return resourceSet.getResource(source, true);
 	}
 
-    /**
-     * @param sourceName The sourceName to set.
-     */
-    public void setSourceName(String sourceName) {
-        this.sourceName = sourceName;
-    }
+	/**
+	 * @param sourceName The sourceName to set.
+	 */
+	public void setSourceName(String sourceName) {
+		this.sourceName = sourceName;
+	}
 
-    /**
-     * @return Returns the sourceName.
-     */
-    public String getSourceName() {
-        return sourceName;
-    }
+	/**
+	 * @return Returns the sourceName.
+	 */
+	public String getSourceName() {
+		return sourceName;
+	}
 
 }

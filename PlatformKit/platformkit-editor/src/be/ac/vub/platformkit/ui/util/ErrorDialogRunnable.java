@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.ui.util;
 
 import org.eclipse.core.runtime.ILog;
@@ -5,6 +15,8 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.ui.PlatformUI;
+
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
  * Wraps an error dialog in a {@link Runnable}.
@@ -43,10 +55,10 @@ public class ErrorDialogRunnable implements Runnable {
     	IStatus st = getStatus();
         ErrorDialog dlg = new ErrorDialog(
         		PlatformUI.getWorkbench().getDisplay().getActiveShell(),
-                "Error",
+                PlatformkitEditorPlugin.getPlugin().getString("ErrorDialogRunnable.dlgTitle"),
                 st.getMessage(),
                 st,
-                IStatus.ERROR);
+                IStatus.ERROR); //$NON-NLS-1$
         dlg.open();
     }
     
