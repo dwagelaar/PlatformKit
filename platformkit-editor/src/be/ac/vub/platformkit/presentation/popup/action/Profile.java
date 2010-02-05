@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.popup.action;
 
 import org.eclipse.core.resources.IResource;
@@ -35,7 +45,7 @@ public class Profile extends ViewerFilterAction {
 				if (element instanceof IResource) {
 					IResource resource = (IResource) element;
 					if (resource.getType() == IResource.FILE) {
-						return resource.getFileExtension().toLowerCase().equals("owl");
+						return resource.getFileExtension().toLowerCase().equals("owl"); //$NON-NLS-1$
 					}
 					return true;
 				}
@@ -68,7 +78,7 @@ public class Profile extends ViewerFilterAction {
 	 */
 	public void run(IAction action) {
 		PlatformSpecDialogRunnable dlg = new PlatformSpecDialogRunnable();
-	    dlg.setInstruction("Select a platform specification, or click 'Cancel' \nto remove platform constraint checking:");
+		dlg.setInstruction(PlatformkitEditorPlugin.getPlugin().getString("Profile.dlgInstruction")); //$NON-NLS-1$
 		if (getFilter() != null) {
 			dlg.setFilter(getFilter());
 		}

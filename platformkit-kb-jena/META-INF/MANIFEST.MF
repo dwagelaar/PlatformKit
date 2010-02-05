@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Platformkit Jena Knowledgebase Plug-in
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: be.ac.vub.platformkit.kb.jena;singleton:=true
-Bundle-Version: 1.2.0
+Bundle-Version: 1.2.1
 Bundle-Activator: be.ac.vub.platformkit.kb.jena.eclipse.Activator
-Bundle-Vendor: Vrije Universiteit Brussel
+Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.core.runtime,
  be.ac.vub.platformkit,
  org.junit,

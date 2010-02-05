@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.ui.dialogs;
 
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -6,7 +16,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.CheckedTreeSelectionDialog;
-
 
 /**
  * PlatformKit tree selection dialog 
@@ -17,7 +26,7 @@ public class PlatformKitTreeSelectionDialog extends CheckedTreeSelectionDialog {
 	protected PlatformKitDialogPart dlgPart = new PlatformKitDialogPart();
 
 	/**
-	 * Creates a new PlatformKitTreeSelectionDialog
+	 * Creates a new {@link PlatformKitTreeSelectionDialog}.
 	 * @param parent
 	 * @param labelProvider
 	 * @param contentProvider

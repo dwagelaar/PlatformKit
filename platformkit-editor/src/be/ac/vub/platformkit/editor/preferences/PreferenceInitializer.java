@@ -1,4 +1,16 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.editor.preferences;
+
+import java.util.logging.Level;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -17,6 +29,7 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
  * Class used to initialize default preference values.
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
@@ -28,11 +41,12 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
 				.getPreferenceStore();
-		store.setDefault(PreferenceConstants.P_REASONER, "builtin");
-		store.setDefault(PreferenceConstants.P_DIG_URL, "http://localhost:8081");
-		store.setDefault(PreferenceConstants.P_KB, "be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory");
+		store.setDefault(PreferenceConstants.P_REASONER, "builtin"); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_DIG_URL, "http://localhost:8081"); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_KB, "be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory"); //$NON-NLS-1$
 		store.setDefault(PreferenceConstants.P_ATLVM, CoreService.getLaunchersNames()[0]);
 		store.setDefault(PreferenceConstants.P_CACHE_API, true);
+		store.setDefault(PreferenceConstants.P_LOG_LEVEL, Level.INFO.toString());
 	}
 	
 	public static IOntologiesFactory getPreferredOntologyFactory() throws CoreException {
@@ -53,7 +67,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
         IStatus status = new Status(
         		IStatus.ERROR, 
         		PlatformkitEditorPlugin.getPlugin().getBundle().getSymbolicName(),
-        		"no preferred knowledgebase found");
+        		PlatformkitEditorPlugin.getPlugin().getString("PreferenceInitializer.noPrefKbError")); //$NON-NLS-1$
         throw new CoreException(status);
 	}
 

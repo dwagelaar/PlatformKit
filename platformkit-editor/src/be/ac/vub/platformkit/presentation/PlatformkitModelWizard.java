@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation;
 
 
@@ -75,7 +79,7 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "(C) 2007-2008, Dennis Wagelaar, Vrije Universiteit Brussel";
+	public static final String copyright = "(C) 2005-2010, Dennis Wagelaar, Vrije Universiteit Brussel";
 
 	/**
 	 * The supported extensions for created files.
@@ -160,8 +164,8 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle(PlatformkitEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(PlatformkitEditorPlugin.INSTANCE.getImage("full/wizban/NewPlatformkit")));
+		setWindowTitle(PlatformkitEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(PlatformkitEditorPlugin.INSTANCE.getImage("full/wizban/NewPlatformkit"))); //$NON-NLS-1$
 	}
 
 	/**
@@ -279,7 +283,7 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
 			}
 			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), PlatformkitEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				MessageDialog.openError(workbenchWindow.getShell(), PlatformkitEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage()); //$NON-NLS-1$
 				return false;
 			}
 
@@ -319,7 +323,7 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 			if (super.validatePage()) {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
-					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
+					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension"; //$NON-NLS-1$ //$NON-NLS-2$
 					setErrorMessage(PlatformkitEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
@@ -397,7 +401,7 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
-				containerLabel.setText(PlatformkitEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+				containerLabel.setText(PlatformkitEditorPlugin.INSTANCE.getString("_UI_ModelObject")); //$NON-NLS-1$
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -423,7 +427,7 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 
 			Label encodingLabel = new Label(composite, SWT.LEFT);
 			{
-				encodingLabel.setText(PlatformkitEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+				encodingLabel.setText(PlatformkitEditorPlugin.INSTANCE.getString("_UI_XMLEncoding")); //$NON-NLS-1$
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -522,7 +526,7 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 		 */
 		protected String getLabel(String typeName) {
 			try {
-				return PlatformkitEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+				return PlatformkitEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type"); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			catch(MissingResourceException mre) {
 				PlatformkitEditorPlugin.INSTANCE.log(mre);
@@ -538,7 +542,8 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(PlatformkitEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(PlatformkitEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) //$NON-NLS-1$
+				{
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -556,10 +561,10 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
-		newFileCreationPage = new PlatformkitModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitModelWizard_label"));
-		newFileCreationPage.setDescription(PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitModelWizard_description"));
-		newFileCreationPage.setFileName(PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage = new PlatformkitModelWizardNewFileCreationPage("Whatever", selection); //$NON-NLS-1$
+		newFileCreationPage.setTitle(PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitModelWizard_label")); //$NON-NLS-1$
+		newFileCreationPage.setDescription(PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitModelWizard_description")); //$NON-NLS-1$
+		newFileCreationPage.setFileName(PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0)); //$NON-NLS-1$ //$NON-NLS-2$
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -585,19 +590,19 @@ public class PlatformkitModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitEditorFilenameDefaultBase"); //$NON-NLS-1$
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
-					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
+					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension; //$NON-NLS-1$
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
-						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
+						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension; //$NON-NLS-1$
 					}
 					newFileCreationPage.setFileName(modelFilename);
 				}
 			}
 		}
-		initialObjectCreationPage = new PlatformkitModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitModelWizard_label"));
-		initialObjectCreationPage.setDescription(PlatformkitEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		initialObjectCreationPage = new PlatformkitModelWizardInitialObjectCreationPage("Whatever2"); //$NON-NLS-1$
+		initialObjectCreationPage.setTitle(PlatformkitEditorPlugin.INSTANCE.getString("_UI_PlatformkitModelWizard_label")); //$NON-NLS-1$
+		initialObjectCreationPage.setDescription(PlatformkitEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description")); //$NON-NLS-1$
 		addPage(initialObjectCreationPage);
 	}
 

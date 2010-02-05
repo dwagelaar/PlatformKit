@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.java;
 
 import java.io.IOException;
@@ -39,10 +49,10 @@ public class JavaOntologyProvider implements IOntologyProvider {
 		"platformkit_2009_01/swt-3_4.owl",
 		"platformkit_2009_01/swt-3_5.owl",
 		"platformkit_2009_01/SWTAPI.owl"
-	};
-	
-	protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit.java");
-    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
+	}; //$NON-NLS-1$
+
+	protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit.java"); //$NON-NLS-1$
+	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	public static JavaOntologyProvider INSTANCE = new JavaOntologyProvider();
 
@@ -51,13 +61,16 @@ public class JavaOntologyProvider implements IOntologyProvider {
 		for (int i = 0; i < ontologies.length; i++) {
 			URL resource = null;
 			if (bundle == null) {
-				resource = JavaOntologyProvider.class.getResource("../../../../../" + ontologies[i]);
+				resource = JavaOntologyProvider.class.getResource("../../../../../" + ontologies[i]); //$NON-NLS-1$
 			} else {
-				resource = bundle.getResource("ontology/" + ontologies[i]);
+				resource = bundle.getResource("ontology/" + ontologies[i]); //$NON-NLS-1$
 			}
 			Assert.assertNotNull(resource);
 			streams[i] = resource.openStream();
-			logger.fine("Providing ontology " + ontologies[i] + " as " + streams[i]);
+			logger.fine(String.format(
+					PlatformkitJavaResources.getString("JavaOntologyProvider.providingOntAs"),
+					ontologies[i], 
+					streams[i])); //$NON-NLS-1$
 		}
 		return streams;
 	}

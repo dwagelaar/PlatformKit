@@ -5,7 +5,7 @@
          point="be.ac.vub.platformkit.knowledgebase">
       <knowledgebase
             factory="be.ac.vub.platformkit.kb.jena.JenaOntologiesFactory"
-            name="Jena">
+            name="%knowledgebase.name">
       </knowledgebase>
    </extension>
 

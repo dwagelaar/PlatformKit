@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.jobs;
 
 import java.io.ByteArrayInputStream;
@@ -26,7 +36,7 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
  * Operation for pre-classifying the taxonomy of ontology classes for a
- * given PlatformKit constraint space model.
+ * given PlatformKit {@link ConstraintSpace} model.
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
@@ -37,7 +47,7 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 	 * Creates a new {@link ClassifyTaxonomyJob}.
 	 */
 	public ClassifyTaxonomyJob() {
-		super("Classifying Taxonomy");
+		super(PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.name")); //$NON-NLS-1$
 	}
 
 	/* (non-Javadoc)
@@ -49,63 +59,63 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 		//
 		// 1
 		//
-		subTask(monitor, "Loading source ontologies...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("loadingSourceOnt")); //$NON-NLS-1$
 		// Don't use existing knowledgebase, since it may be pre-classified
 		IOntologies ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
 		ConstraintSpace space = getSpace();
 		space.setKnowledgeBase(ont);
 		space.init(false);
-		worked(monitor, "Loaded source ontologies");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("loadedSourceOnt")); //$NON-NLS-1$
 		//
 		// 2
 		//
-		subTask(monitor, "Creating intersection and union classes...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.creatingIntersectUnion")); //$NON-NLS-1$
 		//create intersection set before reasoning
 		ConstraintSet is = space.getIntersectionSet();
 		is.getIntersection();
-		worked(monitor, "Created intersection and union classes");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.createdIntersectUnion")); //$NON-NLS-1$
 		//
 		// 3
 		//
-		subTask(monitor, "Attaching DL reasoner...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachingDlReasoner")); //$NON-NLS-1$
 		attachDLReasoner(monitor, ont);
-		worked(monitor, "Attached DL reasoner");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachedDlReasoner")); //$NON-NLS-1$
 		//
 		// 4
 		//
-		subTask(monitor, "Checking consistency...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.checkingConsist")); //$NON-NLS-1$
 		ont.checkConsistency();
-		worked(monitor, "Checked consistency");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.checkedConsist")); //$NON-NLS-1$
 		//
 		// 5
 		//
-		subTask(monitor, "Building class hierarchy map...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.buildingHierarchy")); //$NON-NLS-1$
 		buildHierarchyMap(monitor, ont);
-		worked(monitor, "Built class hierarchy map");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.builtHierarchy")); //$NON-NLS-1$
 		//
 		// 6
 		//
-		subTask(monitor, "Detaching reasoner...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("detachingReasoner")); //$NON-NLS-1$
 		ont.detachReasoner();
-		worked(monitor, "Detached reasoner");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("detachedReasoner")); //$NON-NLS-1$
 		//
 		// 7
 		//
-		subTask(monitor, "Pruning class hierarchy map...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.pruningHierarchy")); //$NON-NLS-1$
 		pruneHierarchyMap(monitor, ont);
-		worked(monitor, "Pruned class hierarchy map");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.prunedHierarchy")); //$NON-NLS-1$
 		//
 		// 8
 		//
-		subTask(monitor, "Updating asserted class hierarchy...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.updatingHierarchy")); //$NON-NLS-1$
 		updateHierarchy(monitor, ont);
-		worked(monitor, "Updated asserted class hierarchy");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.updatedHierarchy")); //$NON-NLS-1$
 		//
 		// 9
 		//
-		subTask(monitor, "Writing target ontology...");
+		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.writingOntology")); //$NON-NLS-1$
 		writeOntology(ont, space.eResource().getURI());
-		worked(monitor, "Written target ontology");
+		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.writtenOntology")); //$NON-NLS-1$
 	}
 
 	/**
@@ -169,36 +179,40 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 	}
 
 	/**
-	  * Writes the ontology for the given resource URI.
-	  * @param ont
-	  * @param uri
-	  * @throws CoreException
-	  * @throws IOException
-	  */
-	 protected void writeOntology(IOntologies ont, URI uri)
-	 throws CoreException, IOException {
-		 IPath platformkitPath = new Path(uri.toPlatformString(true));
-		 Assert.isNotNull(platformkitPath);
-		 IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(platformkitPath);
-		 Assert.isNotNull(file);
-		 Path path = new Path(
-				 file.getFullPath().removeFileExtension().
-				 addFileExtension("inferred").
-				 addFileExtension("owl").lastSegment());
-		 IContainer cont = file.getParent();
-		 IFile dest = cont.getFile(path);
-		 logger.info("Writing ontology to " + dest.getLocation());
-		 ByteArrayOutputStream output = new ByteArrayOutputStream(OUTPUTSIZE);
-		 ont.saveOntology(output);
-		 if (dest.exists()) {
-			 dest.setContents(new ByteArrayInputStream(output.toByteArray()), 
-					 true, true, null);
-		 } else {
-			 dest.create(new ByteArrayInputStream(output.toByteArray()), 
-					 true, null);
-		 }
-		 output.close();
-		 logger.info("Ontology written to " + dest.getLocation());
-	 }
+	 * Writes the ontology for the given resource URI.
+	 * @param ont
+	 * @param uri
+	 * @throws CoreException
+	 * @throws IOException
+	 */
+	protected void writeOntology(IOntologies ont, URI uri)
+	throws CoreException, IOException {
+		IPath platformkitPath = new Path(uri.toPlatformString(true));
+		Assert.isNotNull(platformkitPath);
+		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(platformkitPath);
+		Assert.isNotNull(file);
+		Path path = new Path(
+				file.getFullPath().removeFileExtension().
+				addFileExtension("inferred").
+				addFileExtension("owl").lastSegment()); //$NON-NLS-1$ //$NON-NLS-2$
+		IContainer cont = file.getParent();
+		IFile dest = cont.getFile(path);
+		logger.info(String.format(
+				PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.writingOntologyTo"), 
+				dest.getLocation())); //$NON-NLS-1$
+		ByteArrayOutputStream output = new ByteArrayOutputStream(OUTPUTSIZE);
+		ont.saveOntology(output);
+		if (dest.exists()) {
+			dest.setContents(new ByteArrayInputStream(output.toByteArray()), 
+					true, true, null);
+		} else {
+			dest.create(new ByteArrayInputStream(output.toByteArray()), 
+					true, null);
+		}
+		output.close();
+		logger.info(String.format(
+				PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.writtenOntologyTo"), 
+				dest.getLocation())); //$NON-NLS-1$
+	}
 
 }

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.java.actions;
 
 import java.util.logging.Logger;
@@ -7,23 +17,25 @@ import org.eclipse.jface.action.Action;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.PlatformUI;
 
+import be.ac.vub.platformkit.java.PlatformkitJavaResources;
 import be.ac.vub.platformkit.java.jobs.CompatJob;
 import be.ac.vub.platformkit.java.ui.util.OpenFileInEditorRunnable;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.ui.util.MessageDialogRunnable;
 
 /**
+ * Shows the result of a {@link CompatJob}.
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
- *
  */
 public class ShowCompatResultAction extends Action {
 
 	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
-	
+
 	private CompatJob job;
 
 	/**
-	 * 
+	 * Creates a new {@link ShowCompatResultAction}.
+	 * @param job
 	 */
 	public ShowCompatResultAction(CompatJob job) {
 		super();
@@ -31,6 +43,8 @@ public class ShowCompatResultAction extends Action {
 	}
 
 	/**
+	 * Creates a new {@link ShowCompatResultAction}.
+	 * @param job
 	 * @param text
 	 */
 	public ShowCompatResultAction(CompatJob job, String text) {
@@ -39,6 +53,8 @@ public class ShowCompatResultAction extends Action {
 	}
 
 	/**
+	 * Creates a new {@link ShowCompatResultAction}.
+	 * @param job
 	 * @param text
 	 * @param image
 	 */
@@ -48,6 +64,8 @@ public class ShowCompatResultAction extends Action {
 	}
 
 	/**
+	 * Creates a new {@link ShowCompatResultAction}.
+	 * @param job
 	 * @param text
 	 * @param style
 	 */
@@ -56,6 +74,10 @@ public class ShowCompatResultAction extends Action {
 		setJob(job);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see org.eclipse.jface.action.Action#run()
+	 */
 	@Override
 	public void run() {
 		CompatJob job = getJob();
@@ -66,20 +88,25 @@ public class ShowCompatResultAction extends Action {
 		IFile outputFile = job.getOutputFile();
 		boolean compatible = outputFile == null;
 		int mode;
-		final StringBuffer summary = new StringBuffer();
-		summary.append(job.getInputName());
+		String summary;
 		if (compatible) {
-			summary.append(" is compatible with ");
-		    summary.append(job.getApiList());
-		    mode = MessageDialogRunnable.MODE_INFORMATION;
+			summary = String.format(
+					PlatformkitJavaResources.getString("ShowCompatResultAction.isCompatibleWith"), 
+					job.getInputName(), 
+					job.getApiList()); //$NON-NLS-1$
+			mode = MessageDialogRunnable.MODE_INFORMATION;
 		} else {
-			summary.append(" is not compatible with ");
-		    summary.append(job.getApiList());
-		    summary.append(".\nCheck \"" + outputFile.getFullPath().toString() + "\" for details.");
-		    mode = MessageDialogRunnable.MODE_ERROR;
+			summary = String.format(
+					PlatformkitJavaResources.getString("ShowCompatResultAction.isNotCompatibleWith"), 
+					job.getInputName(), 
+					job.getApiList(), 
+					outputFile.getFullPath()); //$NON-NLS-1$
+			mode = MessageDialogRunnable.MODE_ERROR;
 		}
-		final MessageDialogRunnable dlg = new MessageDialogRunnable(
-		        "Compatible with " + job.getApiList(), summary.toString());
+		String title = String.format(
+				PlatformkitJavaResources.getString("ShowCompatResultAction.dlgTitle"), 
+				job.getApiList());
+		MessageDialogRunnable dlg = new MessageDialogRunnable(title, summary);
 		dlg.setMode(mode);
 		PlatformUI.getWorkbench().getDisplay().syncExec(dlg);
 		// open report in editor
@@ -88,7 +115,7 @@ public class ShowCompatResultAction extends Action {
 		}
 	}
 
-    /**
+	/**
 	 * @return the job
 	 */
 	public CompatJob getJob() {

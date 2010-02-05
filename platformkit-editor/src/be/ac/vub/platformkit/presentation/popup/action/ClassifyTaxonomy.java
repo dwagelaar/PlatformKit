@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.popup.action;
 
 import org.eclipse.jface.action.IAction;
@@ -9,12 +19,8 @@ import be.ac.vub.platformkit.presentation.jobs.ClassifyTaxonomyJob;
 
 /**
  * Pre-classifies the taxonomy of ontology classes for a
- * given CDD configuration. Note that this needs to be redone
- * whenever the ontologies and/or the CDD configurations changes.
- * The output is written to &lt;CDD config basename&gt;.inferred.owl.
- * Requires a DIG reasoner at port 8080.
- * @author dennis
- *
+ * given Platformkit {@link ConstraintSpace} model.
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class ClassifyTaxonomy extends ObjectSelectionAction {
 

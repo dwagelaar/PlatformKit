@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.util;
 
 import java.util.Map;
@@ -12,6 +22,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
  * Applies an {@link EObjectValidator} in the EMF validation chain.
@@ -43,13 +55,13 @@ public class PlatformEValidator extends EValidatorWrapper {
 			valid = validator.isValid(eObject);
 		}
 		if ((diagnostics != null) && (!valid)) {
-			diagnostics.add
-			(new BasicDiagnostic
-					(Diagnostic.ERROR,
+			diagnostics.add(
+					new BasicDiagnostic(
+							Diagnostic.ERROR,
 							DIAGNOSTIC_SOURCE,
 							0,
-							eClass.getName() + " instances are not valid in the chosen context",
-							new Object [] { eObject }));
+							String.format(PlatformkitEditorPlugin.getPlugin().getString("PlatformEValidator.instancesNotValid"), eClass.getName()),
+							new Object [] { eObject })); //$NON-NLS-1$
 		}
 		return superValid && valid;
 	}

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.ui.dialogs;
 
 import org.eclipse.jface.dialogs.Dialog;
@@ -27,7 +37,7 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  */
 public class PlatformKitDialogPart {
 
-	public static final String WIZ_IMAGE = "icons/full/wizban/PlatformKitWizard.png";
+	public static final String WIZ_IMAGE = "icons/full/wizban/PlatformKitWizard.png"; //$NON-NLS-1$
 
 	private Label titleAreaLabel;
 	private Label titleAreaMessageLabel;
@@ -37,7 +47,7 @@ public class PlatformKitDialogPart {
 	protected Control titleArea;
 
 	/**
-	 * Creates a new PlatformKitDialogPart.
+	 * Creates a new {@link PlatformKitDialogPart}.
 	 */
 	public PlatformKitDialogPart() {
 		super();

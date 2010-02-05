@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Platformkit Documentation
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: be.ac.vub.platformkit.doc;singleton:=true
-Bundle-Version: 1.2.0
-Bundle-Vendor: Vrije Universiteit Brussel
+Bundle-Version: 1.2.1
+Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.help

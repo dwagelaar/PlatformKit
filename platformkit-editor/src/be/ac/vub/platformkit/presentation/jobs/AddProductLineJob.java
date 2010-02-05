@@ -1,8 +1,14 @@
-/**
- * 
- */
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.jobs;
-
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,10 +20,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
 import be.ac.vub.platformkit.ConstraintSet;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
+ * Operation to add product line meta-classes, described in an annotated DSL,
+ * to the PlatformKit constraint space model.
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
- *
  */
 public class AddProductLineJob extends AddConstraintSetsJob {
 
@@ -25,7 +33,7 @@ public class AddProductLineJob extends AddConstraintSetsJob {
 	 * Creates a new {@link AddProductLineJob}.
 	 */
 	public AddProductLineJob() {
-		super("Adding Product Line Meta-models");
+		super(PlatformkitEditorPlugin.getPlugin().getString("AddProductLineJob.name")); //$NON-NLS-1$
 	}
 
 	/* (non-Javadoc)
@@ -33,11 +41,11 @@ public class AddProductLineJob extends AddConstraintSetsJob {
 	 */
 	@Override
 	protected void addConstraintSet(Resource source, EList<ConstraintSet> constraintSets) {
-        TreeIterator<EObject> contents = source.getAllContents();
-        while (contents.hasNext()) {
-            EObject current = contents.next();
-            addMetaObjectConstraintSet(current, constraintSets);
-        }
+		TreeIterator<EObject> contents = source.getAllContents();
+		while (contents.hasNext()) {
+			EObject current = contents.next();
+			addMetaObjectConstraintSet(current, constraintSets);
+		}
 	}
 
 	/* (non-Javadoc)
@@ -45,11 +53,11 @@ public class AddProductLineJob extends AddConstraintSetsJob {
 	 */
 	@Override
 	protected void addOntologies(Resource source, EList<String> ontologies) {
-        TreeIterator<EObject> contents = source.getAllContents();
-        while (contents.hasNext()) {
-            EObject current = contents.next();
-            addMetaObjectOntologies(current, ontologies);
-        }
+		TreeIterator<EObject> contents = source.getAllContents();
+		while (contents.hasNext()) {
+			EObject current = contents.next();
+			addMetaObjectOntologies(current, ontologies);
+		}
 	}
 
 	/**

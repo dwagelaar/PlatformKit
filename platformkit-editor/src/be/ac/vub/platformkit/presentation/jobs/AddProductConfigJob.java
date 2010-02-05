@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.jobs;
 
 import java.util.HashSet;
@@ -10,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
 import be.ac.vub.platformkit.ConstraintSet;
+import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
  * Operation to add a product configuration, described in an annotated DSL,
@@ -22,7 +33,7 @@ public class AddProductConfigJob extends AddConstraintSetsJob {
 	 * Creates a new {@link AddProductConfigJob}.
 	 */
 	public AddProductConfigJob() {
-		super("Adding Product Configuration Models");
+		super(PlatformkitEditorPlugin.getPlugin().getString("AddProductConfigJob.name")); //$NON-NLS-1$
 	}
 
 	/* (non-Javadoc)
@@ -30,10 +41,10 @@ public class AddProductConfigJob extends AddConstraintSetsJob {
 	 */
 	@Override
 	protected void addConstraintSet(Resource source, EList<ConstraintSet> constraintSets) {
-    	ConstraintSet set = createModelConstraintSet(source);
-    	if (set != null) {
-    		constraintSets.add(set);
-    	}
+		ConstraintSet set = createModelConstraintSet(source);
+		if (set != null) {
+			constraintSets.add(set);
+		}
 	}
 
 	/* (non-Javadoc)
@@ -110,5 +121,5 @@ public class AddProductConfigJob extends AddConstraintSetsJob {
 			return set;
 		}
 	}
-	
+
 }

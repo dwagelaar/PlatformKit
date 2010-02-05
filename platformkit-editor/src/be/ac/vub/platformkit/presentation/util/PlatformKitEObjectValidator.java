@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.presentation.util;
 
 import java.util.ArrayList;
@@ -43,7 +53,7 @@ public class PlatformKitEObjectValidator implements IEObjectValidator {
 	 * @return True if the object's EClass is valid according to the ConstraintSpace.
 	 */
 	public boolean isValid(EObject value) {
-		return ! invalid.contains(qName(value.eClass(), "::"));
+		return ! invalid.contains(qName(value.eClass(), "::")); //$NON-NLS-1$
 	}
 
 	/**
@@ -51,7 +61,7 @@ public class PlatformKitEObjectValidator implements IEObjectValidator {
 	 * @return The optimisation index of the object in the list of valid objects, or -1 if no index exists.
 	 */
 	public int indexOf(EObject value) {
-		return valid.indexOf(qName(value.eClass(), "::"));
+		return valid.indexOf(qName(value.eClass(), "::")); //$NON-NLS-1$
 	}
 
 	/**
