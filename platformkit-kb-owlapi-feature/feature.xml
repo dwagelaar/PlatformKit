@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="be.ac.vub.platformkit.kb.owlapi"
-      label="PlatformKit OWLAPI Adapter"
+      label="%featureName"
       version="1.2.1"
-      provider-name="Vrije Universiteit Brussel">
+      provider-name="%providerName">
 
    <description url="about.html">
-      PlatformKit adapter for the OWLAPI framework.
+      %description
    </description>
 
    <copyright url="about.html">
-      © Copyright 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
-      
-      PlatformKit includes third-party software. Copyrights for the included third-party are available in the full copyright notice.
+      %copyright
    </copyright>
 
    <license url="about.html">
-      Vrije Universiteit Brussel makes available all content in this
-plug-in. The Content in this plug-in is provided to you under
-the terms and conditions of the Eclipse Public License Version
-1.0 (&quot;EPL&quot;), with the exception of the included third-party
-software, for which the applicable licenses are available in the full
-license notice. A copy of the EPL is available at http://www.eclipse.org/legal/epl-v10.html.
+      %license
    </license>
 
    <url>
-      <update label="SOFT update site" url="http://soft.vub.ac.be/eclipse/update-3.5"/>
+      <update label="%updateSiteName" url="http://soft.vub.ac.be/eclipse/update-3.5"/>
    </url>
 
    <requires>
