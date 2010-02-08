@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="platformkit-web" default="all">
+
+	<!-- atl.vm = "Regular VM (with debugger)" | "EMF-specific VM" -->
+	<!--property name="atl.launcher" value="Regular VM (with debugger)"/-->
+	<property name="atl.launcher" value="EMF-specific VM"/>
+
+	<eclipse.convertPath resourcepath="/uml2cs-instantmessenger-config-editor/transformations/Transformations" property="trans.path"/>
+	<!--property name="trans.uri" value="platform:/resource/uml2cs-instantmessenger-config-editor/transformations/Transformations"/-->
+	<eclipse.convertPath resourcepath="/${ant.project.name}/transformation" property="localtrans.path"/>
+	
+	<property name="Transformations.nsuri" value="http://ssel.vub.ac.be/uml2cs/Transformations"/>
+	<property name="XML.ecore.uri" value="platform:/resource/${ant.project.name}/metamodels/XML.ecore"/>
+	<property name="TransformationConfig.xmi.uri" value="platform:/resource/${ant.project.name}/TransformationConfig.xmi"/>
+	<property name="BuildParameters.xmi.uri" value="platform:/resource/${ant.project.name}/parameters.xmi"/>
+	
 	<target name="clean">
 		<mkdir dir="build"/>
         <delete includeemptydirs="true">
@@ -10,48 +24,51 @@
 	</target>
 	
 	<target name="loadModels">
-		<am3.loadModel modelHandler="EMF" name="ConfigMM" metamodel="MOF" path="uml2cs-transformations/configuration/Transformations.ecore"/>
-		<am3.loadModel modelHandler="EMF" name="Config" metamodel="ConfigMM" path="${ant.project.name}/TransformationConfig.xmi"/>
-		<am3.loadModel modelHandler="EMF" name="XML" metamodel="MOF" path="uml2cs-transformations/metamodels/XML.ecore"/>
+		<atl.loadModel modelHandler="EMF" name="ConfigMM" metamodel="MOF" nsuri="${Transformations.nsuri}"/>
+		<atl.loadModel modelHandler="EMF" name="Config" metamodel="ConfigMM" uri="${TransformationConfig.xmi.uri}"/>
+		<atl.loadModel modelHandler="EMF" name="XML" metamodel="MOF" uri="${XML.ecore.uri}"/>
+		<atl.loadModel modelHandler="EMF" name="BuildParameters" metamodel="XML" uri="${BuildParameters.xmi.uri}"/>
 	</target>
 
 	<target name="transform" depends="loadModels">
-		<am3.atl path="uml2cs-transformations/ConfigToBuildFile.atl">
+		<atl.launch path="${trans.path}/ConfigToBuildFile.asm">
 			<inmodel name="CFG" model="ConfigMM"/>
 			<inmodel name="IN" model="Config"/>
 			<inmodel name="XML" model="XML"/>
-			<outmodel name="OUT" model="Build" metamodel="XML" path="${ant.project.name}/build/build.xml"/>
-			<superimpose path="platformkit-web/transformation/ConfigToBuildFile.asm"/>
-		</am3.atl>
-		<am3.atl path="uml2cs-transformations/ConfigToParameters.atl">
+			<outmodel name="OUT" model="Build" metamodel="XML" path="platform:/resource/${ant.project.name}/build/build.xml"/>
+			<superimpose path="${localtrans.path}/ConfigToBuildFile.asm"/>
+		</atl.launch>
+		<atl.launch path="${trans.path}/ConfigToParameters.asm">
 			<inmodel name="CFG" model="ConfigMM"/>
 			<inmodel name="IN" model="Config"/>
 			<inmodel name="XML" model="XML"/>
-			<outmodel name="OUT" model="Parameters" metamodel="XML" path="${ant.project.name}/build/parameters.xml"/>
-		</am3.atl>
+			<outmodel name="OUT" model="Parameters" metamodel="XML" path="platform:/resource/${ant.project.name}/build/parameters.xml"/>
+		</atl.launch>
 	</target>
 	
 	<target name="saveModels" depends="transform">
-		<am3.saveModel model="Build" path="${ant.project.name}/build/build.xml">
-			<extractor name="xml"/>
-		</am3.saveModel>
-		<am3.saveModel model="Parameters" path="${ant.project.name}/build/parameters.xml">
-			<extractor name="xml"/>
-		</am3.saveModel>
+		<atl.launch path="${localtrans.path}/XMLExtractor.asm">
+			<inmodel name="IN" model="Build"/>
+			<inmodel name="parameters" model="BuildParameters"/>
+			<inmodel name="XML" model="XML"/>
+		</atl.launch>
+		<atl.saveModel model="Parameters" uri="platform:/resource/${ant.project.name}/build/parameters.xmi"/>
 		<eclipse.refreshLocal resource="${ant.project.name}"/>
 	</target>
 	
 	<target name="copyCommon">
 		<copy todir="build">
-			<fileset dir="transformation">
+			<fileset dir="${trans.path}">
 				<include name="common.xml"/>
 				<include name="hibernate-tools.jar"/>
 			</fileset>
 		</copy>
+		<eclipse.refreshLocal resource="${ant.project.name}"/>
 	</target>
 	
 	<target name="invokeBuild" depends="saveModels, copyCommon">
 		<ant dir="build" antfile="build.xml"></ant>
+		<eclipse.refreshLocal resource="${ant.project.name}"/>
 	</target>
 	
 	<target name="all" depends="clean, invokeBuild"/>

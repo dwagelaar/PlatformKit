@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Persistence="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2 Persistence.profile.uml#_8oQ3IB6PEdyzWPQ9uYFypQ http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Persistence="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2 Persistence.profile.uml#_8oQ3IB6PEdyzWPQ9uYFypQ http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
   <uml:Model xmi:id="_qb8akM37EdqwVrslYOdUDA" name="PlatformKitWeb">
+    <ownedComment xmi:id="_te4EYBIsEd-skPKoMNVqXQ">
+      <body>/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
+</body>
+    </ownedComment>
     <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="be">
       <packagedElement xmi:type="uml:Package" xmi:id="_JwPwIcHBEduKcpNg9SVSYQ" name="ac">
         <packagedElement xmi:type="uml:Package" xmi:id="_L0QPQMHBEduKcpNg9SVSYQ" name="vub">
@@ -196,17 +209,17 @@
         </packagedElement>
       </packagedElement>
     </packagedElement>
-    <profileApplication xmi:id="_McpgcMHLEduY-PgkT4NtFg">
-      <eAnnotations xmi:id="_McpgccHLEduY-PgkT4NtFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="Persistence.profile.uml#_8oQ3IB6PEdyzWPQ9uYFypQ"/>
-      </eAnnotations>
-      <appliedProfile href="Persistence.profile.uml#_ZE1lcMHKEduY-PgkT4NtFg"/>
-    </profileApplication>
     <profileApplication xmi:id="_A75O0OKgEduOI6ponYIZJQ">
       <eAnnotations xmi:id="_A8Dm4OKgEduOI6ponYIZJQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
       </eAnnotations>
       <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_uegKMBKAEd-qAY0-XN2gDg">
+      <eAnnotations xmi:id="_ueh_YBKAEd-qAY0-XN2gDg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../uml2cs-transformations/profiles/Persistence.profile.uml#_8oQ3IB6PEdyzWPQ9uYFypQ"/>
+      </eAnnotations>
+      <appliedProfile href="../../uml2cs-transformations/profiles/Persistence.profile.uml#_ZE1lcMHKEduY-PgkT4NtFg"/>
     </profileApplication>
   </uml:Model>
   <Persistence:Persistent xmi:id="_EFihAB6QEdyzWPQ9uYFypQ" id="_Ra3AgMHDEduKcpNg9SVSYQ" base_Class="_PCGO0MHCEduKcpNg9SVSYQ"/>
@@ -214,4 +227,6 @@
   <Standard:Create xmi:id="_3GBiUOj0EduMF8bmKxtVtA"/>
   <Persistence:Persistent xmi:id="_Sz8kQB6SEdyOtOipTtD9pQ"/>
   <Persistence:mapped xmi:id="_V14EMB6SEdyOtOipTtD9pQ" type="binary" length="100000" base_Property="_bSvkoOkgEduSvsosCY1j6g"/>
+  <Persistence:Persistent xmi:id="_wcgvABKAEd-qAY0-XN2gDg" id="_Ra3AgMHDEduKcpNg9SVSYQ" base_Class="_PCGO0MHCEduKcpNg9SVSYQ"/>
+  <Persistence:mapped xmi:id="_ARqCwBKBEd-qAY0-XN2gDg" type="binary" length="100000" base_Property="_bSvkoOkgEduSvsosCY1j6g"/>
 </xmi:XMI>
