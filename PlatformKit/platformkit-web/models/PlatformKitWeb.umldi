@@ -19,6 +19,11 @@
         <element href="PlatformKitWeb.uml#_w8IxIM37EdqwVrslYOdUDA"/>
       </semanticModel>
     </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_teXHABIsEd-skPKoMNVqXQ" position="190,25" size="415,148">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_teXHARIsEd-skPKoMNVqXQ" presentation="default">
+        <element href="PlatformKitWeb.uml#_te4EYBIsEd-skPKoMNVqXQ"/>
+      </semanticModel>
+    </contained>
   </diagrams>
   <subdiagrams xmi:id="_TtQ1M8plEdyweLrXr02Gag">
     <model href="PlatformKitWeb.uml#_w8IxIM37EdqwVrslYOdUDA"/>
@@ -106,7 +111,7 @@
           </diagrams>
           <subdiagrams xmi:id="_TtTRcMplEdyweLrXr02Gag">
             <model href="PlatformKitWeb.uml#__om3cOKeEdusoPrkeXo32Q"/>
-            <diagrams xmi:id="_TtTRccplEdyweLrXr02Gag" position="0,0" size="100,100" name="unnamed" viewport="44,49">
+            <diagrams xmi:id="_TtTRccplEdyweLrXr02Gag" position="0,0" size="100,100" name="unnamed" viewport="264,0">
               <property xmi:id="_TtTRcsplEdyweLrXr02Gag" key="pageFormatName" value="ecorePageFormat"/>
               <property xmi:id="_TtTRc8plEdyweLrXr02Gag" key="diagramWidth" value="1090"/>
               <property xmi:id="_TtTRdMplEdyweLrXr02Gag" key="diagramHeight" value="840"/>

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Dennis Wagelaar, Vrije Universiteit Brussel
+ *******************************************************************************/
 package be.ac.vub.platformkit.servlet;
 
 import java.io.IOException;
@@ -40,7 +50,7 @@ import be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory;
 
 /**
  * Web service interface for PlatformKit.
- * @author dennis
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class PlatformkitServlet extends HttpServlet {
 

@@ -9,7 +9,7 @@ create OUT : XML from IN : CFG;
 -- helper attributes begin
 -- ======================================================================
 
-helper def : ModelPath : String = '/platformkit-web/models';
+helper def : ModelPath : String = 'platform:/resource/platformkit-web/models';
 
 -- ======================================================================
 -- helper attributes end
@@ -41,7 +41,7 @@ rule ConfigRoot {
 			'inModel',
 			'im',
 			thisModule.ModelPath + '/PlatformKitWeb.uml',
-			'/' + s.targetProject + '/src/PlatformKitWeb.hibernatemapping30'),
+			'platform:/resource/' + s.targetProject + '/src/PlatformKitWeb.hibernatemapping30'),
 		parent <- root)
 }
 
@@ -69,7 +69,7 @@ rule AllTarget(c : CFG!"instantmessenger::InstantMessengerConfiguration") {
 	}
 }
 
-rule ModelTarget(name : String, inModel : String, prefix : String, path : String, hbmpath : String) {
+rule ModelTarget(name : String, inModel : String, prefix : String, uri : String, hbmuri : String) {
 	-- Sequence{name = 'name' depends = 'allBase'}
 	to targetName : XML!"XML::Attribute"(
 	   	name <- 'name',
@@ -77,9 +77,9 @@ rule ModelTarget(name : String, inModel : String, prefix : String, path : String
 	   targetDepends : XML!"XML::Attribute"(
 	   	name <- 'depends',
 		value <- 'allBase'),
-	-- <am3.loadModel modelHandler = 'EMF' name = 'inModel' metamodel = 'UML2' path = 'path'/>
+	-- <atl.loadModel modelHandler = 'EMF' name = 'inModel' metamodel = 'UML2' uri = 'uri'/>
 	   loadModel : XML!"XML::Element" (
-	   	name <- 'am3.loadModel'),
+	   	name <- 'atl.loadModel'),
 	   modelHandler : XML!"XML::Attribute" (
 	   	name <- 'modelHandler',
 		value <- 'EMF',
@@ -92,9 +92,9 @@ rule ModelTarget(name : String, inModel : String, prefix : String, path : String
 	   	name <- 'metamodel',
 		value <- 'UML2',
 		parent <- loadModel),
-	   modelPath : XML!"XML::Attribute" (
-	   	name <- 'path',
-		value <- path,
+	   modelUri : XML!"XML::Attribute" (
+	   	name <- 'uri',
+		value <- uri,
 		parent <- loadModel),
 	-- <antcall target="generateWithHBM" inheritRefs="true">
 	   antcall : XML!"XML::Element" (
@@ -122,10 +122,10 @@ rule ModelTarget(name : String, inModel : String, prefix : String, path : String
 	   	name <- 'param',
 		children <- thisModule->Property('outHBM', prefix + '-HBM'),
 		parent <- antcall),
-	-- <param name="pathHBM" value="prefix-HBM"/>
+	-- <param name="uriHBM" value="hbmuri"/>
 	   parampathHBM : XML!"XML::Element" (
 	   	name <- 'param',
-		children <- thisModule->Property('pathHBM', hbmpath),
+		children <- thisModule->Property('uriHBM', hbmuri),
 		parent <- antcall)
 	do {
 		Sequence{targetName, targetDepends, loadModel, antcall};
