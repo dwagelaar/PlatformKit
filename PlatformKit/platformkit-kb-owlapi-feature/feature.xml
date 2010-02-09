@@ -30,15 +30,15 @@
 
    <plugin
          id="be.ac.vub.platformkit.kb.owlapi"
-         download-size="3020"
-         install-size="3020"
+         download-size="3024"
+         install-size="3024"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.kb.owlapi.doc"
-         download-size="1600"
-         install-size="1600"
+         download-size="1604"
+         install-size="1604"
          version="0.0.0"
          unpack="false"/>
 

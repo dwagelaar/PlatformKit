@@ -33,15 +33,15 @@
 
    <plugin
          id="be.ac.vub.platformkit.kb.jena"
-         download-size="6336"
-         install-size="6336"
+         download-size="6344"
+         install-size="6344"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.kb.jena.doc"
-         download-size="9032"
-         install-size="9032"
+         download-size="9040"
+         install-size="9040"
          version="0.0.0"
          unpack="false"/>
 
