@@ -46,8 +46,8 @@
 
    <plugin
          id="be.ac.vub.platformkit.editor"
-         download-size="228"
-         install-size="228"
+         download-size="256"
+         install-size="256"
          version="0.0.0"
          unpack="false"/>
 
@@ -60,29 +60,29 @@
 
    <plugin
          id="be.ac.vub.platformkit"
-         download-size="128"
-         install-size="128"
+         download-size="136"
+         install-size="136"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.doc"
-         download-size="876"
-         install-size="876"
+         download-size="888"
+         install-size="888"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.java"
-         download-size="4568"
-         install-size="4568"
+         download-size="4576"
+         install-size="4576"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.examples"
-         download-size="288"
-         install-size="288"
+         download-size="292"
+         install-size="292"
          version="0.0.0"
          unpack="false"/>
 
