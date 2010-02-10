@@ -150,57 +150,78 @@ helper context UML2!"ecore::EStringToStringMapEntry" def : isMissing : Boolean =
 -- where locally compatible means compatible without considering any contained elements.
 -- The root Model is never missing.
 helper context UML2!"uml::Model" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		false
-	endif;
+	if self.isInferred then false
+	else self.hasMissingOwner endif;
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Package" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		self.locallyCompatibleWithSelf->isEmpty()
+	if self.isInferred then false else
+		if self.hasMissingOwner then true else
+			self.locallyCompatibleWithSelf->isEmpty()
+		endif
 	endif;
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Class" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		self.locallyCompatibleWithSelf->isEmpty()
+	if self.isInferred then false else
+		if self.hasMissingOwner then true else
+			self.locallyCompatibleWithSelf->isEmpty()
+		endif
 	endif;
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Interface" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		self.locallyCompatibleWithSelf->isEmpty()
+	if self.isInferred then false else
+		if self.hasMissingOwner then true else
+			self.locallyCompatibleWithSelf->isEmpty()
+		endif
+	endif;
+
+-- True iff there are no elements X other than self,
+-- for which self is locally compatible with X,
+-- where locally compatible means compatible without considering any contained elements.
+helper context UML2!"uml::DataType" def : isMissing : Boolean =
+	if self.isInferred then false else
+		if self.hasMissingOwner then true else
+			self.locallyCompatibleWithSelf->isEmpty()
+		endif
 	endif;
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Generalization" def : isMissing : Boolean =
-	if self.specific.isMissing then true else
-		self.specific.incompGenerals->includes(self.general)
+	if self.isInferred then false else
+		if self.specific.isMissing then true else
+			self.specific.incompGenerals->includes(self.general)
+		endif
 	endif;
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::InterfaceRealization" def : isMissing : Boolean =
-	if self.implementingClassifier.isMissing then true else
-		self.implementingClassifier.incompSuppliers->exists(i|self.supplier->includes(i))
+	if self.isInferred then false else
+		if self.implementingClassifier.isMissing then true else
+			self.implementingClassifier.incompSuppliers->exists(i|self.supplier->includes(i))
+		endif
 	endif;
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Property" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		if self.class.oclIsUndefined() then false else
-			self.class.incompFeatures->includes(self)
+	if self.isInferred then false else
+		if self.hasMissingOwner then true else
+			if self.class.oclIsUndefined() then false else
+				self.class.incompFeatures->includes(self)
+			endif
 		endif
 	endif;
 
@@ -208,13 +229,15 @@ helper context UML2!"uml::Property" def : isMissing : Boolean =
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Operation" def : isMissing : Boolean =
-	if self.hasMissingOwner then true else
-		if self.class.oclIsUndefined() then
-			if self.interface.oclIsUndefined() then false else
-				self.interface.incompFeatures->includes(self)
+	if self.isInferred then false else
+		if self.hasMissingOwner then true else
+			if self.class.oclIsUndefined() then
+				if self.interface.oclIsUndefined() then false else
+					self.interface.incompFeatures->includes(self)
+				endif
+			else
+				self.class.incompFeatures->includes(self)
 			endif
-		else
-			self.class.incompFeatures->includes(self)
 		endif
 	endif;
 
@@ -250,27 +273,33 @@ helper context UML2!"uml::Element" def : hasElementsMissing : Boolean =
 -- for which X contains all elements A such that
 -- there exists an element B contained in self that is compatible with A.
 helper context UML2!"uml::Package" def : hasElementsMissing : Boolean =
-	if self.hasMissingOwner then false else
-		if self.compatibleWithSelf->isEmpty() then true
-	 	else self.allOwnedPackages->exists(p|p.compatibleWithSelf->isEmpty()) endif
+	if self.isInferred then false else
+		if self.hasMissingOwner then false else
+			if self.compatibleWithSelf->isEmpty() then true
+	 		else self.allOwnedPackages->exists(p|p.compatibleWithSelf->isEmpty()) endif
+		endif
 	endif;
 
 -- True iff there are no elements X other than self,
 -- for which X contains all elements A such that
 -- there exists an element B contained in self that is compatible with A.
 helper context UML2!"uml::Class" def : hasElementsMissing : Boolean =
-	if self.hasMissingOwner then false else
-		if self.compatibleWithSelf->isEmpty() then true
-	 	else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
+	if self.isInferred then false else
+		if self.hasMissingOwner then false else
+			if self.compatibleWithSelf->isEmpty() then true
+	 		else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
+		endif
 	endif;
 
 -- True iff there are no elements X other than self,
 -- for which X contains all elements A such that
 -- there exists an element B contained in self that is compatible with A.
 helper context UML2!"uml::Interface" def : hasElementsMissing : Boolean =
-	if self.hasMissingOwner then false else
-		if self.compatibleWithSelf->isEmpty() then true
-	 	else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
+	if self.isInferred then false else
+		if self.hasMissingOwner then false else
+			if self.compatibleWithSelf->isEmpty() then true
+	 		else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
+		endif
 	endif;
 
 -- ------------------------ hasMissingOwner -----------------------------
@@ -563,7 +592,8 @@ rule DataType {
 		else false endif)
 	to t : UML2!"uml::DataType" (
         name <- s.name.debug('>>DataType<< ' + s.qualifiedName),
-        visibility <- s.visibility,
+		eAnnotations <- s.eAnnotations,
+		visibility <- s.visibility,
         isLeaf <- s.isLeaf,
         isAbstract <- s.isAbstract,
         ownedAttribute <- s.ownedAttribute,
@@ -601,7 +631,8 @@ rule PrimitiveType {
 		else false endif)
 	to t : UML2!"uml::PrimitiveType" (
         name <- s.name.debug('>>PrimitiveType<< ' + s.qualifiedName),
-        visibility <- s.visibility,
+		eAnnotations <- s.eAnnotations,
+		visibility <- s.visibility,
         isLeaf <- s.isLeaf,
         isAbstract <- s.isAbstract,
         generalization <- s.generalization)
@@ -740,7 +771,8 @@ rule LiteralUnlimitedNatural {
 		else false endif)
     to t : UML2!"uml::LiteralUnlimitedNatural" (
         name <- s.name,
-        visibility <- s.visibility,
+		eAnnotations <- s.eAnnotations,
+		visibility <- s.visibility,
         value <- s.value)
 }
 
@@ -754,7 +786,8 @@ rule LiteralInteger {
 		else false endif)
     to t : UML2!"uml::LiteralInteger" (
         name <- s.name,
-        visibility <- s.visibility,
+		eAnnotations <- s.eAnnotations,
+		visibility <- s.visibility,
         value <- s.value)
 }
 
