@@ -4,5 +4,5 @@
     <dataTypes xsi:type="transformations:Java1DataTypes"/>
   </mapping>
   <observer/>
-  <applet/>
+  <applet xsi:type="transformations:UML2Applet"/>
 </transformations:TransformationConfig>
