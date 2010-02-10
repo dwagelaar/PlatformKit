@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.m2m.atl.core.ATLCoreException;
 
@@ -45,7 +46,7 @@ public class JavaProjectCompatJob extends CompatJob {
 	protected void runAction(IProgressMonitor monitor) throws Exception {
         checkAndSwitchStrategy();
         JavaProjectCompatJobRunner runner = new JavaProjectCompatJobRunner();
-		runActionWithRunner(monitor, runner, 7);
+		runActionWithRunner(monitor, runner, 14);
 	}
 
 	public class JavaProjectCompatJobRunner extends CompatJobRunner {
@@ -79,7 +80,7 @@ public class JavaProjectCompatJob extends CompatJob {
 	        jarToUML.addPaths(jproject, true);
 			jarToUML.setOutputFile(path.toString());
 			jarToUML.setOutputModelName(path.removeFileExtension().lastSegment());
-			jarToUML.setMonitor(monitor);
+			jarToUML.setMonitor(new SubProgressMonitor(monitor, 7));
 			jarToUML.run();
 			if (jarToUML.isRunComplete()) {
 				jarToUML.getModel().eResource().save(Collections.EMPTY_MAP);
