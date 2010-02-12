@@ -59,6 +59,13 @@ helper context UML2!"uml::BehavioredClassifier" def : superTypes : Set(UML2!"uml
 helper context UML2!"uml::Classifier" def : superTypes : Set(UML2!"uml::Classifier") =
 	self.general;
 
+helper context UML2!"uml::Classifier" def : qualifiedName(separator : String) : String =
+	if self.owner.oclIsTypeOf(UML2!"uml::Package") or self.owner.oclIsKindOf(UML2!"uml::Classifier") then
+		self.owner.qualifiedName(separator) + separator + self.name
+	else
+		self.name
+	endif;
+
 ------------------------------- MultiplicityElement -----------------------------------
 
 helper context UML2!"uml::MultiplicityElement" def : accessorBaseName : String =
