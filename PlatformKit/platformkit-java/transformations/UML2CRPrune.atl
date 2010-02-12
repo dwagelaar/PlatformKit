@@ -1,6 +1,6 @@
 -- @atlcompiler atl2006
 -- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
--- $Id:UML2Comparison.atl 7084 2007-07-10 13:19:05Z dwagelaa $
+-- $Id$
 -- Prunes superfluous elements from a CompatibilityReport UML2 model.
 --
 module UML2CRPrune; -- extends UML2Copy
@@ -9,8 +9,89 @@ create OUT : UML2		-- The pruned compatibility report model
 from IN : UML2; 		-- The input compatibility report model
 
 -- ======================================================================
--- helper attributes begin
+-- context helper attributes begin
 -- ======================================================================
+
+-- ------------------------ mustBePruned --------------------------------
+
+helper context UML2!"ecore::EObject" def : mustBePruned : Boolean =
+	let owner : UML2!"ecore::EObject" = self.refImmediateComposite() in
+	if owner.oclIsUndefined() then false
+	else owner.mustBePruned endif;
+
+helper context UML2!"ecore::EStringToStringMapEntry" def : mustBePruned : Boolean =
+	self.refImmediateComposite().mustBePruned;
+
+--helper context UML2!"uml::Element" def : mustBePruned : Boolean =
+--	self.owner.mustBePruned;
+
+helper context UML2!"uml::Model" def : mustBePruned : Boolean =
+	false;
+
+helper context UML2!"uml::Package" def : mustBePruned : Boolean =
+	if self.isMissing then false else
+	if self.isIncompatible then false else
+	if self.hasReferredTypes then false else true.debug('Pruned ' + self.qualifiedName)
+	endif endif endif;
+
+helper context UML2!"uml::Classifier" def : mustBePruned : Boolean =
+	if self.isMissing then false else
+	if self.isIncompatible then false else
+	if self.isReferred then false else
+	if self.hasReferredTypes then false else true.debug('Pruned ' + self.qualifiedName)
+	endif endif endif endif;
+
+helper context UML2!"uml::Operation" def : mustBePruned : Boolean =
+	not self.isMissing;
+
+helper context UML2!"uml::Property" def : mustBePruned : Boolean =
+	not self.isMissing;
+
+-- ------------------------ isMissing -----------------------------------
+
+helper context UML2!"uml::Element" def : isMissing : Boolean =
+	not self.getAppliedStereotype('CompatibilityReport::Missing').oclIsUndefined();
+
+-- ------------------------ isIncompatible ------------------------------
+
+helper context UML2!"uml::Element" def : isIncompatible : Boolean =
+	not self.getAppliedStereotype('CompatibilityReport::Incompatible').oclIsUndefined();
+
+-- ------------------------ isReferred ----------------------------------
+
+helper context UML2!"uml::Element" def : isReferred : Boolean =
+	false;
+
+helper context UML2!"uml::Classifier" def : isReferred : Boolean =
+	thisModule.allElements
+	->exists(e|
+		if e.isMissing then
+			e.refersToType(self)
+		else false endif);
+
+-- ------------------------ hasReferredTypes ----------------------------
+
+helper context UML2!"uml::Element" def : hasReferredTypes : Boolean =
+	false;
+
+helper context UML2!"uml::Package" def : hasReferredTypes : Boolean =
+	self.packagedElement
+	->exists(e|if e.isReferred then true else e.hasReferredTypes endif);
+
+helper context UML2!"uml::Class" def : hasReferredTypes : Boolean =
+	self.nestedClassifier
+	->exists(e|e.isReferred);
+
+helper context UML2!"uml::Interface" def : hasReferredTypes : Boolean =
+	self.nestedClassifier
+	->exists(e|e.isReferred);
+
+-- ======================================================================
+-- context-free helper attributes begin
+-- ======================================================================
+
+helper def : allElements : Set(UML2!"ecore::EObject") =
+	UML2!"uml::Element".allInstances();
 
 helper def : inElements : Set(UML2!"ecore::EObject") =
 	thisModule.filterInElements(
@@ -24,62 +105,16 @@ helper def : inElements : Set(UML2!"ecore::EObject") =
 -- helper methods begin
 -- ======================================================================
 
+-- ------------------------ filterInElements ----------------------------
+	
 -- work around superimposition bug where amount of local vars in main is not updated
 helper def : filterInElements(inElements : Set(UML2!"ecore::EObject")) : Set(UML2!"ecore::EObject") =
 	inElements->reject(e|
-		if e.oclIsKindOf(UML2!"uml::Element") then
-			if e.isPrunableElement() then
-				if e.isMissing() then false else
-				if e.isIncompatible() then false else
-				if e.isReferred() then false else
-				if e.hasReferredTypes() then false else true.debug('Pruned ' + e.toString())
-				endif endif endif endif
-			else false endif
+		if e.oclIsKindOf(UML2!"ecore::EObject") or e.oclIsKindOf(UML2!"ecore::EStringToStringMapEntry") 
+		then e.mustBePruned 
 		else false endif);
 
-helper context UML2!"uml::Element" def : isPrunableElement() : Boolean =
-	if self.oclIsTypeOf(UML2!"uml::Package") then true else
-	if self.oclIsKindOf(UML2!"uml::Classifier") then true else
-	if self.oclIsKindOf(UML2!"uml::Feature") then true else
-	if self.oclIsKindOf(UML2!"uml::Parameter") then true else
-	false endif endif endif endif;
-
-helper context UML2!"uml::Element" def : isMissing() : Boolean =
-	(not self.getAppliedStereotype('CompatibilityReport::Missing').oclIsUndefined());
-
-helper context UML2!"uml::Element" def : isIncompatible() : Boolean =
-	(not self.getAppliedStereotype('CompatibilityReport::Incompatible').oclIsUndefined());
-
-helper context UML2!"uml::Parameter" def : isMissing() : Boolean =
-	self.owner.isMissing();
-
-helper context UML2!"uml::Parameter" def : isIncompatible() : Boolean =
-	self.owner.isIncompatible();
-
-helper context UML2!"uml::Element" def : isReferred() : Boolean =
-	false;
-
-helper context UML2!"uml::Classifier" def : isReferred() : Boolean =
-	UML2!"uml::Element".allInstances()
-	->exists(e|
-		if e.isMissing() then
-			e.refersToType(self)
-		else false endif);
-
-helper context UML2!"uml::Element" def : hasReferredTypes() : Boolean =
-	false;
-
-helper context UML2!"uml::Package" def : hasReferredTypes() : Boolean =
-	self.packagedElement
-	->exists(e|if e.isReferred() then true else e.hasReferredTypes() endif);
-
-helper context UML2!"uml::Class" def : hasReferredTypes() : Boolean =
-	self.nestedClassifier
-	->exists(e|e.isReferred());
-
-helper context UML2!"uml::Interface" def : hasReferredTypes() : Boolean =
-	self.nestedClassifier
-	->exists(e|e.isReferred());
+-- ------------------------ refersToType --------------------------------
 
 helper context UML2!"uml::Element" def : refersToType(type : UML2!"uml::Type") : Boolean =
 	false;

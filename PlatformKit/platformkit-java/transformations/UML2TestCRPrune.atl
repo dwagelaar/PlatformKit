@@ -1,0 +1,134 @@
+-- @atlcompiler atl2006
+-- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
+-- $Id: UML2TestCompatibilityReport.atl 7950 2010-01-31 19:20:25Z dwagelaa $
+-- Performs a number of tests on generated compatibility reports
+query UML2TestCRPrune = ( 
+	UML2!"uml::Model".allInstances()->forAll(m|m.hasCRProfile).debug('Model.hasCRProfile') and
+	UML2!"uml::TypedElement".allInstances()->forAll(t|t.hasType).debug('TypedElement.hasType') and
+	UML2!"uml::Package".allInstances()->forAll(e|e.isOrHasMissing).debug('Package.isOrHasMissing') and
+	UML2!"uml::Class".allInstances()->forAll(e|e.isOrHasMissing).debug('Class.isOrHasMissing') and
+	UML2!"uml::Interface".allInstances()->forAll(e|e.isOrHasMissing).debug('Interface.isOrHasMissing') and
+	UML2!"uml::Feature".allInstances()->forAll(e|e.isMissing).debug('Feature.isMissing')
+).debug('UML2CRPrune test');
+
+-- ======================================================================
+-- helper attributes begin
+-- ======================================================================
+
+helper context UML2!"uml::NamedElement" def : printName : String = 
+	let qn : String = self.qualifiedName in
+	if qn.oclIsUndefined() then
+		let owner : UML2!"uml::NamedElement" = self.namespace in
+		if owner.oclIsUndefined() then '<unnamed>'
+		else owner.printName + '::<unnamed>' endif
+	else qn endif;
+
+helper context UML2!"uml::Element" def : isMissing : Boolean =
+	(not self.getAppliedStereotype('CompatibilityReport::Missing').oclIsUndefined());
+
+helper context UML2!"uml::NamedElement" def : isOrHasMissing : Boolean =
+	if self.isMissing then
+		true
+		.debug(self.printName + ' is missing')
+	else
+		if self.isReferred then true 
+		else self.hasMissing endif
+	endif;
+
+helper context UML2!"uml::NamedElement" def : hasMissing : Boolean =
+	self.namedElementHasMissing
+	.debug(self.printName + ' has nested missing elements');
+
+helper context UML2!"uml::Classifier" def : hasMissing : Boolean =
+	if self.namedElementHasMissing then true else
+		self.general->exists(g|g.isOrHasMissing)
+	endif
+	.debug(self.printName + ' has nested missing elements');
+
+helper context UML2!"uml::NamedElement" def : namedElementHasMissing : Boolean =
+	self.ownedElement->exists(o|
+		if o.oclIsKindOf(UML2!"uml::NamedElement")
+		then o.isOrHasMissing
+		else true endif);
+
+--helper context UML2!"uml::Element" def : hasNoNestedElements : Boolean =
+--	true; -- no nested packages, classes, interfaces, datatypes, attributes, operations possible
+--
+--helper context UML2!"uml::Package" def : hasNoNestedElements : Boolean =
+--	self.packagedElement->isEmpty();
+--
+--helper context UML2!"uml::Class" def : hasNoNestedElements : Boolean =
+--	if self.hasNoFeatures then
+--		self.nestedClassifier->isEmpty()
+--	else false endif;
+--
+--helper context UML2!"uml::Interface" def : hasNoNestedElements : Boolean =
+--	if self.hasNoFeatures then
+--		self.nestedClassifier->isEmpty()
+--	else false endif;
+--
+--helper context UML2!"uml::Classifier" def : hasNoNestedElements : Boolean =
+--	self.hasNoFeatures;
+
+helper context UML2!"uml::Classifier" def : hasNoFeatures : Boolean =
+	self.feature->isEmpty();
+
+helper context UML2!"uml::TypedElement" def : hasType : Boolean =
+	(not self.type.oclIsUndefined()).debug('TypedElement ' + self.printName + ' has type');
+
+helper context UML2!"uml::Model" def : hasCRProfile : Boolean =
+	(not self.getAppliedProfile('CompatibilityReport').oclIsUndefined())
+	.debug('CompatibilityReport profile applied to ' + self.printName);
+
+helper context UML2!"uml::Element" def : isReferred : Boolean =
+	false;
+
+helper context UML2!"uml::Classifier" def : isReferred : Boolean =
+	UML2!"uml::Element".allInstances()
+	->exists(e|
+		if e.isMissing then
+			e.refersToType(self)
+		else false endif)
+	.debug(self.printName + ' is referred');
+
+helper context UML2!"uml::Element" def : hasReferredTypes : Boolean =
+	false;
+
+helper context UML2!"uml::Package" def : hasReferredTypes : Boolean =
+	self.packagedElement
+	->exists(e|e.isReferred or e.hasReferredTypes);
+
+helper context UML2!"uml::Class" def : hasReferredTypes : Boolean =
+	self.nestedClassifier
+	->exists(e|e.isReferred);
+
+helper context UML2!"uml::Interface" def : hasReferredTypes : Boolean =
+	self.nestedClassifier
+	->exists(e|e.isReferred);
+
+-- ======================================================================
+-- helper attributes end
+-- ======================================================================
+
+-- ======================================================================
+-- helper methods begin
+-- ======================================================================
+
+helper context UML2!"uml::Element" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	false;
+
+helper context UML2!"uml::Property" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.type=type;
+
+helper context UML2!"uml::Parameter" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.type=type;
+
+helper context UML2!"uml::Generalization" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.general=type;
+
+helper context UML2!"uml::InterfaceRealization" def : refersToType(type : UML2!"uml::Type") : Boolean =
+	self.contract=type;
+
+-- ======================================================================
+-- helper methods end
+-- ======================================================================
