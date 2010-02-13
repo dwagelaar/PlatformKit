@@ -147,6 +147,9 @@ public abstract class ProgressMonitorJob extends Job {
 					String.format(
 							PlatformkitEditorPlugin.getPlugin().getString("ProgressMonitorJob.completedSuccesfully"), 
 							getName())); //$NON-NLS-1$
+		} catch (OperationCanceledException e) {
+			st = Status.CANCEL_STATUS;
+			catchCleanup();
 		} catch (Exception e) {
 			PlatformkitEditorPlugin.report(e);
 			st = new Status(
