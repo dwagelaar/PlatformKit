@@ -14,16 +14,10 @@ from IN : UML2; 		-- The input compatibility report model
 
 -- ------------------------ mustBePruned --------------------------------
 
-helper context UML2!"ecore::EObject" def : mustBePruned : Boolean =
-	let owner : UML2!"ecore::EObject" = self.refImmediateComposite() in
+helper context OclAny def : mustBePruned : Boolean =
+	let owner : OclAny = self.refImmediateComposite() in
 	if owner.oclIsUndefined() then false
 	else owner.mustBePruned endif;
-
-helper context UML2!"ecore::EStringToStringMapEntry" def : mustBePruned : Boolean =
-	self.refImmediateComposite().mustBePruned;
-
---helper context UML2!"uml::Element" def : mustBePruned : Boolean =
---	self.owner.mustBePruned;
 
 helper context UML2!"uml::Model" def : mustBePruned : Boolean =
 	false;
@@ -51,6 +45,9 @@ helper context UML2!"uml::Property" def : mustBePruned : Boolean =
 
 helper context UML2!"uml::Element" def : isMissing : Boolean =
 	not self.getAppliedStereotype('CompatibilityReport::Missing').oclIsUndefined();
+
+helper context UML2!"uml::Parameter" def : isMissing : Boolean =
+	self.owner.isMissing;
 
 -- ------------------------ isIncompatible ------------------------------
 
@@ -109,10 +106,7 @@ helper def : inElements : Set(UML2!"ecore::EObject") =
 	
 -- work around superimposition bug where amount of local vars in main is not updated
 helper def : filterInElements(inElements : Set(UML2!"ecore::EObject")) : Set(UML2!"ecore::EObject") =
-	inElements->reject(e|
-		if e.oclIsKindOf(UML2!"ecore::EObject") or e.oclIsKindOf(UML2!"ecore::EStringToStringMapEntry") 
-		then e.mustBePruned 
-		else false endif);
+	inElements->reject(e|e.mustBePruned);
 
 -- ------------------------ refersToType --------------------------------
 
@@ -164,10 +158,11 @@ rule Missing {
 
 endpoint rule End() {
 	do {
-		thisModule.inElements
+		let result : Boolean = thisModule.inElements
 			->select(e|e.oclIsKindOf(UML2!"uml::PackageableElement"))
 			->reject(p|p.owner.oclIsUndefined())
-			->isEmpty().debug('Empty pruned model');
+			->isEmpty().debug('Empty pruned model') in
+		result;
 	}
 }
 
