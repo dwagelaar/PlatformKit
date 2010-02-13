@@ -13,6 +13,7 @@ package be.ac.vub.platformkit.java.actions;
 import java.util.logging.Logger;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.PlatformUI;
@@ -81,7 +82,8 @@ public class ShowCompatResultAction extends Action {
 	@Override
 	public void run() {
 		CompatJob job = getJob();
-		if (job.getResult() == null) {
+		IStatus result = job.getResult();
+		if (result == null || result.getSeverity() != IStatus.OK) {
 			return;
 		}
 		// show result
