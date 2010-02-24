@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY isa "http://soft.vub.ac.be/platformkit/2010/1/isa.owl#" >
+    <!ENTITY arm "http://soft.vub.ac.be/platformkit/2010/1/arm.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/arm.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/arm.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:isa="http://soft.vub.ac.be/platformkit/2010/1/isa.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:arm="http://soft.vub.ac.be/platformkit/2010/1/arm.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit ARM instruction set architecture ontology.</rdfs:label>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <owl:versionInfo>$Id$</owl:versionInfo>
+        <rdfs:comment xml:lang="en"
+            >Describes and disambiguates the different ARM instruction set architectures.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/isa.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv1 -->
+
+    <owl:Class rdf:about="#ARMv1">
+        <rdfs:subClassOf rdf:resource="&isa;ARM"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv1 (obsolete).</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv2 -->
+
+    <owl:Class rdf:about="#ARMv2">
+        <rdfs:subClassOf rdf:resource="#ARMv1"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >ARMv2 (obsolete). Architecture 2 added the MUL (multiply) instruction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv2a -->
+
+    <owl:Class rdf:about="#ARMv2a">
+        <rdfs:subClassOf rdf:resource="#ARMv2"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >ARMv2a (obsolete). Architecture 2a added the SWP and SWPB (swap) instructions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv3 -->
+
+    <owl:Class rdf:about="#ARMv3">
+        <rdfs:subClassOf rdf:resource="#ARMv2a"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv3 (obsolete). v3 architecture first to support addressing 32 bits of memory (as opposed to 26 bits).</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv4 -->
+
+    <owl:Class rdf:about="#ARMv4">
+        <rdfs:subClassOf rdf:resource="#ARMv3"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv4 (StrongARM).</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv4T -->
+
+    <owl:Class rdf:about="#ARMv4T">
+        <rdfs:subClassOf rdf:resource="#ARMv4"/>
+        <rdfs:comment xml:lang="en">ARMv4T. Thumb.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv5TE -->
+
+    <owl:Class rdf:about="#ARMv5TE">
+        <rdfs:subClassOf rdf:resource="#ARMv4T"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv5TE. Thumb, Enhanced DSP instructions.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv5TEJ -->
+
+    <owl:Class rdf:about="#ARMv5TEJ">
+        <rdfs:subClassOf rdf:resource="#ARMv5TE"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv5TEJ. Thumb, Jazelle DBX, Enhanced DSP instructions.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv6 -->
+
+    <owl:Class rdf:about="#ARMv6">
+        <rdfs:subClassOf rdf:resource="#ARMv5TEJ"/>
+        <rdfs:subClassOf rdf:resource="#ARMv6-M"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv6. SIMD, Thumb, Jazelle DBX, (VFP), Enhanced DSP instructions.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv6-M -->
+
+    <owl:Class rdf:about="#ARMv6-M">
+        <rdfs:subClassOf rdf:resource="#ARMv5TE"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >ARMv6-M. Microcontroller profile, Thumb-2 subset (16-bit Thumb instructions &amp; BL, MRS, MSR, ISB, DSB, and DMB).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv6K -->
+
+    <owl:Class rdf:about="#ARMv6K">
+        <rdfs:subClassOf rdf:resource="#ARMv6"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv6K. SIMD, Thumb, Jazelle DBX, (VFP), Enhanced DSP instructions, 1&#8211;4 core SMP.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv6KZ -->
+
+    <owl:Class rdf:about="#ARMv6KZ">
+        <rdfs:subClassOf rdf:resource="#ARMv6"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv6KZ. SIMD, Thumb, Jazelle DBX, (VFP), Enhanced DSP instructions.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv6T2 -->
+
+    <owl:Class rdf:about="#ARMv6T2">
+        <rdfs:subClassOf rdf:resource="#ARMv6-M"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >ARMv6T2. SIMD, Thumb-2, (VFP), Enhanced DSP instructions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv7-A -->
+
+    <owl:Class rdf:about="#ARMv7-A">
+        <rdfs:subClassOf rdf:resource="#ARMv6T2"/>
+        <rdfs:subClassOf rdf:resource="#ARMv7-R"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv7-A. Application profile, VFP, NEON, Jazelle RCT, Thumb-2.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv7-M -->
+
+    <owl:Class rdf:about="#ARMv7-M">
+        <rdfs:subClassOf rdf:resource="#ARMv6-M"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >ARMv7-M. Microcontroller profile, Thumb-2 only. Hardware divide instruction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv7-R -->
+
+    <owl:Class rdf:about="#ARMv7-R">
+        <rdfs:subClassOf rdf:resource="#ARMv7-M"/>
+        <rdfs:comment xml:lang="en"
+            >ARMv7-R. Embedded profile, Thumb-2, (FPU).</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/ARM_architecture#Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/isa.owl#ARM -->
+
+    <owl:Class rdf:about="&isa;ARM"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

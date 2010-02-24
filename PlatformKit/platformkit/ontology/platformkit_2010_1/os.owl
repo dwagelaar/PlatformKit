@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
+    <!ENTITY operatingsystem "http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/os.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:operatingsystem="http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit operating systems ontology.</rdfs:label>
+        <owl:versionInfo>$Id$</owl:versionInfo>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <rdfs:comment xml:lang="en"
+            >Describes and disambiguates common operating systems.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/platform.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#AIX -->
+
+    <owl:Class rdf:about="&operatingsystem;AIX">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;BSD"/>
+        <rdfs:subClassOf rdf:resource="&operatingsystem;SystemV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#AmigaOS -->
+
+    <owl:Class rdf:about="&operatingsystem;AmigaOS">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/AmigaOS_4</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#BSD -->
+
+    <owl:Class rdf:about="&operatingsystem;BSD">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;UnixTSS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#BeOS -->
+
+    <owl:Class rdf:about="&operatingsystem;BeOS">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/BeOS</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Darwin -->
+
+    <owl:Class rdf:about="&operatingsystem;Darwin">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;NetBSD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#FreeBSD -->
+
+    <owl:Class rdf:about="&operatingsystem;FreeBSD">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;BSD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#HP-UX -->
+
+    <owl:Class rdf:about="&operatingsystem;HP-UX">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;SystemIII"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Linux -->
+
+    <owl:Class rdf:about="&operatingsystem;Linux">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;Unix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#MS-DOS -->
+
+    <owl:Class rdf:about="&operatingsystem;MS-DOS">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#MS-Windows -->
+
+    <owl:Class rdf:about="&operatingsystem;MS-Windows">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;MS-DOS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#MS-WindowsNT -->
+
+    <owl:Class rdf:about="&operatingsystem;MS-WindowsNT">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;MS-Windows"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#MacOS -->
+
+    <owl:Class rdf:about="&operatingsystem;MacOS">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#MacOSX -->
+
+    <owl:Class rdf:about="&operatingsystem;MacOSX">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;Darwin"/>
+        <rdfs:subClassOf rdf:resource="&operatingsystem;MacOS"/>
+        <rdfs:subClassOf rdf:resource="&operatingsystem;NEXTSTEP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Minix -->
+
+    <owl:Class rdf:about="&operatingsystem;Minix">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;Unix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Multics -->
+
+    <owl:Class rdf:about="&operatingsystem;Multics">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Multics</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#NEXTSTEP -->
+
+    <owl:Class rdf:about="&operatingsystem;NEXTSTEP">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;BSD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#NetBSD -->
+
+    <owl:Class rdf:about="&operatingsystem;NetBSD">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;BSD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#OS/2 -->
+
+    <owl:Class rdf:about="&operatingsystem;OS/2">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#OpenBSD -->
+
+    <owl:Class rdf:about="&operatingsystem;OpenBSD">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;NetBSD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#OpenServer -->
+
+    <owl:Class rdf:about="&operatingsystem;OpenServer">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;SCOUnix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#PWB-Unix -->
+
+    <owl:Class rdf:about="&operatingsystem;PWB-Unix">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;UnixTSS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Plan9 -->
+
+    <owl:Class rdf:about="&operatingsystem;Plan9">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Plan_9_from_Bell_Labs</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#SCOUnix -->
+
+    <owl:Class rdf:about="&operatingsystem;SCOUnix">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;SCOXenix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#SCOXenix -->
+
+    <owl:Class rdf:about="&operatingsystem;SCOXenix">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;Xenix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#STOP -->
+
+    <owl:Class rdf:about="&operatingsystem;STOP">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Secure_Trusted_Operating_Program</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Solaris -->
+
+    <owl:Class rdf:about="&operatingsystem;Solaris">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;SystemV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#SunOS -->
+
+    <owl:Class rdf:about="&operatingsystem;SunOS">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;BSD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#SystemIII -->
+
+    <owl:Class rdf:about="&operatingsystem;SystemIII">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;PWB-Unix"/>
+        <rdfs:subClassOf rdf:resource="&operatingsystem;Unix32v"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#SystemV -->
+
+    <owl:Class rdf:about="&operatingsystem;SystemV">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;SystemIII"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Unics -->
+
+    <owl:Class rdf:about="&operatingsystem;Unics">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;Unix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Unix -->
+
+    <owl:Class rdf:about="&operatingsystem;Unix">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+        <rdfs:comment xml:lang="en"
+            >The Unix family of operating systems.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://nl.wikipedia.org/wiki/Unix</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://upload.wikimedia.org/wikipedia/commons/d/d9/Unix_history-simple.en.svg</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Unix32v -->
+
+    <owl:Class rdf:about="&operatingsystem;Unix32v">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;UnixTSS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#UnixTSS -->
+
+    <owl:Class rdf:about="&operatingsystem;UnixTSS">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;Unics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#UnixWare -->
+
+    <owl:Class rdf:about="&operatingsystem;UnixWare">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;SystemV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#VMS -->
+
+    <owl:Class rdf:about="&operatingsystem;VMS">
+        <rdfs:subClassOf rdf:resource="&platform;OperatingSystem"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/OpenVMS</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/operatingsystem.owl#Xenix -->
+
+    <owl:Class rdf:about="&operatingsystem;Xenix">
+        <rdfs:subClassOf rdf:resource="&operatingsystem;UnixTSS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#OperatingSystem -->
+
+    <owl:Class rdf:about="&platform;OperatingSystem"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
