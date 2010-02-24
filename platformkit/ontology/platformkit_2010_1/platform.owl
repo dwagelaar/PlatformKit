@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
+    <!ENTITY platform2 "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#3" >
+    <!ENTITY HP "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#HP/" >
+    <!ENTITY PWB "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#PWB/" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/platform.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:platform2="&platform;3"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:PWB="&platform;PWB/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:HP="&platform;HP/">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit root platform ontology.</rdfs:label>
+        <owl:versionInfo rdf:datatype="&xsd;string">$Id$</owl:versionInfo>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <rdfs:comment xml:lang="en"
+            >Platform concepts and definitions.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="#implementsInterface">
+        <rdfs:comment xml:lang="en"
+            >The interfaces implemented by the feature.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Feature"/>
+        <rdfs:range rdf:resource="#FeatureInterface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#providesFeature -->
+
+    <owl:ObjectProperty rdf:about="#providesFeature">
+        <rdfs:comment xml:lang="en"
+            >The features (directly) provided or contained by the platform.</rdfs:comment>
+        <rdfs:range rdf:resource="#Feature"/>
+        <rdfs:domain rdf:resource="#Platform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Application -->
+
+    <owl:Class rdf:about="#Application">
+        <rdfs:subClassOf rdf:resource="#Software"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#implementsInterface"/>
+                <owl:allValuesFrom rdf:resource="#ApplicationProgrammingInterface"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Application_software</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Software application, program, or executable.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ApplicationBinaryInterface -->
+
+    <owl:Class rdf:about="#ApplicationBinaryInterface">
+        <rdfs:subClassOf rdf:resource="#FeatureInterface"/>
+        <owl:disjointWith rdf:resource="#ApplicationProgrammingInterface"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Application_binary_interface</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >An ABI is a lower level definition concerning details at the assembly language level.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ApplicationProgrammingInterface -->
+
+    <owl:Class rdf:about="#ApplicationProgrammingInterface">
+        <rdfs:subClassOf rdf:resource="#FeatureInterface"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Application_programming_interface</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >An API provides a programming interface for software. APIs are implemented by software applications, libraries, operating systems, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Feature -->
+
+    <owl:Class rdf:about="#Feature">
+        <rdfs:label xml:lang="en"
+            >Platform feature. Can be implemented in software or hardware.</rdfs:label>
+        <owl:disjointWith rdf:resource="#FeatureInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#FeatureInterface -->
+
+    <owl:Class rdf:about="#FeatureInterface">
+        <owl:disjointWith rdf:resource="#Platform"/>
+        <rdfs:comment xml:lang="en"
+            >An interface implemented by a feature, which can be used by other features.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Interface_%28computer_science%29</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Framework -->
+
+    <owl:Class rdf:about="#Framework">
+        <rdfs:subClassOf rdf:resource="#Software"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#implementsInterface"/>
+                <owl:allValuesFrom rdf:resource="#ApplicationProgrammingInterface"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Software_framework</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Software framework. Typically implements an API.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Hardware -->
+
+    <owl:Class rdf:about="#Hardware">
+        <rdfs:subClassOf rdf:resource="#Feature"/>
+        <owl:disjointWith rdf:resource="#Software"/>
+        <rdfs:comment xml:lang="en"
+            >Platform feature that is implemented in hardware.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Electronics</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#IODevice -->
+
+    <owl:Class rdf:about="#IODevice">
+        <rdfs:subClassOf rdf:resource="#Hardware"/>
+        <rdfs:subClassOf rdf:resource="#IOFeature"/>
+        <owl:disjointWith rdf:resource="#Resource"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Input/output</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Input/output device. Implemented in hardware.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#IOFeature -->
+
+    <owl:Class rdf:about="#IOFeature">
+        <rdfs:subClassOf rdf:resource="#Feature"/>
+        <rdfs:comment xml:lang="en"
+            >Input/output feature. Can be implemented in hardware or software.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Input/output</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Installer -->
+
+    <owl:Class rdf:about="#Installer">
+        <rdfs:subClassOf rdf:resource="#Software"/>
+        <rdfs:comment xml:lang="en"
+            >Software package installer.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Installer</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#InstructionSetArchitecture -->
+
+    <owl:Class rdf:about="#InstructionSetArchitecture">
+        <rdfs:label xml:lang="en"
+            >Machine architecture. Can be implemented in hardware or a software virtual machine.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#ApplicationBinaryInterface"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Category:Instruction_set_architectures</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Library -->
+
+    <owl:Class rdf:about="#Library">
+        <rdfs:subClassOf rdf:resource="#Software"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#implementsInterface"/>
+                <owl:allValuesFrom rdf:resource="#ApplicationProgrammingInterface"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Library_%28computing%29</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Shared (runtime) software library. Typically implements an API.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#OperatingSystem -->
+
+    <owl:Class rdf:about="#OperatingSystem">
+        <rdfs:subClassOf rdf:resource="#Platform"/>
+        <rdfs:subClassOf rdf:resource="#Software"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Operating_system</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Computer operating system.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#PackageManager -->
+
+    <owl:Class rdf:about="#PackageManager">
+        <rdfs:subClassOf rdf:resource="#Installer"/>
+        <rdfs:comment xml:lang="en"
+            >Software package manager. Manages installation and dependencies of software packages.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Package_manager</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Platform -->
+
+    <owl:Class rdf:about="#Platform">
+        <rdfs:comment xml:lang="en"
+            >Combination of hardware and/or software features on top of which new features can be built.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Computing_platform</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Resource -->
+
+    <owl:Class rdf:about="#Resource">
+        <rdfs:subClassOf rdf:resource="#Hardware"/>
+        <rdfs:comment xml:lang="en"
+            >Quantifiable hardware resource, providing a certain amount of, e.g. processing power, memory, etc.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Resource_%28computer_science%29</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#RuntimeEnvironment -->
+
+    <owl:Class rdf:about="#RuntimeEnvironment">
+        <rdfs:subClassOf rdf:resource="#Platform"/>
+        <rdfs:subClassOf rdf:resource="#Software"/>
+        <rdfs:comment xml:lang="en"
+            >Software runtime environment.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Runtime_environment</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Software -->
+
+    <owl:Class rdf:about="#Software">
+        <rdfs:subClassOf rdf:resource="#Feature"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Software</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Platform feature that is implemented in software.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#VirtualIODevice -->
+
+    <owl:Class rdf:about="#VirtualIODevice">
+        <rdfs:subClassOf rdf:resource="#IOFeature"/>
+        <rdfs:subClassOf rdf:resource="#Software"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Virtual_keyboard</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Virtual input/output device that is implemented in software.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#VirtualMachine -->
+
+    <owl:Class rdf:about="#VirtualMachine">
+        <rdfs:subClassOf rdf:resource="#Software"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#implementsInterface"/>
+                <owl:allValuesFrom rdf:resource="#InstructionSetArchitecture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en"
+            >Software virtual machine. Typically implements an instruction set architecture.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Virtual_machine</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Application"/>
+            <rdf:Description rdf:about="#Framework"/>
+            <rdf:Description rdf:about="#Installer"/>
+            <rdf:Description rdf:about="#Library"/>
+            <rdf:Description rdf:about="#OperatingSystem"/>
+            <rdf:Description rdf:about="#RuntimeEnvironment"/>
+            <rdf:Description rdf:about="#VirtualIODevice"/>
+            <rdf:Description rdf:about="#VirtualMachine"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

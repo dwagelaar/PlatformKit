@@ -1,0 +1,473 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY io "http://soft.vub.ac.be/platformkit/2010/1/io.owl#" >
+    <!ENTITY io2 "http://soft.vub.ac.be/platformkit/2010/1/io.owl#3" >
+    <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/io.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/io.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:io2="&io;3"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:io="http://soft.vub.ac.be/platformkit/2010/1/io.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit I/O feature ontology.</rdfs:label>
+        <owl:versionInfo>$Id$</owl:versionInfo>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <rdfs:comment xml:lang="en"
+            >General Input/Output feature classification.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/platform.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#numberOfAnalogChannels -->
+
+    <owl:DatatypeProperty rdf:about="#numberOfAnalogChannels">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en"
+            >Amount of analog channels on an analog input interface.</rdfs:comment>
+        <rdfs:domain rdf:resource="#AnalogInputInterface"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#numberOfButtons -->
+
+    <owl:DatatypeProperty rdf:about="#numberOfButtons">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en"
+            >Number of buttons on an input interface.</rdfs:comment>
+        <rdfs:domain rdf:resource="#InputInterface"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#numberOfColors -->
+
+    <owl:DatatypeProperty rdf:about="#numberOfColors">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en"
+            >Amount of colors that the screen can display.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Screen"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#numberOfKeys -->
+
+    <owl:DatatypeProperty rdf:about="#numberOfKeys">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en"
+            >Amount of keys on a key input interface.</rdfs:comment>
+        <rdfs:domain rdf:resource="#KeyInputInterface"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#screenHeight -->
+
+    <owl:DatatypeProperty rdf:about="#screenHeight">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en"
+            >Screen height in pixels.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Screen"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#screenWidth -->
+
+    <owl:DatatypeProperty rdf:about="#screenWidth">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en"
+            >Screen width in pixels.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Screen"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#3DPrinter -->
+
+    <owl:Class rdf:about="#3DPrinter">
+        <rdfs:subClassOf rdf:resource="#PhysicalOutputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#AnalogInputInterface -->
+
+    <owl:Class rdf:about="#AnalogInputInterface">
+        <rdfs:subClassOf rdf:resource="#InputInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#AudioInputInterface -->
+
+    <owl:Class rdf:about="#AudioInputInterface">
+        <rdfs:subClassOf rdf:resource="#InputInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#AudioOutputInterface -->
+
+    <owl:Class rdf:about="#AudioOutputInterface">
+        <rdfs:subClassOf rdf:resource="#OutputInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#DirectionalPad -->
+
+    <owl:Class rdf:about="#DirectionalPad">
+        <rdfs:subClassOf rdf:resource="#KeyInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#EyeTracker -->
+
+    <owl:Class rdf:about="#EyeTracker">
+        <rdfs:subClassOf rdf:resource="#PointerInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#FootPedal -->
+
+    <owl:Class rdf:about="#FootPedal">
+        <rdfs:subClassOf rdf:resource="#AnalogInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#HandwritingRecognition -->
+
+    <owl:Class rdf:about="#HandwritingRecognition">
+        <rdfs:subClassOf rdf:resource="#KeyInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;VirtualIODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Headphones -->
+
+    <owl:Class rdf:about="#Headphones">
+        <rdfs:subClassOf rdf:resource="#AudioOutputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#InputInterface -->
+
+    <owl:Class rdf:about="#InputInterface">
+        <rdfs:subClassOf rdf:resource="&platform;IOFeature"/>
+        <rdfs:comment xml:lang="en"
+            >Input feature. Can be implemented in hardware or software.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Input/output</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Joystick -->
+
+    <owl:Class rdf:about="#Joystick">
+        <rdfs:subClassOf rdf:resource="#AnalogInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#KeyInputInterface -->
+
+    <owl:Class rdf:about="#KeyInputInterface">
+        <rdfs:subClassOf rdf:resource="#InputInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Keyboard -->
+
+    <owl:Class rdf:about="#Keyboard">
+        <rdfs:subClassOf rdf:resource="#KeyInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Microphone -->
+
+    <owl:Class rdf:about="#Microphone">
+        <rdfs:subClassOf rdf:resource="#AudioInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Mouse -->
+
+    <owl:Class rdf:about="#Mouse">
+        <rdfs:subClassOf rdf:resource="#PointerInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#MultiTouchScreen -->
+
+    <owl:Class rdf:about="#MultiTouchScreen">
+        <rdfs:subClassOf rdf:resource="#TouchScreen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#NumericKeypad -->
+
+    <owl:Class rdf:about="#NumericKeypad">
+        <rdfs:subClassOf rdf:resource="#KeyInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#OutputInterface -->
+
+    <owl:Class rdf:about="#OutputInterface">
+        <rdfs:subClassOf rdf:resource="&platform;IOFeature"/>
+        <rdfs:comment xml:lang="en"
+            >Output feature. Can be implemented in hardware or software.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Input/output</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#PhysicalOutputInterface -->
+
+    <owl:Class rdf:about="#PhysicalOutputInterface">
+        <rdfs:subClassOf rdf:resource="#OutputInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Plotter -->
+
+    <owl:Class rdf:about="#Plotter">
+        <rdfs:subClassOf rdf:resource="#PhysicalOutputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#PointerInputInterface -->
+
+    <owl:Class rdf:about="#PointerInputInterface">
+        <rdfs:subClassOf rdf:resource="#InputInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#PointingStick -->
+
+    <owl:Class rdf:about="#PointingStick">
+        <rdfs:subClassOf rdf:resource="#PointerInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Printer -->
+
+    <owl:Class rdf:about="#Printer">
+        <rdfs:subClassOf rdf:resource="#PhysicalOutputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Screen -->
+
+    <owl:Class rdf:about="#Screen">
+        <rdfs:subClassOf rdf:resource="#VisualOutputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#ScreenKeyboard -->
+
+    <owl:Class rdf:about="#ScreenKeyboard">
+        <rdfs:subClassOf rdf:resource="#KeyInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;VirtualIODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Speaker -->
+
+    <owl:Class rdf:about="#Speaker">
+        <rdfs:subClassOf rdf:resource="#AudioOutputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#SpeechRecognition -->
+
+    <owl:Class rdf:about="#SpeechRecognition">
+        <rdfs:subClassOf rdf:resource="#KeyInputInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#SteeringWheel -->
+
+    <owl:Class rdf:about="#SteeringWheel">
+        <rdfs:subClassOf rdf:resource="#AnalogInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Thumbboard -->
+
+    <owl:Class rdf:about="#Thumbboard">
+        <rdfs:subClassOf rdf:resource="#KeyInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#TouchScreen -->
+
+    <owl:Class rdf:about="#TouchScreen">
+        <rdfs:subClassOf rdf:resource="#PointerInputInterface"/>
+        <rdfs:subClassOf rdf:resource="#Screen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Touchpad -->
+
+    <owl:Class rdf:about="#Touchpad">
+        <rdfs:subClassOf rdf:resource="#PointerInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Trackball -->
+
+    <owl:Class rdf:about="#Trackball">
+        <rdfs:subClassOf rdf:resource="#PointerInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Trackpad -->
+
+    <owl:Class rdf:about="#Trackpad">
+        <rdfs:subClassOf rdf:resource="#PointerInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#VisualOutputInterface -->
+
+    <owl:Class rdf:about="#VisualOutputInterface">
+        <rdfs:subClassOf rdf:resource="#OutputInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#IODevice -->
+
+    <owl:Class rdf:about="&platform;IODevice"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#IOFeature -->
+
+    <owl:Class rdf:about="&platform;IOFeature"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#VirtualIODevice -->
+
+    <owl:Class rdf:about="&platform;VirtualIODevice"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

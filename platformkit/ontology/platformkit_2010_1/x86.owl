@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY x86 "http://soft.vub.ac.be/platformkit/2010/1/x86.owl#" >
+    <!ENTITY isa "http://soft.vub.ac.be/platformkit/2010/1/isa.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/x86.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/x86.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:isa="http://soft.vub.ac.be/platformkit/2010/1/isa.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:x86="http://soft.vub.ac.be/platformkit/2010/1/x86.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit Intel x86 instruction set architecture ontology.</rdfs:label>
+        <owl:versionInfo>$Id$</owl:versionInfo>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <rdfs:comment xml:lang="en"
+            >Describes and disambiguates the different x86 instruction set architectures.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/isa.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/isa.owl#Intel_x86 -->
+
+    <owl:Class rdf:about="&isa;Intel_x86"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#AMD64_SSE4a -->
+
+    <owl:Class rdf:about="#AMD64_SSE4a">
+        <rdfs:subClassOf rdf:resource="#Intel_x86-64_SSSE3"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/SSE4</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#AMD_686_3DNow -->
+
+    <owl:Class rdf:about="#AMD_686_3DNow">
+        <rdfs:subClassOf rdf:resource="#Intel_686"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/3DNow!</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_186 -->
+
+    <owl:Class rdf:about="#Intel_186">
+        <rdfs:subClassOf rdf:resource="#Intel_8086"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Intel_80186</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_286 -->
+
+    <owl:Class rdf:about="#Intel_286">
+        <rdfs:subClassOf rdf:resource="#Intel_186"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/80286</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_386 -->
+
+    <owl:Class rdf:about="#Intel_386">
+        <rdfs:subClassOf rdf:resource="#Intel_286"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Intel_80386</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_486 -->
+
+    <owl:Class rdf:about="#Intel_486">
+        <rdfs:subClassOf rdf:resource="#Intel_386"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Intel_80486</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_586 -->
+
+    <owl:Class rdf:about="#Intel_586">
+        <rdfs:subClassOf rdf:resource="#Intel_486"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Intel_P5</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Pentium_compatible_processor</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_586_MMX -->
+
+    <owl:Class rdf:about="#Intel_586_MMX">
+        <rdfs:subClassOf rdf:resource="#Intel_586"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/MMX_%28instruction_set%29</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_686 -->
+
+    <owl:Class rdf:about="#Intel_686">
+        <rdfs:subClassOf rdf:resource="#Intel_586_MMX"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Intel_P6</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_686_SSE -->
+
+    <owl:Class rdf:about="#Intel_686_SSE">
+        <rdfs:subClassOf rdf:resource="#Intel_686"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Streaming_SIMD_Extensions</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_686_SSE2 -->
+
+    <owl:Class rdf:about="#Intel_686_SSE2">
+        <rdfs:subClassOf rdf:resource="#Intel_686_SSE"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/SSE2</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_686_SSE3 -->
+
+    <owl:Class rdf:about="#Intel_686_SSE3">
+        <rdfs:subClassOf rdf:resource="#Intel_686_SSE2"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/SSE3</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_686_SSSE3 -->
+
+    <owl:Class rdf:about="#Intel_686_SSSE3">
+        <rdfs:subClassOf rdf:resource="#Intel_686_SSE3"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/SSSE3</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_8086 -->
+
+    <owl:Class rdf:about="#Intel_8086">
+        <rdfs:subClassOf rdf:resource="&isa;Intel_x86"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Intel_8086</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_x86-64 -->
+
+    <owl:Class rdf:about="#Intel_x86-64">
+        <rdfs:subClassOf rdf:resource="#Intel_686_SSE2"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/X86-64</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_x86-64_SSE3 -->
+
+    <owl:Class rdf:about="#Intel_x86-64_SSE3">
+        <rdfs:subClassOf rdf:resource="#Intel_x86-64"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/SSE3</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_x86-64_SSE4.1 -->
+
+    <owl:Class rdf:about="#Intel_x86-64_SSE4.1">
+        <rdfs:subClassOf rdf:resource="#Intel_x86-64_SSSE3"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/SSE4</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_x86-64_SSE4.2 -->
+
+    <owl:Class rdf:about="#Intel_x86-64_SSE4.2">
+        <rdfs:subClassOf rdf:resource="#Intel_x86-64_SSE4.1"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/SSE4</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/x86.owl#Intel_x86-64_SSSE3 -->
+
+    <owl:Class rdf:about="#Intel_x86-64_SSSE3">
+        <rdfs:subClassOf rdf:resource="#Intel_x86-64_SSE3"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/SSSE3</rdfs:seeAlso>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
