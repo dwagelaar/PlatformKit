@@ -28,9 +28,10 @@
     <owl:Ontology rdf:about="">
         <rdfs:label xml:lang="en"
             >PlatformKit Java software platform ontology.</rdfs:label>
-        <owl:versionInfo>$Id$</owl:versionInfo>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <owl:versionInfo
+            >$Id$</owl:versionInfo>
         <rdfs:comment xml:lang="en"
             >Describes the parts of the Java software platform.</rdfs:comment>
         <dc:rights xml:lang="en"
@@ -62,6 +63,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#comprisesInterfacePart -->
+
+    <owl:ObjectProperty rdf:about="&platform;comprisesInterfacePart"/>
     
 
 
@@ -174,9 +181,23 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaAPI -->
 
     <owl:Class rdf:about="#JavaAPI">
-        <rdfs:subClassOf rdf:resource="&platform;ApplicationProgrammingInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;API"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&platform;comprisesInterfacePart"/>
+                <owl:allValuesFrom rdf:resource="#JavaAPIPart"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:seeAlso xml:lang="en"
             >Java API implemented by a Java class library.</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaAPIPart -->
+
+    <owl:Class rdf:about="#JavaAPIPart">
+        <rdfs:subClassOf rdf:resource="&platform;APIPart"/>
     </owl:Class>
     
 
@@ -217,18 +238,24 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#API -->
+
+    <owl:Class rdf:about="&platform;API"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#APIPart -->
+
+    <owl:Class rdf:about="&platform;APIPart"/>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Application -->
 
     <owl:Class rdf:about="&platform;Application">
         <rdfs:seeAlso
             >http://en.wikipedia.org/wiki/Application_software</rdfs:seeAlso>
     </owl:Class>
-    
-
-
-    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ApplicationProgrammingInterface -->
-
-    <owl:Class rdf:about="&platform;ApplicationProgrammingInterface"/>
     
 
 
