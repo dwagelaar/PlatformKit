@@ -27,12 +27,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IExtension;
-import org.eclipse.core.runtime.IExtensionPoint;
-import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.Platform;
 import org.semanticweb.owl.apibinding.OWLManager;
 import org.semanticweb.owl.inference.OWLReasoner;
 import org.semanticweb.owl.inference.OWLReasonerException;
@@ -64,6 +58,7 @@ import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologyProvider;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.registry.PlatformkitRegistry;
 
 /**
  * The OWLAPI version of the ontology repository for the PlatformKit.
@@ -121,24 +116,9 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 */
 	private void addLocalOntologies() throws IOException {
 		addLocalOntologies(BaseOntologyProvider.INSTANCE);
-		IExtensionRegistry registry = Platform.getExtensionRegistry();
-		if (registry == null) {
-			logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.registryNotFound")); //$NON-NLS-1$
-			return;
-		}
-		IExtensionPoint point = registry.getExtensionPoint(IOntologies.ONTOLOGY_EXT_POINT);
-		for (IExtension extension : point.getExtensions()) {
-			for (IConfigurationElement element : extension.getConfigurationElements()) {
-				try {
-					IOntologyProvider provider = (IOntologyProvider)
-					element.createExecutableExtension("provider"); //$NON-NLS-1$
-					addLocalOntologies(provider);
-				} catch (CoreException e) {
-					IOException ioe = new IOException(e.getLocalizedMessage());
-					ioe.initCause(e);
-					throw ioe;
-				}
-			}
+		IOntologyProvider[] providers = PlatformkitRegistry.INSTANCE.getOntologyProviders();
+		for (IOntologyProvider provider : providers) {
+			addLocalOntologies(provider);
 		}
 	}
 

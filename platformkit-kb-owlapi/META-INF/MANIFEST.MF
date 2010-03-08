@@ -3,15 +3,12 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Platformkit OWLAPI Knowledgebase Plug-in
 Bundle-SymbolicName: be.ac.vub.platformkit.kb.owlapi;singleton:=true
 Bundle-Version: 1.2.1
-Bundle-Activator: be.ac.vub.platformkit.kb.owlapi.eclipse.Activator
 Bundle-Vendor: Vrije Universiteit Brussel
-Require-Bundle: org.eclipse.core.runtime,
- be.ac.vub.platformkit,
+Require-Bundle: be.ac.vub.platformkit,
  org.junit,
  be.ac.vub.platformkit.pellet;bundle-version="2.0.1"
 Bundle-ActivationPolicy: lazy
 Export-Package: be.ac.vub.platformkit.kb.owlapi;uses:="org.semanticweb.owl.inference,be.ac.vub.platformkit.kb,org.semanticweb.owl.model",
- be.ac.vub.platformkit.kb.owlapi.eclipse;uses:="org.eclipse.core.runtime,org.osgi.framework",
  com.clarkparsia.explanation;x-friends:="be.ac.vub.platformkit.pellet",
  com.clarkparsia.explanation.io;x-friends:="be.ac.vub.platformkit.pellet",
  com.clarkparsia.explanation.util;x-friends:="be.ac.vub.platformkit.pellet",
