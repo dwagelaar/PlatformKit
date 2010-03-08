@@ -32,7 +32,6 @@
 	</target>
 	
 	<target name="copyRefs">
-		<copyRef dir="org.eclipse.platform.doc.isv"/>
 		<copyWorkspaceRef fromdir="../../platformkit-doc" todir="be.ac.vub.platformkit.doc"/>
 	</target>
 	
@@ -47,8 +46,7 @@
 			nonavbar="false" 
 			notree="false" 
 			packagenames="
-				be.ac.vub.platformkit.kb.jena,
-				be.ac.vub.platformkit.kb.jena.eclipse" 
+				be.ac.vub.platformkit.kb.jena" 
 			source="1.5" 
 			sourcepath="
 				../../platformkit-kb-jena/src"
@@ -59,7 +57,6 @@
 			<link href="http://www.osgi.org/javadoc/r4v42/"/>
 			<link href="../jena/javadoc"/>
 			<link href="../../../be.ac.vub.platformkit.doc/doc/javadoc"/>
-			<link href="../../../org.eclipse.platform.doc.isv/reference/api"/>
 			<link href="http://logging.apache.org/log4j/docs/api/"/>
 			<classpath>
 				<pathelement path="../../platformkit/bin"/>
