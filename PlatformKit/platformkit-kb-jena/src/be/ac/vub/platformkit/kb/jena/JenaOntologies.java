@@ -24,12 +24,6 @@ import java.util.Set;
 
 import junit.framework.Assert;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IExtension;
-import org.eclipse.core.runtime.IExtensionPoint;
-import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.Platform;
 import org.mindswap.pellet.jena.PelletReasoner;
 import org.mindswap.pellet.jena.PelletReasonerFactory;
 
@@ -39,6 +33,7 @@ import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologyProvider;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.registry.PlatformkitRegistry;
 
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntDocumentManager;
@@ -355,24 +350,9 @@ public class JenaOntologies extends AbstractOntologies {
 	 */
 	private void addLocalOntologies() throws IOException {
 		addLocalOntologies(BaseOntologyProvider.INSTANCE);
-		IExtensionRegistry registry = Platform.getExtensionRegistry();
-		if (registry == null) {
-			logger.info(PlatformkitJenaResources.getString("JenaOntologies.registryNotFound")); //$NON-NLS-1$
-			return;
-		}
-		IExtensionPoint point = registry.getExtensionPoint(ONTOLOGY_EXT_POINT);
-		IExtension[] extensions = point.getExtensions();
-		for (int i = 0 ; i < extensions.length ; i++) {
-			IConfigurationElement[] elements = extensions[i].getConfigurationElements();
-			for (int j = 0 ; j < elements.length ; j++) {
-				try {
-					IOntologyProvider provider = (IOntologyProvider)
-					elements[j].createExecutableExtension("provider"); //$NON-NLS-1$
-					addLocalOntologies(provider);
-				} catch (CoreException e) {
-					throw new IOException(e.getLocalizedMessage());
-				}
-			}
+		IOntologyProvider[] providers = PlatformkitRegistry.INSTANCE.getOntologyProviders();
+		for (IOntologyProvider provider : providers) {
+			addLocalOntologies(provider);
 		}
 	}
 

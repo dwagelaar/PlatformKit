@@ -3,10 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: be.ac.vub.platformkit.kb.jena;singleton:=true
 Bundle-Version: 1.2.1
-Bundle-Activator: be.ac.vub.platformkit.kb.jena.eclipse.Activator
 Bundle-Vendor: %Bundle-Vendor
-Require-Bundle: org.eclipse.core.runtime,
- be.ac.vub.platformkit,
+Require-Bundle: be.ac.vub.platformkit,
  org.junit,
  org.apache.xerces,
  com.ibm.icu,
@@ -19,7 +17,6 @@ Export-Package: arq,
  arq.cmdline;x-friends:="be.ac.vub.platformkit.pellet",
  arq.cmdline.test;x-friends:="be.ac.vub.platformkit.pellet",
  be.ac.vub.platformkit.kb.jena,
- be.ac.vub.platformkit.kb.jena.eclipse,
  com.ctc.wstx.api;x-friends:="be.ac.vub.platformkit.pellet",
  com.ctc.wstx.cfg;x-friends:="be.ac.vub.platformkit.pellet",
  com.ctc.wstx.compat;x-friends:="be.ac.vub.platformkit.pellet",
