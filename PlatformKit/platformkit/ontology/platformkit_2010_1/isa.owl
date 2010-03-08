@@ -26,7 +26,8 @@
     <owl:Ontology rdf:about="">
         <rdfs:label xml:lang="en"
             >PlatformKit instruction set architecture ontology.</rdfs:label>
-        <owl:versionInfo>$Id$</owl:versionInfo>
+        <owl:versionInfo
+            >$Id$</owl:versionInfo>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
         <rdfs:comment xml:lang="en"
@@ -65,7 +66,7 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/isa.owl#ARM -->
 
     <owl:Class rdf:about="#ARM">
-        <rdfs:subClassOf rdf:resource="&platform;InstructionSetArchitecture"/>
+        <rdfs:subClassOf rdf:resource="&platform;EABI"/>
         <rdfs:comment xml:lang="en"
             >Advanced RISC Machine architecture.</rdfs:comment>
         <rdfs:seeAlso
@@ -77,7 +78,7 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/isa.owl#Intel_x86 -->
 
     <owl:Class rdf:about="#Intel_x86">
-        <rdfs:subClassOf rdf:resource="&platform;InstructionSetArchitecture"/>
+        <rdfs:subClassOf rdf:resource="&platform;ISA"/>
         <rdfs:seeAlso
             >http://en.wikipedia.org/wiki/X86_instruction_listings</rdfs:seeAlso>
         <rdfs:seeAlso
@@ -91,7 +92,7 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/isa.owl#JavaBytecode -->
 
     <owl:Class rdf:about="#JavaBytecode">
-        <rdfs:subClassOf rdf:resource="&platform;InstructionSetArchitecture"/>
+        <rdfs:subClassOf rdf:resource="&platform;ISA"/>
         <rdfs:comment xml:lang="en"
             >Java bytecode format.</rdfs:comment>
         <rdfs:seeAlso
@@ -103,7 +104,7 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/isa.owl#PowerPC -->
 
     <owl:Class rdf:about="#PowerPC">
-        <rdfs:subClassOf rdf:resource="&platform;InstructionSetArchitecture"/>
+        <rdfs:subClassOf rdf:resource="&platform;EABI"/>
         <rdfs:comment xml:lang="en"
             >PowerPC architecture.</rdfs:comment>
         <rdfs:seeAlso
@@ -112,9 +113,15 @@
     
 
 
-    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#InstructionSetArchitecture -->
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#EABI -->
 
-    <owl:Class rdf:about="&platform;InstructionSetArchitecture"/>
+    <owl:Class rdf:about="&platform;EABI"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ISA -->
+
+    <owl:Class rdf:about="&platform;ISA"/>
     
 
 

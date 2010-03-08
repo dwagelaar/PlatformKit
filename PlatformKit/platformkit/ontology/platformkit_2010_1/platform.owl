@@ -30,7 +30,8 @@
     <owl:Ontology rdf:about="">
         <rdfs:label xml:lang="en"
             >PlatformKit root platform ontology.</rdfs:label>
-        <owl:versionInfo rdf:datatype="&xsd;string">$Id$</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="&xsd;string"
+            >$Id$</owl:versionInfo>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
         <rdfs:comment xml:lang="en"
@@ -62,6 +63,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#comprisesInterfacePart -->
+
+    <owl:ObjectProperty rdf:about="#comprisesInterfacePart">
+        <rdfs:domain rdf:resource="#FeatureInterface"/>
+        <rdfs:range rdf:resource="#FeatureInterfacePart"/>
+    </owl:ObjectProperty>
     
 
 
@@ -98,6 +108,60 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ABI -->
+
+    <owl:Class rdf:about="#ABI">
+        <rdfs:subClassOf rdf:resource="#FeatureInterface"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#comprisesInterfacePart"/>
+                <owl:allValuesFrom rdf:resource="#ABIPart"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#API"/>
+        <rdfs:comment xml:lang="en"
+            >An Application Binary Interface is a lower level definition concerning details at the assembly language level.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Application_binary_interface</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ABIPart -->
+
+    <owl:Class rdf:about="#ABIPart">
+        <rdfs:subClassOf rdf:resource="#FeatureInterfacePart"/>
+        <owl:disjointWith rdf:resource="#APIPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#API -->
+
+    <owl:Class rdf:about="#API">
+        <rdfs:subClassOf rdf:resource="#FeatureInterface"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#comprisesInterfacePart"/>
+                <owl:allValuesFrom rdf:resource="#APIPart"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en"
+            >An Application Programming Interface provides a programming interface for software. APIs are implemented by software applications, libraries, operating systems, etc.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Application_programming_interface</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#APIPart -->
+
+    <owl:Class rdf:about="#APIPart">
+        <rdfs:subClassOf rdf:resource="#FeatureInterfacePart"/>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Application -->
 
     <owl:Class rdf:about="#Application">
@@ -105,7 +169,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#implementsInterface"/>
-                <owl:allValuesFrom rdf:resource="#ApplicationProgrammingInterface"/>
+                <owl:allValuesFrom rdf:resource="#API"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso
@@ -116,27 +180,14 @@
     
 
 
-    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ApplicationBinaryInterface -->
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#EABI -->
 
-    <owl:Class rdf:about="#ApplicationBinaryInterface">
-        <rdfs:subClassOf rdf:resource="#FeatureInterface"/>
-        <owl:disjointWith rdf:resource="#ApplicationProgrammingInterface"/>
+    <owl:Class rdf:about="#EABI">
+        <rdfs:subClassOf rdf:resource="#ISA"/>
         <rdfs:seeAlso
             >http://en.wikipedia.org/wiki/Application_binary_interface</rdfs:seeAlso>
         <rdfs:comment xml:lang="en"
-            >An ABI is a lower level definition concerning details at the assembly language level.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ApplicationProgrammingInterface -->
-
-    <owl:Class rdf:about="#ApplicationProgrammingInterface">
-        <rdfs:subClassOf rdf:resource="#FeatureInterface"/>
-        <rdfs:seeAlso
-            >http://en.wikipedia.org/wiki/Application_programming_interface</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en"
-            >An API provides a programming interface for software. APIs are implemented by software applications, libraries, operating systems, etc.</rdfs:comment>
+            >Embedded Application Binary Interface. Augments an Instruction Set Architecture with standard bus/memory specifications. Examples are ARM and PowerPC.</rdfs:comment>
     </owl:Class>
     
 
@@ -147,6 +198,7 @@
         <rdfs:label xml:lang="en"
             >Platform feature. Can be implemented in software or hardware.</rdfs:label>
         <owl:disjointWith rdf:resource="#FeatureInterface"/>
+        <owl:disjointWith rdf:resource="#FeatureInterfacePart"/>
     </owl:Class>
     
 
@@ -154,11 +206,20 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#FeatureInterface -->
 
     <owl:Class rdf:about="#FeatureInterface">
+        <owl:disjointWith rdf:resource="#FeatureInterfacePart"/>
         <owl:disjointWith rdf:resource="#Platform"/>
         <rdfs:comment xml:lang="en"
             >An interface implemented by a feature, which can be used by other features.</rdfs:comment>
         <rdfs:seeAlso
             >http://en.wikipedia.org/wiki/Interface_%28computer_science%29</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#FeatureInterfacePart -->
+
+    <owl:Class rdf:about="#FeatureInterfacePart">
+        <owl:disjointWith rdf:resource="#Platform"/>
     </owl:Class>
     
 
@@ -170,7 +231,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#implementsInterface"/>
-                <owl:allValuesFrom rdf:resource="#ApplicationProgrammingInterface"/>
+                <owl:allValuesFrom rdf:resource="#API"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso
@@ -220,6 +281,20 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ISA -->
+
+    <owl:Class rdf:about="#ISA">
+        <rdfs:label xml:lang="en"
+            >Instruction Set Architecture of a machine. Can be implemented in hardware or a software virtual machine.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#ABI"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Category:Instruction_set_architectures</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Instruction_set</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Installer -->
 
     <owl:Class rdf:about="#Installer">
@@ -232,20 +307,6 @@
     
 
 
-    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#InstructionSetArchitecture -->
-
-    <owl:Class rdf:about="#InstructionSetArchitecture">
-        <rdfs:label xml:lang="en"
-            >Machine architecture. Can be implemented in hardware or a software virtual machine.</rdfs:label>
-        <rdfs:subClassOf rdf:resource="#ApplicationBinaryInterface"/>
-        <rdfs:seeAlso
-            >http://en.wikipedia.org/wiki/Category:Instruction_set_architectures</rdfs:seeAlso>
-        <rdfs:seeAlso
-            >http://en.wikipedia.org/wiki/Instruction_set</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
     <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Library -->
 
     <owl:Class rdf:about="#Library">
@@ -253,7 +314,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#implementsInterface"/>
-                <owl:allValuesFrom rdf:resource="#ApplicationProgrammingInterface"/>
+                <owl:allValuesFrom rdf:resource="#API"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso
@@ -357,7 +418,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#implementsInterface"/>
-                <owl:allValuesFrom rdf:resource="#InstructionSetArchitecture"/>
+                <owl:allValuesFrom rdf:resource="#ISA"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en"
