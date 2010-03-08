@@ -21,12 +21,21 @@
         	<fileset dir="resources/" excludes="WEB-INF/*"/>
         	<fileset dir="${platformkit-examples.path}/"/>
         	<fileset file="${pkda.jar.path}"/>
-        	<classes dir="../bin"/>
-        	<classes dir="${platformkit.path}/bin"/>
+        	<classes dir="../bin">
+        		<exclude name="**/PopulateDatabase.class"/>
+        	</classes>
+        	<classes dir="${platformkit.path}/bin">
+        		<exclude name="**/internal/**"/>
+        	</classes>
         	<classes dir="${platformkit.path}/ontology"/>
-        	<classes dir="${platformkit-java.path}/bin"/>
+        	<classes dir="${platformkit-java.path}/bin">
+        		<include name="**/java/*"/>
+        		<exclude name="**/java/*Plugin.class"/>
+        	</classes>
         	<classes dir="${platformkit-java.path}/ontology"/>
-        	<classes dir="${platformkit-kb-owlapi.path}/bin"/>
+        	<classes dir="${platformkit-kb-owlapi.path}/bin">
+        		<include name="**/owlapi/*"/>
+        	</classes>
         	<lib dir="../lib">
         		<exclude name="*.xml"/>
         		<exclude name="javax.servlet.jar"/>
