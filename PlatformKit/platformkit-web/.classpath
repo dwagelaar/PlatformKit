@@ -18,11 +18,7 @@
 	<classpathentry kind="lib" path="lib/commons-fileupload-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/ecore.xmi.jar"/>
 	<classpathentry kind="lib" path="lib/ecore.jar"/>
-	<classpathentry kind="lib" path="lib/equinox.common.jar"/>
-	<classpathentry kind="lib" path="lib/equinox.registry.jar"/>
 	<classpathentry kind="lib" path="lib/osgi.jar"/>
-	<classpathentry kind="lib" path="lib/resources.jar"/>
-	<classpathentry kind="lib" path="lib/runtime.jar"/>
 	<classpathentry kind="lib" path="lib/xerces.jar"/>
 	<classpathentry kind="lib" path="lib/common.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit"/>
