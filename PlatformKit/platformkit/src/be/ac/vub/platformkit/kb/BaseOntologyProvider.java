@@ -17,10 +17,10 @@ import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
-import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
 
 import be.ac.vub.platformkit.PlatformkitResources;
+import be.ac.vub.platformkit.kb.util.BundleSwitch;
 
 /**
  * Provider for default PlatformKit ontologies
@@ -46,7 +46,7 @@ public class BaseOntologyProvider implements IOntologyProvider {
 		"codamos_2007_01/Java.owl"
 	};
 
-	protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit"); //$NON-NLS-1$
+	protected static Bundle bundle = BundleSwitch.getBundle(BaseOntologyProvider.class);
 	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	public static BaseOntologyProvider INSTANCE = new BaseOntologyProvider();
