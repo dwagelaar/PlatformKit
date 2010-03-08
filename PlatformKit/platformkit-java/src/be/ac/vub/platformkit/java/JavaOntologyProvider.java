@@ -17,11 +17,11 @@ import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
-import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
 
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologyProvider;
+import be.ac.vub.platformkit.kb.util.BundleSwitch;
 
 /**
  * Java ontology provider
@@ -51,7 +51,7 @@ public class JavaOntologyProvider implements IOntologyProvider {
 		"platformkit_2009_01/SWTAPI.owl"
 	}; //$NON-NLS-1$
 
-	protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit.java"); //$NON-NLS-1$
+	protected static Bundle bundle = BundleSwitch.getBundle(JavaOntologyProvider.class);
 	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	public static JavaOntologyProvider INSTANCE = new JavaOntologyProvider();
