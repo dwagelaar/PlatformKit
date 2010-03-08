@@ -18,15 +18,15 @@ import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
-import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
 
+import be.ac.vub.platformkit.kb.INamedOntologyProvider;
 import be.ac.vub.platformkit.kb.IOntologies;
-import be.ac.vub.platformkit.presentation.util.INamedOntologyProvider;
+import be.ac.vub.platformkit.kb.util.BundleSwitch;
 
 public class ExamplesOntologyProvider implements INamedOntologyProvider {
 
-	protected static Bundle bundle = Platform.getBundle("be.ac.vub.platformkit.examples"); //$NON-NLS-1$
+	protected static Bundle bundle = BundleSwitch.getBundle(ExamplesOntologyProvider.class);
 	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	private static final String[] ontologies = new String[] {
