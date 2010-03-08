@@ -35,9 +35,9 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ListDialog;
 
+import be.ac.vub.platformkit.kb.INamedOntologyProvider;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
-import be.ac.vub.platformkit.presentation.util.INamedOntologyProvider;
 
 /**
  * Dialog for selecting a platform instance specification.
