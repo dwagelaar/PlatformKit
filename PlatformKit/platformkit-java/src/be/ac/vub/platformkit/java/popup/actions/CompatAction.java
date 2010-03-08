@@ -11,6 +11,7 @@
 package be.ac.vub.platformkit.java.popup.actions;
 
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.action.IAction;
@@ -30,42 +31,49 @@ import be.ac.vub.platformkit.presentation.popup.action.SelectionAction;
  */
 public class CompatAction extends SelectionAction {
 
-	protected CompatJob job;
-	protected ShowCompatResultAction showResultAction;
-
 	/**
-	 * Creates a {@link CompatAction}.
+	 * Adds action to the list of actions to run after job is done.
+	 * @param job
+	 * @param action
 	 */
-	public CompatAction() {
-		super();
-		job = new CompatJob();
-		showResultAction = new ShowCompatResultAction(
-				job, 
-				PlatformkitJavaResources.getString("resultText")); //$NON-NLS-1$
-		initJob();
-	}
-
-	/**
-	 * Initialises the internal job
-	 */
-	protected void initJob() {
-		job.setProperty(IProgressConstants.ACTION_PROPERTY, showResultAction);
+	public static void addDoneAction(final Job job, final IAction action) {
+		job.setProperty(IProgressConstants.ACTION_PROPERTY, action);
 		job.addJobChangeListener(new JobChangeAdapter() {
 			/* (non-Javadoc)
 			 * @see org.eclipse.core.runtime.jobs.JobChangeAdapter#done(org.eclipse.core.runtime.jobs.IJobChangeEvent)
 			 */
 			@Override
 			public void done(IJobChangeEvent event) {
-				showResultAction.run();
+				action.run();
 			}
 		});
 	}
 
+	/**
+	 * @return A new {@link CompatJob}.
+	 */
+	protected CompatJob createCompatJob() {
+		return new CompatJob();
+	}
+
+	/**
+	 * @param job
+	 * @return A new {@link ShowCompatResultAction}.
+	 */
+	protected ShowCompatResultAction createShowResultAction(CompatJob job) {
+		return new ShowCompatResultAction(
+				job, 
+				PlatformkitJavaResources.getString("resultText")); //$NON-NLS-1$
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	public void run(IAction action) {
+		CompatJob job = createCompatJob();
+		IAction showResultAction = createShowResultAction(job);
+		addDoneAction(job, showResultAction);
 		// Select platform API dialog
 		PlatformAPIDialogRunnable paDlg = new PlatformAPIDialogRunnable();
 		paDlg.setTitle(PlatformkitJavaResources.getString("CompatAction.dlgTitle")); //$NON-NLS-1$

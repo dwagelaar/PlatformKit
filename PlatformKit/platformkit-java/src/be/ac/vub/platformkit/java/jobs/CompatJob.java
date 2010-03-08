@@ -16,6 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Handler;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -46,6 +47,26 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class CompatJob extends ProgressMonitorJob {
+
+	/**
+	 * Adds PlatformKit log handler to ATL logger.
+	 */
+	public static void addATLLogHandler() {
+		final Handler pkHandler = PlatformkitEditorPlugin.getHandler();
+		for (Handler handler : ATLLogger.getLogger().getHandlers()) {
+			if (pkHandler == handler) {
+				return; // handler already added
+			}
+		}
+		ATLLogger.getLogger().addHandler(pkHandler);
+	}
+
+	/**
+	 * Removes PlatformKit log handler from ATL logger.
+	 */
+	public static void removeATLLogHandler() {
+		ATLLogger.getLogger().removeHandler(PlatformkitEditorPlugin.getHandler());
+	}
 
 	/**
 	 * Creates a new {@link CompatJob}.
@@ -562,7 +583,7 @@ public class CompatJob extends ProgressMonitorJob {
 			return; //cancel
 		}
 		beginTask(monitor, getName(), steps + emf_uris.length * 3);
-		ATLLogger.getLogger().addHandler(PlatformkitEditorPlugin.getHandler());
+		addATLLogHandler();
 		//
 		// Step 1
 		//
@@ -658,7 +679,7 @@ public class CompatJob extends ProgressMonitorJob {
 	 */
 	protected void finallyCleanup() {
 		try {
-			ATLLogger.getLogger().removeHandler(PlatformkitEditorPlugin.getHandler());
+			removeATLLogHandler();
 			modelLoader.flush();
 		} catch (ATLCoreException e) {
 			PlatformkitJavaPlugin.getPlugin().report(e);

@@ -10,8 +10,7 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.java.popup.actions;
 
-import be.ac.vub.platformkit.java.PlatformkitJavaResources;
-import be.ac.vub.platformkit.java.actions.ShowCompatResultAction;
+import be.ac.vub.platformkit.java.jobs.CompatJob;
 import be.ac.vub.platformkit.java.jobs.JarFileCompatJob;
 
 /**
@@ -20,16 +19,12 @@ import be.ac.vub.platformkit.java.jobs.JarFileCompatJob;
  */
 public class JarFileCompatAction extends CompatAction {
 
-	/**
-	 * Creates a new {@link JarFileCompatAction}.
+	/* (non-Javadoc)
+	 * @see be.ac.vub.platformkit.java.popup.actions.CompatAction#createCompatJob()
 	 */
-	public JarFileCompatAction() {
-		super();
-		job = new JarFileCompatJob();
-		showResultAction = new ShowCompatResultAction(
-				job, 
-				PlatformkitJavaResources.getString("resultText")); //$NON-NLS-1$
-		initJob();
+	@Override
+	protected CompatJob createCompatJob() {
+		return new JarFileCompatJob();
 	}
 
 }
