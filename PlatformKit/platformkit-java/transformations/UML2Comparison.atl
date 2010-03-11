@@ -3,6 +3,8 @@
 -- Library for comparing a UML2 model to other versions of the UML2 model
 library UML2Comparison;
 
+uses UML2;
+
 -- ======================================================================
 -- helper attributes begin
 -- ======================================================================
@@ -57,20 +59,19 @@ helper context UML2!"uml::Package" def : allOwnedClassifiers : Sequence(UML2!"um
 	self.allOwnedElements()
 		->reject(e|e.isInferred)
 		->select(o|o.oclIsKindOf(UML2!"uml::Classifier"))
-		->select(c|c.getNearestPackage() = self and not c.name.endsWith('[]'));
+		->select(c|c.getNearestPackage() = self);
 
 -- The transitive closure of contained Classifiers, excluding inferred and derived Classifiers.
 helper context UML2!"uml::Classifier" def : allOwnedClassifiers : Sequence(UML2!"uml::Classifier") =
 	self.allOwnedElements()
 		->reject(e|e.isInferred)
-		->select(o|o.oclIsKindOf(UML2!"uml::Classifier"))
-		->select(c|not c.name.endsWith('[]'));
+		->select(o|o.oclIsKindOf(UML2!"uml::Classifier"));
 
 -- ------------------------ myOclType -----------------------------------
 
 -- Same as oclType(), except DataType becomes Classifier.
 -- Jar2UML uses DataType to represent inferred Classifier instances
--- of which it isn't know whether they are Classes or Interfaces.
+-- of which it isn't known whether they are Classes or Interfaces.
 helper context UML2!"uml::Element" def : myOclType : OclType =
 	let type : OclType = self.oclType()
 	in if type = UML2!"uml::DataType"

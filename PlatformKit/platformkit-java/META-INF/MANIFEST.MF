@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Platformkit Java Ontologies Plug-in
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: be.ac.vub.platformkit.java;singleton:=true
 Bundle-Version: 1.2.2
-Bundle-Vendor: Vrije Universiteit Brussel
+Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.runtime,
