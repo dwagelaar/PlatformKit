@@ -9,9 +9,6 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
-    <!ENTITY platform2 "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#3" >
-    <!ENTITY HP "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#HP/" >
-    <!ENTITY PWB "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#PWB/" >
 ]>
 
 
@@ -20,13 +17,10 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:platform2="&platform;3"
      xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:PWB="&platform;PWB/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:HP="&platform;HP/">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="">
         <rdfs:label xml:lang="en"
             >PlatformKit root platform ontology.</rdfs:label>
@@ -132,6 +126,10 @@
     <owl:Class rdf:about="#ABIPart">
         <rdfs:subClassOf rdf:resource="#FeatureInterfacePart"/>
         <owl:disjointWith rdf:resource="#APIPart"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Application_binary_interface</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Part of an ABI. Allows for partitioning of ABIs for the purpose of defining partial platform dependency constraints.</rdfs:comment>
     </owl:Class>
     
 
@@ -158,6 +156,10 @@
 
     <owl:Class rdf:about="#APIPart">
         <rdfs:subClassOf rdf:resource="#FeatureInterfacePart"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Application_programming_interface</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Part of an API. Allows for partitioning of APIs for the purpose of defining partial platform dependency constraints.</rdfs:comment>
     </owl:Class>
     
 
@@ -220,6 +222,10 @@
 
     <owl:Class rdf:about="#FeatureInterfacePart">
         <owl:disjointWith rdf:resource="#Platform"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Interface_%28computer_science%29</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Part of a feature interface. Allows for partitioning of feature interfaces for the purpose of defining partial platform dependency constraints.</rdfs:comment>
     </owl:Class>
     
 
