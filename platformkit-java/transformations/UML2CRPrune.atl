@@ -41,6 +41,12 @@ helper context UML2!"uml::Operation" def : mustBePruned : Boolean =
 helper context UML2!"uml::Property" def : mustBePruned : Boolean =
 	not self.isMissing;
 
+helper context UML2!"uml::Dependency" def : mustBePruned : Boolean =
+	not self.isMissing;
+
+helper context UML2!"uml::Generalization" def : mustBePruned : Boolean =
+	not self.isMissing;
+
 -- ------------------------ isMissing -----------------------------------
 
 helper context UML2!"uml::Element" def : isMissing : Boolean =
@@ -132,6 +138,79 @@ helper context UML2!"uml::InterfaceRealization" def : refersToType(type : UML2!"
 -- ======================================================================
 -- transformation rules begin
 -- ======================================================================
+
+rule Class {
+    from s : UML2!"uml::Class" (
+		if s.oclIsTypeOf(UML2!"uml::Class") then
+			thisModule.inElements->includes(s)
+		else false endif)
+    to t : UML2!"uml::Class" (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- s.isLeaf,
+        isAbstract <- s.isAbstract,
+        isActive <- s.isActive,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency->select(c|c.isMissing),
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        generalization <- s.generalization,
+        powertypeExtent <- s.powertypeExtent,
+        redefinedClassifier <- s.redefinedClassifier,
+        substitution <- s.substitution,
+        representation <- s.representation,
+        collaborationUse <- s.collaborationUse,
+        ownedUseCase <- s.ownedUseCase,
+        useCase <- s.useCase,
+        ownedAttribute <- s.ownedAttribute,
+        ownedConnector <- s.ownedConnector,
+        ownedBehavior <- s.ownedBehavior,
+        classifierBehavior <- s.classifierBehavior,
+        interfaceRealization <- s.interfaceRealization->select(c|c.isMissing),
+        ownedTrigger <- s.ownedTrigger,
+        nestedClassifier <- s.nestedClassifier,
+        ownedOperation <- s.ownedOperation,
+        ownedReception <- s.ownedReception)
+}
+
+rule Interface {
+    from s : UML2!"uml::Interface" (thisModule.inElements->includes(s))
+    to t : UML2!"uml::Interface" (
+        name <- s.name,
+        visibility <- s.visibility,
+        isLeaf <- s.isLeaf,
+        isAbstract <- s.isAbstract,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency->select(c|c.isMissing),
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        generalization <- s.generalization,
+        powertypeExtent <- s.powertypeExtent,
+        redefinedClassifier <- s.redefinedClassifier,
+        substitution <- s.substitution,
+        representation <- s.representation,
+        collaborationUse <- s.collaborationUse,
+        ownedUseCase <- s.ownedUseCase,
+        useCase <- s.useCase,
+        ownedAttribute <- s.ownedAttribute,
+        ownedOperation <- s.ownedOperation,
+        nestedClassifier <- s.nestedClassifier,
+        redefinedInterface <- s.redefinedInterface,
+        ownedReception <- s.ownedReception,
+        protocol <- s.protocol)
+}
 
 rule CompatibilityReport {
 	from s : UML2!"CompatibilityReport::CompatibilityReport" (
