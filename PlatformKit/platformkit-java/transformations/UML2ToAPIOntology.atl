@@ -1,9 +1,11 @@
 -- @atlcompiler atl2006
+-- @nsURI UML2 http://www.eclipse.org/uml2/3.0.0/UML
+-- @nsURI OWL http:///org/eclipse/owl.ecore
 -- $Id$
 -- Base module for transforming a UML2 model to an API OWL ontology
 module UML2ToAPIOntology; --abstract
 
-create OUT : OWL from IN : UML2, PLATFORM : OWL, JAVA : OWL;--, PREVOUT : OWL, PREVIN : UML2;
+create OUT : OWL from IN : UML2, PLATFORM : OWL, ISA : OWL, JAVA : OWL;--, PREVOUT : OWL, PREVIN : UML2;
 
 uses UML2Comparison;
 
@@ -16,26 +18,73 @@ helper def : UML2ToAPIOntologyVersionString : String =
 
 helper def : inElements : Set(UML2!"ecore::EObject") = UML2!"ecore::EObject".allInstancesFrom('IN');
 
-helper def : includedPackages : Set(UML2!"uml::Package") = UML2!"uml::Package".allInstancesFrom('IN')
-	->select(p|p.oclIsTypeOf(UML2!"uml::Package") and p.packagedElement
-		->select(c|c.oclIsKindOf(UML2!"uml::Class") or c.oclIsKindOf(UML2!"uml::Interface"))->notEmpty());
+helper def : prevModels : Set(UML2!"uml::Model") = 
+	UML2!"uml::Model".allInstances()->select(m|
+		thisModule.inElements->excludes(m));
 
-helper def : platformPlatform : Set(OWL!"owl::OWLClass") = OWL!"owl::OWLClass".allInstancesFrom('PLATFORM')
-	->select(o|o.localName = 'Platform');
+--TODO check if removable
+--helper def : prevPackages : Set(UML2!"uml::Package") = 
+--	UML2!"uml::Package"->allInstances()->select(p|
+--		thisModule.inElements->excludes(p));
 
-helper def : javaLibrary : Set(OWL!"owl::OWLClass") = OWL!"owl::OWLClass".allInstancesFrom('JAVA')
-	->select(o|o.localName = 'JavaLibrary');
+helper def : includedPackages : Set(UML2!"uml::Package") = 
+	UML2!"uml::Package".allInstancesFrom('IN')
+		->reject(e|e.isInferred)
+		->select(p|p.oclIsTypeOf(UML2!"uml::Package"))
+		->select(p1|p1.packagedElement
+			->select(c|c.oclIsKindOf(UML2!"uml::Class") or c.oclIsKindOf(UML2!"uml::Interface"))->notEmpty());
 
-helper def : javaJRE : Set(OWL!"owl::OWLClass") = OWL!"owl::OWLClass".allInstancesFrom('JAVA')
-	->select(o|o.localName = 'JRE');
+helper def : platformPlatform : OWL!"owl::OWLClass" = 
+	OWL!"owl::OWLClass".allInstancesFrom('PLATFORM')
+		->any(o|o.localName = 'Platform');
 
-helper def : platformProvidesFeature : OWL!"owl::OWLObjectProperty" =
+helper def : javaAPI : OWL!"owl::OWLClass" = 
+	OWL!"owl::OWLClass".allInstancesFrom('JAVA')
+		->any(o|o.localName = 'JavaAPI');
+
+helper def : javaAPIPart : OWL!"owl::OWLClass" = 
+	OWL!"owl::OWLClass".allInstancesFrom('JAVA')
+		->any(o|o.localName = 'JavaAPIPart');
+
+helper def : javaLibrary : OWL!"owl::OWLClass" = 
+	OWL!"owl::OWLClass".allInstancesFrom('JAVA')
+		->any(o|o.localName = 'JavaClassLibrary');
+
+helper def : javaVM : OWL!"owl::OWLClass" = 
+	OWL!"owl::OWLClass".allInstancesFrom('JAVA')
+		->any(o|o.localName = 'JavaVM');
+
+helper def : javaBytecode : OWL!"owl::OWLClass" = 
+	OWL!"owl::OWLClass".allInstancesFrom('ISA')
+		->any(o|o.localName = 'JavaBytecode');
+
+helper def : javaJRE : OWL!"owl::OWLClass" = 
+	OWL!"owl::OWLClass".allInstancesFrom('JAVA')
+		->any(o|o.localName = 'JRE');
+
+helper def : providesFeature : OWL!"owl::OWLObjectProperty" =
 	OWL!"owl::OWLObjectProperty".allInstancesFrom('PLATFORM')
-		->select(p|p.localName = 'providesFeature')->first();
+		->any(p|p.localName = 'providesFeature');
 
-helper def : jreProvidesBuiltinJavaLibrary : OWL!"owl::OWLObjectProperty" =
+helper def : implementsInterface : OWL!"owl::OWLObjectProperty" =
+	OWL!"owl::OWLObjectProperty".allInstancesFrom('PLATFORM')
+		->any(p|p.localName = 'implementsInterface');
+
+helper def : comprisesInterfacePart : OWL!"owl::OWLObjectProperty" =
+	OWL!"owl::OWLObjectProperty".allInstancesFrom('PLATFORM')
+		->any(p|p.localName = 'comprisesInterfacePart');
+
+helper def : majorVersionNumber : OWL!"owl::OWLDatatypeProperty" =
 	OWL!"owl::OWLObjectProperty".allInstancesFrom('JAVA')
-		->select(p|p.localName = 'providesBuiltinJavaLibrary')->first();
+		->any(p|p.localName = 'majorVersionNumber');
+
+helper def : minorVersionNumber : OWL!"owl::OWLDatatypeProperty" =
+	OWL!"owl::OWLObjectProperty".allInstancesFrom('JAVA')
+		->any(p|p.localName = 'minorVersionNumber');
+
+helper def : preverified : OWL!"owl::OWLDatatypeProperty" =
+	OWL!"owl::OWLObjectProperty".allInstancesFrom('JAVA')
+		->any(p|p.localName = 'preverified');
 
 helper def : platformOntology : Set(OWL!"owl::OWLOntology") = 
 	OWL!"owl::OWLOntology".allInstancesFrom('PLATFORM');
@@ -63,7 +112,18 @@ helper context UML2!"uml::NamedElement" def : ontClassName : String =
 	if self.owner.oclIsTypeOf(UML2!"uml::Package") then
 		self.owner.ontClassName
 	else '' endif
-	+ self.name.firstToUpper();
+	+ self.name.legalOntClassName; --TODO test
+
+helper context String def : legalOntClassName : String =
+	self
+	.replaceAll('.', '_')
+	.split(' ')->collect(s|s.firstToUpper())->iterate(e; acc : String = ''|acc + e);
+
+helper context String def : legalOntName : String =
+	self
+	.toLower()
+	.replaceAll('.', '_')
+	.replaceAll(' ', '-');
 
 -- ======================================================================
 -- helper attributes for finding references
@@ -140,6 +200,25 @@ rule PrevNamespace(o : OWL!"owl::OWLOntology") {
 		name <- o.namespace.name)
 	do {
 		n;
+	}
+}
+
+rule APIRestriction(p : UML2!"uml::Package") {
+	to t : OWL!"owl::SomeValuesFromRestriction" (
+		OWLOnProperty <- thisModule.comprisesInterfacePart,
+		OWLSomeValuesFrom <- p,
+		namespace <- p.getModel())
+	do {
+		t;
+	}
+}
+
+rule APISlot(p : UML2!"uml::Package") {
+	to t : OWL!"owl::ObjectSlot" (
+		property <- thisModule.comprisesInterfacePart,
+		content <- thisModule.resolveTemp(p, 'apiPart'))
+	do {
+		t;
 	}
 }
 

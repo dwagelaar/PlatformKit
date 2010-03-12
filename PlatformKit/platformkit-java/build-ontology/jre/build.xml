@@ -5,13 +5,7 @@
 	<property name="inmodel.uri" value="${umlmodel.uri}/jre"/>
 	<property name="outmodel.uri" value="${owlmodel.uri}/jre"/>
 
-	<target name="loadModels">
-		<atl.loadModel modelHandler="EMF" name="OWL"           metamodel="MOF"  nsuri="http:///org/eclipse/owl.ecore"/>
-		<atl.loadModel modelHandler="EMF" name="Platform"      metamodel="OWL"  uri="${build.uri}/Platform.owl"/>
-		<atl.loadModel modelHandler="EMF" name="Java"          metamodel="OWL"  uri="${build.uri}/Java.owl"/>
-		<atl.loadModel modelHandler="EMF" name="EmptyOWL"      metamodel="OWL"  uri="${build.uri}/empty.owl"/>
-		<atl.loadModel modelHandler="EMF" name="UML2"          metamodel="MOF"  nsuri="http://www.eclipse.org/uml2/2.0.0/UML"/>
-		<atl.loadModel modelHandler="EMF" name="EmptyUML"      metamodel="UML2" uri="${build.uri}/empty.uml"/>
+	<target name="loadModels" depends="loadCommonModels">
 		<atl.loadModel modelHandler="EMF" name="J2ME-MIDP-1_0" metamodel="UML2" uri="${inmodel.uri}/j2me-midp-1_0-api.uml"/>
 		<atl.loadModel modelHandler="EMF" name="J2ME-MIDP-2_0" metamodel="UML2" uri="${inmodel.uri}/j2me-midp-2_0-api.uml"/>
 		<atl.loadModel modelHandler="EMF" name="J2ME-PP-1_0"   metamodel="UML2" uri="${inmodel.uri}/j2me-pp-1_0-api.uml"/>

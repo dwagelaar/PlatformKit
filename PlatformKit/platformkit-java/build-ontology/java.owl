@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY isa "http://localhost/~dennis/platformkit/2010_1/isa.owl#" >
+    <!ENTITY java "http://localhost/~dennis/platformkit/2010_1/java.owl#" >
+    <!ENTITY platform "http://localhost/~dennis/platformkit/2010_1/platform.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://localhost/~dennis/platformkit/2010_1/java.owl#"
+     xml:base="http://localhost/~dennis/platformkit/2010_1/java.owl"
+     xmlns:platform="http://localhost/~dennis/platformkit/2010_1/platform.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:isa="http://localhost/~dennis/platformkit/2010_1/isa.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:java="http://localhost/~dennis/platformkit/2010_1/java.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit Java software platform ontology.</rdfs:label>
+        <owl:versionInfo
+            >$Id: java.owl 8040 2010-03-08 11:46:24Z dwagelaa $</owl:versionInfo>
+        <rdfs:comment xml:lang="en"
+            >Describes the parts of the Java software platform.</rdfs:comment>
+        <owl:imports rdf:resource="http://localhost/~dennis/platformkit/2010_1/isa.owl"/>
+        <owl:imports rdf:resource="http://localhost/~dennis/platformkit/2010_1/platform.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#comprisesInterfacePart -->
+
+    <owl:ObjectProperty rdf:about="&platform;comprisesInterfacePart"/>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="&platform;implementsInterface"/>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#providesFeature -->
+
+    <owl:ObjectProperty rdf:about="&platform;providesFeature"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/java.owl#majorVersionNumber -->
+
+    <owl:DatatypeProperty rdf:about="#majorVersionNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Class_%28file_format%29</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Java class file format major version number.</rdfs:comment>
+        <rdfs:domain rdf:resource="&isa;JavaBytecode"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/java.owl#minorVersionNumber -->
+
+    <owl:DatatypeProperty rdf:about="#minorVersionNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Class_%28file_format%29</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Java class file format minor version number.</rdfs:comment>
+        <rdfs:domain rdf:resource="&isa;JavaBytecode"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/java.owl#preverified -->
+
+    <owl:DatatypeProperty rdf:about="#preverified">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/MIDlet</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Whether or not the compiled bytecode has been preverified for execution on Java MIDP platforms.</rdfs:comment>
+        <rdfs:domain rdf:resource="&isa;JavaBytecode"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/isa.owl#JavaBytecode -->
+
+    <owl:Class rdf:about="&isa;JavaBytecode"/>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/java.owl#JRE -->
+
+    <owl:Class rdf:about="#JRE">
+        <rdfs:subClassOf rdf:resource="&platform;RuntimeEnvironment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&platform;providesFeature"/>
+                <owl:someValuesFrom rdf:resource="#JavaVM"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&platform;providesFeature"/>
+                <owl:someValuesFrom rdf:resource="#JavaClassLibrary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/JRE#Execution_environment</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Java Runtime Environment. Provides a virtual machine and a standard class libary.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/java.owl#JavaAPI -->
+
+    <owl:Class rdf:about="#JavaAPI">
+        <rdfs:subClassOf rdf:resource="&platform;API"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&platform;comprisesInterfacePart"/>
+                <owl:allValuesFrom rdf:resource="#JavaAPIPart"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso xml:lang="en"
+            >Java API implemented by a Java class library.</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/java.owl#JavaAPIPart -->
+
+    <owl:Class rdf:about="#JavaAPIPart">
+        <rdfs:subClassOf rdf:resource="&platform;APIPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/java.owl#JavaClassLibrary -->
+
+    <owl:Class rdf:about="#JavaClassLibrary">
+        <rdfs:subClassOf rdf:resource="&platform;Library"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&platform;implementsInterface"/>
+                <owl:allValuesFrom rdf:resource="#JavaAPI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Java_Class_Library</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Java class library.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/java.owl#JavaVM -->
+
+    <owl:Class rdf:about="#JavaVM">
+        <rdfs:subClassOf rdf:resource="&platform;VirtualMachine"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&platform;implementsInterface"/>
+                <owl:allValuesFrom rdf:resource="&isa;JavaBytecode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Java_virtual_machine</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Java virtual machine. Typically implements a specific Java bytecode format.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#API -->
+
+    <owl:Class rdf:about="&platform;API"/>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#APIPart -->
+
+    <owl:Class rdf:about="&platform;APIPart"/>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#Application -->
+
+    <owl:Class rdf:about="&platform;Application">
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Application_software</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#Framework -->
+
+    <owl:Class rdf:about="&platform;Framework">
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Software_framework</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#Library -->
+
+    <owl:Class rdf:about="&platform;Library">
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Library_%28computing%29</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#PackageManager -->
+
+    <owl:Class rdf:about="&platform;PackageManager">
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Package_manager</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#RuntimeEnvironment -->
+
+    <owl:Class rdf:about="&platform;RuntimeEnvironment"/>
+    
+
+
+    <!-- http://localhost/~dennis/platformkit/2010_1/platform.owl#VirtualMachine -->
+
+    <owl:Class rdf:about="&platform;VirtualMachine"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
