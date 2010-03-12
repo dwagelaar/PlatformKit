@@ -21,6 +21,7 @@
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
     			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="ISA" model="ISA"/>
     			<inmodel name="JAVA" model="Java"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
     			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
@@ -40,6 +41,7 @@
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
     			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="ISA" model="ISA"/>
     			<inmodel name="JAVA" model="Java"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
     			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
@@ -62,6 +64,7 @@
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
     			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="ISA" model="ISA"/>
     			<inmodel name="JAVA" model="Java"/>
     			<inmodel name="PREVOUT" model="@{prevout}"/>
     			<inmodel name="PREVIN" model="@{previn}"/>
@@ -88,6 +91,7 @@
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
     			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="ISA" model="ISA"/>
     			<inmodel name="JAVA" model="Java"/>
     			<inmodel name="PREVOUT" model="@{prevout}"/>
     			<inmodel name="PREVIN" model="@{previn}"/>
@@ -118,6 +122,7 @@
     			<inmodel name="OWL" model="OWL"/>
     			<inmodel name="IN" model="@{in}"/>
     			<inmodel name="PLATFORM" model="Platform"/>
+    			<inmodel name="ISA" model="ISA"/>
     			<inmodel name="JAVA" model="Java"/>
     			<inmodel name="PREVOUT" model="@{prevout}"/>
     			<inmodel name="PREVIN" model="@{previn}"/>
@@ -133,4 +138,14 @@
         </sequential>
     </macrodef>
 	
+	<target name="loadCommonModels">
+		<atl.loadModel modelHandler="EMF" name="OWL"           metamodel="MOF"  nsuri="http:///org/eclipse/owl.ecore"/>
+		<atl.loadModel modelHandler="EMF" name="Platform"      metamodel="OWL"  uri="${build.uri}/platform.owl"/>
+		<atl.loadModel modelHandler="EMF" name="ISA"           metamodel="OWL"  uri="${build.uri}/isa.owl"/>
+		<atl.loadModel modelHandler="EMF" name="Java"          metamodel="OWL"  uri="${build.uri}/java.owl"/>
+		<atl.loadModel modelHandler="EMF" name="EmptyOWL"      metamodel="OWL"  uri="${build.uri}/empty.owl"/>
+		<atl.loadModel modelHandler="EMF" name="UML2"          metamodel="MOF"  nsuri="http://www.eclipse.org/uml2/2.0.0/UML"/>
+		<atl.loadModel modelHandler="EMF" name="EmptyUML"      metamodel="UML2" uri="${build.uri}/empty.uml"/>
+	</target>
+
 </project>

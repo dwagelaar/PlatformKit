@@ -1,9 +1,11 @@
 -- @atlcompiler atl2006
+-- @nsURI UML2 http://www.eclipse.org/uml2/3.0.0/UML
+-- @nsURI OWL http:///org/eclipse/owl.ecore
 -- $Id$
 -- Transforms a UML2 model to an API OWL ontology containing all the packages
 module UML2ToPackageAPIOntology; --extends UML2ToAPIOntology
 
-create OUT : OWL from IN : UML2, PLATFORM : OWL, JAVA : OWL;
+create OUT : OWL from IN : UML2, PLATFORM : OWL, ISA : OWL, JAVA : OWL;
 
 uses UML2ToAPIOntology;
 
@@ -26,35 +28,48 @@ rule Model {
 	from s : UML2!"uml::Model" (thisModule.inElements->includes(s))
 	using {
 		prevNotEmpty : Boolean = thisModule.prevModels->select(m|m.packagedElement->notEmpty())->notEmpty();
-		superClasses : Sequence(OWL!"owl::OWLClass") = s.compatibleClasses->select(c|s.equivalentClasses->excludes(c));
+		jar2uml : UML2!"ecore::EAnnotation" = s.getEAnnotation('Jar2UML');
+		majorVersion : Integer = jar2uml.details->any(d|d.key='majorBytecodeFormatVersion').value;
+		minorVersion : Integer = jar2uml.details->any(d|d.key='minorBytecodeFormatVersion').value;
+		preverified : Boolean = (jar2uml.details->any(d|d.key='preverified').value = 'true');
 	}
-	to n : OWL!"rdfs::Namespace" mapsTo s (
-		URI <- 'http://ssel.vub.ac.be/platformkit/' + s.name + '#',
-		name <- s.name),
+	to n : OWL!"rdfs::Namespace" (
+		URI <- 'http://soft.vub.ac.be/platformkit/2010/1/' + s.name.legalOntName + '#',
+		name <- s.name.legalOntName),
 	   xsd : OWL!"rdfs::Namespace" (
 	   	URI <- 'http://www.w3.org/2001/XMLSchema#',
 		name <- 'xsd'),
-	   units : OWL!"rdfs::Namespace" (
-	   	URI <- 'http://localhost/~dennis/Units.owl#',
-		name <- 'units'),
 	   platform : OWL!"rdfs::Namespace" (
-	   	URI <- 'http://localhost/~dennis/Platform.owl#',
+	   	URI <- 'http://localhost/~dennis/platformkit/2010_1/platform.owl#',
 		name <- 'platform'),
+	   isa : OWL!"rdfs::Namespace" (
+	   	URI <- 'http://localhost/~dennis/platformkit/2010_1/isa.owl#',
+		name <- 'isa'),
 	   java : OWL!"rdfs::Namespace" (
-	   	URI <- 'http://localhost/~dennis/Java.owl#',
+	   	URI <- 'http://localhost/~dennis/platformkit/2010_1/java.owl#',
 		name <- 'java'),
+	   positiveInteger : OWL!"rdfs::RDFSDatatype" (
+		localName <- 'positiveInteger',
+		namespace <- xsd),
+	   boolean : OWL!"rdfs::RDFSDatatype" (
+		localName <- 'boolean',
+		namespace <- xsd),
 	   ont : OWL!"owl::OWLOntology" (
 	   	localName <- '',
 		namespace <- n,
 		RDFSLabel <- Sequence{label},
 		RDFSComment <- Sequence{comment},
-		ownedNamespace <- Set{n, xsd, units, platform, java}->union(
+		ownedNamespace <- Set{n, xsd, platform, isa, java}->union(
 			if prevNotEmpty	then thisModule.importedOntologies->collect(o|thisModule.PrevNamespace(o)) else Set{} endif),
 -- !!! OWLImports generates bogus namespace !!!
 		OWLImports <- thisModule.platformOntology->union(thisModule.javaOntology)->union(
 			if prevNotEmpty then thisModule.importedOntologies else Set{} endif),
-		contains <- Sequence{apiClass, jreClass}->union(
-			thisModule.includedPackages)),
+		contains <- Sequence{positiveInteger, boolean, apiClass, apiInstance, libraryClass, bytecodeClass, bytecodeInstance, vmClass, jreClass}
+			->union(thisModule.includedPackages)
+			->union(thisModule.includedPackages->collect(p|thisModule.resolveTemp(p, 'apiClass')))
+			->union(thisModule.includedPackages->collect(p|thisModule.resolveTemp(p, 'apiPart')))
+			->union(thisModule.includedPackages->collect(p|thisModule.resolveTemp(p, 'libraryClass')))
+	   ),
 	   label : OWL!"rdfs::PlainLiteral" (
 	   	language <- 'en',
 		lexicalForm <- s.name),
@@ -65,26 +80,113 @@ rule Model {
 			thisModule.UML2ToAPIOntologyVersionString + ' and ' +
 			thisModule.UML2ComparisonVersionString),
 	   apiClass : OWL!"owl::OWLClass" (
-	   	localName <- s.name.firstToUpper() + 'ClassLibrary',
-		RDFSSubClassOf <- thisModule.includedPackages->union(superClasses),
-		OWLEquivalentClass <- if s.equivalentClasses->isEmpty()
-			then Sequence{} else s.equivalentClasses endif,
+	   	localName <- s.name.legalOntClassName + 'API',
+		RDFSSubClassOf <- Sequence{thisModule.javaAPI},
+		OWLEquivalentClass <- Sequence{apiRestriction},
 		RDFSComment <- Sequence{apiComment},
 		namespace <- s),
 	   apiComment : OWL!"rdfs::PlainLiteral" (
 	   	language <- 'en',
-		lexicalForm <- 'JavaLibrary implementing the entire API for ' + s.name),
+		lexicalForm <- s.name + ' API'),
+	   apiRestriction : OWL!"owl::IntersectionClass" (
+	   	OWLIntersectionOf <- thisModule.includedPackages
+			->collect(p|thisModule.APIRestriction(p)),
+		namespace <- s),
+	   apiInstance : OWL!"owl::Individual" (
+	   	localName <- 'the' + apiClass.localName,
+	   	RDFType <- apiClass,
+		objectSlot <- thisModule.includedPackages
+			->collect(p|thisModule.APISlot(p)),
+	   	namespace <- s),
+	   libraryClass : OWL!"owl::OWLClass" (
+	   	localName <- s.name.legalOntClassName + 'ClassLibrary',
+		RDFSSubClassOf <- Sequence{thisModule.javaLibrary},
+		OWLEquivalentClass <- Sequence{libraryRestriction},
+		RDFSComment <- Sequence{libraryComment},
+		namespace <- s),
+	   libraryComment : OWL!"rdfs::PlainLiteral" (
+	   	language <- 'en',
+		lexicalForm <- 'Java class library implementing the ' + s.name + ' API'),
+	   libraryRestriction : OWL!"owl::SomeValuesFromRestriction" (
+	   	OWLOnProperty <- thisModule.implementsInterface,
+		OWLSomeValuesFrom <- apiClass,
+		namespace <- s),
+	   vmClass : OWL!"owl::OWLClass" (
+	   	localName <- s.name.legalOntClassName + 'VM',
+		RDFSSubClassOf <- Sequence{thisModule.javaVM},
+		OWLEquivalentClass <- Sequence{vmRestriction},
+		RDFSComment <- Sequence{vmComment},
+		namespace <- s),
+	   vmComment : OWL!"rdfs::PlainLiteral" (
+	   	language <- 'en',
+		lexicalForm <- s.name + ' virtual machine'),
+	   vmRestriction : OWL!"owl::SomeValuesFromRestriction" (
+	   	OWLOnProperty <- thisModule.implementsInterface,
+		OWLSomeValuesFrom <- bytecodeClass,
+		namespace <- s),
+	   bytecodeClass : OWL!"owl::OWLClass" (
+	   	localName <- s.name.legalOntClassName + 'BytecodeFormat',
+		RDFSSubClassOf <- Sequence{thisModule.javaBytecode},
+--		OWLEquivalentClass <- Sequence{bytecodeRestriction},
+		RDFSComment <- Sequence{bytecodeComment},
+		namespace <- s),
+	   bytecodeComment : OWL!"rdfs::PlainLiteral" (
+	   	language <- 'en',
+		lexicalForm <- s.name + ' bytecode format'),
+	   bytecodeInstance : OWL!"owl::Individual" (
+	   	localName <- 'the' + bytecodeClass.localName,
+	   	RDFType <- bytecodeClass,
+--TODO cannot set any individual slots
+--		datatypeSlot <- Sequence{
+--	   		bytecodeMajorVersionSlot, 
+--			bytecodeMinorVersionSlot, 
+--			bytecodePreverifiedSlot},
+	   	namespace <- s),
+--	   bytecodeMajorVersionSlot : OWL!"owl::DatatypeSlot" (
+--	   	property <- thisModule.majorVersionNumber,
+--		content <- bytecodeMajorVersionValue),
+--	   bytecodeMajorVersionValue : OWL!"rdfs::TypedLiteral" (
+--	   	datatype <- positiveInteger,
+--		lexicalForm <- majorVersion.toString(),
+--		namespace <- s),
+--	   bytecodeMinorVersionSlot : OWL!"owl::DatatypeSlot" (
+--	   	property <- thisModule.minorVersionNumber,
+--		content <- bytecodeMinorVersionValue),
+--	   bytecodeMinorVersionValue : OWL!"rdfs::TypedLiteral" (
+--	   	datatype <- positiveInteger,
+--		lexicalForm <- minorVersion.toString()),
+--	   bytecodePreverifiedSlot : OWL!"owl::DatatypeSlot" (
+--	   	property <- thisModule.preverified,
+--		content <- bytecodePreverifiedValue),
+--	   bytecodePreverifiedValue : OWL!"rdfs::TypedLiteral" (
+--	   	datatype <- boolean,
+--		lexicalForm <- if preverified then 'true' else 'false' endif),
+--!!! EODM does not support restricted data types !!!
+--	   bytecodeRestriction : OWL!"owl::SomeValuesFromRestriction" (
+--	   	OWLOnProperty <- thisModule.majorVersionNumber,
+--		OWLSomeValuesFrom <- positiveInteger,
+--		namespace <- s),
+--	   bytecodeDescription : OWL!"rdfs::RDFSDatatype" (
+--		namespace <- s),
 	   jreClass : OWL!"owl::OWLClass" (
-	   	localName <- s.name.firstToUpper(),
-		RDFSSubClassOf <- Sequence{thisModule.javaJRE, builtinJavaLibraryRestriction},
+	   	localName <- s.name.legalOntClassName + 'JRE',
+		RDFSSubClassOf <- Sequence{thisModule.javaJRE},
+		OWLEquivalentClass <- Sequence{jreIntersection},
 		RDFSComment <- Sequence{jreComment},
 		namespace <- s),
 	   jreComment : OWL!"rdfs::PlainLiteral" (
 	   	language <- 'en',
 		lexicalForm <- s.name + ' Java Runtime Environment'),
-	   builtinJavaLibraryRestriction : OWL!"owl::SomeValuesFromRestriction" (
-	   	OWLOnProperty <- thisModule.jreProvidesBuiltinJavaLibrary,
-		OWLSomeValuesFrom <- apiClass,
+	   jreIntersection : OWL!"owl::IntersectionClass" (
+	   	OWLIntersectionOf <- Sequence{jreLibraryRestriction, jreVMRestriction},
+		namespace <- s),
+	   jreLibraryRestriction : OWL!"owl::SomeValuesFromRestriction" (
+	   	OWLOnProperty <- thisModule.providesFeature,
+		OWLSomeValuesFrom <- libraryClass,
+		namespace <- s),
+	   jreVMRestriction : OWL!"owl::SomeValuesFromRestriction" (
+	   	OWLOnProperty <- thisModule.providesFeature,
+		OWLSomeValuesFrom <- vmClass,
 		namespace <- s)
 }
 
@@ -93,17 +195,47 @@ rule Package {
 	using {
 		superClasses : Sequence(OWL!"owl::OWLClass") = s.compatibleClasses->select(c|s.equivalentClasses->excludes(c));
 	}
-	to t : OWL!"owl::OWLClass" mapsTo s (
-		localName <- (s.ontClassName + 'Library').debug(thisModule.modelName.prefix + 'Package'),
+	to apiPartClass : OWL!"owl::OWLClass" (
+		localName <- (s.ontClassName).debug(thisModule.modelName.prefix + 'Package'),
 		RDFSSubClassOf <- if superClasses->isEmpty()
-			then thisModule.javaLibrary else superClasses endif,
+			then thisModule.javaAPIPart else superClasses endif,
 		OWLEquivalentClass <- s.equivalentClasses,
-		RDFSComment <- Sequence{comment},
+		RDFSComment <- Sequence{apiPartComment},
 		RDFSSeeAlso <- s.references,
 		namespace <- s.getModel()),
-	   comment : OWL!"rdfs::PlainLiteral" (
+	   apiPartComment : OWL!"rdfs::PlainLiteral" (
 	   	language <- 'en',
-		lexicalForm <- 'JavaLibrary implementing the ' + s.javaQualifiedName + ' package for ' + thisModule.modelName)
+		lexicalForm <- 'Java API part implementing the ' + s.javaQualifiedName + ' package for ' + thisModule.modelName),
+	   apiClass : OWL!"owl::OWLClass" (
+		localName <- s.ontClassName + 'API',
+		RDFSSubClassOf <- Sequence{thisModule.javaAPI},
+		OWLEquivalentClass <- Sequence{apiRestriction},
+		RDFSComment <- Sequence{apiComment},
+		namespace <- s.getModel()),
+	   apiComment : OWL!"rdfs::PlainLiteral" (
+	   	language <- 'en',
+		lexicalForm <- 'JavaLibrary implementing the ' + s.javaQualifiedName + ' package for ' + thisModule.modelName),
+	   apiRestriction : OWL!"owl::SomeValuesFromRestriction" (
+	   	OWLOnProperty <- thisModule.comprisesInterfacePart,
+		OWLSomeValuesFrom <- apiPartClass,
+		namespace <- s.getModel()),
+	   apiPart : OWL!"owl::Individual" (
+	   	localName <- 'the' + s.ontClassName + 'Part',
+		RDFType <- apiPartClass,
+		namespace <- s.getModel()),
+	   libraryClass : OWL!"owl::OWLClass" (
+		localName <- s.ontClassName + 'ClassLibrary',
+		RDFSSubClassOf <- Sequence{thisModule.javaLibrary},
+		OWLEquivalentClass <- Sequence{libraryRestriction},
+		RDFSComment <- Sequence{libraryComment},
+		namespace <- s.getModel()),
+	   libraryComment : OWL!"rdfs::PlainLiteral" (
+	   	language <- 'en',
+		lexicalForm <- 'JavaLibrary implementing the ' + s.javaQualifiedName + ' package for ' + thisModule.modelName),
+	   libraryRestriction : OWL!"owl::SomeValuesFromRestriction" (
+	   	OWLOnProperty <- thisModule.implementsInterface,
+		OWLSomeValuesFrom <- apiClass,
+		namespace <- s.getModel())
 }
 
 -- ======================================================================
