@@ -1045,7 +1045,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_AwRL8SucEd-YldllXC3koA" name="Control" clientDependency="_AwWEcCucEd-YldllXC3koA" isAbstract="true">
             <generalization xmi:id="_AwWrgCucEd-YldllXC3koA" general="_AqMZICucEd-YldllXC3koA"/>
-            <ownedAttribute xmi:id="_BC9egyucEd-YldllXC3koA" name="view" visibility="public" type="_AruDISucEd-YldllXC3koA"/>
             <interfaceRealization xmi:id="_AwWEcCucEd-YldllXC3koA" supplier="_Aq3ukSucEd-YldllXC3koA" client="_AwRL8SucEd-YldllXC3koA" contract="_Aq3ukSucEd-YldllXC3koA"/>
             <ownedOperation xmi:id="_BC9ehCucEd-YldllXC3koA" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_BC9ehSucEd-YldllXC3koA" name="arg0" type="_ApBUciucEd-YldllXC3koA"/>
@@ -4325,7 +4324,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_AxCoACucEd-YldllXC3koA" name="TreeItem">
             <generalization xmi:id="_AxCoASucEd-YldllXC3koA" general="_Apl8MCucEd-YldllXC3koA"/>
-            <ownedAttribute xmi:id="_BEd6UCucEd-YldllXC3koA" name="handle" visibility="public" type="_AuYVkiucEd-YldllXC3koA"/>
             <ownedOperation xmi:id="_BEd6USucEd-YldllXC3koA" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_BEd6UiucEd-YldllXC3koA" name="arg0" type="_Aw_ksCucEd-YldllXC3koA"/>
               <ownedParameter xmi:id="_BEd6UyucEd-YldllXC3koA" name="arg1" type="_AofI8CucEd-YldllXC3koA"/>
@@ -22296,10 +22294,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_Aq7Y8CucEd-YldllXC3koA" name="FontData" isLeaf="true">
             <generalization xmi:id="_Aq7Y8SucEd-YldllXC3koA" general="_AoaQciucEd-YldllXC3koA"/>
-            <ownedAttribute xmi:id="_A3gcYiucEd-YldllXC3koA" name="name" visibility="public" type="_AooS4CucEd-YldllXC3koA"/>
-            <ownedAttribute xmi:id="_A3gcYyucEd-YldllXC3koA" name="height" visibility="public" type="_Aq15YCucEd-YldllXC3koA"/>
-            <ownedAttribute xmi:id="_A3gcZCucEd-YldllXC3koA" name="style" visibility="public" type="_AofI8CucEd-YldllXC3koA"/>
-            <ownedAttribute xmi:id="_A3gcZSucEd-YldllXC3koA" name="nsName" visibility="public" type="_AooS4CucEd-YldllXC3koA"/>
             <ownedOperation xmi:id="_A3hDcCucEd-YldllXC3koA" name="&lt;init>" visibility="public"/>
             <ownedOperation xmi:id="_A3hDcSucEd-YldllXC3koA" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_A3hDciucEd-YldllXC3koA" name="arg0" type="_AooS4CucEd-YldllXC3koA"/>
@@ -26445,8 +26439,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_AqZNcCucEd-YldllXC3koA" name="TransferData">
             <generalization xmi:id="_AqZNcSucEd-YldllXC3koA" general="_AoaQciucEd-YldllXC3koA"/>
-            <ownedAttribute xmi:id="_A27NkCucEd-YldllXC3koA" name="type" visibility="public" type="_AofI8CucEd-YldllXC3koA"/>
-            <ownedAttribute xmi:id="_A27NkSucEd-YldllXC3koA" name="data" visibility="public" type="_ArgAsiucEd-YldllXC3koA"/>
             <ownedOperation xmi:id="_A27NkiucEd-YldllXC3koA" name="&lt;init>" visibility="public"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_AqZ0gCucEd-YldllXC3koA" name="TreeDragSourceEffect">
