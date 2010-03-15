@@ -916,7 +916,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_GZoHUyt_Ed-y0718eu3OGg" name="Control" clientDependency="_GZ07oCt_Ed-y0718eu3OGg" isAbstract="true">
             <generalization xmi:id="_GZ07oSt_Ed-y0718eu3OGg" general="_GYT4sCt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_GeupwCt_Ed-y0718eu3OGg" name="handle" visibility="public" type="_GXD7hCt_Ed-y0718eu3OGg"/>
             <interfaceRealization xmi:id="_GZ07oCt_Ed-y0718eu3OGg" supplier="_GY68sSt_Ed-y0718eu3OGg" client="_GZoHUyt_Ed-y0718eu3OGg" contract="_GY68sSt_Ed-y0718eu3OGg"/>
             <ownedOperation xmi:id="_GeupwSt_Ed-y0718eu3OGg" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_Geupwit_Ed-y0718eu3OGg" name="arg0" type="_GXWPYSt_Ed-y0718eu3OGg"/>
@@ -1616,10 +1615,6 @@
             <ownedOperation xmi:id="_GfEoCyt_Ed-y0718eu3OGg" name="destroy" visibility="protected"/>
             <ownedOperation xmi:id="_GfEoDCt_Ed-y0718eu3OGg" name="disposeExec" visibility="public">
               <ownedParameter xmi:id="_GfFPECt_Ed-y0718eu3OGg" name="arg0" type="_GXeLNit_Ed-y0718eu3OGg"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_GfFPESt_Ed-y0718eu3OGg" name="findWidget" visibility="public">
-              <ownedParameter xmi:id="_GfFPEit_Ed-y0718eu3OGg" name="arg0" type="_GXD7hCt_Ed-y0718eu3OGg"/>
-              <ownedParameter xmi:id="_GfFPEyt_Ed-y0718eu3OGg" name="return" type="_GYT4sCt_Ed-y0718eu3OGg" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_GfFPFCt_Ed-y0718eu3OGg" name="findDisplay" visibility="public" isStatic="true">
               <ownedParameter xmi:id="_GfFPFSt_Ed-y0718eu3OGg" name="arg0" type="_GY_OICt_Ed-y0718eu3OGg"/>
@@ -7926,9 +7921,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_GYYxMCt_Ed-y0718eu3OGg" name="TransferData">
             <generalization xmi:id="_GYYxMSt_Ed-y0718eu3OGg" general="_GXD7git_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_GdDOxCt_Ed-y0718eu3OGg" name="type" visibility="public" type="_GXD7hCt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_GdDOxSt_Ed-y0718eu3OGg" name="data" visibility="public" type="_GYYxNCt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_GdDOxit_Ed-y0718eu3OGg" name="result" visibility="public" type="_GXD7hCt_Ed-y0718eu3OGg"/>
             <ownedOperation xmi:id="_GdDOxyt_Ed-y0718eu3OGg" name="&lt;init>" visibility="public"/>
           </packagedElement>
         </packagedElement>

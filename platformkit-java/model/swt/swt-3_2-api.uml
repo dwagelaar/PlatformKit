@@ -992,7 +992,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_gfqcFSt_Ed-y0718eu3OGg" name="Control" clientDependency="_gfsRQCt_Ed-y0718eu3OGg" isAbstract="true">
             <generalization xmi:id="_gfsRQSt_Ed-y0718eu3OGg" general="_gevPASt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_gnmQECt_Ed-y0718eu3OGg" name="handle" visibility="public" type="_gdZLNyt_Ed-y0718eu3OGg"/>
             <interfaceRealization xmi:id="_gfsRQCt_Ed-y0718eu3OGg" supplier="_ge94hCt_Ed-y0718eu3OGg" client="_gfqcFSt_Ed-y0718eu3OGg" contract="_ge94hCt_Ed-y0718eu3OGg"/>
             <ownedOperation xmi:id="_gnmQESt_Ed-y0718eu3OGg" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_gnmQEit_Ed-y0718eu3OGg" name="arg0" type="_gddcoyt_Ed-y0718eu3OGg"/>
@@ -1697,15 +1696,6 @@
             <ownedOperation xmi:id="_gnydUit_Ed-y0718eu3OGg" name="destroy" visibility="protected"/>
             <ownedOperation xmi:id="_gnydUyt_Ed-y0718eu3OGg" name="disposeExec" visibility="public">
               <ownedParameter xmi:id="_gnydVCt_Ed-y0718eu3OGg" name="arg0" type="_gdxlsit_Ed-y0718eu3OGg"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_gnydVSt_Ed-y0718eu3OGg" name="findWidget" visibility="public">
-              <ownedParameter xmi:id="_gnydVit_Ed-y0718eu3OGg" name="arg0" type="_gdZLNyt_Ed-y0718eu3OGg"/>
-              <ownedParameter xmi:id="_gnydVyt_Ed-y0718eu3OGg" name="return" type="_gevPASt_Ed-y0718eu3OGg" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_gnydWCt_Ed-y0718eu3OGg" name="findWidget" visibility="public">
-              <ownedParameter xmi:id="_gnydWSt_Ed-y0718eu3OGg" name="arg0" type="_gdZLNyt_Ed-y0718eu3OGg"/>
-              <ownedParameter xmi:id="_gnydWit_Ed-y0718eu3OGg" name="arg1" type="_gdZLNyt_Ed-y0718eu3OGg"/>
-              <ownedParameter xmi:id="_gnydWyt_Ed-y0718eu3OGg" name="return" type="_gevPASt_Ed-y0718eu3OGg" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_gnydXCt_Ed-y0718eu3OGg" name="findDisplay" visibility="public" isStatic="true">
               <ownedParameter xmi:id="_gnydXSt_Ed-y0718eu3OGg" name="arg0" type="_gfA70Ct_Ed-y0718eu3OGg"/>
@@ -12506,9 +12496,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_ge_Goit_Ed-y0718eu3OGg" name="FontData" isLeaf="true">
             <generalization xmi:id="_ge_Goyt_Ed-y0718eu3OGg" general="_gdZLNSt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_gh0YPSt_Ed-y0718eu3OGg" name="name" visibility="public" type="_gdZyQCt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_gh0YPit_Ed-y0718eu3OGg" name="height" visibility="public" type="_gdZLNyt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_gh0YPyt_Ed-y0718eu3OGg" name="style" visibility="public" type="_gdZLNyt_Ed-y0718eu3OGg"/>
             <ownedOperation xmi:id="_gh0YQCt_Ed-y0718eu3OGg" name="&lt;init>" visibility="public"/>
             <ownedOperation xmi:id="_gh0YQSt_Ed-y0718eu3OGg" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_gh0YQit_Ed-y0718eu3OGg" name="arg0" type="_gdZyQCt_Ed-y0718eu3OGg"/>
@@ -16298,9 +16285,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_ge1VoCt_Ed-y0718eu3OGg" name="TransferData">
             <generalization xmi:id="_ge1VoSt_Ed-y0718eu3OGg" general="_gdZLNSt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_ghnj6Ct_Ed-y0718eu3OGg" name="type" visibility="public" type="_gdZLNyt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_ghnj6St_Ed-y0718eu3OGg" name="data" visibility="public" type="_ge1VpCt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_ghnj6it_Ed-y0718eu3OGg" name="result" visibility="public" type="_gdZLNyt_Ed-y0718eu3OGg"/>
             <ownedOperation xmi:id="_ghnj6yt_Ed-y0718eu3OGg" name="&lt;init>" visibility="public"/>
           </packagedElement>
         </packagedElement>

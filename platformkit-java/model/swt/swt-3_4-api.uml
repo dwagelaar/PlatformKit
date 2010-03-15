@@ -1036,7 +1036,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_wqvjkSt_Ed-y0718eu3OGg" name="Control" clientDependency="_wqxYwSt_Ed-y0718eu3OGg" isAbstract="true">
             <generalization xmi:id="_wqxYwit_Ed-y0718eu3OGg" general="_wpN5kSt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_w6SbcCt_Ed-y0718eu3OGg" name="handle" visibility="public" type="_woW99it_Ed-y0718eu3OGg"/>
             <interfaceRealization xmi:id="_wqxYwSt_Ed-y0718eu3OGg" supplier="_wpdKICt_Ed-y0718eu3OGg" client="_wqvjkSt_Ed-y0718eu3OGg" contract="_wpdKICt_Ed-y0718eu3OGg"/>
             <ownedOperation xmi:id="_w6SbcSt_Ed-y0718eu3OGg" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_w6Sbcit_Ed-y0718eu3OGg" name="arg0" type="_wodrqSt_Ed-y0718eu3OGg"/>
@@ -1876,15 +1875,6 @@
             <ownedOperation xmi:id="_w6nyoCt_Ed-y0718eu3OGg" name="destroy" visibility="protected"/>
             <ownedOperation xmi:id="_w6nyoSt_Ed-y0718eu3OGg" name="disposeExec" visibility="public">
               <ownedParameter xmi:id="_w6nyoit_Ed-y0718eu3OGg" name="arg0" type="_woqf8yt_Ed-y0718eu3OGg"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_w6nyoyt_Ed-y0718eu3OGg" name="findWidget" visibility="public">
-              <ownedParameter xmi:id="_w6nypCt_Ed-y0718eu3OGg" name="arg0" type="_woW99it_Ed-y0718eu3OGg"/>
-              <ownedParameter xmi:id="_w6nypSt_Ed-y0718eu3OGg" name="return" type="_wpN5kSt_Ed-y0718eu3OGg" direction="return"/>
-            </ownedOperation>
-            <ownedOperation xmi:id="_w6nypit_Ed-y0718eu3OGg" name="findWidget" visibility="public">
-              <ownedParameter xmi:id="_w6nypyt_Ed-y0718eu3OGg" name="arg0" type="_woW99it_Ed-y0718eu3OGg"/>
-              <ownedParameter xmi:id="_w6nyqCt_Ed-y0718eu3OGg" name="arg1" type="_woW99it_Ed-y0718eu3OGg"/>
-              <ownedParameter xmi:id="_w6nyqSt_Ed-y0718eu3OGg" name="return" type="_wpN5kSt_Ed-y0718eu3OGg" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_w6oZsCt_Ed-y0718eu3OGg" name="findWidget" visibility="public">
               <ownedParameter xmi:id="_w6oZsSt_Ed-y0718eu3OGg" name="arg0" type="_wpN5kSt_Ed-y0718eu3OGg"/>
@@ -18828,10 +18818,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_wpeYQCt_Ed-y0718eu3OGg" name="FontData" isLeaf="true">
             <generalization xmi:id="_wpeYQSt_Ed-y0718eu3OGg" general="_woW99Ct_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_wtIwTCt_Ed-y0718eu3OGg" name="name" visibility="public" type="_woXlACt_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_wtIwTSt_Ed-y0718eu3OGg" name="height" visibility="public" type="_wpb8Bit_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_wtIwTit_Ed-y0718eu3OGg" name="style" visibility="public" type="_woW99it_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_wtIwTyt_Ed-y0718eu3OGg" name="atsName" visibility="public" type="_woXlACt_Ed-y0718eu3OGg"/>
             <ownedOperation xmi:id="_wtIwUCt_Ed-y0718eu3OGg" name="&lt;init>" visibility="public"/>
             <ownedOperation xmi:id="_wtIwUSt_Ed-y0718eu3OGg" name="&lt;init>" visibility="public">
               <ownedParameter xmi:id="_wtIwUit_Ed-y0718eu3OGg" name="arg0" type="_woXlACt_Ed-y0718eu3OGg"/>
@@ -22892,9 +22878,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_wpRj8Ct_Ed-y0718eu3OGg" name="TransferData">
             <generalization xmi:id="_wpRj8St_Ed-y0718eu3OGg" general="_woW99Ct_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_ws6t2St_Ed-y0718eu3OGg" name="type" visibility="public" type="_woW99it_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_ws6t2it_Ed-y0718eu3OGg" name="data" visibility="public" type="_wpRj9Ct_Ed-y0718eu3OGg"/>
-            <ownedAttribute xmi:id="_ws6t2yt_Ed-y0718eu3OGg" name="result" visibility="public" type="_woW99it_Ed-y0718eu3OGg"/>
             <ownedOperation xmi:id="_ws6t3Ct_Ed-y0718eu3OGg" name="&lt;init>" visibility="public"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_wpRj9St_Ed-y0718eu3OGg" name="TreeDragSourceEffect">
