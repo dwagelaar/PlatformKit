@@ -888,6 +888,9 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_gtxfsSqyEd-zA8skcmz8uA" name="ref">
+        <eAnnotations xmi:id="_wuybEDAqEd-fGJw3_uK0NQ" source="Jar2UML">
+          <details xmi:id="_wu2FcDAqEd-fGJw3_uK0NQ" key="inferred" value="true"/>
+        </eAnnotations>
         <packagedElement xmi:type="uml:Class" xmi:id="_gtxfsiqyEd-zA8skcmz8uA" name="Reference" isAbstract="true">
           <generalization xmi:id="_gtxfsyqyEd-zA8skcmz8uA" general="_gtkEUyqyEd-zA8skcmz8uA"/>
           <ownedOperation xmi:id="_gz9AMCqyEd-zA8skcmz8uA" name="get" visibility="public">
