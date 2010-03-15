@@ -144,8 +144,8 @@
 		<atl.loadModel modelHandler="EMF" name="ISA"           metamodel="OWL"  uri="${build.uri}/isa.owl"/>
 		<atl.loadModel modelHandler="EMF" name="Java"          metamodel="OWL"  uri="${build.uri}/java.owl"/>
 		<atl.loadModel modelHandler="EMF" name="EmptyOWL"      metamodel="OWL"  uri="${build.uri}/empty.owl"/>
-		<atl.loadModel modelHandler="EMF" name="UML2"          metamodel="MOF"  nsuri="http://www.eclipse.org/uml2/2.0.0/UML"/>
-		<atl.loadModel modelHandler="EMF" name="EmptyUML"      metamodel="UML2" uri="${build.uri}/empty.uml"/>
+		<atl.loadModel modelHandler="UML2" name="UML2"         metamodel="MOF"  nsuri="http://www.eclipse.org/uml2/3.0.0/UML"/>
+		<atl.loadModel modelHandler="UML2" name="EmptyUML"     metamodel="UML2" uri="${build.uri}/empty.uml"/>
 	</target>
 
 </project>
