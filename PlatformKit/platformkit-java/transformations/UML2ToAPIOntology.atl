@@ -22,11 +22,6 @@ helper def : prevModels : Set(UML2!"uml::Model") =
 	UML2!"uml::Model".allInstances()->select(m|
 		thisModule.inElements->excludes(m));
 
---TODO check if removable
---helper def : prevPackages : Set(UML2!"uml::Package") = 
---	UML2!"uml::Package"->allInstances()->select(p|
---		thisModule.inElements->excludes(p));
-
 helper def : includedPackages : Set(UML2!"uml::Package") = 
 	UML2!"uml::Package".allInstancesFrom('IN')
 		->reject(e|e.isInferred)
@@ -133,6 +128,7 @@ helper context UML2!"uml::Package" def : references : Set(UML2!"uml::Package") =
 	self.allOwnedClassifiers
 		->collect(c|c.references)->flatten()->asSet()
 		->collect(r|r.referencesOtherPackageThan(self))->flatten()->asSet()
+		->reject(e|e.isInferred)
 		.debug(thisModule.modelName.prefix + self.qualifiedName + ' referenced packages');
 	
 -- Non-transitive references
@@ -140,7 +136,8 @@ helper context UML2!"uml::Classifier" def : references : Set(UML2!"uml::Classifi
 	self.general->union(
 		self.suppliers->select(s|s.oclIsKindOf(UML2!"uml::Classifier")))->union(
 		self.feature->collect(f|f.referencesOtherThan(self)))
-	->flatten()->asSet();
+	->flatten()->asSet()
+	->reject(e|e.isInferred);
 
 -- ======================================================================
 -- helper attributes for determining compatibility
@@ -148,8 +145,8 @@ helper context UML2!"uml::Classifier" def : references : Set(UML2!"uml::Classifi
 
 helper context UML2!"uml::NamedElement" def : owlClassesInPrev : Sequence(OWL!"owl::OWLClass") =
 	OWL!"owl::OWLClass".allInstances()
-		->select(c|c.localName = self.ontClassName + 'Library')
-		->select(o|o.namespace.name = self.getModel().name);
+		->select(c|c.localName = self.ontClassName)
+		->select(o|o.namespace.name = self.getModel().name.legalOntName);
 
 helper context UML2!"uml::Package" def : compatibleClasses : Sequence(OWL!"owl::OWLClass") =
 	self.compatibleInPrev->collect(p|p.owlClassesInPrev)->flatten();

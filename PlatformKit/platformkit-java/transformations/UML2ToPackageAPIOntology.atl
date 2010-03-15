@@ -34,7 +34,7 @@ rule Model {
 		preverified : Boolean = (jar2uml.details->any(d|d.key='preverified').value = 'true');
 	}
 	to n : OWL!"rdfs::Namespace" (
-		URI <- 'http://soft.vub.ac.be/platformkit/2010/1/' + s.name.legalOntName + '#',
+		URI <- 'http://soft.vub.ac.be/platformkit/2010/1/' + s.name.legalOntName + '.owl#',
 		name <- s.name.legalOntName),
 	   xsd : OWL!"rdfs::Namespace" (
 	   	URI <- 'http://www.w3.org/2001/XMLSchema#',
