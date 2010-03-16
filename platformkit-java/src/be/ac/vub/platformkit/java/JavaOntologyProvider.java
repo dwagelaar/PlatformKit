@@ -30,25 +30,28 @@ import be.ac.vub.platformkit.kb.util.BundleSwitch;
 public class JavaOntologyProvider implements IOntologyProvider {
 
 	private static final String[] ontologies = new String[] {
-		"codamos_2007_01/j2me-midp-1_0-api.owl",
-		"codamos_2007_01/j2me-midp-2_0-api.owl",
-		"codamos_2007_01/personaljava-1_1-api.owl",
-		"codamos_2007_01/jdk-1_1-api.owl",
-		"codamos_2007_01/j2se-1_2-api.owl",
-		"codamos_2007_01/j2me-pp-1_0-api.owl",
-		"codamos_2007_01/j2se-1_3-api.owl",
-		"codamos_2007_01/j2me-pp-1_1-api.owl",
-		"codamos_2007_01/j2se-1_4-api.owl",
-		"codamos_2007_01/j2se-1_5-api.owl",
-		"codamos_2007_01/j2se-1_6-api.owl",
-		"codamos_2007_01/JavaAPI.owl",
-		"platformkit_2009_01/swt-3_0.owl",
-		"platformkit_2009_01/swt-3_1.owl",
-		"platformkit_2009_01/swt-3_2.owl",
-		"platformkit_2009_01/swt-3_3.owl",
-		"platformkit_2009_01/swt-3_4.owl",
-		"platformkit_2009_01/swt-3_5.owl",
-		"platformkit_2009_01/SWTAPI.owl"
+		"platformkit_2010_1/java.owl",
+
+		"platformkit_2010_1/j2me-midp-1_0.owl",
+		"platformkit_2010_1/j2me-midp-2_0.owl",
+		"platformkit_2010_1/personaljava-1_1.owl",
+		"platformkit_2010_1/jdk-1_1.owl",
+		"platformkit_2010_1/j2se-1_2.owl",
+		"platformkit_2010_1/j2me-pp-1_0.owl",
+		"platformkit_2010_1/j2se-1_3.owl",
+		"platformkit_2010_1/j2me-pp-1_1.owl",
+		"platformkit_2010_1/j2se-1_4.owl",
+		"platformkit_2010_1/j2se-5_0.owl",
+		"platformkit_2010_1/java-se-6.owl",
+		"platformkit_2010_1/java-re.owl",
+
+		"platformkit_2010_1/swt-3_0.owl",
+		"platformkit_2010_1/swt-3_1.owl",
+		"platformkit_2010_1/swt-3_2.owl",
+		"platformkit_2010_1/swt-3_3.owl",
+		"platformkit_2010_1/swt-3_4.owl",
+		"platformkit_2010_1/swt-3_5.owl",
+		"platformkit_2010_1/swt.owl"
 	}; //$NON-NLS-1$
 
 	protected static Bundle bundle = BundleSwitch.getBundle(JavaOntologyProvider.class);
