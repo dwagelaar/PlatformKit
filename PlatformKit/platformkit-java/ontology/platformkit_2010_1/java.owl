@@ -30,6 +30,8 @@
             >PlatformKit Java software platform ontology.</rdfs:label>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <rdfs:seeAlso
+            >http://java.sun.com/</rdfs:seeAlso>
         <owl:versionInfo
             >$Id$</owl:versionInfo>
         <rdfs:comment xml:lang="en"
