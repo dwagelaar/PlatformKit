@@ -6,49 +6,49 @@
 	<property name="outmodel.uri" value="${owlmodel.uri}/jre"/>
 
 	<target name="loadModels" depends="loadCommonModels">
-		<atl.loadModel modelHandler="EMF" name="J2ME-MIDP-1_0" metamodel="UML2" uri="${inmodel.uri}/j2me-midp-1_0-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="J2ME-MIDP-2_0" metamodel="UML2" uri="${inmodel.uri}/j2me-midp-2_0-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="J2ME-PP-1_0"   metamodel="UML2" uri="${inmodel.uri}/j2me-pp-1_0-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="J2ME-PP-1_1"   metamodel="UML2" uri="${inmodel.uri}/j2me-pp-1_1-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="PJ-1_1"        metamodel="UML2" uri="${inmodel.uri}/personaljava-1_1-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="JDK-1_1"       metamodel="UML2" uri="${inmodel.uri}/jdk-1_1-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="J2SE-1_2"      metamodel="UML2" uri="${inmodel.uri}/j2se-1_2-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="J2SE-1_3"      metamodel="UML2" uri="${inmodel.uri}/j2se-1_3-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="J2SE-1_4"      metamodel="UML2" uri="${inmodel.uri}/j2se-1_4-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="J2SE-1_5"      metamodel="UML2" uri="${inmodel.uri}/j2se-1_5-api.uml"/>
-		<atl.loadModel modelHandler="EMF" name="J2SE-1_6"      metamodel="UML2" uri="${inmodel.uri}/j2se-1_6-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="J2ME-MIDP-1_0" metamodel="UML2" uri="${inmodel.uri}/j2me-midp-1_0-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="J2ME-MIDP-2_0" metamodel="UML2" uri="${inmodel.uri}/j2me-midp-2_0-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="J2ME-PP-1_0"   metamodel="UML2" uri="${inmodel.uri}/j2me-pp-1_0-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="J2ME-PP-1_1"   metamodel="UML2" uri="${inmodel.uri}/j2me-pp-1_1-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="PJ-1_1"        metamodel="UML2" uri="${inmodel.uri}/personaljava-1_1-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="JDK-1_1"       metamodel="UML2" uri="${inmodel.uri}/jdk-1_1-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="J2SE-1_2"      metamodel="UML2" uri="${inmodel.uri}/j2se-1_2-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="J2SE-1_3"      metamodel="UML2" uri="${inmodel.uri}/j2se-1_3-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="J2SE-1_4"      metamodel="UML2" uri="${inmodel.uri}/j2se-1_4-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="J2SE-5_0"      metamodel="UML2" uri="${inmodel.uri}/j2se-5_0-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="JAVA-SE-6"     metamodel="UML2" uri="${inmodel.uri}/java-se-6-api.uml"/>
 	</target>
 	
 	<target name="pre-transform" depends="loadModels">
 		<nice currentpriority="curpri" newpriority="1"/>
-		<parallel threadCount="8"><!-- start heaviest task first -->
-			<preUML2ToAPIOntology in="J2SE-1_5"      out="preJ2SE-1_5_OWL"      uri="${outmodel.uri}/j2se-1_5-api.owl"/>
-			<preUML2ToAPIOntology in="J2SE-1_4"      out="preJ2SE-1_4_OWL"      uri="${outmodel.uri}/j2se-1_4-api.owl"/>
-			<preUML2ToAPIOntology in="J2SE-1_3"      out="preJ2SE-1_3_OWL"      uri="${outmodel.uri}/j2se-1_3-api.owl"/>
-			<preUML2ToAPIOntology in="J2SE-1_2"      out="preJ2SE-1_2_OWL"      uri="${outmodel.uri}/j2se-1_2-api.owl"/>
-			<preUML2ToAPIOntology in="JDK-1_1"       out="preJDK-1_1_OWL"       uri="${outmodel.uri}/jdk-1_1-api.owl"/>
-			<preUML2ToAPIOntology in="PJ-1_1"        out="prePJ-1_1_OWL"        uri="${outmodel.uri}/personaljava-1_1-api.owl"/>
-			<preUML2ToAPIOntology in="J2ME-PP-1_1"   out="preJ2ME-PP-1_1_OWL"   uri="${outmodel.uri}/j2me-pp-1_1-api.owl"/>
-			<preUML2ToAPIOntology in="J2ME-PP-1_0"   out="preJ2ME-PP-1_0_OWL"   uri="${outmodel.uri}/j2me-pp-1_0-api.owl"/>
-			<preUML2ToAPIOntology in="J2ME-MIDP-2_0" out="preJ2ME-MIDP-2_0_OWL" uri="${outmodel.uri}/j2me-midp-2_0-api.owl"/>
-			<UML2ToAPIOntology    in="J2ME-MIDP-1_0" out="J2ME-MIDP-1_0_OWL"    uri="${outmodel.uri}/j2me-midp-1_0-api.owl"/>
+		<parallel threadsperprocessor="1"><!-- start heaviest task first -->
+			<preUML2ToAPIOntology in="J2SE-5_0"      out="preJ2SE-5_0_OWL"      uri="${outmodel.uri}/j2se-5_0.owl"/>
+			<preUML2ToAPIOntology in="J2SE-1_4"      out="preJ2SE-1_4_OWL"      uri="${outmodel.uri}/j2se-1_4.owl"/>
+			<preUML2ToAPIOntology in="J2SE-1_3"      out="preJ2SE-1_3_OWL"      uri="${outmodel.uri}/j2se-1_3.owl"/>
+			<preUML2ToAPIOntology in="J2SE-1_2"      out="preJ2SE-1_2_OWL"      uri="${outmodel.uri}/j2se-1_2.owl"/>
+			<preUML2ToAPIOntology in="JDK-1_1"       out="preJDK-1_1_OWL"       uri="${outmodel.uri}/jdk-1_1.owl"/>
+			<preUML2ToAPIOntology in="PJ-1_1"        out="prePJ-1_1_OWL"        uri="${outmodel.uri}/personaljava-1_1.owl"/>
+			<preUML2ToAPIOntology in="J2ME-PP-1_1"   out="preJ2ME-PP-1_1_OWL"   uri="${outmodel.uri}/j2me-pp-1_1.owl"/>
+			<preUML2ToAPIOntology in="J2ME-PP-1_0"   out="preJ2ME-PP-1_0_OWL"   uri="${outmodel.uri}/j2me-pp-1_0.owl"/>
+			<preUML2ToAPIOntology in="J2ME-MIDP-2_0" out="preJ2ME-MIDP-2_0_OWL" uri="${outmodel.uri}/j2me-midp-2_0.owl"/>
+			<UML2ToAPIOntology    in="J2ME-MIDP-1_0" out="J2ME-MIDP-1_0_OWL"    uri="${outmodel.uri}/j2me-midp-1_0.owl"/>
 		</parallel>
 		<nice newpriority="${curpri}"/>
 	</target>
 	
 	<target name="transform" depends="pre-transform">
 		<nice currentpriority="curpri" newpriority="1"/>
-		<parallel threadCount="8"><!-- start heaviest task first -->
-			<UML2ToAPIOntology1 in="J2SE-1_6"      prevout="preJ2SE-1_5_OWL"      previn="J2SE-1_5"      out="J2SE-1_6_OWL"              uri="${outmodel.uri}/j2se-1_6-api.owl"/>
-			<UML2ToAPIOntology1 in="J2SE-1_5"      prevout="preJ2SE-1_4_OWL"      previn="J2SE-1_4"      out="J2SE-1_5_OWL"              uri="${outmodel.uri}/j2se-1_5-api.owl"/>
-			<UML2ToAPIOntology2 in="J2SE-1_4"      prevout="preJ2SE-1_3_OWL"      previn="J2SE-1_3"      prevout2="preJ2ME-PP-1_1_OWL"   previn2="J2ME-PP-1_1"                             out="J2SE-1_4_OWL"              uri="${outmodel.uri}/j2se-1_4-api.owl"/>
-			<UML2ToAPIOntology2 in="J2SE-1_3"      prevout="preJ2SE-1_2_OWL"      previn="J2SE-1_2"      prevout2="preJ2ME-PP-1_0_OWL"   previn2="J2ME-PP-1_0"                             out="J2SE-1_3_OWL"              uri="${outmodel.uri}/j2se-1_3-api.owl"/>
-			<UML2ToAPIOntology3 in="J2SE-1_2"      prevout="preJDK-1_1_OWL"       previn="JDK-1_1"       prevout2="prePJ-1_1_OWL"        previn2="PJ-1_1"                                  prevout3="preJ2ME-MIDP-2_0_OWL" previn3="J2ME-MIDP-2_0"                      out="J2SE-1_2_OWL"    uri="${outmodel.uri}/j2se-1_2-api.owl"/>
-			<UML2ToAPIOntology1 in="JDK-1_1"       prevout="prePJ-1_1_OWL"        previn="PJ-1_1"        out="JDK-1_1_OWL"               uri="${outmodel.uri}/jdk-1_1-api.owl"/>
-			<UML2ToAPIOntology1 in="PJ-1_1"        prevout="preJ2ME-MIDP-2_0_OWL" previn="J2ME-MIDP-2_0" out="PJ-1_1_OWL"                uri="${outmodel.uri}/personaljava-1_1-api.owl"/>
-			<UML2ToAPIOntology2 in="J2ME-PP-1_1"   prevout="preJ2SE-1_3_OWL"      previn="J2SE-1_3"      prevout2="preJ2ME-PP-1_0_OWL"   previn2="J2ME-PP-1_0"                             out="J2ME-PP-1_1_OWL"           uri="${outmodel.uri}/j2me-pp-1_1-api.owl"/>
-			<UML2ToAPIOntology3 in="J2ME-PP-1_0"   prevout="preJ2SE-1_2_OWL"      previn="J2SE-1_2"      prevout2="J2ME-MIDP-1_0_OWL"    previn2="J2ME-MIDP-1_0"                           prevout3="preJ2ME-MIDP-2_0_OWL" previn3="J2ME-MIDP-2_0"                      out="J2ME-PP-1_0_OWL" uri="${outmodel.uri}/j2me-pp-1_0-api.owl"/>
-			<UML2ToAPIOntology1 in="J2ME-MIDP-2_0" prevout="J2ME-MIDP-1_0_OWL"    previn="J2ME-MIDP-1_0" out="J2ME-MIDP-2_0_OWL"         uri="${outmodel.uri}/j2me-midp-2_0-api.owl"/>
+		<parallel threadsperprocessor="1"><!-- start heaviest task first -->
+			<UML2ToAPIOntology1 in="JAVA-SE-6"     prevout="preJ2SE-5_0_OWL"      previn="J2SE-5_0"      out="JAVA-SE-6_OWL"             uri="${outmodel.uri}/java-se-6.owl"/>
+			<UML2ToAPIOntology1 in="J2SE-5_0"      prevout="preJ2SE-1_4_OWL"      previn="J2SE-1_4"      out="J2SE-5_0_OWL"              uri="${outmodel.uri}/j2se-5_0.owl"/>
+			<UML2ToAPIOntology2 in="J2SE-1_4"      prevout="preJ2SE-1_3_OWL"      previn="J2SE-1_3"      prevout2="preJ2ME-PP-1_1_OWL"   previn2="J2ME-PP-1_1"                             out="J2SE-1_4_OWL"              uri="${outmodel.uri}/j2se-1_4.owl"/>
+			<UML2ToAPIOntology2 in="J2SE-1_3"      prevout="preJ2SE-1_2_OWL"      previn="J2SE-1_2"      prevout2="preJ2ME-PP-1_0_OWL"   previn2="J2ME-PP-1_0"                             out="J2SE-1_3_OWL"              uri="${outmodel.uri}/j2se-1_3.owl"/>
+			<UML2ToAPIOntology3 in="J2SE-1_2"      prevout="preJDK-1_1_OWL"       previn="JDK-1_1"       prevout2="prePJ-1_1_OWL"        previn2="PJ-1_1"                                  prevout3="preJ2ME-MIDP-2_0_OWL" previn3="J2ME-MIDP-2_0"                      out="J2SE-1_2_OWL"    uri="${outmodel.uri}/j2se-1_2.owl"/>
+			<UML2ToAPIOntology1 in="JDK-1_1"       prevout="prePJ-1_1_OWL"        previn="PJ-1_1"        out="JDK-1_1_OWL"               uri="${outmodel.uri}/jdk-1_1.owl"/>
+			<UML2ToAPIOntology1 in="PJ-1_1"        prevout="preJ2ME-MIDP-2_0_OWL" previn="J2ME-MIDP-2_0" out="PJ-1_1_OWL"                uri="${outmodel.uri}/personaljava-1_1.owl"/>
+			<UML2ToAPIOntology2 in="J2ME-PP-1_1"   prevout="preJ2SE-1_3_OWL"      previn="J2SE-1_3"      prevout2="preJ2ME-PP-1_0_OWL"   previn2="J2ME-PP-1_0"                             out="J2ME-PP-1_1_OWL"           uri="${outmodel.uri}/j2me-pp-1_1.owl"/>
+			<UML2ToAPIOntology3 in="J2ME-PP-1_0"   prevout="preJ2SE-1_2_OWL"      previn="J2SE-1_2"      prevout2="J2ME-MIDP-1_0_OWL"    previn2="J2ME-MIDP-1_0"                           prevout3="preJ2ME-MIDP-2_0_OWL" previn3="J2ME-MIDP-2_0"                      out="J2ME-PP-1_0_OWL" uri="${outmodel.uri}/j2me-pp-1_0.owl"/>
+			<UML2ToAPIOntology1 in="J2ME-MIDP-2_0" prevout="J2ME-MIDP-1_0_OWL"    previn="J2ME-MIDP-1_0" out="J2ME-MIDP-2_0_OWL"         uri="${outmodel.uri}/j2me-midp-2_0.owl"/>
 		</parallel>
 		<nice newpriority="${curpri}"/>
 	</target>
