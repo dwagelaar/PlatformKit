@@ -104,7 +104,7 @@
         <rdfs:comment xml:lang="en"
             >Java class file format major version number.</rdfs:comment>
         <rdfs:domain rdf:resource="&isa;JavaBytecode"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -118,7 +118,7 @@
         <rdfs:comment xml:lang="en"
             >Java class file format minor version number.</rdfs:comment>
         <rdfs:domain rdf:resource="&isa;JavaBytecode"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
