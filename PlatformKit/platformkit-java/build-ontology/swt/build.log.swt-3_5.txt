@@ -1,137 +1,79 @@
-[swt-3_5] swt-3_5::org compatible packages: Sequence {PREVIN!org}
-[swt-3_5] swt-3_5::org::eclipse compatible packages: Sequence {PREVIN!eclipse}
-[swt-3_5] swt-3_5::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
-[swt-3_5] swt-3_5::org::eclipse::swt::accessibility compatible packages: Sequence {PREVIN!accessibility}
-[swt-3_5] swt-3_5::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
-[swt-3_5] swt-3_5::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::browser misses classifiers compatible with : Sequence {PREVIN!Browser}
-[swt-3_5] swt-3_5::org::eclipse::swt::browser compatible packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Composite misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Canvas misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Button misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Control misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::DateTime misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Display misses features compatible with : Sequence {PREVIN!findWidget, PREVIN!findWidget}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::ExpandBar misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Link misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::List misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Spinner misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Table misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Text misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::ToolBar misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets::Tree misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {PREVIN!Composite, PREVIN!Canvas, PREVIN!Button, PREVIN!Control, PREVIN!Combo, PREVIN!Scrollable, PREVIN!CoolBar, PREVIN!DateTime, PREVIN!Decorations, PREVIN!Display, PREVIN!ExpandBar, PREVIN!Group, PREVIN!Label, PREVIN!Link, PREVIN!List, PREVIN!ProgressBar, PREVIN!Sash, PREVIN!Scale, PREVIN!Shell, PREVIN!Slider, PREVIN!Spinner, PREVIN!TabFolder, PREVIN!Table, PREVIN!Text, PREVIN!ToolBar, PREVIN!Tree}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets compatible packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::StyleRange misses dependency suppliers compatible with : Sequence {PREVIN!Cloneable}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom misses classifiers compatible with : Sequence {PREVIN!AnimatedProgress, PREVIN!CBanner, PREVIN!CCombo, PREVIN!CLabel, PREVIN!CTabFolder, PREVIN!SashForm, PREVIN!ScrolledComposite, PREVIN!StyleRange, PREVIN!StyledText, PREVIN!TableCursor, PREVIN!TableTree, PREVIN!ViewForm}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom compatible packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics::FontData misses features compatible with : Sequence {PREVIN!atsName}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics::GC misses features compatible with : Sequence {PREVIN!<init>, PREVIN!<init>, PREVIN!getGCData}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics::Image misses features compatible with : Sequence {PREVIN!data}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics::ImageData misses dependency suppliers compatible with : Sequence {PREVIN!Cloneable}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics::Point misses dependency suppliers compatible with : Sequence {PREVIN!Serializable}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics::RGB misses dependency suppliers compatible with : Sequence {PREVIN!Serializable}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics::Rectangle misses dependency suppliers compatible with : Sequence {PREVIN!Serializable}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {PREVIN!FontData, PREVIN!GC, PREVIN!Image, PREVIN!ImageData, PREVIN!Point, PREVIN!RGB, PREVIN!Rectangle}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics compatible packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::dnd::TransferData misses features compatible with : Sequence {PREVIN!result}
-[swt-3_5] swt-3_5::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {PREVIN!TransferData}
-[swt-3_5] swt-3_5::org::eclipse::swt::dnd compatible packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
-[swt-3_5] swt-3_5::org::eclipse::swt::opengl::GLCanvas misses features compatible with : Sequence {PREVIN!handle}
-[swt-3_5] swt-3_5::org::eclipse::swt::opengl misses classifiers compatible with : Sequence {PREVIN!GLCanvas}
-[swt-3_5] swt-3_5::org::eclipse::swt::opengl compatible packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
-[swt-3_5] swt-3_5::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
-[swt-3_5] swt-3_5::java compatible packages: Sequence {PREVIN!java}
-[swt-3_5] swt-3_5::java::lang compatible packages: Sequence {PREVIN!lang}
-[swt-3_5] swt-3_5::java::util compatible packages: Sequence {PREVIN!util}
-[swt-3_5] swt-3_5::java::io compatible packages: Sequence {PREVIN!io}
-[swt-3_5] swt-3_5::java::awt compatible packages: Sequence {PREVIN!awt}
-[swt-3_5] swt-3_5 misses packages compatible with : Sequence {PREVIN!browser, PREVIN!widgets, PREVIN!custom, PREVIN!graphics, PREVIN!dnd, PREVIN!opengl}
-[swt-3_5] swt-3_5 compatible models: Sequence {}
-[swt-3_5] swt-3_4::org::eclipse::swt::SWT misses features compatible with : Sequence {IN!SHEET, IN!UNDERLINE_LINK, IN!ICON_SEARCH, IN!ICON_CANCEL, IN!ERROR_FUNCTION_DISPOSED, IN!ERROR_FAILED_EVALUATE, IN!ERROR_INVALID_RETURN_VALUE}
-[swt-3_5] swt-3_4::org::eclipse::swt misses classifiers compatible with : Sequence {IN!SWT}
-[swt-3_5] swt-3_5::org::eclipse::swt equivalent packages: Sequence {}
-[swt-3_5] swt-3_4::org::eclipse::swt::accessibility::ACC misses features compatible with : Sequence {IN!ROLE_SPLITBUTTON}
-[swt-3_5] swt-3_4::org::eclipse::swt::accessibility::Accessible misses features compatible with : Sequence {IN!<init>}
-[swt-3_5] swt-3_4::org::eclipse::swt::accessibility misses classifiers compatible with : Sequence {IN!ACC, IN!Accessible}
-[swt-3_5] swt-3_5::org::eclipse::swt::accessibility equivalent packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
-[swt-3_5] swt-3_5::org::eclipse::swt::events equivalent packages: Sequence {PREVIN!events}
-[swt-3_5] swt-3_5::org::eclipse::swt::layout equivalent packages: Sequence {PREVIN!layout}
-[swt-3_5] swt-3_4::org::eclipse::swt::printing::PrinterData misses features compatible with : Sequence {IN!orientation, IN!PORTRAIT, IN!LANDSCAPE}
-[swt-3_5] swt-3_4::org::eclipse::swt::printing misses classifiers compatible with : Sequence {IN!PrinterData}
-[swt-3_5] swt-3_5::org::eclipse::swt::printing equivalent packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
-[swt-3_5] swt-3_5::java::lang equivalent packages: Sequence {PREVIN!lang}
-[swt-3_5] swt-3_5::java::util equivalent packages: Sequence {PREVIN!util}
-[swt-3_5] swt-3_5::java::io equivalent packages: Sequence {PREVIN!io}
-[swt-3_5] swt-3_5::org equivalent packages: Sequence {PREVIN!org}
-[swt-3_5] swt-3_5::org::eclipse equivalent packages: Sequence {PREVIN!eclipse}
-[swt-3_5] swt-3_5::org::eclipse::swt::browser equivalent packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::custom equivalent packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics equivalent packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::dnd equivalent packages: Sequence {}
-[swt-3_5] swt-3_5::org::eclipse::swt::opengl equivalent packages: Sequence {}
-[swt-3_5] swt-3_5::java equivalent packages: Sequence {PREVIN!java}
-[swt-3_5] swt-3_5::java::awt equivalent packages: Sequence {PREVIN!awt}
-[swt-3_5] swt-3_5 misses packages equivalent with : Sequence {PREVIN!swt, PREVIN!accessibility, PREVIN!browser, PREVIN!widgets, PREVIN!custom, PREVIN!graphics, PREVIN!dnd, PREVIN!opengl, PREVIN!printing}
-[swt-3_5] swt-3_5 equivalent models: Sequence {}
-[swt-3_5] Package: 'OrgEclipseSwtLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt referenced packages: Set {IN!lang}
-[swt-3_5] Package: 'OrgEclipseSwtAccessibilityLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::accessibility referenced packages: Set {IN!lang, IN!widgets}
-[swt-3_5] Package: 'OrgEclipseSwtAwtLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::awt referenced packages: Set {IN!lang, IN!widgets}
-[swt-3_5] Package: 'OrgEclipseSwtBrowserLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::browser referenced packages: Set {IN!events, IN!graphics, IN!lang, IN!widgets}
-[swt-3_5] Package: 'OrgEclipseSwtEventsLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::events referenced packages: Set {IN!lang, IN!graphics, IN!widgets}
-[swt-3_5] Package: 'OrgEclipseSwtWidgetsLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::widgets referenced packages: Set {IN!lang, IN!events, IN!accessibility, IN!graphics}
-[swt-3_5] Package: 'OrgEclipseSwtCustomLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::custom referenced packages: Set {IN!lang, IN!events, IN!dnd, IN!widgets, IN!printing, IN!graphics}
-[swt-3_5] Package: 'OrgEclipseSwtGraphicsLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::graphics referenced packages: Set {IN!io, IN!lang}
-[swt-3_5] Package: 'OrgEclipseSwtDndLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::dnd referenced packages: Set {IN!events, IN!graphics, IN!lang, IN!widgets}
-[swt-3_5] Package: 'OrgEclipseSwtLayoutLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::layout referenced packages: Set {IN!graphics, IN!lang, IN!widgets}
-[swt-3_5] Package: 'OrgEclipseSwtOpenglLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::opengl referenced packages: Set {IN!lang, IN!widgets}
-[swt-3_5] Package: 'OrgEclipseSwtPrintingLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::printing referenced packages: Set {IN!graphics, IN!widgets}
-[swt-3_5] Package: 'OrgEclipseSwtProgramLibrary'
-[swt-3_5] swt-3_5::org::eclipse::swt::program referenced packages: Set {IN!graphics, IN!lang}
-[swt-3_5] Package: 'JavaLangLibrary'
-[swt-3_5] swt-3_5::java::lang referenced packages: Set {}
-[swt-3_5] Package: 'JavaUtilLibrary'
-[swt-3_5] swt-3_5::java::util referenced packages: Set {}
-[swt-3_5] Package: 'JavaIoLibrary'
-[swt-3_5] swt-3_5::java::io referenced packages: Set {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::SWT misses features compatible with : Sequence {IN!SHEET, IN!UNDERLINE_LINK, IN!ICON_SEARCH, IN!ICON_CANCEL, IN!ERROR_FUNCTION_DISPOSED, IN!ERROR_FAILED_EVALUATE, IN!ERROR_INVALID_RETURN_VALUE}
+[SWT 3.5] SWT 3.4::org::eclipse::swt misses classifiers compatible with : Sequence {IN!SWT}
+[SWT 3.5] SWT 3.5::org::eclipse::swt equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::accessibility compatible packages: Sequence {PREVIN!accessibility}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::accessibility::ACC misses features compatible with : Sequence {IN!ROLE_SPLITBUTTON}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::accessibility::Accessible misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::accessibility misses classifiers compatible with : Sequence {IN!ACC, IN!Accessible}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::accessibility equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getModified, IN!setModified}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Shell}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!getCookie, IN!setCookie, IN!addAuthenticationListener, IN!evaluate, IN!getBrowserType, IN!getJavascriptEnabled, IN!removeAuthenticationListener, IN!setJavascriptEnabled}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::LocationEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::ProgressEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::StatusTextEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::TitleEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::WindowEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!AuthenticationEvent, IN!AuthenticationListener, IN!Browser, IN!BrowserFunction, IN!LocationEvent, IN!ProgressEvent, IN!StatusTextEvent, IN!TitleEvent, IN!WebBrowser, IN!EvaluateFunction, IN!WindowEvent}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::events equivalent packages: Sequence {PREVIN!events}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::graphics compatible packages: Sequence {PREVIN!graphics}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::graphics::TextStyle misses features compatible with : Sequence {IN!data}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::graphics::Font misses features compatible with : Sequence {IN!extraTraits}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {IN!TextStyle, IN!Font}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::custom::ST misses features compatible with : Sequence {IN!TOGGLE_BLOCKSELECTION}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::custom::StyleRange misses features compatible with : Sequence {IN!data}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!addCaretListener, IN!getMarginColor, IN!getBlockSelection, IN!getBlockSelectionBounds, IN!getBottomMargin, IN!getLeftMargin, IN!getRightMargin, IN!getSelectionRanges, IN!getTopMargin, IN!removeCaretListener, IN!setBlockSelection, IN!setBlockSelectionBounds, IN!setBlockSelectionBounds, IN!setBottomMargin, IN!setLeftMargin, IN!setMarginColor, IN!setMargins, IN!setRightMargin, IN!setTopMargin}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!CaretEvent, IN!CaretListener, IN!ST, IN!StyleRange, IN!StyledText}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::custom equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::printing::PrinterData misses features compatible with : Sequence {IN!orientation, IN!PORTRAIT, IN!LANDSCAPE}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::printing misses classifiers compatible with : Sequence {IN!PrinterData}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::printing equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::dnd::DragSourceEvent misses features compatible with : Sequence {IN!offsetX, IN!offsetY}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {IN!DragSourceEvent}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::layout equivalent packages: Sequence {PREVIN!layout}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::opengl compatible packages: Sequence {PREVIN!opengl}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::opengl::GLData misses features compatible with : Sequence {IN!shareContext}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::opengl misses classifiers compatible with : Sequence {IN!GLData}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::opengl equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
+[SWT 3.5] Package: 'OrgEclipseSwt'
+[SWT 3.5] SWT 3.5::org::eclipse::swt referenced packages: Sequence {}
+[SWT 3.5] Package: 'OrgEclipseSwtAccessibility'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtWidgets'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets referenced packages: Sequence {IN!accessibility, IN!graphics, IN!events}
+[SWT 3.5] Package: 'OrgEclipseSwtAwt'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtBrowser'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::browser referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtEvents'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtGraphics'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.5] Package: 'OrgEclipseSwtCustom'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!dnd, IN!graphics, IN!events, IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::printing referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtDnd'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtLayout'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtOpengl'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtProgram'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}

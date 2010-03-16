@@ -5,19 +5,13 @@
 	<property name="inmodel.uri" value="${umlmodel.uri}/swt"/>
 	<property name="outmodel.uri" value="${owlmodel.uri}/swt"/>
 
-	<target name="loadModels">
-		<atl.loadModel modelHandler="EMF" name="OWL"           metamodel="MOF"  nsuri="http:///org/eclipse/owl.ecore"/>
-		<atl.loadModel modelHandler="EMF" name="Platform"      metamodel="OWL"  uri="${build.uri}/Platform.owl"/>
-		<atl.loadModel modelHandler="EMF" name="Java"          metamodel="OWL"  uri="${build.uri}/Java.owl"/>
-		<atl.loadModel modelHandler="EMF" name="EmptyOWL"      metamodel="OWL"  uri="${build.uri}/empty.owl"/>
-		<atl.loadModel modelHandler="EMF" name="UML2"          metamodel="MOF"  nsuri="http://www.eclipse.org/uml2/2.0.0/UML"/>
-		<atl.loadModel modelHandler="EMF" name="EmptyUML"      metamodel="UML2" uri="${build.uri}/empty.uml"/>
-		<atl.loadModel modelHandler="EMF" name="SWT-3_0"       metamodel="UML2" uri="${inmodel.uri}/swt-3_0.uml"/>
-		<atl.loadModel modelHandler="EMF" name="SWT-3_1"       metamodel="UML2" uri="${inmodel.uri}/swt-3_1.uml"/>
-		<atl.loadModel modelHandler="EMF" name="SWT-3_2"       metamodel="UML2" uri="${inmodel.uri}/swt-3_2.uml"/>
-		<atl.loadModel modelHandler="EMF" name="SWT-3_3"       metamodel="UML2" uri="${inmodel.uri}/swt-3_3.uml"/>
-		<atl.loadModel modelHandler="EMF" name="SWT-3_4"       metamodel="UML2" uri="${inmodel.uri}/swt-3_4.uml"/>
-		<atl.loadModel modelHandler="EMF" name="SWT-3_5"       metamodel="UML2" uri="${inmodel.uri}/swt-3_5.uml"/>
+	<target name="loadModels" depends="loadCommonModels">
+		<atl.loadModel modelHandler="UML2" name="SWT-3_0"       metamodel="UML2" uri="${inmodel.uri}/swt-3_0-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="SWT-3_1"       metamodel="UML2" uri="${inmodel.uri}/swt-3_1-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="SWT-3_2"       metamodel="UML2" uri="${inmodel.uri}/swt-3_2-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="SWT-3_3"       metamodel="UML2" uri="${inmodel.uri}/swt-3_3-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="SWT-3_4"       metamodel="UML2" uri="${inmodel.uri}/swt-3_4-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="SWT-3_5"       metamodel="UML2" uri="${inmodel.uri}/swt-3_5-api.uml"/>
 	</target>
 	
 	<target name="pre-transform" depends="loadModels">
