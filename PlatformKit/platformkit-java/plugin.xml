@@ -137,12 +137,12 @@
            name="%apiModel.name.2">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_5-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-5_0-api.uml"
            category="%apiModel.category.3"
            name="%apiModel.name.3">
      </apiModel>
      <apiModel
-           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_6-api.uml"
+           emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/java-se-6-api.uml"
            category="%apiModel.category.4"
            name="%apiModel.name.4">
      </apiModel>
