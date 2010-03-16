@@ -29,21 +29,13 @@ import be.ac.vub.platformkit.kb.util.BundleSwitch;
 public class BaseOntologyProvider implements IOntologyProvider {
 
 	private static final String[] ontologies = new String[] {
-		"codamos_2005_01/Units.owl",
-		"codamos_2006_01/Environment.owl",
-		"codamos_2006_01/Platform.owl",
-		"codamos_2006_01/Service.owl",
-		"codamos_2006_01/User.owl",
-		"codamos_2006_01/Context.owl",
-		"codamos_2007_01/Platform.owl",
-
-		"codamos_2006_01/Corba.owl",
-		"codamos_2006_01/Java.owl",
-		"codamos_2006_01/OperatingSystems.owl",
-		"davy_2006_01/Component.owl",
-		"davy_2006_01/Draco.owl",
-		"codamos_2007_01/PackageManagers.owl",
-		"codamos_2007_01/Java.owl"
+		"platformkit_2010_1/platform.owl",
+		"platformkit_2010_1/io.owl",
+		"platformkit_2010_1/resource.owl",
+		"platformkit_2010_1/isa.owl",
+		"platformkit_2010_1/os.owl",
+		"platformkit_2010_1/arm.owl",
+		"platformkit_2010_1/x86.owl"
 	};
 
 	protected static Bundle bundle = BundleSwitch.getBundle(BaseOntologyProvider.class);
