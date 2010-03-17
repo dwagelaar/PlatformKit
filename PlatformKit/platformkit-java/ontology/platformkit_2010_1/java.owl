@@ -30,12 +30,12 @@
             >PlatformKit Java software platform ontology.</rdfs:label>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <rdfs:comment xml:lang="en"
+            >Describes the parts of the Java software platform.</rdfs:comment>
         <rdfs:seeAlso
             >http://java.sun.com/</rdfs:seeAlso>
         <owl:versionInfo
             >$Id$</owl:versionInfo>
-        <rdfs:comment xml:lang="en"
-            >Describes the parts of the Java software platform.</rdfs:comment>
         <dc:rights xml:lang="en"
             >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
         <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/isa.owl"/>
@@ -163,13 +163,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&platform;providesFeature"/>
-                <owl:someValuesFrom rdf:resource="#JavaVM"/>
+                <owl:someValuesFrom rdf:resource="#JavaClassLibrary"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&platform;providesFeature"/>
-                <owl:someValuesFrom rdf:resource="#JavaClassLibrary"/>
+                <owl:someValuesFrom rdf:resource="#JavaVM"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso
@@ -204,6 +204,18 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaApplet -->
+
+    <owl:Class rdf:about="#JavaApplet">
+        <rdfs:subClassOf rdf:resource="#JavaInstaller"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Java_applet</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Java SE/ME Applet runner.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaClassLibrary -->
 
     <owl:Class rdf:about="#JavaClassLibrary">
@@ -222,6 +234,39 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaInstaller -->
+
+    <owl:Class rdf:about="#JavaInstaller">
+        <rdfs:subClassOf rdf:resource="&platform;Installer"/>
+        <rdfs:comment xml:lang="en"
+            >Java software installer.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaOSGiBundle -->
+
+    <owl:Class rdf:about="#JavaOSGiBundle">
+        <rdfs:subClassOf rdf:resource="#JavaClassLibrary"/>
+        <rdfs:seeAlso xml:lang="en"
+            >Java OSGi bundle.</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Osgi#Bundles</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaPackageManager -->
+
+    <owl:Class rdf:about="#JavaPackageManager">
+        <rdfs:subClassOf rdf:resource="#JavaInstaller"/>
+        <rdfs:subClassOf rdf:resource="&platform;PackageManager"/>
+        <rdfs:comment xml:lang="en"
+            >Java software package manager.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaVM -->
 
     <owl:Class rdf:about="#JavaVM">
@@ -236,6 +281,54 @@
             >http://en.wikipedia.org/wiki/Java_virtual_machine</rdfs:seeAlso>
         <rdfs:comment xml:lang="en"
             >Java virtual machine. Typically implements a specific Java bytecode format.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#MIDlet -->
+
+    <owl:Class rdf:about="#MIDlet">
+        <rdfs:subClassOf rdf:resource="#JavaInstaller"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/MIDlet</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Java ME MIDlet installer/runner.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#OSGi -->
+
+    <owl:Class rdf:about="#OSGi">
+        <rdfs:subClassOf rdf:resource="#JavaPackageManager"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Osgi</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >The Java OSGi framework.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#WebApplet -->
+
+    <owl:Class rdf:about="#WebApplet">
+        <rdfs:subClassOf rdf:resource="#JavaApplet"/>
+        <rdfs:comment xml:lang="en"
+            >Java SE/ME Applet runner with web browser plugin support.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Java_applet</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#WebStart -->
+
+    <owl:Class rdf:about="#WebStart">
+        <rdfs:subClassOf rdf:resource="#JavaInstaller"/>
+        <rdfs:comment xml:lang="en"
+            >Java SE Web Start runner.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Webstart</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -267,6 +360,12 @@
         <rdfs:seeAlso
             >http://en.wikipedia.org/wiki/Software_framework</rdfs:seeAlso>
     </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Installer -->
+
+    <owl:Class rdf:about="&platform;Installer"/>
     
 
 
