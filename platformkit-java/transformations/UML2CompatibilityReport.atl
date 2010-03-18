@@ -764,7 +764,7 @@ rule MissingProperty {
 -- Copy all LiteralUnlimitedNaturals in DEPS that are contained in a Property or Parameter.
 rule LiteralUnlimitedNatural {
     from s : UML2!"uml::LiteralUnlimitedNatural" (
-    	if thisModule.depsElements->includes(self) then
+    	if thisModule.depsElements->includes(s) then
 			let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
 			if p.oclIsTypeOf(UML2!"uml::Property") then true
 			else p.oclIsKindOf(UML2!"uml::Parameter") endif
@@ -779,7 +779,7 @@ rule LiteralUnlimitedNatural {
 -- Copy all LiteralIntegers in DEPS that are contained in a Property or Parameter.
 rule LiteralInteger {
     from s : UML2!"uml::LiteralInteger" (
-    	if thisModule.depsElements->includes(self) then
+    	if thisModule.depsElements->includes(s) then
 			let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
 			if p.oclIsTypeOf(UML2!"uml::Property") then true
 			else p.oclIsKindOf(UML2!"uml::Parameter") endif
