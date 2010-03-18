@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qG2Y0Cq7Ed-5d_a0R-B5Hg" name="J2ME PP 1.0">
   <eAnnotations xmi:id="_qW3x0Sq7Ed-5d_a0R-B5Hg" source="Jar2UML">
-    <details xmi:id="_qW3x0iq7Ed-5d_a0R-B5Hg" key="majorBytecodeFormatVersion" value="45"/>
-    <details xmi:id="_qW3x0yq7Ed-5d_a0R-B5Hg" key="minorBytecodeFormatVersion" value="3"/>
+    <details xmi:id="_qW3x0iq7Ed-5d_a0R-B5Hg" key="majorBytecodeFormatVersion" value="47"/>
+    <details xmi:id="_qW3x0yq7Ed-5d_a0R-B5Hg" key="minorBytecodeFormatVersion" value="0"/>
     <details xmi:id="_qW3x1Cq7Ed-5d_a0R-B5Hg" key="preverified" value="false"/>
   </eAnnotations>
   <ownedComment xmi:id="_qW3x0Cq7Ed-5d_a0R-B5Hg">
