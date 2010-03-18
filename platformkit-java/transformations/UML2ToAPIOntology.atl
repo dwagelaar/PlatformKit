@@ -70,15 +70,15 @@ helper def : comprisesInterfacePart : OWL!"owl::OWLObjectProperty" =
 		->any(p|p.localName = 'comprisesInterfacePart');
 
 helper def : majorVersionNumber : OWL!"owl::OWLDatatypeProperty" =
-	OWL!"owl::OWLObjectProperty".allInstancesFrom('JAVA')
+	OWL!"owl::OWLDatatypeProperty".allInstancesFrom('JAVA')
 		->any(p|p.localName = 'majorVersionNumber');
 
 helper def : minorVersionNumber : OWL!"owl::OWLDatatypeProperty" =
-	OWL!"owl::OWLObjectProperty".allInstancesFrom('JAVA')
+	OWL!"owl::OWLDatatypeProperty".allInstancesFrom('JAVA')
 		->any(p|p.localName = 'minorVersionNumber');
 
 helper def : preverified : OWL!"owl::OWLDatatypeProperty" =
-	OWL!"owl::OWLObjectProperty".allInstancesFrom('JAVA')
+	OWL!"owl::OWLDatatypeProperty".allInstancesFrom('JAVA')
 		->any(p|p.localName = 'preverified');
 
 helper def : platformOntology : Set(OWL!"owl::OWLOntology") = 
@@ -148,11 +148,33 @@ helper context UML2!"uml::NamedElement" def : owlClassesInPrev : Sequence(OWL!"o
 		->select(c|c.localName = self.ontClassName)
 		->select(o|o.namespace.name = self.getModel().name.legalOntName);
 
+helper context UML2!"uml::NamedElement" def : owlApiClassesInPrev : Sequence(OWL!"owl::OWLClass") =
+	OWL!"owl::OWLClass".allInstances()
+		->select(c|c.localName = self.ontClassName + 'API')
+		->select(o|o.namespace.name = self.getModel().name.legalOntName);
+
+helper context UML2!"uml::NamedElement" def : owlLibraryClassesInPrev : Sequence(OWL!"owl::OWLClass") =
+	OWL!"owl::OWLClass".allInstances()
+		->select(c|c.localName = self.ontClassName + 'ClassLibrary')
+		->select(o|o.namespace.name = self.getModel().name.legalOntName);
+
 helper context UML2!"uml::Package" def : compatibleClasses : Sequence(OWL!"owl::OWLClass") =
 	self.compatibleInPrev->collect(p|p.owlClassesInPrev)->flatten();
 
 helper context UML2!"uml::Package" def : equivalentClasses : Sequence(OWL!"owl::OWLClass") =
 	self.equivalentInPrev->collect(p|p.owlClassesInPrev)->flatten();
+
+helper context UML2!"uml::Package" def : compatibleApiClasses : Sequence(OWL!"owl::OWLClass") =
+	self.compatibleInPrev->collect(p|p.owlApiClassesInPrev)->flatten();
+
+helper context UML2!"uml::Package" def : equivalentApiClasses : Sequence(OWL!"owl::OWLClass") =
+	self.equivalentInPrev->collect(p|p.owlApiClassesInPrev)->flatten();
+
+helper context UML2!"uml::Package" def : compatibleLibraryClasses : Sequence(OWL!"owl::OWLClass") =
+	self.compatibleInPrev->collect(p|p.owlLibraryClassesInPrev)->flatten();
+
+helper context UML2!"uml::Package" def : equivalentLibraryClasses : Sequence(OWL!"owl::OWLClass") =
+	self.equivalentInPrev->collect(p|p.owlLibraryClassesInPrev)->flatten();
 
 -- ======================================================================
 -- helper attributes end
@@ -216,6 +238,44 @@ rule APISlot(p : UML2!"uml::Package") {
 		content <- thisModule.resolveTemp(p, 'apiPart'))
 	do {
 		t;
+	}
+}
+
+rule APIClass(s : UML2!"uml::Model") {
+	to apiClass : OWL!"owl::OWLClass" (
+	   	localName <- s.name.legalOntClassName + 'API',
+		RDFSSubClassOf <- Sequence{thisModule.javaAPI},
+		OWLEquivalentClass <- Sequence{apiRestriction},
+		RDFSComment <- Sequence{apiComment},
+		namespace <- s),
+	   apiComment : OWL!"rdfs::PlainLiteral" (
+	   	language <- 'en',
+		lexicalForm <- s.name + ' API'),
+	   apiRestriction : OWL!"owl::IntersectionClass" (
+	   	OWLIntersectionOf <- thisModule.includedPackages
+			->collect(p|thisModule.APIRestriction(p)),
+		namespace <- s)
+	do {
+		apiClass;
+	}
+}
+
+rule LibraryClass(s : UML2!"uml::Model", apiClass : OWL!"owl::OWLClass") {
+	to libraryClass : OWL!"owl::OWLClass" (
+	   	localName <- s.name.legalOntClassName + 'ClassLibrary',
+		RDFSSubClassOf <- Sequence{thisModule.javaLibrary},
+		OWLEquivalentClass <- Sequence{libraryRestriction},
+		RDFSComment <- Sequence{libraryComment},
+		namespace <- s),
+	   libraryComment : OWL!"rdfs::PlainLiteral" (
+	   	language <- 'en',
+		lexicalForm <- 'Java class library implementing the ' + s.name + ' API'),
+	   libraryRestriction : OWL!"owl::SomeValuesFromRestriction" (
+	   	OWLOnProperty <- thisModule.implementsInterface,
+		OWLSomeValuesFrom <- apiClass,
+		namespace <- s)
+	do {
+		Sequence{apiClass, libraryClass};
 	}
 }
 

@@ -10,7 +10,7 @@ uses UML2;
 -- ======================================================================
 
 helper def : UML2ComparisonVersionString : String =
-	'$Id:UML2Comparison.atl 7084 2007-07-10 13:19:05Z dwagelaa $';
+	'$Id$';
 
 -- All Package instances
 helper def : allPackages : Set(UML2!"uml::Package") = 
