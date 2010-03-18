@@ -107,7 +107,7 @@ helper context UML2!"uml::NamedElement" def : ontClassName : String =
 	if self.owner.oclIsTypeOf(UML2!"uml::Package") then
 		self.owner.ontClassName
 	else '' endif
-	+ self.name.legalOntClassName; --TODO test
+	+ self.name.legalOntClassName;
 
 helper context String def : legalOntClassName : String =
 	self
@@ -158,6 +158,11 @@ helper context UML2!"uml::NamedElement" def : owlLibraryClassesInPrev : Sequence
 		->select(c|c.localName = self.ontClassName + 'ClassLibrary')
 		->select(o|o.namespace.name = self.getModel().name.legalOntName);
 
+helper context UML2!"uml::NamedElement" def : owlBytecodeClassesInPrev : Sequence(OWL!"owl::OWLClass") =
+	OWL!"owl::OWLClass".allInstances()
+		->select(c|c.localName = self.ontClassName + 'BytecodeFormat')
+		->select(o|o.namespace.name = self.getModel().name.legalOntName);
+
 helper context UML2!"uml::Package" def : compatibleClasses : Sequence(OWL!"owl::OWLClass") =
 	self.compatibleInPrev->collect(p|p.owlClassesInPrev)->flatten();
 
@@ -175,6 +180,12 @@ helper context UML2!"uml::Package" def : compatibleLibraryClasses : Sequence(OWL
 
 helper context UML2!"uml::Package" def : equivalentLibraryClasses : Sequence(OWL!"owl::OWLClass") =
 	self.equivalentInPrev->collect(p|p.owlLibraryClassesInPrev)->flatten();
+
+helper context UML2!"uml::Model" def : compatibleBytecodeClasses : Sequence(OWL!"owl::OWLClass") =
+	self.bytecodeCompatibleInPrev->collect(p|p.owlBytecodeClassesInPrev)->flatten();
+
+helper context UML2!"uml::Package" def : equivalentBytecodeClasses : Sequence(OWL!"owl::OWLClass") =
+	self.bytecodeEquivalentInPrev->collect(p|p.owlBytecodeClassesInPrev)->flatten();
 
 -- ======================================================================
 -- helper attributes end
@@ -276,6 +287,63 @@ rule LibraryClass(s : UML2!"uml::Model", apiClass : OWL!"owl::OWLClass") {
 		namespace <- s)
 	do {
 		Sequence{apiClass, libraryClass};
+	}
+}
+
+rule BytecodeClass(s : UML2!"uml::Model", 
+				   integer : OWL!"rdfs::RDFSDatatype",
+				   boolean : OWL!"rdfs::RDFSDatatype") {
+	using {
+		jar2uml : UML2!"ecore::EAnnotation" = s.getEAnnotation('Jar2UML');
+		majorVersion : Integer = s.bytecodeMajorVersion;
+		minorVersion : Integer = s.bytecodeMinorVersion;
+		preverified : Boolean = s.bytecodePreverified;
+		superClasses : Sequence(OWL!"owl::OWLClass") = 
+			s.compatibleBytecodeClasses->select(c|s.equivalentBytecodeClasses->excludes(c));
+	}
+	to bytecodeClass : OWL!"owl::OWLClass" (
+	   	localName <- s.name.legalOntClassName + 'BytecodeFormat',
+		RDFSSubClassOf <- if superClasses->isEmpty() then Sequence{thisModule.javaBytecode}
+	   		else superClasses endif,
+		OWLEquivalentClass <- s.equivalentBytecodeClasses,
+		RDFSComment <- Sequence{bytecodeComment, bytecodeRestriction},
+		namespace <- s),
+	   bytecodeComment : OWL!"rdfs::PlainLiteral" (
+	   	language <- 'en',
+		lexicalForm <- s.name + ' bytecode format'),
+	   bytecodeInstance : OWL!"owl::Individual" (
+	   	localName <- 'the' + bytecodeClass.localName,
+	   	RDFType <- bytecodeClass,
+		datatypeSlot <- Sequence{
+	   		bytecodeMajorVersionSlot, 
+			bytecodeMinorVersionSlot, 
+			bytecodePreverifiedSlot},
+	   	namespace <- s),
+	   bytecodeMajorVersionSlot : OWL!"owl::DatatypeSlot" (
+	   	property <- thisModule.majorVersionNumber,
+		content <- bytecodeMajorVersionValue),
+	   bytecodeMajorVersionValue : OWL!"rdfs::TypedLiteral" (
+	   	datatype <- integer,
+		lexicalForm <- majorVersion.toString(),
+		namespace <- s),
+	   bytecodeMinorVersionSlot : OWL!"owl::DatatypeSlot" (
+	   	property <- thisModule.minorVersionNumber,
+		content <- bytecodeMinorVersionValue),
+	   bytecodeMinorVersionValue : OWL!"rdfs::TypedLiteral" (
+	   	datatype <- integer,
+		lexicalForm <- minorVersion.toString()),
+	   bytecodePreverifiedSlot : OWL!"owl::DatatypeSlot" (
+	   	property <- thisModule.preverified,
+		content <- bytecodePreverifiedValue),
+	   bytecodePreverifiedValue : OWL!"rdfs::TypedLiteral" (
+	   	datatype <- boolean,
+		lexicalForm <- if preverified then 'true' else 'false' endif),
+--!!! EODM does not support restricted data types !!!
+	   bytecodeRestriction : OWL!"rdfs::PlainLiteral" (
+	   	language <- 'OWLManchester',
+		lexicalForm <- 'java:majorVersionNumber some xsd:integer[>="' + majorVersion + '"^^xsd:integer]')
+	do {
+		Sequence{bytecodeClass, bytecodeInstance};
 	}
 }
 

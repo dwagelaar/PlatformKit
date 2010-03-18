@@ -113,6 +113,30 @@ helper context UML2!"uml::Package" def : allOther : Sequence(UML2!"uml::Package"
 	thisModule.allPackages
 		->reject(p|p=self);
 
+-- ------------------------ jar2umlAnnotation -----------------------------
+
+-- The "Jar2UML" EAnnotation, if any.
+helper context UML2!"uml::Model" def : jar2umlAnnotation : UML2!"ecore::EAnnotation" =
+	self.getEAnnotation('Jar2UML');
+
+-- ------------------------ bytecodeMajorVersion --------------------------
+
+-- The bytecode format major version specified for the API library.
+helper context UML2!"uml::Model" def : bytecodeMajorVersion : Integer =
+	self.jar2umlAnnotation.details->any(d|d.key='majorBytecodeFormatVersion').value;
+
+-- ------------------------ bytecodeMinorVersion ------------------------
+
+-- The bytecode format minor version specified for the API library.
+helper context UML2!"uml::Model" def : bytecodeMinorVersion : Integer =
+	self.jar2umlAnnotation.details->any(d|d.key='minorBytecodeFormatVersion').value;
+
+-- ------------------------ bytecodePreverified -------------------------
+
+-- Whether the bytecode for the API library was preverified.
+helper context UML2!"uml::Model" def : bytecodePreverified : Boolean =
+	self.jar2umlAnnotation.details->any(d|d.key='preverified').value = 'true';
+
 -- ======================================================================
 -- helper attributes for determining compatibility
 -- ======================================================================
@@ -149,14 +173,6 @@ helper context UML2!"uml::Classifier" def : allFeatures : Set(UML2!"uml::Feature
 		->union(self.suppliers
 			->select(s|s.oclIsKindOf(UML2!"uml::Classifier"))
 			->collect(c|c.allFeatures)->flatten()->asSet());
-
--- ------------------------ owlClassesInPrev ----------------------------
-
--- All OWLClasses that represent self (usually only one).
-helper context UML2!"uml::NamedElement" def : owlClassesInPrev : Sequence(OWL!"owl::OWLClass") =
-	OWL!"owl::OWLClass".allInstances()
-		->select(c|c.localName = self.ontClassName + 'Library')
-		->select(o|o.namespace.name = self.getModel().name);
 
 -- ------------------------ compatibleInPrev ----------------------------
 
@@ -209,6 +225,18 @@ helper context UML2!"uml::Classifier" def : locallyCompatibleInPrev : Sequence(U
 	self.getNearestPackage().locallyCompatibleInPrev
 		->collect(p1|p1.allOwnedClassifiers)->flatten()
 		->select(c|self.isLocallyCompatibleWith(c));
+
+-- ------------------------ bytecodeCompatibleInPrev --------------------
+
+-- All Models other than self that have a bytecode format that is supported by self
+helper context UML2!"uml::Model" def : bytecodeCompatibleInPrev : Sequence(UML2!"uml::Model") =
+	self.allOther->select(m|self.bytecodeSupportCompatibleWith(m));
+
+-- ------------------------ bytecodeEquivalentInPrev --------------------
+
+-- All Models other than self that have the same bytecode format
+helper context UML2!"uml::Model" def : bytecodeEquivalentInPrev : Sequence(UML2!"uml::Model") =
+	self.bytecodeCompatibleInPrev->select(m|m.bytecodeSupportCompatibleWith(self));
 
 -- ======================================================================
 -- helper attributes end
@@ -524,6 +552,13 @@ helper context UML2!"uml::NamedElement" def : hasSupplierCompatibleWith(e : UML2
 helper context UML2!"uml::NamedElement" def : namedElementHasSupplierCompatibleWith(e : UML2!"uml::NamedElement") : Boolean =
 	self.allSuppliers
 		->select(s|s.umlQualifiedName = e.umlQualifiedName)->notEmpty();
+
+-- ------------------------ bytecodeSupportCompatibleWith ---------------
+
+-- True iff self also supports the bytecode format of m
+helper context UML2!"uml::Model" def : bytecodeSupportCompatibleWith(m : UML2!"uml::Model") : Boolean =
+	self.bytecodeMajorVersion >= m.bytecodeMajorVersion
+	and	self.bytecodePreverified implies m.bytecodePreverified;
 
 -- ======================================================================
 -- helper methods end

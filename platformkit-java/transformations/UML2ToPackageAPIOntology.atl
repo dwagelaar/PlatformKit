@@ -93,9 +93,9 @@ rule Model {
 -- !!! OWLImports generates bogus namespace !!!
 		OWLImports <- thisModule.platformOntology->union(thisModule.javaOntology)->union(
 			if prevNotEmpty then thisModule.importedOntologies else Set{} endif),
-		contains <- thisModule.LibraryClass(s, thisModule.APIClass(s))->union(
-			Sequence{integer, boolean, string, 
-			apiInstance, bytecodeClass, bytecodeInstance, vmClass, jreClass})
+		contains <- thisModule.LibraryClass(s, thisModule.APIClass(s))
+			->union(thisModule.BytecodeClass(s, integer, boolean))
+			->union(Sequence{integer, boolean, string, apiInstance, vmClass, jreClass})
 			->union(thisModule.includedPackages)
 			->union(thisModule.includedPackages->collect(p|thisModule.resolveTemp(p, 'apiClass')))
 			->union(thisModule.includedPackages->collect(p|thisModule.resolveTemp(p, 'apiPart')))
@@ -131,51 +131,8 @@ rule Model {
 		lexicalForm <- s.name + ' virtual machine'),
 	   vmRestriction : OWL!"owl::SomeValuesFromRestriction" (
 	   	OWLOnProperty <- thisModule.implementsInterface,
-		OWLSomeValuesFrom <- bytecodeClass,
+		OWLSomeValuesFrom <- ont.contains->at(3),
 		namespace <- s),
-	   bytecodeClass : OWL!"owl::OWLClass" (
-	   	localName <- s.name.legalOntClassName + 'BytecodeFormat',
-		RDFSSubClassOf <- Sequence{thisModule.javaBytecode},
---		OWLEquivalentClass <- Sequence{bytecodeRestriction},
-		RDFSComment <- Sequence{bytecodeComment},
-		namespace <- s),
-	   bytecodeComment : OWL!"rdfs::PlainLiteral" (
-	   	language <- 'en',
-		lexicalForm <- s.name + ' bytecode format'),
-	   bytecodeInstance : OWL!"owl::Individual" (
-	   	localName <- 'the' + bytecodeClass.localName,
-	   	RDFType <- bytecodeClass,
-		datatypeSlot <- Sequence{
-	   		bytecodeMajorVersionSlot, 
-			bytecodeMinorVersionSlot, 
-			bytecodePreverifiedSlot},
-	   	namespace <- s),
-	   bytecodeMajorVersionSlot : OWL!"owl::DatatypeSlot" (
-	   	property <- thisModule.majorVersionNumber,
-		content <- bytecodeMajorVersionValue),
-	   bytecodeMajorVersionValue : OWL!"rdfs::TypedLiteral" (
-	   	datatype <- integer,
-		lexicalForm <- majorVersion.toString(),
-		namespace <- s),
-	   bytecodeMinorVersionSlot : OWL!"owl::DatatypeSlot" (
-	   	property <- thisModule.minorVersionNumber,
-		content <- bytecodeMinorVersionValue),
-	   bytecodeMinorVersionValue : OWL!"rdfs::TypedLiteral" (
-	   	datatype <- integer,
-		lexicalForm <- minorVersion.toString()),
-	   bytecodePreverifiedSlot : OWL!"owl::DatatypeSlot" (
-	   	property <- thisModule.preverified,
-		content <- bytecodePreverifiedValue),
-	   bytecodePreverifiedValue : OWL!"rdfs::TypedLiteral" (
-	   	datatype <- boolean,
-		lexicalForm <- if preverified then 'true' else 'false' endif),
---!!! EODM does not support restricted data types !!!
---	   bytecodeRestriction : OWL!"owl::SomeValuesFromRestriction" (
---	   	OWLOnProperty <- thisModule.majorVersionNumber,
---		OWLSomeValuesFrom <- integer,
---		namespace <- s),
---	   bytecodeDescription : OWL!"rdfs::RDFSDatatype" (
---		namespace <- s),
 	   jreClass : OWL!"owl::OWLClass" (
 	   	localName <- s.name.legalOntClassName + 'JRE',
 		RDFSSubClassOf <- Sequence{thisModule.javaJRE},
