@@ -299,9 +299,23 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-midp-2_0.owl#J2MEMIDP2_0BytecodeFormat -->
 
     <owl:Class rdf:about="#J2MEMIDP2_0BytecodeFormat">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&java;majorVersionNumber"/>
+                <owl:someValuesFrom>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                        <owl:onDatatype rdf:resource="&xsd;integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="&xsd;integer">47</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdf:Description>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&j2me-midp-1_0;J2MEMIDP1_0BytecodeFormat"/>
-        <rdfs:comment xml:lang="OWLManchester"
-            >java:majorVersionNumber some xsd:integer[&gt;=&quot;47&quot;^^xsd:integer]</rdfs:comment>
         <rdfs:comment xml:lang="en"
             >J2ME MIDP 2.0 bytecode format</rdfs:comment>
     </owl:Class>
@@ -810,6 +824,12 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaVM -->
 
     <owl:Class rdf:about="&java;JavaVM"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
     
 
 

@@ -1862,9 +1862,31 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#J2SE1_3BytecodeFormat -->
 
     <owl:Class rdf:about="#J2SE1_3BytecodeFormat">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&java;majorVersionNumber"/>
+                        <owl:someValuesFrom>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">47</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdf:Description>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&java;preverified"/>
+                        <owl:hasValue rdf:datatype="&xsd;boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&j2se-1_2;J2SE1_2BytecodeFormat"/>
-        <rdfs:comment xml:lang="OWLManchester"
-            >java:majorVersionNumber some xsd:integer[&gt;=&quot;47&quot;^^xsd:integer] and java:preverified value false</rdfs:comment>
         <rdfs:comment xml:lang="en"
             >J2SE 1.3 bytecode format</rdfs:comment>
     </owl:Class>
@@ -5480,6 +5502,12 @@
     
 
 
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -5965,9 +5993,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#theJavaxSoundSampledPart -->
 
-    <owl:Thing rdf:about="#theJavaxSoundSampledPart">
-        <rdf:type rdf:resource="#JavaxSoundSampled"/>
-    </owl:Thing>
+    <JavaxSoundSampled rdf:about="#theJavaxSoundSampledPart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </JavaxSoundSampled>
     
 
 
@@ -6085,9 +6113,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#theJavaxSwingTextRtfPart -->
 
-    <owl:Thing rdf:about="#theJavaxSwingTextRtfPart">
-        <rdf:type rdf:resource="#JavaxSwingTextRtf"/>
-    </owl:Thing>
+    <JavaxSwingTextRtf rdf:about="#theJavaxSwingTextRtfPart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </JavaxSwingTextRtf>
     
 
 

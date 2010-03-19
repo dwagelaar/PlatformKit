@@ -2166,9 +2166,31 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl#J2SE1_4BytecodeFormat -->
 
     <owl:Class rdf:about="#J2SE1_4BytecodeFormat">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&java;majorVersionNumber"/>
+                        <owl:someValuesFrom>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">48</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdf:Description>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&java;preverified"/>
+                        <owl:hasValue rdf:datatype="&xsd;boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&j2se-1_3;J2SE1_3BytecodeFormat"/>
-        <rdfs:comment xml:lang="OWLManchester"
-            >java:majorVersionNumber some xsd:integer[&gt;=&quot;48&quot;^^xsd:integer] and java:preverified value false</rdfs:comment>
         <rdfs:comment xml:lang="en"
             >J2SE 1.4 bytecode format</rdfs:comment>
     </owl:Class>
@@ -8539,6 +8561,12 @@
     
 
 
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -8976,9 +9004,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl#theJavaSecurityInterfacesPart -->
 
-    <owl:Thing rdf:about="#theJavaSecurityInterfacesPart">
-        <rdf:type rdf:resource="#JavaSecurityInterfaces"/>
-    </owl:Thing>
+    <JavaSecurityInterfaces rdf:about="#theJavaSecurityInterfacesPart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </JavaSecurityInterfaces>
     
 
 
@@ -9008,9 +9036,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl#theJavaTextPart -->
 
-    <owl:Thing rdf:about="#theJavaTextPart">
-        <rdf:type rdf:resource="#JavaText"/>
-    </owl:Thing>
+    <JavaText rdf:about="#theJavaTextPart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </JavaText>
     
 
 
@@ -9312,9 +9340,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl#theJavaxSoundMidiSpiPart -->
 
-    <owl:Thing rdf:about="#theJavaxSoundMidiSpiPart">
-        <rdf:type rdf:resource="#JavaxSoundMidiSpi"/>
-    </owl:Thing>
+    <JavaxSoundMidiSpi rdf:about="#theJavaxSoundMidiSpiPart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </JavaxSoundMidiSpi>
     
 
 
@@ -9328,9 +9356,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl#theJavaxSoundSampledSpiPart -->
 
-    <owl:Thing rdf:about="#theJavaxSoundSampledSpiPart">
-        <rdf:type rdf:resource="#JavaxSoundSampledSpi"/>
-    </owl:Thing>
+    <JavaxSoundSampledSpi rdf:about="#theJavaxSoundSampledSpiPart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </JavaxSoundSampledSpi>
     
 
 
@@ -9656,9 +9684,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl#theOrgOmgIOPCodecPackagePart -->
 
-    <owl:Thing rdf:about="#theOrgOmgIOPCodecPackagePart">
-        <rdf:type rdf:resource="#OrgOmgIOPCodecPackage"/>
-    </owl:Thing>
+    <OrgOmgIOPCodecPackage rdf:about="#theOrgOmgIOPCodecPackagePart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </OrgOmgIOPCodecPackage>
     
 
 
@@ -9736,9 +9764,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl#theOrgOmgPortableServerServantLocatorPackagePart -->
 
-    <owl:Thing rdf:about="#theOrgOmgPortableServerServantLocatorPackagePart">
-        <rdf:type rdf:resource="#OrgOmgPortableServerServantLocatorPackage"/>
-    </owl:Thing>
+    <OrgOmgPortableServerServantLocatorPackage rdf:about="#theOrgOmgPortableServerServantLocatorPackagePart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </OrgOmgPortableServerServantLocatorPackage>
     
 
 
