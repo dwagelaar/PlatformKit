@@ -557,8 +557,8 @@ helper context UML2!"uml::NamedElement" def : namedElementHasSupplierCompatibleW
 
 -- True iff self also supports the bytecode format of m
 helper context UML2!"uml::Model" def : bytecodeSupportCompatibleWith(m : UML2!"uml::Model") : Boolean =
-	self.bytecodeMajorVersion >= m.bytecodeMajorVersion
-	and	self.bytecodePreverified implies m.bytecodePreverified;
+	(self.bytecodeMajorVersion >= m.bytecodeMajorVersion)
+	and	(self.bytecodePreverified implies m.bytecodePreverified);
 
 -- ======================================================================
 -- helper methods end
