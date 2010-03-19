@@ -341,7 +341,8 @@ rule BytecodeClass(s : UML2!"uml::Model",
 --!!! EODM does not support restricted data types !!!
 	   bytecodeRestriction : OWL!"rdfs::PlainLiteral" (
 	   	language <- 'OWLManchester',
-		lexicalForm <- 'java:majorVersionNumber some xsd:integer[>="' + majorVersion + '"^^xsd:integer]')
+		lexicalForm <- 'java:majorVersionNumber some xsd:integer[>="' + majorVersion + '"^^xsd:integer]' +
+			if preverified then '' else ' and java:preverified value false' endif)
 	do {
 		Sequence{bytecodeClass, bytecodeInstance};
 	}
