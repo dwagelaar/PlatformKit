@@ -21,9 +21,11 @@
 [JDK 1.1] JDK 1.1::java::rmi::dgc compatible packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::rmi::server compatible packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::beans compatible packages: Sequence {}
+[JDK 1.1] JDK 1.1 compatible models: Sequence {}
+[JDK 1.1] JDK 1.1 equivalent models: Sequence {}
 [JDK 1.1] Package: 'JavaLang'
 [JDK 1.1] JDK 1.1::java::lang equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::lang referenced packages: Sequence {IN!net, IN!reflect, IN!util, IN!io}
+[JDK 1.1] JDK 1.1::java::lang referenced packages: Sequence {IN!util, IN!reflect, IN!net, IN!io}
 [JDK 1.1] Package: 'JavaLangReflect'
 [JDK 1.1] JDK 1.1::java::lang::reflect equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::lang::reflect referenced packages: Sequence {IN!lang}
@@ -50,7 +52,7 @@
 [JDK 1.1] JDK 1.1::java::math referenced packages: Sequence {IN!lang, IN!util}
 [JDK 1.1] Package: 'JavaSecurity'
 [JDK 1.1] JDK 1.1::java::security equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::security referenced packages: Sequence {IN!lang, IN!util, IN!io}
+[JDK 1.1] JDK 1.1::java::security referenced packages: Sequence {IN!util, IN!lang, IN!io}
 [JDK 1.1] Package: 'JavaSecurityAcl'
 [JDK 1.1] JDK 1.1::java::security::acl equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::security::acl referenced packages: Sequence {IN!lang, IN!security, IN!util}
@@ -59,25 +61,25 @@
 [JDK 1.1] JDK 1.1::java::security::interfaces referenced packages: Sequence {IN!security, IN!math}
 [JDK 1.1] Package: 'JavaAwt'
 [JDK 1.1] JDK 1.1::java::awt equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::awt referenced packages: Sequence {IN!net, IN!lang, IN!util, IN!io, IN!event, IN!image, IN!datatransfer}
+[JDK 1.1] JDK 1.1::java::awt referenced packages: Sequence {IN!event, IN!io, IN!image, IN!util, IN!lang, IN!net, IN!datatransfer}
 [JDK 1.1] Package: 'JavaAwtImage'
 [JDK 1.1] JDK 1.1::java::awt::image equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::awt::image referenced packages: Sequence {IN!lang, IN!awt, IN!util}
+[JDK 1.1] JDK 1.1::java::awt::image referenced packages: Sequence {IN!lang, IN!util, IN!awt}
 [JDK 1.1] Package: 'JavaAwtDatatransfer'
 [JDK 1.1] JDK 1.1::java::awt::datatransfer equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::awt::datatransfer referenced packages: Sequence {IN!lang}
 [JDK 1.1] Package: 'JavaAwtEvent'
 [JDK 1.1] JDK 1.1::java::awt::event equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::awt::event referenced packages: Sequence {IN!lang, IN!awt, IN!util}
+[JDK 1.1] JDK 1.1::java::awt::event referenced packages: Sequence {IN!lang, IN!util, IN!awt}
 [JDK 1.1] Package: 'JavaApplet'
 [JDK 1.1] JDK 1.1::java::applet equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::applet referenced packages: Sequence {IN!net, IN!lang, IN!awt, IN!util}
+[JDK 1.1] JDK 1.1::java::applet referenced packages: Sequence {IN!lang, IN!util, IN!net, IN!awt}
 [JDK 1.1] Package: 'JavaSql'
 [JDK 1.1] JDK 1.1::java::sql equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::sql referenced packages: Sequence {IN!lang, IN!util, IN!math, IN!io}
 [JDK 1.1] Package: 'JavaRmi'
 [JDK 1.1] JDK 1.1::java::rmi equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::rmi referenced packages: Sequence {IN!net, IN!lang, IN!io}
+[JDK 1.1] JDK 1.1::java::rmi referenced packages: Sequence {IN!lang, IN!net, IN!io}
 [JDK 1.1] Package: 'JavaRmiRegistry'
 [JDK 1.1] JDK 1.1::java::rmi::registry equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::rmi::registry referenced packages: Sequence {IN!lang, IN!rmi}
@@ -86,10 +88,10 @@
 [JDK 1.1] JDK 1.1::java::rmi::dgc referenced packages: Sequence {IN!lang, IN!rmi, IN!io}
 [JDK 1.1] Package: 'JavaRmiServer'
 [JDK 1.1] JDK 1.1::java::rmi::server equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::rmi::server referenced packages: Sequence {IN!net, IN!rmi, IN!lang, IN!io}
+[JDK 1.1] JDK 1.1::java::rmi::server referenced packages: Sequence {IN!lang, IN!net, IN!rmi, IN!io}
 [JDK 1.1] Package: 'JavaBeans'
 [JDK 1.1] JDK 1.1::java::beans equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::beans referenced packages: Sequence {IN!reflect, IN!awt, IN!lang, IN!util, IN!io}
+[JDK 1.1] JDK 1.1::java::beans referenced packages: Sequence {IN!util, IN!reflect, IN!lang, IN!io, IN!awt}
 [JDK 1.1] JDK 1.1::java::lang compatible packages: Sequence {PREVIN!lang}
 [JDK 1.1] JDK 1.1::java::lang equivalent packages: Sequence {PREVIN!lang}
 [JDK 1.1] JDK 1.1::java::lang::reflect compatible packages: Sequence {PREVIN!reflect}
@@ -137,8 +139,22 @@
 [JDK 1.1] JDK 1.1::java::rmi::server compatible packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::beans compatible packages: Sequence {PREVIN!beans}
 [JDK 1.1] JDK 1.1::java::beans equivalent packages: Sequence {PREVIN!beans}
+[JDK 1.1] JDK 1.1::java compatible packages: Sequence {PREVIN!java}
+[JDK 1.1] JDK 1.1 compatible models: Sequence {PREVIN!PersonalJava 1.1}
+[JDK 1.1] JDK 1.1::java equivalent packages: Sequence {PREVIN!java}
+[JDK 1.1] JDK 1.1::java::math equivalent packages: Sequence {}
+[JDK 1.1] JDK 1.1::java::security equivalent packages: Sequence {}
+[JDK 1.1] JDK 1.1::java::security::acl equivalent packages: Sequence {}
+[JDK 1.1] JDK 1.1::java::security::interfaces equivalent packages: Sequence {}
+[JDK 1.1] JDK 1.1::java::sql equivalent packages: Sequence {}
+[JDK 1.1] JDK 1.1::java::rmi equivalent packages: Sequence {}
+[JDK 1.1] JDK 1.1::java::rmi::registry equivalent packages: Sequence {}
+[JDK 1.1] JDK 1.1::java::rmi::dgc equivalent packages: Sequence {}
+[JDK 1.1] JDK 1.1::java::rmi::server equivalent packages: Sequence {}
+[JDK 1.1] JDK 1.1 misses packages equivalent with : Sequence {PREVIN!io, PREVIN!zip, PREVIN!resources, PREVIN!awt}
+[JDK 1.1] JDK 1.1 equivalent models: Sequence {}
 [JDK 1.1] Package: 'JavaLang'
-[JDK 1.1] JDK 1.1::java::lang referenced packages: Sequence {IN!net, IN!reflect, IN!util, IN!io}
+[JDK 1.1] JDK 1.1::java::lang referenced packages: Sequence {IN!util, IN!reflect, IN!net, IN!io}
 [JDK 1.1] Package: 'JavaLangReflect'
 [JDK 1.1] JDK 1.1::java::lang::reflect referenced packages: Sequence {IN!lang}
 [JDK 1.1] Package: 'JavaIo'
@@ -154,41 +170,32 @@
 [JDK 1.1] Package: 'JavaTextResources'
 [JDK 1.1] JDK 1.1::java::text::resources referenced packages: Sequence {IN!lang, IN!util}
 [JDK 1.1] Package: 'JavaMath'
-[JDK 1.1] JDK 1.1::java::math equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::math referenced packages: Sequence {IN!lang, IN!util}
 [JDK 1.1] Package: 'JavaSecurity'
-[JDK 1.1] JDK 1.1::java::security equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::security referenced packages: Sequence {IN!lang, IN!util, IN!io}
+[JDK 1.1] JDK 1.1::java::security referenced packages: Sequence {IN!util, IN!lang, IN!io}
 [JDK 1.1] Package: 'JavaSecurityAcl'
-[JDK 1.1] JDK 1.1::java::security::acl equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::security::acl referenced packages: Sequence {IN!lang, IN!security, IN!util}
 [JDK 1.1] Package: 'JavaSecurityInterfaces'
-[JDK 1.1] JDK 1.1::java::security::interfaces equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::security::interfaces referenced packages: Sequence {IN!security, IN!math}
 [JDK 1.1] Package: 'JavaAwt'
-[JDK 1.1] JDK 1.1::java::awt referenced packages: Sequence {IN!net, IN!lang, IN!util, IN!io, IN!event, IN!image, IN!datatransfer}
+[JDK 1.1] JDK 1.1::java::awt referenced packages: Sequence {IN!event, IN!io, IN!image, IN!util, IN!lang, IN!net, IN!datatransfer}
 [JDK 1.1] Package: 'JavaAwtImage'
-[JDK 1.1] JDK 1.1::java::awt::image referenced packages: Sequence {IN!lang, IN!awt, IN!util}
+[JDK 1.1] JDK 1.1::java::awt::image referenced packages: Sequence {IN!lang, IN!util, IN!awt}
 [JDK 1.1] Package: 'JavaAwtDatatransfer'
 [JDK 1.1] JDK 1.1::java::awt::datatransfer referenced packages: Sequence {IN!lang}
 [JDK 1.1] Package: 'JavaAwtEvent'
-[JDK 1.1] JDK 1.1::java::awt::event referenced packages: Sequence {IN!lang, IN!awt, IN!util}
+[JDK 1.1] JDK 1.1::java::awt::event referenced packages: Sequence {IN!lang, IN!util, IN!awt}
 [JDK 1.1] Package: 'JavaApplet'
-[JDK 1.1] JDK 1.1::java::applet referenced packages: Sequence {IN!net, IN!lang, IN!awt, IN!util}
+[JDK 1.1] JDK 1.1::java::applet referenced packages: Sequence {IN!lang, IN!util, IN!net, IN!awt}
 [JDK 1.1] Package: 'JavaSql'
-[JDK 1.1] JDK 1.1::java::sql equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::sql referenced packages: Sequence {IN!lang, IN!util, IN!math, IN!io}
 [JDK 1.1] Package: 'JavaRmi'
-[JDK 1.1] JDK 1.1::java::rmi equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::rmi referenced packages: Sequence {IN!net, IN!lang, IN!io}
+[JDK 1.1] JDK 1.1::java::rmi referenced packages: Sequence {IN!lang, IN!net, IN!io}
 [JDK 1.1] Package: 'JavaRmiRegistry'
-[JDK 1.1] JDK 1.1::java::rmi::registry equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::rmi::registry referenced packages: Sequence {IN!lang, IN!rmi}
 [JDK 1.1] Package: 'JavaRmiDgc'
-[JDK 1.1] JDK 1.1::java::rmi::dgc equivalent packages: Sequence {}
 [JDK 1.1] JDK 1.1::java::rmi::dgc referenced packages: Sequence {IN!lang, IN!rmi, IN!io}
 [JDK 1.1] Package: 'JavaRmiServer'
-[JDK 1.1] JDK 1.1::java::rmi::server equivalent packages: Sequence {}
-[JDK 1.1] JDK 1.1::java::rmi::server referenced packages: Sequence {IN!net, IN!rmi, IN!lang, IN!io}
+[JDK 1.1] JDK 1.1::java::rmi::server referenced packages: Sequence {IN!lang, IN!net, IN!rmi, IN!io}
 [JDK 1.1] Package: 'JavaBeans'
-[JDK 1.1] JDK 1.1::java::beans referenced packages: Sequence {IN!reflect, IN!awt, IN!lang, IN!util, IN!io}
+[JDK 1.1] JDK 1.1::java::beans referenced packages: Sequence {IN!util, IN!reflect, IN!lang, IN!io, IN!awt}

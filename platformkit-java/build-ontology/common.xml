@@ -9,6 +9,8 @@
 	<property name="build.uri" value="platform:/resource/platformkit-java/build-ontology"/>
 	<property name="umlmodel.uri" value="platform:/resource/platformkit-java/model"/>
 	<property name="owlmodel.uri" value="${build.uri}"/>
+	<!--property name="ontologytrans.path" value="${trans.path}/UML2ToClassifiedPackageAPIOntology.asm"/-->
+	<property name="ontologytrans.path" value="${trans.path}/UML2ToSimplifiedPackageAPIOntology.asm"/>
 
     <macrodef name="preUML2ToAPIOntology">
         <attribute name="in" default="MODEL.IN" />
@@ -25,6 +27,7 @@
     			<inmodel name="JAVA" model="Java"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
     			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<superimpose path="${ontologytrans.path}"/>
     			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
     		</atl.launch>
         </sequential>
@@ -45,6 +48,7 @@
     			<inmodel name="JAVA" model="Java"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
     			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<superimpose path="${ontologytrans.path}"/>
     			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
     		</atl.launch>
         	<atl.saveModel model="@{out}" uri="@{uri}"/>
@@ -70,6 +74,7 @@
     			<inmodel name="PREVIN" model="@{previn}"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
     			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<superimpose path="${ontologytrans.path}"/>
     			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
     		</atl.launch>
         	<atl.saveModel model="@{out}" uri="@{uri}"/>
@@ -99,6 +104,7 @@
     			<inmodel name="PREVIN2" model="@{previn2}"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
     			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<superimpose path="${ontologytrans.path}"/>
     			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
     		</atl.launch>
         	<atl.saveModel model="@{out}" uri="@{uri}"/>
@@ -132,6 +138,7 @@
     			<inmodel name="PREVIN3" model="@{previn3}"/>
     			<outmodel name="OUT" model="@{out}" metamodel="OWL" path="@{uri}"/>
     			<superimpose path="${trans.path}/UML2ToPackageAPIOntology.asm"/>
+    			<superimpose path="${ontologytrans.path}"/>
     			<library name="UML2Comparison" path="${trans.path}/UML2Comparison.asm"/>
     		</atl.launch>
         	<atl.saveModel model="@{out}" uri="@{uri}"/>
