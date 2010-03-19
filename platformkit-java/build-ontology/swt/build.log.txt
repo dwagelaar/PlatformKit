@@ -1,5 +1,5 @@
 
-Buildfile: /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/build-ontology/swt/build.xml
+Buildfile: /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/build-ontology/swt/build.xml
 
 loadCommonModels:
 [atl.loadModel] Loading model OWL from http:///org/eclipse/owl.ecore
@@ -19,260 +19,172 @@ loadModels:
 [atl.loadModel] Loading model SWT-3_5 from platform:/resource/platformkit-java/model/swt/swt-3_5-api.uml
 
 pre-transform:
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
-[SWT 3.3] SWT 3.3::org::eclipse::swt compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::awt compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::browser compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::events compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::custom compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::printing compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::layout compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl compatible packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::program compatible packages: Sequence {}
-[SWT 3.3] Package: 'OrgEclipseSwt'
-[SWT 3.3] SWT 3.3::org::eclipse::swt equivalent packages: Sequence {}
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
 [SWT 3.4] SWT 3.4::org::eclipse::swt compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt compatible packages: Sequence {}
+[SWT 3.0] SWT 3.0::org::eclipse::swt compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility compatible packages: Sequence {}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::accessibility compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::awt compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::awt compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::browser compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::accessibility compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::events compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::browser compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::widgets compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::graphics compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::events compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::awt compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::custom compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::browser compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::printing compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::custom compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::events compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::printing compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::graphics compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::dnd compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::custom compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::layout compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::layout compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::printing compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::program compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::dnd compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::program compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::layout compatible packages: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::opengl compatible packages: Sequence {}
+[SWT 3.1] SWT 3.1 compatible models: Sequence {}
+[SWT 3.2] SWT 3.2 compatible models: Sequence {}
 [SWT 3.4] SWT 3.4::org::eclipse::swt::program compatible packages: Sequence {}
-[SWT 3.4] Package: 'OrgEclipseSwt'
-[SWT 3.4] SWT 3.4::org::eclipse::swt equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt referenced packages: Sequence {}
-[SWT 3.3] Package: 'OrgEclipseSwtAccessibility'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!events, IN!accessibility}
-[SWT 3.3] Package: 'OrgEclipseSwtAwt'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::awt equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::browser referenced packages: Sequence {IN!graphics, IN!widgets, IN!events}
-[SWT 3.3] Package: 'OrgEclipseSwtEvents'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::events equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtGraphics'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics referenced packages: Sequence {}
-[SWT 3.3] Package: 'OrgEclipseSwtCustom'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::custom referenced packages: Sequence {IN!graphics, IN!events, IN!dnd, IN!printing, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::printing equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::printing referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtDnd'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtLayout'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::layout equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtOpengl'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtProgram'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::program equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 2,039s
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
-[SWT 3.4] SWT 3.4::org::eclipse::swt referenced packages: Sequence {}
-[SWT 3.4] Package: 'OrgEclipseSwtAccessibility'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::accessibility equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
-[SWT 3.4] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!events, IN!accessibility}
-[SWT 3.4] Package: 'OrgEclipseSwtAwt'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::awt equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
-[SWT 3.4] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::browser referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtEvents'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::events equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtGraphics'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::awt compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::browser compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::events compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::graphics compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::custom compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::printing compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::layout compatible packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics referenced packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::program compatible packages: Sequence {}
-[SWT 3.4] Package: 'OrgEclipseSwtCustom'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.2] Package: 'OrgEclipseSwt'
-[SWT 3.2] SWT 3.2::org::eclipse::swt equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::custom referenced packages: Sequence {IN!graphics, IN!events, IN!printing, IN!widgets, IN!dnd}
-[SWT 3.4] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::printing equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtDnd'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtLayout'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::layout equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtOpengl'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
-[SWT 3.4] Package: 'OrgEclipseSwtProgram'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::program equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 2,518s
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
-[SWT 3.1] SWT 3.1::org::eclipse::swt compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::awt compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::browser compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::events compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::custom compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::printing compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::dnd compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::layout compatible packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::program compatible packages: Sequence {}
-[SWT 3.1] Package: 'OrgEclipseSwt'
-[SWT 3.1] SWT 3.1::org::eclipse::swt equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt referenced packages: Sequence {}
-[SWT 3.2] Package: 'OrgEclipseSwtAccessibility'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
-[SWT 3.2] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!accessibility, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtAwt'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::awt equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
-[SWT 3.2] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!events, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtEvents'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::events equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtGraphics'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::graphics equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::graphics referenced packages: Sequence {}
-[SWT 3.2] Package: 'OrgEclipseSwtCustom'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt referenced packages: Sequence {}
-[SWT 3.1] Package: 'OrgEclipseSwtAccessibility'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
-[SWT 3.1] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::custom referenced packages: Sequence {IN!events, IN!printing, IN!widgets, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::printing equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtDnd'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!graphics, IN!accessibility}
-[SWT 3.1] Package: 'OrgEclipseSwtAwt'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::awt equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
-[SWT 3.1] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::browser referenced packages: Sequence {IN!events, IN!graphics, IN!widgets}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd referenced packages: Sequence {IN!widgets, IN!events}
-[SWT 3.1] Package: 'OrgEclipseSwtEvents'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::events equivalent packages: Sequence {}
-[SWT 3.2] Package: 'OrgEclipseSwtLayout'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::layout equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.1] Package: 'OrgEclipseSwtGraphics'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtOpengl'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
-[SWT 3.2] Package: 'OrgEclipseSwtProgram'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::program equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 1,985s
-[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics referenced packages: Sequence {}
-[SWT 3.1] Package: 'OrgEclipseSwtCustom'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::custom equivalent packages: Sequence {}
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
-[SWT 3.1] SWT 3.1::org::eclipse::swt::custom referenced packages: Sequence {IN!events, IN!graphics, IN!printing, IN!widgets}
-[SWT 3.1] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::printing equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::printing referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.1] Package: 'OrgEclipseSwtDnd'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::dnd equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::dnd referenced packages: Sequence {IN!events, IN!widgets}
-[SWT 3.1] Package: 'OrgEclipseSwtLayout'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::layout equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.1] Package: 'OrgEclipseSwtProgram'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::program equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 1,809s
-[SWT 3.0] SWT 3.0::org::eclipse::swt compatible packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::accessibility compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2 equivalent models: Sequence {}
+[SWT 3.1] SWT 3.1 equivalent models: Sequence {}
+[SWT 3.4] SWT 3.4 compatible models: Sequence {}
+[SWT 3.4] SWT 3.4 equivalent models: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::widgets compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::awt compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::browser compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::events compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::graphics compatible packages: Sequence {}
+[SWT 3.2] Package: 'OrgEclipseSwt'
+[SWT 3.4] Package: 'OrgEclipseSwt'
+[SWT 3.2] SWT 3.2::org::eclipse::swt equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::custom compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::printing compatible packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::dnd compatible packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::layout compatible packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::awt compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::program compatible packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::browser compatible packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::events compatible packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics compatible packages: Sequence {}
+[SWT 3.0] SWT 3.0 compatible models: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::custom compatible packages: Sequence {}
+[SWT 3.0] SWT 3.0 equivalent models: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::printing compatible packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd compatible packages: Sequence {}
+[SWT 3.1] Package: 'OrgEclipseSwt'
+[SWT 3.1] SWT 3.1::org::eclipse::swt equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::layout compatible packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl compatible packages: Sequence {}
 [SWT 3.0] Package: 'OrgEclipseSwt'
 [SWT 3.0] SWT 3.0::org::eclipse::swt equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::program compatible packages: Sequence {}
+[SWT 3.3] SWT 3.3 compatible models: Sequence {}
+[SWT 3.3] SWT 3.3 equivalent models: Sequence {}
+[SWT 3.3] Package: 'OrgEclipseSwt'
+[SWT 3.3] SWT 3.3::org::eclipse::swt equivalent packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt referenced packages: Sequence {}
 [SWT 3.0] Package: 'OrgEclipseSwtAccessibility'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::accessibility equivalent packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
 [SWT 3.0] Package: 'OrgEclipseSwtWidgets'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!events, IN!accessibility}
+[SWT 3.1] SWT 3.1::org::eclipse::swt referenced packages: Sequence {}
+[SWT 3.1] Package: 'OrgEclipseSwtAccessibility'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
+[SWT 3.1] Package: 'OrgEclipseSwtWidgets'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt referenced packages: Sequence {}
+[SWT 3.2] Package: 'OrgEclipseSwtAccessibility'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
+[SWT 3.2] Package: 'OrgEclipseSwtWidgets'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets equivalent packages: Sequence {}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::widgets referenced packages: Sequence {IN!accessibility, IN!graphics, IN!events}
 [SWT 3.0] Package: 'OrgEclipseSwtAwt'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::awt equivalent packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
 [SWT 3.0] Package: 'OrgEclipseSwtBrowser'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::browser referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!graphics, IN!events}
 [SWT 3.0] Package: 'OrgEclipseSwtEvents'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::events equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.0] Package: 'OrgEclipseSwtGraphics'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!accessibility, IN!events}
+[SWT 3.1] Package: 'OrgEclipseSwtAwt'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::awt equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
+[SWT 3.1] Package: 'OrgEclipseSwtBrowser'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::browser equivalent packages: Sequence {}
 [SWT 3.0] Package: 'OrgEclipseSwtCustom'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!graphics, IN!events, IN!widgets}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!graphics, IN!events}
+[SWT 3.1] Package: 'OrgEclipseSwtEvents'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::events equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt referenced packages: Sequence {}
+[SWT 3.3] Package: 'OrgEclipseSwtAccessibility'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.1] Package: 'OrgEclipseSwtGraphics'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt referenced packages: Sequence {}
+[SWT 3.4] Package: 'OrgEclipseSwtAccessibility'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::accessibility equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
+[SWT 3.3] Package: 'OrgEclipseSwtWidgets'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets referenced packages: Sequence {IN!accessibility, IN!graphics, IN!events}
+[SWT 3.2] Package: 'OrgEclipseSwtAwt'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::awt equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
+[SWT 3.2] Package: 'OrgEclipseSwtBrowser'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
+[SWT 3.4] Package: 'OrgEclipseSwtWidgets'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!graphics, IN!events}
+[SWT 3.2] Package: 'OrgEclipseSwtEvents'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::events equivalent packages: Sequence {}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::custom referenced packages: Sequence {IN!graphics, IN!printing, IN!events, IN!widgets}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.0] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.2] Package: 'OrgEclipseSwtGraphics'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::printing equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::printing referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.0] Package: 'OrgEclipseSwtDnd'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.1] Package: 'OrgEclipseSwtCustom'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::custom equivalent packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::dnd referenced packages: Sequence {IN!widgets, IN!events}
 [SWT 3.0] Package: 'OrgEclipseSwtLayout'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::layout equivalent packages: Sequence {}
@@ -280,14 +192,135 @@ pre-transform:
 [SWT 3.0] Package: 'OrgEclipseSwtProgram'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::program equivalent packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 0,788s
+  [atl.launch] Transformation executed in 5,261s
 [atl.saveModel] Saving model SWT-3_0_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_0.owl
+[SWT 3.2] SWT 3.2::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.2] Package: 'OrgEclipseSwtCustom'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::custom equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::custom referenced packages: Sequence {IN!widgets, IN!graphics, IN!events, IN!printing}
+[SWT 3.1] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::printing equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.1] Package: 'OrgEclipseSwtDnd'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::dnd referenced packages: Sequence {IN!widgets, IN!events}
+[SWT 3.1] Package: 'OrgEclipseSwtLayout'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::layout equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!accessibility, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtAwt'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::awt equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtBrowser'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.1] Package: 'OrgEclipseSwtProgram'
+[SWT 3.1] SWT 3.1::org::eclipse::swt::program equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
+  [atl.launch] Transformation executed in 5,554s
+[SWT 3.2] SWT 3.2::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!widgets, IN!graphics, IN!events}
+[SWT 3.2] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::printing equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.2] Package: 'OrgEclipseSwtDnd'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!accessibility, IN!graphics}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::browser referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtAwt'
+[SWT 3.3] Package: 'OrgEclipseSwtEvents'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::awt equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::events equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
+[SWT 3.4] Package: 'OrgEclipseSwtBrowser'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd referenced packages: Sequence {IN!widgets, IN!events}
+[SWT 3.2] Package: 'OrgEclipseSwtLayout'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::layout equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::browser referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtEvents'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::events equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.2] Package: 'OrgEclipseSwtOpengl'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl equivalent packages: Sequence {}
+[SWT 3.3] Package: 'OrgEclipseSwtGraphics'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
+[SWT 3.2] Package: 'OrgEclipseSwtProgram'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::program equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
+  [atl.launch] Transformation executed in 5,642s
+[SWT 3.4] SWT 3.4::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtGraphics'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.3] Package: 'OrgEclipseSwtCustom'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::custom equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.4] Package: 'OrgEclipseSwtCustom'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::custom equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::custom referenced packages: Sequence {IN!events, IN!widgets, IN!printing, IN!dnd, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::printing equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtDnd'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!events, IN!dnd, IN!widgets, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::printing equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtDnd'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtLayout'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::layout equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtOpengl'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
+[SWT 3.3] Package: 'OrgEclipseSwtProgram'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::program equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd referenced packages: Sequence {IN!events, IN!graphics, IN!widgets}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtLayout'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::layout equivalent packages: Sequence {}
+  [atl.launch] Transformation executed in 5,748s
+[SWT 3.4] SWT 3.4::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.4] Package: 'OrgEclipseSwtOpengl'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
+[SWT 3.4] Package: 'OrgEclipseSwtProgram'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::program equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
+  [atl.launch] Transformation executed in 5,757s
 
 transform:
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+  [atl.launch] Launching transformation /home/dwagelaa/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
+[SWT 3.1] SWT 3.1::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
+[SWT 3.3] SWT 3.3::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
+[SWT 3.2] SWT 3.2::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
 [SWT 3.4] SWT 3.4::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::SWT misses features compatible with : Sequence {IN!MouseWheel, IN!OFF, IN!ON, IN!LOW, IN!HIGH, IN!DOUBLE_BUFFERED, IN!BUTTON4, IN!BUTTON5, IN!SCROLL_LINE, IN!SCROLL_PAGE, IN!ERROR_CANNOT_INVERT_MATRIX, IN!ERROR_NO_GRAPHICS_LIBRARY, IN!ERROR_INVALID_FONT, IN!CAP_FLAT, IN!CAP_ROUND, IN!CAP_SQUARE, IN!JOIN_MITER, IN!JOIN_ROUND, IN!JOIN_BEVEL, IN!LINE_CUSTOM, IN!PATH_MOVE_TO, IN!PATH_LINE_TO, IN!PATH_QUAD_TO, IN!PATH_CUBIC_TO, IN!PATH_CLOSE, IN!FILL_EVEN_ODD, IN!FILL_WINDING, IN!IMAGE_OS2_BMP}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::SWTError misses features compatible with : Sequence {IN!getCause}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::SWTException misses features compatible with : Sequence {IN!getCause}
+[SWT 3.1] SWT 3.0::org::eclipse::swt misses classifiers compatible with : Sequence {IN!SWT, IN!SWTError, IN!SWTException}
+[SWT 3.1] SWT 3.1::org::eclipse::swt equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility compatible packages: Sequence {PREVIN!accessibility}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility equivalent packages: Sequence {PREVIN!accessibility}
 [SWT 3.5] SWT 3.5::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::SWT misses features compatible with : Sequence {IN!HOT, IN!SEARCH, IN!DATE, IN!TIME, IN!CALENDAR, IN!SHORT, IN!MEDIUM, IN!LONG, IN!MOZILLA, IN!DELIMITER_SELECTION, IN!LAST_LINE_SELECTION, IN!MOVEMENT_WORD_END, IN!MOVEMENT_WORD_START}
+[SWT 3.3] SWT 3.2::org::eclipse::swt misses classifiers compatible with : Sequence {IN!SWT}
+[SWT 3.3] SWT 3.3::org::eclipse::swt equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility compatible packages: Sequence {PREVIN!accessibility}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility equivalent packages: Sequence {PREVIN!accessibility}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::SWT misses features compatible with : Sequence {IN!Settings, IN!EraseItem, IN!MeasureItem, IN!PaintItem, IN!SELECTED, IN!FOCUSED, IN!BACKGROUND, IN!FOREGROUND, IN!BALLOON, IN!INHERIT_NONE, IN!INHERIT_DEFAULT, IN!INHERIT_FORCE}
+[SWT 3.2] SWT 3.1::org::eclipse::swt misses classifiers compatible with : Sequence {IN!SWT}
+[SWT 3.2] SWT 3.2::org::eclipse::swt equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility compatible packages: Sequence {PREVIN!accessibility}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility equivalent packages: Sequence {PREVIN!accessibility}
 [SWT 3.4] SWT 3.3::org::eclipse::swt::SWT misses features compatible with : Sequence {IN!ImeComposition, IN!COMPOSITION_CHANGED, IN!COMPOSITION_OFFSET, IN!COMPOSITION_SELECTION, IN!NO_SCROLL, IN!TRANSPARENT, IN!UNDERLINE_SINGLE, IN!UNDERLINE_DOUBLE, IN!UNDERLINE_ERROR, IN!UNDERLINE_SQUIGGLE, IN!BORDER_SOLID, IN!BORDER_DASH, IN!BORDER_DOT, IN!ERROR, IN!PAUSED}
 [SWT 3.4] SWT 3.3::org::eclipse::swt misses classifiers compatible with : Sequence {IN!SWT}
 [SWT 3.4] SWT 3.4::org::eclipse::swt equivalent packages: Sequence {}
@@ -301,297 +334,132 @@ transform:
 [SWT 3.5] SWT 3.4::org::eclipse::swt::accessibility::Accessible misses features compatible with : Sequence {IN!<init>}
 [SWT 3.5] SWT 3.4::org::eclipse::swt::accessibility misses classifiers compatible with : Sequence {IN!ACC, IN!Accessible}
 [SWT 3.5] SWT 3.5::org::eclipse::swt::accessibility equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Composite misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Canvas misses features compatible with : Sequence {IN!getIME, IN!setIME, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Item misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Widget misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Button misses features compatible with : Sequence {IN!getGrayed, IN!setGrayed, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Control misses features compatible with : Sequence {IN!getRegion, IN!print, IN!setRegion, IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Caret misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {IN!getListVisible, IN!setListVisible, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::CoolItem misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::DateTime misses features compatible with : Sequence {IN!setDate, IN!setTime, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!getIME, IN!getRegion, IN!setIME, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Display misses features compatible with : Sequence {IN!getSynchronizer}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ExpandBar misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ExpandItem misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::FileDialog misses features compatible with : Sequence {IN!getFilterIndex, IN!getOverwrite, IN!setFilterIndex, IN!setOverwrite}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Link misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::List misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Menu misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::MenuItem misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {IN!getState, IN!setState, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ScrollBar misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getAlpha, IN!getFullScreen, IN!print, IN!setAlpha, IN!setFullScreen, IN!getIME, IN!setIME, IN!getListeners, IN!print}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Spinner misses features compatible with : Sequence {IN!LIMIT, IN!getText, IN!getTextLimit, IN!setTextLimit, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {IN!getItem, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TabItem misses features compatible with : Sequence {IN!getBounds, IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Table misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TableColumn misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TableItem misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getModified, IN!setModified}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Text misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ToolBar misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ToolItem misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ToolTip misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Tracker misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Tray misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TrayItem misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Tree misses features compatible with : Sequence {IN!deselect, IN!select, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TreeColumn misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TreeItem misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Composite, IN!Canvas, IN!Item, IN!Widget, IN!Button, IN!Control, IN!Caret, IN!Combo, IN!Scrollable, IN!CoolBar, IN!CoolItem, IN!DateTime, IN!Decorations, IN!Display, IN!ExpandBar, IN!ExpandItem, IN!FileDialog, IN!Group, IN!IME, IN!Label, IN!Link, IN!List, IN!Menu, IN!MenuItem, IN!ProgressBar, IN!Sash, IN!Scale, IN!ScrollBar, IN!Shell, IN!Slider, IN!Spinner, IN!TabFolder, IN!TabItem, IN!Table, IN!TableColumn, IN!TableItem, IN!Text, IN!ToolBar, IN!ToolItem, IN!ToolTip, IN!Tracker, IN!Tray, IN!TrayItem, IN!Tree, IN!TreeColumn, IN!TreeItem}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!getText, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!Browser}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::events equivalent packages: Sequence {PREVIN!events}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics compatible packages: Sequence {PREVIN!graphics}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics::TextStyle misses features compatible with : Sequence {IN!underlineColor, IN!underlineStyle, IN!strikeoutColor, IN!borderStyle, IN!borderColor, IN!<init>, IN!<init>}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics::Resource misses features compatible with : Sequence {IN!dispose}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics::Path misses features compatible with : Sequence {IN!<init>, IN!<init>}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics::Transform misses features compatible with : Sequence {IN!identity, IN!shear}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {IN!TextStyle, IN!Resource, IN!Path, IN!Transform}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics equivalent packages: Sequence {}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Shell}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!getCookie, IN!setCookie, IN!addAuthenticationListener, IN!evaluate, IN!getBrowserType, IN!getJavascriptEnabled, IN!removeAuthenticationListener, IN!setJavascriptEnabled}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::LocationEvent misses features compatible with : Sequence {IN!<init>}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::ProgressEvent misses features compatible with : Sequence {IN!<init>}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::StatusTextEvent misses features compatible with : Sequence {IN!<init>}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::TitleEvent misses features compatible with : Sequence {IN!<init>}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::WindowEvent misses features compatible with : Sequence {IN!<init>}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!AuthenticationEvent, IN!AuthenticationListener, IN!Browser, IN!BrowserFunction, IN!LocationEvent, IN!ProgressEvent, IN!StatusTextEvent, IN!TitleEvent, IN!WebBrowser, IN!EvaluateFunction, IN!WindowEvent}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::events equivalent packages: Sequence {PREVIN!events}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::graphics compatible packages: Sequence {PREVIN!graphics}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::graphics::TextStyle misses features compatible with : Sequence {IN!data}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::graphics::Font misses features compatible with : Sequence {IN!extraTraits}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {IN!TextStyle, IN!Font}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::graphics equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!getIME, IN!getRegion, IN!setIME, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {IN!getListVisible, IN!setListVisible, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!getIME, IN!getRegion, IN!setIME, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::custom::ST misses features compatible with : Sequence {IN!TOGGLE_BLOCKSELECTION}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CTabItem misses features compatible with : Sequence {IN!getShowClose, IN!setShowClose, IN!getListeners}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::custom::StyleRange misses features compatible with : Sequence {IN!data}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {IN!getSashWidth, IN!setSashWidth, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {IN!getShowFocusedControl, IN!setShowFocusedControl, IN!showControl, IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::StyleRange misses features compatible with : Sequence {IN!<init>, IN!borderColor, IN!strikeoutColor, IN!underlineColor, IN!underlineStyle, IN!<init>, IN!borderStyle}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!addCaretListener, IN!getMarginColor, IN!getBlockSelection, IN!getBlockSelectionBounds, IN!getBottomMargin, IN!getLeftMargin, IN!getRightMargin, IN!getSelectionRanges, IN!getTopMargin, IN!removeCaretListener, IN!setBlockSelection, IN!setBlockSelectionBounds, IN!setBlockSelectionBounds, IN!setBottomMargin, IN!setLeftMargin, IN!setMarginColor, IN!setMargins, IN!setRightMargin, IN!setTopMargin}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!CaretEvent, IN!CaretListener, IN!ST, IN!StyleRange, IN!StyledText}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::printing::PrinterData misses features compatible with : Sequence {IN!orientation, IN!PORTRAIT, IN!LANDSCAPE}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::printing misses classifiers compatible with : Sequence {IN!PrinterData}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::printing equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!getLine, IN!getIME, IN!getRegion, IN!setIME, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::StyledTextPrintOptions misses features compatible with : Sequence {IN!lineLabels}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::dnd::DragSourceEvent misses features compatible with : Sequence {IN!offsetX, IN!offsetY}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {IN!DragSourceEvent}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd equivalent packages: Sequence {}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::layout equivalent packages: Sequence {PREVIN!layout}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::opengl compatible packages: Sequence {PREVIN!opengl}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!getIME, IN!getRegion, IN!setIME, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::opengl::GLData misses features compatible with : Sequence {IN!shareContext}
-[SWT 3.5] SWT 3.4::org::eclipse::swt::opengl misses classifiers compatible with : Sequence {IN!GLData}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::opengl equivalent packages: Sequence {}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
-[SWT 3.5] SWT 3.5::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
-[SWT 3.5] Package: 'OrgEclipseSwt'
-[SWT 3.5] SWT 3.5::org::eclipse::swt referenced packages: Sequence {}
-[SWT 3.5] Package: 'OrgEclipseSwtAccessibility'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
-[SWT 3.5] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets referenced packages: Sequence {IN!accessibility, IN!graphics, IN!events}
-[SWT 3.5] Package: 'OrgEclipseSwtAwt'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
-[SWT 3.5] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::browser referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
-[SWT 3.5] Package: 'OrgEclipseSwtEvents'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.5] Package: 'OrgEclipseSwtGraphics'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::graphics referenced packages: Sequence {}
-[SWT 3.5] Package: 'OrgEclipseSwtCustom'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!dnd, IN!graphics, IN!events, IN!widgets}
-[SWT 3.5] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::printing referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.5] Package: 'OrgEclipseSwtDnd'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
-[SWT 3.5] Package: 'OrgEclipseSwtLayout'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.5] Package: 'OrgEclipseSwtOpengl'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
-[SWT 3.5] Package: 'OrgEclipseSwtProgram'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 55,711s
-[atl.saveModel] Saving model SWT-3_5_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_5.owl
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::TableTreeItem misses features compatible with : Sequence {IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {IN!getRegion, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!AnimatedProgress, IN!CBanner, IN!CCombo, IN!CLabel, IN!CTabFolder, IN!CTabItem, IN!SashForm, IN!ScrolledComposite, IN!StyleRange, IN!StyledText, IN!StyledTextPrintOptions, IN!TableCursor, IN!TableTree, IN!TableTreeItem, IN!ViewForm}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::printing::PrintDialog misses features compatible with : Sequence {IN!setPrinterData, IN!getPrinterData}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::printing misses classifiers compatible with : Sequence {IN!PrintDialog}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::printing equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::dnd::DND misses features compatible with : Sequence {IN!DROP_TARGET_KEY, IN!DRAG_SOURCE_KEY}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::dnd::DragSource misses features compatible with : Sequence {IN!getDragListeners, IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::dnd::DropTarget misses features compatible with : Sequence {IN!getDropListeners, IN!getListeners}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {IN!DND, IN!DragSource, IN!DropTarget, IN!ImageTransfer, IN!URLTransfer}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::layout::RowLayout misses features compatible with : Sequence {IN!center}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::layout misses classifiers compatible with : Sequence {IN!RowLayout}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::layout equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl compatible packages: Sequence {PREVIN!opengl}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::opengl::GLCanvas misses features compatible with : Sequence {IN!getIME, IN!getRegion, IN!setIME, IN!getListeners, IN!print, IN!setRegion}
-[SWT 3.4] SWT 3.3::org::eclipse::swt::opengl misses classifiers compatible with : Sequence {IN!GLCanvas}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl equivalent packages: Sequence {}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
-[SWT 3.4] SWT 3.4::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
-[SWT 3.4] Package: 'OrgEclipseSwt'
-[SWT 3.4] SWT 3.4::org::eclipse::swt referenced packages: Sequence {}
-[SWT 3.4] Package: 'OrgEclipseSwtAccessibility'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
-[SWT 3.4] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!events, IN!accessibility}
-[SWT 3.4] Package: 'OrgEclipseSwtAwt'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
-[SWT 3.4] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::browser referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtEvents'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtGraphics'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics referenced packages: Sequence {}
-[SWT 3.4] Package: 'OrgEclipseSwtCustom'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::custom referenced packages: Sequence {IN!graphics, IN!events, IN!printing, IN!widgets, IN!dnd}
-[SWT 3.4] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtDnd'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtLayout'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.4] Package: 'OrgEclipseSwtOpengl'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
-[SWT 3.4] Package: 'OrgEclipseSwtProgram'
-[SWT 3.4] SWT 3.4::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 58,828s
-[atl.saveModel] Saving model SWT-3_4_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_4.owl
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
-[SWT 3.3] SWT 3.3::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::SWT misses features compatible with : Sequence {IN!HOT, IN!SEARCH, IN!DATE, IN!TIME, IN!CALENDAR, IN!SHORT, IN!MEDIUM, IN!LONG, IN!MOZILLA, IN!DELIMITER_SELECTION, IN!LAST_LINE_SELECTION, IN!MOVEMENT_WORD_END, IN!MOVEMENT_WORD_START}
-[SWT 3.3] SWT 3.2::org::eclipse::swt misses classifiers compatible with : Sequence {IN!SWT}
-[SWT 3.3] SWT 3.3::org::eclipse::swt equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility compatible packages: Sequence {PREVIN!accessibility}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility equivalent packages: Sequence {PREVIN!accessibility}
-[SWT 3.2] SWT 3.2::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::SWT misses features compatible with : Sequence {IN!Settings, IN!EraseItem, IN!MeasureItem, IN!PaintItem, IN!SELECTED, IN!FOCUSED, IN!BACKGROUND, IN!FOREGROUND, IN!BALLOON, IN!INHERIT_NONE, IN!INHERIT_DEFAULT, IN!INHERIT_FORCE}
-[SWT 3.2] SWT 3.1::org::eclipse::swt misses classifiers compatible with : Sequence {IN!SWT}
-[SWT 3.2] SWT 3.2::org::eclipse::swt equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility compatible packages: Sequence {PREVIN!accessibility}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility equivalent packages: Sequence {PREVIN!accessibility}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Composite misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Canvas misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Button misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Control misses features compatible with : Sequence {IN!addDragDetectListener, IN!addMenuDetectListener, IN!addMouseWheelListener, IN!dragDetect, IN!dragDetect, IN!getDragDetect, IN!getCursor, IN!removeDragDetectListener, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!setDragDetect}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Display misses features compatible with : Sequence {IN!findWidget, IN!loadFont}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Composite misses features compatible with : Sequence {IN!changed, IN!getLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!layout, IN!setLayoutDeferred, IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Canvas misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Item misses features compatible with : Sequence {IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Layout misses features compatible with : Sequence {IN!flushCache}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Widget misses features compatible with : Sequence {IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Button misses features compatible with : Sequence {IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Control misses features compatible with : Sequence {IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Caret misses features compatible with : Sequence {IN!isListening}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::ExpandBar misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {IN!addVerifyListener, IN!removeVerifyListener, IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Composite misses features compatible with : Sequence {IN!getBackgroundMode, IN!setBackgroundMode, IN!getBackgroundImage, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {IN!isListening}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Canvas misses features compatible with : Sequence {IN!drawBackground, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Link misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::CoolItem misses features compatible with : Sequence {IN!isListening}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Button misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Control misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::List misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Composite misses features compatible with : Sequence {IN!dragDetect, IN!removeDragDetectListener, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Canvas misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {IN!isListening}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Button misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::List misses features compatible with : Sequence {IN!isListening}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Control misses features compatible with : Sequence {IN!addDragDetectListener, IN!addMenuDetectListener, IN!addMouseWheelListener, IN!dragDetect, IN!dragDetect, IN!getDragDetect, IN!getCursor, IN!removeDragDetectListener, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!setDragDetect}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Menu misses features compatible with : Sequence {IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::MenuItem misses features compatible with : Sequence {IN!isListening}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {IN!isListening}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Event misses features compatible with : Sequence {IN!index}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {IN!isListening}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::ScrollBar misses features compatible with : Sequence {IN!isListening}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Spinner misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Link misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getMinimumSize, IN!isLayoutDeferred, IN!setMinimumSize, IN!setMinimumSize, IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {IN!isListening}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::List misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Composite misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!dragDetect, IN!removeDragDetectListener, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TabItem misses features compatible with : Sequence {IN!isListening}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Display misses features compatible with : Sequence {IN!findWidget, IN!loadFont}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Canvas misses features compatible with : Sequence {IN!getIME, IN!setIME, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Item misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Widget misses features compatible with : Sequence {IN!getListeners}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Table misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::TableItem misses features compatible with : Sequence {IN!getTextBounds}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Text misses features compatible with : Sequence {IN!getMessage, IN!setMessage, IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::ToolBar misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::TrayItem misses features compatible with : Sequence {IN!addMenuDetectListener, IN!removeMenuDetectListener}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Button misses features compatible with : Sequence {IN!getGrayed, IN!setGrayed, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::ExpandBar misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Table misses features compatible with : Sequence {IN!getColumnOrder, IN!setColumnOrder, IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TableColumn misses features compatible with : Sequence {IN!getMoveable, IN!setMoveable, IN!isListening}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Control misses features compatible with : Sequence {IN!getRegion, IN!print, IN!setRegion, IN!getListeners}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TableItem misses features compatible with : Sequence {IN!isListening}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Caret misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Text misses features compatible with : Sequence {IN!isListening}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {IN!getListVisible, IN!setListVisible, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::ToolBar misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Link misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::ToolItem misses features compatible with : Sequence {IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Tracker misses features compatible with : Sequence {IN!addKeyListener, IN!removeKeyListener, IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Tray misses features compatible with : Sequence {IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TrayItem misses features compatible with : Sequence {IN!isListening}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Spinner misses features compatible with : Sequence {IN!setValues, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Tree misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::List misses features compatible with : Sequence {IN!dragDetect, IN!removeDragDetectListener, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Tree misses features compatible with : Sequence {IN!getColumn, IN!getColumnCount, IN!getColumns, IN!getGridLineWidth, IN!getHeaderHeight, IN!getHeaderVisible, IN!getItem, IN!getLinesVisible, IN!indexOf, IN!indexOf, IN!setHeaderVisible, IN!setLinesVisible, IN!showColumn, IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TreeItem misses features compatible with : Sequence {IN!getBackground, IN!getBounds, IN!getFont, IN!getForeground, IN!getImage, IN!getImageBounds, IN!getItem, IN!getText, IN!indexOf, IN!removeAll, IN!setBackground, IN!setFont, IN!setForeground, IN!setImage, IN!setImage, IN!setText, IN!setText, IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Composite, IN!Canvas, IN!Item, IN!Layout, IN!Widget, IN!Button, IN!Control, IN!Caret, IN!Combo, IN!Scrollable, IN!CoolBar, IN!CoolItem, IN!Decorations, IN!Group, IN!Label, IN!Link, IN!List, IN!Menu, IN!MenuItem, IN!ProgressBar, IN!Sash, IN!Scale, IN!ScrollBar, IN!Shell, IN!Slider, IN!Spinner, IN!TabFolder, IN!TabItem, IN!Table, IN!TableColumn, IN!TableItem, IN!Text, IN!ToolBar, IN!ToolItem, IN!Tracker, IN!Tray, IN!TrayItem, IN!Tree, IN!TreeColumn, IN!TreeItem}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::CoolItem misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {IN!setSelection, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::TreeItem misses features compatible with : Sequence {IN!getTextBounds}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Composite, IN!Canvas, IN!Button, IN!Control, IN!Combo, IN!Scrollable, IN!CoolBar, IN!DateTime, IN!Decorations, IN!Display, IN!ExpandBar, IN!Group, IN!Label, IN!Link, IN!List, IN!ProgressBar, IN!Sash, IN!Scale, IN!Shell, IN!Slider, IN!Spinner, IN!TabFolder, IN!Table, IN!TableItem, IN!Text, IN!ToolBar, IN!TrayItem, IN!Tree, IN!TreeItem}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::DateTime misses features compatible with : Sequence {IN!setDate, IN!setTime, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Table misses features compatible with : Sequence {IN!getSortColumn, IN!getSortDirection, IN!setSelection, IN!setSortColumn, IN!setSortDirection, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::TableColumn misses features compatible with : Sequence {IN!getToolTipText, IN!setToolTipText}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::TableItem misses features compatible with : Sequence {IN!getBounds}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!getWebBrowser, IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!Browser}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!execute, IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::browser::WindowEvent misses features compatible with : Sequence {IN!required, IN!addressBar, IN!menuBar, IN!statusBar, IN!toolBar}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!Browser, IN!WindowEvent}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!getIME, IN!setRegion, IN!setIME}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Display misses features compatible with : Sequence {IN!getSynchronizer}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::events::SelectionEvent misses features compatible with : Sequence {IN!text}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::events::TreeEvent misses features compatible with : Sequence {IN!text}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::events misses classifiers compatible with : Sequence {IN!SelectionEvent, IN!TreeEvent}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::events equivalent packages: Sequence {}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Text misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::events::MouseEvent misses features compatible with : Sequence {IN!count}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::events misses classifiers compatible with : Sequence {IN!DragDetectEvent, IN!MouseEvent, IN!DragDetectListener, IN!MenuDetectEvent, IN!MenuDetectListener, IN!MouseWheelListener}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::events equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics::FontData misses features compatible with : Sequence {PREVIN!name, PREVIN!height, PREVIN!style}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {PREVIN!FontData}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics compatible packages: Sequence {}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ExpandBar misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::ToolBar misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ExpandItem misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::FileDialog misses features compatible with : Sequence {IN!getFilterIndex, IN!getOverwrite, IN!setFilterIndex, IN!setOverwrite}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::TrayItem misses features compatible with : Sequence {IN!getParent, IN!getToolTip, IN!setToolTip}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics compatible packages: Sequence {PREVIN!graphics}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::graphics::Device misses features compatible with : Sequence {IN!loadFont}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::graphics::GC misses features compatible with : Sequence {IN!getLineAttributes, IN!setLineAttributes}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::graphics::TextLayout misses features compatible with : Sequence {IN!draw}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {IN!Device, IN!GC, IN!LineAttributes, IN!TextLayout}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Tree misses features compatible with : Sequence {IN!clear, IN!clearAll, IN!getColumnOrder, IN!getSortColumn, IN!getSortDirection, IN!setColumnOrder, IN!setItemCount, IN!setSelection, IN!setSortColumn, IN!setSortDirection, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Spinner misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::TreeColumn misses features compatible with : Sequence {IN!getMoveable, IN!getToolTipText, IN!setMoveable, IN!setToolTipText}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::TreeItem misses features compatible with : Sequence {IN!clear, IN!clearAll, IN!setItemCount}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Composite, IN!Canvas, IN!Button, IN!Control, IN!Combo, IN!Scrollable, IN!CoolBar, IN!Decorations, IN!Event, IN!ExpandBar, IN!ExpandItem, IN!Group, IN!Label, IN!Link, IN!List, IN!ProgressBar, IN!Sash, IN!Scale, IN!Shell, IN!Slider, IN!Spinner, IN!TabFolder, IN!Table, IN!TableColumn, IN!TableItem, IN!Text, IN!ToolBar, IN!ToolTip, IN!TrayItem, IN!Tree, IN!TreeColumn, IN!TreeItem}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::widgets equivalent packages: Sequence {}
@@ -599,19 +467,31 @@ transform:
 [SWT 3.2] SWT 3.1::org::eclipse::swt::awt::SWT_AWT misses features compatible with : Sequence {IN!getFrame}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::awt misses classifiers compatible with : Sequence {IN!SWT_AWT}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::awt equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Link misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::List misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Menu misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::MenuItem misses features compatible with : Sequence {IN!getListeners}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!clearSessions, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!Browser}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {IN!getState, IN!setState, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Table misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::events misses classifiers compatible with : Sequence {IN!ExpandAdapter, IN!ExpandListener, IN!ExpandEvent}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::events equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::TableItem misses features compatible with : Sequence {IN!getTextBounds}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ScrollBar misses features compatible with : Sequence {IN!getListeners}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::graphics compatible packages: Sequence {PREVIN!graphics}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics::TextStyle misses features compatible with : Sequence {IN!metrics, IN!rise}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics::Color misses features compatible with : Sequence {IN!getDevice}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics::Resource misses features compatible with : Sequence {IN!getDevice}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics::Cursor misses features compatible with : Sequence {IN!getDevice}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics::Font misses features compatible with : Sequence {IN!getDevice}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Text misses features compatible with : Sequence {IN!getMessage, IN!setMessage, IN!dragDetect, IN!removeDragDetectListener, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics::GC misses features compatible with : Sequence {IN!getDevice}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics::Image misses features compatible with : Sequence {IN!getDevice}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics::Path misses features compatible with : Sequence {IN!getDevice}
@@ -622,212 +502,106 @@ transform:
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics::Transform misses features compatible with : Sequence {IN!getDevice}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {IN!TextStyle, IN!Color, IN!Resource, IN!Cursor, IN!Font, IN!GC, IN!GlyphMetrics, IN!Image, IN!Path, IN!Pattern, IN!RGB, IN!Region, IN!TextLayout, IN!Transform}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::graphics equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {IN!addVerifyListener, IN!copy, IN!cut, IN!paste, IN!removeVerifyListener, IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::LineStyleEvent misses features compatible with : Sequence {IN!ranges, IN!alignment, IN!indent, IN!justify, IN!bullet, IN!bulletIndex}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::ST misses features compatible with : Sequence {IN!BULLET_DOT, IN!BULLET_NUMBER, IN!BULLET_LETTER_LOWER, IN!BULLET_LETTER_UPPER, IN!BULLET_TEXT, IN!BULLET_CUSTOM}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!addWordMovementListener, IN!getDragDetect, IN!removeWordMovementListener, IN!setDragDetect, IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::StyledTextPrintOptions misses features compatible with : Sequence {IN!printLineNumbers}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {IN!getExpandHorizontal, IN!getExpandVertical, IN!getMinWidth, IN!getMinHeight, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::StyleRange misses generals compatible with : Sequence {IN!TextStyle}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!AnimatedProgress, IN!CBanner, IN!CCombo, IN!CLabel, IN!CTabFolder, IN!MovementEvent, IN!MovementListener, IN!SashForm, IN!ScrolledComposite, IN!StyledText, IN!StyledTextDropTargetEffect, IN!StyledTextPrintOptions, IN!TableCursor, IN!TableTree, IN!ViewForm}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::printing::Printer misses features compatible with : Sequence {IN!loadFont}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::printing misses classifiers compatible with : Sequence {IN!Printer}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::printing equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!addPaintObjectListener, IN!getAlignment, IN!getBaseline, IN!getIndent, IN!getJustify, IN!getLineAlignment, IN!getLineBullet, IN!getLineHeight, IN!getLineIndent, IN!getLineJustify, IN!getLineSpacing, IN!getLinePixel, IN!getLineIndex, IN!getRanges, IN!getRanges, IN!getStyleRanges, IN!getStyleRanges, IN!removePaintObjectListener, IN!setAlignment, IN!setIndent, IN!setJustify, IN!setLineAlignment, IN!setLineBullet, IN!setLineIndent, IN!setLineJustify, IN!setLineSpacing, IN!setStyleRanges, IN!setStyleRanges, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::dnd::DragSource misses features compatible with : Sequence {IN!getDragSourceEffect, IN!setDragSourceEffect}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::dnd::DragSourceEvent misses features compatible with : Sequence {IN!image}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::dnd::DropTarget misses features compatible with : Sequence {IN!getDropTargetEffect, IN!setDropTargetEffect}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {IN!DropTargetEffect, IN!DragSource, IN!DragSourceEffect, IN!DragSourceEvent, IN!DropTarget, IN!TableDragSourceEffect, IN!TableDropTargetEffect, IN!TreeDragSourceEffect, IN!TreeDropTargetEffect}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::layout equivalent packages: Sequence {PREVIN!layout}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl compatible packages: Sequence {PREVIN!opengl}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!AnimatedProgress, IN!Bullet, IN!CBanner, IN!CCombo, IN!CLabel, IN!CTabFolder, IN!LineStyleEvent, IN!PaintObjectEvent, IN!PaintObjectListener, IN!ST, IN!SashForm, IN!ScrolledComposite, IN!StyleRange, IN!StyledText, IN!TableCursor, IN!TableTree, IN!ViewForm}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::printing equivalent packages: Sequence {PREVIN!printing}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::opengl::GLCanvas misses features compatible with : Sequence {IN!dragDetect, IN!addMouseWheelListener, IN!dragDetect, IN!removeMenuDetectListener, IN!setDragDetect, IN!removeDragDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addDragDetectListener, IN!getCursor, IN!addMenuDetectListener}
-[SWT 3.3] SWT 3.2::org::eclipse::swt::opengl misses classifiers compatible with : Sequence {IN!GLCanvas}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl equivalent packages: Sequence {}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::dnd::DragSourceEvent misses features compatible with : Sequence {IN!x, IN!y}
-[SWT 3.3] Package: 'OrgEclipseSwt'
-[SWT 3.3] SWT 3.3::org::eclipse::swt referenced packages: Sequence {}
-[SWT 3.3] Package: 'OrgEclipseSwtAccessibility'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.2] SWT 3.1::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {IN!DragSourceEvent}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::layout::FormAttachment misses features compatible with : Sequence {IN!<init>}
-[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!events, IN!accessibility}
-[SWT 3.3] Package: 'OrgEclipseSwtAwt'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::browser referenced packages: Sequence {IN!graphics, IN!widgets, IN!events}
-[SWT 3.3] Package: 'OrgEclipseSwtEvents'
-[SWT 3.2] SWT 3.1::org::eclipse::swt::layout misses classifiers compatible with : Sequence {IN!FormAttachment}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::layout equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl compatible packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
-[SWT 3.2] Package: 'OrgEclipseSwt'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtGraphics'
-[SWT 3.2] SWT 3.2::org::eclipse::swt referenced packages: Sequence {}
-[SWT 3.2] Package: 'OrgEclipseSwtAccessibility'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
-[SWT 3.2] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics referenced packages: Sequence {}
-[SWT 3.3] Package: 'OrgEclipseSwtCustom'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::custom referenced packages: Sequence {IN!graphics, IN!events, IN!dnd, IN!printing, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::printing referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtDnd'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtLayout'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!accessibility, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtAwt'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
-[SWT 3.2] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!events, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtEvents'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtGraphics'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtOpengl'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
-[SWT 3.3] Package: 'OrgEclipseSwtProgram'
-[SWT 3.3] SWT 3.3::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 41,026s
-[atl.saveModel] Saving model SWT-3_3_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_3.owl
-[SWT 3.2] SWT 3.2::org::eclipse::swt::graphics referenced packages: Sequence {}
-[SWT 3.2] Package: 'OrgEclipseSwtCustom'
-  [atl.launch] Launching transformation /home/dennis/Documents/Werk/Projects/PlatformKit/platformkit-java/transformations/UML2ToAPIOntology.asm using EMF-specific VM
-[SWT 3.2] SWT 3.2::org::eclipse::swt::custom referenced packages: Sequence {IN!events, IN!printing, IN!widgets, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtDnd'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd referenced packages: Sequence {IN!widgets, IN!events}
-[SWT 3.2] Package: 'OrgEclipseSwtLayout'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
-[SWT 3.2] Package: 'OrgEclipseSwtOpengl'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
-[SWT 3.2] Package: 'OrgEclipseSwtProgram'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 37,975s
-[atl.saveModel] Saving model SWT-3_2_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_2.owl
-[SWT 3.1] SWT 3.1::org::eclipse::swt compatible packages: Sequence {PREVIN!swt}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::SWT misses features compatible with : Sequence {IN!MouseWheel, IN!OFF, IN!ON, IN!LOW, IN!HIGH, IN!DOUBLE_BUFFERED, IN!BUTTON4, IN!BUTTON5, IN!SCROLL_LINE, IN!SCROLL_PAGE, IN!ERROR_CANNOT_INVERT_MATRIX, IN!ERROR_NO_GRAPHICS_LIBRARY, IN!ERROR_INVALID_FONT, IN!CAP_FLAT, IN!CAP_ROUND, IN!CAP_SQUARE, IN!JOIN_MITER, IN!JOIN_ROUND, IN!JOIN_BEVEL, IN!LINE_CUSTOM, IN!PATH_MOVE_TO, IN!PATH_LINE_TO, IN!PATH_QUAD_TO, IN!PATH_CUBIC_TO, IN!PATH_CLOSE, IN!FILL_EVEN_ODD, IN!FILL_WINDING, IN!IMAGE_OS2_BMP}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::SWTError misses features compatible with : Sequence {IN!getCause}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::SWTException misses features compatible with : Sequence {IN!getCause}
-[SWT 3.1] SWT 3.0::org::eclipse::swt misses classifiers compatible with : Sequence {IN!SWT, IN!SWTError, IN!SWTException}
-[SWT 3.1] SWT 3.1::org::eclipse::swt equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility compatible packages: Sequence {PREVIN!accessibility}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility equivalent packages: Sequence {PREVIN!accessibility}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets compatible packages: Sequence {PREVIN!widgets}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Composite misses features compatible with : Sequence {IN!changed, IN!getLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!layout, IN!setLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Canvas misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Item misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Layout misses features compatible with : Sequence {IN!flushCache}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Widget misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Button misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Control misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Caret misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {IN!addVerifyListener, IN!removeVerifyListener, IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::CoolItem misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::List misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Menu misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::MenuItem misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::ScrollBar misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getMinimumSize, IN!isLayoutDeferred, IN!setMinimumSize, IN!setMinimumSize, IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TabItem misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Table misses features compatible with : Sequence {IN!getColumnOrder, IN!setColumnOrder, IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TableColumn misses features compatible with : Sequence {IN!getMoveable, IN!setMoveable, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TableItem misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Text misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::ToolBar misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::ToolItem misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Tracker misses features compatible with : Sequence {IN!addKeyListener, IN!removeKeyListener, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Tray misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TrayItem misses features compatible with : Sequence {IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::Tree misses features compatible with : Sequence {IN!getColumn, IN!getColumnCount, IN!getColumns, IN!getGridLineWidth, IN!getHeaderHeight, IN!getHeaderVisible, IN!getItem, IN!getLinesVisible, IN!indexOf, IN!indexOf, IN!setHeaderVisible, IN!setLinesVisible, IN!showColumn, IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets::TreeItem misses features compatible with : Sequence {IN!getBackground, IN!getBounds, IN!getFont, IN!getForeground, IN!getImage, IN!getImageBounds, IN!getItem, IN!getText, IN!indexOf, IN!removeAll, IN!setBackground, IN!setFont, IN!setForeground, IN!setImage, IN!setImage, IN!setText, IN!setText, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Composite, IN!Canvas, IN!Item, IN!Layout, IN!Widget, IN!Button, IN!Control, IN!Caret, IN!Combo, IN!Scrollable, IN!CoolBar, IN!CoolItem, IN!Decorations, IN!Group, IN!Label, IN!Link, IN!List, IN!Menu, IN!MenuItem, IN!ProgressBar, IN!Sash, IN!Scale, IN!ScrollBar, IN!Shell, IN!Slider, IN!Spinner, IN!TabFolder, IN!TabItem, IN!Table, IN!TableColumn, IN!TableItem, IN!Text, IN!ToolBar, IN!ToolItem, IN!Tracker, IN!Tray, IN!TrayItem, IN!Tree, IN!TreeColumn, IN!TreeItem}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!execute, IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::browser::WindowEvent misses features compatible with : Sequence {IN!required, IN!addressBar, IN!menuBar, IN!statusBar, IN!toolBar}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!Browser, IN!WindowEvent}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::events::SelectionEvent misses features compatible with : Sequence {IN!text}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::events::TreeEvent misses features compatible with : Sequence {IN!text}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::events misses classifiers compatible with : Sequence {IN!SelectionEvent, IN!TreeEvent}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::events equivalent packages: Sequence {}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics::FontData misses features compatible with : Sequence {PREVIN!name, PREVIN!height, PREVIN!style}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {PREVIN!FontData}
-[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics compatible packages: Sequence {}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::ToolBar misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getAlpha, IN!getFullScreen, IN!print, IN!setAlpha, IN!setFullScreen, IN!print, IN!getListeners, IN!getIME, IN!setIME}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::TrayItem misses features compatible with : Sequence {IN!addMenuDetectListener, IN!removeMenuDetectListener}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::Tree misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Spinner misses features compatible with : Sequence {IN!LIMIT, IN!getText, IN!getTextLimit, IN!setTextLimit, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets::TreeItem misses features compatible with : Sequence {IN!getTextBounds}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Composite, IN!Canvas, IN!Button, IN!Control, IN!Combo, IN!Scrollable, IN!CoolBar, IN!DateTime, IN!Decorations, IN!Display, IN!ExpandBar, IN!Group, IN!Label, IN!Link, IN!List, IN!ProgressBar, IN!Sash, IN!Scale, IN!Shell, IN!Slider, IN!Spinner, IN!TabFolder, IN!Table, IN!TableItem, IN!Text, IN!ToolBar, IN!TrayItem, IN!Tree, IN!TreeItem}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {IN!getItem, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TabItem misses features compatible with : Sequence {IN!getBounds, IN!getListeners}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!getWebBrowser, IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!Browser}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getModified, IN!setModified}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::events::MouseEvent misses features compatible with : Sequence {IN!count}
 [SWT 3.1] SWT 3.1::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {IN!getRightMinimumSize, IN!setRightMinimumSize, IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {IN!getMRUVisible, IN!setMRUVisible, IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Table misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::events misses classifiers compatible with : Sequence {IN!DragDetectEvent, IN!MouseEvent, IN!DragDetectListener, IN!MenuDetectEvent, IN!MenuDetectListener, IN!MouseWheelListener}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::events equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TableColumn misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TableItem misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics compatible packages: Sequence {PREVIN!graphics}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::graphics::Device misses features compatible with : Sequence {IN!loadFont}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {IN!getRightMinimumSize, IN!setRightMinimumSize, IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Text misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::graphics::GC misses features compatible with : Sequence {IN!getLineAttributes, IN!setLineAttributes}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::graphics::TextLayout misses features compatible with : Sequence {IN!draw}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {IN!Device, IN!GC, IN!LineAttributes, IN!TextLayout}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ToolBar misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ToolItem misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::ToolTip misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Tracker misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Tray misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TrayItem misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::Tree misses features compatible with : Sequence {IN!deselect, IN!select, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TreeColumn misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets::TreeItem misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Composite, IN!Canvas, IN!Item, IN!Widget, IN!Button, IN!Control, IN!Caret, IN!Combo, IN!Scrollable, IN!CoolBar, IN!CoolItem, IN!DateTime, IN!Decorations, IN!Display, IN!ExpandBar, IN!ExpandItem, IN!FileDialog, IN!Group, IN!IME, IN!Label, IN!Link, IN!List, IN!Menu, IN!MenuItem, IN!ProgressBar, IN!Sash, IN!Scale, IN!ScrollBar, IN!Shell, IN!Slider, IN!Spinner, IN!TabFolder, IN!TabItem, IN!Table, IN!TableColumn, IN!TableItem, IN!Text, IN!ToolBar, IN!ToolItem, IN!ToolTip, IN!Tracker, IN!Tray, IN!TrayItem, IN!Tree, IN!TreeColumn, IN!TreeItem}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {IN!getMRUVisible, IN!setMRUVisible, IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::custom::CTabItem misses features compatible with : Sequence {IN!isListening}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::custom::ST misses features compatible with : Sequence {IN!SELECT_ALL}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::custom::StackLayout misses features compatible with : Sequence {IN!flushCache, IN!toString, IN!flushCache}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::custom::StyleRange misses features compatible with : Sequence {IN!underline, IN!strikeout}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!copy, IN!getTextBounds, IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {IN!getItem, IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!getText, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!Browser}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::events equivalent packages: Sequence {PREVIN!events}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::widgets misses classifiers compatible with : Sequence {IN!Shell}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::awt compatible packages: Sequence {PREVIN!awt}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::awt equivalent packages: Sequence {PREVIN!awt}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics compatible packages: Sequence {PREVIN!graphics}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics::TextStyle misses features compatible with : Sequence {IN!underlineColor, IN!underlineStyle, IN!strikeoutColor, IN!borderStyle, IN!borderColor, IN!<init>, IN!<init>}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics::Resource misses features compatible with : Sequence {IN!dispose}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!copy, IN!getTextBounds, IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics::Path misses features compatible with : Sequence {IN!<init>, IN!<init>}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics::Transform misses features compatible with : Sequence {IN!identity, IN!shear}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {IN!TextStyle, IN!Resource, IN!Path, IN!Transform}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::browser compatible packages: Sequence {PREVIN!browser}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {IN!getItem, IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::custom::TableTreeItem misses features compatible with : Sequence {IN!getItem, IN!isListening}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::custom::TreeEditor misses features compatible with : Sequence {IN!getColumn, IN!setColumn, IN!setEditor}
-[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!isLayoutDeferred, IN!layout, IN!changed, IN!getLayoutDeferred, IN!isListening}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::Browser misses features compatible with : Sequence {IN!getCookie, IN!setCookie, IN!addAuthenticationListener, IN!evaluate, IN!getBrowserType, IN!getJavascriptEnabled, IN!removeAuthenticationListener, IN!setJavascriptEnabled}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::LocationEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::ProgressEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::StatusTextEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::TitleEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser::WindowEvent misses features compatible with : Sequence {IN!<init>}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::browser misses classifiers compatible with : Sequence {IN!AuthenticationEvent, IN!AuthenticationListener, IN!Browser, IN!BrowserFunction, IN!LocationEvent, IN!ProgressEvent, IN!StatusTextEvent, IN!TitleEvent, IN!WebBrowser, IN!EvaluateFunction, IN!WindowEvent}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::browser equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::events compatible packages: Sequence {PREVIN!events}
+[SWT 3.1] SWT 3.0::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {IN!layout, IN!setLayoutDeferred, IN!changed, IN!layout, IN!isLayoutDeferred, IN!getLayoutDeferred, IN!isListening}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!AnimatedProgress, IN!CBanner, IN!CCombo, IN!CLabel, IN!CTabFolder, IN!CTabItem, IN!ST, IN!SashForm, IN!ScrolledComposite, IN!StackLayout, IN!StyleRange, IN!StyledText, IN!TableCursor, IN!TableTree, IN!TableTreeItem, IN!TreeEditor, IN!ViewForm}
 [SWT 3.1] SWT 3.1::org::eclipse::swt::custom equivalent packages: Sequence {}
 [SWT 3.1] SWT 3.1::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
 [SWT 3.1] SWT 3.1::org::eclipse::swt::printing equivalent packages: Sequence {PREVIN!printing}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::events equivalent packages: Sequence {PREVIN!events}
 [SWT 3.1] SWT 3.1::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::dnd::ByteArrayTransfer misses features compatible with : Sequence {IN!validate}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::dnd::Transfer misses features compatible with : Sequence {IN!validate}
@@ -844,6 +618,7 @@ transform:
 [SWT 3.1] SWT 3.0::org::eclipse::swt::layout::FillLayout misses features compatible with : Sequence {IN!flushCache, IN!toString, IN!flushCache}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::layout::FormData misses features compatible with : Sequence {IN!toString}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::layout::FormLayout misses features compatible with : Sequence {IN!marginLeft, IN!marginTop, IN!marginRight, IN!marginBottom, IN!flushCache, IN!toString, IN!flushCache}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::layout::GridData misses features compatible with : Sequence {IN!verticalIndent, IN!minimumWidth, IN!minimumHeight, IN!exclude, IN!toString}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::layout::GridLayout misses features compatible with : Sequence {IN!marginLeft, IN!marginTop, IN!marginRight, IN!marginBottom, IN!flushCache, IN!toString, IN!flushCache}
 [SWT 3.1] SWT 3.0::org::eclipse::swt::layout::RowData misses features compatible with : Sequence {IN!exclude, IN!toString}
@@ -852,32 +627,303 @@ transform:
 [SWT 3.1] SWT 3.1::org::eclipse::swt::layout equivalent packages: Sequence {}
 [SWT 3.1] SWT 3.1::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
 [SWT 3.1] SWT 3.1::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::LineStyleEvent misses features compatible with : Sequence {IN!ranges, IN!alignment, IN!indent, IN!justify, IN!bullet, IN!bulletIndex}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::ST misses features compatible with : Sequence {IN!BULLET_DOT, IN!BULLET_NUMBER, IN!BULLET_LETTER_LOWER, IN!BULLET_LETTER_UPPER, IN!BULLET_TEXT, IN!BULLET_CUSTOM}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::graphics compatible packages: Sequence {PREVIN!graphics}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::graphics::TextStyle misses features compatible with : Sequence {IN!data}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::graphics::Font misses features compatible with : Sequence {IN!extraTraits}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {IN!TextStyle, IN!Font}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {IN!getExpandHorizontal, IN!getExpandVertical, IN!getMinWidth, IN!getMinHeight, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::StyleRange misses generals compatible with : Sequence {IN!TextStyle}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!dragDetect, IN!removeDragDetectListener, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.1::org compatible packages: Sequence {PREVIN!org}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!addPaintObjectListener, IN!getAlignment, IN!getBaseline, IN!getIndent, IN!getJustify, IN!getLineAlignment, IN!getLineBullet, IN!getLineHeight, IN!getLineIndent, IN!getLineJustify, IN!getLineSpacing, IN!getLinePixel, IN!getLineIndex, IN!getRanges, IN!getRanges, IN!getStyleRanges, IN!getStyleRanges, IN!removePaintObjectListener, IN!setAlignment, IN!setIndent, IN!setJustify, IN!setLineAlignment, IN!setLineBullet, IN!setLineIndent, IN!setLineJustify, IN!setLineSpacing, IN!setStyleRanges, IN!setStyleRanges, IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.1] SWT 3.1::org::eclipse compatible packages: Sequence {PREVIN!eclipse}
+[SWT 3.1] SWT 3.1 misses packages compatible with : Sequence {PREVIN!graphics}
+[SWT 3.1] SWT 3.1 compatible models: Sequence {}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {IN!addVerifyListener, IN!copy, IN!cut, IN!paste, IN!removeVerifyListener, IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!dragDetect, IN!removeDragDetectListener, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.1] SWT 3.1::org equivalent packages: Sequence {PREVIN!org}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!AnimatedProgress, IN!Bullet, IN!CBanner, IN!CCombo, IN!CLabel, IN!CTabFolder, IN!LineStyleEvent, IN!PaintObjectEvent, IN!PaintObjectListener, IN!ST, IN!SashForm, IN!ScrolledComposite, IN!StyleRange, IN!StyledText, IN!TableCursor, IN!TableTree, IN!ViewForm}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::custom equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::printing equivalent packages: Sequence {PREVIN!printing}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::dnd::DragSourceEvent misses features compatible with : Sequence {IN!x, IN!y}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {IN!DragSourceEvent}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::layout::FormAttachment misses features compatible with : Sequence {IN!<init>}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::layout misses classifiers compatible with : Sequence {IN!FormAttachment}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::layout equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
+[SWT 3.1] SWT 3.1::org::eclipse equivalent packages: Sequence {PREVIN!eclipse}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics equivalent packages: Sequence {}
+[SWT 3.1] SWT 3.1 misses packages equivalent with : Sequence {PREVIN!swt, PREVIN!widgets, PREVIN!browser, PREVIN!events, PREVIN!graphics, PREVIN!custom, PREVIN!dnd, PREVIN!layout}
+[SWT 3.1] SWT 3.1 equivalent models: Sequence {}
 [SWT 3.1] Package: 'OrgEclipseSwt'
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
 [SWT 3.1] SWT 3.1::org::eclipse::swt referenced packages: Sequence {}
 [SWT 3.1] Package: 'OrgEclipseSwtAccessibility'
 [SWT 3.1] SWT 3.1::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
 [SWT 3.1] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!graphics, IN!accessibility}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!accessibility, IN!events}
 [SWT 3.1] Package: 'OrgEclipseSwtAwt'
 [SWT 3.1] SWT 3.1::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
 [SWT 3.1] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::browser referenced packages: Sequence {IN!events, IN!graphics, IN!widgets}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!graphics, IN!events}
 [SWT 3.1] Package: 'OrgEclipseSwtEvents'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.1] Package: 'OrgEclipseSwtGraphics'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::graphics equivalent packages: Sequence {}
 [SWT 3.1] SWT 3.1::org::eclipse::swt::graphics referenced packages: Sequence {}
 [SWT 3.1] Package: 'OrgEclipseSwtCustom'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::custom referenced packages: Sequence {IN!events, IN!graphics, IN!printing, IN!widgets}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::custom referenced packages: Sequence {IN!widgets, IN!graphics, IN!events, IN!printing}
 [SWT 3.1] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::printing referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.1] Package: 'OrgEclipseSwtDnd'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::dnd referenced packages: Sequence {IN!events, IN!widgets}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::dnd referenced packages: Sequence {IN!widgets, IN!events}
 [SWT 3.1] Package: 'OrgEclipseSwtLayout'
-[SWT 3.1] SWT 3.1::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.1] SWT 3.1::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.1] Package: 'OrgEclipseSwtProgram'
 [SWT 3.1] SWT 3.1::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
-  [atl.launch] Transformation executed in 25,462s
+  [atl.launch] Transformation executed in 30,76s
 [atl.saveModel] Saving model SWT-3_1_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_1.owl
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.2] SWT 3.2::org compatible packages: Sequence {PREVIN!org}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!addWordMovementListener, IN!getDragDetect, IN!removeWordMovementListener, IN!setDragDetect, IN!dragDetect, IN!removeDragDetectListener, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::StyledTextPrintOptions misses features compatible with : Sequence {IN!printLineNumbers}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!getIME, IN!setRegion, IN!setIME}
+[SWT 3.2] SWT 3.2::org::eclipse compatible packages: Sequence {PREVIN!eclipse}
+[SWT 3.2] SWT 3.2 compatible models: Sequence {PREVIN!SWT 3.1}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!dragDetect, IN!removeDragDetectListener, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.2] SWT 3.2::org equivalent packages: Sequence {PREVIN!org}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {IN!getListVisible, IN!setListVisible, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {IN!removeDragDetectListener, IN!dragDetect, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!AnimatedProgress, IN!CBanner, IN!CCombo, IN!CLabel, IN!CTabFolder, IN!MovementEvent, IN!MovementListener, IN!SashForm, IN!ScrolledComposite, IN!StyledText, IN!StyledTextDropTargetEffect, IN!StyledTextPrintOptions, IN!TableCursor, IN!TableTree, IN!ViewForm}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::custom equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::printing::Printer misses features compatible with : Sequence {IN!loadFont}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::printing misses classifiers compatible with : Sequence {IN!Printer}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::printing equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2::org::eclipse equivalent packages: Sequence {PREVIN!eclipse}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2 misses packages equivalent with : Sequence {PREVIN!swt, PREVIN!widgets, PREVIN!awt, PREVIN!browser, PREVIN!events, PREVIN!graphics, PREVIN!custom, PREVIN!dnd, PREVIN!layout}
+[SWT 3.2] SWT 3.2 equivalent models: Sequence {}
+[SWT 3.2] Package: 'OrgEclipseSwt'
+[SWT 3.2] SWT 3.2::org::eclipse::swt referenced packages: Sequence {}
+[SWT 3.2] Package: 'OrgEclipseSwtAccessibility'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
+[SWT 3.2] Package: 'OrgEclipseSwtWidgets'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets referenced packages: Sequence {IN!accessibility, IN!graphics, IN!events}
+[SWT 3.2] Package: 'OrgEclipseSwtAwt'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
+[SWT 3.2] Package: 'OrgEclipseSwtBrowser'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!graphics, IN!events}
+[SWT 3.2] Package: 'OrgEclipseSwtEvents'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.2] Package: 'OrgEclipseSwtGraphics'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.2] Package: 'OrgEclipseSwtCustom'
+[SWT 3.3] SWT 3.2::org::eclipse::swt::dnd::DragSource misses features compatible with : Sequence {IN!getDragSourceEffect, IN!setDragSourceEffect}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!getIME, IN!setRegion, IN!setIME}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::dnd::DragSourceEvent misses features compatible with : Sequence {IN!image}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!widgets, IN!graphics, IN!events}
+[SWT 3.2] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.3] SWT 3.2::org::eclipse::swt::dnd::DropTarget misses features compatible with : Sequence {IN!getDropTargetEffect, IN!setDropTargetEffect}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.2] Package: 'OrgEclipseSwtDnd'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::dnd referenced packages: Sequence {IN!widgets, IN!events}
+[SWT 3.2] Package: 'OrgEclipseSwtLayout'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.2] Package: 'OrgEclipseSwtOpengl'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
+[SWT 3.2] Package: 'OrgEclipseSwtProgram'
+[SWT 3.2] SWT 3.2::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
+  [atl.launch] Transformation executed in 33,044s
+[atl.saveModel] Saving model SWT-3_2_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_2.owl
+[SWT 3.3] SWT 3.2::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {IN!DropTargetEffect, IN!DragSource, IN!DragSourceEffect, IN!DragSourceEvent, IN!DropTarget, IN!TableDragSourceEffect, IN!TableDropTargetEffect, IN!TreeDragSourceEffect, IN!TreeDropTargetEffect}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::layout equivalent packages: Sequence {PREVIN!layout}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl compatible packages: Sequence {PREVIN!opengl}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::CTabItem misses features compatible with : Sequence {IN!getShowClose, IN!setShowClose, IN!getListeners}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::opengl::GLCanvas misses features compatible with : Sequence {IN!dragDetect, IN!removeDragDetectListener, IN!dragDetect, IN!setDragDetect, IN!addDragDetectListener, IN!addMenuDetectListener, IN!getCursor, IN!removeMenuDetectListener, IN!removeMouseWheelListener, IN!getDragDetect, IN!addMouseWheelListener}
+[SWT 3.3] SWT 3.2::org::eclipse::swt::opengl misses classifiers compatible with : Sequence {IN!GLCanvas}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {IN!getSashWidth, IN!setSashWidth, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {IN!getShowFocusedControl, IN!setShowFocusedControl, IN!showControl, IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::StyleRange misses features compatible with : Sequence {IN!<init>, IN!underlineStyle, IN!<init>, IN!borderColor, IN!borderStyle, IN!underlineColor, IN!strikeoutColor}
+[SWT 3.3] SWT 3.3::org compatible packages: Sequence {PREVIN!org}
+[SWT 3.3] SWT 3.3::org::eclipse compatible packages: Sequence {PREVIN!eclipse}
+[SWT 3.3] SWT 3.3 compatible models: Sequence {PREVIN!SWT 3.2}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!getLine, IN!print, IN!getRegion, IN!getListeners, IN!getIME, IN!setRegion, IN!setIME}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::StyledTextPrintOptions misses features compatible with : Sequence {IN!lineLabels}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::custom::ST misses features compatible with : Sequence {IN!TOGGLE_BLOCKSELECTION}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!getIME, IN!setRegion, IN!setIME}
+[SWT 3.3] SWT 3.3::org equivalent packages: Sequence {PREVIN!org}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::custom::StyleRange misses features compatible with : Sequence {IN!data}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::TableTreeItem misses features compatible with : Sequence {IN!getListeners}
+[SWT 3.3] SWT 3.3::org::eclipse equivalent packages: Sequence {PREVIN!eclipse}
+[SWT 3.3] SWT 3.3 misses packages equivalent with : Sequence {PREVIN!swt, PREVIN!widgets, PREVIN!browser, PREVIN!events, PREVIN!graphics, PREVIN!custom, PREVIN!printing, PREVIN!dnd, PREVIN!opengl}
+[SWT 3.3] SWT 3.3 equivalent models: Sequence {}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!setRegion}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!AnimatedProgress, IN!CBanner, IN!CCombo, IN!CLabel, IN!CTabFolder, IN!CTabItem, IN!SashForm, IN!ScrolledComposite, IN!StyleRange, IN!StyledText, IN!StyledTextPrintOptions, IN!TableCursor, IN!TableTree, IN!TableTreeItem, IN!ViewForm}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::custom equivalent packages: Sequence {}
+[SWT 3.3] Package: 'OrgEclipseSwt'
+[SWT 3.3] SWT 3.3::org::eclipse::swt referenced packages: Sequence {}
+[SWT 3.3] Package: 'OrgEclipseSwtAccessibility'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
+[SWT 3.3] Package: 'OrgEclipseSwtWidgets'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::printing::PrintDialog misses features compatible with : Sequence {IN!setPrinterData, IN!getPrinterData}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!accessibility, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtAwt'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
+[SWT 3.3] Package: 'OrgEclipseSwtBrowser'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::browser referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtEvents'
+[SWT 3.4] SWT 3.3::org::eclipse::swt::printing misses classifiers compatible with : Sequence {IN!PrintDialog}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::printing equivalent packages: Sequence {}
+[SWT 3.3] SWT 3.3::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtGraphics'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.3] Package: 'OrgEclipseSwtCustom'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::custom referenced packages: Sequence {IN!events, IN!widgets, IN!printing, IN!dnd, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtDnd'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::dnd referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtLayout'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.3] Package: 'OrgEclipseSwtOpengl'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
+[SWT 3.3] Package: 'OrgEclipseSwtProgram'
+[SWT 3.3] SWT 3.3::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
+  [atl.launch] Transformation executed in 36,478s
+[atl.saveModel] Saving model SWT-3_3_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_3.owl
+[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::dnd::DND misses features compatible with : Sequence {IN!DROP_TARGET_KEY, IN!DRAG_SOURCE_KEY}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::dnd::DragSource misses features compatible with : Sequence {IN!getDragListeners, IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::dnd::DropTarget misses features compatible with : Sequence {IN!getDropListeners, IN!getListeners}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {IN!DND, IN!DragSource, IN!DropTarget, IN!ImageTransfer, IN!URLTransfer}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::layout::RowLayout misses features compatible with : Sequence {IN!center}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::layout misses classifiers compatible with : Sequence {IN!RowLayout}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::layout equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!addCaretListener, IN!getMarginColor, IN!getBlockSelection, IN!getBlockSelectionBounds, IN!getBottomMargin, IN!getLeftMargin, IN!getRightMargin, IN!getSelectionRanges, IN!getTopMargin, IN!removeCaretListener, IN!setBlockSelection, IN!setBlockSelectionBounds, IN!setBlockSelectionBounds, IN!setBottomMargin, IN!setLeftMargin, IN!setMarginColor, IN!setMargins, IN!setRightMargin, IN!setTopMargin}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl compatible packages: Sequence {PREVIN!opengl}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::opengl::GLCanvas misses features compatible with : Sequence {IN!print, IN!getRegion, IN!getListeners, IN!getIME, IN!setRegion, IN!setIME}
+[SWT 3.4] SWT 3.3::org::eclipse::swt::opengl misses classifiers compatible with : Sequence {IN!GLCanvas}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl equivalent packages: Sequence {}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
+[SWT 3.4] SWT 3.4::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!CaretEvent, IN!CaretListener, IN!ST, IN!StyleRange, IN!StyledText}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::custom equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::printing compatible packages: Sequence {PREVIN!printing}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::printing::PrinterData misses features compatible with : Sequence {IN!orientation, IN!PORTRAIT, IN!LANDSCAPE}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::printing misses classifiers compatible with : Sequence {IN!PrinterData}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::printing equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd compatible packages: Sequence {PREVIN!dnd}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::dnd::DragSourceEvent misses features compatible with : Sequence {IN!offsetX, IN!offsetY}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::dnd misses classifiers compatible with : Sequence {IN!DragSourceEvent}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::layout compatible packages: Sequence {PREVIN!layout}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::layout equivalent packages: Sequence {PREVIN!layout}
+[SWT 3.4] SWT 3.4::org compatible packages: Sequence {PREVIN!org}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::opengl compatible packages: Sequence {PREVIN!opengl}
+[SWT 3.4] SWT 3.4::org::eclipse compatible packages: Sequence {PREVIN!eclipse}
+[SWT 3.4] SWT 3.4 compatible models: Sequence {PREVIN!SWT 3.3}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::opengl::GLData misses features compatible with : Sequence {IN!shareContext}
+[SWT 3.5] SWT 3.4::org::eclipse::swt::opengl misses classifiers compatible with : Sequence {IN!GLData}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::opengl equivalent packages: Sequence {}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
+[SWT 3.4] SWT 3.4::org equivalent packages: Sequence {PREVIN!org}
+[SWT 3.4] SWT 3.4::org::eclipse equivalent packages: Sequence {PREVIN!eclipse}
+[SWT 3.4] SWT 3.4 misses packages equivalent with : Sequence {PREVIN!swt, PREVIN!widgets, PREVIN!browser, PREVIN!graphics, PREVIN!custom, PREVIN!printing, PREVIN!dnd, PREVIN!layout, PREVIN!opengl}
+[SWT 3.4] SWT 3.4 equivalent models: Sequence {}
+[SWT 3.4] Package: 'OrgEclipseSwt'
+[SWT 3.4] SWT 3.4::org::eclipse::swt referenced packages: Sequence {}
+[SWT 3.4] Package: 'OrgEclipseSwtAccessibility'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
+[SWT 3.4] Package: 'OrgEclipseSwtWidgets'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!accessibility, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtAwt'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
+[SWT 3.4] Package: 'OrgEclipseSwtBrowser'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::browser referenced packages: Sequence {IN!events, IN!widgets, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtEvents'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtGraphics'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.4] Package: 'OrgEclipseSwtCustom'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!events, IN!dnd, IN!widgets, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.4] Package: 'OrgEclipseSwtDnd'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::dnd referenced packages: Sequence {IN!events, IN!graphics, IN!widgets}
+[SWT 3.4] Package: 'OrgEclipseSwtLayout'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.4] Package: 'OrgEclipseSwtOpengl'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
+[SWT 3.4] Package: 'OrgEclipseSwtProgram'
+[SWT 3.4] SWT 3.4::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
+  [atl.launch] Transformation executed in 39,974s
+[atl.saveModel] Saving model SWT-3_4_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_4.owl
+[SWT 3.5] SWT 3.5::org compatible packages: Sequence {PREVIN!org}
+[SWT 3.5] SWT 3.5::org::eclipse compatible packages: Sequence {PREVIN!eclipse}
+[SWT 3.5] SWT 3.5 compatible models: Sequence {PREVIN!SWT 3.4}
+[SWT 3.5] SWT 3.5::org equivalent packages: Sequence {PREVIN!org}
+[SWT 3.5] SWT 3.5::org::eclipse equivalent packages: Sequence {PREVIN!eclipse}
+[SWT 3.5] SWT 3.5 misses packages equivalent with : Sequence {PREVIN!swt, PREVIN!accessibility, PREVIN!widgets, PREVIN!browser, PREVIN!graphics, PREVIN!custom, PREVIN!printing, PREVIN!dnd, PREVIN!opengl}
+[SWT 3.5] SWT 3.5 equivalent models: Sequence {}
+[SWT 3.5] Package: 'OrgEclipseSwt'
+[SWT 3.5] SWT 3.5::org::eclipse::swt referenced packages: Sequence {}
+[SWT 3.5] Package: 'OrgEclipseSwtAccessibility'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtWidgets'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!accessibility, IN!events}
+[SWT 3.5] Package: 'OrgEclipseSwtAwt'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtBrowser'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::browser referenced packages: Sequence {IN!graphics, IN!widgets, IN!events}
+[SWT 3.5] Package: 'OrgEclipseSwtEvents'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtGraphics'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::graphics referenced packages: Sequence {}
+[SWT 3.5] Package: 'OrgEclipseSwtCustom'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::custom referenced packages: Sequence {IN!dnd, IN!graphics, IN!widgets, IN!events, IN!printing}
+[SWT 3.5] Package: 'OrgEclipseSwtPrinting'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
+[SWT 3.5] Package: 'OrgEclipseSwtDnd'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd referenced packages: Sequence {IN!graphics, IN!widgets, IN!events}
+[SWT 3.5] Package: 'OrgEclipseSwtLayout'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtOpengl'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
+[SWT 3.5] Package: 'OrgEclipseSwtProgram'
+[SWT 3.5] SWT 3.5::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}
+  [atl.launch] Transformation executed in 41,699s
+[atl.saveModel] Saving model SWT-3_5_OWL to platform:/resource/platformkit-java/build-ontology/swt/swt-3_5.owl
 BUILD SUCCESSFUL
-Total time: 2 minutes 12 seconds
+Total time: 52 seconds

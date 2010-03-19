@@ -11,6 +11,8 @@
 [SWT 3.2] SWT 3.2::org::eclipse::swt::layout compatible packages: Sequence {}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::opengl compatible packages: Sequence {}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::program compatible packages: Sequence {}
+[SWT 3.2] SWT 3.2 compatible models: Sequence {}
+[SWT 3.2] SWT 3.2 equivalent models: Sequence {}
 [SWT 3.2] Package: 'OrgEclipseSwt'
 [SWT 3.2] SWT 3.2::org::eclipse::swt equivalent packages: Sequence {}
 [SWT 3.2] SWT 3.2::org::eclipse::swt referenced packages: Sequence {}
@@ -19,13 +21,13 @@
 [SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
 [SWT 3.2] Package: 'OrgEclipseSwtWidgets'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!accessibility, IN!graphics}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets referenced packages: Sequence {IN!accessibility, IN!graphics, IN!events}
 [SWT 3.2] Package: 'OrgEclipseSwtAwt'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::awt equivalent packages: Sequence {}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
 [SWT 3.2] Package: 'OrgEclipseSwtBrowser'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!events, IN!graphics}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!graphics, IN!events}
 [SWT 3.2] Package: 'OrgEclipseSwtEvents'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::events equivalent packages: Sequence {}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
@@ -34,7 +36,7 @@
 [SWT 3.2] SWT 3.2::org::eclipse::swt::graphics referenced packages: Sequence {}
 [SWT 3.2] Package: 'OrgEclipseSwtCustom'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.2] SWT 3.2::org::eclipse::swt::custom referenced packages: Sequence {IN!events, IN!printing, IN!widgets, IN!graphics}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!widgets, IN!graphics, IN!events}
 [SWT 3.2] Package: 'OrgEclipseSwtPrinting'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::printing equivalent packages: Sequence {}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
@@ -64,7 +66,7 @@
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Combo misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Scrollable misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::CoolBar misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Decorations misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Event misses features compatible with : Sequence {IN!index}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Group misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Label misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
@@ -73,7 +75,7 @@
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::ProgressBar misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Sash misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Scale misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Shell misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Slider misses features compatible with : Sequence {IN!getBackgroundImage, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::Spinner misses features compatible with : Sequence {IN!setValues, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::widgets::TabFolder misses features compatible with : Sequence {IN!setSelection, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
@@ -116,18 +118,18 @@
 [SWT 3.2] SWT 3.1::org::eclipse::swt::graphics misses classifiers compatible with : Sequence {IN!TextStyle, IN!Color, IN!Resource, IN!Cursor, IN!Font, IN!GC, IN!GlyphMetrics, IN!Image, IN!Path, IN!Pattern, IN!RGB, IN!Region, IN!TextLayout, IN!Transform}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::graphics equivalent packages: Sequence {}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::custom compatible packages: Sequence {PREVIN!custom}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::AnimatedProgress misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CBanner misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CCombo misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CLabel misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::CTabFolder misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::LineStyleEvent misses features compatible with : Sequence {IN!ranges, IN!alignment, IN!indent, IN!justify, IN!bullet, IN!bulletIndex}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::ST misses features compatible with : Sequence {IN!BULLET_DOT, IN!BULLET_NUMBER, IN!BULLET_LETTER_LOWER, IN!BULLET_LETTER_UPPER, IN!BULLET_TEXT, IN!BULLET_CUSTOM}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::SashForm misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::ScrolledComposite misses features compatible with : Sequence {IN!getExpandHorizontal, IN!getExpandVertical, IN!getMinWidth, IN!getMinHeight, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::StyleRange misses generals compatible with : Sequence {IN!TextStyle}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!addPaintObjectListener, IN!getAlignment, IN!getBaseline, IN!getIndent, IN!getJustify, IN!getLineAlignment, IN!getLineBullet, IN!getLineHeight, IN!getLineIndent, IN!getLineJustify, IN!getLineSpacing, IN!getLinePixel, IN!getLineIndex, IN!getRanges, IN!getRanges, IN!getStyleRanges, IN!getStyleRanges, IN!removePaintObjectListener, IN!setAlignment, IN!setIndent, IN!setJustify, IN!setLineAlignment, IN!setLineBullet, IN!setLineIndent, IN!setLineJustify, IN!setLineSpacing, IN!setStyleRanges, IN!setStyleRanges, IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
-[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!drawBackground, IN!setBackgroundImage}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::StyledText misses features compatible with : Sequence {IN!addPaintObjectListener, IN!getAlignment, IN!getBaseline, IN!getIndent, IN!getJustify, IN!getLineAlignment, IN!getLineBullet, IN!getLineHeight, IN!getLineIndent, IN!getLineJustify, IN!getLineSpacing, IN!getLinePixel, IN!getLineIndex, IN!getRanges, IN!getRanges, IN!getStyleRanges, IN!getStyleRanges, IN!removePaintObjectListener, IN!setAlignment, IN!setIndent, IN!setJustify, IN!setLineAlignment, IN!setLineBullet, IN!setLineIndent, IN!setLineJustify, IN!setLineSpacing, IN!setStyleRanges, IN!setStyleRanges, IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
+[SWT 3.2] SWT 3.1::org::eclipse::swt::custom::TableCursor misses features compatible with : Sequence {IN!getBackgroundMode, IN!drawBackground, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::TableTree misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom::ViewForm misses features compatible with : Sequence {IN!getBackgroundMode, IN!getBackgroundImage, IN!setBackgroundMode, IN!setBackgroundImage}
 [SWT 3.2] SWT 3.1::org::eclipse::swt::custom misses classifiers compatible with : Sequence {IN!AnimatedProgress, IN!Bullet, IN!CBanner, IN!CCombo, IN!CLabel, IN!CTabFolder, IN!LineStyleEvent, IN!PaintObjectEvent, IN!PaintObjectListener, IN!ST, IN!SashForm, IN!ScrolledComposite, IN!StyleRange, IN!StyledText, IN!TableCursor, IN!TableTree, IN!ViewForm}
@@ -145,22 +147,30 @@
 [SWT 3.2] SWT 3.2::org::eclipse::swt::opengl compatible packages: Sequence {}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
+[SWT 3.2] SWT 3.2::org compatible packages: Sequence {PREVIN!org}
+[SWT 3.2] SWT 3.2::org::eclipse compatible packages: Sequence {PREVIN!eclipse}
+[SWT 3.2] SWT 3.2 compatible models: Sequence {PREVIN!SWT 3.1}
+[SWT 3.2] SWT 3.2::org equivalent packages: Sequence {PREVIN!org}
+[SWT 3.2] SWT 3.2::org::eclipse equivalent packages: Sequence {PREVIN!eclipse}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl equivalent packages: Sequence {}
+[SWT 3.2] SWT 3.2 misses packages equivalent with : Sequence {PREVIN!swt, PREVIN!widgets, PREVIN!awt, PREVIN!browser, PREVIN!events, PREVIN!graphics, PREVIN!custom, PREVIN!dnd, PREVIN!layout}
+[SWT 3.2] SWT 3.2 equivalent models: Sequence {}
 [SWT 3.2] Package: 'OrgEclipseSwt'
 [SWT 3.2] SWT 3.2::org::eclipse::swt referenced packages: Sequence {}
 [SWT 3.2] Package: 'OrgEclipseSwtAccessibility'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
 [SWT 3.2] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets referenced packages: Sequence {IN!events, IN!accessibility, IN!graphics}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::widgets referenced packages: Sequence {IN!accessibility, IN!graphics, IN!events}
 [SWT 3.2] Package: 'OrgEclipseSwtAwt'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
 [SWT 3.2] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!events, IN!graphics}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!graphics, IN!events}
 [SWT 3.2] Package: 'OrgEclipseSwtEvents'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.2] Package: 'OrgEclipseSwtGraphics'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::graphics referenced packages: Sequence {}
 [SWT 3.2] Package: 'OrgEclipseSwtCustom'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::custom referenced packages: Sequence {IN!events, IN!printing, IN!widgets, IN!graphics}
+[SWT 3.2] SWT 3.2::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!widgets, IN!graphics, IN!events}
 [SWT 3.2] Package: 'OrgEclipseSwtPrinting'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.2] Package: 'OrgEclipseSwtDnd'
@@ -168,7 +178,6 @@
 [SWT 3.2] Package: 'OrgEclipseSwtLayout'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::layout referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.2] Package: 'OrgEclipseSwtOpengl'
-[SWT 3.2] SWT 3.2::org::eclipse::swt::opengl equivalent packages: Sequence {}
 [SWT 3.2] SWT 3.2::org::eclipse::swt::opengl referenced packages: Sequence {IN!widgets}
 [SWT 3.2] Package: 'OrgEclipseSwtProgram'
 [SWT 3.2] SWT 3.2::org::eclipse::swt::program referenced packages: Sequence {IN!graphics}

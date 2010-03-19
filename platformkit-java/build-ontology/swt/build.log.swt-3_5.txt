@@ -51,26 +51,33 @@
 [SWT 3.5] SWT 3.5::org::eclipse::swt::opengl equivalent packages: Sequence {}
 [SWT 3.5] SWT 3.5::org::eclipse::swt::program compatible packages: Sequence {PREVIN!program}
 [SWT 3.5] SWT 3.5::org::eclipse::swt::program equivalent packages: Sequence {PREVIN!program}
+[SWT 3.5] SWT 3.5::org compatible packages: Sequence {PREVIN!org}
+[SWT 3.5] SWT 3.5::org::eclipse compatible packages: Sequence {PREVIN!eclipse}
+[SWT 3.5] SWT 3.5 compatible models: Sequence {PREVIN!SWT 3.4}
+[SWT 3.5] SWT 3.5::org equivalent packages: Sequence {PREVIN!org}
+[SWT 3.5] SWT 3.5::org::eclipse equivalent packages: Sequence {PREVIN!eclipse}
+[SWT 3.5] SWT 3.5 misses packages equivalent with : Sequence {PREVIN!swt, PREVIN!accessibility, PREVIN!widgets, PREVIN!browser, PREVIN!graphics, PREVIN!custom, PREVIN!printing, PREVIN!dnd, PREVIN!opengl}
+[SWT 3.5] SWT 3.5 equivalent models: Sequence {}
 [SWT 3.5] Package: 'OrgEclipseSwt'
 [SWT 3.5] SWT 3.5::org::eclipse::swt referenced packages: Sequence {}
 [SWT 3.5] Package: 'OrgEclipseSwtAccessibility'
 [SWT 3.5] SWT 3.5::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
 [SWT 3.5] Package: 'OrgEclipseSwtWidgets'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets referenced packages: Sequence {IN!accessibility, IN!graphics, IN!events}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!accessibility, IN!events}
 [SWT 3.5] Package: 'OrgEclipseSwtAwt'
 [SWT 3.5] SWT 3.5::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
 [SWT 3.5] Package: 'OrgEclipseSwtBrowser'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::browser referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::browser referenced packages: Sequence {IN!graphics, IN!widgets, IN!events}
 [SWT 3.5] Package: 'OrgEclipseSwtEvents'
 [SWT 3.5] SWT 3.5::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
 [SWT 3.5] Package: 'OrgEclipseSwtGraphics'
 [SWT 3.5] SWT 3.5::org::eclipse::swt::graphics referenced packages: Sequence {}
 [SWT 3.5] Package: 'OrgEclipseSwtCustom'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!dnd, IN!graphics, IN!events, IN!widgets}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::custom referenced packages: Sequence {IN!dnd, IN!graphics, IN!widgets, IN!events, IN!printing}
 [SWT 3.5] Package: 'OrgEclipseSwtPrinting'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::printing referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.5] Package: 'OrgEclipseSwtDnd'
-[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
+[SWT 3.5] SWT 3.5::org::eclipse::swt::dnd referenced packages: Sequence {IN!graphics, IN!widgets, IN!events}
 [SWT 3.5] Package: 'OrgEclipseSwtLayout'
 [SWT 3.5] SWT 3.5::org::eclipse::swt::layout referenced packages: Sequence {IN!graphics, IN!widgets}
 [SWT 3.5] Package: 'OrgEclipseSwtOpengl'
