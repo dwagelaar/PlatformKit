@@ -770,9 +770,31 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/personaljava-1_1.owl#PersonalJava1_1BytecodeFormat -->
 
     <owl:Class rdf:about="#PersonalJava1_1BytecodeFormat">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&java;majorVersionNumber"/>
+                        <owl:someValuesFrom>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">45</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdf:Description>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&java;preverified"/>
+                        <owl:hasValue rdf:datatype="&xsd;boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&isa;JavaBytecode"/>
-        <rdfs:comment xml:lang="OWLManchester"
-            >java:majorVersionNumber some xsd:integer[&gt;=&quot;45&quot;^^xsd:integer] and java:preverified value false</rdfs:comment>
         <rdfs:comment xml:lang="en"
             >PersonalJava 1.1 bytecode format</rdfs:comment>
     </owl:Class>
@@ -841,6 +863,12 @@
         <rdfs:comment xml:lang="en"
             >PersonalJava 1.1 virtual machine</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
     
 
 

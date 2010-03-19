@@ -244,10 +244,32 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_2.owl#J2SE1_2BytecodeFormat -->
 
     <owl:Class rdf:about="#J2SE1_2BytecodeFormat">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&java;majorVersionNumber"/>
+                        <owl:someValuesFrom>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">46</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdf:Description>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&java;preverified"/>
+                        <owl:hasValue rdf:datatype="&xsd;boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&jdk-1_1;JDK1_1BytecodeFormat"/>
         <rdfs:subClassOf rdf:resource="&personaljava-1_1;PersonalJava1_1BytecodeFormat"/>
-        <rdfs:comment xml:lang="OWLManchester"
-            >java:majorVersionNumber some xsd:integer[&gt;=&quot;46&quot;^^xsd:integer] and java:preverified value false</rdfs:comment>
         <rdfs:comment xml:lang="en"
             >J2SE 1.2 bytecode format</rdfs:comment>
     </owl:Class>
@@ -3715,6 +3737,12 @@
     
 
 
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -3796,12 +3824,12 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_2.owl#theJ2SE1_2BytecodeFormat -->
 
-    <owl:Thing rdf:about="#theJ2SE1_2BytecodeFormat">
-        <rdf:type rdf:resource="#J2SE1_2BytecodeFormat"/>
+    <J2SE1_2BytecodeFormat rdf:about="#theJ2SE1_2BytecodeFormat">
+        <rdf:type rdf:resource="&owl;Thing"/>
         <java:minorVersionNumber rdf:datatype="&xsd;integer">0</java:minorVersionNumber>
         <java:majorVersionNumber rdf:datatype="&xsd;integer">46</java:majorVersionNumber>
         <java:preverified rdf:datatype="&xsd;boolean">false</java:preverified>
-    </owl:Thing>
+    </J2SE1_2BytecodeFormat>
     
 
 
@@ -3951,9 +3979,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_2.owl#theJavaMathPart -->
 
-    <owl:Thing rdf:about="#theJavaMathPart">
-        <rdf:type rdf:resource="#JavaMath"/>
-    </owl:Thing>
+    <JavaMath rdf:about="#theJavaMathPart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </JavaMath>
     
 
 
@@ -4031,9 +4059,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_2.owl#theJavaSecurityPart -->
 
-    <owl:Thing rdf:about="#theJavaSecurityPart">
-        <rdf:type rdf:resource="#JavaSecurity"/>
-    </owl:Thing>
+    <JavaSecurity rdf:about="#theJavaSecurityPart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </JavaSecurity>
     
 
 
@@ -4119,9 +4147,9 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_2.owl#theJavaxSwingEventPart -->
 
-    <owl:Thing rdf:about="#theJavaxSwingEventPart">
-        <rdf:type rdf:resource="#JavaxSwingEvent"/>
-    </owl:Thing>
+    <JavaxSwingEvent rdf:about="#theJavaxSwingEventPart">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </JavaxSwingEvent>
     
 
 
