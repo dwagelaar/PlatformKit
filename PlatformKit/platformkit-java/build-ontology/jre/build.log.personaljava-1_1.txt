@@ -12,48 +12,50 @@
 [PersonalJava 1.1] PersonalJava 1.1::java::awt::event compatible packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::applet compatible packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::beans compatible packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1 compatible models: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1 equivalent models: Sequence {}
 [PersonalJava 1.1] Package: 'JavaLang'
 [PersonalJava 1.1] PersonalJava 1.1::java::lang equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::lang referenced packages: Sequence {IN!util, IN!net, IN!reflect, IN!io}
+[PersonalJava 1.1] PersonalJava 1.1::java::lang referenced packages: Sequence {IN!reflect, IN!util, IN!io, IN!net}
 [PersonalJava 1.1] Package: 'JavaLangReflect'
 [PersonalJava 1.1] PersonalJava 1.1::java::lang::reflect equivalent packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::lang::reflect referenced packages: Sequence {IN!lang}
 [PersonalJava 1.1] Package: 'JavaIo'
 [PersonalJava 1.1] PersonalJava 1.1::java::io equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::io referenced packages: Sequence {IN!util, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::io referenced packages: Sequence {IN!lang, IN!util}
 [PersonalJava 1.1] Package: 'JavaNet'
 [PersonalJava 1.1] PersonalJava 1.1::java::net equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::net referenced packages: Sequence {IN!io, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::net referenced packages: Sequence {IN!lang, IN!io}
 [PersonalJava 1.1] Package: 'JavaUtil'
 [PersonalJava 1.1] PersonalJava 1.1::java::util equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::util referenced packages: Sequence {IN!io, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::util referenced packages: Sequence {IN!lang, IN!io}
 [PersonalJava 1.1] Package: 'JavaUtilZip'
 [PersonalJava 1.1] PersonalJava 1.1::java::util::zip equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::util::zip referenced packages: Sequence {IN!io, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::util::zip referenced packages: Sequence {IN!lang, IN!io}
 [PersonalJava 1.1] Package: 'JavaText'
 [PersonalJava 1.1] PersonalJava 1.1::java::text equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::text referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::text referenced packages: Sequence {IN!lang, IN!util, IN!io}
 [PersonalJava 1.1] Package: 'JavaTextResources'
 [PersonalJava 1.1] PersonalJava 1.1::java::text::resources equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::text::resources referenced packages: Sequence {IN!util, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::text::resources referenced packages: Sequence {IN!lang, IN!util}
 [PersonalJava 1.1] Package: 'JavaAwt'
 [PersonalJava 1.1] PersonalJava 1.1::java::awt equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::awt referenced packages: Sequence {IN!util, IN!io, IN!lang, IN!event, IN!datatransfer, IN!net, IN!image}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt referenced packages: Sequence {IN!event, IN!image, IN!datatransfer, IN!util, IN!io, IN!lang, IN!net}
 [PersonalJava 1.1] Package: 'JavaAwtImage'
 [PersonalJava 1.1] PersonalJava 1.1::java::awt::image equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::awt::image referenced packages: Sequence {IN!util, IN!awt, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt::image referenced packages: Sequence {IN!lang, IN!util, IN!awt}
 [PersonalJava 1.1] Package: 'JavaAwtDatatransfer'
 [PersonalJava 1.1] PersonalJava 1.1::java::awt::datatransfer equivalent packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::awt::datatransfer referenced packages: Sequence {IN!lang}
 [PersonalJava 1.1] Package: 'JavaAwtEvent'
 [PersonalJava 1.1] PersonalJava 1.1::java::awt::event equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::awt::event referenced packages: Sequence {IN!util, IN!awt, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt::event referenced packages: Sequence {IN!lang, IN!util, IN!awt}
 [PersonalJava 1.1] Package: 'JavaApplet'
 [PersonalJava 1.1] PersonalJava 1.1::java::applet equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::applet referenced packages: Sequence {IN!util, IN!net, IN!awt, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::applet referenced packages: Sequence {IN!lang, IN!util, IN!awt, IN!net}
 [PersonalJava 1.1] Package: 'JavaBeans'
 [PersonalJava 1.1] PersonalJava 1.1::java::beans equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::beans referenced packages: Sequence {IN!util, IN!reflect, IN!io, IN!lang, IN!awt}
+[PersonalJava 1.1] PersonalJava 1.1::java::beans referenced packages: Sequence {IN!lang, IN!reflect, IN!awt, IN!util, IN!io}
 [PersonalJava 1.1] PersonalJava 1.1::java::lang::StringBuffer misses features compatible with : Sequence {PREVIN!delete, PREVIN!deleteCharAt}
 [PersonalJava 1.1] PersonalJava 1.1::java::lang::Float misses features compatible with : Sequence {PREVIN!parseFloat}
 [PersonalJava 1.1] PersonalJava 1.1::java::lang::Double misses features compatible with : Sequence {PREVIN!parseDouble}
@@ -62,13 +64,13 @@
 [PersonalJava 1.1] PersonalJava 1.1::java::lang compatible packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::lang::reflect compatible packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::io compatible packages: Sequence {PREVIN!io}
-[PersonalJava 1.1] J2ME MIDP 2.0::java::io::IOException misses features compatible with : Sequence {IN!finalize, IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!clone, IN!printStackTrace}
+[PersonalJava 1.1] J2ME MIDP 2.0::java::io::IOException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!printStackTrace, IN!getLocalizedMessage, IN!clone}
 [PersonalJava 1.1] J2ME MIDP 2.0::java::io::InputStream misses features compatible with : Sequence {IN!finalize, IN!clone}
 [PersonalJava 1.1] J2ME MIDP 2.0::java::io::OutputStream misses features compatible with : Sequence {IN!finalize, IN!clone}
-[PersonalJava 1.1] J2ME MIDP 2.0::java::io::EOFException misses features compatible with : Sequence {IN!clone, IN!finalize, IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!printStackTrace}
-[PersonalJava 1.1] J2ME MIDP 2.0::java::io::UTFDataFormatException misses features compatible with : Sequence {IN!clone, IN!finalize, IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!printStackTrace}
-[PersonalJava 1.1] J2ME MIDP 2.0::java::io::InterruptedIOException misses features compatible with : Sequence {IN!clone, IN!finalize, IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!printStackTrace}
-[PersonalJava 1.1] J2ME MIDP 2.0::java::io::UnsupportedEncodingException misses features compatible with : Sequence {IN!clone, IN!finalize, IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!printStackTrace}
+[PersonalJava 1.1] J2ME MIDP 2.0::java::io::EOFException misses features compatible with : Sequence {IN!printStackTrace, IN!fillInStackTrace, IN!printStackTrace, IN!getLocalizedMessage, IN!clone, IN!finalize}
+[PersonalJava 1.1] J2ME MIDP 2.0::java::io::UTFDataFormatException misses features compatible with : Sequence {IN!printStackTrace, IN!fillInStackTrace, IN!printStackTrace, IN!getLocalizedMessage, IN!clone, IN!finalize}
+[PersonalJava 1.1] J2ME MIDP 2.0::java::io::InterruptedIOException misses features compatible with : Sequence {IN!printStackTrace, IN!fillInStackTrace, IN!printStackTrace, IN!getLocalizedMessage, IN!clone, IN!finalize}
+[PersonalJava 1.1] J2ME MIDP 2.0::java::io::UnsupportedEncodingException misses features compatible with : Sequence {IN!printStackTrace, IN!fillInStackTrace, IN!printStackTrace, IN!getLocalizedMessage, IN!clone, IN!finalize}
 [PersonalJava 1.1] J2ME MIDP 2.0::java::io::DataInput misses features compatible with : Sequence {IN!readLine}
 [PersonalJava 1.1] J2ME MIDP 2.0::java::io::DataOutput misses features compatible with : Sequence {IN!writeBytes}
 [PersonalJava 1.1] J2ME MIDP 2.0::java::io::DataInputStream misses generals compatible with : Sequence {IN!FilterInputStream}
@@ -85,7 +87,7 @@
 [PersonalJava 1.1] PersonalJava 1.1::java::net compatible packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::util::Calendar misses features compatible with : Sequence {PREVIN!before, PREVIN!after}
 [PersonalJava 1.1] PersonalJava 1.1::java::util::Random misses features compatible with : Sequence {PREVIN!nextInt}
-[PersonalJava 1.1] PersonalJava 1.1::java::util::Stack misses features compatible with : Sequence {PREVIN!isEmpty, PREVIN!ensureCapacity, PREVIN!setSize, PREVIN!firstElement, PREVIN!copyInto, PREVIN!indexOf, PREVIN!lastIndexOf, PREVIN!contains, PREVIN!indexOf, PREVIN!insertElementAt, PREVIN!removeElement, PREVIN!setElementAt, PREVIN!capacity, PREVIN!size, PREVIN!elements, PREVIN!trimToSize, PREVIN!removeAllElements, PREVIN!lastIndexOf, PREVIN!elementAt, PREVIN!lastElement, PREVIN!removeElementAt, PREVIN!addElement}
+[PersonalJava 1.1] PersonalJava 1.1::java::util::Stack misses features compatible with : Sequence {PREVIN!removeElement, PREVIN!indexOf, PREVIN!setElementAt, PREVIN!isEmpty, PREVIN!lastIndexOf, PREVIN!ensureCapacity, PREVIN!insertElementAt, PREVIN!firstElement, PREVIN!elementAt, PREVIN!size, PREVIN!addElement, PREVIN!trimToSize, PREVIN!capacity, PREVIN!setSize, PREVIN!lastIndexOf, PREVIN!lastElement, PREVIN!copyInto, PREVIN!contains, PREVIN!removeElementAt, PREVIN!elements, PREVIN!removeAllElements, PREVIN!indexOf}
 [PersonalJava 1.1] PersonalJava 1.1::java::util::Vector misses features compatible with : Sequence {PREVIN!copyInto, PREVIN!trimToSize, PREVIN!ensureCapacity, PREVIN!setSize, PREVIN!capacity, PREVIN!size, PREVIN!isEmpty, PREVIN!elements, PREVIN!contains, PREVIN!indexOf, PREVIN!indexOf, PREVIN!lastIndexOf, PREVIN!lastIndexOf, PREVIN!elementAt, PREVIN!firstElement, PREVIN!lastElement, PREVIN!setElementAt, PREVIN!removeElementAt, PREVIN!insertElementAt, PREVIN!addElement, PREVIN!removeElement, PREVIN!removeAllElements}
 [PersonalJava 1.1] PersonalJava 1.1::java::util misses classifiers compatible with : Sequence {PREVIN!Calendar, PREVIN!Random, PREVIN!Stack, PREVIN!Vector, PREVIN!Timer, PREVIN!TimerTask}
 [PersonalJava 1.1] PersonalJava 1.1::java::util compatible packages: Sequence {}
@@ -98,44 +100,50 @@
 [PersonalJava 1.1] PersonalJava 1.1::java::awt::event compatible packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::applet compatible packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::beans compatible packages: Sequence {}
-[PersonalJava 1.1] Package: 'JavaLang'
+[PersonalJava 1.1] PersonalJava 1.1::java compatible packages: Sequence {PREVIN!java}
+[PersonalJava 1.1] PersonalJava 1.1 misses packages compatible with : Sequence {PREVIN!util, PREVIN!lang, PREVIN!javax, PREVIN!microedition, PREVIN!io, PREVIN!pki, PREVIN!lcdui, PREVIN!game, PREVIN!midlet, PREVIN!rms, PREVIN!media, PREVIN!control}
+[PersonalJava 1.1] PersonalJava 1.1 compatible models: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java equivalent packages: Sequence {PREVIN!java}
 [PersonalJava 1.1] PersonalJava 1.1::java::lang equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::lang referenced packages: Sequence {IN!util, IN!net, IN!reflect, IN!io}
-[PersonalJava 1.1] Package: 'JavaLangReflect'
 [PersonalJava 1.1] PersonalJava 1.1::java::lang::reflect equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::net equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::util equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::util::zip equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::text equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::text::resources equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt::image equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt::datatransfer equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt::event equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::applet equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1::java::beans equivalent packages: Sequence {}
+[PersonalJava 1.1] PersonalJava 1.1 misses packages equivalent with : Sequence {PREVIN!util, PREVIN!lang, PREVIN!io, PREVIN!javax, PREVIN!microedition, PREVIN!io, PREVIN!pki, PREVIN!lcdui, PREVIN!game, PREVIN!midlet, PREVIN!rms, PREVIN!media, PREVIN!control}
+[PersonalJava 1.1] PersonalJava 1.1 equivalent models: Sequence {}
+[PersonalJava 1.1] Package: 'JavaLang'
+[PersonalJava 1.1] PersonalJava 1.1::java::lang referenced packages: Sequence {IN!reflect, IN!util, IN!io, IN!net}
+[PersonalJava 1.1] Package: 'JavaLangReflect'
 [PersonalJava 1.1] PersonalJava 1.1::java::lang::reflect referenced packages: Sequence {IN!lang}
 [PersonalJava 1.1] Package: 'JavaIo'
-[PersonalJava 1.1] PersonalJava 1.1::java::io referenced packages: Sequence {IN!util, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::io referenced packages: Sequence {IN!lang, IN!util}
 [PersonalJava 1.1] Package: 'JavaNet'
-[PersonalJava 1.1] PersonalJava 1.1::java::net equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::net referenced packages: Sequence {IN!io, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::net referenced packages: Sequence {IN!lang, IN!io}
 [PersonalJava 1.1] Package: 'JavaUtil'
-[PersonalJava 1.1] PersonalJava 1.1::java::util equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::util referenced packages: Sequence {IN!io, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::util referenced packages: Sequence {IN!lang, IN!io}
 [PersonalJava 1.1] Package: 'JavaUtilZip'
-[PersonalJava 1.1] PersonalJava 1.1::java::util::zip equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::util::zip referenced packages: Sequence {IN!io, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::util::zip referenced packages: Sequence {IN!lang, IN!io}
 [PersonalJava 1.1] Package: 'JavaText'
-[PersonalJava 1.1] PersonalJava 1.1::java::text equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::text referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::text referenced packages: Sequence {IN!lang, IN!util, IN!io}
 [PersonalJava 1.1] Package: 'JavaTextResources'
-[PersonalJava 1.1] PersonalJava 1.1::java::text::resources equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::text::resources referenced packages: Sequence {IN!util, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::text::resources referenced packages: Sequence {IN!lang, IN!util}
 [PersonalJava 1.1] Package: 'JavaAwt'
-[PersonalJava 1.1] PersonalJava 1.1::java::awt equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::awt referenced packages: Sequence {IN!util, IN!io, IN!lang, IN!event, IN!datatransfer, IN!net, IN!image}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt referenced packages: Sequence {IN!event, IN!image, IN!datatransfer, IN!util, IN!io, IN!lang, IN!net}
 [PersonalJava 1.1] Package: 'JavaAwtImage'
-[PersonalJava 1.1] PersonalJava 1.1::java::awt::image equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::awt::image referenced packages: Sequence {IN!util, IN!awt, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt::image referenced packages: Sequence {IN!lang, IN!util, IN!awt}
 [PersonalJava 1.1] Package: 'JavaAwtDatatransfer'
-[PersonalJava 1.1] PersonalJava 1.1::java::awt::datatransfer equivalent packages: Sequence {}
 [PersonalJava 1.1] PersonalJava 1.1::java::awt::datatransfer referenced packages: Sequence {IN!lang}
 [PersonalJava 1.1] Package: 'JavaAwtEvent'
-[PersonalJava 1.1] PersonalJava 1.1::java::awt::event equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::awt::event referenced packages: Sequence {IN!util, IN!awt, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::awt::event referenced packages: Sequence {IN!lang, IN!util, IN!awt}
 [PersonalJava 1.1] Package: 'JavaApplet'
-[PersonalJava 1.1] PersonalJava 1.1::java::applet equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::applet referenced packages: Sequence {IN!util, IN!net, IN!awt, IN!lang}
+[PersonalJava 1.1] PersonalJava 1.1::java::applet referenced packages: Sequence {IN!lang, IN!util, IN!awt, IN!net}
 [PersonalJava 1.1] Package: 'JavaBeans'
-[PersonalJava 1.1] PersonalJava 1.1::java::beans equivalent packages: Sequence {}
-[PersonalJava 1.1] PersonalJava 1.1::java::beans referenced packages: Sequence {IN!util, IN!reflect, IN!io, IN!lang, IN!awt}
+[PersonalJava 1.1] PersonalJava 1.1::java::beans referenced packages: Sequence {IN!lang, IN!reflect, IN!awt, IN!util, IN!io}

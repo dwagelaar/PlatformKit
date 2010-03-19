@@ -5,6 +5,8 @@
 [J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::lcdui compatible packages: Sequence {}
 [J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::midlet compatible packages: Sequence {}
 [J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::rms compatible packages: Sequence {}
+[J2ME MIDP 1.0] J2ME MIDP 1.0 compatible models: Sequence {}
+[J2ME MIDP 1.0] J2ME MIDP 1.0 equivalent models: Sequence {}
 [J2ME MIDP 1.0] Package: 'JavaLang'
 [J2ME MIDP 1.0] J2ME MIDP 1.0::java::lang equivalent packages: Sequence {}
 [J2ME MIDP 1.0] J2ME MIDP 1.0::java::lang referenced packages: Sequence {IN!io}
@@ -16,10 +18,10 @@
 [J2ME MIDP 1.0] J2ME MIDP 1.0::java::util referenced packages: Sequence {IN!lang}
 [J2ME MIDP 1.0] Package: 'JavaxMicroeditionIo'
 [J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::io equivalent packages: Sequence {}
-[J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::io referenced packages: Sequence {IN!io, IN!lang}
+[J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::io referenced packages: Sequence {IN!lang, IN!io}
 [J2ME MIDP 1.0] Package: 'JavaxMicroeditionLcdui'
 [J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::lcdui equivalent packages: Sequence {}
-[J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::lcdui referenced packages: Sequence {IN!midlet, IN!lang, IN!util}
+[J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::lcdui referenced packages: Sequence {IN!lang, IN!midlet, IN!util}
 [J2ME MIDP 1.0] Package: 'JavaxMicroeditionMidlet'
 [J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::midlet equivalent packages: Sequence {}
 [J2ME MIDP 1.0] J2ME MIDP 1.0::javax::microedition::midlet referenced packages: Sequence {IN!lang}

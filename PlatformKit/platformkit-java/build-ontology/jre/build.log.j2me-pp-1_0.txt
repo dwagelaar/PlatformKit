@@ -26,100 +26,102 @@
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::io compatible packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet compatible packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet::ixc compatible packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0 compatible models: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0 equivalent models: Sequence {}
 [J2ME PP 1.0] Package: 'JavaIo'
 [J2ME PP 1.0] J2ME PP 1.0::java::io equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::io referenced packages: Sequence {IN!net, IN!util, IN!security, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::java::io referenced packages: Sequence {IN!security, IN!util, IN!lang, IN!net}
 [J2ME PP 1.0] Package: 'JavaLang'
 [J2ME PP 1.0] J2ME PP 1.0::java::lang equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::lang referenced packages: Sequence {IN!reflect, IN!util, IN!net, IN!io, IN!security}
+[J2ME PP 1.0] J2ME PP 1.0::java::lang referenced packages: Sequence {IN!security, IN!io, IN!util, IN!reflect, IN!net}
 [J2ME PP 1.0] Package: 'JavaLangReflect'
 [J2ME PP 1.0] J2ME PP 1.0::java::lang::reflect equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::lang::reflect referenced packages: Sequence {IN!security, IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::lang::reflect referenced packages: Sequence {IN!security, IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaLangRef'
 [J2ME PP 1.0] J2ME PP 1.0::java::lang::ref equivalent packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::java::lang::ref referenced packages: Sequence {IN!lang}
 [J2ME PP 1.0] Package: 'JavaNet'
 [J2ME PP 1.0] J2ME PP 1.0::java::net equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::net referenced packages: Sequence {IN!util, IN!lang, IN!io, IN!security, IN!jar}
+[J2ME PP 1.0] J2ME PP 1.0::java::net referenced packages: Sequence {IN!security, IN!io, IN!util, IN!jar, IN!lang}
 [J2ME PP 1.0] Package: 'JavaSecurity'
 [J2ME PP 1.0] J2ME PP 1.0::java::security equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::security referenced packages: Sequence {IN!spec, IN!util, IN!cert, IN!io, IN!lang, IN!net}
+[J2ME PP 1.0] J2ME PP 1.0::java::security referenced packages: Sequence {IN!io, IN!spec, IN!util, IN!cert, IN!lang, IN!net}
 [J2ME PP 1.0] Package: 'JavaSecurityCert'
 [J2ME PP 1.0] J2ME PP 1.0::java::security::cert equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::security::cert referenced packages: Sequence {IN!util, IN!math, IN!io, IN!lang, IN!security}
+[J2ME PP 1.0] J2ME PP 1.0::java::security::cert referenced packages: Sequence {IN!security, IN!io, IN!math, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaSecuritySpec'
 [J2ME PP 1.0] J2ME PP 1.0::java::security::spec equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::security::spec referenced packages: Sequence {IN!math, IN!lang, IN!security, IN!interfaces}
+[J2ME PP 1.0] J2ME PP 1.0::java::security::spec referenced packages: Sequence {IN!security, IN!math, IN!interfaces, IN!lang}
 [J2ME PP 1.0] Package: 'JavaSecurityInterfaces'
 [J2ME PP 1.0] J2ME PP 1.0::java::security::interfaces equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::security::interfaces referenced packages: Sequence {IN!math, IN!security}
+[J2ME PP 1.0] J2ME PP 1.0::java::security::interfaces referenced packages: Sequence {IN!security, IN!math}
 [J2ME PP 1.0] Package: 'JavaSecurityAcl'
 [J2ME PP 1.0] J2ME PP 1.0::java::security::acl equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::security::acl referenced packages: Sequence {IN!util, IN!security, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::java::security::acl referenced packages: Sequence {IN!security, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaUtil'
 [J2ME PP 1.0] J2ME PP 1.0::java::util equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::util referenced packages: Sequence {IN!io, IN!lang, IN!security}
+[J2ME PP 1.0] J2ME PP 1.0::java::util referenced packages: Sequence {IN!security, IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaUtilJar'
 [J2ME PP 1.0] J2ME PP 1.0::java::util::jar equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::util::jar referenced packages: Sequence {IN!util, IN!lang, IN!io, IN!zip}
+[J2ME PP 1.0] J2ME PP 1.0::java::util::jar referenced packages: Sequence {IN!io, IN!util, IN!zip, IN!lang}
 [J2ME PP 1.0] Package: 'JavaUtilZip'
 [J2ME PP 1.0] J2ME PP 1.0::java::util::zip equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::util::zip referenced packages: Sequence {IN!util, IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::util::zip referenced packages: Sequence {IN!io, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaMath'
 [J2ME PP 1.0] J2ME PP 1.0::java::math equivalent packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::java::math referenced packages: Sequence {IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaText'
 [J2ME PP 1.0] J2ME PP 1.0::java::text equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::text referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::java::text referenced packages: Sequence {IN!io, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaTextResources'
 [J2ME PP 1.0] J2ME PP 1.0::java::text::resources equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::text::resources referenced packages: Sequence {IN!lang, IN!util}
+[J2ME PP 1.0] J2ME PP 1.0::java::text::resources referenced packages: Sequence {IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaApplet'
 [J2ME PP 1.0] J2ME PP 1.0::java::applet equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::applet referenced packages: Sequence {IN!net, IN!lang, IN!util, IN!awt}
+[J2ME PP 1.0] J2ME PP 1.0::java::applet referenced packages: Sequence {IN!awt, IN!util, IN!lang, IN!net}
 [J2ME PP 1.0] Package: 'JavaAwt'
 [J2ME PP 1.0] J2ME PP 1.0::java::awt equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt referenced packages: Sequence {IN!event, IN!util, IN!io, IN!lang, IN!security, IN!image, IN!color, IN!net, IN!datatransfer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt referenced packages: Sequence {IN!security, IN!datatransfer, IN!io, IN!util, IN!image, IN!color, IN!lang, IN!event, IN!net}
 [J2ME PP 1.0] Package: 'JavaAwtEvent'
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::event equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::event referenced packages: Sequence {IN!util, IN!lang, IN!awt}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::event referenced packages: Sequence {IN!awt, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaAwtImage'
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::image equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::image referenced packages: Sequence {IN!util, IN!lang, IN!color, IN!awt}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::image referenced packages: Sequence {IN!awt, IN!color, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaAwtColor'
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::color equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::color referenced packages: Sequence {IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::color referenced packages: Sequence {IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaAwtDatatransfer'
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::datatransfer equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::datatransfer referenced packages: Sequence {IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::datatransfer referenced packages: Sequence {IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaBeans'
 [J2ME PP 1.0] J2ME PP 1.0::java::beans equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::beans referenced packages: Sequence {IN!lang, IN!io, IN!util}
+[J2ME PP 1.0] J2ME PP 1.0::java::beans referenced packages: Sequence {IN!io, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaRmi'
 [J2ME PP 1.0] J2ME PP 1.0::java::rmi equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::rmi referenced packages: Sequence {IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::rmi referenced packages: Sequence {IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaRmiRegistry'
 [J2ME PP 1.0] J2ME PP 1.0::java::rmi::registry equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::rmi::registry referenced packages: Sequence {IN!rmi, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::java::rmi::registry referenced packages: Sequence {IN!lang, IN!rmi}
 [J2ME PP 1.0] Package: 'JavaxMicroeditionIo'
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::io equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::io referenced packages: Sequence {IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::io referenced packages: Sequence {IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaxMicroeditionXlet'
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet referenced packages: Sequence {IN!lang, IN!awt}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet referenced packages: Sequence {IN!awt, IN!lang}
 [J2ME PP 1.0] Package: 'JavaxMicroeditionXletIxc'
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet::ixc equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet::ixc referenced packages: Sequence {IN!registry, IN!xlet, IN!rmi, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet::ixc referenced packages: Sequence {IN!xlet, IN!registry, IN!rmi, IN!lang}
 [J2ME PP 1.0] J2ME PP 1.0::java::io::ByteArrayOutputStream misses features compatible with : Sequence {PREVIN!toString}
 [J2ME PP 1.0] J2ME PP 1.0::java::io::StreamTokenizer misses features compatible with : Sequence {PREVIN!<init>}
 [J2ME PP 1.0] J2ME PP 1.0::java::io misses classifiers compatible with : Sequence {PREVIN!ByteArrayOutputStream, PREVIN!StreamTokenizer, PREVIN!StringBufferInputStream, PREVIN!LineNumberInputStream}
 [J2ME PP 1.0] J2ME PP 1.0::java::io compatible packages: Sequence {PREVIN3!io, PREVIN2!io}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::InputStream misses features compatible with : Sequence {IN!finalize, IN!clone}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::io::IOException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::io::IOException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::PrintStream misses generals compatible with : Sequence {IN!FilterOutputStream}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::OutputStream misses features compatible with : Sequence {IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::Writer misses features compatible with : Sequence {IN!finalize, IN!clone}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::io::UnsupportedEncodingException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::io::UnsupportedEncodingException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::OutputStreamWriter misses features compatible with : Sequence {IN!getEncoding, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::DataOutput misses features compatible with : Sequence {IN!writeBytes}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::DataInput misses features compatible with : Sequence {IN!readLine}
@@ -128,17 +130,17 @@
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::Reader misses features compatible with : Sequence {IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::ByteArrayInputStream misses features compatible with : Sequence {IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::ByteArrayOutputStream misses features compatible with : Sequence {IN!writeTo, IN!toString, IN!finalize, IN!clone}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::io::EOFException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::io::EOFException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io::InputStreamReader misses features compatible with : Sequence {IN!getEncoding, IN!clone, IN!finalize}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::io::InterruptedIOException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::io::UTFDataFormatException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::io::InterruptedIOException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::io::UTFDataFormatException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::io misses classifiers compatible with : Sequence {IN!BufferedInputStream, IN!FilterInputStream, IN!InputStream, IN!IOException, IN!Serializable, IN!PrintStream, IN!FilterOutputStream, IN!OutputStream, IN!PrintWriter, IN!Writer, IN!ObjectStreamField, IN!UnsupportedEncodingException, IN!BufferedWriter, IN!OutputStreamWriter, IN!File, IN!ObjectOutputStream, IN!PutField, IN!ObjectOutput, IN!ObjectStreamConstants, IN!DataOutput, IN!ObjectInputStream, IN!GetField, IN!ObjectInput, IN!DataInput, IN!CharConversionException, IN!ObjectStreamException, IN!FilenameFilter, IN!FileFilter, IN!FileDescriptor, IN!Externalizable, IN!ObjectStreamClass, IN!SerializablePermission, IN!StreamCorruptedException, IN!OptionalDataException, IN!NotActiveException, IN!ObjectInputValidation, IN!InvalidObjectException, IN!DataOutputStream, IN!SyncFailedException, IN!InvalidClassException, IN!DataInputStream, IN!BufferedOutputStream, IN!BufferedReader, IN!Reader, IN!ByteArrayInputStream, IN!ByteArrayOutputStream, IN!EOFException, IN!FileInputStream, IN!FileNotFoundException, IN!FileOutputStream, IN!FilePermission, IN!FileReader, IN!InputStreamReader, IN!FileWriter, IN!InterruptedIOException, IN!NotSerializableException, IN!PipedInputStream, IN!PipedOutputStream, IN!PushbackInputStream, IN!StreamTokenizer, IN!UTFDataFormatException, IN!WriteAbortedException, IN!StringReader, IN!CharArrayReader, IN!CharArrayWriter, IN!FilterReader, IN!FilterWriter, IN!LineNumberReader, IN!PipedReader, IN!PipedWriter, IN!PushbackReader, IN!RandomAccessFile, IN!SequenceInputStream, IN!StringWriter}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::InputStream misses features compatible with : Sequence {IN!finalize, IN!clone}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::io::IOException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::io::IOException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::PrintStream misses generals compatible with : Sequence {IN!FilterOutputStream}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::OutputStream misses features compatible with : Sequence {IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::Writer misses features compatible with : Sequence {IN!finalize, IN!clone}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::io::UnsupportedEncodingException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::io::UnsupportedEncodingException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::OutputStreamWriter misses features compatible with : Sequence {IN!getEncoding, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::DataOutput misses features compatible with : Sequence {IN!writeFloat, IN!writeDouble, IN!writeBytes}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::DataInput misses features compatible with : Sequence {IN!readFloat, IN!readDouble, IN!readLine}
@@ -147,10 +149,10 @@
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::Reader misses features compatible with : Sequence {IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::ByteArrayInputStream misses features compatible with : Sequence {IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::ByteArrayOutputStream misses features compatible with : Sequence {IN!writeTo, IN!toString, IN!finalize, IN!clone}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::io::EOFException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::io::EOFException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io::InputStreamReader misses features compatible with : Sequence {IN!getEncoding, IN!clone, IN!finalize}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::io::InterruptedIOException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::io::UTFDataFormatException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::io::InterruptedIOException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::io::UTFDataFormatException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::io misses classifiers compatible with : Sequence {IN!BufferedInputStream, IN!FilterInputStream, IN!InputStream, IN!IOException, IN!Serializable, IN!PrintStream, IN!FilterOutputStream, IN!OutputStream, IN!PrintWriter, IN!Writer, IN!ObjectStreamField, IN!UnsupportedEncodingException, IN!BufferedWriter, IN!OutputStreamWriter, IN!File, IN!ObjectOutputStream, IN!PutField, IN!ObjectOutput, IN!ObjectStreamConstants, IN!DataOutput, IN!ObjectInputStream, IN!GetField, IN!ObjectInput, IN!DataInput, IN!CharConversionException, IN!ObjectStreamException, IN!FilenameFilter, IN!FileFilter, IN!FileDescriptor, IN!Externalizable, IN!ObjectStreamClass, IN!SerializablePermission, IN!StreamCorruptedException, IN!OptionalDataException, IN!NotActiveException, IN!ObjectInputValidation, IN!InvalidObjectException, IN!DataOutputStream, IN!SyncFailedException, IN!InvalidClassException, IN!DataInputStream, IN!BufferedOutputStream, IN!BufferedReader, IN!Reader, IN!ByteArrayInputStream, IN!ByteArrayOutputStream, IN!EOFException, IN!FileInputStream, IN!FileNotFoundException, IN!FileOutputStream, IN!FilePermission, IN!FileReader, IN!InputStreamReader, IN!FileWriter, IN!InterruptedIOException, IN!NotSerializableException, IN!PipedInputStream, IN!PipedOutputStream, IN!PushbackInputStream, IN!StreamTokenizer, IN!UTFDataFormatException, IN!WriteAbortedException, IN!StringReader, IN!CharArrayReader, IN!CharArrayWriter, IN!FilterReader, IN!FilterWriter, IN!LineNumberReader, IN!PipedReader, IN!PipedWriter, IN!PushbackReader, IN!RandomAccessFile, IN!SequenceInputStream, IN!StringWriter}
 [J2ME PP 1.0] J2ME PP 1.0::java::io equivalent packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::java::lang::Character misses features compatible with : Sequence {PREVIN!isJavaLetter, PREVIN!isJavaLetterOrDigit, PREVIN!isSpace}
@@ -164,84 +166,84 @@
 [J2ME PP 1.0] J2ME PP 1.0::java::lang misses classifiers compatible with : Sequence {PREVIN!Character, PREVIN!ClassLoader, PREVIN!Runtime, PREVIN!String, PREVIN!Thread, PREVIN!ThreadGroup, PREVIN!System, PREVIN!SecurityManager}
 [J2ME PP 1.0] J2ME PP 1.0::java::lang compatible packages: Sequence {PREVIN3!lang, PREVIN2!lang}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Object misses features compatible with : Sequence {IN!clone, IN!finalize}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Exception misses features compatible with : Sequence {IN!fillInStackTrace, IN!getLocalizedMessage, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Exception misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Throwable misses dependency suppliers compatible with : Sequence {IN!Serializable}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Class misses dependency suppliers compatible with : Sequence {IN!Serializable}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::String misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::InterruptedException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ClassNotFoundException misses features compatible with : Sequence {IN!<init>, IN!getException, IN!printStackTrace, IN!printStackTrace, IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::InstantiationException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalAccessException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::RuntimeException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::SecurityException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::InterruptedException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ClassNotFoundException misses features compatible with : Sequence {IN!<init>, IN!getException, IN!printStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::InstantiationException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalAccessException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::RuntimeException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::SecurityException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::StringBuffer misses dependency suppliers compatible with : Sequence {IN!Serializable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Error misses features compatible with : Sequence {IN!fillInStackTrace, IN!getLocalizedMessage, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalArgumentException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::NumberFormatException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Error misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalArgumentException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::NumberFormatException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Thread misses features compatible with : Sequence {IN!sleep, IN!<init>, IN!<init>, IN!<init>, IN!interrupted, IN!isInterrupted, IN!destroy, IN!setName, IN!getThreadGroup, IN!enumerate, IN!join, IN!join, IN!dumpStack, IN!setDaemon, IN!isDaemon, IN!checkAccess, IN!getContextClassLoader, IN!setContextClassLoader, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Integer misses dependency suppliers compatible with : Sequence {IN!Comparable}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Long misses dependency suppliers compatible with : Sequence {IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ArithmeticException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ArrayIndexOutOfBoundsException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IndexOutOfBoundsException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ArrayStoreException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ArithmeticException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ArrayIndexOutOfBoundsException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IndexOutOfBoundsException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ArrayStoreException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Boolean misses dependency suppliers compatible with : Sequence {IN!Serializable}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Byte misses dependency suppliers compatible with : Sequence {IN!Comparable}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Character misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ClassCastException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::ClassCastException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Double misses dependency suppliers compatible with : Sequence {IN!Comparable}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Float misses dependency suppliers compatible with : Sequence {IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalMonitorStateException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalStateException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalThreadStateException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::VirtualMachineError misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalMonitorStateException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalStateException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::IllegalThreadStateException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::VirtualMachineError misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Math misses features compatible with : Sequence {IN!asin, IN!acos, IN!atan, IN!exp, IN!log, IN!IEEEremainder, IN!rint, IN!atan2, IN!pow, IN!round, IN!round, IN!random, IN!finalize, IN!clone}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::NegativeArraySizeException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::NegativeArraySizeException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::NoClassDefFoundError misses generals compatible with : Sequence {IN!LinkageError}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::NullPointerException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::OutOfMemoryError misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::NullPointerException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::OutOfMemoryError misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Runtime misses features compatible with : Sequence {IN!addShutdownHook, IN!removeShutdownHook, IN!halt, IN!exec, IN!exec, IN!exec, IN!exec, IN!exec, IN!exec, IN!runFinalization, IN!traceInstructions, IN!traceMethodCalls, IN!load, IN!loadLibrary, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::Short misses dependency suppliers compatible with : Sequence {IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::StringIndexOutOfBoundsException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::lang::StringIndexOutOfBoundsException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang::System misses features compatible with : Sequence {IN!in, IN!setIn, IN!setOut, IN!setErr, IN!setSecurityManager, IN!getSecurityManager, IN!getProperties, IN!setProperties, IN!getProperty, IN!setProperty, IN!runFinalization, IN!load, IN!loadLibrary, IN!mapLibraryName, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::lang misses classifiers compatible with : Sequence {IN!Object, IN!Exception, IN!Comparable, IN!Throwable, IN!Class, IN!CloneNotSupportedException, IN!String, IN!InterruptedException, IN!ClassLoader, IN!ClassNotFoundException, IN!InstantiationException, IN!IllegalAccessException, IN!Package, IN!RuntimeException, IN!SecurityException, IN!NoSuchFieldException, IN!NoSuchMethodException, IN!RuntimePermission, IN!ThreadLocal, IN!StringBuffer, IN!Cloneable, IN!ClassFormatError, IN!LinkageError, IN!Error, IN!IllegalArgumentException, IN!NumberFormatException, IN!SecurityManager, IN!ThreadGroup, IN!Thread, IN!Integer, IN!Number, IN!Long, IN!UnsupportedOperationException, IN!AbstractMethodError, IN!IncompatibleClassChangeError, IN!ArithmeticException, IN!ArrayIndexOutOfBoundsException, IN!IndexOutOfBoundsException, IN!ArrayStoreException, IN!Boolean, IN!Byte, IN!Character, IN!Subset, IN!UnicodeBlock, IN!ClassCastException, IN!ClassCircularityError, IN!Double, IN!ExceptionInInitializerError, IN!Float, IN!IllegalAccessError, IN!IllegalMonitorStateException, IN!IllegalStateException, IN!IllegalThreadStateException, IN!InheritableThreadLocal, IN!InstantiationError, IN!InternalError, IN!VirtualMachineError, IN!Math, IN!NegativeArraySizeException, IN!NoClassDefFoundError, IN!NoSuchFieldError, IN!NoSuchMethodError, IN!NullPointerException, IN!OutOfMemoryError, IN!Process, IN!Runtime, IN!Short, IN!Void, IN!StackOverflowError, IN!StrictMath, IN!StringIndexOutOfBoundsException, IN!System, IN!ThreadDeath, IN!UnsatisfiedLinkError, IN!UnsupportedClassVersionError, IN!VerifyError, IN!Compiler, IN!UnknownError}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Object misses features compatible with : Sequence {IN!clone, IN!finalize}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Exception misses features compatible with : Sequence {IN!fillInStackTrace, IN!getLocalizedMessage, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Exception misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Throwable misses dependency suppliers compatible with : Sequence {IN!Serializable}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Class misses dependency suppliers compatible with : Sequence {IN!Serializable}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::String misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::InterruptedException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ClassNotFoundException misses features compatible with : Sequence {IN!<init>, IN!getException, IN!printStackTrace, IN!printStackTrace, IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::InstantiationException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalAccessException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::RuntimeException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::SecurityException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::InterruptedException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ClassNotFoundException misses features compatible with : Sequence {IN!<init>, IN!getException, IN!printStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::InstantiationException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalAccessException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::RuntimeException misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::SecurityException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::StringBuffer misses dependency suppliers compatible with : Sequence {IN!Serializable}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Error misses features compatible with : Sequence {IN!fillInStackTrace, IN!getLocalizedMessage, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalArgumentException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::NumberFormatException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Error misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalArgumentException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::NumberFormatException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Thread misses features compatible with : Sequence {IN!sleep, IN!<init>, IN!<init>, IN!<init>, IN!<init>, IN!<init>, IN!interrupt, IN!interrupted, IN!isInterrupted, IN!destroy, IN!setName, IN!getName, IN!getThreadGroup, IN!enumerate, IN!join, IN!join, IN!dumpStack, IN!setDaemon, IN!isDaemon, IN!checkAccess, IN!getContextClassLoader, IN!setContextClassLoader, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Integer misses dependency suppliers compatible with : Sequence {IN!Comparable}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Long misses dependency suppliers compatible with : Sequence {IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ArithmeticException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ArrayIndexOutOfBoundsException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IndexOutOfBoundsException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ArrayStoreException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ArithmeticException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ArrayIndexOutOfBoundsException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IndexOutOfBoundsException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ArrayStoreException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Boolean misses dependency suppliers compatible with : Sequence {IN!Serializable}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Byte misses dependency suppliers compatible with : Sequence {IN!Comparable}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Character misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ClassCastException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalMonitorStateException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalStateException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalThreadStateException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::VirtualMachineError misses features compatible with : Sequence {IN!getLocalizedMessage, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!clone, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::ClassCastException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalMonitorStateException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalStateException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::IllegalThreadStateException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::VirtualMachineError misses features compatible with : Sequence {IN!finalize, IN!printStackTrace, IN!fillInStackTrace, IN!getLocalizedMessage, IN!clone, IN!printStackTrace}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Math misses features compatible with : Sequence {IN!E, IN!PI, IN!sin, IN!cos, IN!tan, IN!asin, IN!acos, IN!atan, IN!toRadians, IN!toDegrees, IN!exp, IN!log, IN!sqrt, IN!IEEEremainder, IN!ceil, IN!floor, IN!rint, IN!atan2, IN!pow, IN!round, IN!round, IN!random, IN!abs, IN!abs, IN!max, IN!max, IN!min, IN!min, IN!finalize, IN!clone}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::NegativeArraySizeException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::NullPointerException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::OutOfMemoryError misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::NegativeArraySizeException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::NullPointerException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::OutOfMemoryError misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Runtime misses features compatible with : Sequence {IN!addShutdownHook, IN!removeShutdownHook, IN!halt, IN!exec, IN!exec, IN!exec, IN!exec, IN!exec, IN!exec, IN!runFinalization, IN!traceInstructions, IN!traceMethodCalls, IN!load, IN!loadLibrary, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::Short misses dependency suppliers compatible with : Sequence {IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::StringIndexOutOfBoundsException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::lang::StringIndexOutOfBoundsException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang::System misses features compatible with : Sequence {IN!in, IN!setIn, IN!setOut, IN!setErr, IN!setSecurityManager, IN!getSecurityManager, IN!getProperties, IN!setProperties, IN!getProperty, IN!setProperty, IN!runFinalization, IN!load, IN!loadLibrary, IN!mapLibraryName, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::lang misses classifiers compatible with : Sequence {IN!Object, IN!Exception, IN!float, IN!double, IN!Comparable, IN!Throwable, IN!Class, IN!CloneNotSupportedException, IN!String, IN!InterruptedException, IN!ClassLoader, IN!ClassNotFoundException, IN!InstantiationException, IN!IllegalAccessException, IN!Package, IN!RuntimeException, IN!SecurityException, IN!NoSuchFieldException, IN!NoSuchMethodException, IN!RuntimePermission, IN!ThreadLocal, IN!StringBuffer, IN!Cloneable, IN!ClassFormatError, IN!LinkageError, IN!Error, IN!IllegalArgumentException, IN!NumberFormatException, IN!SecurityManager, IN!ThreadGroup, IN!Thread, IN!Integer, IN!Number, IN!Long, IN!UnsupportedOperationException, IN!AbstractMethodError, IN!IncompatibleClassChangeError, IN!ArithmeticException, IN!ArrayIndexOutOfBoundsException, IN!IndexOutOfBoundsException, IN!ArrayStoreException, IN!Boolean, IN!Byte, IN!Character, IN!Subset, IN!UnicodeBlock, IN!ClassCastException, IN!ClassCircularityError, IN!Double, IN!ExceptionInInitializerError, IN!Float, IN!IllegalAccessError, IN!IllegalMonitorStateException, IN!IllegalStateException, IN!IllegalThreadStateException, IN!InheritableThreadLocal, IN!InstantiationError, IN!InternalError, IN!VirtualMachineError, IN!Math, IN!NegativeArraySizeException, IN!NoClassDefFoundError, IN!NoSuchFieldError, IN!NoSuchMethodError, IN!NullPointerException, IN!OutOfMemoryError, IN!Process, IN!Runtime, IN!Short, IN!Void, IN!StackOverflowError, IN!StrictMath, IN!StringIndexOutOfBoundsException, IN!System, IN!ThreadDeath, IN!UnsatisfiedLinkError, IN!UnsupportedClassVersionError, IN!VerifyError, IN!Compiler, IN!UnknownError}
 [J2ME PP 1.0] J2ME PP 1.0::java::lang equivalent packages: Sequence {}
@@ -284,34 +286,34 @@
 [J2ME PP 1.0] J2ME PP 1.0::java::util::Date misses features compatible with : Sequence {PREVIN!<init>, PREVIN!<init>, PREVIN!<init>, PREVIN!<init>, PREVIN!UTC, PREVIN!getDate, PREVIN!getDay, PREVIN!getHours, PREVIN!getMinutes, PREVIN!getMonth, PREVIN!getSeconds, PREVIN!getTimezoneOffset, PREVIN!getYear, PREVIN!parse, PREVIN!setDate, PREVIN!setHours, PREVIN!setMinutes, PREVIN!setMonth, PREVIN!setSeconds, PREVIN!setYear, PREVIN!toGMTString, PREVIN!toLocaleString}
 [J2ME PP 1.0] J2ME PP 1.0::java::util misses classifiers compatible with : Sequence {PREVIN!Date}
 [J2ME PP 1.0] J2ME PP 1.0::java::util compatible packages: Sequence {PREVIN3!util, PREVIN2!util}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Hashtable misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable, IN!Map}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Vector misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable, IN!List}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Stack misses features compatible with : Sequence {IN!listIterator, IN!iterator, IN!set, IN!removeAll, IN!addAll, IN!addAll, IN!clear, IN!iterator, IN!removeAll, IN!modCount, IN!containsAll, IN!add, IN!containsAll, IN!containsAll, IN!addAll, IN!set, IN!add, IN!addAll, IN!removeAll, IN!toArray, IN!toArray, IN!addAll, IN!remove, IN!removeAll, IN!get, IN!<init>, IN!removeRange, IN!iterator, IN!get, IN!finalize, IN!subList, IN!removeRange, IN!add, IN!retainAll, IN!remove, IN!remove, IN!add, IN!addAll, IN!clear, IN!toArray, IN!clear, IN!remove, IN!remove, IN!listIterator, IN!listIterator, IN!add, IN!containsAll, IN!clear, IN!remove, IN!retainAll, IN!retainAll, IN!retainAll, IN!set, IN!subList, IN!get, IN!clone, IN!toArray, IN!iterator, IN!remove, IN!toArray, IN!toArray, IN!clone, IN!listIterator, IN!toArray, IN!add, IN!add, IN!subList, IN!addAll, IN!toArray, IN!clear, IN!add}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Hashtable misses dependency suppliers compatible with : Sequence {IN!Map, IN!Serializable, IN!Cloneable}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Vector misses dependency suppliers compatible with : Sequence {IN!List, IN!Serializable, IN!Cloneable}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Stack misses features compatible with : Sequence {IN!removeAll, IN!clear, IN!containsAll, IN!iterator, IN!addAll, IN!remove, IN!remove, IN!addAll, IN!remove, IN!add, IN!removeAll, IN!clear, IN!subList, IN!containsAll, IN!<init>, IN!toArray, IN!toArray, IN!add, IN!modCount, IN!removeRange, IN!addAll, IN!remove, IN!toArray, IN!containsAll, IN!retainAll, IN!add, IN!clear, IN!removeAll, IN!removeAll, IN!toArray, IN!iterator, IN!clone, IN!remove, IN!removeRange, IN!addAll, IN!remove, IN!retainAll, IN!get, IN!add, IN!get, IN!subList, IN!retainAll, IN!toArray, IN!set, IN!iterator, IN!add, IN!add, IN!clear, IN!addAll, IN!listIterator, IN!listIterator, IN!iterator, IN!add, IN!remove, IN!add, IN!toArray, IN!toArray, IN!clear, IN!set, IN!listIterator, IN!clone, IN!containsAll, IN!subList, IN!addAll, IN!get, IN!addAll, IN!finalize, IN!listIterator, IN!toArray, IN!retainAll, IN!set}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::util::Random misses dependency suppliers compatible with : Sequence {IN!Serializable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Calendar misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Date misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable, IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::util::TimeZone misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::util::EmptyStackException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 2.0::java::util::NoSuchElementException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Calendar misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Cloneable}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::util::Date misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Cloneable, IN!Comparable}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::util::TimeZone misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Cloneable}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::util::EmptyStackException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 2.0::java::util::NoSuchElementException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::util::Timer misses features compatible with : Sequence {IN!<init>, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::util::TimerTask misses features compatible with : Sequence {IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 2.0::java::util misses classifiers compatible with : Sequence {IN!Map, IN!Entry, IN!Comparator, IN!Locale, IN!Hashtable, IN!Dictionary, IN!Vector, IN!List, IN!AbstractList, IN!AbstractCollection, IN!Collection, IN!Set, IN!HashMap, IN!AbstractMap, IN!Stack, IN!MissingResourceException, IN!ResourceBundle, IN!Iterator, IN!ListIterator, IN!ArrayList, IN!Random, IN!HashSet, IN!AbstractSet, IN!Properties, IN!Calendar, IN!Date, IN!TimeZone, IN!SimpleTimeZone, IN!GregorianCalendar, IN!AbstractSequentialList, IN!Arrays, IN!BitSet, IN!TreeMap, IN!SortedMap, IN!Collections, IN!SortedSet, IN!ConcurrentModificationException, IN!EmptyStackException, IN!LinkedList, IN!NoSuchElementException, IN!PropertyPermission, IN!PropertyResourceBundle, IN!StringTokenizer, IN!TreeSet, IN!WeakHashMap, IN!ListResourceBundle, IN!EventListener, IN!EventObject, IN!Timer, IN!TimerTask, IN!Observable, IN!Observer, IN!TooManyListenersException}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Hashtable misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable, IN!Map}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Vector misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable, IN!List}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Stack misses features compatible with : Sequence {IN!listIterator, IN!iterator, IN!set, IN!removeAll, IN!addAll, IN!addAll, IN!clear, IN!iterator, IN!removeAll, IN!modCount, IN!containsAll, IN!add, IN!containsAll, IN!containsAll, IN!addAll, IN!set, IN!add, IN!addAll, IN!removeAll, IN!toArray, IN!toArray, IN!addAll, IN!remove, IN!removeAll, IN!get, IN!<init>, IN!removeRange, IN!iterator, IN!get, IN!finalize, IN!subList, IN!removeRange, IN!add, IN!retainAll, IN!remove, IN!remove, IN!add, IN!addAll, IN!clear, IN!toArray, IN!clear, IN!remove, IN!remove, IN!listIterator, IN!listIterator, IN!add, IN!containsAll, IN!clear, IN!remove, IN!retainAll, IN!retainAll, IN!retainAll, IN!set, IN!subList, IN!get, IN!clone, IN!toArray, IN!iterator, IN!remove, IN!toArray, IN!toArray, IN!clone, IN!listIterator, IN!toArray, IN!add, IN!add, IN!subList, IN!addAll, IN!toArray, IN!clear, IN!add}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Hashtable misses dependency suppliers compatible with : Sequence {IN!Map, IN!Serializable, IN!Cloneable}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Vector misses dependency suppliers compatible with : Sequence {IN!List, IN!Serializable, IN!Cloneable}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Stack misses features compatible with : Sequence {IN!removeAll, IN!clear, IN!containsAll, IN!iterator, IN!addAll, IN!remove, IN!remove, IN!addAll, IN!remove, IN!add, IN!removeAll, IN!clear, IN!subList, IN!containsAll, IN!<init>, IN!toArray, IN!toArray, IN!add, IN!modCount, IN!removeRange, IN!addAll, IN!remove, IN!toArray, IN!containsAll, IN!retainAll, IN!add, IN!clear, IN!removeAll, IN!removeAll, IN!toArray, IN!iterator, IN!clone, IN!remove, IN!removeRange, IN!addAll, IN!remove, IN!retainAll, IN!get, IN!add, IN!get, IN!subList, IN!retainAll, IN!toArray, IN!set, IN!iterator, IN!add, IN!add, IN!clear, IN!addAll, IN!listIterator, IN!listIterator, IN!iterator, IN!add, IN!remove, IN!add, IN!toArray, IN!toArray, IN!clear, IN!set, IN!listIterator, IN!clone, IN!containsAll, IN!subList, IN!addAll, IN!get, IN!addAll, IN!finalize, IN!listIterator, IN!toArray, IN!retainAll, IN!set}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::util::Random misses dependency suppliers compatible with : Sequence {IN!Serializable}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Calendar misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Date misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable, IN!Comparable}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::util::TimeZone misses dependency suppliers compatible with : Sequence {IN!Cloneable, IN!Serializable}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::util::EmptyStackException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
-[J2ME PP 1.0] J2ME MIDP 1.0::java::util::NoSuchElementException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Calendar misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Cloneable}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::util::Date misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Cloneable, IN!Comparable}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::util::TimeZone misses dependency suppliers compatible with : Sequence {IN!Serializable, IN!Cloneable}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::util::EmptyStackException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
+[J2ME PP 1.0] J2ME MIDP 1.0::java::util::NoSuchElementException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::util::Timer misses features compatible with : Sequence {IN!<init>, IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::util::TimerTask misses features compatible with : Sequence {IN!finalize, IN!clone}
 [J2ME PP 1.0] J2ME MIDP 1.0::java::util misses classifiers compatible with : Sequence {IN!Map, IN!Entry, IN!Comparator, IN!Locale, IN!Hashtable, IN!Dictionary, IN!Vector, IN!List, IN!AbstractList, IN!AbstractCollection, IN!Collection, IN!Set, IN!HashMap, IN!AbstractMap, IN!Stack, IN!MissingResourceException, IN!ResourceBundle, IN!Iterator, IN!ListIterator, IN!ArrayList, IN!Random, IN!HashSet, IN!AbstractSet, IN!Properties, IN!Calendar, IN!Date, IN!TimeZone, IN!SimpleTimeZone, IN!GregorianCalendar, IN!AbstractSequentialList, IN!Arrays, IN!BitSet, IN!TreeMap, IN!SortedMap, IN!Collections, IN!SortedSet, IN!ConcurrentModificationException, IN!EmptyStackException, IN!LinkedList, IN!NoSuchElementException, IN!PropertyPermission, IN!PropertyResourceBundle, IN!StringTokenizer, IN!TreeSet, IN!WeakHashMap, IN!ListResourceBundle, IN!EventListener, IN!EventObject, IN!Timer, IN!TimerTask, IN!Observable, IN!Observer, IN!TooManyListenersException}
 [J2ME PP 1.0] J2ME PP 1.0::java::util equivalent packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::java::util::jar compatible packages: Sequence {PREVIN!jar}
 [J2ME PP 1.0] J2SE 1.2::java::util::jar::Attributes::Name misses features compatible with : Sequence {IN!EXTENSION_LIST, IN!EXTENSION_NAME, IN!EXTENSION_INSTALLATION, IN!IMPLEMENTATION_VENDOR_ID, IN!IMPLEMENTATION_URL}
-[J2ME PP 1.0] J2SE 1.2::java::util::jar::JarFile misses features compatible with : Sequence {IN!<init>, IN!OPEN_DELETE, IN!<init>, IN!OPEN_READ}
+[J2ME PP 1.0] J2SE 1.2::java::util::jar::JarFile misses features compatible with : Sequence {IN!<init>, IN!OPEN_READ, IN!<init>, IN!OPEN_DELETE}
 [J2ME PP 1.0] J2SE 1.2::java::util::jar misses classifiers compatible with : Sequence {IN!Name, IN!JarFile}
 [J2ME PP 1.0] J2ME PP 1.0::java::util::jar equivalent packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::java::util::zip compatible packages: Sequence {PREVIN!zip}
@@ -326,43 +328,43 @@
 [J2ME PP 1.0] J2ME PP 1.0::java::text::resources::DateFormatZoneData_en misses generals compatible with : Sequence {PREVIN!ListResourceBundle}
 [J2ME PP 1.0] J2ME PP 1.0::java::text::resources misses classifiers compatible with : Sequence {PREVIN!DateFormatZoneData, PREVIN!DateFormatZoneData_en, PREVIN!DateFormatZoneData_en_US}
 [J2ME PP 1.0] J2ME PP 1.0::java::text::resources compatible packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::applet::Applet misses features compatible with : Sequence {PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!setComponentOrientation, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::applet::Applet misses features compatible with : Sequence {PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
 [J2ME PP 1.0] J2ME PP 1.0::java::applet misses classifiers compatible with : Sequence {PREVIN!Applet}
 [J2ME PP 1.0] J2ME PP 1.0::java::applet compatible packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Shape misses features compatible with : Sequence {PREVIN!contains, PREVIN!contains, PREVIN!contains, PREVIN!contains, PREVIN!getBounds2D, PREVIN!getPathIterator, PREVIN!getPathIterator, PREVIN!intersects, PREVIN!intersects}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Graphics misses features compatible with : Sequence {PREVIN!drawString}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::FontMetrics misses features compatible with : Sequence {PREVIN!getLineMetrics, PREVIN!getLineMetrics, PREVIN!getLineMetrics, PREVIN!getLineMetrics, PREVIN!getMaxCharBounds, PREVIN!getStringBounds, PREVIN!getStringBounds, PREVIN!getStringBounds, PREVIN!getStringBounds, PREVIN!hasUniformLineMetrics}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::SystemColor misses features compatible with : Sequence {PREVIN!createContext, PREVIN!getColorComponents, PREVIN!getComponents, PREVIN!<init>, PREVIN!createContext, PREVIN!createContext}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::SystemColor misses features compatible with : Sequence {PREVIN!createContext, PREVIN!createContext, PREVIN!getColorComponents, PREVIN!createContext, PREVIN!getComponents, PREVIN!<init>}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Color misses dependency suppliers compatible with : Sequence {PREVIN!Paint}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Dimension misses generals compatible with : Sequence {PREVIN!Dimension2D}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Point misses generals compatible with : Sequence {PREVIN!Point2D}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Rectangle misses generals compatible with : Sequence {PREVIN!Rectangle2D}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Polygon misses features compatible with : Sequence {PREVIN!contains, PREVIN!contains, PREVIN!contains, PREVIN!contains, PREVIN!getBounds2D, PREVIN!getPathIterator, PREVIN!getPathIterator, PREVIN!intersects, PREVIN!intersects, PREVIN!getBounds2D, PREVIN!contains, PREVIN!contains, PREVIN!intersects, PREVIN!intersects, PREVIN!getPathIterator, PREVIN!getPathIterator, PREVIN!contains, PREVIN!contains}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Polygon misses features compatible with : Sequence {PREVIN!contains, PREVIN!contains, PREVIN!contains, PREVIN!contains, PREVIN!getBounds2D, PREVIN!getPathIterator, PREVIN!getPathIterator, PREVIN!intersects, PREVIN!intersects, PREVIN!contains, PREVIN!intersects, PREVIN!getBounds2D, PREVIN!getPathIterator, PREVIN!contains, PREVIN!contains, PREVIN!intersects, PREVIN!getPathIterator, PREVIN!contains}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Toolkit misses features compatible with : Sequence {PREVIN!desktopProperties, PREVIN!desktopPropsSupport, PREVIN!addPropertyChangeListener, PREVIN!createButton, PREVIN!createCanvas, PREVIN!createCheckbox, PREVIN!createCheckboxMenuItem, PREVIN!createChoice, PREVIN!createComponent, PREVIN!createCustomCursor, PREVIN!createDialog, PREVIN!createDragGestureRecognizer, PREVIN!createDragSourceContextPeer, PREVIN!createFileDialog, PREVIN!createFrame, PREVIN!createLabel, PREVIN!createList, PREVIN!createMenu, PREVIN!createMenuBar, PREVIN!createMenuItem, PREVIN!createPanel, PREVIN!createPopupMenu, PREVIN!createScrollPane, PREVIN!createScrollbar, PREVIN!createTextArea, PREVIN!createTextField, PREVIN!createWindow, PREVIN!getBestCursorSize, PREVIN!getDesktopProperty, PREVIN!getFontPeer, PREVIN!getMaximumCursorColors, PREVIN!getNativeContainer, PREVIN!getPrintJob, PREVIN!initializeDesktopProperties, PREVIN!lazilyLoadDesktopProperty, PREVIN!removePropertyChangeListener, PREVIN!setDesktopProperty}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Component misses features compatible with : Sequence {PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!addPropertyChangeListener, PREVIN!enableInputMethods, PREVIN!firePropertyChange, PREVIN!getComponentOrientation, PREVIN!getDropTarget, PREVIN!getInputContext, PREVIN!getInputMethodRequests, PREVIN!getPeer, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!removePropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!setComponentOrientation, PREVIN!setDropTarget}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Container misses features compatible with : Sequence {PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!setComponentOrientation, PREVIN!getDropTarget, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!getPeer, PREVIN!removePropertyChangeListener}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Button misses features compatible with : Sequence {PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!setComponentOrientation, PREVIN!getDropTarget, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!getPeer, PREVIN!removePropertyChangeListener}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Scrollbar misses features compatible with : Sequence {PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!setComponentOrientation, PREVIN!getDropTarget, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!getPeer, PREVIN!removePropertyChangeListener}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::ScrollPane misses features compatible with : Sequence {PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!setComponentOrientation, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Container misses features compatible with : Sequence {PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Button misses features compatible with : Sequence {PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Scrollbar misses features compatible with : Sequence {PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::ScrollPane misses features compatible with : Sequence {PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::MenuComponent misses features compatible with : Sequence {PREVIN!getPeer}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::MenuBar misses features compatible with : Sequence {PREVIN!getPeer}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Menu misses features compatible with : Sequence {PREVIN!getPeer}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::MenuItem misses features compatible with : Sequence {PREVIN!getPeer}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::PopupMenu misses features compatible with : Sequence {PREVIN!getPeer}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::CheckboxMenuItem misses features compatible with : Sequence {PREVIN!getPeer}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Choice misses features compatible with : Sequence {PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!setComponentOrientation, PREVIN!getDropTarget, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!getPeer, PREVIN!removePropertyChangeListener}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Checkbox misses features compatible with : Sequence {PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!setComponentOrientation, PREVIN!getDropTarget, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!getPeer, PREVIN!removePropertyChangeListener}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Label misses features compatible with : Sequence {PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!setComponentOrientation, PREVIN!getDropTarget, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!getPeer, PREVIN!removePropertyChangeListener}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::List misses features compatible with : Sequence {PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!setComponentOrientation, PREVIN!getDropTarget, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!getPeer, PREVIN!removePropertyChangeListener}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::TextComponent misses features compatible with : Sequence {PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!setComponentOrientation, PREVIN!getDropTarget, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!getPeer, PREVIN!removePropertyChangeListener}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::TextField misses features compatible with : Sequence {PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!setComponentOrientation, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getPeer}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::TextArea misses features compatible with : Sequence {PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!setComponentOrientation, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getPeer}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Panel misses features compatible with : Sequence {PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!setComponentOrientation, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getPeer}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Canvas misses features compatible with : Sequence {PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!setComponentOrientation, PREVIN!getDropTarget, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!removePropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!getPeer, PREVIN!removePropertyChangeListener}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Frame misses features compatible with : Sequence {PREVIN!getFrames, PREVIN!getOwner, PREVIN!applyResourceBundle, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getOwnedWindows, PREVIN!setComponentOrientation, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!applyResourceBundle, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getInputContext, PREVIN!getPeer}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Window misses features compatible with : Sequence {PREVIN!applyResourceBundle, PREVIN!applyResourceBundle, PREVIN!getInputContext, PREVIN!getOwnedWindows, PREVIN!getOwner, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!setComponentOrientation, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getPeer}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::Dialog misses features compatible with : Sequence {PREVIN!<init>, PREVIN!<init>, PREVIN!<init>, PREVIN!getOwner, PREVIN!applyResourceBundle, PREVIN!getInputContext, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getOwnedWindows, PREVIN!setComponentOrientation, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!applyResourceBundle, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getInputContext, PREVIN!getPeer}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::FileDialog misses features compatible with : Sequence {PREVIN!<init>, PREVIN!getOwner, PREVIN!applyResourceBundle, PREVIN!getInputContext, PREVIN!<init>, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getComponentOrientation, PREVIN!removePropertyChangeListener, PREVIN!<init>, PREVIN!processInputMethodEvent, PREVIN!setDropTarget, PREVIN!getInputMethodRequests, PREVIN!firePropertyChange, PREVIN!getOwnedWindows, PREVIN!setComponentOrientation, PREVIN!addInputMethodListener, PREVIN!addPropertyChangeListener, PREVIN!applyResourceBundle, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!getInputContext, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Choice misses features compatible with : Sequence {PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Checkbox misses features compatible with : Sequence {PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Label misses features compatible with : Sequence {PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::List misses features compatible with : Sequence {PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::TextComponent misses features compatible with : Sequence {PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::TextField misses features compatible with : Sequence {PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::TextArea misses features compatible with : Sequence {PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Panel misses features compatible with : Sequence {PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Canvas misses features compatible with : Sequence {PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Frame misses features compatible with : Sequence {PREVIN!getFrames, PREVIN!firePropertyChange, PREVIN!getOwner, PREVIN!removePropertyChangeListener, PREVIN!getOwnedWindows, PREVIN!getInputContext, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!applyResourceBundle, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputContext, PREVIN!applyResourceBundle, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Window misses features compatible with : Sequence {PREVIN!applyResourceBundle, PREVIN!applyResourceBundle, PREVIN!getInputContext, PREVIN!getOwnedWindows, PREVIN!getOwner, PREVIN!firePropertyChange, PREVIN!removePropertyChangeListener, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputContext, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::Dialog misses features compatible with : Sequence {PREVIN!<init>, PREVIN!<init>, PREVIN!<init>, PREVIN!firePropertyChange, PREVIN!getOwner, PREVIN!removePropertyChangeListener, PREVIN!getOwnedWindows, PREVIN!getInputContext, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!applyResourceBundle, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputContext, PREVIN!applyResourceBundle, PREVIN!getComponentOrientation, PREVIN!getPeer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::FileDialog misses features compatible with : Sequence {PREVIN!<init>, PREVIN!firePropertyChange, PREVIN!getOwner, PREVIN!<init>, PREVIN!removePropertyChangeListener, PREVIN!getOwnedWindows, PREVIN!getInputContext, PREVIN!setDropTarget, PREVIN!addPropertyChangeListener, PREVIN!getInputMethodRequests, PREVIN!setComponentOrientation, PREVIN!applyResourceBundle, PREVIN!enableInputMethods, PREVIN!addPropertyChangeListener, PREVIN!addInputMethodListener, PREVIN!<init>, PREVIN!processInputMethodEvent, PREVIN!removeInputMethodListener, PREVIN!getDropTarget, PREVIN!removePropertyChangeListener, PREVIN!getInputContext, PREVIN!applyResourceBundle, PREVIN!getComponentOrientation, PREVIN!getPeer}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::Cursor misses features compatible with : Sequence {PREVIN!CUSTOM_CURSOR, PREVIN!name, PREVIN!<init>, PREVIN!getName, PREVIN!getSystemCustomCursor}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::FlowLayout misses features compatible with : Sequence {PREVIN!LEADING, PREVIN!TRAILING}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::GridBagConstraints misses features compatible with : Sequence {PREVIN!<init>}
@@ -397,7 +399,7 @@
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::image::BufferedImage misses dependency suppliers compatible with : Sequence {PREVIN!WritableRenderedImage}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::image::ColorModel misses features compatible with : Sequence {PREVIN!transferType, PREVIN!coerceData, PREVIN!createCompatibleSampleModel, PREVIN!createCompatibleWritableRaster, PREVIN!getAlpha, PREVIN!getAlphaRaster, PREVIN!getBlue, PREVIN!getComponents, PREVIN!getComponents, PREVIN!getDataElement, PREVIN!getDataElements, PREVIN!getDataElements, PREVIN!getGreen, PREVIN!getNormalizedComponents, PREVIN!getRGB, PREVIN!getRed, PREVIN!getUnnormalizedComponents, PREVIN!isCompatibleRaster, PREVIN!isCompatibleSampleModel}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::image::DirectColorModel misses generals compatible with : Sequence {PREVIN!PackedColorModel}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::image::IndexColorModel misses features compatible with : Sequence {PREVIN!<init>, PREVIN!convertToIntDiscrete, PREVIN!createCompatibleSampleModel, PREVIN!createCompatibleWritableRaster, PREVIN!getComponents, PREVIN!getComponents, PREVIN!getDataElement, PREVIN!getDataElements, PREVIN!getDataElements, PREVIN!getRGBs, PREVIN!isCompatibleRaster, PREVIN!isCompatibleSampleModel, PREVIN!getGreen, PREVIN!getBlue, PREVIN!coerceData, PREVIN!isCompatibleSampleModel, PREVIN!getDataElement, PREVIN!getAlpha, PREVIN!getComponents, PREVIN!transferType, PREVIN!getComponents, PREVIN!createCompatibleWritableRaster, PREVIN!isCompatibleRaster, PREVIN!getRGB, PREVIN!getRed, PREVIN!getUnnormalizedComponents, PREVIN!getDataElements, PREVIN!getDataElements, PREVIN!getAlphaRaster, PREVIN!getNormalizedComponents, PREVIN!createCompatibleSampleModel}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::image::IndexColorModel misses features compatible with : Sequence {PREVIN!<init>, PREVIN!convertToIntDiscrete, PREVIN!createCompatibleSampleModel, PREVIN!createCompatibleWritableRaster, PREVIN!getComponents, PREVIN!getComponents, PREVIN!getDataElement, PREVIN!getDataElements, PREVIN!getDataElements, PREVIN!getRGBs, PREVIN!isCompatibleRaster, PREVIN!isCompatibleSampleModel, PREVIN!createCompatibleWritableRaster, PREVIN!isCompatibleRaster, PREVIN!transferType, PREVIN!createCompatibleSampleModel, PREVIN!getRGB, PREVIN!getNormalizedComponents, PREVIN!getDataElements, PREVIN!coerceData, PREVIN!getAlpha, PREVIN!getComponents, PREVIN!isCompatibleSampleModel, PREVIN!getUnnormalizedComponents, PREVIN!getAlphaRaster, PREVIN!getGreen, PREVIN!getComponents, PREVIN!getDataElements, PREVIN!getBlue, PREVIN!getDataElement, PREVIN!getRed}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::image::DataBuffer misses features compatible with : Sequence {PREVIN!TYPE_SHORT, PREVIN!TYPE_FLOAT, PREVIN!TYPE_DOUBLE, PREVIN!dataType, PREVIN!banks, PREVIN!offset, PREVIN!size, PREVIN!offsets, PREVIN!<init>, PREVIN!<init>, PREVIN!<init>, PREVIN!<init>, PREVIN!getDataType, PREVIN!getDataTypeSize, PREVIN!getElem, PREVIN!getElem, PREVIN!getElemDouble, PREVIN!getElemDouble, PREVIN!getElemFloat, PREVIN!getElemFloat, PREVIN!getNumBanks, PREVIN!getOffset, PREVIN!getOffsets, PREVIN!getSize, PREVIN!setElem, PREVIN!setElem, PREVIN!setElemDouble, PREVIN!setElemDouble, PREVIN!setElemFloat, PREVIN!setElemFloat}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::image misses classifiers compatible with : Sequence {PREVIN!AffineTransformOp, PREVIN!BufferedImageOp, PREVIN!RasterOp, PREVIN!BandCombineOp, PREVIN!BufferedImage, PREVIN!WritableRenderedImage, PREVIN!BufferedImageFilter, PREVIN!ByteLookupTable, PREVIN!LookupTable, PREVIN!ColorConvertOp, PREVIN!ColorModel, PREVIN!ComponentColorModel, PREVIN!ConvolveOp, PREVIN!DirectColorModel, PREVIN!PackedColorModel, PREVIN!ImagingOpException, PREVIN!IndexColorModel, PREVIN!Kernel, PREVIN!LookupOp, PREVIN!RescaleOp, PREVIN!ShortLookupTable, PREVIN!DataBuffer, PREVIN!DataBufferByte, PREVIN!DataBufferInt, PREVIN!Raster, PREVIN!DataBufferShort, PREVIN!DataBufferUShort, PREVIN!SampleModel, PREVIN!ComponentSampleModel, PREVIN!BandedSampleModel, PREVIN!PixelInterleavedSampleModel, PREVIN!SinglePixelPackedSampleModel, PREVIN!MultiPixelPackedSampleModel, PREVIN!WritableRaster, PREVIN!RenderedImage, PREVIN!TileObserver}
 [J2ME PP 1.0] J2ME PP 1.0::java::awt::image compatible packages: Sequence {}
@@ -418,81 +420,95 @@
 [J2ME PP 1.0] J2ME PP 1.0::java::rmi::registry compatible packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::io misses classifiers compatible with : Sequence {PREVIN3!PushRegistry, PREVIN3!SocketConnection, PREVIN3!ServerSocketConnection, PREVIN3!CommConnection, PREVIN3!SecurityInfo, PREVIN3!UDPDatagramConnection, PREVIN3!HttpsConnection, PREVIN3!SecureConnection}
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::io compatible packages: Sequence {PREVIN2!io}
-[J2ME PP 1.0] J2ME MIDP 1.0::javax::microedition::io::ConnectionNotFoundException misses features compatible with : Sequence {IN!getLocalizedMessage, IN!clone, IN!fillInStackTrace, IN!printStackTrace, IN!finalize, IN!printStackTrace}
+[J2ME PP 1.0] J2ME MIDP 1.0::javax::microedition::io::ConnectionNotFoundException misses features compatible with : Sequence {IN!printStackTrace, IN!clone, IN!printStackTrace, IN!finalize, IN!fillInStackTrace, IN!getLocalizedMessage}
 [J2ME PP 1.0] J2ME MIDP 1.0::javax::microedition::io::Connector misses features compatible with : Sequence {IN!finalize, IN!clone}
-[J2ME PP 1.0] J2ME MIDP 1.0::javax::microedition::io::Datagram misses features compatible with : Sequence {IN!writeFloat, IN!writeBytes, IN!readDouble, IN!readFloat, IN!writeDouble, IN!readLine, IN!writeFloat, IN!writeBytes, IN!readDouble, IN!readFloat, IN!writeDouble, IN!readLine}
+[J2ME PP 1.0] J2ME MIDP 1.0::javax::microedition::io::Datagram misses features compatible with : Sequence {IN!readDouble, IN!readFloat, IN!writeDouble, IN!readLine, IN!writeFloat, IN!writeBytes, IN!readDouble, IN!readFloat, IN!writeDouble, IN!readLine, IN!writeFloat, IN!writeBytes}
 [J2ME PP 1.0] J2ME MIDP 1.0::javax::microedition::io misses classifiers compatible with : Sequence {IN!ConnectionNotFoundException, IN!Connector, IN!Datagram}
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::io equivalent packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet compatible packages: Sequence {}
 [J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet::ixc compatible packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java compatible packages: Sequence {PREVIN!java, PREVIN3!java, PREVIN2!java}
+[J2ME PP 1.0] J2ME PP 1.0::javax compatible packages: Sequence {PREVIN!javax, PREVIN3!javax, PREVIN2!javax}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition compatible packages: Sequence {PREVIN3!microedition, PREVIN2!microedition}
+[J2ME PP 1.0] J2ME PP 1.0 misses packages compatible with : Sequence {PREVIN!io, PREVIN!lang, PREVIN!net, PREVIN!security, PREVIN!util, PREVIN!text, PREVIN!resources, PREVIN!awt, PREVIN!geom, PREVIN!image, PREVIN!renderable, PREVIN!font, PREVIN!event, PREVIN!dnd, PREVIN!datatransfer, PREVIN!im, PREVIN!print, PREVIN!color, PREVIN!beans, PREVIN!beancontext, PREVIN!applet, PREVIN!rmi, PREVIN!server, PREVIN!dgc, PREVIN!registry, PREVIN!activation, PREVIN!sql, PREVIN!swing, PREVIN!event, PREVIN!text, PREVIN!html, PREVIN!parser, PREVIN!rtf, PREVIN!undo, PREVIN!table, PREVIN!tree, PREVIN!plaf, PREVIN!basic, PREVIN!metal, PREVIN!multi, PREVIN!border, PREVIN!colorchooser, PREVIN!filechooser, PREVIN!accessibility, PREVIN!org, PREVIN!omg, PREVIN!CORBA, PREVIN!portable, PREVIN!DynAnyPackage, PREVIN!ORBPackage, PREVIN!TypeCodePackage, PREVIN!CosNaming, PREVIN!NamingContextPackage}
+[J2ME PP 1.0] J2ME PP 1.0 misses packages compatible with : Sequence {PREVIN3!io, PREVIN3!pki, PREVIN3!lcdui, PREVIN3!game, PREVIN3!midlet, PREVIN3!rms, PREVIN3!media, PREVIN3!control}
+[J2ME PP 1.0] J2ME PP 1.0 misses packages compatible with : Sequence {PREVIN2!lcdui, PREVIN2!midlet, PREVIN2!rms}
+[J2ME PP 1.0] J2ME PP 1.0 compatible models: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java equivalent packages: Sequence {PREVIN!java, PREVIN3!java, PREVIN2!java}
+[J2ME PP 1.0] J2ME PP 1.0::java::net equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::security equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::text equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::text::resources equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::applet equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::event equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::image equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::color equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::datatransfer equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::beans equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::rmi equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::java::rmi::registry equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::javax equivalent packages: Sequence {PREVIN!javax, PREVIN3!javax, PREVIN2!javax}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition equivalent packages: Sequence {PREVIN3!microedition, PREVIN2!microedition}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet::ixc equivalent packages: Sequence {}
+[J2ME PP 1.0] J2ME PP 1.0 misses packages equivalent with : Sequence {PREVIN!io, PREVIN!lang, PREVIN!reflect, PREVIN!net, PREVIN!security, PREVIN!cert, PREVIN!spec, PREVIN!interfaces, PREVIN!util, PREVIN!jar, PREVIN!zip, PREVIN!text, PREVIN!resources, PREVIN!awt, PREVIN!geom, PREVIN!image, PREVIN!renderable, PREVIN!font, PREVIN!event, PREVIN!dnd, PREVIN!datatransfer, PREVIN!im, PREVIN!print, PREVIN!color, PREVIN!beans, PREVIN!beancontext, PREVIN!applet, PREVIN!rmi, PREVIN!server, PREVIN!dgc, PREVIN!registry, PREVIN!activation, PREVIN!sql, PREVIN!swing, PREVIN!event, PREVIN!text, PREVIN!html, PREVIN!parser, PREVIN!rtf, PREVIN!undo, PREVIN!table, PREVIN!tree, PREVIN!plaf, PREVIN!basic, PREVIN!metal, PREVIN!multi, PREVIN!border, PREVIN!colorchooser, PREVIN!filechooser, PREVIN!accessibility, PREVIN!org, PREVIN!omg, PREVIN!CORBA, PREVIN!portable, PREVIN!DynAnyPackage, PREVIN!ORBPackage, PREVIN!TypeCodePackage, PREVIN!CosNaming, PREVIN!NamingContextPackage}
+[J2ME PP 1.0] J2ME PP 1.0 misses packages equivalent with : Sequence {PREVIN3!util, PREVIN3!lang, PREVIN3!io, PREVIN3!io, PREVIN3!pki, PREVIN3!lcdui, PREVIN3!game, PREVIN3!midlet, PREVIN3!rms, PREVIN3!media, PREVIN3!control}
+[J2ME PP 1.0] J2ME PP 1.0 misses packages equivalent with : Sequence {PREVIN2!lang, PREVIN2!io, PREVIN2!util, PREVIN2!io, PREVIN2!lcdui, PREVIN2!midlet, PREVIN2!rms}
+[J2ME PP 1.0] J2ME PP 1.0 equivalent models: Sequence {}
 [J2ME PP 1.0] Package: 'JavaIo'
-[J2ME PP 1.0] J2ME PP 1.0::java::io referenced packages: Sequence {IN!net, IN!util, IN!security, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::java::io referenced packages: Sequence {IN!security, IN!util, IN!lang, IN!net}
 [J2ME PP 1.0] Package: 'JavaLang'
-[J2ME PP 1.0] J2ME PP 1.0::java::lang referenced packages: Sequence {IN!reflect, IN!util, IN!net, IN!io, IN!security}
+[J2ME PP 1.0] J2ME PP 1.0::java::lang referenced packages: Sequence {IN!security, IN!io, IN!util, IN!reflect, IN!net}
 [J2ME PP 1.0] Package: 'JavaLangReflect'
-[J2ME PP 1.0] J2ME PP 1.0::java::lang::reflect referenced packages: Sequence {IN!security, IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::lang::reflect referenced packages: Sequence {IN!security, IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaLangRef'
 [J2ME PP 1.0] J2ME PP 1.0::java::lang::ref referenced packages: Sequence {IN!lang}
 [J2ME PP 1.0] Package: 'JavaNet'
-[J2ME PP 1.0] J2ME PP 1.0::java::net equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::net referenced packages: Sequence {IN!util, IN!lang, IN!io, IN!security, IN!jar}
+[J2ME PP 1.0] J2ME PP 1.0::java::net referenced packages: Sequence {IN!security, IN!io, IN!util, IN!jar, IN!lang}
 [J2ME PP 1.0] Package: 'JavaSecurity'
-[J2ME PP 1.0] J2ME PP 1.0::java::security equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::security referenced packages: Sequence {IN!spec, IN!util, IN!cert, IN!io, IN!lang, IN!net}
+[J2ME PP 1.0] J2ME PP 1.0::java::security referenced packages: Sequence {IN!io, IN!spec, IN!util, IN!cert, IN!lang, IN!net}
 [J2ME PP 1.0] Package: 'JavaSecurityCert'
-[J2ME PP 1.0] J2ME PP 1.0::java::security::cert referenced packages: Sequence {IN!util, IN!math, IN!io, IN!lang, IN!security}
+[J2ME PP 1.0] J2ME PP 1.0::java::security::cert referenced packages: Sequence {IN!security, IN!io, IN!math, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaSecuritySpec'
-[J2ME PP 1.0] J2ME PP 1.0::java::security::spec referenced packages: Sequence {IN!math, IN!lang, IN!security, IN!interfaces}
+[J2ME PP 1.0] J2ME PP 1.0::java::security::spec referenced packages: Sequence {IN!security, IN!math, IN!interfaces, IN!lang}
 [J2ME PP 1.0] Package: 'JavaSecurityInterfaces'
-[J2ME PP 1.0] J2ME PP 1.0::java::security::interfaces referenced packages: Sequence {IN!math, IN!security}
+[J2ME PP 1.0] J2ME PP 1.0::java::security::interfaces referenced packages: Sequence {IN!security, IN!math}
 [J2ME PP 1.0] Package: 'JavaSecurityAcl'
-[J2ME PP 1.0] J2ME PP 1.0::java::security::acl referenced packages: Sequence {IN!util, IN!security, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::java::security::acl referenced packages: Sequence {IN!security, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaUtil'
-[J2ME PP 1.0] J2ME PP 1.0::java::util referenced packages: Sequence {IN!io, IN!lang, IN!security}
+[J2ME PP 1.0] J2ME PP 1.0::java::util referenced packages: Sequence {IN!security, IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaUtilJar'
-[J2ME PP 1.0] J2ME PP 1.0::java::util::jar referenced packages: Sequence {IN!util, IN!lang, IN!io, IN!zip}
+[J2ME PP 1.0] J2ME PP 1.0::java::util::jar referenced packages: Sequence {IN!io, IN!util, IN!zip, IN!lang}
 [J2ME PP 1.0] Package: 'JavaUtilZip'
-[J2ME PP 1.0] J2ME PP 1.0::java::util::zip referenced packages: Sequence {IN!util, IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::util::zip referenced packages: Sequence {IN!io, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaMath'
 [J2ME PP 1.0] J2ME PP 1.0::java::math referenced packages: Sequence {IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaText'
-[J2ME PP 1.0] J2ME PP 1.0::java::text equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::text referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::java::text referenced packages: Sequence {IN!io, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaTextResources'
-[J2ME PP 1.0] J2ME PP 1.0::java::text::resources equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::text::resources referenced packages: Sequence {IN!lang, IN!util}
+[J2ME PP 1.0] J2ME PP 1.0::java::text::resources referenced packages: Sequence {IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaApplet'
-[J2ME PP 1.0] J2ME PP 1.0::java::applet equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::applet referenced packages: Sequence {IN!net, IN!lang, IN!util, IN!awt}
+[J2ME PP 1.0] J2ME PP 1.0::java::applet referenced packages: Sequence {IN!awt, IN!util, IN!lang, IN!net}
 [J2ME PP 1.0] Package: 'JavaAwt'
-[J2ME PP 1.0] J2ME PP 1.0::java::awt equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt referenced packages: Sequence {IN!event, IN!util, IN!io, IN!lang, IN!security, IN!image, IN!color, IN!net, IN!datatransfer}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt referenced packages: Sequence {IN!security, IN!datatransfer, IN!io, IN!util, IN!image, IN!color, IN!lang, IN!event, IN!net}
 [J2ME PP 1.0] Package: 'JavaAwtEvent'
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::event equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::event referenced packages: Sequence {IN!util, IN!lang, IN!awt}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::event referenced packages: Sequence {IN!awt, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaAwtImage'
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::image equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::image referenced packages: Sequence {IN!util, IN!lang, IN!color, IN!awt}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::image referenced packages: Sequence {IN!awt, IN!color, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaAwtColor'
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::color equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::color referenced packages: Sequence {IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::color referenced packages: Sequence {IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaAwtDatatransfer'
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::datatransfer equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::awt::datatransfer referenced packages: Sequence {IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::awt::datatransfer referenced packages: Sequence {IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaBeans'
-[J2ME PP 1.0] J2ME PP 1.0::java::beans equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::beans referenced packages: Sequence {IN!lang, IN!io, IN!util}
+[J2ME PP 1.0] J2ME PP 1.0::java::beans referenced packages: Sequence {IN!io, IN!util, IN!lang}
 [J2ME PP 1.0] Package: 'JavaRmi'
-[J2ME PP 1.0] J2ME PP 1.0::java::rmi equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::rmi referenced packages: Sequence {IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::java::rmi referenced packages: Sequence {IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaRmiRegistry'
-[J2ME PP 1.0] J2ME PP 1.0::java::rmi::registry equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::java::rmi::registry referenced packages: Sequence {IN!rmi, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::java::rmi::registry referenced packages: Sequence {IN!lang, IN!rmi}
 [J2ME PP 1.0] Package: 'JavaxMicroeditionIo'
-[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::io referenced packages: Sequence {IN!lang, IN!io}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::io referenced packages: Sequence {IN!io, IN!lang}
 [J2ME PP 1.0] Package: 'JavaxMicroeditionXlet'
-[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet referenced packages: Sequence {IN!lang, IN!awt}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet referenced packages: Sequence {IN!awt, IN!lang}
 [J2ME PP 1.0] Package: 'JavaxMicroeditionXletIxc'
-[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet::ixc equivalent packages: Sequence {}
-[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet::ixc referenced packages: Sequence {IN!registry, IN!xlet, IN!rmi, IN!lang}
+[J2ME PP 1.0] J2ME PP 1.0::javax::microedition::xlet::ixc referenced packages: Sequence {IN!xlet, IN!registry, IN!rmi, IN!lang}

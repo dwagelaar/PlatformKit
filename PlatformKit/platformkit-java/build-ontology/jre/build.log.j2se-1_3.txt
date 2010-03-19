@@ -75,36 +75,38 @@
 [J2SE 1.3] J2SE 1.3::org::omg::CosNaming compatible packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::org::omg::CosNaming::NamingContextPackage compatible packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::org::omg::stub::java::rmi compatible packages: Sequence {}
+[J2SE 1.3] J2SE 1.3 compatible models: Sequence {}
+[J2SE 1.3] J2SE 1.3 equivalent models: Sequence {}
 [J2SE 1.3] Package: 'JavaIo'
 [J2SE 1.3] J2SE 1.3::java::io equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::io referenced packages: Sequence {IN!net, IN!util, IN!security, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::io referenced packages: Sequence {IN!util, IN!net, IN!lang, IN!security}
 [J2SE 1.3] Package: 'JavaLang'
 [J2SE 1.3] J2SE 1.3::java::lang equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::lang referenced packages: Sequence {IN!reflect, IN!io, IN!security, IN!net, IN!util}
+[J2SE 1.3] J2SE 1.3::java::lang referenced packages: Sequence {IN!reflect, IN!io, IN!security, IN!util, IN!net}
 [J2SE 1.3] Package: 'JavaLangReflect'
 [J2SE 1.3] J2SE 1.3::java::lang::reflect equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::lang::reflect referenced packages: Sequence {IN!io, IN!security, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::lang::reflect referenced packages: Sequence {IN!lang, IN!io, IN!security}
 [J2SE 1.3] Package: 'JavaLangRef'
 [J2SE 1.3] J2SE 1.3::java::lang::ref equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::lang::ref referenced packages: Sequence {IN!lang}
 [J2SE 1.3] Package: 'JavaNet'
 [J2SE 1.3] J2SE 1.3::java::net equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::net referenced packages: Sequence {IN!io, IN!jar, IN!security, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::net referenced packages: Sequence {IN!jar, IN!io, IN!security, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaSecurity'
 [J2SE 1.3] J2SE 1.3::java::security equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::security referenced packages: Sequence {IN!cert, IN!net, IN!util, IN!lang, IN!spec, IN!io}
+[J2SE 1.3] J2SE 1.3::java::security referenced packages: Sequence {IN!spec, IN!io, IN!cert, IN!util, IN!net, IN!lang}
 [J2SE 1.3] Package: 'JavaSecurityCert'
 [J2SE 1.3] J2SE 1.3::java::security::cert equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::security::cert referenced packages: Sequence {IN!io, IN!security, IN!math, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaSecuritySpec'
 [J2SE 1.3] J2SE 1.3::java::security::spec equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::security::spec referenced packages: Sequence {IN!interfaces, IN!math, IN!security, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::security::spec referenced packages: Sequence {IN!math, IN!lang, IN!security, IN!interfaces}
 [J2SE 1.3] Package: 'JavaSecurityInterfaces'
 [J2SE 1.3] J2SE 1.3::java::security::interfaces equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::security::interfaces referenced packages: Sequence {IN!math, IN!security}
 [J2SE 1.3] Package: 'JavaSecurityAcl'
 [J2SE 1.3] J2SE 1.3::java::security::acl equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::security::acl referenced packages: Sequence {IN!security, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::security::acl referenced packages: Sequence {IN!util, IN!lang, IN!security}
 [J2SE 1.3] Package: 'JavaUtil'
 [J2SE 1.3] J2SE 1.3::java::util equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::util referenced packages: Sequence {IN!io, IN!security, IN!lang}
@@ -113,7 +115,7 @@
 [J2SE 1.3] J2SE 1.3::java::util::jar referenced packages: Sequence {IN!io, IN!zip, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaUtilZip'
 [J2SE 1.3] J2SE 1.3::java::util::zip equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::util::zip referenced packages: Sequence {IN!io, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::util::zip referenced packages: Sequence {IN!util, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaMath'
 [J2SE 1.3] J2SE 1.3::java::math equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::math referenced packages: Sequence {IN!util, IN!lang}
@@ -125,118 +127,118 @@
 [J2SE 1.3] J2SE 1.3::java::text::resources referenced packages: Sequence {IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaAwt'
 [J2SE 1.3] J2SE 1.3::java::awt equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt referenced packages: Sequence {IN!color, IN!text, IN!renderable, IN!net, IN!io, IN!dnd, IN!security, IN!datatransfer, IN!image, IN!font, IN!accessibility, IN!event, IN!util, IN!lang, IN!text, IN!beans, IN!geom, IN!im}
+[J2SE 1.3] J2SE 1.3::java::awt referenced packages: Sequence {IN!beans, IN!renderable, IN!io, IN!event, IN!text, IN!util, IN!net, IN!color, IN!im, IN!dnd, IN!datatransfer, IN!security, IN!image, IN!geom, IN!text, IN!lang, IN!font, IN!accessibility}
 [J2SE 1.3] Package: 'JavaAwtGeom'
 [J2SE 1.3] J2SE 1.3::java::awt::geom equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::geom referenced packages: Sequence {IN!io, IN!awt, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::geom referenced packages: Sequence {IN!awt, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaAwtEvent'
 [J2SE 1.3] J2SE 1.3::java::awt::event equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::event referenced packages: Sequence {IN!font, IN!text, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::event referenced packages: Sequence {IN!text, IN!util, IN!awt, IN!lang, IN!font}
 [J2SE 1.3] Package: 'JavaAwtFont'
 [J2SE 1.3] J2SE 1.3::java::awt::font equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::font referenced packages: Sequence {IN!io, IN!text, IN!geom, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::font referenced packages: Sequence {IN!geom, IN!io, IN!text, IN!util, IN!awt, IN!lang}
 [J2SE 1.3] Package: 'JavaAwtImage'
 [J2SE 1.3] J2SE 1.3::java::awt::image equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::image referenced packages: Sequence {IN!geom, IN!color, IN!math, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::image referenced packages: Sequence {IN!geom, IN!math, IN!util, IN!awt, IN!color, IN!lang}
 [J2SE 1.3] Package: 'JavaAwtImageRenderable'
 [J2SE 1.3] J2SE 1.3::java::awt::image::renderable equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::image::renderable referenced packages: Sequence {IN!io, IN!geom, IN!awt, IN!util, IN!image, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::image::renderable referenced packages: Sequence {IN!geom, IN!io, IN!util, IN!image, IN!awt, IN!lang}
 [J2SE 1.3] Package: 'JavaAwtDnd'
 [J2SE 1.3] J2SE 1.3::java::awt::dnd equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::dnd referenced packages: Sequence {IN!event, IN!util, IN!lang, IN!io, IN!awt, IN!datatransfer}
+[J2SE 1.3] J2SE 1.3::java::awt::dnd referenced packages: Sequence {IN!io, IN!event, IN!util, IN!awt, IN!lang, IN!datatransfer}
 [J2SE 1.3] Package: 'JavaAwtIm'
 [J2SE 1.3] J2SE 1.3::java::awt::im equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::im referenced packages: Sequence {IN!font, IN!text, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::im referenced packages: Sequence {IN!text, IN!util, IN!awt, IN!lang, IN!font}
 [J2SE 1.3] Package: 'JavaAwtImSpi'
 [J2SE 1.3] J2SE 1.3::java::awt::im::spi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::im::spi referenced packages: Sequence {IN!font, IN!text, IN!awt, IN!util, IN!im, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::im::spi referenced packages: Sequence {IN!text, IN!util, IN!awt, IN!lang, IN!font, IN!im}
 [J2SE 1.3] Package: 'JavaAwtColor'
 [J2SE 1.3] J2SE 1.3::java::awt::color equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::color referenced packages: Sequence {IN!io, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::color referenced packages: Sequence {IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaAwtDatatransfer'
 [J2SE 1.3] J2SE 1.3::java::awt::datatransfer equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::datatransfer referenced packages: Sequence {IN!io, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::datatransfer referenced packages: Sequence {IN!util, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaAwtPrint'
 [J2SE 1.3] J2SE 1.3::java::awt::print equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::print referenced packages: Sequence {IN!io, IN!awt, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::print referenced packages: Sequence {IN!awt, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaBeans'
 [J2SE 1.3] J2SE 1.3::java::beans equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::beans referenced packages: Sequence {IN!reflect, IN!io, IN!applet, IN!beancontext, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::beans referenced packages: Sequence {IN!reflect, IN!beancontext, IN!io, IN!util, IN!awt, IN!applet, IN!lang}
 [J2SE 1.3] Package: 'JavaBeansBeancontext'
 [J2SE 1.3] J2SE 1.3::java::beans::beancontext equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::beans::beancontext referenced packages: Sequence {IN!net, IN!util, IN!lang, IN!io, IN!beans, IN!awt}
+[J2SE 1.3] J2SE 1.3::java::beans::beancontext referenced packages: Sequence {IN!beans, IN!io, IN!util, IN!awt, IN!net, IN!lang}
 [J2SE 1.3] Package: 'JavaApplet'
 [J2SE 1.3] J2SE 1.3::java::applet equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::applet referenced packages: Sequence {IN!net, IN!accessibility, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::applet referenced packages: Sequence {IN!accessibility, IN!util, IN!awt, IN!net, IN!lang}
 [J2SE 1.3] Package: 'JavaRmi'
 [J2SE 1.3] J2SE 1.3::java::rmi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::rmi referenced packages: Sequence {IN!io, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi referenced packages: Sequence {IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaRmiServer'
 [J2SE 1.3] J2SE 1.3::java::rmi::server equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::rmi::server referenced packages: Sequence {IN!reflect, IN!io, IN!net, IN!rmi, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi::server referenced packages: Sequence {IN!reflect, IN!io, IN!rmi, IN!net, IN!lang}
 [J2SE 1.3] Package: 'JavaRmiDgc'
 [J2SE 1.3] J2SE 1.3::java::rmi::dgc equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::rmi::dgc referenced packages: Sequence {IN!io, IN!rmi, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi::dgc referenced packages: Sequence {IN!rmi, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaRmiRegistry'
 [J2SE 1.3] J2SE 1.3::java::rmi::registry equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::rmi::registry referenced packages: Sequence {IN!server, IN!rmi, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi::registry referenced packages: Sequence {IN!rmi, IN!server, IN!lang}
 [J2SE 1.3] Package: 'JavaRmiActivation'
 [J2SE 1.3] J2SE 1.3::java::rmi::activation equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::rmi::activation referenced packages: Sequence {IN!io, IN!server, IN!rmi, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi::activation referenced packages: Sequence {IN!io, IN!rmi, IN!server, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaSql'
 [J2SE 1.3] J2SE 1.3::java::sql equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::sql referenced packages: Sequence {IN!io, IN!security, IN!math, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaxAccessibility'
 [J2SE 1.3] J2SE 1.3::javax::accessibility equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::accessibility referenced packages: Sequence {IN!beans, IN!text, IN!event, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::accessibility referenced packages: Sequence {IN!beans, IN!event, IN!text, IN!util, IN!awt, IN!lang}
 [J2SE 1.3] Package: 'JavaxSwing'
 [J2SE 1.3] J2SE 1.3::javax::swing equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing referenced packages: Sequence {IN!net, IN!border, IN!table, IN!filechooser, IN!event, IN!util, IN!applet, IN!awt, IN!colorchooser, IN!text, IN!io, IN!image, IN!plaf, IN!accessibility, IN!lang, IN!text, IN!beans, IN!event, IN!tree}
+[J2SE 1.3] J2SE 1.3::javax::swing referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!applet, IN!table, IN!text, IN!awt, IN!colorchooser, IN!accessibility, IN!plaf, IN!text, IN!util, IN!tree, IN!net, IN!border, IN!event, IN!image, IN!lang, IN!filechooser}
 [J2SE 1.3] Package: 'JavaxSwingText'
 [J2SE 1.3] J2SE 1.3::javax::swing::text equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::text referenced packages: Sequence {IN!basic, IN!io, IN!plaf, IN!accessibility, IN!event, IN!util, IN!lang, IN!text, IN!event, IN!swing, IN!tree, IN!undo, IN!awt, IN!im}
+[J2SE 1.3] J2SE 1.3::javax::swing::text referenced packages: Sequence {IN!io, IN!event, IN!plaf, IN!util, IN!tree, IN!im, IN!event, IN!basic, IN!text, IN!awt, IN!lang, IN!swing, IN!undo, IN!accessibility}
 [J2SE 1.3] Package: 'JavaxSwingTextHtml'
 [J2SE 1.3] J2SE 1.3::javax::swing::text::html equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::text::html referenced packages: Sequence {IN!text, IN!net, IN!io, IN!event, IN!util, IN!lang, IN!event, IN!swing, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::text::html referenced packages: Sequence {IN!io, IN!event, IN!text, IN!util, IN!net, IN!event, IN!awt, IN!lang, IN!swing}
 [J2SE 1.3] Package: 'JavaxSwingTextHtmlParser'
 [J2SE 1.3] J2SE 1.3::javax::swing::text::html::parser equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::text::html::parser referenced packages: Sequence {IN!io, IN!text, IN!html, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::text::html::parser referenced packages: Sequence {IN!io, IN!html, IN!text, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaxSwingTextRtf'
 [J2SE 1.3] J2SE 1.3::javax::swing::text::rtf equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::text::rtf referenced packages: Sequence {IN!io, IN!text, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::text::rtf referenced packages: Sequence {IN!text, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxSwingEvent'
 [J2SE 1.3] J2SE 1.3::javax::swing::event equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::event referenced packages: Sequence {IN!text, IN!event, IN!net, IN!table, IN!util, IN!lang, IN!io, IN!beans, IN!swing, IN!tree, IN!undo, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::event referenced packages: Sequence {IN!table, IN!beans, IN!io, IN!event, IN!text, IN!util, IN!awt, IN!tree, IN!net, IN!lang, IN!swing, IN!undo}
 [J2SE 1.3] Package: 'JavaxSwingPlaf'
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::plaf referenced packages: Sequence {IN!accessibility, IN!text, IN!event, IN!border, IN!lang, IN!io, IN!filechooser, IN!swing, IN!tree, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::plaf referenced packages: Sequence {IN!io, IN!event, IN!text, IN!awt, IN!tree, IN!lang, IN!border, IN!filechooser, IN!swing, IN!accessibility}
 [J2SE 1.3] Package: 'JavaxSwingPlafBasic'
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf::basic equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::plaf::basic referenced packages: Sequence {IN!border, IN!table, IN!filechooser, IN!event, IN!util, IN!swing, IN!awt, IN!text, IN!io, IN!plaf, IN!accessibility, IN!lang, IN!beans, IN!event, IN!tree}
+[J2SE 1.3] J2SE 1.3::javax::swing::plaf::basic referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!table, IN!awt, IN!accessibility, IN!plaf, IN!text, IN!util, IN!tree, IN!border, IN!event, IN!lang, IN!filechooser, IN!swing}
 [J2SE 1.3] Package: 'JavaxSwingPlafMetal'
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf::metal equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::plaf::metal referenced packages: Sequence {IN!basic, IN!border, IN!io, IN!plaf, IN!event, IN!lang, IN!event, IN!beans, IN!swing, IN!tree, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::plaf::metal referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!plaf, IN!tree, IN!border, IN!event, IN!basic, IN!awt, IN!lang, IN!swing}
 [J2SE 1.3] Package: 'JavaxSwingPlafMulti'
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf::multi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::plaf::multi referenced packages: Sequence {IN!text, IN!io, IN!filechooser, IN!plaf, IN!accessibility, IN!util, IN!lang, IN!swing, IN!tree, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::plaf::multi referenced packages: Sequence {IN!io, IN!plaf, IN!text, IN!util, IN!tree, IN!awt, IN!lang, IN!filechooser, IN!swing, IN!accessibility}
 [J2SE 1.3] Package: 'JavaxSwingUndo'
 [J2SE 1.3] J2SE 1.3::javax::swing::undo equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::undo referenced packages: Sequence {IN!io, IN!event, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::undo referenced packages: Sequence {IN!event, IN!util, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxSwingTree'
 [J2SE 1.3] J2SE 1.3::javax::swing::tree equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::tree referenced packages: Sequence {IN!event, IN!border, IN!util, IN!lang, IN!io, IN!beans, IN!event, IN!swing, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::tree referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!util, IN!awt, IN!lang, IN!border, IN!event, IN!swing}
 [J2SE 1.3] Package: 'JavaxSwingTable'
 [J2SE 1.3] J2SE 1.3::javax::swing::table equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::table referenced packages: Sequence {IN!plaf, IN!accessibility, IN!event, IN!border, IN!util, IN!lang, IN!io, IN!beans, IN!event, IN!swing, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::table referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!plaf, IN!util, IN!awt, IN!lang, IN!border, IN!event, IN!swing, IN!accessibility}
 [J2SE 1.3] Package: 'JavaxSwingBorder'
 [J2SE 1.3] J2SE 1.3::javax::swing::border equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::border referenced packages: Sequence {IN!io, IN!swing, IN!awt, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::border referenced packages: Sequence {IN!awt, IN!lang, IN!swing, IN!io}
 [J2SE 1.3] Package: 'JavaxSwingColorchooser'
 [J2SE 1.3] J2SE 1.3::javax::swing::colorchooser equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::colorchooser referenced packages: Sequence {IN!io, IN!event, IN!swing, IN!awt, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::colorchooser referenced packages: Sequence {IN!event, IN!swing, IN!io, IN!awt, IN!lang}
 [J2SE 1.3] Package: 'JavaxSwingFilechooser'
 [J2SE 1.3] J2SE 1.3::javax::swing::filechooser equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing::filechooser referenced packages: Sequence {IN!io, IN!swing, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::filechooser referenced packages: Sequence {IN!swing, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxNaming'
 [J2SE 1.3] J2SE 1.3::javax::naming equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::naming referenced packages: Sequence {IN!io, IN!util, IN!lang}
@@ -245,55 +247,55 @@
 [J2SE 1.3] J2SE 1.3::javax::naming::directory referenced packages: Sequence {IN!naming, IN!io, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaxNamingEvent'
 [J2SE 1.3] J2SE 1.3::javax::naming::event equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::naming::event referenced packages: Sequence {IN!naming, IN!directory, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::naming::event referenced packages: Sequence {IN!directory, IN!util, IN!naming, IN!lang}
 [J2SE 1.3] Package: 'JavaxNamingLdap'
 [J2SE 1.3] J2SE 1.3::javax::naming::ldap equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::naming::ldap referenced packages: Sequence {IN!naming, IN!io, IN!event, IN!directory, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::naming::ldap referenced packages: Sequence {IN!directory, IN!event, IN!util, IN!naming, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxNamingSpi'
 [J2SE 1.3] J2SE 1.3::javax::naming::spi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::naming::spi referenced packages: Sequence {IN!naming, IN!io, IN!directory, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::naming::spi referenced packages: Sequence {IN!directory, IN!util, IN!naming, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxSoundMidi'
 [J2SE 1.3] J2SE 1.3::javax::sound::midi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::sound::midi referenced packages: Sequence {IN!io, IN!net, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::sound::midi referenced packages: Sequence {IN!util, IN!net, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxSoundMidiSpi'
 [J2SE 1.3] J2SE 1.3::javax::sound::midi::spi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::sound::midi::spi referenced packages: Sequence {IN!io, IN!net, IN!midi, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::sound::midi::spi referenced packages: Sequence {IN!net, IN!lang, IN!midi, IN!io}
 [J2SE 1.3] Package: 'JavaxSoundSampled'
 [J2SE 1.3] J2SE 1.3::javax::sound::sampled equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::sound::sampled referenced packages: Sequence {IN!io, IN!net, IN!util, IN!security, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::sound::sampled referenced packages: Sequence {IN!util, IN!net, IN!lang, IN!io, IN!security}
 [J2SE 1.3] Package: 'JavaxSoundSampledSpi'
 [J2SE 1.3] J2SE 1.3::javax::sound::sampled::spi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::sound::sampled::spi referenced packages: Sequence {IN!io, IN!sampled, IN!net, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::sound::sampled::spi referenced packages: Sequence {IN!io, IN!net, IN!lang, IN!sampled}
 [J2SE 1.3] Package: 'JavaxRmi'
 [J2SE 1.3] J2SE 1.3::javax::rmi equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::rmi referenced packages: Sequence {IN!rmi, IN!lang}
 [J2SE 1.3] Package: 'JavaxRmiCORBA'
 [J2SE 1.3] J2SE 1.3::javax::rmi::CORBA equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::rmi::CORBA referenced packages: Sequence {IN!io, IN!portable, IN!portable, IN!CORBA, IN!SendingContext, IN!rmi, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::rmi::CORBA referenced packages: Sequence {IN!portable, IN!portable, IN!io, IN!SendingContext, IN!CORBA, IN!rmi, IN!lang}
 [J2SE 1.3] Package: 'JavaxTransaction'
 [J2SE 1.3] J2SE 1.3::javax::transaction equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::transaction referenced packages: Sequence {IN!rmi, IN!lang}
 [J2SE 1.3] Package: 'OrgOmgCORBA_2_3'
 [J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3 equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3 referenced packages: Sequence {IN!portable, IN!CORBA, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3 referenced packages: Sequence {IN!portable, IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgCORBA_2_3Portable'
 [J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3::portable equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3::portable referenced packages: Sequence {IN!CORBA, IN!portable, IN!io, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3::portable referenced packages: Sequence {IN!portable, IN!lang, IN!io, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgCORBA'
 [J2SE 1.3] J2SE 1.3::org::omg::CORBA equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA referenced packages: Sequence {IN!io, IN!applet, IN!portable, IN!math, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA referenced packages: Sequence {IN!portable, IN!io, IN!math, IN!util, IN!applet, IN!lang}
 [J2SE 1.3] Package: 'OrgOmgCORBAPortable'
 [J2SE 1.3] J2SE 1.3::org::omg::CORBA::portable equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA::portable referenced packages: Sequence {IN!portable, IN!CORBA, IN!lang, IN!io, IN!math}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA::portable referenced packages: Sequence {IN!io, IN!lang, IN!portable, IN!CORBA, IN!math}
 [J2SE 1.3] Package: 'OrgOmgCORBATypeCodePackage'
 [J2SE 1.3] J2SE 1.3::org::omg::CORBA::TypeCodePackage equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA::TypeCodePackage referenced packages: Sequence {IN!CORBA, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA::TypeCodePackage referenced packages: Sequence {IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgCORBAORBPackage'
 [J2SE 1.3] J2SE 1.3::org::omg::CORBA::ORBPackage equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA::ORBPackage referenced packages: Sequence {IN!CORBA, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA::ORBPackage referenced packages: Sequence {IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgCORBADynAnyPackage'
 [J2SE 1.3] J2SE 1.3::org::omg::CORBA::DynAnyPackage equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA::DynAnyPackage referenced packages: Sequence {IN!CORBA, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA::DynAnyPackage referenced packages: Sequence {IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgSendingContext'
 [J2SE 1.3] J2SE 1.3::org::omg::SendingContext equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::org::omg::SendingContext referenced packages: Sequence {IN!portable, IN!CORBA}
@@ -302,17 +304,17 @@
 [J2SE 1.3] J2SE 1.3::org::omg::CosNaming referenced packages: Sequence {IN!portable, IN!CORBA, IN!lang}
 [J2SE 1.3] Package: 'OrgOmgCosNamingNamingContextPackage'
 [J2SE 1.3] J2SE 1.3::org::omg::CosNaming::NamingContextPackage equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CosNaming::NamingContextPackage referenced packages: Sequence {IN!portable, IN!CORBA, IN!CosNaming, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CosNaming::NamingContextPackage referenced packages: Sequence {IN!portable, IN!CosNaming, IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgStubJavaRmi'
 [J2SE 1.3] J2SE 1.3::org::omg::stub::java::rmi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::stub::java::rmi referenced packages: Sequence {IN!CORBA, IN!rmi}
+[J2SE 1.3] J2SE 1.3::org::omg::stub::java::rmi referenced packages: Sequence {IN!rmi, IN!CORBA}
 [J2SE 1.3] J2SE 1.3::java::io compatible packages: Sequence {PREVIN2!io, PREVIN!io}
 [J2SE 1.3] J2ME PP 1.0::java::io::ByteArrayOutputStream misses features compatible with : Sequence {IN!toString}
 [J2SE 1.3] J2ME PP 1.0::java::io::StreamTokenizer misses features compatible with : Sequence {IN!<init>}
 [J2SE 1.3] J2ME PP 1.0::java::io misses classifiers compatible with : Sequence {IN!ByteArrayOutputStream, IN!StreamTokenizer, IN!StringBufferInputStream, IN!LineNumberInputStream}
-[J2SE 1.3] J2SE 1.2::java::io::ObjectOutputStream misses features compatible with : Sequence {IN!annotateProxyClass, IN!writeClassDescriptor, IN!TC_LONGSTRING, IN!TC_PROXYCLASSDESC}
+[J2SE 1.3] J2SE 1.2::java::io::ObjectOutputStream misses features compatible with : Sequence {IN!annotateProxyClass, IN!writeClassDescriptor, IN!TC_PROXYCLASSDESC, IN!TC_LONGSTRING}
 [J2SE 1.3] J2SE 1.2::java::io::ObjectStreamConstants misses features compatible with : Sequence {IN!TC_LONGSTRING, IN!TC_PROXYCLASSDESC}
-[J2SE 1.3] J2SE 1.2::java::io::ObjectInputStream misses features compatible with : Sequence {IN!resolveProxyClass, IN!readClassDescriptor, IN!TC_LONGSTRING, IN!TC_PROXYCLASSDESC}
+[J2SE 1.3] J2SE 1.2::java::io::ObjectInputStream misses features compatible with : Sequence {IN!resolveProxyClass, IN!readClassDescriptor, IN!TC_PROXYCLASSDESC, IN!TC_LONGSTRING}
 [J2SE 1.3] J2SE 1.2::java::io misses classifiers compatible with : Sequence {IN!ObjectOutputStream, IN!ObjectStreamConstants, IN!ObjectInputStream}
 [J2SE 1.3] J2SE 1.3::java::io equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::lang compatible packages: Sequence {PREVIN2!lang, PREVIN!lang}
@@ -339,8 +341,8 @@
 [J2SE 1.3] J2ME PP 1.0::java::net::URLStreamHandler misses features compatible with : Sequence {IN!setURL}
 [J2SE 1.3] J2ME PP 1.0::java::net::URLConnection misses features compatible with : Sequence {IN!setDefaultRequestProperty, IN!getDefaultRequestProperty}
 [J2SE 1.3] J2ME PP 1.0::java::net::URLClassLoader misses features compatible with : Sequence {IN!defineClass}
-[J2SE 1.3] J2ME PP 1.0::java::net::JarURLConnection misses features compatible with : Sequence {IN!getDefaultRequestProperty, IN!setDefaultRequestProperty}
-[J2SE 1.3] J2ME PP 1.0::java::net::HttpURLConnection misses features compatible with : Sequence {IN!HTTP_SERVER_ERROR, IN!getDefaultRequestProperty, IN!setDefaultRequestProperty}
+[J2SE 1.3] J2ME PP 1.0::java::net::JarURLConnection misses features compatible with : Sequence {IN!setDefaultRequestProperty, IN!getDefaultRequestProperty}
+[J2SE 1.3] J2ME PP 1.0::java::net::HttpURLConnection misses features compatible with : Sequence {IN!HTTP_SERVER_ERROR, IN!setDefaultRequestProperty, IN!getDefaultRequestProperty}
 [J2SE 1.3] J2ME PP 1.0::java::net::Socket misses features compatible with : Sequence {IN!<init>, IN!<init>}
 [J2SE 1.3] J2ME PP 1.0::java::net::DatagramSocketImpl misses features compatible with : Sequence {IN!setTTL, IN!getTTL}
 [J2SE 1.3] J2ME PP 1.0::java::net::MulticastSocket misses features compatible with : Sequence {IN!setTTL, IN!getTTL}
@@ -362,7 +364,7 @@
 [J2SE 1.3] J2SE 1.3::java::security compatible packages: Sequence {PREVIN2!security, PREVIN!security}
 [J2SE 1.3] J2ME PP 1.0::java::security::SecureClassLoader misses features compatible with : Sequence {IN!defineClass}
 [J2SE 1.3] J2ME PP 1.0::java::security::Security misses features compatible with : Sequence {IN!getAlgorithmProperty}
-[J2SE 1.3] J2ME PP 1.0::java::security::Signature misses features compatible with : Sequence {IN!setParameter, IN!getParameter, IN!engineGetParameter, IN!engineSetParameter}
+[J2SE 1.3] J2ME PP 1.0::java::security::Signature misses features compatible with : Sequence {IN!setParameter, IN!getParameter, IN!engineSetParameter, IN!engineGetParameter}
 [J2SE 1.3] J2ME PP 1.0::java::security::SignatureSpi misses features compatible with : Sequence {IN!engineSetParameter, IN!engineGetParameter}
 [J2SE 1.3] J2ME PP 1.0::java::security misses classifiers compatible with : Sequence {IN!SecureClassLoader, IN!Security, IN!Signature, IN!SignatureSpi}
 [J2SE 1.3] J2SE 1.2::java::security::AccessControlContext misses features compatible with : Sequence {IN!<init>, IN!getDomainCombiner}
@@ -395,7 +397,7 @@
 [J2SE 1.3] J2SE 1.3::java::util equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::util::jar compatible packages: Sequence {PREVIN2!jar, PREVIN!jar}
 [J2SE 1.3] J2SE 1.2::java::util::jar::Attributes::Name misses features compatible with : Sequence {IN!EXTENSION_LIST, IN!EXTENSION_NAME, IN!EXTENSION_INSTALLATION, IN!IMPLEMENTATION_VENDOR_ID, IN!IMPLEMENTATION_URL}
-[J2SE 1.3] J2SE 1.2::java::util::jar::JarFile misses features compatible with : Sequence {IN!<init>, IN!OPEN_DELETE, IN!<init>, IN!OPEN_READ}
+[J2SE 1.3] J2SE 1.2::java::util::jar::JarFile misses features compatible with : Sequence {IN!<init>, IN!OPEN_READ, IN!<init>, IN!OPEN_DELETE}
 [J2SE 1.3] J2SE 1.2::java::util::jar misses classifiers compatible with : Sequence {IN!Name, IN!JarFile}
 [J2SE 1.3] J2SE 1.3::java::util::jar equivalent packages: Sequence {PREVIN2!jar}
 [J2SE 1.3] J2SE 1.3::java::util::zip compatible packages: Sequence {PREVIN2!zip, PREVIN!zip}
@@ -416,7 +418,7 @@
 [J2SE 1.3] J2ME PP 1.0::java::awt::Shape misses features compatible with : Sequence {IN!getBounds2D, IN!contains, IN!contains, IN!intersects, IN!intersects, IN!contains, IN!contains, IN!getPathIterator, IN!getPathIterator}
 [J2SE 1.3] J2ME PP 1.0::java::awt::AWTEvent misses features compatible with : Sequence {IN!INPUT_METHOD_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Component misses features compatible with : Sequence {IN!getPeer, IN!setDropTarget, IN!getDropTarget, IN!enableInputMethods, IN!addHierarchyListener, IN!removeHierarchyListener, IN!addHierarchyBoundsListener, IN!removeHierarchyBoundsListener, IN!addInputMethodListener, IN!removeInputMethodListener, IN!getListeners, IN!getInputMethodRequests, IN!getInputContext, IN!processInputMethodEvent, IN!processHierarchyEvent, IN!processHierarchyBoundsEvent, IN!addPropertyChangeListener, IN!removePropertyChangeListener, IN!addPropertyChangeListener, IN!removePropertyChangeListener, IN!firePropertyChange, IN!setComponentOrientation, IN!getComponentOrientation, IN!getAccessibleContext}
-[J2SE 1.3] J2ME PP 1.0::java::awt::Container misses features compatible with : Sequence {IN!getListeners, IN!removeHierarchyListener, IN!addInputMethodListener, IN!setDropTarget, IN!getListeners, IN!removeHierarchyBoundsListener, IN!addPropertyChangeListener, IN!setComponentOrientation, IN!getInputContext, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!firePropertyChange, IN!removeInputMethodListener, IN!processHierarchyEvent, IN!removePropertyChangeListener, IN!getComponentOrientation, IN!processInputMethodEvent, IN!getAccessibleContext, IN!getInputMethodRequests, IN!addHierarchyListener, IN!getPeer, IN!addPropertyChangeListener, IN!removePropertyChangeListener, IN!addHierarchyBoundsListener, IN!enableInputMethods}
+[J2SE 1.3] J2ME PP 1.0::java::awt::Container misses features compatible with : Sequence {IN!getListeners, IN!setDropTarget, IN!setComponentOrientation, IN!removeHierarchyListener, IN!enableInputMethods, IN!removeInputMethodListener, IN!addInputMethodListener, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!getInputMethodRequests, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!getPeer, IN!processInputMethodEvent, IN!removePropertyChangeListener, IN!getComponentOrientation, IN!getInputContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!addPropertyChangeListener, IN!firePropertyChange, IN!addPropertyChangeListener, IN!addHierarchyBoundsListener, IN!removePropertyChangeListener}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Color misses dependency suppliers compatible with : Sequence {IN!Paint}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Font misses features compatible with : Sequence {IN!ROMAN_BASELINE, IN!CENTER_BASELINE, IN!HANGING_BASELINE, IN!TRUETYPE_FONT, IN!pointSize, IN!getPeer, IN!<init>, IN!getFont, IN!createFont, IN!getTransform, IN!getFamily, IN!getPSName, IN!getFontName, IN!getFontName, IN!getSize2D, IN!getNumGlyphs, IN!getMissingGlyphCode, IN!getBaselineFor, IN!getAttributes, IN!getAvailableAttributes, IN!deriveFont, IN!deriveFont, IN!deriveFont, IN!deriveFont, IN!deriveFont, IN!deriveFont, IN!canDisplay, IN!canDisplayUpTo, IN!canDisplayUpTo, IN!canDisplayUpTo, IN!getItalicAngle, IN!hasUniformLineMetrics, IN!getLineMetrics, IN!getLineMetrics, IN!getLineMetrics, IN!getLineMetrics, IN!getStringBounds, IN!getStringBounds, IN!getStringBounds, IN!getStringBounds, IN!getMaxCharBounds, IN!createGlyphVector, IN!createGlyphVector, IN!createGlyphVector, IN!createGlyphVector}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Cursor misses features compatible with : Sequence {IN!CUSTOM_CURSOR, IN!name, IN!getSystemCustomCursor, IN!<init>, IN!getName}
@@ -428,33 +430,33 @@
 [J2SE 1.3] J2ME PP 1.0::java::awt::Graphics misses features compatible with : Sequence {IN!drawString}
 [J2SE 1.3] J2ME PP 1.0::java::awt::FontMetrics misses features compatible with : Sequence {IN!hasUniformLineMetrics, IN!getLineMetrics, IN!getLineMetrics, IN!getLineMetrics, IN!getLineMetrics, IN!getStringBounds, IN!getStringBounds, IN!getStringBounds, IN!getStringBounds, IN!getMaxCharBounds}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Window misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2ME PP 1.0::java::awt::PopupMenu misses features compatible with : Sequence {IN!getAccessibleContext, IN!getAccessibleContext, IN!getPeer, IN!getAccessibleContext, IN!getListeners, IN!getAccessibleContext, IN!getAccessibleContext}
+[J2SE 1.3] J2ME PP 1.0::java::awt::PopupMenu misses features compatible with : Sequence {IN!getAccessibleContext, IN!getListeners, IN!getAccessibleContext, IN!getAccessibleContext, IN!getAccessibleContext, IN!getAccessibleContext, IN!getPeer}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Menu misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2ME PP 1.0::java::awt::MenuItem misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2ME PP 1.0::java::awt::MenuComponent misses features compatible with : Sequence {IN!getPeer, IN!getAccessibleContext}
 [J2SE 1.3] J2ME PP 1.0::java::awt::GraphicsDevice misses features compatible with : Sequence {IN!getBestConfiguration}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Button misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2ME PP 1.0::java::awt::TextField misses features compatible with : Sequence {IN!getListeners, IN!getAccessibleContext, IN!removeHierarchyListener, IN!addInputMethodListener, IN!setDropTarget, IN!getListeners, IN!getListeners, IN!removeHierarchyBoundsListener, IN!addPropertyChangeListener, IN!setComponentOrientation, IN!getInputContext, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!firePropertyChange, IN!getAccessibleContext, IN!removeInputMethodListener, IN!processHierarchyEvent, IN!removePropertyChangeListener, IN!getComponentOrientation, IN!processInputMethodEvent, IN!enableInputMethods, IN!getAccessibleContext, IN!getAccessibleContext, IN!getInputMethodRequests, IN!addHierarchyListener, IN!getPeer, IN!addPropertyChangeListener, IN!removePropertyChangeListener, IN!addHierarchyBoundsListener, IN!enableInputMethods}
+[J2SE 1.3] J2ME PP 1.0::java::awt::TextField misses features compatible with : Sequence {IN!getListeners, IN!getAccessibleContext, IN!setDropTarget, IN!setComponentOrientation, IN!removeHierarchyListener, IN!enableInputMethods, IN!removeInputMethodListener, IN!addInputMethodListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getAccessibleContext, IN!getDropTarget, IN!getInputMethodRequests, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!getPeer, IN!processInputMethodEvent, IN!removePropertyChangeListener, IN!getComponentOrientation, IN!getInputContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!enableInputMethods, IN!getAccessibleContext, IN!addPropertyChangeListener, IN!firePropertyChange, IN!addPropertyChangeListener, IN!addHierarchyBoundsListener, IN!removePropertyChangeListener}
 [J2SE 1.3] J2ME PP 1.0::java::awt::TextComponent misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Label misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2ME PP 1.0::java::awt::List misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Checkbox misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Scrollbar misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2ME PP 1.0::java::awt::ScrollPane misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2ME PP 1.0::java::awt::TextArea misses features compatible with : Sequence {IN!getAccessibleContext, IN!removeHierarchyListener, IN!addInputMethodListener, IN!setDropTarget, IN!getListeners, IN!getListeners, IN!removeHierarchyBoundsListener, IN!addPropertyChangeListener, IN!setComponentOrientation, IN!getInputContext, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!firePropertyChange, IN!getAccessibleContext, IN!removeInputMethodListener, IN!processHierarchyEvent, IN!removePropertyChangeListener, IN!getComponentOrientation, IN!processInputMethodEvent, IN!enableInputMethods, IN!getAccessibleContext, IN!getAccessibleContext, IN!getInputMethodRequests, IN!addHierarchyListener, IN!getPeer, IN!addPropertyChangeListener, IN!removePropertyChangeListener, IN!addHierarchyBoundsListener, IN!enableInputMethods}
+[J2SE 1.3] J2ME PP 1.0::java::awt::TextArea misses features compatible with : Sequence {IN!getAccessibleContext, IN!setDropTarget, IN!setComponentOrientation, IN!removeHierarchyListener, IN!enableInputMethods, IN!removeInputMethodListener, IN!addInputMethodListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getAccessibleContext, IN!getDropTarget, IN!getInputMethodRequests, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!getPeer, IN!processInputMethodEvent, IN!removePropertyChangeListener, IN!getComponentOrientation, IN!getInputContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!enableInputMethods, IN!getAccessibleContext, IN!addPropertyChangeListener, IN!firePropertyChange, IN!addPropertyChangeListener, IN!addHierarchyBoundsListener, IN!removePropertyChangeListener}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Choice misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2ME PP 1.0::java::awt::Frame misses features compatible with : Sequence {IN!getFrames, IN!getAccessibleContext, IN!removeHierarchyListener, IN!addInputMethodListener, IN!setDropTarget, IN!getListeners, IN!applyResourceBundle, IN!removeHierarchyBoundsListener, IN!getListeners, IN!addPropertyChangeListener, IN!setComponentOrientation, IN!getInputContext, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!firePropertyChange, IN!getAccessibleContext, IN!applyResourceBundle, IN!removeInputMethodListener, IN!processHierarchyEvent, IN!getInputContext, IN!removePropertyChangeListener, IN!getOwnedWindows, IN!getComponentOrientation, IN!processInputMethodEvent, IN!getAccessibleContext, IN!getAccessibleContext, IN!getInputMethodRequests, IN!addHierarchyListener, IN!getListeners, IN!getPeer, IN!addPropertyChangeListener, IN!getOwner, IN!removePropertyChangeListener, IN!addHierarchyBoundsListener, IN!enableInputMethods}
+[J2SE 1.3] J2ME PP 1.0::java::awt::Frame misses features compatible with : Sequence {IN!getFrames, IN!getAccessibleContext, IN!getInputContext, IN!setDropTarget, IN!setComponentOrientation, IN!removeHierarchyListener, IN!getOwnedWindows, IN!enableInputMethods, IN!removeInputMethodListener, IN!addInputMethodListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!getInputMethodRequests, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!getPeer, IN!processInputMethodEvent, IN!applyResourceBundle, IN!removePropertyChangeListener, IN!applyResourceBundle, IN!getComponentOrientation, IN!getInputContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getAccessibleContext, IN!getAccessibleContext, IN!getOwner, IN!getListeners, IN!addPropertyChangeListener, IN!firePropertyChange, IN!addPropertyChangeListener, IN!addHierarchyBoundsListener, IN!removePropertyChangeListener}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Canvas misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Panel misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2ME PP 1.0::java::awt::Dialog misses features compatible with : Sequence {IN!<init>, IN!<init>, IN!<init>, IN!getAccessibleContext, IN!removeHierarchyListener, IN!addInputMethodListener, IN!setDropTarget, IN!getListeners, IN!applyResourceBundle, IN!removeHierarchyBoundsListener, IN!getListeners, IN!addPropertyChangeListener, IN!setComponentOrientation, IN!getInputContext, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!firePropertyChange, IN!getAccessibleContext, IN!applyResourceBundle, IN!removeInputMethodListener, IN!processHierarchyEvent, IN!getInputContext, IN!removePropertyChangeListener, IN!getOwnedWindows, IN!getComponentOrientation, IN!processInputMethodEvent, IN!getAccessibleContext, IN!getAccessibleContext, IN!getInputMethodRequests, IN!addHierarchyListener, IN!getListeners, IN!getPeer, IN!addPropertyChangeListener, IN!getOwner, IN!removePropertyChangeListener, IN!addHierarchyBoundsListener, IN!enableInputMethods}
+[J2SE 1.3] J2ME PP 1.0::java::awt::Dialog misses features compatible with : Sequence {IN!<init>, IN!<init>, IN!<init>, IN!getAccessibleContext, IN!getInputContext, IN!setDropTarget, IN!setComponentOrientation, IN!removeHierarchyListener, IN!getOwnedWindows, IN!enableInputMethods, IN!removeInputMethodListener, IN!addInputMethodListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!getInputMethodRequests, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!getPeer, IN!processInputMethodEvent, IN!applyResourceBundle, IN!removePropertyChangeListener, IN!applyResourceBundle, IN!getComponentOrientation, IN!getInputContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getAccessibleContext, IN!getAccessibleContext, IN!getOwner, IN!getListeners, IN!addPropertyChangeListener, IN!firePropertyChange, IN!addPropertyChangeListener, IN!addHierarchyBoundsListener, IN!removePropertyChangeListener}
 [J2SE 1.3] J2ME PP 1.0::java::awt::MenuBar misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2ME PP 1.0::java::awt::FileDialog misses features compatible with : Sequence {IN!removeHierarchyListener, IN!addInputMethodListener, IN!setDropTarget, IN!<init>, IN!getListeners, IN!<init>, IN!applyResourceBundle, IN!removeHierarchyBoundsListener, IN!getListeners, IN!addPropertyChangeListener, IN!setComponentOrientation, IN!getInputContext, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!firePropertyChange, IN!getAccessibleContext, IN!applyResourceBundle, IN!removeInputMethodListener, IN!processHierarchyEvent, IN!getInputContext, IN!removePropertyChangeListener, IN!getOwnedWindows, IN!<init>, IN!getComponentOrientation, IN!getAccessibleContext, IN!processInputMethodEvent, IN!getAccessibleContext, IN!getAccessibleContext, IN!getInputMethodRequests, IN!addHierarchyListener, IN!getListeners, IN!getPeer, IN!addPropertyChangeListener, IN!getOwner, IN!removePropertyChangeListener, IN!addHierarchyBoundsListener, IN!enableInputMethods}
+[J2SE 1.3] J2ME PP 1.0::java::awt::FileDialog misses features compatible with : Sequence {IN!getInputContext, IN!setDropTarget, IN!setComponentOrientation, IN!removeHierarchyListener, IN!getOwnedWindows, IN!enableInputMethods, IN!removeInputMethodListener, IN!addInputMethodListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!getInputMethodRequests, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!<init>, IN!<init>, IN!getPeer, IN!processInputMethodEvent, IN!applyResourceBundle, IN!removePropertyChangeListener, IN!applyResourceBundle, IN!<init>, IN!getComponentOrientation, IN!getInputContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getAccessibleContext, IN!getAccessibleContext, IN!getOwner, IN!getAccessibleContext, IN!getListeners, IN!addPropertyChangeListener, IN!firePropertyChange, IN!addPropertyChangeListener, IN!addHierarchyBoundsListener, IN!removePropertyChangeListener}
 [J2SE 1.3] J2ME PP 1.0::java::awt::CheckboxMenuItem misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2ME PP 1.0::java::awt::Polygon misses features compatible with : Sequence {IN!getBounds2D, IN!contains, IN!contains, IN!intersects, IN!intersects, IN!contains, IN!contains, IN!getPathIterator, IN!getPathIterator, IN!contains, IN!contains, IN!getPathIterator, IN!getPathIterator, IN!getBounds2D, IN!contains, IN!intersects, IN!contains, IN!intersects}
+[J2SE 1.3] J2ME PP 1.0::java::awt::Polygon misses features compatible with : Sequence {IN!getBounds2D, IN!contains, IN!contains, IN!intersects, IN!intersects, IN!contains, IN!contains, IN!getPathIterator, IN!getPathIterator, IN!getPathIterator, IN!intersects, IN!contains, IN!getBounds2D, IN!getPathIterator, IN!intersects, IN!contains, IN!contains, IN!contains}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Graphics2D misses features compatible with : Sequence {IN!draw, IN!drawImage, IN!drawImage, IN!drawRenderedImage, IN!drawRenderableImage, IN!drawString, IN!drawString, IN!drawString, IN!drawGlyphVector, IN!fill, IN!hit, IN!setPaint, IN!setStroke, IN!setRenderingHint, IN!getRenderingHint, IN!setRenderingHints, IN!addRenderingHints, IN!getRenderingHints, IN!translate, IN!rotate, IN!rotate, IN!scale, IN!shear, IN!transform, IN!setTransform, IN!getTransform, IN!getPaint, IN!setBackground, IN!getBackground, IN!getStroke, IN!clip, IN!getFontRenderContext, IN!drawString}
 [J2SE 1.3] J2ME PP 1.0::java::awt::Composite misses features compatible with : Sequence {IN!createContext}
-[J2SE 1.3] J2ME PP 1.0::java::awt::SystemColor misses features compatible with : Sequence {IN!createContext, IN!createContext, IN!getColorComponents, IN!<init>, IN!createContext, IN!getComponents}
-[J2SE 1.3] J2ME PP 1.0::java::awt::AWTEventMulticaster misses dependency suppliers compatible with : Sequence {IN!HierarchyBoundsListener, IN!HierarchyListener, IN!InputMethodListener}
+[J2SE 1.3] J2ME PP 1.0::java::awt::SystemColor misses features compatible with : Sequence {IN!createContext, IN!getColorComponents, IN!createContext, IN!createContext, IN!getComponents, IN!<init>}
+[J2SE 1.3] J2ME PP 1.0::java::awt::AWTEventMulticaster misses dependency suppliers compatible with : Sequence {IN!HierarchyListener, IN!InputMethodListener, IN!HierarchyBoundsListener}
 [J2SE 1.3] J2ME PP 1.0::java::awt::BorderLayout misses features compatible with : Sequence {IN!BEFORE_FIRST_LINE, IN!AFTER_LAST_LINE, IN!BEFORE_LINE_BEGINS, IN!AFTER_LINE_ENDS}
 [J2SE 1.3] J2ME PP 1.0::java::awt::FlowLayout misses features compatible with : Sequence {IN!LEADING, IN!TRAILING}
 [J2SE 1.3] J2ME PP 1.0::java::awt::GridBagConstraints misses features compatible with : Sequence {IN!<init>}
@@ -464,34 +466,34 @@
 [J2SE 1.3] J2ME PP 1.0::java::awt misses classifiers compatible with : Sequence {IN!ComponentOrientation, IN!Shape, IN!AWTEvent, IN!Component, IN!AccessibleAWTComponent, IN!AccessibleAWTComponentHandler, IN!AccessibleAWTFocusHandler, IN!Container, IN!AccessibleAWTContainer, IN!AccessibleContainerHandler, IN!Color, IN!Paint, IN!Font, IN!Cursor, IN!GraphicsConfiguration, IN!Dimension, IN!Toolkit, IN!Point, IN!Rectangle, IN!Graphics, IN!FontMetrics, IN!Window, IN!AccessibleAWTWindow, IN!PopupMenu, IN!AccessibleAWTPopupMenu, IN!Menu, IN!AccessibleAWTMenu, IN!MenuItem, IN!AccessibleAWTMenuItem, IN!MenuComponent, IN!AccessibleAWTMenuComponent, IN!PaintContext, IN!RenderingHints, IN!Key, IN!FontFormatException, IN!GraphicsDevice, IN!Button, IN!AccessibleAWTButton, IN!TextField, IN!AccessibleAWTTextField, IN!TextComponent, IN!AccessibleAWTTextComponent, IN!Label, IN!AccessibleAWTLabel, IN!List, IN!AccessibleAWTList, IN!AccessibleAWTListChild, IN!Checkbox, IN!AccessibleAWTCheckbox, IN!Scrollbar, IN!AccessibleAWTScrollBar, IN!ScrollPane, IN!AccessibleAWTScrollPane, IN!TextArea, IN!AccessibleAWTTextArea, IN!Choice, IN!AccessibleAWTChoice, IN!Frame, IN!AccessibleAWTFrame, IN!Canvas, IN!AccessibleAWTCanvas, IN!Panel, IN!AccessibleAWTPanel, IN!Dialog, IN!AccessibleAWTDialog, IN!MenuBar, IN!AccessibleAWTMenuBar, IN!FileDialog, IN!CheckboxMenuItem, IN!AccessibleAWTCheckboxMenuItem, IN!PrintJob, IN!JobAttributes, IN!DefaultSelectionType, IN!DestinationType, IN!DialogType, IN!MultipleDocumentHandlingType, IN!SidesType, IN!PageAttributes, IN!ColorType, IN!MediaType, IN!OrientationRequestedType, IN!OriginType, IN!PrintQualityType, IN!Polygon, IN!GraphicsConfigTemplate, IN!Graphics2D, IN!Composite, IN!Stroke, IN!CompositeContext, IN!SystemColor, IN!Robot, IN!AWTEventMulticaster, IN!BorderLayout, IN!FlowLayout, IN!GridBagConstraints, IN!GridBagLayout, IN!PrintGraphics, IN!AlphaComposite, IN!BasicStroke, IN!GradientPaint, IN!GraphicsEnvironment, IN!TexturePaint}
 [J2SE 1.3] J2SE 1.2::java::awt::AWTEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
 [J2SE 1.3] J2SE 1.2::java::awt::Component misses features compatible with : Sequence {IN!getGraphicsConfiguration, IN!addHierarchyListener, IN!removeHierarchyListener, IN!addHierarchyBoundsListener, IN!removeHierarchyBoundsListener, IN!getListeners, IN!processHierarchyEvent, IN!processHierarchyBoundsEvent, IN!getAccessibleContext}
-[J2SE 1.3] J2SE 1.2::java::awt::Container misses features compatible with : Sequence {IN!getListeners, IN!removeHierarchyListener, IN!getListeners, IN!removeHierarchyBoundsListener, IN!processHierarchyBoundsEvent, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!addHierarchyListener, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::java::awt::Container misses features compatible with : Sequence {IN!getListeners, IN!removeHierarchyListener, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!addHierarchyBoundsListener}
 [J2SE 1.3] J2SE 1.2::java::awt::Font misses features compatible with : Sequence {IN!TRUETYPE_FONT, IN!createFont}
 [J2SE 1.3] J2SE 1.2::java::awt::GraphicsConfiguration misses features compatible with : Sequence {IN!getBounds}
 [J2SE 1.3] J2SE 1.2::java::awt::Toolkit misses features compatible with : Sequence {IN!getPrintJob, IN!getLockingKeyState, IN!setLockingKeyState, IN!mapInputMethodHighlight}
 [J2SE 1.3] J2SE 1.2::java::awt::Window misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2SE 1.2::java::awt::PopupMenu misses features compatible with : Sequence {IN!getAccessibleContext, IN!getAccessibleContext, IN!getAccessibleContext, IN!getListeners, IN!getAccessibleContext, IN!getAccessibleContext}
+[J2SE 1.3] J2SE 1.2::java::awt::PopupMenu misses features compatible with : Sequence {IN!getAccessibleContext, IN!getListeners, IN!getAccessibleContext, IN!getAccessibleContext, IN!getAccessibleContext, IN!getAccessibleContext}
 [J2SE 1.3] J2SE 1.2::java::awt::Menu misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2SE 1.2::java::awt::MenuItem misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2SE 1.2::java::awt::MenuComponent misses features compatible with : Sequence {IN!getAccessibleContext}
 [J2SE 1.3] J2SE 1.2::java::awt::RenderingHints misses features compatible with : Sequence {IN!KEY_STROKE_CONTROL, IN!VALUE_STROKE_DEFAULT, IN!VALUE_STROKE_NORMALIZE, IN!VALUE_STROKE_PURE}
 [J2SE 1.3] J2SE 1.2::java::awt::Button misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2SE 1.2::java::awt::TextField misses features compatible with : Sequence {IN!getListeners, IN!getAccessibleContext, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!removeHierarchyBoundsListener, IN!processHierarchyBoundsEvent, IN!getAccessibleContext, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!addHierarchyListener, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::java::awt::TextField misses features compatible with : Sequence {IN!getListeners, IN!getAccessibleContext, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getAccessibleContext, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!addHierarchyBoundsListener}
 [J2SE 1.3] J2SE 1.2::java::awt::TextComponent misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2SE 1.2::java::awt::Label misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2SE 1.2::java::awt::List misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2SE 1.2::java::awt::Checkbox misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2SE 1.2::java::awt::Scrollbar misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2SE 1.2::java::awt::ScrollPane misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2SE 1.2::java::awt::TextArea misses features compatible with : Sequence {IN!getAccessibleContext, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!removeHierarchyBoundsListener, IN!processHierarchyBoundsEvent, IN!getAccessibleContext, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!addHierarchyListener, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::java::awt::TextArea misses features compatible with : Sequence {IN!getAccessibleContext, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getAccessibleContext, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!addHierarchyBoundsListener}
 [J2SE 1.3] J2SE 1.2::java::awt::Choice misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2SE 1.2::java::awt::Frame misses features compatible with : Sequence {IN!<init>, IN!<init>, IN!getAccessibleContext, IN!removeHierarchyListener, IN!getListeners, IN!removeHierarchyBoundsListener, IN!getListeners, IN!<init>, IN!processHierarchyBoundsEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!addHierarchyListener, IN!getListeners, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::java::awt::Frame misses features compatible with : Sequence {IN!<init>, IN!<init>, IN!getAccessibleContext, IN!removeHierarchyListener, IN!getGraphicsConfiguration, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!getListeners, IN!<init>, IN!addHierarchyBoundsListener}
 [J2SE 1.3] J2SE 1.2::java::awt::Canvas misses dependency suppliers compatible with : Sequence {IN!Accessible}
 [J2SE 1.3] J2SE 1.2::java::awt::Panel misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2SE 1.2::java::awt::Dialog misses features compatible with : Sequence {IN!getAccessibleContext, IN!removeHierarchyListener, IN!getListeners, IN!removeHierarchyBoundsListener, IN!getListeners, IN!<init>, IN!processHierarchyBoundsEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!addHierarchyListener, IN!getListeners, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::java::awt::Dialog misses features compatible with : Sequence {IN!getAccessibleContext, IN!removeHierarchyListener, IN!getGraphicsConfiguration, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!getListeners, IN!<init>, IN!addHierarchyBoundsListener}
 [J2SE 1.3] J2SE 1.2::java::awt::MenuBar misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2SE 1.2::java::awt::FileDialog misses features compatible with : Sequence {IN!removeHierarchyListener, IN!getListeners, IN!removeHierarchyBoundsListener, IN!<init>, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!processHierarchyEvent, IN!getAccessibleContext, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!addHierarchyListener, IN!getListeners, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::java::awt::FileDialog misses features compatible with : Sequence {IN!removeHierarchyListener, IN!getGraphicsConfiguration, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!getAccessibleContext, IN!<init>, IN!getListeners, IN!addHierarchyBoundsListener}
 [J2SE 1.3] J2SE 1.2::java::awt::CheckboxMenuItem misses dependency suppliers compatible with : Sequence {IN!Accessible}
-[J2SE 1.3] J2SE 1.2::java::awt::AWTEventMulticaster misses dependency suppliers compatible with : Sequence {IN!HierarchyBoundsListener, IN!HierarchyListener}
+[J2SE 1.3] J2SE 1.2::java::awt::AWTEventMulticaster misses dependency suppliers compatible with : Sequence {IN!HierarchyListener, IN!HierarchyBoundsListener}
 [J2SE 1.3] J2SE 1.2::java::awt misses classifiers compatible with : Sequence {IN!AWTEvent, IN!Component, IN!AccessibleAWTComponent, IN!AccessibleAWTComponentHandler, IN!AccessibleAWTFocusHandler, IN!Container, IN!AccessibleAWTContainer, IN!AccessibleContainerHandler, IN!Font, IN!GraphicsConfiguration, IN!Toolkit, IN!Window, IN!AccessibleAWTWindow, IN!PopupMenu, IN!AccessibleAWTPopupMenu, IN!Menu, IN!AccessibleAWTMenu, IN!MenuItem, IN!AccessibleAWTMenuItem, IN!MenuComponent, IN!AccessibleAWTMenuComponent, IN!RenderingHints, IN!FontFormatException, IN!Button, IN!AccessibleAWTButton, IN!TextField, IN!AccessibleAWTTextField, IN!TextComponent, IN!AccessibleAWTTextComponent, IN!Label, IN!AccessibleAWTLabel, IN!List, IN!AccessibleAWTList, IN!AccessibleAWTListChild, IN!Checkbox, IN!AccessibleAWTCheckbox, IN!Scrollbar, IN!AccessibleAWTScrollBar, IN!ScrollPane, IN!AccessibleAWTScrollPane, IN!TextArea, IN!AccessibleAWTTextArea, IN!Choice, IN!AccessibleAWTChoice, IN!Frame, IN!AccessibleAWTFrame, IN!Canvas, IN!AccessibleAWTCanvas, IN!Panel, IN!AccessibleAWTPanel, IN!Dialog, IN!AccessibleAWTDialog, IN!MenuBar, IN!AccessibleAWTMenuBar, IN!FileDialog, IN!CheckboxMenuItem, IN!AccessibleAWTCheckboxMenuItem, IN!JobAttributes, IN!DefaultSelectionType, IN!DestinationType, IN!DialogType, IN!MultipleDocumentHandlingType, IN!SidesType, IN!PageAttributes, IN!ColorType, IN!MediaType, IN!OrientationRequestedType, IN!OriginType, IN!PrintQualityType, IN!Robot, IN!AWTEventMulticaster}
 [J2SE 1.3] J2SE 1.3::java::awt equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::awt::geom compatible packages: Sequence {PREVIN!geom}
@@ -504,34 +506,34 @@
 [J2SE 1.3] J2SE 1.2::java::awt::geom misses classifiers compatible with : Sequence {IN!CubicCurve2D, IN!Float, IN!Double, IN!QuadCurve2D, IN!Float, IN!Double}
 [J2SE 1.3] J2SE 1.3::java::awt::geom equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::awt::event compatible packages: Sequence {PREVIN2!event, PREVIN!event}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::KeyEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::InputEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::ComponentEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::FocusEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::MouseEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::PaintEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::ContainerEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::WindowEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::ActionEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::TextEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::ItemEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::AdjustmentEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
-[J2SE 1.3] J2ME PP 1.0::java::awt::event::InvocationEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::KeyEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::InputEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::ComponentEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::FocusEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::MouseEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::PaintEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::ContainerEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::WindowEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::ActionEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::TextEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::ItemEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::AdjustmentEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
+[J2SE 1.3] J2ME PP 1.0::java::awt::event::InvocationEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!INPUT_METHOD_EVENT_MASK}
 [J2SE 1.3] J2ME PP 1.0::java::awt::event misses classifiers compatible with : Sequence {IN!KeyEvent, IN!InputEvent, IN!ComponentEvent, IN!HierarchyListener, IN!HierarchyBoundsListener, IN!InputMethodListener, IN!FocusEvent, IN!MouseEvent, IN!InputMethodEvent, IN!HierarchyEvent, IN!PaintEvent, IN!ContainerEvent, IN!WindowEvent, IN!ActionEvent, IN!TextEvent, IN!ItemEvent, IN!AdjustmentEvent, IN!InvocationEvent, IN!HierarchyBoundsAdapter}
-[J2SE 1.3] J2SE 1.2::java::awt::event::KeyEvent misses features compatible with : Sequence {IN!VK_KANA_LOCK, IN!VK_INPUT_METHOD_ON_OFF, IN!setSource, IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::InputEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::ComponentEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::FocusEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::MouseEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::InputMethodEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::PaintEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::ContainerEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::WindowEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::ActionEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::TextEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::ItemEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::AdjustmentEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::java::awt::event::InvocationEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::KeyEvent misses features compatible with : Sequence {IN!VK_KANA_LOCK, IN!VK_INPUT_METHOD_ON_OFF, IN!setSource, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::InputEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::ComponentEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::FocusEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::MouseEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::InputMethodEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::PaintEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::ContainerEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::WindowEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::ActionEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::TextEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::ItemEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::AdjustmentEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::java::awt::event::InvocationEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
 [J2SE 1.3] J2SE 1.2::java::awt::event misses classifiers compatible with : Sequence {IN!KeyEvent, IN!InputEvent, IN!ComponentEvent, IN!HierarchyListener, IN!HierarchyBoundsListener, IN!FocusEvent, IN!MouseEvent, IN!InputMethodEvent, IN!HierarchyEvent, IN!PaintEvent, IN!ContainerEvent, IN!WindowEvent, IN!ActionEvent, IN!TextEvent, IN!ItemEvent, IN!AdjustmentEvent, IN!InvocationEvent, IN!HierarchyBoundsAdapter}
 [J2SE 1.3] J2SE 1.3::java::awt::event equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::awt::font misses classifiers compatible with : Sequence {PREVIN!TextLine, PREVIN!TextLineMetrics}
@@ -539,7 +541,7 @@
 [J2SE 1.3] J2SE 1.3::java::awt::image compatible packages: Sequence {PREVIN2!image, PREVIN!image}
 [J2SE 1.3] J2ME PP 1.0::java::awt::image::ColorModel misses features compatible with : Sequence {IN!transferType, IN!getRed, IN!getGreen, IN!getBlue, IN!getAlpha, IN!getRGB, IN!getDataElements, IN!getComponents, IN!getComponents, IN!getUnnormalizedComponents, IN!getNormalizedComponents, IN!getDataElement, IN!getDataElements, IN!coerceData, IN!isCompatibleRaster, IN!createCompatibleWritableRaster, IN!createCompatibleSampleModel, IN!isCompatibleSampleModel, IN!getAlphaRaster}
 [J2SE 1.3] J2ME PP 1.0::java::awt::image::BufferedImage misses dependency suppliers compatible with : Sequence {IN!WritableRenderedImage}
-[J2SE 1.3] J2ME PP 1.0::java::awt::image::IndexColorModel misses features compatible with : Sequence {IN!<init>, IN!<init>, IN!getRGBs, IN!getDataElements, IN!getComponents, IN!getComponents, IN!getDataElement, IN!getDataElements, IN!createCompatibleWritableRaster, IN!isCompatibleRaster, IN!createCompatibleSampleModel, IN!isCompatibleSampleModel, IN!convertToIntDiscrete, IN!isValid, IN!isValid, IN!getValidPixels, IN!getRed, IN!getUnnormalizedComponents, IN!createCompatibleWritableRaster, IN!isCompatibleSampleModel, IN!createCompatibleSampleModel, IN!getDataElement, IN!getDataElements, IN!getRGB, IN!coerceData, IN!getDataElements, IN!transferType, IN!getNormalizedComponents, IN!getGreen, IN!getAlphaRaster, IN!getComponents, IN!getComponents, IN!getAlpha, IN!getBlue, IN!isCompatibleRaster}
+[J2SE 1.3] J2ME PP 1.0::java::awt::image::IndexColorModel misses features compatible with : Sequence {IN!<init>, IN!<init>, IN!getRGBs, IN!getDataElements, IN!getComponents, IN!getComponents, IN!getDataElement, IN!getDataElements, IN!createCompatibleWritableRaster, IN!isCompatibleRaster, IN!createCompatibleSampleModel, IN!isCompatibleSampleModel, IN!convertToIntDiscrete, IN!isValid, IN!isValid, IN!getValidPixels, IN!getAlpha, IN!transferType, IN!createCompatibleWritableRaster, IN!getGreen, IN!getDataElements, IN!getNormalizedComponents, IN!getDataElement, IN!getComponents, IN!coerceData, IN!isCompatibleRaster, IN!getDataElements, IN!getComponents, IN!getBlue, IN!createCompatibleSampleModel, IN!getUnnormalizedComponents, IN!getAlphaRaster, IN!getRGB, IN!getRed, IN!isCompatibleSampleModel}
 [J2SE 1.3] J2ME PP 1.0::java::awt::image::DataBuffer misses features compatible with : Sequence {IN!TYPE_SHORT, IN!TYPE_FLOAT, IN!TYPE_DOUBLE, IN!dataType, IN!banks, IN!offset, IN!size, IN!offsets, IN!getDataTypeSize, IN!<init>, IN!<init>, IN!<init>, IN!<init>, IN!getDataType, IN!getSize, IN!getOffset, IN!getOffsets, IN!getNumBanks, IN!getElem, IN!getElem, IN!setElem, IN!setElem, IN!getElemFloat, IN!getElemFloat, IN!setElemFloat, IN!setElemFloat, IN!getElemDouble, IN!getElemDouble, IN!setElemDouble, IN!setElemDouble}
 [J2SE 1.3] J2ME PP 1.0::java::awt::image::DirectColorModel misses generals compatible with : Sequence {IN!PackedColorModel}
 [J2SE 1.3] J2ME PP 1.0::java::awt::image misses classifiers compatible with : Sequence {IN!ColorModel, IN!BufferedImage, IN!WritableRenderedImage, IN!RenderedImage, IN!WritableRaster, IN!Raster, IN!SampleModel, IN!IndexColorModel, IN!TileObserver, IN!DataBuffer, IN!BufferedImageOp, IN!DirectColorModel, IN!PackedColorModel, IN!ComponentSampleModel, IN!AffineTransformOp, IN!RasterOp, IN!BandCombineOp, IN!BufferedImageFilter, IN!ByteLookupTable, IN!LookupTable, IN!ColorConvertOp, IN!ComponentColorModel, IN!ConvolveOp, IN!Kernel, IN!ImagingOpException, IN!LookupOp, IN!ShortLookupTable, IN!RescaleOp, IN!DataBufferByte, IN!DataBufferInt, IN!DataBufferShort, IN!DataBufferUShort, IN!BandedSampleModel, IN!PixelInterleavedSampleModel, IN!SinglePixelPackedSampleModel, IN!MultiPixelPackedSampleModel}
@@ -568,8 +570,8 @@
 [J2SE 1.3] J2ME PP 1.0::java::awt::color misses classifiers compatible with : Sequence {IN!ColorSpace, IN!ICC_ColorSpace, IN!ICC_Profile, IN!ICC_ProfileGray, IN!ICC_ProfileRGB, IN!ProfileDataException, IN!CMMException}
 [J2SE 1.3] J2SE 1.2::java::awt::color::ColorSpace misses dependency suppliers compatible with : Sequence {IN!Serializable}
 [J2SE 1.3] J2SE 1.2::java::awt::color::ICC_Profile misses dependency suppliers compatible with : Sequence {IN!Serializable}
-[J2SE 1.3] J2SE 1.2::java::awt::color::ICC_ProfileGray misses features compatible with : Sequence {IN!icSigDeviceSettingsTag, IN!readResolve, IN!icSigCrdInfoTag, IN!icSigOutputResponseTag, IN!icSigChromaticityTag}
-[J2SE 1.3] J2SE 1.2::java::awt::color::ICC_ProfileRGB misses features compatible with : Sequence {IN!icSigDeviceSettingsTag, IN!readResolve, IN!icSigCrdInfoTag, IN!icSigOutputResponseTag, IN!icSigChromaticityTag}
+[J2SE 1.3] J2SE 1.2::java::awt::color::ICC_ProfileGray misses features compatible with : Sequence {IN!icSigChromaticityTag, IN!icSigDeviceSettingsTag, IN!icSigOutputResponseTag, IN!icSigCrdInfoTag, IN!readResolve}
+[J2SE 1.3] J2SE 1.2::java::awt::color::ICC_ProfileRGB misses features compatible with : Sequence {IN!icSigChromaticityTag, IN!icSigDeviceSettingsTag, IN!icSigOutputResponseTag, IN!icSigCrdInfoTag, IN!readResolve}
 [J2SE 1.3] J2SE 1.2::java::awt::color misses classifiers compatible with : Sequence {IN!ColorSpace, IN!ICC_Profile, IN!ICC_ProfileGray, IN!ICC_ProfileRGB}
 [J2SE 1.3] J2SE 1.3::java::awt::color equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::awt::datatransfer compatible packages: Sequence {PREVIN2!datatransfer, PREVIN!datatransfer}
@@ -589,9 +591,9 @@
 [J2SE 1.3] J2SE 1.3::java::beans::beancontext compatible packages: Sequence {PREVIN!beancontext}
 [J2SE 1.3] J2SE 1.3::java::beans::beancontext equivalent packages: Sequence {PREVIN!beancontext}
 [J2SE 1.3] J2SE 1.3::java::applet compatible packages: Sequence {PREVIN2!applet, PREVIN!applet}
-[J2SE 1.3] J2ME PP 1.0::java::applet::Applet misses features compatible with : Sequence {IN!getAccessibleContext, IN!removeHierarchyListener, IN!addInputMethodListener, IN!setDropTarget, IN!getListeners, IN!removeHierarchyBoundsListener, IN!getListeners, IN!addPropertyChangeListener, IN!getAccessibleContext, IN!setComponentOrientation, IN!getInputContext, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!firePropertyChange, IN!getAccessibleContext, IN!removeInputMethodListener, IN!processHierarchyEvent, IN!removePropertyChangeListener, IN!getComponentOrientation, IN!processInputMethodEvent, IN!getAccessibleContext, IN!getInputMethodRequests, IN!addHierarchyListener, IN!getPeer, IN!addPropertyChangeListener, IN!removePropertyChangeListener, IN!addHierarchyBoundsListener, IN!enableInputMethods}
+[J2SE 1.3] J2ME PP 1.0::java::applet::Applet misses features compatible with : Sequence {IN!getAccessibleContext, IN!setDropTarget, IN!setComponentOrientation, IN!removeHierarchyListener, IN!enableInputMethods, IN!removeInputMethodListener, IN!addInputMethodListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!getDropTarget, IN!getInputMethodRequests, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!getPeer, IN!processInputMethodEvent, IN!getAccessibleContext, IN!removePropertyChangeListener, IN!getComponentOrientation, IN!getInputContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getAccessibleContext, IN!addPropertyChangeListener, IN!firePropertyChange, IN!addPropertyChangeListener, IN!addHierarchyBoundsListener, IN!removePropertyChangeListener}
 [J2SE 1.3] J2ME PP 1.0::java::applet misses classifiers compatible with : Sequence {IN!Applet, IN!AccessibleApplet}
-[J2SE 1.3] J2SE 1.2::java::applet::Applet misses features compatible with : Sequence {IN!getAccessibleContext, IN!removeHierarchyListener, IN!getListeners, IN!removeHierarchyBoundsListener, IN!getListeners, IN!getAccessibleContext, IN!processHierarchyBoundsEvent, IN!getAccessibleContext, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!addHierarchyListener, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::java::applet::Applet misses features compatible with : Sequence {IN!getAccessibleContext, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!addHierarchyBoundsListener}
 [J2SE 1.3] J2SE 1.2::java::applet misses classifiers compatible with : Sequence {IN!Applet, IN!AccessibleApplet}
 [J2SE 1.3] J2SE 1.3::java::applet equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::java::rmi compatible packages: Sequence {PREVIN2!rmi, PREVIN!rmi}
@@ -619,47 +621,47 @@
 [J2SE 1.3] J2SE 1.3::javax::swing misses classifiers compatible with : Sequence {PREVIN!WindowPopup, PREVIN!AccessibleWindowPopup}
 [J2SE 1.3] J2SE 1.3::javax::swing compatible packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::swing::text compatible packages: Sequence {PREVIN!text}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::JTextComponent misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::JTextComponent::AccessibleJTextComponent misses features compatible with : Sequence {IN!accessibleFocusHandler, IN!ACCESSIBLE_TABLE_MODEL_CHANGED, IN!accessibleAWTComponentHandler, IN!<init>, IN!getAccessibleRelationSet, IN!getAccessibleIcon, IN!ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_SUMMARY_CHANGED, IN!getAccessibleTable, IN!ACCESSIBLE_TABLE_ROW_HEADER_CHANGED, IN!ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED, IN!ACCESSIBLE_ACTION_PROPERTY, IN!<init>, IN!ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_CAPTION_CHANGED, IN!accessibleAWTFocusHandler}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::JTextComponent misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::JTextComponent::AccessibleJTextComponent misses features compatible with : Sequence {IN!<init>, IN!ACCESSIBLE_ACTION_PROPERTY, IN!accessibleAWTComponentHandler, IN!<init>, IN!ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED, IN!ACCESSIBLE_TABLE_CAPTION_CHANGED, IN!accessibleAWTFocusHandler, IN!getAccessibleTable, IN!ACCESSIBLE_TABLE_SUMMARY_CHANGED, IN!ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED, IN!accessibleFocusHandler, IN!ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_MODEL_CHANGED, IN!ACCESSIBLE_TABLE_ROW_HEADER_CHANGED, IN!getAccessibleRelationSet, IN!getAccessibleIcon}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultCaret misses features compatible with : Sequence {IN!getListeners}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::TextAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::TextAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::Segment misses dependency suppliers compatible with : Sequence {IN!CharacterIterator, IN!Cloneable}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::EditorKit misses features compatible with : Sequence {IN!clone}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::View misses features compatible with : Sequence {IN!removeAll, IN!remove, IN!insert, IN!append, IN!replace, IN!getViewIndex, IN!getGraphics, IN!updateChildren, IN!forwardUpdate, IN!forwardUpdateToView, IN!updateLayout}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::AbstractDocument misses features compatible with : Sequence {IN!getListeners}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::DefaultKeyTypedAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY, IN!ACTION_COMMAND_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::InsertContentAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY, IN!ACTION_COMMAND_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::InsertBreakAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY, IN!ACTION_COMMAND_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::InsertTabAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY, IN!ACTION_COMMAND_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::CutAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY, IN!ACTION_COMMAND_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::CopyAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY, IN!ACTION_COMMAND_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::PasteAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY, IN!ACTION_COMMAND_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::BeepAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY, IN!ACTION_COMMAND_KEY, IN!getKeys}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::DefaultKeyTypedAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::InsertContentAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::InsertBreakAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::InsertTabAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::CutAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::CopyAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::PasteAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultEditorKit::BeepAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::PlainDocument misses features compatible with : Sequence {IN!getListeners}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::DefaultStyledDocument misses features compatible with : Sequence {IN!getListeners}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::StyleContext::NamedStyle misses features compatible with : Sequence {IN!getListeners}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::StyledTextAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY, IN!ACTION_COMMAND_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::FontFamilyAction misses features compatible with : Sequence {IN!ACTION_COMMAND_KEY, IN!getKeys, IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::FontSizeAction misses features compatible with : Sequence {IN!ACTION_COMMAND_KEY, IN!getKeys, IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::ForegroundAction misses features compatible with : Sequence {IN!ACTION_COMMAND_KEY, IN!getKeys, IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::AlignmentAction misses features compatible with : Sequence {IN!ACTION_COMMAND_KEY, IN!getKeys, IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::BoldAction misses features compatible with : Sequence {IN!ACTION_COMMAND_KEY, IN!getKeys, IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::ItalicAction misses features compatible with : Sequence {IN!ACTION_COMMAND_KEY, IN!getKeys, IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::UnderlineAction misses features compatible with : Sequence {IN!ACTION_COMMAND_KEY, IN!getKeys, IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::StyledTextAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::FontFamilyAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::FontSizeAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::ForegroundAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::AlignmentAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::BoldAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::ItalicAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::StyledEditorKit::UnderlineAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::AbstractWriter misses features compatible with : Sequence {IN!getStartOffset, IN!getEndOffset, IN!getWriter, IN!getLineLength, IN!setCurrentLineLength, IN!getCurrentLineLength, IN!isLineEmpty, IN!setCanWrapLines, IN!getCanWrapLines, IN!getIndentSpace, IN!setLineSeparator, IN!getLineSeparator, IN!getIndentLevel, IN!writeLineSeparator, IN!write, IN!output}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::LabelView misses dependency suppliers compatible with : Sequence {IN!TabableView}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::ParagraphView misses generals compatible with : Sequence {IN!FlowView}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::BoxView misses features compatible with : Sequence {IN!getAxis, IN!setAxis, IN!layoutChanged, IN!forwardUpdate, IN!getWidth, IN!getHeight, IN!getOffset, IN!getSpan, IN!getViewIndex, IN!forwardUpdate, IN!updateChildren, IN!getBottomInset, IN!setInsets, IN!forwardUpdateToView, IN!getLeftInset, IN!getRightInset, IN!setParagraphInsets, IN!updateLayout, IN!remove, IN!getTopInset, IN!getViewIndex, IN!getGraphics}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::ComponentView misses features compatible with : Sequence {IN!append, IN!insert, IN!getViewIndex, IN!removeAll, IN!replace, IN!forwardUpdate, IN!updateLayout, IN!updateChildren, IN!remove, IN!getGraphics, IN!forwardUpdateToView}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::WrappedPlainView misses features compatible with : Sequence {IN!getViewIndex, IN!getAxis, IN!forwardUpdate, IN!getSpan, IN!updateChildren, IN!getBottomInset, IN!getWidth, IN!setInsets, IN!forwardUpdateToView, IN!getHeight, IN!getLeftInset, IN!setParagraphInsets, IN!getRightInset, IN!getOffset, IN!updateLayout, IN!remove, IN!setAxis, IN!layoutChanged, IN!getTopInset, IN!getViewIndex, IN!forwardUpdate, IN!getGraphics}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::CompositeView misses features compatible with : Sequence {IN!getViewIndex, IN!setParagraphInsets, IN!setInsets, IN!getLeftInset, IN!getRightInset, IN!getTopInset, IN!getBottomInset, IN!getViewIndex, IN!forwardUpdate, IN!updateLayout, IN!updateChildren, IN!remove, IN!getGraphics, IN!forwardUpdateToView}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::IconView misses features compatible with : Sequence {IN!append, IN!insert, IN!getViewIndex, IN!removeAll, IN!replace, IN!forwardUpdate, IN!updateLayout, IN!updateChildren, IN!remove, IN!getGraphics, IN!forwardUpdateToView}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::FieldView misses features compatible with : Sequence {IN!append, IN!insert, IN!getViewIndex, IN!removeAll, IN!replace, IN!forwardUpdate, IN!updateChildren, IN!forwardUpdateToView, IN!updateLayout, IN!remove, IN!getGraphics}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::PlainView misses features compatible with : Sequence {IN!append, IN!insert, IN!getViewIndex, IN!removeAll, IN!replace, IN!forwardUpdate, IN!updateLayout, IN!updateChildren, IN!remove, IN!getGraphics, IN!forwardUpdateToView}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::PasswordView misses features compatible with : Sequence {IN!append, IN!insert, IN!getViewIndex, IN!removeAll, IN!replace, IN!forwardUpdate, IN!updateChildren, IN!forwardUpdateToView, IN!updateLayout, IN!remove, IN!getGraphics}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::TableView misses features compatible with : Sequence {IN!forwardUpdate, IN!getViewIndex, IN!getAxis, IN!forwardUpdate, IN!getSpan, IN!updateChildren, IN!getBottomInset, IN!getWidth, IN!setInsets, IN!forwardUpdateToView, IN!getHeight, IN!getLeftInset, IN!setParagraphInsets, IN!getRightInset, IN!getOffset, IN!updateLayout, IN!remove, IN!setAxis, IN!layoutChanged, IN!getTopInset, IN!getViewIndex, IN!forwardUpdate, IN!getGraphics}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::TableView::TableRow misses features compatible with : Sequence {IN!getViewIndex, IN!getAxis, IN!forwardUpdate, IN!getSpan, IN!updateChildren, IN!getBottomInset, IN!getWidth, IN!setInsets, IN!forwardUpdateToView, IN!getHeight, IN!getLeftInset, IN!setParagraphInsets, IN!getRightInset, IN!getOffset, IN!updateLayout, IN!remove, IN!setAxis, IN!layoutChanged, IN!getTopInset, IN!getViewIndex, IN!forwardUpdate, IN!getGraphics}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::TableView::TableCell misses features compatible with : Sequence {IN!getViewIndex, IN!getAxis, IN!forwardUpdate, IN!getSpan, IN!updateChildren, IN!getBottomInset, IN!getWidth, IN!setInsets, IN!forwardUpdateToView, IN!getHeight, IN!getLeftInset, IN!setParagraphInsets, IN!getRightInset, IN!getOffset, IN!updateLayout, IN!remove, IN!setAxis, IN!layoutChanged, IN!getTopInset, IN!getViewIndex, IN!forwardUpdate, IN!getGraphics}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::BoxView misses features compatible with : Sequence {IN!getAxis, IN!setAxis, IN!layoutChanged, IN!forwardUpdate, IN!getWidth, IN!getHeight, IN!getOffset, IN!getSpan, IN!forwardUpdate, IN!setParagraphInsets, IN!getGraphics, IN!getBottomInset, IN!updateChildren, IN!getViewIndex, IN!remove, IN!getTopInset, IN!updateLayout, IN!getViewIndex, IN!setInsets, IN!getLeftInset, IN!forwardUpdateToView, IN!getRightInset}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::ComponentView misses features compatible with : Sequence {IN!getViewIndex, IN!forwardUpdate, IN!remove, IN!updateLayout, IN!getGraphics, IN!append, IN!removeAll, IN!replace, IN!forwardUpdateToView, IN!insert, IN!updateChildren}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::WrappedPlainView misses features compatible with : Sequence {IN!getOffset, IN!forwardUpdate, IN!getHeight, IN!setParagraphInsets, IN!getGraphics, IN!getWidth, IN!getBottomInset, IN!updateChildren, IN!getSpan, IN!getViewIndex, IN!setAxis, IN!getAxis, IN!layoutChanged, IN!remove, IN!getTopInset, IN!updateLayout, IN!forwardUpdate, IN!getViewIndex, IN!setInsets, IN!getLeftInset, IN!forwardUpdateToView, IN!getRightInset}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::CompositeView misses features compatible with : Sequence {IN!getViewIndex, IN!setParagraphInsets, IN!setInsets, IN!getLeftInset, IN!getRightInset, IN!getTopInset, IN!getBottomInset, IN!getViewIndex, IN!forwardUpdate, IN!remove, IN!updateLayout, IN!getGraphics, IN!forwardUpdateToView, IN!updateChildren}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::IconView misses features compatible with : Sequence {IN!getViewIndex, IN!forwardUpdate, IN!remove, IN!updateLayout, IN!getGraphics, IN!append, IN!removeAll, IN!replace, IN!forwardUpdateToView, IN!insert, IN!updateChildren}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::FieldView misses features compatible with : Sequence {IN!forwardUpdate, IN!getGraphics, IN!append, IN!removeAll, IN!replace, IN!updateChildren, IN!getViewIndex, IN!remove, IN!updateLayout, IN!forwardUpdateToView, IN!insert}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::PlainView misses features compatible with : Sequence {IN!getViewIndex, IN!forwardUpdate, IN!remove, IN!updateLayout, IN!getGraphics, IN!append, IN!removeAll, IN!replace, IN!forwardUpdateToView, IN!insert, IN!updateChildren}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::PasswordView misses features compatible with : Sequence {IN!forwardUpdate, IN!getGraphics, IN!append, IN!removeAll, IN!replace, IN!updateChildren, IN!getViewIndex, IN!remove, IN!updateLayout, IN!forwardUpdateToView, IN!insert}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::TableView misses features compatible with : Sequence {IN!forwardUpdate, IN!getOffset, IN!forwardUpdate, IN!getHeight, IN!setParagraphInsets, IN!getGraphics, IN!getWidth, IN!getBottomInset, IN!updateChildren, IN!getSpan, IN!getViewIndex, IN!setAxis, IN!getAxis, IN!layoutChanged, IN!remove, IN!getTopInset, IN!updateLayout, IN!forwardUpdate, IN!getViewIndex, IN!setInsets, IN!getLeftInset, IN!forwardUpdateToView, IN!getRightInset}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::TableView::TableRow misses features compatible with : Sequence {IN!getOffset, IN!forwardUpdate, IN!getHeight, IN!setParagraphInsets, IN!getGraphics, IN!getWidth, IN!getBottomInset, IN!updateChildren, IN!getSpan, IN!getViewIndex, IN!setAxis, IN!getAxis, IN!layoutChanged, IN!remove, IN!getTopInset, IN!updateLayout, IN!forwardUpdate, IN!getViewIndex, IN!setInsets, IN!getLeftInset, IN!forwardUpdateToView, IN!getRightInset}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::TableView::TableCell misses features compatible with : Sequence {IN!getOffset, IN!forwardUpdate, IN!getHeight, IN!setParagraphInsets, IN!getGraphics, IN!getWidth, IN!getBottomInset, IN!updateChildren, IN!getSpan, IN!getViewIndex, IN!setAxis, IN!getAxis, IN!layoutChanged, IN!remove, IN!getTopInset, IN!updateLayout, IN!forwardUpdate, IN!getViewIndex, IN!setInsets, IN!getLeftInset, IN!forwardUpdateToView, IN!getRightInset}
 [J2SE 1.3] J2SE 1.2::javax::swing::text misses classifiers compatible with : Sequence {IN!JTextComponent, IN!AccessibleJTextComponent, IN!DefaultCaret, IN!TextAction, IN!Segment, IN!EditorKit, IN!View, IN!AbstractDocument, IN!DefaultKeyTypedAction, IN!InsertContentAction, IN!InsertBreakAction, IN!InsertTabAction, IN!CutAction, IN!CopyAction, IN!PasteAction, IN!BeepAction, IN!PlainDocument, IN!GlyphView, IN!GlyphPainter, IN!DefaultStyledDocument, IN!NamedStyle, IN!StyledTextAction, IN!FontFamilyAction, IN!FontSizeAction, IN!ForegroundAction, IN!AlignmentAction, IN!BoldAction, IN!ItalicAction, IN!UnderlineAction, IN!AbstractWriter, IN!LabelView, IN!ParagraphView, IN!BoxView, IN!ComponentView, IN!WrappedPlainView, IN!CompositeView, IN!FlowView, IN!FlowStrategy, IN!IconView, IN!AsyncBoxView, IN!ChildLocator, IN!ChildState, IN!LayoutQueue, IN!FieldView, IN!PlainView, IN!PasswordView, IN!TableView, IN!TableRow, IN!TableCell, IN!ZoneView}
 [J2SE 1.3] J2SE 1.3::javax::swing::text equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::swing::text::html compatible packages: Sequence {PREVIN!html}
@@ -670,18 +672,18 @@
 [J2SE 1.3] J2SE 1.2::javax::swing::text::html::HTMLEditorKit misses features compatible with : Sequence {IN!setDefaultCursor, IN!getDefaultCursor, IN!setLinkCursor, IN!getLinkCursor}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::html::HTMLEditorKit::ParserCallback misses features compatible with : Sequence {IN!IMPLIED, IN!handleEndOfLineString}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::html::HTMLEditorKit::LinkController misses dependency suppliers compatible with : Sequence {IN!MouseMotionListener}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::HTMLEditorKit::HTMLTextAction misses features compatible with : Sequence {IN!ACTION_COMMAND_KEY, IN!getKeys, IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::HTMLEditorKit::InsertHTMLTextAction misses features compatible with : Sequence {IN!insertAtBoundary, IN!ACTION_COMMAND_KEY, IN!getKeys, IN!ACCELERATOR_KEY, IN!MNEMONIC_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::HTMLEditorKit::HTMLTextAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::HTMLEditorKit::InsertHTMLTextAction misses features compatible with : Sequence {IN!insertAtBoundary, IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::html::StyleSheet misses features compatible with : Sequence {IN!addStyleSheet, IN!removeStyleSheet, IN!getStyleSheets, IN!importStyleSheet, IN!setBase, IN!getBase, IN!addCSSAttribute, IN!addCSSAttributeFromHTML}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::html::CSS misses dependency suppliers compatible with : Sequence {IN!Serializable}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::HTMLWriter misses features compatible with : Sequence {IN!writeLineSeparator, IN!output, IN!getCanWrapLines, IN!isLineEmpty, IN!getWriter, IN!setCurrentLineLength, IN!write, IN!getIndentLevel, IN!getLineSeparator, IN!output, IN!writeLineSeparator, IN!getStartOffset, IN!getEndOffset, IN!setLineSeparator, IN!getLineLength, IN!setCanWrapLines, IN!getCurrentLineLength, IN!getIndentSpace}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::MinimalHTMLWriter misses features compatible with : Sequence {IN!getCanWrapLines, IN!isLineEmpty, IN!getWriter, IN!setCurrentLineLength, IN!write, IN!getIndentLevel, IN!getLineSeparator, IN!output, IN!writeLineSeparator, IN!getStartOffset, IN!getEndOffset, IN!setLineSeparator, IN!getLineLength, IN!setCanWrapLines, IN!getCurrentLineLength, IN!getIndentSpace}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::InlineView misses features compatible with : Sequence {IN!append, IN!insert, IN!isSubscript, IN!getViewIndex, IN!removeAll, IN!replace, IN!getFont, IN!forwardUpdate, IN!getGlyphPainter, IN!getBackground, IN!checkPainter, IN!updateChildren, IN!isSuperscript, IN!getTabbedSpan, IN!isUnderline, IN!getText, IN!getPartialSpan, IN!getForeground, IN!getFont, IN!isSuperscript, IN!forwardUpdateToView, IN!getTabbedSpan, IN!setGlyphPainter, IN!isUnderline, IN!updateLayout, IN!remove, IN!getBackground, IN!isSubscript, IN!isStrikeThrough, IN!getTabExpander, IN!getForeground, IN!getGraphics, IN!isStrikeThrough, IN!getPartialSpan}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::ParagraphView misses features compatible with : Sequence {IN!getFlowSpan, IN!getViewIndex, IN!getAxis, IN!layoutSpan, IN!forwardUpdate, IN!getSpan, IN!updateChildren, IN!getFlowStart, IN!getBottomInset, IN!getWidth, IN!getFlowSpan, IN!getFlowAxis, IN!getFlowStart, IN!setInsets, IN!forwardUpdateToView, IN!getHeight, IN!layoutPool, IN!createRow, IN!createRow, IN!getLeftInset, IN!setParagraphInsets, IN!getRightInset, IN!getOffset, IN!updateLayout, IN!strategy, IN!remove, IN!setAxis, IN!layoutChanged, IN!getTopInset, IN!getViewIndex, IN!forwardUpdate, IN!getGraphics}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::ListView misses features compatible with : Sequence {IN!getViewIndex, IN!getAxis, IN!forwardUpdate, IN!getSpan, IN!updateChildren, IN!getBottomInset, IN!getWidth, IN!setInsets, IN!forwardUpdateToView, IN!getHeight, IN!getLeftInset, IN!getRightInset, IN!setParagraphInsets, IN!getOffset, IN!updateLayout, IN!remove, IN!setAxis, IN!layoutChanged, IN!getTopInset, IN!getViewIndex, IN!forwardUpdate, IN!getGraphics}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::BlockView misses features compatible with : Sequence {IN!getViewIndex, IN!getAxis, IN!forwardUpdate, IN!getSpan, IN!updateChildren, IN!getBottomInset, IN!getWidth, IN!setInsets, IN!forwardUpdateToView, IN!getHeight, IN!getLeftInset, IN!setParagraphInsets, IN!getRightInset, IN!getOffset, IN!updateLayout, IN!remove, IN!setAxis, IN!layoutChanged, IN!getTopInset, IN!getViewIndex, IN!forwardUpdate, IN!getGraphics}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::FormView misses features compatible with : Sequence {IN!append, IN!insert, IN!getViewIndex, IN!removeAll, IN!replace, IN!forwardUpdate, IN!updateLayout, IN!updateChildren, IN!remove, IN!getGraphics, IN!forwardUpdateToView}
-[J2SE 1.3] J2SE 1.2::javax::swing::text::html::ObjectView misses features compatible with : Sequence {IN!append, IN!insert, IN!getViewIndex, IN!removeAll, IN!replace, IN!forwardUpdate, IN!updateLayout, IN!updateChildren, IN!remove, IN!getGraphics, IN!forwardUpdateToView}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::HTMLWriter misses features compatible with : Sequence {IN!writeLineSeparator, IN!output, IN!getWriter, IN!writeLineSeparator, IN!getIndentLevel, IN!setCanWrapLines, IN!getCurrentLineLength, IN!output, IN!getEndOffset, IN!getCanWrapLines, IN!getLineSeparator, IN!getStartOffset, IN!isLineEmpty, IN!getLineLength, IN!setLineSeparator, IN!getIndentSpace, IN!setCurrentLineLength, IN!write}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::MinimalHTMLWriter misses features compatible with : Sequence {IN!getWriter, IN!writeLineSeparator, IN!getIndentLevel, IN!setCanWrapLines, IN!getCurrentLineLength, IN!output, IN!getEndOffset, IN!getCanWrapLines, IN!getLineSeparator, IN!getStartOffset, IN!isLineEmpty, IN!getLineLength, IN!setLineSeparator, IN!getIndentSpace, IN!setCurrentLineLength, IN!write}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::InlineView misses features compatible with : Sequence {IN!forwardUpdate, IN!isSuperscript, IN!isUnderline, IN!getForeground, IN!isStrikeThrough, IN!getFont, IN!getGraphics, IN!setGlyphPainter, IN!append, IN!isSubscript, IN!getTabbedSpan, IN!removeAll, IN!isSuperscript, IN!replace, IN!checkPainter, IN!isStrikeThrough, IN!updateChildren, IN!getGlyphPainter, IN!getPartialSpan, IN!getTabbedSpan, IN!getViewIndex, IN!isUnderline, IN!remove, IN!updateLayout, IN!getForeground, IN!getBackground, IN!getText, IN!isSubscript, IN!getFont, IN!getBackground, IN!forwardUpdateToView, IN!insert, IN!getPartialSpan, IN!getTabExpander}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::ParagraphView misses features compatible with : Sequence {IN!getOffset, IN!forwardUpdate, IN!getHeight, IN!strategy, IN!setParagraphInsets, IN!getFlowSpan, IN!getGraphics, IN!getFlowStart, IN!createRow, IN!getWidth, IN!layoutSpan, IN!getBottomInset, IN!updateChildren, IN!getSpan, IN!getViewIndex, IN!setAxis, IN!getAxis, IN!layoutChanged, IN!remove, IN!getTopInset, IN!updateLayout, IN!forwardUpdate, IN!getViewIndex, IN!layoutPool, IN!createRow, IN!setInsets, IN!getLeftInset, IN!getFlowStart, IN!getFlowAxis, IN!forwardUpdateToView, IN!getRightInset, IN!getFlowSpan}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::ListView misses features compatible with : Sequence {IN!getOffset, IN!forwardUpdate, IN!getHeight, IN!setParagraphInsets, IN!getGraphics, IN!getWidth, IN!getBottomInset, IN!updateChildren, IN!getSpan, IN!getViewIndex, IN!setAxis, IN!getAxis, IN!layoutChanged, IN!remove, IN!getTopInset, IN!updateLayout, IN!forwardUpdate, IN!getViewIndex, IN!setInsets, IN!getLeftInset, IN!forwardUpdateToView, IN!getRightInset}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::BlockView misses features compatible with : Sequence {IN!getOffset, IN!forwardUpdate, IN!getHeight, IN!setParagraphInsets, IN!getGraphics, IN!getWidth, IN!getBottomInset, IN!updateChildren, IN!getSpan, IN!getViewIndex, IN!setAxis, IN!getAxis, IN!layoutChanged, IN!remove, IN!getTopInset, IN!updateLayout, IN!forwardUpdate, IN!getViewIndex, IN!setInsets, IN!getLeftInset, IN!forwardUpdateToView, IN!getRightInset}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::FormView misses features compatible with : Sequence {IN!getViewIndex, IN!forwardUpdate, IN!remove, IN!updateLayout, IN!getGraphics, IN!append, IN!removeAll, IN!replace, IN!forwardUpdateToView, IN!insert, IN!updateChildren}
+[J2SE 1.3] J2SE 1.2::javax::swing::text::html::ObjectView misses features compatible with : Sequence {IN!getViewIndex, IN!forwardUpdate, IN!remove, IN!updateLayout, IN!getGraphics, IN!append, IN!removeAll, IN!replace, IN!forwardUpdateToView, IN!insert, IN!updateChildren}
 [J2SE 1.3] J2SE 1.2::javax::swing::text::html misses classifiers compatible with : Sequence {IN!HTMLDocument, IN!HTMLReader, IN!Tag, IN!UnknownTag, IN!HTMLEditorKit, IN!ParserCallback, IN!LinkController, IN!HTMLTextAction, IN!InsertHTMLTextAction, IN!StyleSheet, IN!CSS, IN!HTMLWriter, IN!MinimalHTMLWriter, IN!InlineView, IN!ParagraphView, IN!ListView, IN!BlockView, IN!TableView, IN!RowView, IN!FormView, IN!ObjectView}
 [J2SE 1.3] J2SE 1.3::javax::swing::text::html equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::swing::text::html::parser compatible packages: Sequence {PREVIN!parser}
@@ -692,10 +694,10 @@
 [J2SE 1.3] J2SE 1.3::javax::swing::text::rtf equivalent packages: Sequence {PREVIN!rtf}
 [J2SE 1.3] J2SE 1.3::javax::swing::event compatible packages: Sequence {PREVIN!event}
 [J2SE 1.3] J2SE 1.2::javax::swing::event::EventListenerList misses features compatible with : Sequence {IN!getListeners}
-[J2SE 1.3] J2SE 1.2::javax::swing::event::AncestorEvent misses features compatible with : Sequence {IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::javax::swing::event::MenuDragMouseEvent misses features compatible with : Sequence {IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK}
-[J2SE 1.3] J2SE 1.2::javax::swing::event::MenuKeyEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!setSource, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!VK_INPUT_METHOD_ON_OFF, IN!VK_KANA_LOCK}
-[J2SE 1.3] J2SE 1.2::javax::swing::event::InternalFrameEvent misses features compatible with : Sequence {IN!getInternalFrame, IN!INVOCATION_EVENT_MASK, IN!PAINT_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!HIERARCHY_BOUNDS_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::javax::swing::event::AncestorEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::javax::swing::event::MenuDragMouseEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::javax::swing::event::MenuKeyEvent misses features compatible with : Sequence {IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!VK_KANA_LOCK, IN!PAINT_EVENT_MASK, IN!VK_INPUT_METHOD_ON_OFF, IN!setSource, IN!INVOCATION_EVENT_MASK}
+[J2SE 1.3] J2SE 1.2::javax::swing::event::InternalFrameEvent misses features compatible with : Sequence {IN!getInternalFrame, IN!HIERARCHY_BOUNDS_EVENT_MASK, IN!INVOCATION_EVENT_MASK, IN!HIERARCHY_EVENT_MASK, IN!PAINT_EVENT_MASK}
 [J2SE 1.3] J2SE 1.2::javax::swing::event::TreeSelectionEvent misses features compatible with : Sequence {IN!isAddedPath}
 [J2SE 1.3] J2SE 1.2::javax::swing::event misses classifiers compatible with : Sequence {IN!EventListenerList, IN!AncestorEvent, IN!MenuDragMouseEvent, IN!MenuKeyEvent, IN!InternalFrameEvent, IN!TreeSelectionEvent}
 [J2SE 1.3] J2SE 1.3::javax::swing::event equivalent packages: Sequence {}
@@ -703,73 +705,73 @@
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::PopupMenuUI misses features compatible with : Sequence {IN!isPopupTrigger}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::FontUIResource misses features compatible with : Sequence {IN!TRUETYPE_FONT, IN!createFont}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::EmptyBorderUIResource misses features compatible with : Sequence {IN!getBorderInsets}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::LineBorderUIResource misses features compatible with : Sequence {IN!getRoundedCorners, IN!<init>}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::BevelBorderUIResource misses features compatible with : Sequence {IN!getHighlightInnerColor, IN!getShadowOuterColor, IN!getShadowInnerColor, IN!getHighlightOuterColor}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::LineBorderUIResource misses features compatible with : Sequence {IN!<init>, IN!getRoundedCorners}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::BevelBorderUIResource misses features compatible with : Sequence {IN!getShadowInnerColor, IN!getHighlightOuterColor, IN!getHighlightInnerColor, IN!getShadowOuterColor}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::EtchedBorderUIResource misses features compatible with : Sequence {IN!getHighlightColor, IN!getShadowColor}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::MatteBorderUIResource misses features compatible with : Sequence {IN!getTileIcon, IN!getBorderInsets, IN!<init>, IN!<init>, IN!getMatteColor, IN!getBorderInsets}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::TitledBorderUIResource misses features compatible with : Sequence {IN!LEADING, IN!TRAILING}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::MatteBorderUIResource misses features compatible with : Sequence {IN!getMatteColor, IN!<init>, IN!getBorderInsets, IN!getBorderInsets, IN!getTileIcon, IN!<init>}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::BorderUIResource::TitledBorderUIResource misses features compatible with : Sequence {IN!TRAILING, IN!LEADING}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf misses classifiers compatible with : Sequence {IN!RootPaneUI, IN!PopupMenuUI, IN!InputMapUIResource, IN!ComponentInputMapUIResource, IN!ActionMapUIResource, IN!FontUIResource, IN!EmptyBorderUIResource, IN!LineBorderUIResource, IN!BevelBorderUIResource, IN!EtchedBorderUIResource, IN!MatteBorderUIResource, IN!TitledBorderUIResource}
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf::basic compatible packages: Sequence {PREVIN!basic}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTextUI::BasicCaret misses features compatible with : Sequence {IN!getListeners}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicArrowButton misses features compatible with : Sequence {IN!getInputVerifier, IN!setAction, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!configurePropertiesFromAction, IN!createActionPropertyChangeListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!<init>, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!configurePropertiesFromAction, IN!getGraphicsConfiguration, IN!getAction, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicArrowButton misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!configurePropertiesFromAction, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!createActionPropertyChangeListener, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!<init>, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!configurePropertiesFromAction, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet, IN!setAction, IN!getAction}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicBorders misses features compatible with : Sequence {IN!getButtonBorder, IN!getRadioButtonBorder, IN!getToggleButtonBorder, IN!getMenuBarBorder, IN!getSplitPaneBorder, IN!getSplitPaneDividerBorder, IN!getTextFieldBorder, IN!getProgressBarBorder, IN!getInternalFrameBorder}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicComboBoxRenderer misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicComboBoxRenderer::UIResource misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicComboPopup misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!isPopupTrigger, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!createActionComponent, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicDesktopPaneUI::CloseAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicDesktopPaneUI::MinimizeAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicDesktopPaneUI::MaximizeAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicDesktopPaneUI::NavigateAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::NewFolderAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::GoHomeAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::ChangeToParentDirectoryAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::ApproveSelectionAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::CancelSelectionAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::UpdateAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicComboBoxRenderer misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicComboBoxRenderer::UIResource misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicComboPopup misses features compatible with : Sequence {IN!getInputMap, IN!isPopupTrigger, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!createActionComponent, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicDesktopPaneUI::CloseAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicDesktopPaneUI::MinimizeAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicDesktopPaneUI::MaximizeAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicDesktopPaneUI::NavigateAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::NewFolderAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::GoHomeAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::ChangeToParentDirectoryAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::ApproveSelectionAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::CancelSelectionAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicFileChooserUI::UpdateAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicDirectoryModel misses features compatible with : Sequence {IN!getListeners}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane misses features compatible with : Sequence {IN!uninstallListeners, IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::CloseAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::MaximizeAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::IconifyAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::RestoreAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::MoveAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::SizeAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::SystemMenuBar misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!processKeyBinding, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane misses features compatible with : Sequence {IN!uninstallListeners, IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::CloseAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::MaximizeAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::IconifyAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::RestoreAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::MoveAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::SizeAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicInternalFrameTitlePane::SystemMenuBar misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!processKeyBinding, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicLookAndFeel misses features compatible with : Sequence {IN!loadKeyBindings, IN!makeInputMap, IN!makeComponentInputMap}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicMenuItemUI misses features compatible with : Sequence {IN!installComponents, IN!uninstallComponents}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicCheckBoxMenuItemUI misses features compatible with : Sequence {IN!installComponents, IN!uninstallComponents}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicMenuUI misses features compatible with : Sequence {IN!installComponents, IN!uninstallComponents}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicPopupMenuUI misses features compatible with : Sequence {IN!isPopupTrigger, IN!isPopupTrigger}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicRadioButtonMenuItemUI misses features compatible with : Sequence {IN!installComponents, IN!uninstallComponents}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicScrollPaneUI misses features compatible with : Sequence {IN!LOWER_TRAILING_CORNER, IN!LOWER_LEADING_CORNER, IN!UPPER_TRAILING_CORNER, IN!UPPER_LEADING_CORNER}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicScrollPaneUI misses features compatible with : Sequence {IN!UPPER_LEADING_CORNER, IN!LOWER_LEADING_CORNER, IN!LOWER_TRAILING_CORNER, IN!UPPER_TRAILING_CORNER}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicSliderUI misses features compatible with : Sequence {IN!leftToRightCache, IN!drawInverted, IN!recalculateIfOrientationChanged}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicSliderUI::ActionScroller misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicSplitPaneDivider misses features compatible with : Sequence {IN!setBorder, IN!getBorder, IN!removeHierarchyListener, IN!getListeners, IN!removeHierarchyBoundsListener, IN!getListeners, IN!processHierarchyBoundsEvent, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!addHierarchyListener, IN!addHierarchyBoundsListener}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicToolBarUI::DragWindow misses features compatible with : Sequence {IN!removeHierarchyListener, IN!getListeners, IN!removeHierarchyBoundsListener, IN!getListeners, IN!<init>, IN!processHierarchyBoundsEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!addHierarchyListener, IN!getListeners, IN!addHierarchyBoundsListener}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeTraverseAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreePageAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeIncrementAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeHomeAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeToggleAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeCancelEditingAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicSliderUI::ActionScroller misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicSplitPaneDivider misses features compatible with : Sequence {IN!setBorder, IN!getBorder, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicToolBarUI::DragWindow misses features compatible with : Sequence {IN!removeHierarchyListener, IN!getGraphicsConfiguration, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!getAccessibleContext, IN!getListeners, IN!<init>, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeTraverseAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreePageAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeIncrementAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeHomeAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeToggleAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic::BasicTreeUI::TreeCancelEditingAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::basic misses classifiers compatible with : Sequence {IN!BasicCaret, IN!BasicArrowButton, IN!BasicBorders, IN!BasicComboBoxRenderer, IN!UIResource, IN!BasicComboPopup, IN!OpenAction, IN!CloseAction, IN!MinimizeAction, IN!MaximizeAction, IN!NavigateAction, IN!NewFolderAction, IN!GoHomeAction, IN!ChangeToParentDirectoryAction, IN!ApproveSelectionAction, IN!CancelSelectionAction, IN!UpdateAction, IN!BasicDirectoryModel, IN!BasicHTML, IN!BasicInternalFrameTitlePane, IN!CloseAction, IN!MaximizeAction, IN!IconifyAction, IN!RestoreAction, IN!MoveAction, IN!SizeAction, IN!SystemMenuBar, IN!BasicLookAndFeel, IN!BasicMenuItemUI, IN!BasicCheckBoxMenuItemUI, IN!BasicMenuUI, IN!BasicPopupMenuUI, IN!BasicRadioButtonMenuItemUI, IN!BasicRootPaneUI, IN!BasicScrollPaneUI, IN!BasicSliderUI, IN!ActionScroller, IN!BasicSplitPaneDivider, IN!DragWindow, IN!TreeTraverseAction, IN!TreePageAction, IN!TreeIncrementAction, IN!TreeHomeAction, IN!TreeToggleAction, IN!TreeCancelEditingAction}
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf::basic equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf::metal compatible packages: Sequence {PREVIN!metal}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalBorders misses features compatible with : Sequence {IN!getButtonBorder, IN!getTextBorder, IN!getTextFieldBorder, IN!getToggleButtonBorder, IN!getDesktopIconBorder}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalComboBoxButton misses features compatible with : Sequence {IN!getInputVerifier, IN!setAction, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!configurePropertiesFromAction, IN!createActionPropertyChangeListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!<init>, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!configurePropertiesFromAction, IN!getGraphicsConfiguration, IN!getAction, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalComboBoxUI::MetalComboPopup misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!isPopupTrigger, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!createActionComponent, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalComboBoxButton misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!configurePropertiesFromAction, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!createActionPropertyChangeListener, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!<init>, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!configurePropertiesFromAction, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet, IN!setAction, IN!getAction}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalComboBoxUI::MetalComboPopup misses features compatible with : Sequence {IN!getInputMap, IN!isPopupTrigger, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!createActionComponent, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalFileChooserUI misses features compatible with : Sequence {IN!getButtonPanel, IN!getBottomPanel, IN!getActionMap, IN!createActionMap, IN!removeControlButtons, IN!addControlButtons}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalFileChooserUI::FileRenderer misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalFileChooserUI::FileRenderer misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalFileChooserUI::DirectoryComboBoxModel misses features compatible with : Sequence {IN!getListeners}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalFileChooserUI::FilterComboBoxRenderer misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalFileChooserUI::FilterComboBoxRenderer misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalFileChooserUI::FilterComboBoxModel misses features compatible with : Sequence {IN!getListeners}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalFileChooserUI::DirectoryComboBoxAction misses features compatible with : Sequence {IN!ACCELERATOR_KEY, IN!ACTION_COMMAND_KEY, IN!MNEMONIC_KEY, IN!getKeys}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalFileChooserUI::DirectoryComboBoxAction misses features compatible with : Sequence {IN!MNEMONIC_KEY, IN!getKeys, IN!ACTION_COMMAND_KEY, IN!ACCELERATOR_KEY}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalIconFactory misses features compatible with : Sequence {IN!getCheckBoxIcon}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalLookAndFeel misses features compatible with : Sequence {IN!loadKeyBindings, IN!makeInputMap, IN!makeComponentInputMap}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalScrollButton misses features compatible with : Sequence {IN!getInputVerifier, IN!setAction, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!configurePropertiesFromAction, IN!createActionPropertyChangeListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!<init>, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!configurePropertiesFromAction, IN!getGraphicsConfiguration, IN!getAction, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalScrollPaneUI misses features compatible with : Sequence {IN!LOWER_TRAILING_CORNER, IN!UPPER_TRAILING_CORNER, IN!UPPER_LEADING_CORNER, IN!LOWER_LEADING_CORNER}
-[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalSliderUI misses features compatible with : Sequence {IN!recalculateIfOrientationChanged, IN!leftToRightCache, IN!drawInverted}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalLookAndFeel misses features compatible with : Sequence {IN!makeInputMap, IN!loadKeyBindings, IN!makeComponentInputMap}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalScrollButton misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!configurePropertiesFromAction, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!createActionPropertyChangeListener, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!<init>, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!configurePropertiesFromAction, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet, IN!getAction, IN!setAction}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalScrollPaneUI misses features compatible with : Sequence {IN!LOWER_LEADING_CORNER, IN!UPPER_TRAILING_CORNER, IN!UPPER_LEADING_CORNER, IN!LOWER_TRAILING_CORNER}
+[J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal::MetalSliderUI misses features compatible with : Sequence {IN!recalculateIfOrientationChanged, IN!drawInverted, IN!leftToRightCache}
 [J2SE 1.3] J2SE 1.2::javax::swing::plaf::metal misses classifiers compatible with : Sequence {IN!MetalBorders, IN!PaletteBorder, IN!OptionDialogBorder, IN!ToggleButtonBorder, IN!TableHeaderBorder, IN!MetalComboBoxButton, IN!MetalComboPopup, IN!MetalFileChooserUI, IN!FileRenderer, IN!DirectoryComboBoxModel, IN!FilterComboBoxRenderer, IN!FilterComboBoxModel, IN!DirectoryComboBoxAction, IN!MetalIconFactory, IN!PaletteCloseIcon, IN!MetalInternalFrameTitlePane, IN!MetalLookAndFeel, IN!MetalScrollButton, IN!MetalScrollPaneUI, IN!MetalSliderUI}
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf::metal equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::swing::plaf::multi compatible packages: Sequence {PREVIN!multi}
@@ -782,17 +784,17 @@
 [J2SE 1.3] J2SE 1.3::javax::swing::tree compatible packages: Sequence {PREVIN!tree}
 [J2SE 1.3] J2SE 1.2::javax::swing::tree::DefaultTreeModel misses features compatible with : Sequence {IN!getListeners}
 [J2SE 1.3] J2SE 1.2::javax::swing::tree::DefaultTreeSelectionModel misses features compatible with : Sequence {IN!getListeners}
-[J2SE 1.3] J2SE 1.2::javax::swing::tree::DefaultTreeCellEditor::DefaultTextField misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!createActionPropertyChangeListener, IN!printBorder, IN!processHierarchyBoundsEvent, IN!getAction, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!setAction, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!configurePropertiesFromAction, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::tree::DefaultTreeCellEditor::EditorContainer misses features compatible with : Sequence {IN!removeHierarchyListener, IN!getListeners, IN!removeHierarchyBoundsListener, IN!getListeners, IN!processHierarchyBoundsEvent, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!getAccessibleContext, IN!addHierarchyListener, IN!addHierarchyBoundsListener}
-[J2SE 1.3] J2SE 1.2::javax::swing::tree::DefaultTreeCellRenderer misses features compatible with : Sequence {IN!hasFocus, IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
+[J2SE 1.3] J2SE 1.2::javax::swing::tree::DefaultTreeCellEditor::DefaultTextField misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!setAction, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!getAction, IN!configurePropertiesFromAction, IN!printChildren, IN!createActionPropertyChangeListener, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
+[J2SE 1.3] J2SE 1.2::javax::swing::tree::DefaultTreeCellEditor::EditorContainer misses features compatible with : Sequence {IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!getAccessibleContext, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getGraphicsConfiguration, IN!addHierarchyBoundsListener}
+[J2SE 1.3] J2SE 1.2::javax::swing::tree::DefaultTreeCellRenderer misses features compatible with : Sequence {IN!hasFocus, IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
 [J2SE 1.3] J2SE 1.2::javax::swing::tree misses classifiers compatible with : Sequence {IN!DefaultTreeModel, IN!DefaultTreeSelectionModel, IN!DefaultTextField, IN!EditorContainer, IN!DefaultTreeCellRenderer}
 [J2SE 1.3] J2SE 1.3::javax::swing::tree equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::swing::table compatible packages: Sequence {PREVIN!table}
-[J2SE 1.3] J2SE 1.2::javax::swing::table::JTableHeader misses features compatible with : Sequence {IN!setDefaultRenderer, IN!getDefaultRenderer, IN!createDefaultRenderer, IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::table::JTableHeader::AccessibleJTableHeader misses features compatible with : Sequence {IN!accessibleFocusHandler, IN!ACCESSIBLE_TABLE_MODEL_CHANGED, IN!accessibleAWTComponentHandler, IN!<init>, IN!getAccessibleRelationSet, IN!getAccessibleIcon, IN!ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_SUMMARY_CHANGED, IN!getAccessibleTable, IN!ACCESSIBLE_TABLE_ROW_HEADER_CHANGED, IN!ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED, IN!ACCESSIBLE_ACTION_PROPERTY, IN!<init>, IN!ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_CAPTION_CHANGED, IN!accessibleAWTFocusHandler}
-[J2SE 1.3] J2SE 1.2::javax::swing::table::JTableHeader::AccessibleJTableHeader::AccessibleJTableHeaderEntry misses features compatible with : Sequence {IN!getAccessibleTable, IN!ACCESSIBLE_TABLE_MODEL_CHANGED, IN!ACCESSIBLE_TABLE_ROW_HEADER_CHANGED, IN!ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED, IN!ACCESSIBLE_ACTION_PROPERTY, IN!getAccessibleRelationSet, IN!ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_CAPTION_CHANGED, IN!getAccessibleIcon, IN!ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_SUMMARY_CHANGED}
-[J2SE 1.3] J2SE 1.2::javax::swing::table::DefaultTableCellRenderer misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
-[J2SE 1.3] J2SE 1.2::javax::swing::table::DefaultTableCellRenderer::UIResource misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
+[J2SE 1.3] J2SE 1.2::javax::swing::table::JTableHeader misses features compatible with : Sequence {IN!setDefaultRenderer, IN!getDefaultRenderer, IN!createDefaultRenderer, IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
+[J2SE 1.3] J2SE 1.2::javax::swing::table::JTableHeader::AccessibleJTableHeader misses features compatible with : Sequence {IN!<init>, IN!ACCESSIBLE_ACTION_PROPERTY, IN!accessibleAWTComponentHandler, IN!<init>, IN!ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED, IN!ACCESSIBLE_TABLE_CAPTION_CHANGED, IN!accessibleAWTFocusHandler, IN!getAccessibleTable, IN!ACCESSIBLE_TABLE_SUMMARY_CHANGED, IN!ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED, IN!accessibleFocusHandler, IN!ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_MODEL_CHANGED, IN!ACCESSIBLE_TABLE_ROW_HEADER_CHANGED, IN!getAccessibleRelationSet, IN!getAccessibleIcon}
+[J2SE 1.3] J2SE 1.2::javax::swing::table::JTableHeader::AccessibleJTableHeader::AccessibleJTableHeaderEntry misses features compatible with : Sequence {IN!ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED, IN!ACCESSIBLE_TABLE_CAPTION_CHANGED, IN!ACCESSIBLE_ACTION_PROPERTY, IN!getAccessibleTable, IN!ACCESSIBLE_TABLE_SUMMARY_CHANGED, IN!ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED, IN!ACCESSIBLE_TABLE_MODEL_CHANGED, IN!ACCESSIBLE_TABLE_ROW_HEADER_CHANGED, IN!getAccessibleRelationSet, IN!getAccessibleIcon}
+[J2SE 1.3] J2SE 1.2::javax::swing::table::DefaultTableCellRenderer misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
+[J2SE 1.3] J2SE 1.2::javax::swing::table::DefaultTableCellRenderer::UIResource misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
 [J2SE 1.3] J2SE 1.2::javax::swing::table::DefaultTableColumnModel misses features compatible with : Sequence {IN!getListeners}
 [J2SE 1.3] J2SE 1.2::javax::swing::table::DefaultTableModel misses features compatible with : Sequence {IN!setRowCount, IN!setColumnCount, IN!getListeners}
 [J2SE 1.3] J2SE 1.2::javax::swing::table::AbstractTableModel misses features compatible with : Sequence {IN!getListeners}
@@ -805,11 +807,11 @@
 [J2SE 1.3] J2SE 1.2::javax::swing::border::EtchedBorder misses features compatible with : Sequence {IN!getHighlightColor, IN!getShadowColor}
 [J2SE 1.3] J2SE 1.2::javax::swing::border::MatteBorder misses features compatible with : Sequence {IN!<init>, IN!<init>, IN!getBorderInsets, IN!getMatteColor, IN!getTileIcon, IN!getBorderInsets}
 [J2SE 1.3] J2SE 1.2::javax::swing::border::TitledBorder misses features compatible with : Sequence {IN!LEADING, IN!TRAILING}
-[J2SE 1.3] J2SE 1.2::javax::swing::border::SoftBevelBorder misses features compatible with : Sequence {IN!getHighlightInnerColor, IN!getShadowOuterColor, IN!getShadowInnerColor, IN!getHighlightOuterColor}
+[J2SE 1.3] J2SE 1.2::javax::swing::border::SoftBevelBorder misses features compatible with : Sequence {IN!getShadowInnerColor, IN!getHighlightOuterColor, IN!getHighlightInnerColor, IN!getShadowOuterColor}
 [J2SE 1.3] J2SE 1.2::javax::swing::border misses classifiers compatible with : Sequence {IN!EmptyBorder, IN!LineBorder, IN!BevelBorder, IN!EtchedBorder, IN!MatteBorder, IN!TitledBorder, IN!SoftBevelBorder}
 [J2SE 1.3] J2SE 1.3::javax::swing::border equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::swing::colorchooser compatible packages: Sequence {PREVIN!colorchooser}
-[J2SE 1.3] J2SE 1.2::javax::swing::colorchooser::AbstractColorChooserPanel misses features compatible with : Sequence {IN!getInputVerifier, IN!getInputMap, IN!isPreferredSizeSet, IN!removeHierarchyBoundsListener, IN!getListeners, IN!printBorder, IN!processHierarchyBoundsEvent, IN!setInputMap, IN!isMaximumSizeSet, IN!printComponent, IN!setInputVerifier, IN!addHierarchyBoundsListener, IN!removeHierarchyListener, IN!getListeners, IN!getListeners, IN!getInputMap, IN!setActionMap, IN!getActionMap, IN!processHierarchyEvent, IN!isMinimumSizeSet, IN!processKeyBinding, IN!getGraphicsConfiguration, IN!setVerifyInputWhenFocusTarget, IN!addHierarchyListener, IN!printChildren, IN!getVerifyInputWhenFocusTarget}
+[J2SE 1.3] J2SE 1.2::javax::swing::colorchooser::AbstractColorChooserPanel misses features compatible with : Sequence {IN!getInputMap, IN!isPreferredSizeSet, IN!getListeners, IN!getListeners, IN!processHierarchyBoundsEvent, IN!removeHierarchyBoundsListener, IN!setInputMap, IN!setActionMap, IN!getGraphicsConfiguration, IN!getInputMap, IN!setInputVerifier, IN!printComponent, IN!processKeyBinding, IN!isMaximumSizeSet, IN!getListeners, IN!getVerifyInputWhenFocusTarget, IN!removeHierarchyListener, IN!setVerifyInputWhenFocusTarget, IN!printBorder, IN!getInputVerifier, IN!printChildren, IN!addHierarchyListener, IN!processHierarchyEvent, IN!getActionMap, IN!addHierarchyBoundsListener, IN!isMinimumSizeSet}
 [J2SE 1.3] J2SE 1.2::javax::swing::colorchooser misses classifiers compatible with : Sequence {IN!AbstractColorChooserPanel}
 [J2SE 1.3] J2SE 1.3::javax::swing::colorchooser equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::swing::filechooser compatible packages: Sequence {PREVIN!filechooser}
@@ -832,7 +834,7 @@
 [J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3::portable compatible packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::org::omg::CORBA compatible packages: Sequence {PREVIN!CORBA}
 [J2SE 1.3] J2SE 1.2::org::omg::CORBA::Policy misses dependency suppliers compatible with : Sequence {IN!PolicyOperations, IN!IDLEntity}
-[J2SE 1.3] J2SE 1.2::org::omg::CORBA::DomainManager misses dependency suppliers compatible with : Sequence {IN!DomainManagerOperations, IN!IDLEntity}
+[J2SE 1.3] J2SE 1.2::org::omg::CORBA::DomainManager misses dependency suppliers compatible with : Sequence {IN!IDLEntity, IN!DomainManagerOperations}
 [J2SE 1.3] J2SE 1.2::org::omg::CORBA::ORB misses features compatible with : Sequence {IN!destroy}
 [J2SE 1.3] J2SE 1.2::org::omg::CORBA::Current misses dependency suppliers compatible with : Sequence {IN!CurrentOperations, IN!IDLEntity}
 [J2SE 1.3] J2SE 1.2::org::omg::CORBA::IDLType misses dependency suppliers compatible with : Sequence {IN!IDLTypeOperations}
@@ -857,32 +859,71 @@
 [J2SE 1.3] J2SE 1.3::org::omg::CosNaming::NamingContextPackage compatible packages: Sequence {PREVIN!NamingContextPackage}
 [J2SE 1.3] J2SE 1.3::org::omg::CosNaming::NamingContextPackage equivalent packages: Sequence {PREVIN!NamingContextPackage}
 [J2SE 1.3] J2SE 1.3::org::omg::stub::java::rmi compatible packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::java compatible packages: Sequence {PREVIN2!java, PREVIN!java}
+[J2SE 1.3] J2SE 1.3::javax compatible packages: Sequence {PREVIN2!javax, PREVIN!javax}
+[J2SE 1.3] J2SE 1.3::javax::sound compatible packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::org compatible packages: Sequence {PREVIN!org}
+[J2SE 1.3] J2SE 1.3::org::omg compatible packages: Sequence {PREVIN!omg}
+[J2SE 1.3] J2SE 1.3::org::omg::stub compatible packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::org::omg::stub::java compatible packages: Sequence {}
+[J2SE 1.3] J2SE 1.3 misses packages compatible with : Sequence {PREVIN2!microedition, PREVIN2!io, PREVIN2!xlet, PREVIN2!ixc}
+[J2SE 1.3] J2SE 1.3 misses packages compatible with : Sequence {PREVIN!text, PREVIN!resources, PREVIN!font, PREVIN!swing}
+[J2SE 1.3] J2SE 1.3 compatible models: Sequence {}
+[J2SE 1.3] J2SE 1.3::java equivalent packages: Sequence {PREVIN2!java, PREVIN!java}
+[J2SE 1.3] J2SE 1.3::java::awt::font equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::java::awt::im::spi equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax equivalent packages: Sequence {PREVIN2!javax, PREVIN!javax}
+[J2SE 1.3] J2SE 1.3::javax::swing equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::naming equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::naming::directory equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::naming::event equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::naming::ldap equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::naming::spi equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::sound equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::sound::midi equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::sound::midi::spi equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::sound::sampled equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::sound::sampled::spi equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::rmi equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::rmi::CORBA equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::javax::transaction equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::org equivalent packages: Sequence {PREVIN!org}
+[J2SE 1.3] J2SE 1.3::org::omg equivalent packages: Sequence {PREVIN!omg}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3 equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3::portable equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::org::omg::SendingContext equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::org::omg::stub equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::org::omg::stub::java equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3::org::omg::stub::java::rmi equivalent packages: Sequence {}
+[J2SE 1.3] J2SE 1.3 misses packages equivalent with : Sequence {PREVIN2!io, PREVIN2!lang, PREVIN2!net, PREVIN2!security, PREVIN2!util, PREVIN2!applet, PREVIN2!awt, PREVIN2!event, PREVIN2!image, PREVIN2!color, PREVIN2!datatransfer, PREVIN2!beans, PREVIN2!rmi, PREVIN2!registry, PREVIN2!microedition, PREVIN2!io, PREVIN2!xlet, PREVIN2!ixc}
+[J2SE 1.3] J2SE 1.3 misses packages equivalent with : Sequence {PREVIN!io, PREVIN!lang, PREVIN!reflect, PREVIN!net, PREVIN!security, PREVIN!cert, PREVIN!spec, PREVIN!interfaces, PREVIN!util, PREVIN!jar, PREVIN!zip, PREVIN!text, PREVIN!resources, PREVIN!awt, PREVIN!geom, PREVIN!image, PREVIN!renderable, PREVIN!font, PREVIN!event, PREVIN!datatransfer, PREVIN!im, PREVIN!color, PREVIN!applet, PREVIN!server, PREVIN!sql, PREVIN!swing, PREVIN!event, PREVIN!text, PREVIN!html, PREVIN!parser, PREVIN!table, PREVIN!tree, PREVIN!plaf, PREVIN!basic, PREVIN!metal, PREVIN!multi, PREVIN!border, PREVIN!colorchooser, PREVIN!filechooser, PREVIN!accessibility, PREVIN!CORBA, PREVIN!portable, PREVIN!CosNaming}
+[J2SE 1.3] J2SE 1.3 equivalent models: Sequence {}
 [J2SE 1.3] Package: 'JavaIo'
-[J2SE 1.3] J2SE 1.3::java::io referenced packages: Sequence {IN!net, IN!util, IN!security, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::io referenced packages: Sequence {IN!util, IN!net, IN!lang, IN!security}
 [J2SE 1.3] Package: 'JavaLang'
-[J2SE 1.3] J2SE 1.3::java::lang referenced packages: Sequence {IN!reflect, IN!io, IN!security, IN!net, IN!util}
+[J2SE 1.3] J2SE 1.3::java::lang referenced packages: Sequence {IN!reflect, IN!io, IN!security, IN!util, IN!net}
 [J2SE 1.3] Package: 'JavaLangReflect'
-[J2SE 1.3] J2SE 1.3::java::lang::reflect referenced packages: Sequence {IN!io, IN!security, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::lang::reflect referenced packages: Sequence {IN!lang, IN!io, IN!security}
 [J2SE 1.3] Package: 'JavaLangRef'
 [J2SE 1.3] J2SE 1.3::java::lang::ref referenced packages: Sequence {IN!lang}
 [J2SE 1.3] Package: 'JavaNet'
-[J2SE 1.3] J2SE 1.3::java::net referenced packages: Sequence {IN!io, IN!jar, IN!security, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::net referenced packages: Sequence {IN!jar, IN!io, IN!security, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaSecurity'
-[J2SE 1.3] J2SE 1.3::java::security referenced packages: Sequence {IN!cert, IN!net, IN!util, IN!lang, IN!spec, IN!io}
+[J2SE 1.3] J2SE 1.3::java::security referenced packages: Sequence {IN!spec, IN!io, IN!cert, IN!util, IN!net, IN!lang}
 [J2SE 1.3] Package: 'JavaSecurityCert'
 [J2SE 1.3] J2SE 1.3::java::security::cert referenced packages: Sequence {IN!io, IN!security, IN!math, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaSecuritySpec'
-[J2SE 1.3] J2SE 1.3::java::security::spec referenced packages: Sequence {IN!interfaces, IN!math, IN!security, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::security::spec referenced packages: Sequence {IN!math, IN!lang, IN!security, IN!interfaces}
 [J2SE 1.3] Package: 'JavaSecurityInterfaces'
 [J2SE 1.3] J2SE 1.3::java::security::interfaces referenced packages: Sequence {IN!math, IN!security}
 [J2SE 1.3] Package: 'JavaSecurityAcl'
-[J2SE 1.3] J2SE 1.3::java::security::acl referenced packages: Sequence {IN!security, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::security::acl referenced packages: Sequence {IN!util, IN!lang, IN!security}
 [J2SE 1.3] Package: 'JavaUtil'
 [J2SE 1.3] J2SE 1.3::java::util referenced packages: Sequence {IN!io, IN!security, IN!lang}
 [J2SE 1.3] Package: 'JavaUtilJar'
 [J2SE 1.3] J2SE 1.3::java::util::jar referenced packages: Sequence {IN!io, IN!zip, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaUtilZip'
-[J2SE 1.3] J2SE 1.3::java::util::zip referenced packages: Sequence {IN!io, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::util::zip referenced packages: Sequence {IN!util, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaMath'
 [J2SE 1.3] J2SE 1.3::java::math referenced packages: Sequence {IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaText'
@@ -890,143 +931,124 @@
 [J2SE 1.3] Package: 'JavaTextResources'
 [J2SE 1.3] J2SE 1.3::java::text::resources referenced packages: Sequence {IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaAwt'
-[J2SE 1.3] J2SE 1.3::java::awt referenced packages: Sequence {IN!color, IN!text, IN!renderable, IN!net, IN!io, IN!dnd, IN!security, IN!datatransfer, IN!image, IN!font, IN!accessibility, IN!event, IN!util, IN!lang, IN!text, IN!beans, IN!geom, IN!im}
+[J2SE 1.3] J2SE 1.3::java::awt referenced packages: Sequence {IN!beans, IN!renderable, IN!io, IN!event, IN!text, IN!util, IN!net, IN!color, IN!im, IN!dnd, IN!datatransfer, IN!security, IN!image, IN!geom, IN!text, IN!lang, IN!font, IN!accessibility}
 [J2SE 1.3] Package: 'JavaAwtGeom'
-[J2SE 1.3] J2SE 1.3::java::awt::geom referenced packages: Sequence {IN!io, IN!awt, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::geom referenced packages: Sequence {IN!awt, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaAwtEvent'
-[J2SE 1.3] J2SE 1.3::java::awt::event referenced packages: Sequence {IN!font, IN!text, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::event referenced packages: Sequence {IN!text, IN!util, IN!awt, IN!lang, IN!font}
 [J2SE 1.3] Package: 'JavaAwtFont'
-[J2SE 1.3] J2SE 1.3::java::awt::font equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::font referenced packages: Sequence {IN!io, IN!text, IN!geom, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::font referenced packages: Sequence {IN!geom, IN!io, IN!text, IN!util, IN!awt, IN!lang}
 [J2SE 1.3] Package: 'JavaAwtImage'
-[J2SE 1.3] J2SE 1.3::java::awt::image referenced packages: Sequence {IN!geom, IN!color, IN!math, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::image referenced packages: Sequence {IN!geom, IN!math, IN!util, IN!awt, IN!color, IN!lang}
 [J2SE 1.3] Package: 'JavaAwtImageRenderable'
-[J2SE 1.3] J2SE 1.3::java::awt::image::renderable referenced packages: Sequence {IN!io, IN!geom, IN!awt, IN!util, IN!image, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::image::renderable referenced packages: Sequence {IN!geom, IN!io, IN!util, IN!image, IN!awt, IN!lang}
 [J2SE 1.3] Package: 'JavaAwtDnd'
-[J2SE 1.3] J2SE 1.3::java::awt::dnd referenced packages: Sequence {IN!event, IN!util, IN!lang, IN!io, IN!awt, IN!datatransfer}
+[J2SE 1.3] J2SE 1.3::java::awt::dnd referenced packages: Sequence {IN!io, IN!event, IN!util, IN!awt, IN!lang, IN!datatransfer}
 [J2SE 1.3] Package: 'JavaAwtIm'
-[J2SE 1.3] J2SE 1.3::java::awt::im referenced packages: Sequence {IN!font, IN!text, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::im referenced packages: Sequence {IN!text, IN!util, IN!awt, IN!lang, IN!font}
 [J2SE 1.3] Package: 'JavaAwtImSpi'
-[J2SE 1.3] J2SE 1.3::java::awt::im::spi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::java::awt::im::spi referenced packages: Sequence {IN!font, IN!text, IN!awt, IN!util, IN!im, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::im::spi referenced packages: Sequence {IN!text, IN!util, IN!awt, IN!lang, IN!font, IN!im}
 [J2SE 1.3] Package: 'JavaAwtColor'
-[J2SE 1.3] J2SE 1.3::java::awt::color referenced packages: Sequence {IN!io, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::color referenced packages: Sequence {IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaAwtDatatransfer'
-[J2SE 1.3] J2SE 1.3::java::awt::datatransfer referenced packages: Sequence {IN!io, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::datatransfer referenced packages: Sequence {IN!util, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaAwtPrint'
-[J2SE 1.3] J2SE 1.3::java::awt::print referenced packages: Sequence {IN!io, IN!awt, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::awt::print referenced packages: Sequence {IN!awt, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaBeans'
-[J2SE 1.3] J2SE 1.3::java::beans referenced packages: Sequence {IN!reflect, IN!io, IN!applet, IN!beancontext, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::beans referenced packages: Sequence {IN!reflect, IN!beancontext, IN!io, IN!util, IN!awt, IN!applet, IN!lang}
 [J2SE 1.3] Package: 'JavaBeansBeancontext'
-[J2SE 1.3] J2SE 1.3::java::beans::beancontext referenced packages: Sequence {IN!net, IN!util, IN!lang, IN!io, IN!beans, IN!awt}
+[J2SE 1.3] J2SE 1.3::java::beans::beancontext referenced packages: Sequence {IN!beans, IN!io, IN!util, IN!awt, IN!net, IN!lang}
 [J2SE 1.3] Package: 'JavaApplet'
-[J2SE 1.3] J2SE 1.3::java::applet referenced packages: Sequence {IN!net, IN!accessibility, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::applet referenced packages: Sequence {IN!accessibility, IN!util, IN!awt, IN!net, IN!lang}
 [J2SE 1.3] Package: 'JavaRmi'
-[J2SE 1.3] J2SE 1.3::java::rmi referenced packages: Sequence {IN!io, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi referenced packages: Sequence {IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaRmiServer'
-[J2SE 1.3] J2SE 1.3::java::rmi::server referenced packages: Sequence {IN!reflect, IN!io, IN!net, IN!rmi, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi::server referenced packages: Sequence {IN!reflect, IN!io, IN!rmi, IN!net, IN!lang}
 [J2SE 1.3] Package: 'JavaRmiDgc'
-[J2SE 1.3] J2SE 1.3::java::rmi::dgc referenced packages: Sequence {IN!io, IN!rmi, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi::dgc referenced packages: Sequence {IN!rmi, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaRmiRegistry'
-[J2SE 1.3] J2SE 1.3::java::rmi::registry referenced packages: Sequence {IN!server, IN!rmi, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi::registry referenced packages: Sequence {IN!rmi, IN!server, IN!lang}
 [J2SE 1.3] Package: 'JavaRmiActivation'
-[J2SE 1.3] J2SE 1.3::java::rmi::activation referenced packages: Sequence {IN!io, IN!server, IN!rmi, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::java::rmi::activation referenced packages: Sequence {IN!io, IN!rmi, IN!server, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaSql'
 [J2SE 1.3] J2SE 1.3::java::sql referenced packages: Sequence {IN!io, IN!security, IN!math, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaxAccessibility'
-[J2SE 1.3] J2SE 1.3::javax::accessibility referenced packages: Sequence {IN!beans, IN!text, IN!event, IN!awt, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::accessibility referenced packages: Sequence {IN!beans, IN!event, IN!text, IN!util, IN!awt, IN!lang}
 [J2SE 1.3] Package: 'JavaxSwing'
-[J2SE 1.3] J2SE 1.3::javax::swing equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::swing referenced packages: Sequence {IN!net, IN!border, IN!table, IN!filechooser, IN!event, IN!util, IN!applet, IN!awt, IN!colorchooser, IN!text, IN!io, IN!image, IN!plaf, IN!accessibility, IN!lang, IN!text, IN!beans, IN!event, IN!tree}
+[J2SE 1.3] J2SE 1.3::javax::swing referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!applet, IN!table, IN!text, IN!awt, IN!colorchooser, IN!accessibility, IN!plaf, IN!text, IN!util, IN!tree, IN!net, IN!border, IN!event, IN!image, IN!lang, IN!filechooser}
 [J2SE 1.3] Package: 'JavaxSwingText'
-[J2SE 1.3] J2SE 1.3::javax::swing::text referenced packages: Sequence {IN!basic, IN!io, IN!plaf, IN!accessibility, IN!event, IN!util, IN!lang, IN!text, IN!event, IN!swing, IN!tree, IN!undo, IN!awt, IN!im}
+[J2SE 1.3] J2SE 1.3::javax::swing::text referenced packages: Sequence {IN!io, IN!event, IN!plaf, IN!util, IN!tree, IN!im, IN!event, IN!basic, IN!text, IN!awt, IN!lang, IN!swing, IN!undo, IN!accessibility}
 [J2SE 1.3] Package: 'JavaxSwingTextHtml'
-[J2SE 1.3] J2SE 1.3::javax::swing::text::html referenced packages: Sequence {IN!text, IN!net, IN!io, IN!event, IN!util, IN!lang, IN!event, IN!swing, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::text::html referenced packages: Sequence {IN!io, IN!event, IN!text, IN!util, IN!net, IN!event, IN!awt, IN!lang, IN!swing}
 [J2SE 1.3] Package: 'JavaxSwingTextHtmlParser'
-[J2SE 1.3] J2SE 1.3::javax::swing::text::html::parser referenced packages: Sequence {IN!io, IN!text, IN!html, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::text::html::parser referenced packages: Sequence {IN!io, IN!html, IN!text, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaxSwingTextRtf'
-[J2SE 1.3] J2SE 1.3::javax::swing::text::rtf referenced packages: Sequence {IN!io, IN!text, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::text::rtf referenced packages: Sequence {IN!text, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxSwingEvent'
-[J2SE 1.3] J2SE 1.3::javax::swing::event referenced packages: Sequence {IN!text, IN!event, IN!net, IN!table, IN!util, IN!lang, IN!io, IN!beans, IN!swing, IN!tree, IN!undo, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::event referenced packages: Sequence {IN!table, IN!beans, IN!io, IN!event, IN!text, IN!util, IN!awt, IN!tree, IN!net, IN!lang, IN!swing, IN!undo}
 [J2SE 1.3] Package: 'JavaxSwingPlaf'
-[J2SE 1.3] J2SE 1.3::javax::swing::plaf referenced packages: Sequence {IN!accessibility, IN!text, IN!event, IN!border, IN!lang, IN!io, IN!filechooser, IN!swing, IN!tree, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::plaf referenced packages: Sequence {IN!io, IN!event, IN!text, IN!awt, IN!tree, IN!lang, IN!border, IN!filechooser, IN!swing, IN!accessibility}
 [J2SE 1.3] Package: 'JavaxSwingPlafBasic'
-[J2SE 1.3] J2SE 1.3::javax::swing::plaf::basic referenced packages: Sequence {IN!border, IN!table, IN!filechooser, IN!event, IN!util, IN!swing, IN!awt, IN!text, IN!io, IN!plaf, IN!accessibility, IN!lang, IN!beans, IN!event, IN!tree}
+[J2SE 1.3] J2SE 1.3::javax::swing::plaf::basic referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!table, IN!awt, IN!accessibility, IN!plaf, IN!text, IN!util, IN!tree, IN!border, IN!event, IN!lang, IN!filechooser, IN!swing}
 [J2SE 1.3] Package: 'JavaxSwingPlafMetal'
-[J2SE 1.3] J2SE 1.3::javax::swing::plaf::metal referenced packages: Sequence {IN!basic, IN!border, IN!io, IN!plaf, IN!event, IN!lang, IN!event, IN!beans, IN!swing, IN!tree, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::plaf::metal referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!plaf, IN!tree, IN!border, IN!event, IN!basic, IN!awt, IN!lang, IN!swing}
 [J2SE 1.3] Package: 'JavaxSwingPlafMulti'
-[J2SE 1.3] J2SE 1.3::javax::swing::plaf::multi referenced packages: Sequence {IN!text, IN!io, IN!filechooser, IN!plaf, IN!accessibility, IN!util, IN!lang, IN!swing, IN!tree, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::plaf::multi referenced packages: Sequence {IN!io, IN!plaf, IN!text, IN!util, IN!tree, IN!awt, IN!lang, IN!filechooser, IN!swing, IN!accessibility}
 [J2SE 1.3] Package: 'JavaxSwingUndo'
-[J2SE 1.3] J2SE 1.3::javax::swing::undo referenced packages: Sequence {IN!io, IN!event, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::undo referenced packages: Sequence {IN!event, IN!util, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxSwingTree'
-[J2SE 1.3] J2SE 1.3::javax::swing::tree referenced packages: Sequence {IN!event, IN!border, IN!util, IN!lang, IN!io, IN!beans, IN!event, IN!swing, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::tree referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!util, IN!awt, IN!lang, IN!border, IN!event, IN!swing}
 [J2SE 1.3] Package: 'JavaxSwingTable'
-[J2SE 1.3] J2SE 1.3::javax::swing::table referenced packages: Sequence {IN!plaf, IN!accessibility, IN!event, IN!border, IN!util, IN!lang, IN!io, IN!beans, IN!event, IN!swing, IN!awt}
+[J2SE 1.3] J2SE 1.3::javax::swing::table referenced packages: Sequence {IN!beans, IN!io, IN!event, IN!plaf, IN!util, IN!awt, IN!lang, IN!border, IN!event, IN!swing, IN!accessibility}
 [J2SE 1.3] Package: 'JavaxSwingBorder'
-[J2SE 1.3] J2SE 1.3::javax::swing::border referenced packages: Sequence {IN!io, IN!swing, IN!awt, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::border referenced packages: Sequence {IN!awt, IN!lang, IN!swing, IN!io}
 [J2SE 1.3] Package: 'JavaxSwingColorchooser'
-[J2SE 1.3] J2SE 1.3::javax::swing::colorchooser referenced packages: Sequence {IN!io, IN!event, IN!swing, IN!awt, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::colorchooser referenced packages: Sequence {IN!event, IN!swing, IN!io, IN!awt, IN!lang}
 [J2SE 1.3] Package: 'JavaxSwingFilechooser'
-[J2SE 1.3] J2SE 1.3::javax::swing::filechooser referenced packages: Sequence {IN!io, IN!swing, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::swing::filechooser referenced packages: Sequence {IN!swing, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxNaming'
-[J2SE 1.3] J2SE 1.3::javax::naming equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::naming referenced packages: Sequence {IN!io, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaxNamingDirectory'
-[J2SE 1.3] J2SE 1.3::javax::naming::directory equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::naming::directory referenced packages: Sequence {IN!naming, IN!io, IN!util, IN!lang}
 [J2SE 1.3] Package: 'JavaxNamingEvent'
-[J2SE 1.3] J2SE 1.3::javax::naming::event equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::naming::event referenced packages: Sequence {IN!naming, IN!directory, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::naming::event referenced packages: Sequence {IN!directory, IN!util, IN!naming, IN!lang}
 [J2SE 1.3] Package: 'JavaxNamingLdap'
-[J2SE 1.3] J2SE 1.3::javax::naming::ldap equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::naming::ldap referenced packages: Sequence {IN!naming, IN!io, IN!event, IN!directory, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::naming::ldap referenced packages: Sequence {IN!directory, IN!event, IN!util, IN!naming, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxNamingSpi'
-[J2SE 1.3] J2SE 1.3::javax::naming::spi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::naming::spi referenced packages: Sequence {IN!naming, IN!io, IN!directory, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::naming::spi referenced packages: Sequence {IN!directory, IN!util, IN!naming, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxSoundMidi'
-[J2SE 1.3] J2SE 1.3::javax::sound::midi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::sound::midi referenced packages: Sequence {IN!io, IN!net, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::sound::midi referenced packages: Sequence {IN!util, IN!net, IN!lang, IN!io}
 [J2SE 1.3] Package: 'JavaxSoundMidiSpi'
-[J2SE 1.3] J2SE 1.3::javax::sound::midi::spi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::sound::midi::spi referenced packages: Sequence {IN!io, IN!net, IN!midi, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::sound::midi::spi referenced packages: Sequence {IN!net, IN!lang, IN!midi, IN!io}
 [J2SE 1.3] Package: 'JavaxSoundSampled'
-[J2SE 1.3] J2SE 1.3::javax::sound::sampled equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::sound::sampled referenced packages: Sequence {IN!io, IN!net, IN!util, IN!security, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::sound::sampled referenced packages: Sequence {IN!util, IN!net, IN!lang, IN!io, IN!security}
 [J2SE 1.3] Package: 'JavaxSoundSampledSpi'
-[J2SE 1.3] J2SE 1.3::javax::sound::sampled::spi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::sound::sampled::spi referenced packages: Sequence {IN!io, IN!sampled, IN!net, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::sound::sampled::spi referenced packages: Sequence {IN!io, IN!net, IN!lang, IN!sampled}
 [J2SE 1.3] Package: 'JavaxRmi'
-[J2SE 1.3] J2SE 1.3::javax::rmi equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::rmi referenced packages: Sequence {IN!rmi, IN!lang}
 [J2SE 1.3] Package: 'JavaxRmiCORBA'
-[J2SE 1.3] J2SE 1.3::javax::rmi::CORBA equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::javax::rmi::CORBA referenced packages: Sequence {IN!io, IN!portable, IN!portable, IN!CORBA, IN!SendingContext, IN!rmi, IN!lang}
+[J2SE 1.3] J2SE 1.3::javax::rmi::CORBA referenced packages: Sequence {IN!portable, IN!portable, IN!io, IN!SendingContext, IN!CORBA, IN!rmi, IN!lang}
 [J2SE 1.3] Package: 'JavaxTransaction'
-[J2SE 1.3] J2SE 1.3::javax::transaction equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::javax::transaction referenced packages: Sequence {IN!rmi, IN!lang}
 [J2SE 1.3] Package: 'OrgOmgCORBA_2_3'
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3 equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3 referenced packages: Sequence {IN!portable, IN!CORBA, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3 referenced packages: Sequence {IN!portable, IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgCORBA_2_3Portable'
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3::portable equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3::portable referenced packages: Sequence {IN!CORBA, IN!portable, IN!io, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA_2_3::portable referenced packages: Sequence {IN!portable, IN!lang, IN!io, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgCORBA'
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA referenced packages: Sequence {IN!io, IN!applet, IN!portable, IN!math, IN!util, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA referenced packages: Sequence {IN!portable, IN!io, IN!math, IN!util, IN!applet, IN!lang}
 [J2SE 1.3] Package: 'OrgOmgCORBAPortable'
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA::portable referenced packages: Sequence {IN!portable, IN!CORBA, IN!lang, IN!io, IN!math}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA::portable referenced packages: Sequence {IN!io, IN!lang, IN!portable, IN!CORBA, IN!math}
 [J2SE 1.3] Package: 'OrgOmgCORBATypeCodePackage'
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA::TypeCodePackage referenced packages: Sequence {IN!CORBA, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA::TypeCodePackage referenced packages: Sequence {IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgCORBAORBPackage'
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA::ORBPackage referenced packages: Sequence {IN!CORBA, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA::ORBPackage referenced packages: Sequence {IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgCORBADynAnyPackage'
-[J2SE 1.3] J2SE 1.3::org::omg::CORBA::DynAnyPackage referenced packages: Sequence {IN!CORBA, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CORBA::DynAnyPackage referenced packages: Sequence {IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgSendingContext'
-[J2SE 1.3] J2SE 1.3::org::omg::SendingContext equivalent packages: Sequence {}
 [J2SE 1.3] J2SE 1.3::org::omg::SendingContext referenced packages: Sequence {IN!portable, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgCosNaming'
 [J2SE 1.3] J2SE 1.3::org::omg::CosNaming referenced packages: Sequence {IN!portable, IN!CORBA, IN!lang}
 [J2SE 1.3] Package: 'OrgOmgCosNamingNamingContextPackage'
-[J2SE 1.3] J2SE 1.3::org::omg::CosNaming::NamingContextPackage referenced packages: Sequence {IN!portable, IN!CORBA, IN!CosNaming, IN!lang}
+[J2SE 1.3] J2SE 1.3::org::omg::CosNaming::NamingContextPackage referenced packages: Sequence {IN!portable, IN!CosNaming, IN!lang, IN!CORBA}
 [J2SE 1.3] Package: 'OrgOmgStubJavaRmi'
-[J2SE 1.3] J2SE 1.3::org::omg::stub::java::rmi equivalent packages: Sequence {}
-[J2SE 1.3] J2SE 1.3::org::omg::stub::java::rmi referenced packages: Sequence {IN!CORBA, IN!rmi}
+[J2SE 1.3] J2SE 1.3::org::omg::stub::java::rmi referenced packages: Sequence {IN!rmi, IN!CORBA}

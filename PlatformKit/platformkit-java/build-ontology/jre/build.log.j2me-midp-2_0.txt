@@ -9,6 +9,8 @@
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::rms compatible packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media compatible packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media::control compatible packages: Sequence {}
+[J2ME MIDP 2.0] J2ME MIDP 2.0 compatible models: Sequence {}
+[J2ME MIDP 2.0] J2ME MIDP 2.0 equivalent models: Sequence {}
 [J2ME MIDP 2.0] Package: 'JavaUtil'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::java::util equivalent packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::java::util referenced packages: Sequence {IN!lang}
@@ -20,13 +22,13 @@
 [J2ME MIDP 2.0] J2ME MIDP 2.0::java::io referenced packages: Sequence {IN!lang}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionIo'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::io equivalent packages: Sequence {}
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::io referenced packages: Sequence {IN!pki, IN!io, IN!lang}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::io referenced packages: Sequence {IN!lang, IN!pki, IN!io}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionPki'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::pki equivalent packages: Sequence {}
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::pki referenced packages: Sequence {IN!io, IN!lang}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::pki referenced packages: Sequence {IN!lang, IN!io}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionLcdui'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui equivalent packages: Sequence {}
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui referenced packages: Sequence {IN!util, IN!io, IN!midlet, IN!lang}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui referenced packages: Sequence {IN!midlet, IN!lang, IN!util, IN!io}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionLcduiGame'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui::game equivalent packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui::game referenced packages: Sequence {IN!lang, IN!lcdui}
@@ -38,7 +40,7 @@
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::rms referenced packages: Sequence {IN!lang}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionMedia'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media equivalent packages: Sequence {}
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media referenced packages: Sequence {IN!io, IN!lang}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media referenced packages: Sequence {IN!lang, IN!io}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionMediaControl'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media::control equivalent packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media::control referenced packages: Sequence {IN!media}
@@ -66,7 +68,7 @@
 [J2ME MIDP 2.0] J2ME MIDP 1.0::java::io misses classifiers compatible with : Sequence {IN!DataInput, IN!DataOutputStream, IN!DataOutput, IN!DataInputStream, IN!PrintStream}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::java::io equivalent packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::io compatible packages: Sequence {PREVIN!io}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::io::Datagram misses features compatible with : Sequence {IN!readDouble, IN!writeDouble, IN!readFloat, IN!writeFloat, IN!readDouble, IN!writeDouble, IN!readFloat, IN!writeFloat}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::io::Datagram misses features compatible with : Sequence {IN!writeFloat, IN!writeDouble, IN!readDouble, IN!readFloat, IN!writeFloat, IN!writeDouble, IN!readDouble, IN!readFloat}
 [J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::io misses classifiers compatible with : Sequence {IN!Datagram, IN!PushRegistry, IN!SocketConnection, IN!ServerSocketConnection, IN!CommConnection, IN!SecurityInfo, IN!UDPDatagramConnection, IN!HttpsConnection, IN!SecureConnection}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::io equivalent packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::pki compatible packages: Sequence {}
@@ -78,19 +80,19 @@
 [J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Command misses features compatible with : Sequence {IN!<init>, IN!getLongLabel}
 [J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Font misses features compatible with : Sequence {IN!FONT_STATIC_TEXT, IN!FONT_INPUT_TEXT, IN!getFont}
 [J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Graphics misses features compatible with : Sequence {IN!drawRegion, IN!copyArea, IN!fillTriangle, IN!drawRGB, IN!getDisplayColor}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Screen misses features compatible with : Sequence {IN!getWidth, IN!getHeight, IN!sizeChanged}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Alert misses features compatible with : Sequence {IN!DISMISS_COMMAND, IN!setIndicator, IN!getIndicator, IN!getWidth, IN!getHeight, IN!sizeChanged}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Gauge misses features compatible with : Sequence {IN!INDEFINITE, IN!CONTINUOUS_IDLE, IN!INCREMENTAL_IDLE, IN!CONTINUOUS_RUNNING, IN!INCREMENTAL_UPDATING, IN!setLayout, IN!addCommand, IN!setItemCommandListener, IN!setPreferredSize, IN!setDefaultCommand, IN!getLayout, IN!LAYOUT_VCENTER, IN!LAYOUT_RIGHT, IN!notifyStateChanged, IN!HYPERLINK, IN!LAYOUT_NEWLINE_BEFORE, IN!addCommand, IN!getMinimumHeight, IN!setDefaultCommand, IN!LAYOUT_VSHRINK, IN!LAYOUT_EXPAND, IN!LAYOUT_TOP, IN!LAYOUT_2, IN!getPreferredWidth, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!removeCommand, IN!LAYOUT_BOTTOM, IN!getMinimumWidth, IN!setPreferredSize, IN!LAYOUT_NEWLINE_AFTER, IN!setLayout, IN!LAYOUT_CENTER, IN!setItemCommandListener, IN!LAYOUT_LEFT, IN!LAYOUT_DEFAULT, IN!PLAIN, IN!BUTTON, IN!LAYOUT_VEXPAND}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Canvas misses features compatible with : Sequence {IN!setFullScreenMode, IN!sizeChanged, IN!setTicker, IN!setTitle, IN!getTicker, IN!getTitle, IN!sizeChanged}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Screen misses features compatible with : Sequence {IN!getHeight, IN!sizeChanged, IN!getWidth}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Alert misses features compatible with : Sequence {IN!DISMISS_COMMAND, IN!setIndicator, IN!getIndicator, IN!getHeight, IN!sizeChanged, IN!getWidth}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Gauge misses features compatible with : Sequence {IN!INDEFINITE, IN!CONTINUOUS_IDLE, IN!INCREMENTAL_IDLE, IN!CONTINUOUS_RUNNING, IN!INCREMENTAL_UPDATING, IN!setLayout, IN!addCommand, IN!setItemCommandListener, IN!setPreferredSize, IN!setDefaultCommand, IN!setLayout, IN!PLAIN, IN!getMinimumWidth, IN!LAYOUT_TOP, IN!LAYOUT_NEWLINE_BEFORE, IN!LAYOUT_VCENTER, IN!notifyStateChanged, IN!setItemCommandListener, IN!setDefaultCommand, IN!addCommand, IN!getPreferredWidth, IN!getLayout, IN!LAYOUT_RIGHT, IN!LAYOUT_VSHRINK, IN!LAYOUT_BOTTOM, IN!BUTTON, IN!LAYOUT_VEXPAND, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!LAYOUT_NEWLINE_AFTER, IN!LAYOUT_DEFAULT, IN!getMinimumHeight, IN!setPreferredSize, IN!LAYOUT_2, IN!LAYOUT_LEFT, IN!removeCommand, IN!LAYOUT_CENTER, IN!LAYOUT_EXPAND, IN!HYPERLINK}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Canvas misses features compatible with : Sequence {IN!setFullScreenMode, IN!sizeChanged, IN!getTicker, IN!setTicker, IN!setTitle, IN!getTitle, IN!sizeChanged}
 [J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Choice misses features compatible with : Sequence {IN!POPUP, IN!TEXT_WRAP_DEFAULT, IN!TEXT_WRAP_ON, IN!TEXT_WRAP_OFF, IN!deleteAll, IN!setFitPolicy, IN!getFitPolicy, IN!setFont, IN!getFont}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::StringItem misses features compatible with : Sequence {IN!<init>, IN!getAppearanceMode, IN!setFont, IN!getFont, IN!setPreferredSize, IN!getLayout, IN!LAYOUT_VCENTER, IN!LAYOUT_RIGHT, IN!notifyStateChanged, IN!HYPERLINK, IN!LAYOUT_NEWLINE_BEFORE, IN!addCommand, IN!getMinimumHeight, IN!setDefaultCommand, IN!LAYOUT_VSHRINK, IN!LAYOUT_EXPAND, IN!LAYOUT_TOP, IN!LAYOUT_2, IN!getPreferredWidth, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!removeCommand, IN!LAYOUT_BOTTOM, IN!getMinimumWidth, IN!setPreferredSize, IN!LAYOUT_NEWLINE_AFTER, IN!setLayout, IN!LAYOUT_CENTER, IN!setItemCommandListener, IN!LAYOUT_LEFT, IN!LAYOUT_DEFAULT, IN!PLAIN, IN!BUTTON, IN!LAYOUT_VEXPAND}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::ChoiceGroup misses features compatible with : Sequence {IN!deleteAll, IN!setFitPolicy, IN!getFitPolicy, IN!setFont, IN!getFont, IN!getLayout, IN!LAYOUT_VCENTER, IN!LAYOUT_RIGHT, IN!notifyStateChanged, IN!HYPERLINK, IN!LAYOUT_NEWLINE_BEFORE, IN!addCommand, IN!getMinimumHeight, IN!setDefaultCommand, IN!LAYOUT_VSHRINK, IN!LAYOUT_EXPAND, IN!LAYOUT_TOP, IN!LAYOUT_2, IN!getPreferredWidth, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!removeCommand, IN!LAYOUT_BOTTOM, IN!getMinimumWidth, IN!setPreferredSize, IN!LAYOUT_NEWLINE_AFTER, IN!setLayout, IN!LAYOUT_CENTER, IN!setItemCommandListener, IN!LAYOUT_LEFT, IN!LAYOUT_DEFAULT, IN!PLAIN, IN!BUTTON, IN!LAYOUT_VEXPAND, IN!setFitPolicy, IN!setFont, IN!POPUP, IN!TEXT_WRAP_DEFAULT, IN!TEXT_WRAP_OFF, IN!getFont, IN!deleteAll, IN!getFitPolicy, IN!TEXT_WRAP_ON}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::List misses features compatible with : Sequence {IN!deleteAll, IN!setSelectCommand, IN!setFitPolicy, IN!getFitPolicy, IN!setFont, IN!getFont, IN!getWidth, IN!getHeight, IN!sizeChanged, IN!setFitPolicy, IN!setFont, IN!POPUP, IN!TEXT_WRAP_DEFAULT, IN!TEXT_WRAP_OFF, IN!getFont, IN!deleteAll, IN!getFitPolicy, IN!TEXT_WRAP_ON}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Form misses features compatible with : Sequence {IN!deleteAll, IN!getWidth, IN!getHeight, IN!getWidth, IN!getHeight, IN!sizeChanged}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::TextBox misses features compatible with : Sequence {IN!setInitialInputMode, IN!getWidth, IN!getHeight, IN!sizeChanged}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::TextField misses features compatible with : Sequence {IN!DECIMAL, IN!UNEDITABLE, IN!SENSITIVE, IN!NON_PREDICTIVE, IN!INITIAL_CAPS_WORD, IN!INITIAL_CAPS_SENTENCE, IN!setInitialInputMode, IN!getLayout, IN!LAYOUT_VCENTER, IN!LAYOUT_RIGHT, IN!notifyStateChanged, IN!HYPERLINK, IN!LAYOUT_NEWLINE_BEFORE, IN!addCommand, IN!getMinimumHeight, IN!setDefaultCommand, IN!LAYOUT_VSHRINK, IN!LAYOUT_EXPAND, IN!LAYOUT_TOP, IN!LAYOUT_2, IN!getPreferredWidth, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!removeCommand, IN!LAYOUT_BOTTOM, IN!getMinimumWidth, IN!setPreferredSize, IN!LAYOUT_NEWLINE_AFTER, IN!setLayout, IN!LAYOUT_CENTER, IN!setItemCommandListener, IN!LAYOUT_LEFT, IN!LAYOUT_DEFAULT, IN!PLAIN, IN!BUTTON, IN!LAYOUT_VEXPAND}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::DateField misses features compatible with : Sequence {IN!getLayout, IN!LAYOUT_VCENTER, IN!LAYOUT_RIGHT, IN!notifyStateChanged, IN!HYPERLINK, IN!LAYOUT_NEWLINE_BEFORE, IN!addCommand, IN!getMinimumHeight, IN!setDefaultCommand, IN!LAYOUT_VSHRINK, IN!LAYOUT_EXPAND, IN!LAYOUT_TOP, IN!LAYOUT_2, IN!getPreferredWidth, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!removeCommand, IN!LAYOUT_BOTTOM, IN!getMinimumWidth, IN!setPreferredSize, IN!LAYOUT_NEWLINE_AFTER, IN!setLayout, IN!LAYOUT_CENTER, IN!setItemCommandListener, IN!LAYOUT_LEFT, IN!LAYOUT_DEFAULT, IN!PLAIN, IN!BUTTON, IN!LAYOUT_VEXPAND}
-[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::ImageItem misses features compatible with : Sequence {IN!<init>, IN!getAppearanceMode, IN!LAYOUT_VCENTER, IN!notifyStateChanged, IN!HYPERLINK, IN!addCommand, IN!getMinimumHeight, IN!setDefaultCommand, IN!LAYOUT_VSHRINK, IN!LAYOUT_EXPAND, IN!LAYOUT_TOP, IN!LAYOUT_2, IN!getPreferredWidth, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!removeCommand, IN!LAYOUT_BOTTOM, IN!getMinimumWidth, IN!setPreferredSize, IN!setItemCommandListener, IN!PLAIN, IN!BUTTON, IN!LAYOUT_VEXPAND}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::StringItem misses features compatible with : Sequence {IN!<init>, IN!getAppearanceMode, IN!setFont, IN!getFont, IN!setPreferredSize, IN!setLayout, IN!PLAIN, IN!getMinimumWidth, IN!LAYOUT_TOP, IN!LAYOUT_NEWLINE_BEFORE, IN!LAYOUT_VCENTER, IN!notifyStateChanged, IN!setItemCommandListener, IN!setDefaultCommand, IN!addCommand, IN!getPreferredWidth, IN!getLayout, IN!LAYOUT_RIGHT, IN!LAYOUT_VSHRINK, IN!LAYOUT_BOTTOM, IN!BUTTON, IN!LAYOUT_VEXPAND, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!LAYOUT_NEWLINE_AFTER, IN!LAYOUT_DEFAULT, IN!getMinimumHeight, IN!setPreferredSize, IN!LAYOUT_2, IN!LAYOUT_LEFT, IN!removeCommand, IN!LAYOUT_CENTER, IN!LAYOUT_EXPAND, IN!HYPERLINK}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::ChoiceGroup misses features compatible with : Sequence {IN!deleteAll, IN!setFitPolicy, IN!getFitPolicy, IN!setFont, IN!getFont, IN!setLayout, IN!PLAIN, IN!getMinimumWidth, IN!LAYOUT_TOP, IN!LAYOUT_NEWLINE_BEFORE, IN!LAYOUT_VCENTER, IN!notifyStateChanged, IN!setItemCommandListener, IN!setDefaultCommand, IN!addCommand, IN!getPreferredWidth, IN!getLayout, IN!LAYOUT_RIGHT, IN!LAYOUT_VSHRINK, IN!LAYOUT_BOTTOM, IN!BUTTON, IN!LAYOUT_VEXPAND, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!LAYOUT_NEWLINE_AFTER, IN!LAYOUT_DEFAULT, IN!getMinimumHeight, IN!setPreferredSize, IN!LAYOUT_2, IN!LAYOUT_LEFT, IN!removeCommand, IN!LAYOUT_CENTER, IN!LAYOUT_EXPAND, IN!HYPERLINK, IN!getFont, IN!setFont, IN!TEXT_WRAP_ON, IN!POPUP, IN!deleteAll, IN!TEXT_WRAP_OFF, IN!setFitPolicy, IN!getFitPolicy, IN!TEXT_WRAP_DEFAULT}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::List misses features compatible with : Sequence {IN!deleteAll, IN!setSelectCommand, IN!setFitPolicy, IN!getFitPolicy, IN!setFont, IN!getFont, IN!getHeight, IN!sizeChanged, IN!getWidth, IN!getFont, IN!setFont, IN!TEXT_WRAP_ON, IN!POPUP, IN!deleteAll, IN!TEXT_WRAP_OFF, IN!setFitPolicy, IN!getFitPolicy, IN!TEXT_WRAP_DEFAULT}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::Form misses features compatible with : Sequence {IN!deleteAll, IN!getWidth, IN!getHeight, IN!getHeight, IN!sizeChanged, IN!getWidth}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::TextBox misses features compatible with : Sequence {IN!setInitialInputMode, IN!getHeight, IN!sizeChanged, IN!getWidth}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::TextField misses features compatible with : Sequence {IN!DECIMAL, IN!UNEDITABLE, IN!SENSITIVE, IN!NON_PREDICTIVE, IN!INITIAL_CAPS_WORD, IN!INITIAL_CAPS_SENTENCE, IN!setInitialInputMode, IN!setLayout, IN!PLAIN, IN!getMinimumWidth, IN!LAYOUT_TOP, IN!LAYOUT_NEWLINE_BEFORE, IN!LAYOUT_VCENTER, IN!notifyStateChanged, IN!setItemCommandListener, IN!setDefaultCommand, IN!addCommand, IN!getPreferredWidth, IN!getLayout, IN!LAYOUT_RIGHT, IN!LAYOUT_VSHRINK, IN!LAYOUT_BOTTOM, IN!BUTTON, IN!LAYOUT_VEXPAND, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!LAYOUT_NEWLINE_AFTER, IN!LAYOUT_DEFAULT, IN!getMinimumHeight, IN!setPreferredSize, IN!LAYOUT_2, IN!LAYOUT_LEFT, IN!removeCommand, IN!LAYOUT_CENTER, IN!LAYOUT_EXPAND, IN!HYPERLINK}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::DateField misses features compatible with : Sequence {IN!setLayout, IN!PLAIN, IN!getMinimumWidth, IN!LAYOUT_TOP, IN!LAYOUT_NEWLINE_BEFORE, IN!LAYOUT_VCENTER, IN!notifyStateChanged, IN!setItemCommandListener, IN!setDefaultCommand, IN!addCommand, IN!getPreferredWidth, IN!getLayout, IN!LAYOUT_RIGHT, IN!LAYOUT_VSHRINK, IN!LAYOUT_BOTTOM, IN!BUTTON, IN!LAYOUT_VEXPAND, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!LAYOUT_NEWLINE_AFTER, IN!LAYOUT_DEFAULT, IN!getMinimumHeight, IN!setPreferredSize, IN!LAYOUT_2, IN!LAYOUT_LEFT, IN!removeCommand, IN!LAYOUT_CENTER, IN!LAYOUT_EXPAND, IN!HYPERLINK}
+[J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui::ImageItem misses features compatible with : Sequence {IN!<init>, IN!getAppearanceMode, IN!PLAIN, IN!getMinimumWidth, IN!LAYOUT_TOP, IN!LAYOUT_VCENTER, IN!notifyStateChanged, IN!setItemCommandListener, IN!setDefaultCommand, IN!addCommand, IN!getPreferredWidth, IN!LAYOUT_VSHRINK, IN!LAYOUT_BOTTOM, IN!BUTTON, IN!LAYOUT_VEXPAND, IN!getPreferredHeight, IN!LAYOUT_SHRINK, IN!getMinimumHeight, IN!setPreferredSize, IN!LAYOUT_2, IN!removeCommand, IN!LAYOUT_EXPAND, IN!HYPERLINK}
 [J2ME MIDP 2.0] J2ME MIDP 1.0::javax::microedition::lcdui misses classifiers compatible with : Sequence {IN!Display, IN!Displayable, IN!Image, IN!Item, IN!Command, IN!Font, IN!Graphics, IN!ItemCommandListener, IN!Screen, IN!Alert, IN!Gauge, IN!Canvas, IN!Choice, IN!StringItem, IN!ChoiceGroup, IN!Spacer, IN!List, IN!Form, IN!TextBox, IN!TextField, IN!DateField, IN!CustomItem, IN!ImageItem}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui equivalent packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui::game compatible packages: Sequence {}
@@ -104,6 +106,19 @@
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::rms equivalent packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media compatible packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media::control compatible packages: Sequence {}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::java compatible packages: Sequence {PREVIN!java}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax compatible packages: Sequence {PREVIN!javax}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition compatible packages: Sequence {PREVIN!microedition}
+[J2ME MIDP 2.0] J2ME MIDP 2.0 compatible models: Sequence {PREVIN!J2ME MIDP 1.0}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::java equivalent packages: Sequence {PREVIN!java}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax equivalent packages: Sequence {PREVIN!javax}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition equivalent packages: Sequence {PREVIN!microedition}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::pki equivalent packages: Sequence {}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui::game equivalent packages: Sequence {}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media equivalent packages: Sequence {}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media::control equivalent packages: Sequence {}
+[J2ME MIDP 2.0] J2ME MIDP 2.0 misses packages equivalent with : Sequence {PREVIN!lang, PREVIN!io, PREVIN!util, PREVIN!io, PREVIN!lcdui, PREVIN!midlet, PREVIN!rms}
+[J2ME MIDP 2.0] J2ME MIDP 2.0 equivalent models: Sequence {}
 [J2ME MIDP 2.0] Package: 'JavaUtil'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::java::util referenced packages: Sequence {IN!lang}
 [J2ME MIDP 2.0] Package: 'JavaLang'
@@ -111,22 +126,18 @@
 [J2ME MIDP 2.0] Package: 'JavaIo'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::java::io referenced packages: Sequence {IN!lang}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionIo'
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::io referenced packages: Sequence {IN!pki, IN!io, IN!lang}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::io referenced packages: Sequence {IN!lang, IN!pki, IN!io}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionPki'
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::pki equivalent packages: Sequence {}
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::pki referenced packages: Sequence {IN!io, IN!lang}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::pki referenced packages: Sequence {IN!lang, IN!io}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionLcdui'
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui referenced packages: Sequence {IN!util, IN!io, IN!midlet, IN!lang}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui referenced packages: Sequence {IN!midlet, IN!lang, IN!util, IN!io}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionLcduiGame'
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui::game equivalent packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::lcdui::game referenced packages: Sequence {IN!lang, IN!lcdui}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionMidlet'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::midlet referenced packages: Sequence {IN!lang}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionRms'
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::rms referenced packages: Sequence {IN!lang}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionMedia'
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media equivalent packages: Sequence {}
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media referenced packages: Sequence {IN!io, IN!lang}
+[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media referenced packages: Sequence {IN!lang, IN!io}
 [J2ME MIDP 2.0] Package: 'JavaxMicroeditionMediaControl'
-[J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media::control equivalent packages: Sequence {}
 [J2ME MIDP 2.0] J2ME MIDP 2.0::javax::microedition::media::control referenced packages: Sequence {IN!media}
