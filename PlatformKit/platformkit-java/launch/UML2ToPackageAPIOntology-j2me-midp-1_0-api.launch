@@ -51,5 +51,6 @@
 </mapAttribute>
 <listAttribute key="Superimpose">
 <listEntry value="/platformkit-java/transformations/UML2ToPackageAPIOntology.asm"/>
+<listEntry value="/platformkit-java/transformations/UML2ToSimplifiedPackageAPIOntology.asm"/>
 </listAttribute>
 </launchConfiguration>
