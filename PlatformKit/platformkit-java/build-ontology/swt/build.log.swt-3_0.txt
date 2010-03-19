@@ -10,6 +10,8 @@
 [SWT 3.0] SWT 3.0::org::eclipse::swt::dnd compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::layout compatible packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::program compatible packages: Sequence {}
+[SWT 3.0] SWT 3.0 compatible models: Sequence {}
+[SWT 3.0] SWT 3.0 equivalent models: Sequence {}
 [SWT 3.0] Package: 'OrgEclipseSwt'
 [SWT 3.0] SWT 3.0::org::eclipse::swt equivalent packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt referenced packages: Sequence {}
@@ -18,25 +20,25 @@
 [SWT 3.0] SWT 3.0::org::eclipse::swt::accessibility referenced packages: Sequence {IN!widgets}
 [SWT 3.0] Package: 'OrgEclipseSwtWidgets'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::widgets equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::widgets referenced packages: Sequence {IN!graphics, IN!events, IN!accessibility}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::widgets referenced packages: Sequence {IN!accessibility, IN!graphics, IN!events}
 [SWT 3.0] Package: 'OrgEclipseSwtAwt'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::awt equivalent packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::awt referenced packages: Sequence {IN!widgets}
 [SWT 3.0] Package: 'OrgEclipseSwtBrowser'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::browser equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::browser referenced packages: Sequence {IN!graphics, IN!events, IN!widgets}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::browser referenced packages: Sequence {IN!widgets, IN!graphics, IN!events}
 [SWT 3.0] Package: 'OrgEclipseSwtEvents'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::events equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::events referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::events referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.0] Package: 'OrgEclipseSwtGraphics'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::graphics equivalent packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::graphics referenced packages: Sequence {}
 [SWT 3.0] Package: 'OrgEclipseSwtCustom'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::custom equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::custom referenced packages: Sequence {IN!printing, IN!graphics, IN!events, IN!widgets}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::custom referenced packages: Sequence {IN!graphics, IN!printing, IN!events, IN!widgets}
 [SWT 3.0] Package: 'OrgEclipseSwtPrinting'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::printing equivalent packages: Sequence {}
-[SWT 3.0] SWT 3.0::org::eclipse::swt::printing referenced packages: Sequence {IN!graphics, IN!widgets}
+[SWT 3.0] SWT 3.0::org::eclipse::swt::printing referenced packages: Sequence {IN!widgets, IN!graphics}
 [SWT 3.0] Package: 'OrgEclipseSwtDnd'
 [SWT 3.0] SWT 3.0::org::eclipse::swt::dnd equivalent packages: Sequence {}
 [SWT 3.0] SWT 3.0::org::eclipse::swt::dnd referenced packages: Sequence {IN!widgets, IN!events}
