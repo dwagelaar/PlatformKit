@@ -28,7 +28,8 @@
             >PlatformKit hardware resources ontology.</rdfs:label>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
-        <owl:versionInfo>$Id$</owl:versionInfo>
+        <owl:versionInfo
+            >$Id$</owl:versionInfo>
         <rdfs:comment xml:lang="en"
             >Describes and disambiguates common hardware resource kinds.</rdfs:comment>
         <dc:rights xml:lang="en"
@@ -54,6 +55,96 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#batteryCapacity -->
+
+    <owl:DatatypeProperty rdf:about="#batteryCapacity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Milliampere-hour</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Battery capacity in mAh (milliampere-hours).</rdfs:comment>
+        <rdfs:domain rdf:resource="#BatteryResource"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#dataCapacity -->
+
+    <owl:DatatypeProperty rdf:about="#dataCapacity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en"
+            >Memory/storage size in MB (megabytes).</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Megabyte</rdfs:seeAlso>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#MemoryResource"/>
+                    <rdf:Description rdf:about="#StorageResource"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#dataSpeed -->
+
+    <owl:DatatypeProperty rdf:about="#dataSpeed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:seeAlso xml:lang="en"
+            >Computer data speed in Mb/s (megabit per second).</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Megabit_per_second</rdfs:seeAlso>
+        <rdfs:domain rdf:resource="#NetworkResource"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#processingSpeed -->
+
+    <owl:DatatypeProperty rdf:about="#processingSpeed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Megahertz</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >CPU clock speed in MHz (mega-hertz).</rdfs:comment>
+        <rdfs:domain rdf:resource="#ProcessingResource"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#voltage -->
+
+    <owl:DatatypeProperty rdf:about="#voltage">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Volt</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Voltage</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Power source voltage in V (Volt).</rdfs:comment>
+        <rdfs:domain rdf:resource="#PowerResource"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -68,10 +159,26 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#BatteryResource -->
+
+    <owl:Class rdf:about="#BatteryResource">
+        <rdfs:subClassOf rdf:resource="#PowerResource"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Battery_%28electricity%29</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Any computer power source that stores a finite amount of energy and allows the computer to work autonomously for a limited time.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#MemoryResource -->
 
     <owl:Class rdf:about="#MemoryResource">
         <rdfs:subClassOf rdf:resource="&platform;Resource"/>
+        <rdfs:comment xml:lang="en"
+            >Computer working memory, usually RAM.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Random-access_memory</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -80,6 +187,10 @@
 
     <owl:Class rdf:about="#NetworkResource">
         <rdfs:subClassOf rdf:resource="&platform;Resource"/>
+        <rdfs:comment xml:lang="en"
+            >Computer network resource that connects to other computers.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Computer_network</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -88,6 +199,12 @@
 
     <owl:Class rdf:about="#PowerResource">
         <rdfs:subClassOf rdf:resource="&platform;Resource"/>
+        <rdfs:comment xml:lang="en"
+            >Computer power source.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Computer_power_supply</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Battery_%28electricity%29</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -96,6 +213,16 @@
 
     <owl:Class rdf:about="#ProcessingResource">
         <rdfs:subClassOf rdf:resource="&platform;Resource"/>
+        <rdfs:comment xml:lang="en"
+            >A (main or secondary) computer processing unit.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Microprocessor</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Field-programmable_gate_array</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Digital_signal_processor</rdfs:seeAlso>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Central_processing_unit</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -104,6 +231,10 @@
 
     <owl:Class rdf:about="#StorageResource">
         <rdfs:subClassOf rdf:resource="&platform;Resource"/>
+        <rdfs:seeAlso
+            >http://en.wikipedia.org/wiki/Mass_storage</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Computer mass storage.</rdfs:comment>
     </owl:Class>
     
 
