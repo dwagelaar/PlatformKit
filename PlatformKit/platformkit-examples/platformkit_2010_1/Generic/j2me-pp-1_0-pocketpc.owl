@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY os "http://soft.vub.ac.be/platformkit/2010/1/os.owl#" >
+    <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
+    <!ENTITY j2me-pp-1_0 "http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#" >
+    <!ENTITY j2me-pp-1_0-pocketpc "http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xmlns:os="http://soft.vub.ac.be/platformkit/2010/1/os.owl#"
+     xmlns:j2me-pp-1_0-pocketpc="http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:j2me-pp-1_0="http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit ontology of a J2ME PP 1.0 PocketPC.</rdfs:label>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <owl:versionInfo>$Id$</owl:versionInfo>
+        <rdfs:comment xml:lang="en"
+            >Example PlatformKit platform instance ontology.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/java-re.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/os.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="&platform;implementsInterface"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#providesFeature -->
+
+    <owl:ObjectProperty rdf:about="&platform;providesFeature"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#J2MEPP1_0ClassLibrary -->
+
+    <owl:Class rdf:about="&j2me-pp-1_0;J2MEPP1_0ClassLibrary"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#J2MEPP1_0JRE -->
+
+    <owl:Class rdf:about="&j2me-pp-1_0;J2MEPP1_0JRE"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#J2MEPP1_0VM -->
+
+    <owl:Class rdf:about="&j2me-pp-1_0;J2MEPP1_0VM"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/os.owl#MS-Cabinet -->
+
+    <owl:Class rdf:about="&os;MS-Cabinet"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/os.owl#PocketPC -->
+
+    <owl:Class rdf:about="&os;PocketPC"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Platform -->
+
+    <owl:Class rdf:about="&platform;Platform"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl#cvm -->
+
+    <j2me-pp-1_0:J2MEPP1_0VM rdf:about="#cvm">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:implementsInterface rdf:resource="&j2me-pp-1_0;theJ2MEPP1_0BytecodeFormat"/>
+    </j2me-pp-1_0:J2MEPP1_0VM>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl#j2me-pp-1_0ClassLibrary -->
+
+    <j2me-pp-1_0:J2MEPP1_0ClassLibrary rdf:about="#j2me-pp-1_0ClassLibrary">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:implementsInterface rdf:resource="&j2me-pp-1_0;theJ2MEPP1_0API"/>
+    </j2me-pp-1_0:J2MEPP1_0ClassLibrary>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl#j2me-pp-1_0JRE -->
+
+    <owl:Thing rdf:about="#j2me-pp-1_0JRE">
+        <rdf:type rdf:resource="&j2me-pp-1_0;J2MEPP1_0JRE"/>
+        <platform:providesFeature rdf:resource="#cvm"/>
+        <platform:providesFeature rdf:resource="#j2me-pp-1_0ClassLibrary"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl#pocketPC -->
+
+    <owl:Thing rdf:about="#pocketPC">
+        <rdf:type rdf:resource="&platform;Platform"/>
+        <platform:providesFeature rdf:resource="#j2me-pp-1_0JRE"/>
+        <platform:providesFeature rdf:resource="#pocketpcCAB"/>
+        <platform:providesFeature rdf:resource="#pocketpcOS"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl#pocketpcCAB -->
+
+    <os:MS-Cabinet rdf:about="#pocketpcCAB">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </os:MS-Cabinet>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2me-pp-1_0-pocketpc.owl#pocketpcOS -->
+
+    <owl:Thing rdf:about="#pocketpcOS">
+        <rdf:type rdf:resource="&os;PocketPC"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#theJ2MEPP1_0API -->
+
+    <owl:Thing rdf:about="&j2me-pp-1_0;theJ2MEPP1_0API"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#theJ2MEPP1_0BytecodeFormat -->
+
+    <owl:Thing rdf:about="&j2me-pp-1_0;theJ2MEPP1_0BytecodeFormat"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

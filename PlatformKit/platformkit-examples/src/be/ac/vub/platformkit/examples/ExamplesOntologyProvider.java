@@ -30,19 +30,21 @@ public class ExamplesOntologyProvider implements INamedOntologyProvider {
 	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	private static final String[] ontologies = new String[] {
-		"codamos_2007_01/Generic/JDK1.1PC.owl",
-		"codamos_2007_01/Generic/JDK1.2PC.owl",
-		"codamos_2007_01/Generic/JDK1.3PC.owl",
-		"codamos_2007_01/Generic/JDK1.4PC.owl",
-		"codamos_2007_01/Generic/JDK1.5PC.owl",
-		"codamos_2007_01/Generic/JDK1.6PC.owl",
-		"codamos_2007_01/Generic/PersonalJava1.1PocketPC.owl",
-		"codamos_2007_01/Generic/J2MEPP1.0PocketPC.owl",
-		"codamos_2007_01/Generic/J2MEPP1.1PocketPC.owl",
-		"codamos_2007_01/Generic/J2MEMIDP1.0Phone.owl",
-		"codamos_2007_01/Generic/J2MEMIDP2.0Phone.owl",
-		"codamos_2007_01/Sharp/ZaurusSL-C1000PP.owl",
-		"codamos_2007_01/Sharp/ZaurusSL-C1000Jeode.owl",
+		"platformkit_2010_1/Generic/jdk-1_1-pc.owl",
+		"platformkit_2010_1/Generic/j2se-1_2-pc.owl",
+		"platformkit_2010_1/Generic/j2se-1_3-pc.owl",
+		"platformkit_2010_1/Generic/j2se-1_4-pc.owl",
+		"platformkit_2010_1/Generic/j2se-5_0-pc.owl",
+		"platformkit_2010_1/Generic/java-se-6-pc.owl",
+		"platformkit_2010_1/Generic/personaljava-1_1-pocketpc.owl",
+		"platformkit_2010_1/Generic/j2me-pp-1_0-pocketpc.owl",
+		"platformkit_2010_1/Generic/j2me-pp-1_1-pocketpc.owl",
+		"platformkit_2010_1/Generic/j2me-midp-1_0-phone.owl",
+		"platformkit_2010_1/Generic/j2me-midp-2_0-phone.owl",
+
+		"platformkit_2010_1/Sharp/sharp-zaurus-sl-c1000-pp.owl",
+		"platformkit_2010_1/Sharp/sharp-zaurus-sl-c1000-jeode.owl",
+
 		"codamos_2007_01/Siemens/CX70v.owl",
 		"codamos_2007_01/Nokia/NokiaN800Jalimo.owl"
 	}; //$NON-NLS-1$

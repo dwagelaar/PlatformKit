@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY java "http://soft.vub.ac.be/platformkit/2010/1/java.owl#" >
+    <!ENTITY java-se-6 "http://soft.vub.ac.be/platformkit/2010/1/java-se-6.owl#" >
+    <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
+    <!ENTITY java-se-6-pc "http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:java-se-6="http://soft.vub.ac.be/platformkit/2010/1/java-se-6.owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:java-se-6-pc="http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:java="http://soft.vub.ac.be/platformkit/2010/1/java.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit ontology of a Java SE 6 PC.</rdfs:label>
+        <owl:versionInfo>$Id$</owl:versionInfo>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <rdfs:comment xml:lang="en"
+            >Example PlatformKit platform instance ontology.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/java-re.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="&platform;implementsInterface"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#providesFeature -->
+
+    <owl:ObjectProperty rdf:about="&platform;providesFeature"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#WebApplet -->
+
+    <owl:Class rdf:about="&java;WebApplet"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java-se-6.owl#JavaSE6ClassLibrary -->
+
+    <owl:Class rdf:about="&java-se-6;JavaSE6ClassLibrary"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java-se-6.owl#JavaSE6JRE -->
+
+    <owl:Class rdf:about="&java-se-6;JavaSE6JRE"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java-se-6.owl#JavaSE6VM -->
+
+    <owl:Class rdf:about="&java-se-6;JavaSE6VM"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Platform -->
+
+    <owl:Class rdf:about="&platform;Platform"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl#java-se-6ClassLibrary -->
+
+    <java-se-6:JavaSE6ClassLibrary rdf:about="#java-se-6ClassLibrary">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:implementsInterface rdf:resource="&java-se-6;theJavaSE6API"/>
+    </java-se-6:JavaSE6ClassLibrary>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl#java-se-6JRE -->
+
+    <java-se-6:JavaSE6JRE rdf:about="#java-se-6JRE">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:providesFeature rdf:resource="#java-se-6ClassLibrary"/>
+        <platform:providesFeature rdf:resource="#java-se-6VM"/>
+        <platform:providesFeature rdf:resource="#java-se-6WebApplet"/>
+        <platform:providesFeature rdf:resource="#java-se-6WebStart"/>
+    </java-se-6:JavaSE6JRE>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl#java-se-6VM -->
+
+    <owl:Thing rdf:about="#java-se-6VM">
+        <rdf:type rdf:resource="&java-se-6;JavaSE6VM"/>
+        <platform:implementsInterface rdf:resource="&java-se-6;theJavaSE6BytecodeFormat"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl#java-se-6WebApplet -->
+
+    <owl:Thing rdf:about="#java-se-6WebApplet">
+        <rdf:type rdf:resource="&java;WebApplet"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl#java-se-6WebStart -->
+
+    <owl:Thing rdf:about="#java-se-6WebStart">
+        <rdf:type rdf:resource="&java;WebStart"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/java-se-6-pc.owl#pc -->
+
+    <owl:Thing rdf:about="#pc">
+        <rdf:type rdf:resource="&platform;Platform"/>
+        <platform:providesFeature rdf:resource="#java-se-6JRE"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java-se-6.owl#theJavaSE6API -->
+
+    <owl:Thing rdf:about="&java-se-6;theJavaSE6API"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java-se-6.owl#theJavaSE6BytecodeFormat -->
+
+    <owl:Thing rdf:about="&java-se-6;theJavaSE6BytecodeFormat"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
