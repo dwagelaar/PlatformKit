@@ -1,0 +1,434 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY io "http://soft.vub.ac.be/platformkit/2010/1/io.owl#" >
+    <!ENTITY os "http://soft.vub.ac.be/platformkit/2010/1/os.owl#" >
+    <!ENTITY arm "http://soft.vub.ac.be/platformkit/2010/1/arm.owl#" >
+    <!ENTITY java "http://soft.vub.ac.be/platformkit/2010/1/java.owl#" >
+    <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
+    <!ENTITY resource "http://soft.vub.ac.be/platformkit/2010/1/resource.owl#" >
+    <!ENTITY j2me-pp-1_0 "http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:os="http://soft.vub.ac.be/platformkit/2010/1/os.owl#"
+     xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xmlns:j2me-pp-1_0="http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#"
+     xmlns:resource="http://soft.vub.ac.be/platformkit/2010/1/resource.owl#"
+     xmlns:io="http://soft.vub.ac.be/platformkit/2010/1/io.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:java="http://soft.vub.ac.be/platformkit/2010/1/java.owl#"
+     xmlns:arm="http://soft.vub.ac.be/platformkit/2010/1/arm.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit ontology of a Sharp Zaurus SL-C1000 with J2ME PP 1.0.</rdfs:label>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <owl:versionInfo>$Id$</owl:versionInfo>
+        <rdfs:comment xml:lang="en"
+            >Example PlatformKit platform instance ontology.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/arm.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/io.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/java-re.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/os.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/resource.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="&platform;implementsInterface"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#providesFeature -->
+
+    <owl:ObjectProperty rdf:about="&platform;providesFeature"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#numberOfColors -->
+
+    <owl:DatatypeProperty rdf:about="&io;numberOfColors"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#screenHeight -->
+
+    <owl:DatatypeProperty rdf:about="&io;screenHeight"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#screenWidth -->
+
+    <owl:DatatypeProperty rdf:about="&io;screenWidth"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#batteryCapacity -->
+
+    <owl:DatatypeProperty rdf:about="&resource;batteryCapacity"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#dataCapacity -->
+
+    <owl:DatatypeProperty rdf:about="&resource;dataCapacity"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#dataSpeed -->
+
+    <owl:DatatypeProperty rdf:about="&resource;dataSpeed"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#processingSpeed -->
+
+    <owl:DatatypeProperty rdf:about="&resource;processingSpeed"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#voltage -->
+
+    <owl:DatatypeProperty rdf:about="&resource;voltage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv5TE_CPU -->
+
+    <owl:Class rdf:about="&arm;ARMv5TE_CPU"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Keyboard -->
+
+    <owl:Class rdf:about="&io;Keyboard"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#TouchScreen -->
+
+    <owl:Class rdf:about="&io;TouchScreen"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#J2MEPP1_0ClassLibrary -->
+
+    <owl:Class rdf:about="&j2me-pp-1_0;J2MEPP1_0ClassLibrary"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#J2MEPP1_0JRE -->
+
+    <owl:Class rdf:about="&j2me-pp-1_0;J2MEPP1_0JRE"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#J2MEPP1_0VM -->
+
+    <owl:Class rdf:about="&j2me-pp-1_0;J2MEPP1_0VM"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaApplet -->
+
+    <owl:Class rdf:about="&java;JavaApplet"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/os.owl#Ipkg -->
+
+    <owl:Class rdf:about="&os;Ipkg"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/os.owl#Linux -->
+
+    <owl:Class rdf:about="&os;Linux"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Framework -->
+
+    <owl:Class rdf:about="&platform;Framework"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Platform -->
+
+    <owl:Class rdf:about="&platform;Platform"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#BatteryResource -->
+
+    <owl:Class rdf:about="&resource;BatteryResource"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#MemoryResource -->
+
+    <owl:Class rdf:about="&resource;MemoryResource"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#NetworkResource -->
+
+    <owl:Class rdf:about="&resource;NetworkResource"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#StorageResource -->
+
+    <owl:Class rdf:about="&resource;StorageResource"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#theARMv5TE -->
+
+    <owl:Thing rdf:about="&arm;theARMv5TE"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#compactFlashWiFi -->
+
+    <resource:NetworkResource rdf:about="#compactFlashWiFi">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <resource:dataSpeed rdf:datatype="&xsd;decimal">11</resource:dataSpeed>
+    </resource:NetworkResource>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#intel_PXA270_CPU -->
+
+    <arm:ARMv5TE_CPU rdf:about="#intel_PXA270_CPU">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <resource:processingSpeed rdf:datatype="&xsd;decimal">416</resource:processingSpeed>
+        <platform:implementsInterface rdf:resource="&arm;theARMv5TE"/>
+    </arm:ARMv5TE_CPU>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#ipkg -->
+
+    <os:Ipkg rdf:about="#ipkg">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </os:Ipkg>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#j2me-pp-1_0AppletViewer -->
+
+    <java:JavaApplet rdf:about="#j2me-pp-1_0AppletViewer">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </java:JavaApplet>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#j2me-pp-1_0CVM -->
+
+    <j2me-pp-1_0:J2MEPP1_0VM rdf:about="#j2me-pp-1_0CVM">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:implementsInterface rdf:resource="&j2me-pp-1_0;theJ2MEPP1_0BytecodeFormat"/>
+    </j2me-pp-1_0:J2MEPP1_0VM>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#j2me-pp-1_0ClassLibrary -->
+
+    <owl:Thing rdf:about="#j2me-pp-1_0ClassLibrary">
+        <rdf:type rdf:resource="&j2me-pp-1_0;J2MEPP1_0ClassLibrary"/>
+        <platform:implementsInterface rdf:resource="&j2me-pp-1_0;theJ2MEPP1_0API"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#j2me-pp-1_0JRE -->
+
+    <owl:Thing rdf:about="#j2me-pp-1_0JRE">
+        <rdf:type rdf:resource="&j2me-pp-1_0;J2MEPP1_0JRE"/>
+        <platform:providesFeature rdf:resource="#j2me-pp-1_0AppletViewer"/>
+        <platform:providesFeature rdf:resource="#j2me-pp-1_0CVM"/>
+        <platform:providesFeature rdf:resource="#j2me-pp-1_0ClassLibrary"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#linux2_4_20 -->
+
+    <os:Linux rdf:about="#linux2_4_20">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </os:Linux>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#qtopia1_5_4 -->
+
+    <platform:Framework rdf:about="#qtopia1_5_4">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </platform:Framework>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#sharpZaurusSL-C1000 -->
+
+    <owl:Thing rdf:about="#sharpZaurusSL-C1000">
+        <rdf:type rdf:resource="&platform;Platform"/>
+        <platform:providesFeature rdf:resource="#compactFlashWiFi"/>
+        <platform:providesFeature rdf:resource="#intel_PXA270_CPU"/>
+        <platform:providesFeature rdf:resource="#ipkg"/>
+        <platform:providesFeature rdf:resource="#j2me-pp-1_0JRE"/>
+        <platform:providesFeature rdf:resource="#linux2_4_20"/>
+        <platform:providesFeature rdf:resource="#qtopia1_5_4"/>
+        <platform:providesFeature rdf:resource="#zaurusBattery"/>
+        <platform:providesFeature rdf:resource="#zaurusInternalStorage"/>
+        <platform:providesFeature rdf:resource="#zaurusKeyboard"/>
+        <platform:providesFeature rdf:resource="#zaurusRAM"/>
+        <platform:providesFeature rdf:resource="#zaurusTouchScreen"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#zaurusBattery -->
+
+    <owl:Thing rdf:about="#zaurusBattery">
+        <rdf:type rdf:resource="&resource;BatteryResource"/>
+        <resource:batteryCapacity rdf:datatype="&xsd;decimal">1800</resource:batteryCapacity>
+        <resource:voltage rdf:datatype="&xsd;decimal">3.7</resource:voltage>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#zaurusInternalStorage -->
+
+    <owl:Thing rdf:about="#zaurusInternalStorage">
+        <rdf:type rdf:resource="&resource;StorageResource"/>
+        <resource:dataCapacity rdf:datatype="&xsd;decimal">128</resource:dataCapacity>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#zaurusKeyboard -->
+
+    <owl:Thing rdf:about="#zaurusKeyboard">
+        <rdf:type rdf:resource="&io;Keyboard"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#zaurusRAM -->
+
+    <resource:MemoryResource rdf:about="#zaurusRAM">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <resource:dataCapacity rdf:datatype="&xsd;decimal">64</resource:dataCapacity>
+    </resource:MemoryResource>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/sharp-zaurus-sl-c1000-pp.owl#zaurusTouchScreen -->
+
+    <owl:Thing rdf:about="#zaurusTouchScreen">
+        <rdf:type rdf:resource="&io;TouchScreen"/>
+        <io:screenHeight rdf:datatype="&xsd;integer">480</io:screenHeight>
+        <io:screenWidth rdf:datatype="&xsd;integer">640</io:screenWidth>
+        <io:numberOfColors rdf:datatype="&xsd;integer">65535</io:numberOfColors>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#theJ2MEPP1_0API -->
+
+    <owl:Thing rdf:about="&j2me-pp-1_0;theJ2MEPP1_0API"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl#theJ2MEPP1_0BytecodeFormat -->
+
+    <owl:Thing rdf:about="&j2me-pp-1_0;theJ2MEPP1_0BytecodeFormat"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

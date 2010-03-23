@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY java "http://soft.vub.ac.be/platformkit/2010/1/java.owl#" >
+    <!ENTITY j2se-1_3 "http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#" >
+    <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
+    <!ENTITY j2se-1_3-pc "http://soft.vub.ac.be/platformkit/2010/1/examples/j2se-1_3-pc.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/examples/j2se-1_3-pc.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/examples/j2se-1_3-pc.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:j2se-1_3="http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:j2se-1_3-pc="http://soft.vub.ac.be/platformkit/2010/1/examples/j2se-1_3-pc.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:java="http://soft.vub.ac.be/platformkit/2010/1/java.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit ontology of a J2SE 1.3 PC.</rdfs:label>
+        <owl:versionInfo>$Id$</owl:versionInfo>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <rdfs:comment xml:lang="en"
+            >Example PlatformKit platform instance ontology.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/java-re.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="&platform;implementsInterface"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#providesFeature -->
+
+    <owl:ObjectProperty rdf:about="&platform;providesFeature"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#WebApplet -->
+
+    <owl:Class rdf:about="&java;WebApplet"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#J2SE1_3ClassLibrary -->
+
+    <owl:Class rdf:about="&j2se-1_3;J2SE1_3ClassLibrary"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#J2SE1_3JRE -->
+
+    <owl:Class rdf:about="&j2se-1_3;J2SE1_3JRE"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#J2SE1_3VM -->
+
+    <owl:Class rdf:about="&j2se-1_3;J2SE1_3VM"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Platform -->
+
+    <owl:Class rdf:about="&platform;Platform"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2se-1_3-pc.owl#j2se-1_3ClassLibrary -->
+
+    <j2se-1_3:J2SE1_3ClassLibrary rdf:about="#j2se-1_3ClassLibrary">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:implementsInterface rdf:resource="&j2se-1_3;theJ2SE1_3API"/>
+    </j2se-1_3:J2SE1_3ClassLibrary>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2se-1_3-pc.owl#j2se-1_3JRE -->
+
+    <j2se-1_3:J2SE1_3JRE rdf:about="#j2se-1_3JRE">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:providesFeature rdf:resource="#j2se-1_3ClassLibrary"/>
+        <platform:providesFeature rdf:resource="#j2se-1_3VM"/>
+        <platform:providesFeature rdf:resource="#j2se-1_3WebApplet"/>
+    </j2se-1_3:J2SE1_3JRE>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2se-1_3-pc.owl#j2se-1_3VM -->
+
+    <owl:Thing rdf:about="#j2se-1_3VM">
+        <rdf:type rdf:resource="&j2se-1_3;J2SE1_3VM"/>
+        <platform:implementsInterface rdf:resource="&j2se-1_3;theJ2SE1_3BytecodeFormat"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2se-1_3-pc.owl#j2se-1_3WebApplet -->
+
+    <owl:Thing rdf:about="#j2se-1_3WebApplet">
+        <rdf:type rdf:resource="&java;WebApplet"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/j2se-1_3-pc.owl#pc -->
+
+    <owl:Thing rdf:about="#pc">
+        <rdf:type rdf:resource="&platform;Platform"/>
+        <platform:providesFeature rdf:resource="#j2se-1_3JRE"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#theJ2SE1_3API -->
+
+    <owl:Thing rdf:about="&j2se-1_3;theJ2SE1_3API"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl#theJ2SE1_3BytecodeFormat -->
+
+    <owl:Thing rdf:about="&j2se-1_3;theJ2SE1_3BytecodeFormat"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
