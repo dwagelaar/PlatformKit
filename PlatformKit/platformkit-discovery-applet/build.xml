@@ -62,6 +62,7 @@
 				<include name="hibernate-tools.jar"/>
 			</fileset>
 		</copy>
+		<eclipse.refreshLocal resource="${ant.project.name}"/>
 	</target>
 	
 	<target name="invokeBuild" depends="saveModels, copyCommon">
