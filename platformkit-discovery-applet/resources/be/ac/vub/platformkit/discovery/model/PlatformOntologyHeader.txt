@@ -4,31 +4,40 @@
 	<!ENTITY owl "http://www.w3.org/2002/07/owl">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
-	<!ENTITY units "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2005/01/Units.owl">
-	<!ENTITY platform "http://www.cs.kuleuven.be/~distrinet/projects/CoDAMoS/2007/01/Platform.owl">
-	<!ENTITY pm "http://ssel.vub.ac.be/codamos/2007/01/PackageManagers.owl">
-	<!ENTITY java "http://ssel.vub.ac.be/codamos/2007/01/Java.owl">
-	<!ENTITY jdk-1_1 "http://ssel.vub.ac.be/codamos/2007/01/jdk-1_1-api.owl">
-	<!ENTITY j2se-1_2 "http://ssel.vub.ac.be/codamos/2007/01/j2se-1_2-api.owl">
-	<!ENTITY j2se-1_3 "http://ssel.vub.ac.be/codamos/2007/01/j2se-1_3-api.owl">
-	<!ENTITY j2se-1_4 "http://ssel.vub.ac.be/codamos/2007/01/j2se-1_4-api.owl">
-	<!ENTITY j2se-1_5 "http://ssel.vub.ac.be/codamos/2007/01/j2se-1_5-api.owl">
-	<!ENTITY j2se-1_6 "http://ssel.vub.ac.be/codamos/2007/01/j2se-1_6-api.owl">
-	<!ENTITY personaljava-1_1 "http://ssel.vub.ac.be/codamos/2007/01/personaljava-1_1-api.owl">
-	<!ENTITY j2me-midp-1_0 "http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-1_0-api.owl">
-	<!ENTITY j2me-midp-2_0 "http://ssel.vub.ac.be/codamos/2007/01/j2me-midp-2_0-api.owl">
-	<!ENTITY j2me-pp-1_0 "http://ssel.vub.ac.be/codamos/2007/01/j2me-pp-1_0-api.owl">
-	<!ENTITY j2me-pp-1_1 "http://ssel.vub.ac.be/codamos/2007/01/j2me-pp-1_1-api.owl">
-	<!ENTITY javaapi "http://ssel.vub.ac.be/codamos/2007/01/JavaAPI.owl">
-	<!ENTITY DEFAULT "http://local/dynamic.owl">
+	<!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl">
+	<!ENTITY isa "http://soft.vub.ac.be/platformkit/2010/1/isa.owl#" >
+	<!ENTITY io "http://soft.vub.ac.be/platformkit/2010/1/io.owl#" >
+	<!ENTITY os "http://soft.vub.ac.be/platformkit/2010/1/os.owl#" >
+	<!ENTITY resource "http://soft.vub.ac.be/platformkit/2010/1/resource.owl#" >
+	<!ENTITY arm "http://soft.vub.ac.be/platformkit/2010/1/arm.owl#" >
+	<!ENTITY x86 "http://soft.vub.ac.be/platformkit/2010/1/x86.owl#" >
+	<!ENTITY java "http://soft.vub.ac.be/platformkit/2010/1/java.owl">
+	<!ENTITY jdk-1_1 "http://soft.vub.ac.be/platformkit/2010/1/jdk-1_1.owl">
+	<!ENTITY j2se-1_2 "http://soft.vub.ac.be/platformkit/2010/1/j2se-1_2.owl">
+	<!ENTITY j2se-1_3 "http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl">
+	<!ENTITY j2se-1_4 "http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl">
+	<!ENTITY j2se-5_0 "http://soft.vub.ac.be/platformkit/2010/1/j2se-5_0.owl">
+	<!ENTITY java-se-6 "http://soft.vub.ac.be/platformkit/2010/1/java-se-6.owl">
+	<!ENTITY personaljava-1_1 "http://soft.vub.ac.be/platformkit/2010/1/personaljava-1_1.owl">
+	<!ENTITY j2me-midp-1_0 "http://soft.vub.ac.be/platformkit/2010/1/j2me-midp-1_0.owl">
+	<!ENTITY j2me-midp-2_0 "http://soft.vub.ac.be/platformkit/2010/1/j2me-midp-2_0.owl">
+	<!ENTITY j2me-pp-1_0 "http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl">
+	<!ENTITY j2me-pp-1_1 "http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_1.owl">
+	<!ENTITY java-re "http://soft.vub.ac.be/platformkit/2010/1/java-re.owl">
+	<!ENTITY DEFAULT "http://soft.vub.ac.be/platformkit/2010/1/dynamic-instance.owl">
 ]>
 <rdf:RDF
 	 xmlns:xsd="&xsd;#"
 	 xmlns:owl="&owl;#"
 	 xmlns:rdfs="&rdfs;#"
 	 xmlns:rdf="&rdf;#"
-	 xmlns:units="&units;#"
 	 xmlns:platform="&platform;#"
+	 xmlns:isa="&isa;#"
+	 xmlns:io="&io;#"
+	 xmlns:os="&os;#"
+	 xmlns:resource="&resource;#"
+	 xmlns:arm="&arm;#"
+	 xmlns:x86="&x86;#"
 	 xmlns:java="&java;#"
 	 xmlns:jdk-1_1="&jdk-1_1;#"
 	 xmlns:j2se-1_2="&j2se-1_2;#"
@@ -41,10 +50,14 @@
 	 xmlns:j2me-midp-2_0="&j2me-midp-2_0;#"
 	 xmlns:j2me-pp-1_0="&j2me-pp-1_0;#"
 	 xmlns:j2me-pp-1_1="&j2me-pp-1_1;#"
-	 xmlns:javaapi="&javaapi;#"
+	 xmlns:java-re="&java-re;#"
 	 xmlns = "&DEFAULT;#"
 	 xml:base = "&DEFAULT;"
 >
   <owl:Ontology rdf:about="">
-    <owl:imports rdf:resource="&javaapi;"/>
+    <owl:imports rdf:resource="&io;"/>
+    <owl:imports rdf:resource="&os;"/>
+    <owl:imports rdf:resource="&arm;"/>
+    <owl:imports rdf:resource="&x86;"/>
+    <owl:imports rdf:resource="&java-re;"/>
   </owl:Ontology>
