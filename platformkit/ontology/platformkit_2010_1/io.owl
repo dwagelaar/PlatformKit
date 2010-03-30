@@ -113,6 +113,26 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#photoXResolution -->
+
+    <owl:DatatypeProperty rdf:about="#photoXResolution">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#PhotoCamera"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#photoYResolution -->
+
+    <owl:DatatypeProperty rdf:about="#photoYResolution">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#PhotoCamera"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#screenHeight -->
 
     <owl:DatatypeProperty rdf:about="#screenHeight">
@@ -132,6 +152,26 @@
         <rdfs:comment xml:lang="en"
             >Screen width in pixels.</rdfs:comment>
         <rdfs:domain rdf:resource="#Screen"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#videoXResolution -->
+
+    <owl:DatatypeProperty rdf:about="#videoXResolution">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#VideoCamera"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#videoYResolution -->
+
+    <owl:DatatypeProperty rdf:about="#videoYResolution">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#VideoCamera"/>
         <rdfs:range rdf:resource="&xsd;positiveInteger"/>
     </owl:DatatypeProperty>
     
@@ -169,6 +209,8 @@
 
     <owl:Class rdf:about="#AudioInputInterface">
         <rdfs:subClassOf rdf:resource="#InputInterface"/>
+        <rdfs:comment xml:lang="en"
+            >Audio input feature.</rdfs:comment>
     </owl:Class>
     
 
@@ -177,6 +219,15 @@
 
     <owl:Class rdf:about="#AudioOutputInterface">
         <rdfs:subClassOf rdf:resource="#OutputInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Camera -->
+
+    <owl:Class rdf:about="#Camera">
+        <rdfs:subClassOf rdf:resource="#VideoInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
     </owl:Class>
     
 
@@ -311,6 +362,14 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#PhotoCamera -->
+
+    <owl:Class rdf:about="#PhotoCamera">
+        <rdfs:subClassOf rdf:resource="#Camera"/>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#PhysicalOutputInterface -->
 
     <owl:Class rdf:about="#PhysicalOutputInterface">
@@ -439,6 +498,24 @@
     <owl:Class rdf:about="#Trackpad">
         <rdfs:subClassOf rdf:resource="#PointerInputInterface"/>
         <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#VideoCamera -->
+
+    <owl:Class rdf:about="#VideoCamera">
+        <rdfs:subClassOf rdf:resource="#Camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#VideoInputInterface -->
+
+    <owl:Class rdf:about="#VideoInputInterface">
+        <rdfs:subClassOf rdf:resource="#InputInterface"/>
+        <rdfs:comment xml:lang="en"
+            >Video input feature. Can be still or moving images.</rdfs:comment>
     </owl:Class>
     
 
