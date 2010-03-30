@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AbstractFactory="http:///schemas/AbstractFactory/0" xmlns:Applet="http:///schemas/Applet/1" xmlns:Singleton="http:///schemas/Singleton/1" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/AbstractFactory/0 ../../uml2cs-transformations/profiles/AbstractFactory.profile.uml#_-a-lgUPTEdusb52s3APTjA http:///schemas/Applet/1 ../../uml2cs-transformations/profiles/Applet.profile.uml#_i8fxgDgqEduNII1tDKqNvA http:///schemas/Singleton/1 ../../uml2cs-transformations/profiles/Singleton.profile.uml#_eMWcQDgqEduNII1tDKqNvA http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
   <uml:Model xmi:id="_qb8akM37EdqwVrslYOdUDA" name="PlatformkitDiscoveryApplet">
     <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="be">
@@ -6,12 +6,12 @@
         <packagedElement xmi:type="uml:Package" xmi:id="_Lla7IC1cEd2KTNOPeUc_7g" name="vub">
           <packagedElement xmi:type="uml:Package" xmi:id="_NUZlcC1cEd2KTNOPeUc_7g" name="platformkit">
             <packagedElement xmi:type="uml:Package" xmi:id="_O5BZ4C1cEd2KTNOPeUc_7g" name="discovery">
-              <packagedElement xmi:type="uml:Class" xmi:id="_RBdGAC1cEd2KTNOPeUc_7g" name="DiscoveryApplet" clientDependency="_-B99Yy2AEd2e7od4K9wNBA _KUjT4y2CEd2e7od4K9wNBA _7XZwYy2HEd2e7od4K9wNBA _I46goC5kEd2wms9OZLfx4Q _ggq1Ey5kEd2wms9OZLfx4Q _Jyljgy54Ed2wms9OZLfx4Q">
-                <ownedAttribute xmi:id="_ZKebzC2BEd2e7od4K9wNBA" name="ontology" type="_szP1IC1gEd2e7od4K9wNBA" aggregation="shared" association="_ZKebyC2BEd2e7od4K9wNBA">
+              <packagedElement xmi:type="uml:Class" xmi:id="_RBdGAC1cEd2KTNOPeUc_7g" name="DiscoveryApplet" clientDependency="_-B99Yy2AEd2e7od4K9wNBA _KUjT4y2CEd2e7od4K9wNBA _I46goC5kEd2wms9OZLfx4Q _ggq1Ey5kEd2wms9OZLfx4Q _Jyljgy54Ed2wms9OZLfx4Q _7XZwYy2HEd2e7od4K9wNBA">
+                <ownedAttribute xmi:id="_ZKebzC2BEd2e7od4K9wNBA" name="ontology" visibility="public" type="_szP1IC1gEd2e7od4K9wNBA" aggregation="shared" association="_ZKebyC2BEd2e7od4K9wNBA">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZKebzS2BEd2e7od4K9wNBA" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZKebzi2BEd2e7od4K9wNBA" value="1"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:id="_7_1pbC2HEd2e7od4K9wNBA" name="view" type="_RX_hcC2CEd2e7od4K9wNBA" aggregation="shared" association="_7_1paC2HEd2e7od4K9wNBA">
+                <ownedAttribute xmi:id="_7_1pbC2HEd2e7od4K9wNBA" name="view" visibility="public" type="_RX_hcC2CEd2e7od4K9wNBA" aggregation="shared" association="_7_1paC2HEd2e7od4K9wNBA">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7_1pbS2HEd2e7od4K9wNBA" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7_1pbi2HEd2e7od4K9wNBA" value="1"/>
                 </ownedAttribute>
@@ -21,34 +21,34 @@
                 </ownedAttribute>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_nXi-cC2BEd2e7od4K9wNBA" name="DiscoveryApplet_initBehavior" specification="_OrNAgC2BEd2e7od4K9wNBA">
                   <language>java</language>
-                  <body>&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;setBackground(Color.decode(getParameter(&quot;Color&quot;)));&#xA;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;getAppletContext().showStatus(e.getLocalizedMessage());&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;setView(ViewFactory.getDefault().createMainView());&#xA;&#x9;&#x9;getView().setEnabled(false);&#xA;&#x9;&#x9;getView().addListener(this);</body>
+                  <body>try {&#xA;&#x9;&#x9;&#x9;setBackground(Color.decode(getParameter(&quot;Color&quot;)));&#xA;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;getAppletContext().showStatus(e.getLocalizedMessage());&#xA;&#x9;&#x9;}&#xA;setView(ViewFactory.getDefault().createMainView());&#xA;getView().setEnabled(false);&#xA;getView().addListener(this);</body>
                 </ownedBehavior>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_n_-3cC2BEd2e7od4K9wNBA" name="DiscoveryApplet_startBehavior" specification="_RYXKUC2BEd2e7od4K9wNBA">
                   <language>java</language>
-                  <body>&#x9;&#x9;getView().setStatus(&quot;Discovering platform...&quot;);&#xA;&#x9;&#x9;final PlatformOntology ont = new PlatformOntology();&#xA;&#x9;&#x9;setOntology(ont);&#xA;&#xA;&#x9;&#x9;final String javaVendor = System.getProperty(&quot;java.vendor&quot;, &quot;unknown&quot;);&#xA;&#x9;&#x9;final String javaVersion = System&#xA;&#x9;&#x9;&#x9;&#x9;.getProperty(&quot;java.version&quot;, &quot;unknown&quot;);&#xA;&#x9;&#x9;final String javaSpecName = System.getProperty(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;java.specification.name&quot;, &quot;unknown&quot;);&#xA;&#x9;&#x9;final String javaSpecVersion = System.getProperty(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;java.specification.version&quot;, &quot;unknown&quot;);&#xA;&#x9;&#x9;final String javaVmName = System.getProperty(&quot;java.vm.name&quot;, &quot;unknown&quot;);&#xA;&#x9;&#x9;final String javaVmVersion = System.getProperty(&quot;java.vm.version&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&quot;unknown&quot;);&#xA;&#x9;&#x9;final String javaVmSpecName = System.getProperty(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;java.vm.specification.name&quot;, &quot;unknown&quot;);&#xA;&#x9;&#x9;final String javaVmSpecVersion = System.getProperty(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;java.vm.specification.version&quot;, &quot;unknown&quot;);&#xA;&#x9;&#x9;final String osName = System.getProperty(&quot;os.name&quot;, &quot;unknown&quot;);&#xA;&#x9;&#x9;final String osArch = System.getProperty(&quot;os.arch&quot;, &quot;unknown&quot;);&#xA;&#x9;&#x9;final String osVersion = System.getProperty(&quot;os.version&quot;, &quot;unknown&quot;);&#xA;&#xA;&#x9;&#x9;// Platform&#xA;&#x9;&#x9;final Individual platform = new Individual();&#xA;&#x9;&#x9;platform.setClassNS(&quot;platform&quot;);&#xA;&#x9;&#x9;platform.setClassName(&quot;Platform&quot;);&#xA;&#x9;&#x9;platform.setName(&quot;DynamicallyDiscoveredPlatform&quot;);&#xA;&#x9;&#x9;ont.addIndividual(platform);&#xA;&#x9;&#x9;// JRE&#xA;&#x9;&#x9;final Individual jre = new Individual();&#xA;&#x9;&#x9;jre.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;jre.setClassName(&quot;JRE&quot;);&#xA;&#x9;&#x9;final StringBuffer jreName = new StringBuffer();&#xA;&#x9;&#x9;jreName.append(javaVendor.replace(' ', '-'));&#xA;&#x9;&#x9;jreName.append(&quot;-JRE-&quot;);&#xA;&#x9;&#x9;jreName.append(javaVersion.replace(' ', '-'));&#xA;&#x9;&#x9;jre.setName(jreName.toString());&#xA;&#x9;&#x9;ont.addIndividual(jre);&#xA;&#x9;&#x9;// Platform providesSoftware JRE&#xA;&#x9;&#x9;final Slot prJre = new Slot();&#xA;&#x9;&#x9;prJre.setIndividual(platform);&#xA;&#x9;&#x9;prJre.setClassNS(&quot;platform&quot;);&#xA;&#x9;&#x9;prJre.setClassName(&quot;providesSoftware&quot;);&#xA;&#x9;&#x9;prJre.setValue(jre);&#xA;&#x9;&#x9;// ClassLibrary&#xA;&#x9;&#x9;final Individual clsLib = new Individual();&#xA;&#x9;&#x9;clsLib.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;clsLib.setClassName(&quot;JavaLibrary&quot;);&#xA;&#x9;&#x9;clsLib.setName(jre.getName() + &quot;-ClassLibrary&quot;);&#xA;&#x9;&#x9;ont.addIndividual(clsLib);&#xA;&#x9;&#x9;// JRE providesBuiltinClassLibrary ClassLibrary&#xA;&#x9;&#x9;final Slot prClsLib = new Slot();&#xA;&#x9;&#x9;prClsLib.setIndividual(jre);&#xA;&#x9;&#x9;prClsLib.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;prClsLib.setClassName(&quot;providesBuiltinJavaLibrary&quot;);&#xA;&#x9;&#x9;prClsLib.setValue(clsLib);&#xA;&#x9;&#x9;// JavaVM&#xA;&#x9;&#x9;final Individual jvm = new Individual();&#xA;&#x9;&#x9;jvm.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;jvm.setClassName(&quot;JavaVM&quot;);&#xA;&#x9;&#x9;final StringBuffer jvmName = new StringBuffer();&#xA;&#x9;&#x9;jvmName.append(javaVmName.replace(' ', '-'));&#xA;&#x9;&#x9;jvmName.append(&quot;-&quot;);&#xA;&#x9;&#x9;jvmName.append(javaVmVersion.replace(' ', '-'));&#xA;&#x9;&#x9;jvm.setName(jvmName.toString());&#xA;&#x9;&#x9;ont.addIndividual(jvm);&#xA;&#x9;&#x9;// JRE providesJavaVM JavaVM&#xA;&#x9;&#x9;final Slot prJVM = new Slot();&#xA;&#x9;&#x9;prJVM.setIndividual(jre);&#xA;&#x9;&#x9;prJVM.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;prJVM.setClassName(&quot;providesJavaVM&quot;);&#xA;&#x9;&#x9;prJVM.setValue(jvm);&#xA;&#x9;&#x9;// JavaBytecodeFormat&#xA;&#x9;&#x9;final Individual bcformat = new Individual();&#xA;&#x9;&#x9;bcformat.setNamespace(&quot;java&quot;);&#xA;&#x9;&#x9;bcformat.setName(&quot;Java1.1BytecodeFormat&quot;);&#xA;&#x9;&#x9;// JavaVM supportsBytecodeFormat JavaBytecodeFormat&#xA;&#x9;&#x9;final Slot supBCF = new Slot();&#xA;&#x9;&#x9;supBCF.setIndividual(jvm);&#xA;&#x9;&#x9;supBCF.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;supBCF.setClassName(&quot;supportsBytecodeFormat&quot;);&#xA;&#x9;&#x9;supBCF.setValue(bcformat);&#xA;&#x9;&#x9;// OperatingSystem&#xA;&#x9;&#x9;final Individual os = new Individual();&#xA;&#x9;&#x9;os.setClassNS(&quot;platform&quot;);&#xA;&#x9;&#x9;os.setClassName(&quot;OperatingSystem&quot;);&#xA;&#x9;&#x9;final StringBuffer osId = new StringBuffer();&#xA;&#x9;&#x9;osId.append(osName.replace(' ', '-'));&#xA;&#x9;&#x9;osId.append(&quot;-&quot;);&#xA;&#x9;&#x9;osId.append(osArch.replace(' ', '-'));&#xA;&#x9;&#x9;osId.append(&quot;-&quot;);&#xA;&#x9;&#x9;osId.append(osVersion.replace(' ', '-'));&#xA;&#x9;&#x9;os.setName(osId.toString());&#xA;&#x9;&#x9;ont.addIndividual(os);&#xA;&#x9;&#x9;// Platform providesSoftware OperatingSystem&#xA;&#x9;&#x9;final Slot prOS = new Slot();&#xA;&#x9;&#x9;prOS.setIndividual(platform);&#xA;&#x9;&#x9;prOS.setClassNS(&quot;platform&quot;);&#xA;&#x9;&#x9;prOS.setClassName(&quot;providesSoftware&quot;);&#xA;&#x9;&#x9;prOS.setValue(os);&#xA;&#x9;&#x9;// CPUResource&#xA;&#x9;&#x9;final Individual cpu = new Individual();&#xA;&#x9;&#x9;cpu.setClassNS(&quot;platform&quot;);&#xA;&#x9;&#x9;cpu.setClassName(&quot;CPUResource&quot;);&#xA;&#x9;&#x9;cpu.setName(&quot;SomeKindOf&quot; + osArch);&#xA;&#x9;&#x9;ont.addIndividual(cpu);&#xA;&#x9;&#x9;// Platform providesHardware CPUResource&#xA;&#x9;&#x9;final Slot prCPU = new Slot();&#xA;&#x9;&#x9;prCPU.setIndividual(platform);&#xA;&#x9;&#x9;prCPU.setClassNS(&quot;platform&quot;);&#xA;&#x9;&#x9;prCPU.setClassName(&quot;providesHardware&quot;);&#xA;&#x9;&#x9;prCPU.setValue(cpu);&#xA;&#x9;&#x9;// StringValue (*&amp;^%^$%^$ StringValue.... XSD wasn't good enough?!)&#xA;&#x9;&#x9;final Individual instr = new Individual();&#xA;&#x9;&#x9;instr.setClassNS(&quot;units&quot;);&#xA;&#x9;&#x9;instr.setClassName(&quot;StringValue&quot;);&#xA;&#x9;&#x9;instr.setName(osArch);&#xA;&#x9;&#x9;ont.addIndividual(instr);&#xA;&#x9;&#x9;// CPUResource instructionSet StringValue&#xA;&#x9;&#x9;final Slot instrSet = new Slot();&#xA;&#x9;&#x9;instrSet.setIndividual(cpu);&#xA;&#x9;&#x9;instrSet.setClassNS(&quot;platform&quot;);&#xA;&#x9;&#x9;instrSet.setClassName(&quot;instructionSet&quot;);&#xA;&#x9;&#x9;instrSet.setValue(instr);&#xA;&#x9;&#x9;// String&#xA;&#x9;&#x9;final Individual instrStr = new Individual();&#xA;&#x9;&#x9;instrStr.setClassNS(&quot;xsd&quot;);&#xA;&#x9;&#x9;instrStr.setClassName(&quot;string&quot;);&#xA;&#x9;&#x9;instrStr.setName(osArch);&#xA;&#x9;&#x9;// StringValue sval String&#xA;&#x9;&#x9;final Slot svalInstr = new Slot();&#xA;&#x9;&#x9;svalInstr.setIndividual(instr);&#xA;&#x9;&#x9;svalInstr.setClassNS(&quot;units&quot;);&#xA;&#x9;&#x9;svalInstr.setClassName(&quot;sval&quot;);&#xA;&#x9;&#x9;svalInstr.setValue(instrStr);&#xA;&#xA;&#x9;&#x9;if (&quot;Java Platform API Specification&quot;.equals(javaSpecName)) { // JDK&#xA;&#x9;&#x9;&#x9;// JavaWebApplet&#xA;&#x9;&#x9;&#x9;final Individual jwa = new Individual();&#xA;&#x9;&#x9;&#x9;jwa.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;&#x9;jwa.setClassName(&quot;JavaWebApplet&quot;);&#xA;&#x9;&#x9;&#x9;jwa.setName(jre.getName() + &quot;-JavaWebApplet&quot;);&#xA;&#x9;&#x9;&#x9;ont.addIndividual(jwa);&#xA;&#x9;&#x9;&#x9;// JRE providesJavaPackageManager JavaWebApplet&#xA;&#x9;&#x9;&#x9;final Slot prJWA = new Slot();&#xA;&#x9;&#x9;&#x9;prJWA.setIndividual(jre);&#xA;&#x9;&#x9;&#x9;prJWA.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;&#x9;prJWA.setClassName(&quot;providesJavaPackageManager&quot;);&#xA;&#x9;&#x9;&#x9;prJWA.setValue(jwa);&#xA;&#x9;&#x9;&#x9;// JavaWebStart&#xA;&#x9;&#x9;&#x9;final Individual jws = new Individual();&#xA;&#x9;&#x9;&#x9;jws.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;&#x9;jws.setClassName(&quot;JavaWebStart&quot;);&#xA;&#x9;&#x9;&#x9;jws.setName(jre.getName() + &quot;-JavaWebStart&quot;);&#xA;&#x9;&#x9;&#x9;// JRE providesJavaPackageManager JavaWebStart&#xA;&#x9;&#x9;&#x9;final Slot prJWS = new Slot();&#xA;&#x9;&#x9;&#x9;prJWS.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;&#x9;prJWS.setClassName(&quot;providesJavaPackageManager&quot;);&#xA;&#x9;&#x9;&#x9;prJWS.setValue(jws);&#xA;&#x9;&#x9;&#x9;// parse version number&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;final int jv = Integer.parseInt(javaSpecVersion.replace('.',&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'0'));&#xA;&#x9;&#x9;&#x9;&#x9;if (jv >= 101) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;switch (jv) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 101 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;jdk-1_1&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;Jdk-1_1&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;Java1.1BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 102 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;j2se-1_2&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;J2se-1_2&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;Java1.2BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 103 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;j2se-1_3&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;J2se-1_3&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;Java1.3BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 104 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;j2se-1_4&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;J2se-1_4&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;Java1.4BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ont.addIndividual(jws);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;prJWS.setIndividual(jre);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 105 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;j2se-1_5&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;J2se-1_5&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;Java5BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ont.addIndividual(jws);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;prJWS.setIndividual(jre);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;default : // 1.6 and up&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;j2se-1_6&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;J2se-1_6&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;Java6BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ont.addIndividual(jws);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;prJWS.setIndividual(jre);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clsLib.setClassNS(jre.getClassNS());&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clsLib.setClassName(jre.getClassName() + &quot;ClassLibrary&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;} catch (NumberFormatException e) {&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;} else if (javaSpecName.startsWith(&quot;J2ME Personal Profile&quot;)) {&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;final int jv = Integer.parseInt(javaSpecVersion.replace('.',&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'0'));&#xA;&#x9;&#x9;&#x9;&#x9;switch (jv) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;case 100 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;j2me-pp-1_0&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;J2me-pp-1_0&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;Java1.3BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;default : // 1.1 and up&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;j2me-pp-1_1&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;J2me-pp-1_1&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;Java1.4BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;clsLib.setClassNS(jre.getClassNS());&#xA;&#x9;&#x9;&#x9;&#x9;clsLib.setClassName(jre.getClassName() + &quot;ClassLibrary&quot;);&#xA;&#x9;&#x9;&#x9;} catch (NumberFormatException e) {&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;} else if (javaVendor.equals(&quot;Insignia Solutions Inc.&quot;)) { // Jeode&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;final int jv = Integer.parseInt(javaVersion.replace('.', '0'));&#xA;&#x9;&#x9;&#x9;&#x9;if (jv >= 301) { // Jeode 3.1 == PersonalJava 1.2&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;personaljava-1_1&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;Personaljava-1_1&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;Java1.1BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;clsLib.setClassNS(jre.getClassNS());&#xA;&#x9;&#x9;&#x9;&#x9;clsLib.setClassName(jre.getClassName() + &quot;ClassLibrary&quot;);&#xA;&#x9;&#x9;&#x9;} catch (NumberFormatException e) {&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.vendor = &quot; + javaVendor);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.version = &quot; + javaVersion);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.specification.name = &quot; + javaSpecName);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.specification.version = &quot;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ javaSpecVersion);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.vm.name = &quot; + javaVmName);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.vm.version = &quot; + javaVmVersion);&#xA;&#x9;&#x9;&#x9;System.out&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.println(&quot;java.vm.specification.name = &quot; + javaVmSpecName);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.vm.specification.version = &quot;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ javaVmSpecVersion);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;getView().setStatus(&quot;Platform discovered&quot;);&#xA;&#x9;&#x9;getView().setEnabled(true);</body>
+                  <body>getView().setStatus(&quot;Discovering platform...&quot;);&#xA;final PlatformOntology ont = new PlatformOntology();&#xA;setOntology(ont);&#xA;final String javaVendor = System.getProperty(&quot;java.vendor&quot;, &quot;unknown&quot;);&#xA;final String javaVersion = System&#xA;&#x9;&#x9;&#x9;&#x9;.getProperty(&quot;java.version&quot;, &quot;unknown&quot;);&#xA;final String javaSpecName = System.getProperty(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;java.specification.name&quot;, &quot;unknown&quot;);&#xA;final String javaSpecVersion = System.getProperty(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;java.specification.version&quot;, &quot;unknown&quot;);&#xA;final String javaVmName = System.getProperty(&quot;java.vm.name&quot;, &quot;unknown&quot;);&#xA;final String javaVmVersion = System.getProperty(&quot;java.vm.version&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&quot;unknown&quot;);&#xA;final String javaVmSpecName = System.getProperty(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;java.vm.specification.name&quot;, &quot;unknown&quot;);&#xA;final String javaVmSpecVersion = System.getProperty(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;java.vm.specification.version&quot;, &quot;unknown&quot;);&#xA;final String osName = System.getProperty(&quot;os.name&quot;, &quot;unknown&quot;);&#xA;final String osArch = System.getProperty(&quot;os.arch&quot;, &quot;unknown&quot;);&#xA;final String osVersion = System.getProperty(&quot;os.version&quot;, &quot;unknown&quot;);&#xA;final Individual platform = new Individual();&#xA;platform.setClassNS(&quot;platform&quot;);&#xA;platform.setClassName(&quot;Platform&quot;);&#xA;platform.setName(&quot;DynamicallyDiscoveredPlatform&quot;);&#xA;ont.addIndividual(platform);&#xA;final Individual jre = new Individual();&#xA;jre.setClassNS(&quot;java&quot;);&#xA;jre.setClassName(&quot;JRE&quot;);&#xA;final StringBuffer jreName = new StringBuffer();&#xA;jreName.append(javaVendor.replace(' ', '-'));&#xA;jreName.append(&quot;-JRE-&quot;);&#xA;jreName.append(javaVersion.replace(' ', '-'));&#xA;jre.setName(jreName.toString());&#xA;ont.addIndividual(jre);&#xA;final Slot prJre = new Slot();&#xA;prJre.setIndividual(platform);&#xA;prJre.setClassNS(&quot;platform&quot;);&#xA;prJre.setClassName(&quot;providesFeature&quot;);&#xA;prJre.setValue(jre);&#xA;final Individual clsLib = new Individual();&#xA;clsLib.setClassNS(&quot;java&quot;);&#xA;clsLib.setClassName(&quot;JavaClassLibrary&quot;);&#xA;clsLib.setName(jre.getName() + &quot;-ClassLibrary&quot;);&#xA;ont.addIndividual(clsLib);&#xA;final Slot prClsLib = new Slot();&#xA;prClsLib.setIndividual(jre);&#xA;prClsLib.setClassNS(&quot;platform&quot;);&#xA;prClsLib.setClassName(&quot;providesFeature&quot;);&#xA;prClsLib.setValue(clsLib);&#xA;final Individual jvm = new Individual();&#xA;jvm.setClassNS(&quot;java&quot;);&#xA;jvm.setClassName(&quot;JavaVM&quot;);&#xA;final StringBuffer jvmName = new StringBuffer();&#xA;jvmName.append(javaVmName.replace(' ', '-'));&#xA;jvmName.append(&quot;-&quot;);&#xA;jvmName.append(javaVmVersion.replace(' ', '-'));&#xA;jvm.setName(jvmName.toString());&#xA;ont.addIndividual(jvm);&#xA;final Slot prJVM = new Slot();&#xA;prJVM.setIndividual(jre);&#xA;prJVM.setClassNS(&quot;platform&quot;);&#xA;prJVM.setClassName(&quot;providesFeature&quot;);&#xA;prJVM.setValue(jvm);&#xA;final Individual bcformat = new Individual();&#xA;bcformat.setNamespace(&quot;j2me-midp-1_0&quot;);&#xA;bcformat.setName(&quot;theJ2MEMIDP1_0BytecodeFormat&quot;);&#xA;final Slot implJBC = new Slot();&#xA;implJBC.setIndividual(jvm);&#xA;implJBC.setClassNS(&quot;platform&quot;);&#xA;implJBC.setClassName(&quot;implementsInterface&quot;);&#xA;implJBC.setValue(bcformat);&#xA;final Individual os = new Individual();&#xA;os.setClassNS(&quot;platform&quot;);&#xA;os.setClassName(&quot;OperatingSystem&quot;);&#xA;final StringBuffer osId = new StringBuffer();&#xA;osId.append(osName.replace(' ', '-'));&#xA;osId.append(&quot;-&quot;);&#xA;osId.append(osArch.replace(' ', '-'));&#xA;osId.append(&quot;-&quot;);&#xA;osId.append(osVersion.replace(' ', '-'));&#xA;os.setName(osId.toString());&#xA;ont.addIndividual(os);&#xA;final Slot prOS = new Slot();&#xA;prOS.setIndividual(platform);&#xA;prOS.setClassNS(&quot;platform&quot;);&#xA;prOS.setClassName(&quot;providesFeature&quot;);&#xA;prOS.setValue(os);&#xA;final Individual cpu = new Individual();&#xA;cpu.setClassNS(&quot;platform&quot;);&#xA;cpu.setClassName(&quot;ProcessingResource&quot;);&#xA;cpu.setName(&quot;SomeKindOf&quot; + osArch);&#xA;ont.addIndividual(cpu);&#xA;final Slot prCPU = new Slot();&#xA;prCPU.setIndividual(platform);&#xA;prCPU.setClassNS(&quot;platform&quot;);&#xA;prCPU.setClassName(&quot;providesFeature&quot;);&#xA;prCPU.setValue(cpu);&#xA;final Individual isa = new Individual();&#xA;final Slot implISA = new Slot();&#xA;implISA.setClassNS(&quot;platform&quot;);&#xA;implISA.setClassName(&quot;implementsInterface&quot;);&#xA;implISA.setValue(isa);&#xA;if (&quot;Java Platform API Specification&quot;.equals(javaSpecName)) { // JDK&#xA;&#x9;&#x9;&#x9;// JavaWebApplet&#xA;&#x9;&#x9;&#x9;final Individual jwa = new Individual();&#xA;&#x9;&#x9;&#x9;jwa.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;&#x9;jwa.setClassName(&quot;WebApplet&quot;);&#xA;&#x9;&#x9;&#x9;jwa.setName(jre.getName() + &quot;-WebApplet&quot;);&#xA;&#x9;&#x9;&#x9;ont.addIndividual(jwa);&#xA;&#x9;&#x9;&#x9;// JRE providesFeature WebApplet&#xA;&#x9;&#x9;&#x9;final Slot prJWA = new Slot();&#xA;&#x9;&#x9;&#x9;prJWA.setIndividual(jre);&#xA;&#x9;&#x9;&#x9;prJWA.setClassNS(&quot;platform&quot;);&#xA;&#x9;&#x9;&#x9;prJWA.setClassName(&quot;providesFeature&quot;);&#xA;&#x9;&#x9;&#x9;prJWA.setValue(jwa);&#xA;&#x9;&#x9;&#x9;// JavaWebStart&#xA;&#x9;&#x9;&#x9;final Individual jws = new Individual();&#xA;&#x9;&#x9;&#x9;jws.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;&#x9;jws.setClassName(&quot;WebStart&quot;);&#xA;&#x9;&#x9;&#x9;jws.setName(jre.getName() + &quot;-WebStart&quot;);&#xA;&#x9;&#x9;&#x9;// JRE providesFeature WebStart&#xA;&#x9;&#x9;&#x9;final Slot prJWS = new Slot();&#xA;&#x9;&#x9;&#x9;prJWS.setClassNS(&quot;java&quot;);&#xA;&#x9;&#x9;&#x9;prJWS.setClassName(&quot;providesFeature&quot;);&#xA;&#x9;&#x9;&#x9;prJWS.setValue(jws);&#xA;&#x9;&#x9;&#x9;// parse version number&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;final int jv = Integer.parseInt(javaSpecVersion.replace('.',&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'0'));&#xA;&#x9;&#x9;&#x9;&#x9;if (jv >= 101) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;String javaName;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;String javaNamespace;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;switch (jv) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 101 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaNamespace = &quot;jdk-1_1&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaName = &quot;JDK1_1&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 102 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaNamespace = &quot;j2se-1_2&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaName = &quot;J2SE1_2&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 103 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaNamespace = &quot;j2se-1_3&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaName = &quot;J2SE1_3&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 104 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaNamespace = &quot;j2se-1_4&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaName = &quot;J2SE1_4&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ont.addIndividual(jws);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;prJWS.setIndividual(jre);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case 105 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaNamespace = &quot;j2se-5_0&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaName = &quot;J2SE5_0&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ont.addIndividual(jws);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;prJWS.setIndividual(jre);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;default : // 1.6 and up&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaNamespace = &quot;java-se-6&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaName = &quot;JavaSE6&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ont.addIndividual(jws);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;prJWS.setIndividual(jre);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(javaNamespace);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(javaName + &quot;JRE&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setNamespace(javaNamespace);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;the&quot; + javaName + &quot;BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clsLib.setClassNS(javaNamespace);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clsLib.setClassName(javaName + &quot;ClassLibrary&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;} catch (NumberFormatException e) {&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;} else if (javaSpecName.startsWith(&quot;J2ME Personal Profile&quot;)) {&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;final int jv = Integer.parseInt(javaSpecVersion.replace('.',&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'0'));&#xA;&#x9;&#x9;&#x9;&#x9;String javaName;&#xA;&#x9;&#x9;&#x9;&#x9;String javaNamespace;&#xA;&#x9;&#x9;&#x9;&#x9;switch (jv) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;case 100 :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaNamespace = &quot;j2me-pp-1_0&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaName = &quot;J2MEPP1_0&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;default : // 1.1 and up&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaNamespace = &quot;j2me-pp-1_1&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;javaName = &quot;J2MEPP1_1&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(javaNamespace);&#xA;&#x9;&#x9;&#x9;&#x9;jre.setClassName(javaName + &quot;JRE&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;bcformat.setNamespace(javaNamespace);&#xA;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;the&quot; + javaName + &quot;BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;clsLib.setClassNS(jre.getClassNS());&#xA;&#x9;&#x9;&#x9;&#x9;clsLib.setClassName(jre.getClassName() + &quot;ClassLibrary&quot;);&#xA;&#x9;&#x9;&#x9;} catch (NumberFormatException e) {&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;} else if (javaVendor.equals(&quot;Insignia Solutions Inc.&quot;)) { // Jeode&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;final int jv = Integer.parseInt(javaVersion.replace('.', '0'));&#xA;&#x9;&#x9;&#x9;&#x9;if (jv >= 301) { // Jeode 3.1 == PersonalJava 1.2&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassNS(&quot;personaljava-1_1&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;jre.setClassName(&quot;PersonalJava1_1JRE&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setNamespace(jre.getClassNS());&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;bcformat.setName(&quot;thePersonalJava1_1BytecodeFormat&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clsLib.setClassNS(jre.getClassNS());&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clsLib.setClassName(&quot;PersonalJava1_1ClassLibrary&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;} catch (NumberFormatException e) {&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.vendor = &quot; + javaVendor);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.version = &quot; + javaVersion);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.specification.name = &quot; + javaSpecName);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.specification.version = &quot;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ javaSpecVersion);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.vm.name = &quot; + javaVmName);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.vm.version = &quot; + javaVmVersion);&#xA;&#x9;&#x9;&#x9;System.out&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.println(&quot;java.vm.specification.name = &quot; + javaVmSpecName);&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;java.vm.specification.version = &quot;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ javaVmSpecVersion);&#xA;&#x9;&#x9;}&#xA;if (&quot;i386&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;isa.setNamespace(&quot;x86&quot;);&#xA;&#x9;&#x9;&#x9;isa.setName(&quot;theIntel_i386&quot;);&#xA;&#x9;&#x9;&#x9;implISA.setIndividual(cpu);&#xA;&#x9;&#x9;} else if (osArch.startsWith(&quot;arm&quot;)) {&#xA;&#x9;&#x9;&#x9;isa.setNamespace(&quot;arm&quot;);&#xA;&#x9;&#x9;&#x9;if (&quot;armv7-a&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv7-A&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv7-r&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv7-R&quot;);&#xA;&#x9;&#x9;&#x9;} else if (osArch.startsWith(&quot;armv7&quot;)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv7-M&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv6&quot;.equals(osArch) || &quot;armv6j&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv6&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv6t2&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv6T2&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv6z&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv6KZ&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv6zk&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv6K&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv6-m&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv6-M&quot;);&#xA;&#x9;&#x9;&#x9;} else if (osArch.startsWith(&quot;armv5&quot;)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv5TE&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv4t&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv4T&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv4&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv4&quot;);&#xA;&#x9;&#x9;&#x9;} else if (osArch.startsWith(&quot;armv3&quot;)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv3&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv2a&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv2a&quot;);&#xA;&#x9;&#x9;&#x9;} else if (&quot;armv2&quot;.equals(osArch)) {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv2&quot;);&#xA;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;isa.setName(&quot;theARMv1&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;implISA.setIndividual(cpu);&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;os.arch = &quot; + osArch);&#xA;&#x9;&#x9;}&#xA;getView().setStatus(&quot;Platform discovered&quot;);&#xA;getView().setEnabled(true);</body>
                 </ownedBehavior>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_od9M4C2BEd2e7od4K9wNBA" name="DiscoveryApplet_stopBehavior" specification="_SspcsC2BEd2e7od4K9wNBA">
                   <language>java</language>
-                  <body>&#x9;&#x9;getView().setEnabled(false);</body>
+                  <body>getView().setEnabled(false);</body>
                 </ownedBehavior>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aHLQYC2IEd2e7od4K9wNBA" name="DiscoveryApplet_onSubmitBehavior" specification="_V0i9kC2IEd2e7od4K9wNBA">
                   <language>java</language>
-                  <body>&#x9;&#x9;System.out.println(&quot;Submit clicked&quot;);&#xA;&#x9;&#x9;if (getOntology() != null) {&#xA;&#x9;&#x9;&#x9;final String owl = getOWL();&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;Toolkit tk = Toolkit.getDefaultToolkit();&#xA;&#x9;&#x9;&#x9;&#x9;Clipboard cb = tk.getSystemClipboard();&#xA;&#x9;&#x9;&#x9;&#x9;cb.setContents(new Transferable() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public Object getTransferData(DataFlavor flavor)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throws UnsupportedFlavorException, IOException {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (DataFlavor.stringFlavor.equals(flavor)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return owl;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public DataFlavor[] getTransferDataFlavors() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;DataFlavor[] df = {DataFlavor.stringFlavor};&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return df;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public boolean isDataFlavorSupported(DataFlavor flavor) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return (DataFlavor.stringFlavor.equals(flavor));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}, new ClipboardOwner() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public void lostOwnership(Clipboard clipboard,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Transferable contents) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;&#x9;&#x9;getView().setStatus(&quot;Platform copied&quot;);&#xA;&#x9;&#x9;&#x9;} catch (java.security.AccessControlException e) {&#xA;&#x9;&#x9;&#x9;&#x9;CopyToClipboardView ctcbView = ViewFactory.getDefault().createCopyToClipboardView();&#xA;&#x9;&#x9;&#x9;&#x9;ctcbView.setCopyText(owl);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}</body>
+                  <body>System.out.println(&quot;Submit clicked&quot;);&#xA;if (getOntology() != null) {&#xA;&#x9;&#x9;&#x9;final String owl = getOWL();&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;Toolkit tk = Toolkit.getDefaultToolkit();&#xA;&#x9;&#x9;&#x9;&#x9;Clipboard cb = tk.getSystemClipboard();&#xA;&#x9;&#x9;&#x9;&#x9;cb.setContents(new Transferable() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public Object getTransferData(DataFlavor flavor)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throws UnsupportedFlavorException, IOException {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (DataFlavor.stringFlavor.equals(flavor)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return owl;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public DataFlavor[] getTransferDataFlavors() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;DataFlavor[] df = {DataFlavor.stringFlavor};&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return df;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public boolean isDataFlavorSupported(DataFlavor flavor) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return (DataFlavor.stringFlavor.equals(flavor));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}, new ClipboardOwner() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;public void lostOwnership(Clipboard clipboard,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Transferable contents) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;&#x9;&#x9;getView().setStatus(&quot;Platform copied&quot;);&#xA;&#x9;&#x9;&#x9;} catch (java.security.AccessControlException e) {&#xA;&#x9;&#x9;&#x9;&#x9;CopyToClipboardView ctcbView = ViewFactory.getDefault()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;.createCopyToClipboardView();&#xA;&#x9;&#x9;&#x9;&#x9;ctcbView.setCopyText(owl);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}</body>
                 </ownedBehavior>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_b8_ZsDCBEd2NeaEjqU5_yA" name="DiscoveryApplet_getOWLBehavior" specification="_Tf4qgDCBEd2NeaEjqU5_yA">
-                  <ownedParameter xmi:id="_qU23IDCBEd2NeaEjqU5_yA" name="return" direction="return">
+                  <ownedParameter xmi:id="_qU23IDCBEd2NeaEjqU5_yA" name="return" visibility="public" direction="return" effect="create">
                     <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                   </ownedParameter>
                   <language>java</language>
-                  <body>&#x9;&#x9;if (getOntology() != null) {&#xA;&#x9;&#x9;&#x9;final ByteArrayOutputStream out = new ByteArrayOutputStream();&#xA;&#x9;&#x9;&#x9;getOntology().toOWL(out);&#xA;&#x9;&#x9;&#x9;return out.toString();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return null;</body>
+                  <body>if (getOntology() != null) {&#xA;&#x9;&#x9;&#x9;final ByteArrayOutputStream out = new ByteArrayOutputStream();&#xA;&#x9;&#x9;&#x9;getOntology().toOWL(out);&#xA;&#x9;&#x9;&#x9;return out.toString();&#xA;&#x9;&#x9;}&#xA;return null;</body>
                 </ownedBehavior>
                 <interfaceRealization xmi:id="_7XZwYy2HEd2e7od4K9wNBA" name="InterfaceRealization1" supplier="_e4LI8C2CEd2e7od4K9wNBA" client="_RBdGAC1cEd2KTNOPeUc_7g" contract="_e4LI8C2CEd2e7od4K9wNBA"/>
-                <ownedOperation xmi:id="_OrNAgC2BEd2e7od4K9wNBA" name="init" method="_nXi-cC2BEd2e7od4K9wNBA"/>
-                <ownedOperation xmi:id="_RYXKUC2BEd2e7od4K9wNBA" name="start" method="_n_-3cC2BEd2e7od4K9wNBA"/>
-                <ownedOperation xmi:id="_SspcsC2BEd2e7od4K9wNBA" name="stop" method="_od9M4C2BEd2e7od4K9wNBA"/>
-                <ownedOperation xmi:id="_V0i9kC2IEd2e7od4K9wNBA" name="onSubmit" method="_aHLQYC2IEd2e7od4K9wNBA"/>
-                <ownedOperation xmi:id="_Tf4qgDCBEd2NeaEjqU5_yA" name="getOWL" method="_b8_ZsDCBEd2NeaEjqU5_yA">
-                  <ownedParameter xmi:id="_VBve0DCBEd2NeaEjqU5_yA" name="return" direction="return">
+                <ownedOperation xmi:id="_OrNAgC2BEd2e7od4K9wNBA" name="init" visibility="public" method="_nXi-cC2BEd2e7od4K9wNBA"/>
+                <ownedOperation xmi:id="_RYXKUC2BEd2e7od4K9wNBA" name="start" visibility="public" method="_n_-3cC2BEd2e7od4K9wNBA"/>
+                <ownedOperation xmi:id="_SspcsC2BEd2e7od4K9wNBA" name="stop" visibility="public" method="_od9M4C2BEd2e7od4K9wNBA"/>
+                <ownedOperation xmi:id="_V0i9kC2IEd2e7od4K9wNBA" name="onSubmit" visibility="public" method="_aHLQYC2IEd2e7od4K9wNBA"/>
+                <ownedOperation xmi:id="_Tf4qgDCBEd2NeaEjqU5_yA" name="getOWL" visibility="public" method="_b8_ZsDCBEd2NeaEjqU5_yA">
+                  <ownedParameter xmi:id="_VBve0DCBEd2NeaEjqU5_yA" name="return" visibility="public" direction="return" effect="create">
                     <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                   </ownedParameter>
                 </ownedOperation>
@@ -56,65 +56,65 @@
               <packagedElement xmi:type="uml:Package" xmi:id="_uUurcC1fEd2e7od4K9wNBA" name="model">
                 <packagedElement xmi:type="uml:Class" xmi:id="_szP1IC1gEd2e7od4K9wNBA" name="PlatformOntology" clientDependency="_JhR6Uy12Ed2e7od4K9wNBA _VuyHEy14Ed2e7od4K9wNBA">
                   <generalization xmi:id="_iKLm4y1vEd2e7od4K9wNBA" general="_yNtm0C1tEd2e7od4K9wNBA"/>
-                  <ownedAttribute xmi:id="_En1PPC1iEd2e7od4K9wNBA" name="individual" type="_uGoIkC1gEd2e7od4K9wNBA" isOrdered="true" aggregation="composite" association="_En1POC1iEd2e7od4K9wNBA">
+                  <ownedAttribute xmi:id="_En1PPC1iEd2e7od4K9wNBA" name="individual" visibility="public" type="_uGoIkC1gEd2e7od4K9wNBA" isOrdered="true" aggregation="composite" association="_En1POC1iEd2e7od4K9wNBA">
                     <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_En1PPS1iEd2e7od4K9wNBA" value="*"/>
                     <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_En1PPi1iEd2e7od4K9wNBA"/>
                   </ownedAttribute>
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_6PyU8C1vEd2e7od4K9wNBA" name="PlatformOntology_toOWLBehavior" specification="_6Py8AC1vEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_6PyU8S1vEd2e7od4K9wNBA" name="out">
+                    <ownedParameter xmi:id="_6PyU8S1vEd2e7od4K9wNBA" name="out" visibility="public" effect="create">
                       <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
                     </ownedParameter>
                     <language>java</language>
-                    <body>&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;InputStream header = getClass().getResourceAsStream(&quot;PlatformOntologyHeader.txt&quot;);&#xA;&#x9;&#x9;&#x9;int data;&#xA;&#x9;&#x9;&#x9;while ((data = header.read()) > -1) {&#xA;&#x9;&#x9;&#x9;&#x9;out.write(data);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;header.close();&#xA;&#x9;&#x9;&#x9;for (Enumeration e = getIndividuals(); e.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;&#x9;Individual i = (Individual) e.nextElement();&#xA;&#x9;&#x9;&#x9;&#x9;i.toOWL(out);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;InputStream footer = getClass().getResourceAsStream(&quot;PlatformOntologyFooter.txt&quot;);&#xA;&#x9;&#x9;&#x9;while ((data = footer.read()) > -1) {&#xA;&#x9;&#x9;&#x9;&#x9;out.write(data);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;footer.close();&#xA;&#x9;&#x9;&#x9;out.flush();&#xA;&#x9;&#x9;} catch (IOException e) {&#xA;&#x9;&#x9;&#x9;e.printStackTrace();&#xA;&#x9;&#x9;}</body>
+                    <body>try {&#xA;&#x9;&#x9;&#x9;InputStream header = getClass().getResourceAsStream(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;PlatformOntologyHeader.txt&quot;);&#xA;&#x9;&#x9;&#x9;int data;&#xA;&#x9;&#x9;&#x9;while ((data = header.read()) > -1) {&#xA;&#x9;&#x9;&#x9;&#x9;out.write(data);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;header.close();&#xA;&#x9;&#x9;&#x9;for (Enumeration e = getIndividuals(); e.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;&#x9;Individual i = (Individual) e.nextElement();&#xA;&#x9;&#x9;&#x9;&#x9;i.toOWL(out);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;InputStream footer = getClass().getResourceAsStream(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;PlatformOntologyFooter.txt&quot;);&#xA;&#x9;&#x9;&#x9;while ((data = footer.read()) > -1) {&#xA;&#x9;&#x9;&#x9;&#x9;out.write(data);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;footer.close();&#xA;&#x9;&#x9;&#x9;out.flush();&#xA;&#x9;&#x9;} catch (IOException e) {&#xA;&#x9;&#x9;&#x9;e.printStackTrace();&#xA;&#x9;&#x9;}</body>
                   </ownedBehavior>
-                  <ownedOperation xmi:id="_6Py8AC1vEd2e7od4K9wNBA" name="toOWL" method="_6PyU8C1vEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_6Py8AS1vEd2e7od4K9wNBA" name="out">
+                  <ownedOperation xmi:id="_6Py8AC1vEd2e7od4K9wNBA" name="toOWL" visibility="public" method="_6PyU8C1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_6Py8AS1vEd2e7od4K9wNBA" name="out" visibility="public" effect="create">
                       <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
                     </ownedParameter>
                   </ownedOperation>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Class" xmi:id="_uGoIkC1gEd2e7od4K9wNBA" name="Individual" clientDependency="_KTjEwy12Ed2e7od4K9wNBA _WMZQIy14Ed2e7od4K9wNBA">
                   <generalization xmi:id="_ibk44C1vEd2e7od4K9wNBA" general="_yNtm0C1tEd2e7od4K9wNBA"/>
-                  <ownedAttribute xmi:id="_En1POS1iEd2e7od4K9wNBA" name="ontology" type="_szP1IC1gEd2e7od4K9wNBA" association="_En1POC1iEd2e7od4K9wNBA">
+                  <ownedAttribute xmi:id="_En1POS1iEd2e7od4K9wNBA" name="ontology" visibility="public" type="_szP1IC1gEd2e7od4K9wNBA" association="_En1POC1iEd2e7od4K9wNBA">
                     <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_En1POi1iEd2e7od4K9wNBA" value="1"/>
                     <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_En1POy1iEd2e7od4K9wNBA"/>
                   </ownedAttribute>
-                  <ownedAttribute xmi:id="_WOBCzC1iEd2e7od4K9wNBA" name="slot" type="_IQ-VkC1hEd2e7od4K9wNBA" isOrdered="true" aggregation="composite" association="_WOBCyC1iEd2e7od4K9wNBA">
+                  <ownedAttribute xmi:id="_WOBCzC1iEd2e7od4K9wNBA" name="slot" visibility="public" type="_IQ-VkC1hEd2e7od4K9wNBA" isOrdered="true" aggregation="composite" association="_WOBCyC1iEd2e7od4K9wNBA">
                     <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WOBCzS1iEd2e7od4K9wNBA" value="*"/>
                     <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WOBCzi1iEd2e7od4K9wNBA"/>
                   </ownedAttribute>
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_6GyJ8C1vEd2e7od4K9wNBA" name="Individual_toOWLBehavior" specification="_6GyxAC1vEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_6GyJ8S1vEd2e7od4K9wNBA" name="out">
+                    <ownedParameter xmi:id="_6GyJ8S1vEd2e7od4K9wNBA" name="out" visibility="public" effect="create">
                       <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
                     </ownedParameter>
                     <language>java</language>
-                    <body>&#x9;&#x9;PrintStream pout = new PrintStream(out);&#xA;&#x9;&#x9;pout.print(&quot;  &lt;&quot;);&#xA;&#x9;&#x9;pout.print(getClassRef());&#xA;&#x9;&#x9;pout.print(&quot; rdf:ID=\&quot;&quot;);&#xA;&#x9;&#x9;pout.print(getName());&#xA;&#x9;&#x9;pout.println(&quot;\&quot;>&quot;);&#xA;&#x9;&#x9;pout.flush();&#xA;&#x9;&#x9;for (Enumeration e = getSlots(); e.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;Slot s = (Slot) e.nextElement();&#xA;&#x9;&#x9;&#x9;s.toOWL(out);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;pout.print(&quot;  &lt;/&quot;);&#xA;&#x9;&#x9;pout.print(getClassRef());&#xA;&#x9;&#x9;pout.println(&quot;>&quot;);&#xA;&#x9;&#x9;pout.flush();</body>
+                    <body>PrintStream pout = new PrintStream(out);&#xA;pout.print(&quot;  &lt;&quot;);&#xA;pout.print(getClassRef());&#xA;pout.print(&quot; rdf:ID=\&quot;&quot;);&#xA;pout.print(getName());&#xA;pout.println(&quot;\&quot;>&quot;);&#xA;pout.flush();&#xA;for (Enumeration e = getSlots(); e.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;Slot s = (Slot) e.nextElement();&#xA;&#x9;&#x9;&#x9;s.toOWL(out);&#xA;&#x9;&#x9;}&#xA;pout.print(&quot;  &lt;/&quot;);&#xA;pout.print(getClassRef());&#xA;pout.println(&quot;>&quot;);&#xA;pout.flush();</body>
                   </ownedBehavior>
-                  <ownedOperation xmi:id="_6GyxAC1vEd2e7od4K9wNBA" name="toOWL" method="_6GyJ8C1vEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_6GyxAS1vEd2e7od4K9wNBA" name="out">
+                  <ownedOperation xmi:id="_6GyxAC1vEd2e7od4K9wNBA" name="toOWL" visibility="public" method="_6GyJ8C1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_6GyxAS1vEd2e7od4K9wNBA" name="out" visibility="public" effect="create">
                       <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
                     </ownedParameter>
                   </ownedOperation>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Class" xmi:id="_IQ-VkC1hEd2e7od4K9wNBA" name="Slot" clientDependency="_KqI_0i12Ed2e7od4K9wNBA">
                   <generalization xmi:id="_itfvUy1vEd2e7od4K9wNBA" general="_yNtm0C1tEd2e7od4K9wNBA"/>
-                  <ownedAttribute xmi:id="_WOBCyS1iEd2e7od4K9wNBA" name="individual" type="_uGoIkC1gEd2e7od4K9wNBA" association="_WOBCyC1iEd2e7od4K9wNBA">
+                  <ownedAttribute xmi:id="_WOBCyS1iEd2e7od4K9wNBA" name="individual" visibility="public" type="_uGoIkC1gEd2e7od4K9wNBA" association="_WOBCyC1iEd2e7od4K9wNBA">
                     <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WOBCyi1iEd2e7od4K9wNBA" value="1"/>
                     <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WOBCyy1iEd2e7od4K9wNBA" value="1"/>
                   </ownedAttribute>
-                  <ownedAttribute xmi:id="_BaYH3C16Ed2e7od4K9wNBA" name="value" type="_uGoIkC1gEd2e7od4K9wNBA" association="_BaYH2C16Ed2e7od4K9wNBA">
+                  <ownedAttribute xmi:id="_BaYH3C16Ed2e7od4K9wNBA" name="value" visibility="public" type="_uGoIkC1gEd2e7od4K9wNBA" association="_BaYH2C16Ed2e7od4K9wNBA">
                     <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BaYH3S16Ed2e7od4K9wNBA" value="1"/>
                     <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BaYH3i16Ed2e7od4K9wNBA" value="1"/>
                   </ownedAttribute>
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_54--gC1vEd2e7od4K9wNBA" name="Slot_toOWLBehavior" specification="_54--gi1vEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_54--gS1vEd2e7od4K9wNBA" name="out">
+                    <ownedParameter xmi:id="_54--gS1vEd2e7od4K9wNBA" name="out" visibility="public" effect="create">
                       <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
                     </ownedParameter>
                     <language>java</language>
-                    <body>&#x9;&#x9;PrintStream pout = new PrintStream(out);&#xA;&#x9;&#x9;pout.print(&quot;    &lt;&quot;);&#xA;&#x9;&#x9;pout.print(getClassRef());&#xA;&#x9;&#x9;boolean dataTypeProperty = false;&#xA;&#x9;&#x9;if (getValue() != null) {&#xA;&#x9;&#x9;&#x9;if (&quot;xsd&quot;.equals(getValue().getClassNS())) {&#xA;&#x9;&#x9;&#x9;&#x9;dataTypeProperty = true;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;if (dataTypeProperty) {&#xA;&#x9;&#x9;&#x9;pout.print(&quot; rdf:datatype=\&quot;&amp;&quot;);&#xA;&#x9;&#x9;&#x9;pout.print(getValue().getClassNS());&#xA;&#x9;&#x9;&#x9;pout.print(&quot;;#&quot;);&#xA;&#x9;&#x9;&#x9;pout.print(getValue().getClassName());&#xA;&#x9;&#x9;&#x9;pout.print(&quot;\&quot;>&quot;);&#xA;&#x9;&#x9;&#x9;pout.print(getValue().getName());&#xA;&#x9;&#x9;&#x9;pout.print(&quot;&lt;/&quot;);&#xA;&#x9;&#x9;&#x9;pout.print(getClassRef());&#xA;&#x9;&#x9;&#x9;pout.println(&quot;>&quot;);&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;pout.print(&quot; rdf:resource=\&quot;&quot;);&#xA;&#x9;&#x9;&#x9;if (getValue() != null) {&#xA;&#x9;&#x9;&#x9;&#x9;pout.print(getValue().getRef());&#xA;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;pout.print(&quot;NULL&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;pout.println(&quot;\&quot;/>&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;pout.flush();</body>
+                    <body>PrintStream pout = new PrintStream(out);&#xA;pout.print(&quot;    &lt;&quot;);&#xA;pout.print(getClassRef());&#xA;boolean dataTypeProperty = false;&#xA;if (getValue() != null) {&#xA;&#x9;&#x9;&#x9;if (&quot;xsd&quot;.equals(getValue().getClassNS())) {&#xA;&#x9;&#x9;&#x9;&#x9;dataTypeProperty = true;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;if (dataTypeProperty) {&#xA;&#x9;&#x9;&#x9;pout.print(&quot; rdf:datatype=\&quot;&amp;&quot;);&#xA;&#x9;&#x9;&#x9;pout.print(getValue().getClassNS());&#xA;&#x9;&#x9;&#x9;pout.print(&quot;;#&quot;);&#xA;&#x9;&#x9;&#x9;pout.print(getValue().getClassName());&#xA;&#x9;&#x9;&#x9;pout.print(&quot;\&quot;>&quot;);&#xA;&#x9;&#x9;&#x9;pout.print(getValue().getName());&#xA;&#x9;&#x9;&#x9;pout.print(&quot;&lt;/&quot;);&#xA;&#x9;&#x9;&#x9;pout.print(getClassRef());&#xA;&#x9;&#x9;&#x9;pout.println(&quot;>&quot;);&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;pout.print(&quot; rdf:resource=\&quot;&quot;);&#xA;&#x9;&#x9;&#x9;if (getValue() != null) {&#xA;&#x9;&#x9;&#x9;&#x9;pout.print(getValue().getRef());&#xA;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;pout.print(&quot;NULL&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;pout.println(&quot;\&quot;/>&quot;);&#xA;&#x9;&#x9;}&#xA;pout.flush();</body>
                   </ownedBehavior>
-                  <ownedOperation xmi:id="_54--gi1vEd2e7od4K9wNBA" name="toOWL" method="_54--gC1vEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_54--gy1vEd2e7od4K9wNBA" name="out">
+                  <ownedOperation xmi:id="_54--gi1vEd2e7od4K9wNBA" name="toOWL" visibility="public" method="_54--gC1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_54--gy1vEd2e7od4K9wNBA" name="out" visibility="public" effect="create">
                       <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
                     </ownedParameter>
                   </ownedOperation>
@@ -122,49 +122,49 @@
                 <packagedElement xmi:type="uml:Association" xmi:id="_En1POC1iEd2e7od4K9wNBA" name="Association_PlatformOntology_Individual" memberEnd="_En1POS1iEd2e7od4K9wNBA _En1PPC1iEd2e7od4K9wNBA"/>
                 <packagedElement xmi:type="uml:Association" xmi:id="_WOBCyC1iEd2e7od4K9wNBA" name="Association_Individual_Slot" memberEnd="_WOBCyS1iEd2e7od4K9wNBA _WOBCzC1iEd2e7od4K9wNBA"/>
                 <packagedElement xmi:type="uml:Class" xmi:id="_yNtm0C1tEd2e7od4K9wNBA" name="OntologyElement" isAbstract="true">
-                  <ownedAttribute xmi:id="_4J7kEC1hEd2e7od4K9wNBA" name="classNS">
+                  <ownedAttribute xmi:id="_4J7kEC1hEd2e7od4K9wNBA" name="classNS" visibility="public">
                     <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                   </ownedAttribute>
-                  <ownedAttribute xmi:id="_5lh_YC1hEd2e7od4K9wNBA" name="className">
+                  <ownedAttribute xmi:id="_5lh_YC1hEd2e7od4K9wNBA" name="className" visibility="public">
                     <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                   </ownedAttribute>
-                  <ownedAttribute xmi:id="_A7uJ0C1iEd2e7od4K9wNBA" name="namespace">
+                  <ownedAttribute xmi:id="_A7uJ0C1iEd2e7od4K9wNBA" name="namespace" visibility="public">
                     <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                   </ownedAttribute>
-                  <ownedAttribute xmi:id="_GFxYkC19Ed2e7od4K9wNBA" name="name">
+                  <ownedAttribute xmi:id="_GFxYkC19Ed2e7od4K9wNBA" name="name" visibility="public">
                     <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                   </ownedAttribute>
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zFresC1vEd2e7od4K9wNBA" name="OntologyElement_toOWLBehavior" specification="_0cvqMC1tEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_4qkqoC1vEd2e7od4K9wNBA" name="out">
+                    <ownedParameter xmi:id="_4qkqoC1vEd2e7od4K9wNBA" name="out" visibility="public" effect="create">
                       <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
                     </ownedParameter>
                   </ownedBehavior>
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_klfqYC19Ed2e7od4K9wNBA" name="OntologyElement_getRefBehavior" specification="_TFsysi19Ed2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_ur89AC19Ed2e7od4K9wNBA" name="return" direction="return">
+                    <ownedParameter xmi:id="_ur89AC19Ed2e7od4K9wNBA" name="return" visibility="public" direction="return" effect="create">
                       <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                     </ownedParameter>
                     <language>java</language>
-                    <body>&#x9;&#x9;StringBuffer buf = new StringBuffer();&#xD;&#x9;&#x9;if (getNamespace() != null) {&#xD;&#x9;&#x9;&#x9;buf.append('&amp;');&#xD;&#x9;&#x9;&#x9;buf.append(getNamespace());&#xD;&#x9;&#x9;&#x9;buf.append(';');&#xD;&#x9;&#x9;}&#xD;&#x9;&#x9;buf.append('#');&#xD;&#x9;&#x9;buf.append(getName());&#xD;&#x9;&#x9;return buf.toString();</body>
+                    <body>StringBuffer buf = new StringBuffer();&#xA;if (getNamespace() != null) {&#xA;&#x9;&#x9;&#x9;buf.append('&amp;');&#xA;&#x9;&#x9;&#x9;buf.append(getNamespace());&#xA;&#x9;&#x9;&#x9;buf.append(';');&#xA;&#x9;&#x9;}&#xA;buf.append('#');&#xA;buf.append(getName());&#xA;return buf.toString();</body>
                   </ownedBehavior>
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_uREiYC1-Ed2e7od4K9wNBA" name="OntologyElement_getClassRefBehavior" specification="_qY1FgC1-Ed2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_AO2WkC1_Ed2e7od4K9wNBA" name="return" direction="return">
+                    <ownedParameter xmi:id="_AO2WkC1_Ed2e7od4K9wNBA" name="return" visibility="public" direction="return" effect="create">
                       <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                     </ownedParameter>
                     <language>java</language>
-                    <body>&#x9;&#x9;StringBuffer buf = new StringBuffer();&#xD;&#x9;&#x9;buf.append(getClassNS());&#xD;&#x9;&#x9;buf.append(':');&#xD;&#x9;&#x9;buf.append(getClassName());&#xD;&#x9;&#x9;return buf.toString();</body>
+                    <body>StringBuffer buf = new StringBuffer();&#xA;buf.append(getClassNS());&#xA;buf.append(':');&#xA;buf.append(getClassName());&#xA;return buf.toString();</body>
                   </ownedBehavior>
-                  <ownedOperation xmi:id="_0cvqMC1tEd2e7od4K9wNBA" name="toOWL" method="_zFresC1vEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_jvnJEC1uEd2e7od4K9wNBA" name="out">
+                  <ownedOperation xmi:id="_0cvqMC1tEd2e7od4K9wNBA" name="toOWL" visibility="public" method="_zFresC1vEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_jvnJEC1uEd2e7od4K9wNBA" name="out" visibility="public" effect="create">
                       <type xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_JDw8EC1vEd2e7od4K9wNBA"/>
                     </ownedParameter>
                   </ownedOperation>
-                  <ownedOperation xmi:id="_TFsysi19Ed2e7od4K9wNBA" name="getRef" method="_klfqYC19Ed2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_gRthAC19Ed2e7od4K9wNBA" name="return" direction="return">
+                  <ownedOperation xmi:id="_TFsysi19Ed2e7od4K9wNBA" name="getRef" visibility="public" method="_klfqYC19Ed2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_gRthAC19Ed2e7od4K9wNBA" name="return" visibility="public" direction="return" effect="create">
                       <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                     </ownedParameter>
                   </ownedOperation>
-                  <ownedOperation xmi:id="_qY1FgC1-Ed2e7od4K9wNBA" name="getClassRef" method="_uREiYC1-Ed2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_rhqV0C1-Ed2e7od4K9wNBA" name="return" direction="return">
+                  <ownedOperation xmi:id="_qY1FgC1-Ed2e7od4K9wNBA" name="getClassRef" visibility="public" method="_uREiYC1-Ed2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_rhqV0C1-Ed2e7od4K9wNBA" name="return" visibility="public" direction="return" effect="create">
                       <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                     </ownedParameter>
                   </ownedOperation>
@@ -185,7 +185,7 @@
                   <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_6Kkv0PfuEdqaqL9wEVL3aA"/>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Association" xmi:id="_BaYH2C16Ed2e7od4K9wNBA" name="Association_Slot_Individual" memberEnd="_BaYH2S16Ed2e7od4K9wNBA _BaYH3C16Ed2e7od4K9wNBA">
-                  <ownedEnd xmi:id="_BaYH2S16Ed2e7od4K9wNBA" name="slot" type="_IQ-VkC1hEd2e7od4K9wNBA" association="_BaYH2C16Ed2e7od4K9wNBA">
+                  <ownedEnd xmi:id="_BaYH2S16Ed2e7od4K9wNBA" name="slot" visibility="public" type="_IQ-VkC1hEd2e7od4K9wNBA" association="_BaYH2C16Ed2e7od4K9wNBA">
                     <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BaYH2i16Ed2e7od4K9wNBA" value="1"/>
                     <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BaYH2y16Ed2e7od4K9wNBA" value="1"/>
                   </ownedEnd>
@@ -193,33 +193,33 @@
               </packagedElement>
               <packagedElement xmi:type="uml:Dependency" xmi:id="_-B99Yy2AEd2e7od4K9wNBA" name="DiscoveryApplet_modelDependency" supplier="_uUurcC1fEd2e7od4K9wNBA" client="_RBdGAC1cEd2KTNOPeUc_7g"/>
               <packagedElement xmi:type="uml:Association" xmi:id="_ZKebyC2BEd2e7od4K9wNBA" name="Association_DiscoveryApplet_PlatformOntology" memberEnd="_ZKebyS2BEd2e7od4K9wNBA _ZKebzC2BEd2e7od4K9wNBA">
-                <ownedEnd xmi:id="_ZKebyS2BEd2e7od4K9wNBA" name="applet" type="_RBdGAC1cEd2KTNOPeUc_7g" association="_ZKebyC2BEd2e7od4K9wNBA">
+                <ownedEnd xmi:id="_ZKebyS2BEd2e7od4K9wNBA" name="applet" visibility="public" type="_RBdGAC1cEd2KTNOPeUc_7g" association="_ZKebyC2BEd2e7od4K9wNBA">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZKebyi2BEd2e7od4K9wNBA" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZKebyy2BEd2e7od4K9wNBA"/>
                 </ownedEnd>
               </packagedElement>
               <packagedElement xmi:type="uml:Package" xmi:id="_ICi1AC2CEd2e7od4K9wNBA" name="view">
                 <packagedElement xmi:type="uml:Interface" xmi:id="_RX_hcC2CEd2e7od4K9wNBA" name="MainView">
-                  <ownedOperation xmi:id="_autZMi2CEd2e7od4K9wNBA" name="setEnabled" isAbstract="true">
-                    <ownedParameter xmi:id="_q6-McC2CEd2e7od4K9wNBA" name="enabled">
+                  <ownedOperation xmi:id="_autZMi2CEd2e7od4K9wNBA" name="setEnabled" visibility="public" isAbstract="true">
+                    <ownedParameter xmi:id="_q6-McC2CEd2e7od4K9wNBA" name="enabled" visibility="public" effect="create">
                       <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_--NgwPyKEdqlTr7ZXrCGhQ"/>
                     </ownedParameter>
                   </ownedOperation>
-                  <ownedOperation xmi:id="_b4ZlIi2CEd2e7od4K9wNBA" name="addListener" isAbstract="true">
-                    <ownedParameter xmi:id="_1TxMQC2CEd2e7od4K9wNBA" name="listener" type="_e4LI8C2CEd2e7od4K9wNBA"/>
+                  <ownedOperation xmi:id="_b4ZlIi2CEd2e7od4K9wNBA" name="addListener" visibility="public" isAbstract="true">
+                    <ownedParameter xmi:id="_1TxMQC2CEd2e7od4K9wNBA" name="listener" visibility="public" type="_e4LI8C2CEd2e7od4K9wNBA" effect="create"/>
                   </ownedOperation>
-                  <ownedOperation xmi:id="_XHgYQC2eEd2B-Yp_XuL6wA" name="setStatus" isAbstract="true">
-                    <ownedParameter xmi:id="_ZBIMUC2eEd2B-Yp_XuL6wA" name="status">
+                  <ownedOperation xmi:id="_XHgYQC2eEd2B-Yp_XuL6wA" name="setStatus" visibility="public" isAbstract="true">
+                    <ownedParameter xmi:id="_ZBIMUC2eEd2B-Yp_XuL6wA" name="status" visibility="public" effect="create">
                       <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                     </ownedParameter>
                   </ownedOperation>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Package" xmi:id="_RpXlUi2CEd2e7od4K9wNBA" name="awt">
-                  <packagedElement xmi:type="uml:Class" xmi:id="_C_VkYC2DEd2e7od4K9wNBA" name="AWTMainView" clientDependency="_kBF4oy2EEd2e7od4K9wNBA _6GUqYy2EEd2e7od4K9wNBA __7MMAy2EEd2e7od4K9wNBA _pQWEYy2HEd2e7od4K9wNBA">
+                  <packagedElement xmi:type="uml:Class" xmi:id="_C_VkYC2DEd2e7od4K9wNBA" name="AWTMainView" clientDependency="_6GUqYy2EEd2e7od4K9wNBA __7MMAy2EEd2e7od4K9wNBA _pQWEYy2HEd2e7od4K9wNBA _kBF4oy2EEd2e7od4K9wNBA">
                     <generalization xmi:id="_BQ92sy2GEd2e7od4K9wNBA">
                       <general xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_cEVFUEVbEdu1R4x2hFmiHQ"/>
                     </generalization>
-                    <ownedAttribute xmi:id="_cBVXXC2FEd2e7od4K9wNBA" name="listener" type="_e4LI8C2CEd2e7od4K9wNBA" association="_cBVXWC2FEd2e7od4K9wNBA">
+                    <ownedAttribute xmi:id="_cBVXXC2FEd2e7od4K9wNBA" name="listener" visibility="public" type="_e4LI8C2CEd2e7od4K9wNBA" association="_cBVXWC2FEd2e7od4K9wNBA">
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cBVXXS2FEd2e7od4K9wNBA" value="*"/>
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cBVXXi2FEd2e7od4K9wNBA"/>
                     </ownedAttribute>
@@ -242,28 +242,28 @@
                       <defaultValue xmi:type="uml:LiteralString" xmi:id="_cK99sDvbEd-pu7TKTCLWYA" value="1096960877634530506L"/>
                     </ownedAttribute>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_rrfYgC2EEd2e7od4K9wNBA" name="AWTMainViewBehavior" specification="_lZufgC2EEd2e7od4K9wNBA">
-                      <ownedParameter xmi:id="_vgL8sC2FEd2e7od4K9wNBA" name="return" type="_C_VkYC2DEd2e7od4K9wNBA" direction="return"/>
+                      <ownedParameter xmi:id="_vgL8sC2FEd2e7od4K9wNBA" name="return" visibility="public" type="_C_VkYC2DEd2e7od4K9wNBA" direction="return" effect="create"/>
                       <language>java</language>
-                      <body>&#x9;&#x9;submitBtn.addActionListener(new ActionListener() {&#xA;&#x9;&#x9;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;notifySubmitClicked();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;&#x9;&#x9;setLayout(new FlowLayout());&#xD;&#x9;&#x9;add(status);&#xA;&#x9;&#x9;add(submitBtn);&#xD;&#x9;&#x9;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().setLayout(new BorderLayout());&#xA;&#x9;&#x9;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().add(this, BorderLayout.CENTER);</body>
+                      <body>submitBtn.addActionListener(new ActionListener() {&#xA;&#x9;&#x9;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;notifySubmitClicked();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;setLayout(new FlowLayout());&#xA;add(status);&#xA;add(submitBtn);&#xA;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance()&#xA;&#x9;&#x9;&#x9;&#x9;.setLayout(new BorderLayout());&#xA;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().add(this,&#xA;&#x9;&#x9;&#x9;&#x9;BorderLayout.CENTER);</body>
                     </ownedBehavior>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_WnhvIC2HEd2e7od4K9wNBA" name="AWTMainView_notifySubmitClickedBehavior" specification="_JYVJ8C2HEd2e7od4K9wNBA">
                       <language>java</language>
-                      <body>&#x9;&#x9;for (java.util.Enumeration ls = getListeners(); ls.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;((MainViewListener) ls.nextElement()).onSubmit();&#xA;&#x9;&#x9;}</body>
+                      <body>for (java.util.Enumeration ls = getListeners(); ls.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;((MainViewListener) ls.nextElement()).onSubmit();&#xA;&#x9;&#x9;}</body>
                     </ownedBehavior>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0tAdgC2eEd2B-Yp_XuL6wA" name="AWTMainView_setStatusBehaviour" specification="_nuQIEC2eEd2B-Yp_XuL6wA">
-                      <ownedParameter xmi:id="_iqEnEC2fEd2B-Yp_XuL6wA" name="status">
+                      <ownedParameter xmi:id="_iqEnEC2fEd2B-Yp_XuL6wA" name="status" visibility="public" effect="create">
                         <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                       </ownedParameter>
                       <language>java</language>
-                      <body>&#x9;&#x9;this.status.setText(status);</body>
+                      <body>this.status.setText(status);</body>
                     </ownedBehavior>
                     <interfaceRealization xmi:id="_kBF4oy2EEd2e7od4K9wNBA" name="InterfaceRealization1" supplier="_RX_hcC2CEd2e7od4K9wNBA" client="_C_VkYC2DEd2e7od4K9wNBA" contract="_RX_hcC2CEd2e7od4K9wNBA"/>
-                    <ownedOperation xmi:id="_lZufgC2EEd2e7od4K9wNBA" name="AWTMainView" method="_rrfYgC2EEd2e7od4K9wNBA">
-                      <ownedParameter xmi:id="_mhexwC2EEd2e7od4K9wNBA" name="return" type="_C_VkYC2DEd2e7od4K9wNBA" direction="return"/>
+                    <ownedOperation xmi:id="_lZufgC2EEd2e7od4K9wNBA" name="AWTMainView" visibility="public" method="_rrfYgC2EEd2e7od4K9wNBA">
+                      <ownedParameter xmi:id="_mhexwC2EEd2e7od4K9wNBA" name="return" visibility="public" type="_C_VkYC2DEd2e7od4K9wNBA" direction="return" effect="create"/>
                     </ownedOperation>
                     <ownedOperation xmi:id="_JYVJ8C2HEd2e7od4K9wNBA" name="notifySubmitClicked" visibility="private" method="_WnhvIC2HEd2e7od4K9wNBA"/>
-                    <ownedOperation xmi:id="_nuQIEC2eEd2B-Yp_XuL6wA" name="setStatus" method="_0tAdgC2eEd2B-Yp_XuL6wA">
-                      <ownedParameter xmi:id="_nuQIES2eEd2B-Yp_XuL6wA" name="status">
+                    <ownedOperation xmi:id="_nuQIEC2eEd2B-Yp_XuL6wA" name="setStatus" visibility="public" method="_0tAdgC2eEd2B-Yp_XuL6wA">
+                      <ownedParameter xmi:id="_nuQIES2eEd2B-Yp_XuL6wA" name="status" visibility="public" effect="create">
                         <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                       </ownedParameter>
                     </ownedOperation>
@@ -271,12 +271,12 @@
                   <packagedElement xmi:type="uml:Class" xmi:id="_02_UMC2DEd2e7od4K9wNBA" name="AWTViewFactory" clientDependency="_6aJawy2DEd2e7od4K9wNBA _0GquMzh-Ed2LtPiPcfHlaQ">
                     <generalization xmi:id="_2sJfAy2DEd2e7od4K9wNBA" general="_KAKi0C2DEd2e7od4K9wNBA"/>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_YEFUEC2EEd2e7od4K9wNBA" name="AWTViewFactoryBehavior" specification="_OHNbQC2EEd2e7od4K9wNBA">
-                      <ownedParameter xmi:id="_hZm5AC2EEd2e7od4K9wNBA" name="return" type="_02_UMC2DEd2e7od4K9wNBA" direction="return"/>
+                      <ownedParameter xmi:id="_hZm5AC2EEd2e7od4K9wNBA" name="return" visibility="public" type="_02_UMC2DEd2e7od4K9wNBA" direction="return" effect="create"/>
                       <language>java</language>
-                      <body>    // fail factory creation if AWT not available&#xA;    Class.forName(&quot;java.awt.Toolkit&quot;);</body>
+                      <body>Class.forName(&quot;java.awt.Toolkit&quot;);</body>
                     </ownedBehavior>
-                    <ownedOperation xmi:id="_OHNbQC2EEd2e7od4K9wNBA" name="AWTViewFactory" method="_YEFUEC2EEd2e7od4K9wNBA">
-                      <ownedParameter xmi:id="_UWTawC2EEd2e7od4K9wNBA" name="return" type="_02_UMC2DEd2e7od4K9wNBA" direction="return"/>
+                    <ownedOperation xmi:id="_OHNbQC2EEd2e7od4K9wNBA" name="AWTViewFactory" visibility="public" method="_YEFUEC2EEd2e7od4K9wNBA">
+                      <ownedParameter xmi:id="_UWTawC2EEd2e7od4K9wNBA" name="return" visibility="public" type="_02_UMC2DEd2e7od4K9wNBA" direction="return" effect="create"/>
                       <raisedException xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_OnuCwET5Edu8hscEjMiyKA"/>
                     </ownedOperation>
                   </packagedElement>
@@ -288,13 +288,13 @@
                     <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_yIdwYEPmEdug19jXgM5cew"/>
                   </packagedElement>
                   <packagedElement xmi:type="uml:Association" xmi:id="_cBVXWC2FEd2e7od4K9wNBA" name="Association_AWTMainView_MainViewListener" memberEnd="_cBVXWS2FEd2e7od4K9wNBA _cBVXXC2FEd2e7od4K9wNBA">
-                    <ownedEnd xmi:id="_cBVXWS2FEd2e7od4K9wNBA" name="view" type="_C_VkYC2DEd2e7od4K9wNBA" association="_cBVXWC2FEd2e7od4K9wNBA">
+                    <ownedEnd xmi:id="_cBVXWS2FEd2e7od4K9wNBA" name="view" visibility="public" type="_C_VkYC2DEd2e7od4K9wNBA" association="_cBVXWC2FEd2e7od4K9wNBA">
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cBVXWi2FEd2e7od4K9wNBA" value="1"/>
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cBVXWy2FEd2e7od4K9wNBA"/>
                     </ownedEnd>
                   </packagedElement>
                   <packagedElement xmi:type="uml:Dependency" xmi:id="_pQWEYy2HEd2e7od4K9wNBA" name="AWTMainView_viewDependency" supplier="_ICi1AC2CEd2e7od4K9wNBA" client="_C_VkYC2DEd2e7od4K9wNBA"/>
-                  <packagedElement xmi:type="uml:Class" xmi:id="_FFGsoDh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView" clientDependency="_IpOTozh8Ed2LtPiPcfHlaQ _bB1Xwzh-Ed2LtPiPcfHlaQ _hBjegzh-Ed2LtPiPcfHlaQ">
+                  <packagedElement xmi:type="uml:Class" xmi:id="_FFGsoDh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView" clientDependency="_bB1Xwzh-Ed2LtPiPcfHlaQ _hBjegzh-Ed2LtPiPcfHlaQ _IpOTozh8Ed2LtPiPcfHlaQ">
                     <generalization xmi:id="_8LyGEzh8Ed2LtPiPcfHlaQ">
                       <general xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_yfVHUEPdEdusb52s3APTjA"/>
                     </generalization>
@@ -324,23 +324,23 @@
                       <defaultValue xmi:type="uml:LiteralString" xmi:id="_jW9qUDvbEd-pu7TKTCLWYA" value="5403561301382228166L"/>
                     </ownedAttribute>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_cgcVsDh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView_setCopyTextBehavior" specification="_SKDwsDh8Ed2LtPiPcfHlaQ">
-                      <ownedParameter xmi:id="_LQ1kMDh-Ed2LtPiPcfHlaQ" name="text">
+                      <ownedParameter xmi:id="_LQ1kMDh-Ed2LtPiPcfHlaQ" name="text" visibility="public" effect="create">
                         <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                       </ownedParameter>
                       <language>java</language>
-                      <body>&#x9;&#x9;textField.setText(text);&#xA;&#x9;&#x9;textField.setSelectionStart(0);&#xA;&#x9;&#x9;textField.setSelectionEnd(text.length());&#xA;&#x9;&#x9;textField.requestFocus();</body>
+                      <body>textField.setText(text);&#xA;textField.setSelectionStart(0);&#xA;textField.setSelectionEnd(text.length());&#xA;textField.requestFocus();</body>
                     </ownedBehavior>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_upRjUDh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardBehavior" specification="_jntTUjh8Ed2LtPiPcfHlaQ">
                       <language>java</language>
-                      <body>&#x9;&#x9;addWindowListener(new WindowAdapter() {&#xA;&#x9;&#x9;&#x9;public void windowClosing(WindowEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;setVisible(false);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;&#x9;&#x9;setTitle(&quot;Platform description&quot;);&#xA;&#x9;&#x9;setLayout(new BorderLayout());&#xA;&#x9;&#x9;textField.setEditable(false);&#xA;&#x9;&#x9;add(textField, BorderLayout.CENTER);&#xA;&#x9;&#x9;bottomPanel.setLayout(new FlowLayout());&#xA;&#x9;&#x9;bottomPanel.add(instructionsLabel);&#xA;&#x9;&#x9;add(bottomPanel, BorderLayout.SOUTH);&#xA;&#x9;&#x9;pack();&#xA;&#x9;&#x9;setVisible(true);</body>
+                      <body>addWindowListener(new WindowAdapter() {&#xA;&#x9;&#x9;&#x9;public void windowClosing(WindowEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;setVisible(false);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;setTitle(&quot;Platform description&quot;);&#xA;setLayout(new BorderLayout());&#xA;textField.setEditable(false);&#xA;add(textField, BorderLayout.CENTER);&#xA;bottomPanel.setLayout(new FlowLayout());&#xA;bottomPanel.add(instructionsLabel);&#xA;add(bottomPanel, BorderLayout.SOUTH);&#xA;pack();&#xA;setVisible(true);</body>
                     </ownedBehavior>
                     <interfaceRealization xmi:id="_IpOTozh8Ed2LtPiPcfHlaQ" name="InterfaceRealization1" supplier="_N6yJUDh7Ed2LtPiPcfHlaQ" client="_FFGsoDh8Ed2LtPiPcfHlaQ" contract="_N6yJUDh7Ed2LtPiPcfHlaQ"/>
-                    <ownedOperation xmi:id="_SKDwsDh8Ed2LtPiPcfHlaQ" name="setCopyText" method="_cgcVsDh8Ed2LtPiPcfHlaQ">
-                      <ownedParameter xmi:id="_SKDwsTh8Ed2LtPiPcfHlaQ" name="text">
+                    <ownedOperation xmi:id="_SKDwsDh8Ed2LtPiPcfHlaQ" name="setCopyText" visibility="public" method="_cgcVsDh8Ed2LtPiPcfHlaQ">
+                      <ownedParameter xmi:id="_SKDwsTh8Ed2LtPiPcfHlaQ" name="text" visibility="public" effect="create">
                         <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                       </ownedParameter>
                     </ownedOperation>
-                    <ownedOperation xmi:id="_jntTUjh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView" method="_upRjUDh8Ed2LtPiPcfHlaQ"/>
+                    <ownedOperation xmi:id="_jntTUjh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView" visibility="public" method="_upRjUDh8Ed2LtPiPcfHlaQ"/>
                   </packagedElement>
                   <packagedElement xmi:type="uml:Dependency" xmi:id="_bB1Xwzh-Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView_JavaAwtDependency" client="_FFGsoDh8Ed2LtPiPcfHlaQ">
                     <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_dK7VkEPdEdusb52s3APTjA"/>
@@ -351,33 +351,33 @@
                   <packagedElement xmi:type="uml:Dependency" xmi:id="_0GquMzh-Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardViewProductDependency" supplier="_FFGsoDh8Ed2LtPiPcfHlaQ" client="_02_UMC2DEd2e7od4K9wNBA"/>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Interface" xmi:id="_e4LI8C2CEd2e7od4K9wNBA" name="MainViewListener">
-                  <ownedOperation xmi:id="_nS8V0i2CEd2e7od4K9wNBA" name="onSubmit" isAbstract="true"/>
+                  <ownedOperation xmi:id="_nS8V0i2CEd2e7od4K9wNBA" name="onSubmit" visibility="public" isAbstract="true"/>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Class" xmi:id="_KAKi0C2DEd2e7od4K9wNBA" name="ViewFactory" clientDependency="_Puzgoy2DEd2e7od4K9wNBA _dzXLkzh7Ed2LtPiPcfHlaQ" isAbstract="true">
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f7Ds0C2DEd2e7od4K9wNBA" name="ViewFactory_getDefaultBehavior" specification="_S6VBcC2DEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_tOQBMC2DEd2e7od4K9wNBA" name="return" type="_KAKi0C2DEd2e7od4K9wNBA" direction="return"/>
+                    <ownedParameter xmi:id="_tOQBMC2DEd2e7od4K9wNBA" name="return" visibility="public" type="_KAKi0C2DEd2e7od4K9wNBA" direction="return" effect="create"/>
                     <language>java</language>
-                    <body>    String[] options = {&#xA;            &quot;be.ac.vub.platformkit.discovery.view.swing.SwingViewFactory&quot;,&#xA;            &quot;be.ac.vub.platformkit.discovery.view.awt.AWTViewFactory&quot;,&#xA;            &quot;be.ac.vub.platformkit.discovery.view.lcdui.LCDUIViewFactory&quot;&#xA;    };&#xA;    ViewFactory factory = null;&#xA;    for (int i = 0; i &lt; options.length &amp;&amp; factory == null; i++) {&#xA;        try {&#xA;            factory = (ViewFactory) Class.forName(options[i]).newInstance();&#xA;        } catch (Exception e) {&#xA;        }&#xA;    }&#xA;    return factory;</body>
+                    <body>String[] options = {&#xA;&#x9;&#x9;&#x9;&#x9;&quot;be.ac.vub.platformkit.discovery.view.swing.SwingViewFactory&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&quot;be.ac.vub.platformkit.discovery.view.awt.AWTViewFactory&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&quot;be.ac.vub.platformkit.discovery.view.lcdui.LCDUIViewFactory&quot;};&#xA;ViewFactory factory = null;&#xA;for (int i = 0; i &lt; options.length &amp;&amp; factory == null; i++) {&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;factory = (ViewFactory) Class.forName(options[i]).newInstance();&#xA;&#x9;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;return factory;</body>
                   </ownedBehavior>
-                  <ownedOperation xmi:id="_S6VBcC2DEd2e7od4K9wNBA" name="getDefault" isStatic="true" method="_f7Ds0C2DEd2e7od4K9wNBA">
-                    <ownedParameter xmi:id="_UFS_wC2DEd2e7od4K9wNBA" name="return" type="_KAKi0C2DEd2e7od4K9wNBA" direction="return"/>
+                  <ownedOperation xmi:id="_S6VBcC2DEd2e7od4K9wNBA" name="getDefault" visibility="public" isStatic="true" method="_f7Ds0C2DEd2e7od4K9wNBA">
+                    <ownedParameter xmi:id="_UFS_wC2DEd2e7od4K9wNBA" name="return" visibility="public" type="_KAKi0C2DEd2e7od4K9wNBA" direction="return" effect="create"/>
                   </ownedOperation>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Dependency" xmi:id="_Puzgoy2DEd2e7od4K9wNBA" name="MainViewProductDependency" supplier="_RX_hcC2CEd2e7od4K9wNBA" client="_KAKi0C2DEd2e7od4K9wNBA"/>
                 <packagedElement xmi:type="uml:Interface" xmi:id="_N6yJUDh7Ed2LtPiPcfHlaQ" name="CopyToClipboardView">
-                  <ownedOperation xmi:id="_VAF_IDh7Ed2LtPiPcfHlaQ" name="setCopyText" isAbstract="true">
-                    <ownedParameter xmi:id="_YxjekDh7Ed2LtPiPcfHlaQ" name="text">
+                  <ownedOperation xmi:id="_VAF_IDh7Ed2LtPiPcfHlaQ" name="setCopyText" visibility="public" isAbstract="true">
+                    <ownedParameter xmi:id="_YxjekDh7Ed2LtPiPcfHlaQ" name="text" visibility="public" effect="create">
                       <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                     </ownedParameter>
                   </ownedOperation>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Dependency" xmi:id="_dzXLkzh7Ed2LtPiPcfHlaQ" name="CopyToClipboardViewProductDependency" supplier="_N6yJUDh7Ed2LtPiPcfHlaQ" client="_KAKi0C2DEd2e7od4K9wNBA"/>
                 <packagedElement xmi:type="uml:Package" xmi:id="_fOTsUDiLEd2dy_l0QkGsYA" name="swing">
-                  <packagedElement xmi:type="uml:Class" xmi:id="_pfMtUDiLEd2dy_l0QkGsYA" name="SwingMainView" clientDependency="_pfMtXjiLEd2dy_l0QkGsYA _pfOigDiLEd2dy_l0QkGsYA _pfPJkDiLEd2dy_l0QkGsYA _pfPwpDiLEd2dy_l0QkGsYA _X_HsUziMEd2dy_l0QkGsYA">
+                  <packagedElement xmi:type="uml:Class" xmi:id="_pfMtUDiLEd2dy_l0QkGsYA" name="SwingMainView" clientDependency="_pfOigDiLEd2dy_l0QkGsYA _pfPJkDiLEd2dy_l0QkGsYA _pfPwpDiLEd2dy_l0QkGsYA _X_HsUziMEd2dy_l0QkGsYA _pfMtXjiLEd2dy_l0QkGsYA">
                     <generalization xmi:id="_dBidUziMEd2dy_l0QkGsYA">
                       <general xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_C-Cq4ETuEdum9Mv7WaUBHw"/>
                     </generalization>
-                    <ownedAttribute xmi:id="_pfMtUjiLEd2dy_l0QkGsYA" name="listener" type="_e4LI8C2CEd2e7od4K9wNBA" association="_pfPwoDiLEd2dy_l0QkGsYA">
+                    <ownedAttribute xmi:id="_pfMtUjiLEd2dy_l0QkGsYA" name="listener" visibility="public" type="_e4LI8C2CEd2e7od4K9wNBA" association="_pfPwoDiLEd2dy_l0QkGsYA">
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pfMtUziLEd2dy_l0QkGsYA" value="*"/>
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pfMtVDiLEd2dy_l0QkGsYA"/>
                     </ownedAttribute>
@@ -400,28 +400,28 @@
                       <defaultValue xmi:type="uml:LiteralString" xmi:id="__U_38DvaEd-pu7TKTCLWYA" value="2396362876791510320L"/>
                     </ownedAttribute>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfMtWTiLEd2dy_l0QkGsYA" name="SwingMainViewBehavior" specification="_pfMtXziLEd2dy_l0QkGsYA">
-                      <ownedParameter xmi:id="_pfMtWjiLEd2dy_l0QkGsYA" name="return" type="_pfMtUDiLEd2dy_l0QkGsYA" direction="return"/>
+                      <ownedParameter xmi:id="_pfMtWjiLEd2dy_l0QkGsYA" name="return" visibility="public" type="_pfMtUDiLEd2dy_l0QkGsYA" direction="return" effect="create"/>
                       <language>java</language>
-                      <body>&#x9;&#x9;submitBtn.addActionListener(new ActionListener() {&#xA;&#x9;&#x9;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;notifySubmitClicked();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;&#x9;&#x9;setLayout(new FlowLayout());&#xD;&#x9;&#x9;add(status);&#xA;&#x9;&#x9;add(submitBtn);&#xD;&#x9;&#x9;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().setLayout(new BorderLayout());&#xA;&#x9;&#x9;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().add(this, BorderLayout.CENTER);&#xA;&#x9;&#x9;setBackground(be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().getBackground());</body>
+                      <body>submitBtn.addActionListener(new ActionListener() {&#xA;&#x9;&#x9;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;notifySubmitClicked();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;setLayout(new FlowLayout());&#xA;add(status);&#xA;add(submitBtn);&#xA;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance()&#xA;&#x9;&#x9;&#x9;&#x9;.setLayout(new BorderLayout());&#xA;be.ac.vub.platformkit.discovery.DiscoveryApplet.getInstance().add(this,&#xA;&#x9;&#x9;&#x9;&#x9;BorderLayout.CENTER);&#xA;setBackground(be.ac.vub.platformkit.discovery.DiscoveryApplet&#xA;&#x9;&#x9;&#x9;&#x9;.getInstance().getBackground());</body>
                     </ownedBehavior>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfMtWziLEd2dy_l0QkGsYA" name="SwingMainView_notifySubmitClickedBehavior" specification="_pfMtYTiLEd2dy_l0QkGsYA">
                       <language>java</language>
-                      <body>&#x9;&#x9;for (java.util.Enumeration ls = getListeners(); ls.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;((MainViewListener) ls.nextElement()).onSubmit();&#xA;&#x9;&#x9;}</body>
+                      <body>for (java.util.Enumeration ls = getListeners(); ls.hasMoreElements();) {&#xA;&#x9;&#x9;&#x9;((MainViewListener) ls.nextElement()).onSubmit();&#xA;&#x9;&#x9;}</body>
                     </ownedBehavior>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfMtXDiLEd2dy_l0QkGsYA" name="SwingMainView_setStatusBehaviour" specification="_pfMtYjiLEd2dy_l0QkGsYA">
-                      <ownedParameter xmi:id="_pfMtXTiLEd2dy_l0QkGsYA" name="status">
+                      <ownedParameter xmi:id="_pfMtXTiLEd2dy_l0QkGsYA" name="status" visibility="public" effect="create">
                         <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                       </ownedParameter>
                       <language>java</language>
-                      <body>&#x9;&#x9;this.status.setText(status);</body>
+                      <body>this.status.setText(status);</body>
                     </ownedBehavior>
                     <interfaceRealization xmi:id="_pfMtXjiLEd2dy_l0QkGsYA" name="InterfaceRealization1" supplier="_RX_hcC2CEd2e7od4K9wNBA" client="_pfMtUDiLEd2dy_l0QkGsYA" contract="_RX_hcC2CEd2e7od4K9wNBA"/>
-                    <ownedOperation xmi:id="_pfMtXziLEd2dy_l0QkGsYA" name="SwingMainView" method="_pfMtWTiLEd2dy_l0QkGsYA">
-                      <ownedParameter xmi:id="_pfMtYDiLEd2dy_l0QkGsYA" name="return" type="_pfMtUDiLEd2dy_l0QkGsYA" direction="return"/>
+                    <ownedOperation xmi:id="_pfMtXziLEd2dy_l0QkGsYA" name="SwingMainView" visibility="public" method="_pfMtWTiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfMtYDiLEd2dy_l0QkGsYA" name="return" visibility="public" type="_pfMtUDiLEd2dy_l0QkGsYA" direction="return" effect="create"/>
                     </ownedOperation>
                     <ownedOperation xmi:id="_pfMtYTiLEd2dy_l0QkGsYA" name="notifySubmitClicked" visibility="private" method="_pfMtWziLEd2dy_l0QkGsYA"/>
-                    <ownedOperation xmi:id="_pfMtYjiLEd2dy_l0QkGsYA" name="setStatus" method="_pfMtXDiLEd2dy_l0QkGsYA">
-                      <ownedParameter xmi:id="_pfMtYziLEd2dy_l0QkGsYA" name="status">
+                    <ownedOperation xmi:id="_pfMtYjiLEd2dy_l0QkGsYA" name="setStatus" visibility="public" method="_pfMtXDiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfMtYziLEd2dy_l0QkGsYA" name="status" visibility="public" effect="create">
                         <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                       </ownedParameter>
                     </ownedOperation>
@@ -429,12 +429,12 @@
                   <packagedElement xmi:type="uml:Class" xmi:id="_pfN7cDiLEd2dy_l0QkGsYA" name="SwingViewFactory" clientDependency="_pfN7djiLEd2dy_l0QkGsYA _pfQXsjiLEd2dy_l0QkGsYA">
                     <generalization xmi:id="_pfN7cTiLEd2dy_l0QkGsYA" general="_KAKi0C2DEd2e7od4K9wNBA"/>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfN7cjiLEd2dy_l0QkGsYA" name="SwingViewFactoryBehavior" specification="_pfN7dDiLEd2dy_l0QkGsYA">
-                      <ownedParameter xmi:id="_pfN7cziLEd2dy_l0QkGsYA" name="return" type="_pfN7cDiLEd2dy_l0QkGsYA" direction="return"/>
+                      <ownedParameter xmi:id="_pfN7cziLEd2dy_l0QkGsYA" name="return" visibility="public" type="_pfN7cDiLEd2dy_l0QkGsYA" direction="return" effect="create"/>
                       <language>java</language>
-                      <body>// fail factory creation if Swing not available&#xA;Class.forName(&quot;javax.swing.UIManager&quot;);</body>
+                      <body>Class.forName(&quot;javax.swing.UIManager&quot;);</body>
                     </ownedBehavior>
-                    <ownedOperation xmi:id="_pfN7dDiLEd2dy_l0QkGsYA" name="SwingViewFactory" method="_pfN7cjiLEd2dy_l0QkGsYA">
-                      <ownedParameter xmi:id="_pfN7dTiLEd2dy_l0QkGsYA" name="return" type="_pfN7cDiLEd2dy_l0QkGsYA" direction="return"/>
+                    <ownedOperation xmi:id="_pfN7dDiLEd2dy_l0QkGsYA" name="SwingViewFactory" visibility="public" method="_pfN7cjiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfN7dTiLEd2dy_l0QkGsYA" name="return" visibility="public" type="_pfN7cDiLEd2dy_l0QkGsYA" direction="return" effect="create"/>
                       <raisedException xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_OnuCwET5Edu8hscEjMiyKA"/>
                     </ownedOperation>
                   </packagedElement>
@@ -446,13 +446,13 @@
                     <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_yIdwYEPmEdug19jXgM5cew"/>
                   </packagedElement>
                   <packagedElement xmi:type="uml:Association" xmi:id="_pfPwoDiLEd2dy_l0QkGsYA" name="Association_SwingMainView_MainViewListener" memberEnd="_pfPwoTiLEd2dy_l0QkGsYA _pfMtUjiLEd2dy_l0QkGsYA">
-                    <ownedEnd xmi:id="_pfPwoTiLEd2dy_l0QkGsYA" name="view" type="_pfMtUDiLEd2dy_l0QkGsYA" association="_pfPwoDiLEd2dy_l0QkGsYA">
+                    <ownedEnd xmi:id="_pfPwoTiLEd2dy_l0QkGsYA" name="view" visibility="public" type="_pfMtUDiLEd2dy_l0QkGsYA" association="_pfPwoDiLEd2dy_l0QkGsYA">
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pfPwojiLEd2dy_l0QkGsYA" value="1"/>
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pfPwoziLEd2dy_l0QkGsYA"/>
                     </ownedEnd>
                   </packagedElement>
                   <packagedElement xmi:type="uml:Dependency" xmi:id="_pfPwpDiLEd2dy_l0QkGsYA" name="SwingMainView_viewDependency" supplier="_ICi1AC2CEd2e7od4K9wNBA" client="_pfMtUDiLEd2dy_l0QkGsYA"/>
-                  <packagedElement xmi:type="uml:Class" xmi:id="_pfPwpTiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView" clientDependency="_pfPwsDiLEd2dy_l0QkGsYA _pfQXsDiLEd2dy_l0QkGsYA _pfQXsTiLEd2dy_l0QkGsYA _tFVboziNEd2dy_l0QkGsYA">
+                  <packagedElement xmi:type="uml:Class" xmi:id="_pfPwpTiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView" clientDependency="_pfQXsDiLEd2dy_l0QkGsYA _pfQXsTiLEd2dy_l0QkGsYA _tFVboziNEd2dy_l0QkGsYA _pfPwsDiLEd2dy_l0QkGsYA">
                     <generalization xmi:id="_JwfN8ziNEd2dy_l0QkGsYA">
                       <general xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_N1xCYETuEdum9Mv7WaUBHw"/>
                     </generalization>
@@ -489,23 +489,23 @@
                       <defaultValue xmi:type="uml:LiteralString" xmi:id="_Ufp30DvbEd-pu7TKTCLWYA" value="5674276328199317442L"/>
                     </ownedAttribute>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfPwrTiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView_setCopyTextBehavior" specification="_pfPwsTiLEd2dy_l0QkGsYA">
-                      <ownedParameter xmi:id="_pfPwrjiLEd2dy_l0QkGsYA" name="text">
+                      <ownedParameter xmi:id="_pfPwrjiLEd2dy_l0QkGsYA" name="text" visibility="public" effect="create">
                         <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                       </ownedParameter>
                       <language>java</language>
-                      <body>&#x9;&#x9;textField.setText(text);&#xA;&#x9;&#x9;textField.setSelectionStart(0);&#xA;&#x9;&#x9;textField.setSelectionEnd(text.length());&#xA;&#x9;&#x9;textField.requestFocus();</body>
+                      <body>textField.setText(text);&#xA;textField.setSelectionStart(0);&#xA;textField.setSelectionEnd(text.length());&#xA;textField.requestFocus();</body>
                     </ownedBehavior>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfPwrziLEd2dy_l0QkGsYA" name="SwingCopyToClipboardBehavior" specification="_pfPwsziLEd2dy_l0QkGsYA">
                       <language>java</language>
-                      <body>&#x9;&#x9;addWindowListener(new WindowAdapter() {&#xA;&#x9;&#x9;&#x9;public void windowClosing(WindowEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;setVisible(false);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;&#x9;&#x9;setTitle(&quot;Platform description&quot;);&#xA;&#x9;&#x9;setLayout(new BorderLayout());&#xA;&#x9;&#x9;textField.setEditable(false);&#xA;&#x9;&#x9;textScroll.getViewport().setView(textField);&#xA;&#x9;&#x9;textScroll.setPreferredSize(new Dimension(500, 300));&#xA;&#x9;&#x9;add(textScroll, BorderLayout.CENTER);&#xA;&#x9;&#x9;bottomPanel.setLayout(new FlowLayout());&#xA;&#x9;&#x9;bottomPanel.add(instructionsLabel);&#xA;&#x9;&#x9;add(bottomPanel, BorderLayout.SOUTH);&#xA;&#x9;&#x9;pack();&#xA;&#x9;&#x9;setVisible(true);</body>
+                      <body>addWindowListener(new WindowAdapter() {&#xA;&#x9;&#x9;&#x9;public void windowClosing(WindowEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;setVisible(false);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;});&#xA;setTitle(&quot;Platform description&quot;);&#xA;setLayout(new BorderLayout());&#xA;textField.setEditable(false);&#xA;textScroll.getViewport().setView(textField);&#xA;textScroll.setPreferredSize(new Dimension(500, 300));&#xA;add(textScroll, BorderLayout.CENTER);&#xA;bottomPanel.setLayout(new FlowLayout());&#xA;bottomPanel.add(instructionsLabel);&#xA;add(bottomPanel, BorderLayout.SOUTH);&#xA;pack();&#xA;setVisible(true);</body>
                     </ownedBehavior>
                     <interfaceRealization xmi:id="_pfPwsDiLEd2dy_l0QkGsYA" name="InterfaceRealization1" supplier="_N6yJUDh7Ed2LtPiPcfHlaQ" client="_pfPwpTiLEd2dy_l0QkGsYA" contract="_N6yJUDh7Ed2LtPiPcfHlaQ"/>
-                    <ownedOperation xmi:id="_pfPwsTiLEd2dy_l0QkGsYA" name="setCopyText" method="_pfPwrTiLEd2dy_l0QkGsYA">
-                      <ownedParameter xmi:id="_pfPwsjiLEd2dy_l0QkGsYA" name="text">
+                    <ownedOperation xmi:id="_pfPwsTiLEd2dy_l0QkGsYA" name="setCopyText" visibility="public" method="_pfPwrTiLEd2dy_l0QkGsYA">
+                      <ownedParameter xmi:id="_pfPwsjiLEd2dy_l0QkGsYA" name="text" visibility="public" effect="create">
                         <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                       </ownedParameter>
                     </ownedOperation>
-                    <ownedOperation xmi:id="_pfPwsziLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView" method="_pfPwrziLEd2dy_l0QkGsYA"/>
+                    <ownedOperation xmi:id="_pfPwsziLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView" visibility="public" method="_pfPwrziLEd2dy_l0QkGsYA"/>
                   </packagedElement>
                   <packagedElement xmi:type="uml:Dependency" xmi:id="_pfQXsDiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView_JavaAwtDependency" client="_pfPwpTiLEd2dy_l0QkGsYA">
                     <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_dK7VkEPdEdusb52s3APTjA"/>
@@ -524,7 +524,7 @@
               </packagedElement>
               <packagedElement xmi:type="uml:Dependency" xmi:id="_KUjT4y2CEd2e7od4K9wNBA" name="DiscoveryApplet_viewDependency" supplier="_ICi1AC2CEd2e7od4K9wNBA" client="_RBdGAC1cEd2KTNOPeUc_7g"/>
               <packagedElement xmi:type="uml:Association" xmi:id="_7_1paC2HEd2e7od4K9wNBA" name="DiscoveryApplet_MainView_Association" memberEnd="_7_1paS2HEd2e7od4K9wNBA _7_1pbC2HEd2e7od4K9wNBA">
-                <ownedEnd xmi:id="_7_1paS2HEd2e7od4K9wNBA" name="applet" type="_RBdGAC1cEd2KTNOPeUc_7g" association="_7_1paC2HEd2e7od4K9wNBA">
+                <ownedEnd xmi:id="_7_1paS2HEd2e7od4K9wNBA" name="applet" visibility="public" type="_RBdGAC1cEd2KTNOPeUc_7g" association="_7_1paC2HEd2e7od4K9wNBA">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7_1pai2HEd2e7od4K9wNBA" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7_1pay2HEd2e7od4K9wNBA"/>
                 </ownedEnd>
@@ -588,19 +588,19 @@
   </uml:Model>
   <Applet:Applet xmi:id="_EgGo0C1dEd2e7od4K9wNBA" appletInfo="(C) 2008, Dennis Wagelaar, System and Software Engineering Lab, Vrije Universiteit Brussel" parameterInfo="{{&quot;Color&quot;, &quot;#000000 - #FFFFFF&quot;, &quot;Background color for the applet&quot;}}" base_Classifier="_RBdGAC1cEd2KTNOPeUc_7g"/>
   <Singleton:Singleton xmi:id="_EgH28C1dEd2e7od4K9wNBA" base_Classifier="_RBdGAC1cEd2KTNOPeUc_7g"/>
-  <AbstractFactory:AbstractFactory xmi:id="_Nt9qQC2DEd2e7od4K9wNBA" base_Classifier="_KAKi0C2DEd2e7od4K9wNBA"/>
-  <AbstractFactory:product xmi:id="_QZIQAC2DEd2e7od4K9wNBA" base_Dependency="_Puzgoy2DEd2e7od4K9wNBA"/>
-  <AbstractFactory:ConcreteFactory xmi:id="_4TWGUC2DEd2e7od4K9wNBA" base_Class="_02_UMC2DEd2e7od4K9wNBA"/>
-  <AbstractFactory:product xmi:id="_7GFTsC2DEd2e7od4K9wNBA" base_Dependency="_6aJawy2DEd2e7od4K9wNBA"/>
   <Standard:Create xmi:id="_oJQn4C2EEd2e7od4K9wNBA" base_BehavioralFeature="_lZufgC2EEd2e7od4K9wNBA"/>
   <Standard:Create xmi:id="_GG8jYC4kEd2wms9OZLfx4Q" base_BehavioralFeature="_OHNbQC2EEd2e7od4K9wNBA"/>
-  <AbstractFactory:product xmi:id="_ezdWoDh7Ed2LtPiPcfHlaQ" base_Dependency="_dzXLkzh7Ed2LtPiPcfHlaQ"/>
   <Standard:Create xmi:id="_p-pAMDh8Ed2LtPiPcfHlaQ" base_BehavioralFeature="_jntTUjh8Ed2LtPiPcfHlaQ"/>
-  <AbstractFactory:product xmi:id="_3SH9kDh-Ed2LtPiPcfHlaQ" base_Dependency="_0GquMzh-Ed2LtPiPcfHlaQ"/>
-  <AbstractFactory:product xmi:id="_hpzo8DiMEd2dy_l0QkGsYA" base_Dependency="_pfN7djiLEd2dy_l0QkGsYA"/>
-  <AbstractFactory:ConcreteFactory xmi:id="_pETroDiMEd2dy_l0QkGsYA" base_Class="_pfN7cDiLEd2dy_l0QkGsYA"/>
-  <AbstractFactory:product xmi:id="_CIrIADiNEd2dy_l0QkGsYA" base_Dependency="_pfQXsjiLEd2dy_l0QkGsYA"/>
   <Standard:Create xmi:id="_CAEJIDiOEd2dy_l0QkGsYA" base_BehavioralFeature="_pfN7dDiLEd2dy_l0QkGsYA"/>
   <Standard:Create xmi:id="_VSKE4DiOEd2dy_l0QkGsYA" base_BehavioralFeature="_pfMtXziLEd2dy_l0QkGsYA"/>
   <Standard:Create xmi:id="_WQNBgDiOEd2dy_l0QkGsYA" base_BehavioralFeature="_pfPwsziLEd2dy_l0QkGsYA"/>
+  <AbstractFactory:AbstractFactory xmi:id="_Nt9qQC2DEd2e7od4K9wNBA" base_Classifier="_KAKi0C2DEd2e7od4K9wNBA"/>
+  <AbstractFactory:ConcreteFactory xmi:id="_4TWGUC2DEd2e7od4K9wNBA" base_Class="_02_UMC2DEd2e7od4K9wNBA"/>
+  <AbstractFactory:ConcreteFactory xmi:id="_pETroDiMEd2dy_l0QkGsYA" base_Class="_pfN7cDiLEd2dy_l0QkGsYA"/>
+  <AbstractFactory:product xmi:id="_QZIQAC2DEd2e7od4K9wNBA" base_Dependency="_Puzgoy2DEd2e7od4K9wNBA"/>
+  <AbstractFactory:product xmi:id="_7GFTsC2DEd2e7od4K9wNBA" base_Dependency="_6aJawy2DEd2e7od4K9wNBA"/>
+  <AbstractFactory:product xmi:id="_ezdWoDh7Ed2LtPiPcfHlaQ" base_Dependency="_dzXLkzh7Ed2LtPiPcfHlaQ"/>
+  <AbstractFactory:product xmi:id="_3SH9kDh-Ed2LtPiPcfHlaQ" base_Dependency="_0GquMzh-Ed2LtPiPcfHlaQ"/>
+  <AbstractFactory:product xmi:id="_hpzo8DiMEd2dy_l0QkGsYA" base_Dependency="_pfN7djiLEd2dy_l0QkGsYA"/>
+  <AbstractFactory:product xmi:id="_CIrIADiNEd2dy_l0QkGsYA" base_Dependency="_pfQXsjiLEd2dy_l0QkGsYA"/>
 </xmi:XMI>
