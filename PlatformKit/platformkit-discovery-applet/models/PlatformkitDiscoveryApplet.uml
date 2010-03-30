@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AbstractFactory="http:///schemas/AbstractFactory/0" xmlns:Applet="http:///schemas/Applet/1" xmlns:Singleton="http:///schemas/Singleton/1" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/AbstractFactory/0 ../../uml2cs-transformations/profiles/AbstractFactory.profile.uml#_-a-lgUPTEdusb52s3APTjA http:///schemas/Applet/1 ../../uml2cs-transformations/profiles/Applet.profile.uml#_i8fxgDgqEduNII1tDKqNvA http:///schemas/Singleton/1 ../../uml2cs-transformations/profiles/Singleton.profile.uml#_eMWcQDgqEduNII1tDKqNvA http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AbstractFactory="http:///schemas/AbstractFactory/0" xmlns:Applet="http:///schemas/Applet/1" xmlns:Singleton="http:///schemas/Singleton/1" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/AbstractFactory/0 ../../uml2cs-transformations/profiles/AbstractFactory.profile.uml#_-a-lgUPTEdusb52s3APTjA http:///schemas/Applet/1 ../../uml2cs-transformations/profiles/Applet.profile.uml#_i8fxgDgqEduNII1tDKqNvA http:///schemas/Singleton/1 ../../uml2cs-transformations/profiles/Singleton.profile.uml#_eMWcQDgqEduNII1tDKqNvA http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
   <uml:Model xmi:id="_qb8akM37EdqwVrslYOdUDA" name="PlatformkitDiscoveryApplet">
     <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="be">
       <packagedElement xmi:type="uml:Package" xmi:id="_GvuXgC1cEd2KTNOPeUc_7g" name="ac">
@@ -14,6 +14,10 @@
                 <ownedAttribute xmi:id="_7_1pbC2HEd2e7od4K9wNBA" name="view" type="_RX_hcC2CEd2e7od4K9wNBA" aggregation="shared" association="_7_1paC2HEd2e7od4K9wNBA">
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7_1pbS2HEd2e7od4K9wNBA" value="1"/>
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7_1pbi2HEd2e7od4K9wNBA" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_BbXkADvaEd-pu7TKTCLWYA" name="serialVersionUID" visibility="private" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:DataType" href="../../uml2cs-transformations/models/JavaTypes.uml#_-20JgOrLEdyKT-jaGOfUdg"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_Nggw4DvaEd-pu7TKTCLWYA" value="8263667303302526105L"/>
                 </ownedAttribute>
                 <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_nXi-cC2BEd2e7od4K9wNBA" name="DiscoveryApplet_initBehavior" specification="_OrNAgC2BEd2e7od4K9wNBA">
                   <language>java</language>
@@ -92,7 +96,7 @@
                     </ownedParameter>
                   </ownedOperation>
                 </packagedElement>
-                <packagedElement xmi:type="uml:Class" xmi:id="_IQ-VkC1hEd2e7od4K9wNBA" name="Slot" clientDependency="_KqI_0i12Ed2e7od4K9wNBA _WkaHgy14Ed2e7od4K9wNBA">
+                <packagedElement xmi:type="uml:Class" xmi:id="_IQ-VkC1hEd2e7od4K9wNBA" name="Slot" clientDependency="_KqI_0i12Ed2e7od4K9wNBA">
                   <generalization xmi:id="_itfvUy1vEd2e7od4K9wNBA" general="_yNtm0C1tEd2e7od4K9wNBA"/>
                   <ownedAttribute xmi:id="_WOBCyS1iEd2e7od4K9wNBA" name="individual" type="_uGoIkC1gEd2e7od4K9wNBA" association="_WOBCyC1iEd2e7od4K9wNBA">
                     <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WOBCyi1iEd2e7od4K9wNBA" value="1"/>
@@ -180,9 +184,6 @@
                 <packagedElement xmi:type="uml:Dependency" xmi:id="_WMZQIy14Ed2e7od4K9wNBA" name="Individual_JavaUtilDependency" client="_uGoIkC1gEd2e7od4K9wNBA">
                   <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_6Kkv0PfuEdqaqL9wEVL3aA"/>
                 </packagedElement>
-                <packagedElement xmi:type="uml:Dependency" xmi:id="_WkaHgy14Ed2e7od4K9wNBA" name="Slot_JavaUtilDependency" client="_IQ-VkC1hEd2e7od4K9wNBA">
-                  <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_6Kkv0PfuEdqaqL9wEVL3aA"/>
-                </packagedElement>
                 <packagedElement xmi:type="uml:Association" xmi:id="_BaYH2C16Ed2e7od4K9wNBA" name="Association_Slot_Individual" memberEnd="_BaYH2S16Ed2e7od4K9wNBA _BaYH3C16Ed2e7od4K9wNBA">
                   <ownedEnd xmi:id="_BaYH2S16Ed2e7od4K9wNBA" name="slot" type="_IQ-VkC1hEd2e7od4K9wNBA" association="_BaYH2C16Ed2e7od4K9wNBA">
                     <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BaYH2i16Ed2e7od4K9wNBA" value="1"/>
@@ -236,6 +237,10 @@
                         <body>new Label(&quot;Discovery Applet&quot;)</body>
                       </defaultValue>
                     </ownedAttribute>
+                    <ownedAttribute xmi:id="_ZI7JADvbEd-pu7TKTCLWYA" name="serialVersionUID" visibility="private" isStatic="true" isReadOnly="true">
+                      <type xmi:type="uml:DataType" href="../../uml2cs-transformations/models/JavaTypes.uml#_-20JgOrLEdyKT-jaGOfUdg"/>
+                      <defaultValue xmi:type="uml:LiteralString" xmi:id="_cK99sDvbEd-pu7TKTCLWYA" value="1096960877634530506L"/>
+                    </ownedAttribute>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_rrfYgC2EEd2e7od4K9wNBA" name="AWTMainViewBehavior" specification="_lZufgC2EEd2e7od4K9wNBA">
                       <ownedParameter xmi:id="_vgL8sC2FEd2e7od4K9wNBA" name="return" type="_C_VkYC2DEd2e7od4K9wNBA" direction="return"/>
                       <language>java</language>
@@ -275,7 +280,7 @@
                       <raisedException xmi:type="uml:Class" href="../../uml2cs-transformations/models/JavaTypes.uml#_OnuCwET5Edu8hscEjMiyKA"/>
                     </ownedOperation>
                   </packagedElement>
-                  <packagedElement xmi:type="uml:Dependency" xmi:id="_6aJawy2DEd2e7od4K9wNBA" name="Dependency1" supplier="_C_VkYC2DEd2e7od4K9wNBA" client="_02_UMC2DEd2e7od4K9wNBA"/>
+                  <packagedElement xmi:type="uml:Dependency" xmi:id="_6aJawy2DEd2e7od4K9wNBA" name="AWTMainViewProductDependency" supplier="_C_VkYC2DEd2e7od4K9wNBA" client="_02_UMC2DEd2e7od4K9wNBA"/>
                   <packagedElement xmi:type="uml:Dependency" xmi:id="_6GUqYy2EEd2e7od4K9wNBA" name="AWTMainView_JavaAwtDependency" client="_C_VkYC2DEd2e7od4K9wNBA">
                     <supplier xmi:type="uml:Package" href="../../uml2cs-transformations/models/JavaTypes.uml#_dK7VkEPdEdusb52s3APTjA"/>
                   </packagedElement>
@@ -313,6 +318,10 @@
                         <language>java</language>
                         <body>new Label(&quot;Use your standard keyboard shortcut (e.g. Ctrl-C) to copy the above platform description to your clipboard&quot;)</body>
                       </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_gi_t4DvbEd-pu7TKTCLWYA" name="serialVersionUID" visibility="private" isStatic="true" isReadOnly="true">
+                      <type xmi:type="uml:DataType" href="../../uml2cs-transformations/models/JavaTypes.uml#_-20JgOrLEdyKT-jaGOfUdg"/>
+                      <defaultValue xmi:type="uml:LiteralString" xmi:id="_jW9qUDvbEd-pu7TKTCLWYA" value="5403561301382228166L"/>
                     </ownedAttribute>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_cgcVsDh8Ed2LtPiPcfHlaQ" name="AWTCopyToClipboardView_setCopyTextBehavior" specification="_SKDwsDh8Ed2LtPiPcfHlaQ">
                       <ownedParameter xmi:id="_LQ1kMDh-Ed2LtPiPcfHlaQ" name="text">
@@ -385,6 +394,10 @@
                         <language>java</language>
                         <body>new JLabel(&quot;Discovery Applet&quot;)</body>
                       </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_3NBEMDvaEd-pu7TKTCLWYA" name="serialVersionUID" visibility="private" isStatic="true" isReadOnly="true">
+                      <type xmi:type="uml:DataType" href="../../uml2cs-transformations/models/JavaTypes.uml#_-20JgOrLEdyKT-jaGOfUdg"/>
+                      <defaultValue xmi:type="uml:LiteralString" xmi:id="__U_38DvaEd-pu7TKTCLWYA" value="2396362876791510320L"/>
                     </ownedAttribute>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfMtWTiLEd2dy_l0QkGsYA" name="SwingMainViewBehavior" specification="_pfMtXziLEd2dy_l0QkGsYA">
                       <ownedParameter xmi:id="_pfMtWjiLEd2dy_l0QkGsYA" name="return" type="_pfMtUDiLEd2dy_l0QkGsYA" direction="return"/>
@@ -470,6 +483,10 @@
                         <language>java</language>
                         <body>new JScrollPane()</body>
                       </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:id="_RPtxEDvbEd-pu7TKTCLWYA" name="serialVersionUID" visibility="private" isStatic="true" isReadOnly="true">
+                      <type xmi:type="uml:DataType" href="../../uml2cs-transformations/models/JavaTypes.uml#_-20JgOrLEdyKT-jaGOfUdg"/>
+                      <defaultValue xmi:type="uml:LiteralString" xmi:id="_Ufp30DvbEd-pu7TKTCLWYA" value="5674276328199317442L"/>
                     </ownedAttribute>
                     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pfPwrTiLEd2dy_l0QkGsYA" name="SwingCopyToClipboardView_setCopyTextBehavior" specification="_pfPwsTiLEd2dy_l0QkGsYA">
                       <ownedParameter xmi:id="_pfPwrjiLEd2dy_l0QkGsYA" name="text">
