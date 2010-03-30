@@ -10,6 +10,7 @@
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY io "http://soft.vub.ac.be/platformkit/2010/1/io.owl#" >
     <!ENTITY os "http://soft.vub.ac.be/platformkit/2010/1/os.owl#" >
+    <!ENTITY arm "http://soft.vub.ac.be/platformkit/2010/1/arm.owl#" >
     <!ENTITY java "http://soft.vub.ac.be/platformkit/2010/1/java.owl#" >
     <!ENTITY swt-3_4 "http://soft.vub.ac.be/platformkit/2010/1/swt-3_4.owl#" >
     <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
@@ -34,6 +35,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:java="http://soft.vub.ac.be/platformkit/2010/1/java.owl#"
+     xmlns:arm="http://soft.vub.ac.be/platformkit/2010/1/arm.owl#"
      xmlns:j2se-1_4="http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl#">
     <owl:Ontology rdf:about="">
         <rdfs:label xml:lang="en"
@@ -42,7 +44,8 @@
             >http://en.wikipedia.org/wiki/Nokia_N800</rdfs:seeAlso>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
-        <owl:versionInfo>$Id$</owl:versionInfo>
+        <owl:versionInfo
+            >$Id$</owl:versionInfo>
         <rdfs:comment xml:lang="en"
             >Example PlatformKit platform instance ontology.</rdfs:comment>
         <dc:rights xml:lang="en"
@@ -170,6 +173,12 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/resource.owl#processingSpeed -->
+
+    <owl:DatatypeProperty rdf:about="&resource;processingSpeed"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -178,6 +187,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#ARMv6_CPU -->
+
+    <owl:Class rdf:about="&arm;ARMv6_CPU"/>
     
 
 
@@ -1130,6 +1145,12 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#theARMv6 -->
+
+    <owl:Thing rdf:about="&arm;theARMv6"/>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/nokia-n800-jalimo.owl#cacaoVM -->
 
     <j2se-1_4:J2SE1_4VM rdf:about="#cacaoVM">
@@ -1189,6 +1210,7 @@
         <platform:providesFeature rdf:resource="#nokiaN800Screen"/>
         <platform:providesFeature rdf:resource="#nokiaN800VirtualKeyboard"/>
         <platform:providesFeature rdf:resource="#nokiaN800WiFi"/>
+        <platform:providesFeature rdf:resource="#tiOMAP2420"/>
     </platform:Platform>
     
 
@@ -1276,6 +1298,16 @@
         <rdf:type rdf:resource="&owl;Thing"/>
         <resource:dataSpeed rdf:datatype="&xsd;positiveInteger">54</resource:dataSpeed>
     </resource:NetworkResource>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/nokia-n800-jalimo.owl#tiOMAP2420 -->
+
+    <owl:Thing rdf:about="#tiOMAP2420">
+        <rdf:type rdf:resource="&arm;ARMv6_CPU"/>
+        <resource:processingSpeed rdf:datatype="&xsd;decimal">400</resource:processingSpeed>
+        <platform:implementsInterface rdf:resource="&arm;theARMv6"/>
+    </owl:Thing>
     
 
 
