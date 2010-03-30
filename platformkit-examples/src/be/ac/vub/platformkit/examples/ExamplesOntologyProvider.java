@@ -45,8 +45,9 @@ public class ExamplesOntologyProvider implements INamedOntologyProvider {
 		"platformkit_2010_1/Sharp/sharp-zaurus-sl-c1000-pp.owl",
 		"platformkit_2010_1/Sharp/sharp-zaurus-sl-c1000-jeode.owl",
 
-		"codamos_2007_01/Siemens/CX70v.owl",
-		"codamos_2007_01/Nokia/NokiaN800Jalimo.owl"
+		"platformkit_2010_1/Siemens/siemens-cx70v.owl",
+
+		"platformkit_2010_1/Nokia/nokia-n800-jalimo.owl"
 	}; //$NON-NLS-1$
 
 	private static final String[] names = new String[ontologies.length];
