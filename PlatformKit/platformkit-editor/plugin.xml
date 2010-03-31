@@ -3,13 +3,21 @@
 
 <!--
  <copyright>
+ Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+ Contributors:
+     Dennis Wagelaar, Vrije Universiteit Brussel
  </copyright>
 
  $Id$
 -->
 
 <plugin>
-  <extension-point id="platformSpec" name="Platform Specification" schema="schema/platformSpec.exsd"/>
+  <extension-point id="platformSpec" name="%extension-point.name" schema="schema/platformSpec.exsd"/>
 
   <extension
     point = "org.eclipse.ui.newWizards">
@@ -49,7 +57,7 @@
               enablesFor="1"
               icon="icons/full/obj16/ConstraintSpace.gif"
               id="be.ac.vub.platformkit.editor.actions.Profile"
-              label="Profile Against Concrete Platform..."
+              label="%action.label"
               menubarPath="be.ac.vub.platformkit.editor.menu/EObjectGroup">
            <enablement>
               <not>
@@ -64,7 +72,7 @@
         <menu
               icon="icons/full/obj16/PlatformKitLogo16.png"
               id="be.ac.vub.platformkit.editor.menu"
-              label="PlatformKit"
+              label="%menu.label"
               path="additions">
            <separator name="EObjectGroup"/>
         </menu>
@@ -78,42 +86,42 @@
               enablesFor="1"
               icon="icons/full/obj16/complete_tsk.gif"
               id="be.ac.vub.platformkit.editor.actions.Validate"
-              label="Validate Against Concrete Platform..."
+              label="%action.label.0"
               menubarPath="additions"/>
         <action
               class="be.ac.vub.platformkit.presentation.popup.action.SortLeastSpecificFirst"
               enablesFor="1"
               icon="icons/full/obj16/cp_order_obj.gif"
               id="be.ac.vub.platformkit.editor.actions.SortLeastSpecificFirst"
-              label="Sort Least Specific First"
+              label="%action.label.1"
               menubarPath="additions"/>
         <action
               class="be.ac.vub.platformkit.presentation.popup.action.SortMostSpecificFirst"
               enablesFor="1"
               icon="icons/full/obj16/cp_order_obj.gif"
               id="be.ac.vub.platformkit.editor.actions.SortMostSpecificFirst"
-              label="Sort Most Specific First"
+              label="%action.label.2"
               menubarPath="additions"/>
         <action
               class="be.ac.vub.platformkit.presentation.popup.action.ClassifyTaxonomy"
               enablesFor="1"
               icon="icons/full/obj16/GenModel.gif"
               id="be.ac.vub.platformkit.editor.actions.ClassifyTaxonomy"
-              label="Classify Taxonomy"
+              label="%action.label.3"
               menubarPath="additions"/>
         <action
               class="be.ac.vub.platformkit.presentation.popup.action.AddProductConfig"
               enablesFor="1"
               icon="icons/full/obj16/ModelFile.gif"
               id="be.ac.vub.platformkit.editor.actions.AddProductConfig"
-              label="Add Product Configuration Model..."
+              label="%action.label.4"
               menubarPath="additions"/>
         <action
               class="be.ac.vub.platformkit.presentation.popup.action.AddProductLine"
               enablesFor="1"
               icon="icons/full/obj16/EcoreModelFile.gif"
               id="be.ac.vub.platformkit.editor.actions.AddProductLine"
-              label="Add Product Line Meta-model..."
+              label="%action.label.5"
               menubarPath="additions"/>
      </objectContribution>
   </extension>
@@ -122,7 +130,7 @@
      <page
            class="be.ac.vub.platformkit.editor.preferences.PlatformkitPreferencePage"
            id="be.ac.vub.platformkit.editor.preferences.PlatformkitPreferencePage"
-           name="PlatformKit"/>
+           name="%page.name"/>
   </extension>
   <extension
         point="org.eclipse.core.runtime.preferences">
