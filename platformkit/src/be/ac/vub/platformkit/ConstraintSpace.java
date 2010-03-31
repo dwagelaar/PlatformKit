@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.util.PathResolver;
 
 /**
@@ -82,45 +83,47 @@ public interface ConstraintSpace extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" exceptions="be.ac.vub.platformkit.OntException"
 	 *        annotation="GenModel documentation='Returns a constraint set consisting of all the intersection classes of all the constraints. Creates the IntersectionClasses for all ConstraintSets as necessary.'"
 	 * @generated
 	 */
-	ConstraintSet getIntersectionSet();
+	ConstraintSet getIntersectionSet() throws OntException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="GenModel documentation='Returns all or valid constraint sets in order, least-specific first. Requires a reasoner.'"
+	 * @model exceptions="be.ac.vub.platformkit.OntException"
+	 *        annotation="GenModel documentation='Returns all or valid constraint sets in order, least-specific first. Requires a reasoner.'"
 	 * @generated
 	 */
-	EList<ConstraintSet> getLeastSpecific(boolean validate);
+	EList<ConstraintSet> getLeastSpecific(boolean validate) throws OntException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="GenModel documentation='Returns all or valid constraint sets in order, most-specific first. Requires a reasoner.'"
+	 * @model exceptions="be.ac.vub.platformkit.OntException"
+	 *        annotation="GenModel documentation='Returns all or valid constraint sets in order, most-specific first. Requires a reasoner.'"
 	 * @generated
 	 */
-	EList<ConstraintSet> getMostSpecific(boolean validate);
+	EList<ConstraintSet> getMostSpecific(boolean validate) throws OntException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" exceptions="be.ac.vub.platformkit.OntException"
 	 *        annotation="GenModel documentation='Returns valid constraint sets. Requires a reasoner.'"
 	 * @generated
 	 */
-	EList<ConstraintSet> getValid();
+	EList<ConstraintSet> getValid() throws OntException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" exceptions="be.ac.vub.platformkit.OntException"
 	 *        annotation="GenModel documentation='Returns invalid constraint sets. Requires a reasoner.'"
 	 * @generated
 	 */
-	EList<ConstraintSet> getInvalid();
+	EList<ConstraintSet> getInvalid() throws OntException;
 
     /**
      * Sets the path resolver for finding referenced ontologies.
@@ -155,10 +158,11 @@ public interface ConstraintSpace extends EObject {
      * Requires knowledge base to be set.
      * @see #setKnowledgeBase(IOntologies)
      * @param searchPreClassified If true, searches for the pre-classified ontology.
-     * @throws IOException if the input ontologies cannot be read.
      * @return True if the pre-classified ontology is found, false otherwise.
+     * @throws IOException if the input ontologies cannot be read.
+     * @throws OntException if {@link Constraint} ontology classes cannot be found. 
      */
 	boolean init(boolean searchPreClassified)
-    throws IOException;
+    throws IOException, OntException;
     
 } // ConstraintSpace

@@ -360,7 +360,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadOntology(java.lang.String)
 	 */
-	public void loadOntology(String url) {
+	public void loadOntology(String url) throws OntException {
 		logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.loadingOntFrom"), 
 				url)); //$NON-NLS-1$
@@ -374,9 +374,9 @@ public class OWLAPIOntologies extends AbstractOntologies {
 				reasoner.loadOntologies(mgr.getImportsClosure(ontology.model));
 			}
 		} catch (OWLException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		} catch (URISyntaxException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		}
 		notifyOntologyChanged();
 	}
@@ -385,7 +385,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadOntology(java.io.InputStream)
 	 */
-	public void loadOntology(InputStream in) {
+	public void loadOntology(InputStream in) throws OntException {
 		logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.loadingOntFrom"), 
 				in)); //$NON-NLS-1$
@@ -399,7 +399,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 				reasoner.loadOntologies(mgr.getImportsClosure(ontology.model));
 			}
 		} catch (OWLException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		}
 		notifyOntologyChanged();
 	}

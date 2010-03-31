@@ -231,6 +231,25 @@ public interface PlatformkitPackage extends EPackage {
 	int IONT_MODEL_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link be.ac.vub.platformkit.kb.util.OntException <em>Ont Exception</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see be.ac.vub.platformkit.kb.util.OntException
+	 * @see be.ac.vub.platformkit.impl.PlatformkitPackageImpl#getOntException()
+	 * @generated
+	 */
+	int ONT_EXCEPTION = 5;
+
+	/**
+	 * The number of structural features of the '<em>Ont Exception</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONT_EXCEPTION_FEATURE_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link be.ac.vub.platformkit.ConstraintSpace <em>Constraint Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,6 +378,17 @@ public interface PlatformkitPackage extends EPackage {
 	EClass getIOntModelChangeListener();
 
 	/**
+	 * Returns the meta object for class '{@link be.ac.vub.platformkit.kb.util.OntException <em>Ont Exception</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ont Exception</em>'.
+	 * @see be.ac.vub.platformkit.kb.util.OntException
+	 * @model instanceClass="be.ac.vub.platformkit.kb.util.OntException"
+	 * @generated
+	 */
+	EClass getOntException();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -485,6 +515,16 @@ public interface PlatformkitPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IONT_MODEL_CHANGE_LISTENER = eINSTANCE.getIOntModelChangeListener();
+
+		/**
+		 * The meta object literal for the '{@link be.ac.vub.platformkit.kb.util.OntException <em>Ont Exception</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see be.ac.vub.platformkit.kb.util.OntException
+		 * @see be.ac.vub.platformkit.impl.PlatformkitPackageImpl#getOntException()
+		 * @generated
+		 */
+		EClass ONT_EXCEPTION = eINSTANCE.getOntException();
 
 	}
 

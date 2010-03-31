@@ -47,6 +47,7 @@ import be.ac.vub.platformkit.java.JavaOntologyProvider;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
  * Web service interface for PlatformKit.
@@ -161,9 +162,13 @@ public class PlatformkitServlet extends HttpServlet {
 	 * Initialises the reasoning environment with all parameters.
 	 * @param req the HTTP request object
 	 * @param baseurl The base URL of the application to configure
+	 * @throws FileUploadException
+	 * @throws IOException
+	 * @throws IllegalArgumentException
+	 * @throws OntException 
 	 */
 	private ConstraintSpace init(HttpServletRequest req, String baseurl)
-			throws FileUploadException, IOException, IllegalArgumentException {
+			throws FileUploadException, IOException, IllegalArgumentException, OntException {
 		logger.info("Request: " + req);
 		Date date = new Date(getURLDate(baseurl));
 		ConstraintSpace space = getConstraintSpace(baseurl, date);

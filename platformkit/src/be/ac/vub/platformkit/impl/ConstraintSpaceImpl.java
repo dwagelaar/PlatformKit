@@ -44,6 +44,7 @@ import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.util.EMFURIPathResolver;
 import be.ac.vub.platformkit.util.PathResolver;
 
@@ -62,7 +63,7 @@ import be.ac.vub.platformkit.util.PathResolver;
  * @generated
  */
 public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace {
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,15 +81,15 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 				setKnowledgeBase(null);
 			}
 		}
-		
+
 	}
-	
-    protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
-    private static ExtensibleURIConverterImpl converter = new ExtensibleURIConverterImpl();
-    
-    private IOntologies knowledgeBase = null;
-    private PathResolver pathResolver = null;
-    private ConstraintSet intersectionSet = null;
+
+	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
+	private static ExtensibleURIConverterImpl converter = new ExtensibleURIConverterImpl();
+
+	private IOntologies knowledgeBase = null;
+	private PathResolver pathResolver = null;
+	private ConstraintSet intersectionSet = null;
 
 	/**
 	 * The cached value of the '{@link #getOntology() <em>Ontology</em>}' attribute list.
@@ -156,86 +157,91 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws OntException 
 	 */
-	public ConstraintSet getIntersectionSet() {
-        if (intersectionSet == null) {
-            intersectionSet = createIntersectionSet();
-            intersectionSet.setTransientSpace(this);
-        }
-        return intersectionSet;
+	public ConstraintSet getIntersectionSet() throws OntException {
+		if (intersectionSet == null) {
+			intersectionSet = createIntersectionSet();
+			intersectionSet.setTransientSpace(this);
+		}
+		return intersectionSet;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws OntException 
 	 */
-	public EList<ConstraintSet> getLeastSpecific(boolean validate) {
-        logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcLeastSpecific")); //$NON-NLS-1$
-        EList<Constraint> optimalClasses = getIntersectionSet().getLeastSpecific();
-        EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
-        Map<Constraint, ConstraintSet> im = createIntersectionMap(validate);
-        for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
-            ConstraintSet set = im.get(ocs.next());
-            if (set != null) {
-                optimalLists.add(set);
-            }
-        }
-        return optimalLists;
+	public EList<ConstraintSet> getLeastSpecific(boolean validate) throws OntException {
+		logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcLeastSpecific")); //$NON-NLS-1$
+		EList<Constraint> optimalClasses = getIntersectionSet().getLeastSpecific();
+		EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
+		Map<Constraint, ConstraintSet> im = createIntersectionMap(validate);
+		for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
+			ConstraintSet set = im.get(ocs.next());
+			if (set != null) {
+				optimalLists.add(set);
+			}
+		}
+		return optimalLists;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws OntException 
 	 */
-	public EList<ConstraintSet> getMostSpecific(boolean validate) {
-        logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcLeastSpecific")); //$NON-NLS-1$
-        EList<Constraint> optimalClasses = getIntersectionSet().getMostSpecific();
-        EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
-        Map<Constraint, ConstraintSet> im = createIntersectionMap(validate);
-        for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
-            ConstraintSet set = im.get(ocs.next());
-            if (set != null) {
-                optimalLists.add(set);
-            }
-        }
-        return optimalLists;
+	public EList<ConstraintSet> getMostSpecific(boolean validate) throws OntException {
+		logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcLeastSpecific")); //$NON-NLS-1$
+		EList<Constraint> optimalClasses = getIntersectionSet().getMostSpecific();
+		EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
+		Map<Constraint, ConstraintSet> im = createIntersectionMap(validate);
+		for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
+			ConstraintSet set = im.get(ocs.next());
+			if (set != null) {
+				optimalLists.add(set);
+			}
+		}
+		return optimalLists;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws OntException 
 	 */
-	public EList<ConstraintSet> getValid() {
-        logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcValid")); //$NON-NLS-1$
-        EList<Constraint> optimalClasses = getIntersectionSet().getConstraint();
-        EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
-        Map<Constraint, ConstraintSet> im = createIntersectionMap(true);
-        for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
-            ConstraintSet set = im.get(ocs.next());
-            if (set != null) {
-                optimalLists.add(set);
-            }
-        }
-        return optimalLists;
+	public EList<ConstraintSet> getValid() throws OntException {
+		logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcValid")); //$NON-NLS-1$
+		EList<Constraint> optimalClasses = getIntersectionSet().getConstraint();
+		EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
+		Map<Constraint, ConstraintSet> im = createIntersectionMap(true);
+		for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
+			ConstraintSet set = im.get(ocs.next());
+			if (set != null) {
+				optimalLists.add(set);
+			}
+		}
+		return optimalLists;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws OntException 
 	 */
-	public EList<ConstraintSet> getInvalid() {
-        logger.info(String.format(
-        		PlatformkitResources.getString("ConstraintSpaceImpl.calcInvalid"))); //$NON-NLS-1$
-        EList<Constraint> optimalClasses = getIntersectionSet().getConstraint();
-        EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
-        Map<Constraint, ConstraintSet> im = createIntersectionMap(false);
-        for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
-            ConstraintSet set = im.get(ocs.next());
-            if (!set.isValid()) {
-                optimalLists.add(set);
-            }
-        }
-        return optimalLists;
+	public EList<ConstraintSet> getInvalid() throws OntException {
+		logger.info(String.format(
+				PlatformkitResources.getString("ConstraintSpaceImpl.calcInvalid"))); //$NON-NLS-1$
+		EList<Constraint> optimalClasses = getIntersectionSet().getConstraint();
+		EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
+		Map<Constraint, ConstraintSet> im = createIntersectionMap(false);
+		for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
+			ConstraintSet set = im.get(ocs.next());
+			if (!set.isValid()) {
+				optimalLists.add(set);
+			}
+		}
+		return optimalLists;
 	}
 
 	/**
@@ -243,6 +249,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -287,6 +294,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -352,10 +360,18 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		return result.toString();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSpace#getKnowledgeBase()
+	 */
 	public IOntologies getKnowledgeBase() {
 		return knowledgeBase;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSpace#setKnowledgeBase(be.ac.vub.platformkit.kb.IOntologies)
+	 */
 	public void setKnowledgeBase(IOntologies knowledgeBase) {
 		if (this.knowledgeBase != null) {
 			removeAllOntologyChangeListeners(this.knowledgeBase);
@@ -365,7 +381,11 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 			addAllOntologyChangeListeners(knowledgeBase);
 		}
 	}
-	
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSpace#getOntModel()
+	 */
 	public IOntModel getOntModel() {
 		if (knowledgeBase != null) {
 			return knowledgeBase.getOntModel();
@@ -397,101 +417,111 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		resetCache();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSpace#setPathResolver(be.ac.vub.platformkit.util.PathResolver)
+	 */
 	public void setPathResolver(PathResolver pathResolver) {
 		this.pathResolver = pathResolver;
 	}
-	
-    public PathResolver getPathResolver() {
-    	if (pathResolver == null) {
-    		pathResolver = createPathResolver();
-    	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSpace#getPathResolver()
+	 */
+	public PathResolver getPathResolver() {
+		if (pathResolver == null) {
+			pathResolver = createPathResolver();
+		}
 		return pathResolver;
 	}
 
-    /**
-     * @return A new PathResolver.
-     * Requires {@link Resource#getURI()} of {@link #eResource()} to be set.
-     */
-    protected PathResolver createPathResolver() {
-    	Assert.assertNotNull(eResource());
-    	Assert.assertNotNull(eResource().getURI());
-    	return new EMFURIPathResolver(eResource().getURI());
-    }
+	/**
+	 * @return A new PathResolver.
+	 * Requires {@link Resource#getURI()} of {@link #eResource()} to be set.
+	 */
+	protected PathResolver createPathResolver() {
+		Assert.assertNotNull(eResource());
+		Assert.assertNotNull(eResource().getURI());
+		return new EMFURIPathResolver(eResource().getURI());
+	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ConstraintSpace#init(boolean)
+	 */
 	public boolean init(boolean searchPreClassified)
-    throws IOException {
-    	Assert.assertNotNull(getKnowledgeBase());
-    	boolean preClassified = false;
-        if (searchPreClassified) {
-            try {
-            	getKnowledgeBase().loadOntology(getPreClassifiedOntology());
-            	preClassified = true;
-            } catch (IOException e) {
-            	//abort
-            }
-        } else {
-            EList<String> onts = getOntology();
-            for (int i = 0; i < onts.size(); i++) {
-                InputStream in = getPathResolver().getContents(onts.get(i));
-                getKnowledgeBase().loadOntology(in);
-            }
-        }
-        return preClassified;
-    }
+	throws IOException, OntException {
+		Assert.assertNotNull(getKnowledgeBase());
+		boolean preClassified = false;
+		if (searchPreClassified) {
+			getKnowledgeBase().loadOntology(getPreClassifiedOntology());
+			preClassified = true;
+		} else {
+			EList<String> onts = getOntology();
+			for (int i = 0; i < onts.size(); i++) {
+				InputStream in = getPathResolver().getContents(onts.get(i));
+				getKnowledgeBase().loadOntology(in);
+			}
+		}
+		return preClassified;
+	}
 
-    /**
-     * @return A Map of intersection constraints mapped to their constraint sets.
-     * @param validate If true, validate each constraint set before including.
-     */
-    private Map<Constraint, ConstraintSet> createIntersectionMap(boolean validate) {
-        Map<Constraint, ConstraintSet> im = new HashMap<Constraint, ConstraintSet>();
-        for (Iterator<ConstraintSet> css = getConstraintSet().iterator(); css.hasNext();) {
-            ConstraintSet cs = css.next();
-            if (!validate || cs.isValid()) {
-                im.put(cs.getIntersection(), cs);
-            } else {
-                logger.info(String.format(
-                		PlatformkitResources.getString("ConstraintSpaceImpl.invalidRemoved"), 
-                		cs.getName())); //$NON-NLS-1$
-            }
-        }
-        return im;
-    }
-    
-    /**
-     * Creates a constraint set consisting of all the intersection
-     * constraints of all the constraints.
-     * @return the intersection constraint set.
-     */
-    private ConstraintSet createIntersectionSet() {
-    	ConstraintSet ics = PlatformkitFactory.eINSTANCE.createConstraintSet();
-        ics.setName("_intersectionSet_");
-        for (Iterator<ConstraintSet> it = getConstraintSet().iterator(); it.hasNext();) {
-            ConstraintSet cs = it.next();
-            ics.getConstraint().add(cs.getIntersection());
-        }
-        return ics;
-    }
-    
-    /**
-     * Resets cached intersection set.
-     */
-    protected void resetCache() {
-        if (intersectionSet != null) {
-            intersectionSet = null;
-            logger.fine(PlatformkitResources.getString("ConstraintSpaceImpl.resetIntersection")); //$NON-NLS-1$
-        }
-    }
-    
+	/**
+	 * @return A Map of intersection constraints mapped to their constraint sets.
+	 * @param validate If true, validate each constraint set before including.
+	 * @throws OntException 
+	 */
+	private Map<Constraint, ConstraintSet> createIntersectionMap(boolean validate) throws OntException {
+		Map<Constraint, ConstraintSet> im = new HashMap<Constraint, ConstraintSet>();
+		for (Iterator<ConstraintSet> css = getConstraintSet().iterator(); css.hasNext();) {
+			ConstraintSet cs = css.next();
+			if (!validate || cs.isValid()) {
+				im.put(cs.getIntersection(), cs);
+			} else {
+				logger.info(String.format(
+						PlatformkitResources.getString("ConstraintSpaceImpl.invalidRemoved"), 
+						cs.getName())); //$NON-NLS-1$
+			}
+		}
+		return im;
+	}
+
+	/**
+	 * Creates a constraint set consisting of all the intersection
+	 * constraints of all the constraints.
+	 * @return the intersection constraint set.
+	 * @throws OntException 
+	 */
+	private ConstraintSet createIntersectionSet() throws OntException {
+		ConstraintSet ics = PlatformkitFactory.eINSTANCE.createConstraintSet();
+		ics.setName("_intersectionSet_");
+		for (Iterator<ConstraintSet> it = getConstraintSet().iterator(); it.hasNext();) {
+			ConstraintSet cs = it.next();
+			ics.getConstraint().add(cs.getIntersection());
+		}
+		return ics;
+	}
+
+	/**
+	 * Resets cached intersection set.
+	 */
+	protected void resetCache() {
+		if (intersectionSet != null) {
+			intersectionSet = null;
+			logger.fine(PlatformkitResources.getString("ConstraintSpaceImpl.resetIntersection")); //$NON-NLS-1$
+		}
+	}
+
 	/**
 	 * @return The contents of the inferred ontology (.inferred.owl).
 	 * @throws IOException if the inferred ontology cannot be found.
 	 */
 	private InputStream getPreClassifiedOntology() throws IOException {
 		URI uri = eResource().getURI().trimFileExtension().appendFileExtension("inferred.owl");
-        logger.info(String.format(
-        		PlatformkitResources.getString("ConstraintSpaceImpl.searchPreclassified"), 
-        		uri)); //$NON-NLS-1$
+		logger.info(String.format(
+				PlatformkitResources.getString("ConstraintSpaceImpl.searchPreclassified"), 
+				uri)); //$NON-NLS-1$
 		return converter.createInputStream(uri);
 	}
 
@@ -499,5 +529,5 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		setPathResolver(null);
 		return super.eSetResource(resource, notifications);
 	}
-	
+
 } //ConstraintSpaceImpl

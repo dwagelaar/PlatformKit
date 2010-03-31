@@ -13,11 +13,11 @@ package be.ac.vub.platformkit.util;
 import java.util.Comparator;
 import java.util.logging.Logger;
 
-import junit.framework.Assert;
 import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
  * Compares {@link Constraint} objects, such that the more specific (subclass) constraint is
@@ -52,43 +52,45 @@ public class HierarchyComparator implements Comparator<Constraint> {
 
 	/**
 	 * @see Comparator#compare(Object, Object)
-	 * @throws ClassCastException if no order can be determined.
+	 * @throws RuntimeException if no order can be determined.
 	 */
 	public int compare(Constraint arg0, Constraint arg1)
 	throws ClassCastException {
-		IOntClass c0 = arg0.getOntClass();
-		IOntClass c1 = arg1.getOntClass();
-		Assert.assertNotNull(c0);
-		Assert.assertNotNull(c1);
-		if (c0.equals(c1) || c0.hasEquivalentClass(c1)) {
+		try {
+			final IOntClass c0 = arg0.getOntClass();
+			final IOntClass c1 = arg1.getOntClass();
+			if (c0.equals(c1) || c0.hasEquivalentClass(c1)) {
+				logger.fine(String.format(
+						PlatformkitResources.getString("HierarchyComparator.compareEquivalent"), 
+						c0, 
+						c1)); //$NON-NLS-1$
+				return 0;
+			}
+			if (c0.hasSuperClass(c1)) {
+				logger.fine(String.format(
+						PlatformkitResources.getString("HierarchyComparator.compareSubclass"), 
+						c0, 
+						c1)); //$NON-NLS-1$
+				return 1 * mode;
+			}
+			if (c0.hasSubClass(c1)) {
+				logger.fine(String.format(
+						PlatformkitResources.getString("HierarchyComparator.compareSuperclass"), 
+						c0, 
+						c1)); //$NON-NLS-1$
+				return -1 * mode;
+			}
 			logger.fine(String.format(
-					PlatformkitResources.getString("HierarchyComparator.compareEquivalent"), 
+					PlatformkitResources.getString("HierarchyComparator.compareOrthogonal"), 
 					c0, 
 					c1)); //$NON-NLS-1$
-			return 0;
-		}
-		if (c0.hasSuperClass(c1)) {
-			logger.fine(String.format(
-					PlatformkitResources.getString("HierarchyComparator.compareSubclass"), 
+			throw new RuntimeException(String.format(
+					PlatformkitResources.getString("HierarchyComparator.cannotDetermineOrder"), 
 					c0, 
 					c1)); //$NON-NLS-1$
-			return 1 * mode;
+		} catch (OntException e) {
+			throw new RuntimeException(e);
 		}
-		if (c0.hasSubClass(c1)) {
-			logger.fine(String.format(
-					PlatformkitResources.getString("HierarchyComparator.compareSuperclass"), 
-					c0, 
-					c1)); //$NON-NLS-1$
-			return -1 * mode;
-		}
-		logger.fine(String.format(
-				PlatformkitResources.getString("HierarchyComparator.compareOrthogonal"), 
-				c0, 
-				c1)); //$NON-NLS-1$
-		throw new ClassCastException(String.format(
-				PlatformkitResources.getString("HierarchyComparator.cannotDetermineOrder"), 
-				c0, 
-				c1)); //$NON-NLS-1$
 	}
 
 	/**

@@ -24,6 +24,7 @@ import be.ac.vub.platformkit.IOntModelChangeListener;
 import be.ac.vub.platformkit.PlatformkitFactory;
 import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,6 +74,13 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 	 * @generated
 	 */
 	private EClass iOntModelChangeListenerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ontExceptionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -248,6 +256,15 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOntException() {
+		return ontExceptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PlatformkitFactory getPlatformkitFactory() {
 		return (PlatformkitFactory)getEFactoryInstance();
 	}
@@ -287,6 +304,8 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 		iOntModelEClass = createEClass(IONT_MODEL);
 
 		iOntModelChangeListenerEClass = createEClass(IONT_MODEL_CHANGE_LISTENER);
+
+		ontExceptionEClass = createEClass(ONT_EXCEPTION);
 	}
 
 	/**
@@ -324,36 +343,44 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 		initEAttribute(getConstraintSpace_Ontology(), ecorePackage.getEString(), "ontology", null, 0, -1, ConstraintSpace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getConstraintSpace_ConstraintSet(), this.getConstraintSet(), this.getConstraintSet_Space(), "constraintSet", null, 0, -1, ConstraintSpace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
-		addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getIntersectionSet", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		EOperation op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getIntersectionSet", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEException(op, this.getOntException());
 
-		EOperation op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getMostSpecific", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getMostSpecific", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEException(op, this.getOntException());
 
 		op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getLeastSpecific", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEException(op, this.getOntException());
 
-		addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getValid", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getValid", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEException(op, this.getOntException());
 
-		addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getInvalid", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		op = addEOperation(constraintSpaceEClass, this.getConstraintSet(), "getInvalid", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEException(op, this.getOntException());
 
 		initEClass(constraintSetEClass, ConstraintSet.class, "ConstraintSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getConstraintSet_Space(), this.getConstraintSpace(), this.getConstraintSpace_ConstraintSet(), "space", null, 1, 1, ConstraintSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getConstraintSet_Name(), ecorePackage.getEString(), "name", null, 1, 1, ConstraintSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getConstraintSet_Constraint(), this.getConstraint(), this.getConstraint_Set(), "constraint", null, 0, -1, ConstraintSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
-		addEOperation(constraintSetEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		op = addEOperation(constraintSetEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEException(op, this.getOntException());
 
 		addEOperation(constraintSetEClass, this.getConstraint(), "getMostSpecific", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
 		addEOperation(constraintSetEClass, this.getConstraint(), "getLeastSpecific", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		addEOperation(constraintSetEClass, this.getConstraint(), "getIntersection", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		op = addEOperation(constraintSetEClass, this.getConstraint(), "getIntersection", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEException(op, this.getOntException());
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getConstraint_Set(), this.getConstraintSet(), this.getConstraintSet_Constraint(), "set", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getConstraint_OntClassURI(), ecorePackage.getEString(), "ontClassURI", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
-		addEOperation(constraintEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		op = addEOperation(constraintEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEException(op, this.getOntException());
 
 		initEClass(iOntModelEClass, IOntModel.class, "IOntModel", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
@@ -361,6 +388,9 @@ public class PlatformkitPackageImpl extends EPackageImpl implements PlatformkitP
 
 		op = addEOperation(iOntModelChangeListenerEClass, null, "ontModelChanged", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, this.getIOntModel(), "ontModel", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEException(op, this.getOntException());
+
+		initEClass(ontExceptionEClass, OntException.class, "OntException", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);

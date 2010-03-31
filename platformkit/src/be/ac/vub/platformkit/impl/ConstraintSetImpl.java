@@ -38,6 +38,7 @@ import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.util.HierarchyComparator;
 import be.ac.vub.platformkit.util.TreeSorter;
 
@@ -88,7 +89,11 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		}
 
 		public IOntClass next() {
-			return inner.next().getOntClass();
+			try {
+				return inner.next().getOntClass();
+			} catch (OntException e) {
+				throw new RuntimeException(e);
+			}
 		}
 
 		public void remove() {
@@ -247,8 +252,9 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws OntException 
 	 */
-	public boolean isValid() {
+	public boolean isValid() throws OntException {
 		for (Iterator<Constraint> cs = getConstraint().iterator(); cs.hasNext();) {
 			if (!cs.next().isValid()) {
 				return false;
@@ -310,8 +316,9 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws OntException 
 	 */
-	public Constraint getIntersection() {
+	public Constraint getIntersection() throws OntException {
 		if (intersection == null) {
 			intersection = createIntersection();
 		}
@@ -321,8 +328,9 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	/**
 	 * Creates the intersection constraint of all contained constraints.
 	 * @return the intersection constraint.
+	 * @throws OntException 
 	 */
-	private Constraint createIntersection() {
+	private Constraint createIntersection() throws OntException {
 		String ontClassURI = IOntologies.LOCAL_INF_NS + "#" + getName() + "Intersection"; //$NON-NLS-1$ //$NON-NLS-2$
 		IOntModel ontology = getOntModel();
 		Assert.assertNotNull(ontology);
@@ -337,6 +345,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 				logger.fine(String.format(
 						PlatformkitResources.getString("ConstraintSetImpl.createIntersection"), 
 						getName())); //$NON-NLS-1$
+				verifyValidConstraints();
 				ontology.createIntersectionClass(ontClassURI, 
 						new ConstraintIterator(getConstraint().iterator()));
 			}
@@ -348,10 +357,24 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	}
 
 	/**
+	 * @throws OntException If {@link #getConstraint()} contains {@link Constraint}s without resolved {@link IOntClass}es.
+	 */
+	private void verifyValidConstraints() throws OntException {
+		for (Constraint c : getConstraint()) {
+			if (c.getOntClass() == null) {
+				throw new OntException(String.format(
+						PlatformkitResources.getString("ontClassNotFound"),
+						c.getOntClassURI()));
+			}
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -418,6 +441,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -510,7 +534,11 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		for (Iterator<Constraint> it = getConstraint().iterator(); it.hasNext();) {
 			Constraint constraint = it.next();
 			kb.removeOntModelChangeListener(constraint);
-			constraint.ontModelChanged(null);
+			try {
+				constraint.ontModelChanged(null);
+			} catch (OntException e) {
+				throw new RuntimeException(e);
+			}
 		}
 		resetCache();
 	}

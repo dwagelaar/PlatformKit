@@ -49,18 +49,21 @@ public interface IOntologies {
 
 	/**
 	 * Attaches the Pellet OWL reasoner to the knowledgebase.
+	 * @throws OntException 
 	 */
-	public abstract void attachPelletReasoner();
+	public abstract void attachPelletReasoner() throws OntException;
 
 	/**
 	 * Attaches the transitive reasoner to the knowledgebase.
+	 * @throws OntException 
 	 */
-	public abstract void attachTransitiveReasoner();
+	public abstract void attachTransitiveReasoner() throws OntException;
 
 	/**
 	 * Detaches the current reasoner from the knowledgebase.
+	 * @throws OntException 
 	 */
-	public abstract void detachReasoner();
+	public abstract void detachReasoner() throws OntException;
 
 	/**
 	 * @return The base ontology object (excluding reasoner results).
@@ -80,14 +83,16 @@ public interface IOntologies {
 	/**
 	 * Loads an ontology into the repository.
 	 * @param url the ontology url or namespace.
+	 * @throws OntException 
 	 */
-	public abstract void loadOntology(String url);
+	public abstract void loadOntology(String url) throws OntException;
 
 	/**
 	 * Loads an ontology into the repository.
 	 * @param in the inputstream containing the ontology.
+	 * @throws OntException 
 	 */
-	public abstract void loadOntology(InputStream in);
+	public abstract void loadOntology(InputStream in) throws OntException;
 
 	/**
 	 * Loads an instance ontology into the repository, removing the previous

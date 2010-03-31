@@ -92,10 +92,13 @@ public class Validate extends ViewerFilterAction {
 	 * @param job
 	 */
 	private void showReport(ValidateJob job) {
-		MessageDialogRunnable dlg = new MessageDialogRunnable(
-				PlatformkitEditorPlugin.getPlugin().getString("Validate.reportDlgTitle"), 
-				job.getReport()); //$NON-NLS-1$
-		PlatformkitEditorPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
+		final String report = job.getReport();
+		if (report != null) {
+			MessageDialogRunnable dlg = new MessageDialogRunnable(
+					PlatformkitEditorPlugin.getPlugin().getString("Validate.reportDlgTitle"), 
+					report); //$NON-NLS-1$
+			PlatformkitEditorPlugin.getPlugin().getWorkbench().getDisplay().syncExec(dlg);
+		}
 	}
 
 }

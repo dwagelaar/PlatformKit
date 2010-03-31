@@ -32,6 +32,7 @@ import org.semanticweb.owl.model.OWLOntologyManager;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
  * {@link IOntModel} adapter for {@link OWLOntology}.
@@ -69,7 +70,7 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @see be.ac.vub.platformkit.kb.IOntModel#createIntersectionClass(java.lang.String, java.util.Iterator)
 	 */
 	public IOntClass createIntersectionClass(String uri,
-			Iterator<IOntClass> members) {
+			Iterator<IOntClass> members) throws OntException {
 		final OWLOntologyManager mgr = ontologies.mgr;
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		try {
@@ -78,6 +79,12 @@ public class OWLOntologyAdapter implements IOntModel {
 			Set<OWLClass> operands = new HashSet<OWLClass>();
 			while (members.hasNext()) {
 				OWLClassAdapter c = (OWLClassAdapter) members.next();
+				Assert.assertNotNull(c);
+				if (c == null) {
+					throw new OntException(String.format(
+							PlatformkitOWLAPIResources.getString("OWLOntologyAdapter.ontClassNotFound"),
+							c));
+				}
 				operands.add(c.model);
 			}
 			OWLObjectIntersectionOf intersection = factory.getOWLObjectIntersectionOf(operands);

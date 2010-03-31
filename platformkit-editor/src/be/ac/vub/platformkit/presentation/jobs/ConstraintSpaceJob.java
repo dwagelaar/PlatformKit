@@ -25,6 +25,7 @@ import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
 import be.ac.vub.platformkit.jobs.ProgressMonitorJob;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
@@ -49,8 +50,9 @@ public abstract class ConstraintSpaceJob extends ProgressMonitorJob {
 	 * Attaches either a DIG reasoner or the built-in Pellet reasoner.
 	 * @param monitor
 	 * @param ont
+	 * @throws OntException 
 	 */
-	protected void attachDLReasoner(IProgressMonitor monitor, IOntologies ont) {
+	protected void attachDLReasoner(IProgressMonitor monitor, IOntologies ont) throws OntException {
 		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
 		.getPreferenceStore();
 		String reasoner = store.getString(PreferenceConstants.P_REASONER);

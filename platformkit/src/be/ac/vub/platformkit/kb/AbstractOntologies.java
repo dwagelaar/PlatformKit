@@ -42,9 +42,10 @@ public abstract class AbstractOntologies implements IOntologies {
 
 	/**
 	 * Notifies all ontology change listeners of the new ontology model.
+	 * @throws OntException 
 	 * @see #addOntModelChangeListener(IOntModelChangeListener)
 	 */
-	protected void notifyOntologyChanged() {
+	protected void notifyOntologyChanged() throws OntException {
 		IOntModel ontology = getOntModel();
 		for (Iterator<IOntModelChangeListener> it = ontologyChangeListeners.iterator(); it.hasNext();) {
 			it.next().ontModelChanged(ontology);

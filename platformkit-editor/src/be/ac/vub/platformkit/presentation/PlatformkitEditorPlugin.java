@@ -92,8 +92,8 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 	 */
 	public PlatformkitEditorPlugin() {
 		super
-		(new ResourceLocator [] {
-		});
+			(new ResourceLocator [] {
+			});
 	}
 
 	/**
