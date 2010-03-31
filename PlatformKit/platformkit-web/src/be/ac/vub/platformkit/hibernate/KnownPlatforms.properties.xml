@@ -4,16 +4,16 @@
 	<comment>List of browser agent strings mapped to ontology names</comment>
 
 	<!--  Apple MacOS X has Java 1.5 built in -->
-	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl-nl) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3">JDK 1.5 PC</entry>
-	<entry key="Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3">JDK 1.5 PC</entry>
-	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3">JDK 1.5 PC</entry>
-	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4">JDK 1.5 PC</entry>
-	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4">JDK 1.5 PC</entry>
-	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5">JDK 1.5 PC</entry>
-	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5">JDK 1.5 PC</entry>
-	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6">JDK 1.5 PC</entry>
-	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6">JDK 1.5 PC</entry>
-	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14">JDK 1.5 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl-nl) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3">J2SE 5.0 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3">J2SE 5.0 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3">J2SE 5.0 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4">J2SE 5.0 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4">J2SE 5.0 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5">J2SE 5.0 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5">J2SE 5.0 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; nl; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6">J2SE 5.0 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6">J2SE 5.0 PC</entry>
+	<entry key="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14">J2SE 5.0 PC</entry>
 	
 	<!--  Zaurus -->
 	<entry key="Mozilla/4.0 (compatible; MSIE 6.0; Qt embedded; Linux armv5tel; 640x480) Opera 7.55  [en] (IBM EVV/3.0/EAK01AG9/LE)">Sharp Zaurus SL-C1000 PDA with J2ME PP 1.0</entry>

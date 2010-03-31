@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="platformkit-web/web" default="all">
 	<property name="platformkit.path" value="../../platformkit"/>
-	<property name="platformkit-examples.path" value="../../platformkit-examples/codamos_2007_01"/>
+	<property name="platformkit-examples.path" value="../../platformkit-examples/platformkit_2010_1"/>
 	<property name="platformkit-java.path" value="../../platformkit-java"/>
 	<property name="platformkit-kb-jena.path" value="../../platformkit-kb-jena"/>
 	<property name="platformkit-kb-owlapi.path" value="../../platformkit-kb-owlapi"/>
