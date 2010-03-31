@@ -10,6 +10,7 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.util;
 
+import be.ac.vub.platformkit.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -21,6 +22,7 @@ import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.IOntModelChangeListener;
 import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,31 +87,35 @@ public class PlatformkitAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected PlatformkitSwitch<Adapter> modelSwitch =
 		new PlatformkitSwitch<Adapter>() {
-		@Override
-		public Adapter caseConstraintSpace(ConstraintSpace object) {
-			return createConstraintSpaceAdapter();
-		}
-		@Override
-		public Adapter caseConstraintSet(ConstraintSet object) {
-			return createConstraintSetAdapter();
-		}
-		@Override
-		public Adapter caseConstraint(Constraint object) {
-			return createConstraintAdapter();
-		}
-		@Override
-		public Adapter caseIOntModel(IOntModel object) {
-			return createIOntModelAdapter();
-		}
-		@Override
-		public Adapter caseIOntModelChangeListener(IOntModelChangeListener object) {
-			return createIOntModelChangeListenerAdapter();
-		}
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+			@Override
+			public Adapter caseConstraintSpace(ConstraintSpace object) {
+				return createConstraintSpaceAdapter();
+			}
+			@Override
+			public Adapter caseConstraintSet(ConstraintSet object) {
+				return createConstraintSetAdapter();
+			}
+			@Override
+			public Adapter caseConstraint(Constraint object) {
+				return createConstraintAdapter();
+			}
+			@Override
+			public Adapter caseIOntModel(IOntModel object) {
+				return createIOntModelAdapter();
+			}
+			@Override
+			public Adapter caseIOntModelChangeListener(IOntModelChangeListener object) {
+				return createIOntModelChangeListenerAdapter();
+			}
+			@Override
+			public Adapter caseOntException(OntException object) {
+				return createOntExceptionAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -192,6 +198,20 @@ public class PlatformkitAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIOntModelChangeListenerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link be.ac.vub.platformkit.kb.util.OntException <em>Ont Exception</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see be.ac.vub.platformkit.kb.util.OntException
+	 * @generated
+	 */
+	public Adapter createOntExceptionAdapter() {
 		return null;
 	}
 

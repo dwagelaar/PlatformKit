@@ -10,6 +10,7 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.util;
 
+import be.ac.vub.platformkit.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -21,6 +22,7 @@ import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.IOntModelChangeListener;
 import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
  * <!-- begin-user-doc -->
@@ -88,9 +90,9 @@ public class PlatformkitSwitch<T> {
 		else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
 			return
-			eSuperTypes.isEmpty() ?
+				eSuperTypes.isEmpty() ?
 					defaultCase(theEObject) :
-						doSwitch(eSuperTypes.get(0), theEObject);
+					doSwitch(eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -103,32 +105,32 @@ public class PlatformkitSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case PlatformkitPackage.CONSTRAINT_SPACE: {
-			ConstraintSpace constraintSpace = (ConstraintSpace)theEObject;
-			T result = caseConstraintSpace(constraintSpace);
-			if (result == null) result = defaultCase(theEObject);
-			return result;
-		}
-		case PlatformkitPackage.CONSTRAINT_SET: {
-			ConstraintSet constraintSet = (ConstraintSet)theEObject;
-			T result = caseConstraintSet(constraintSet);
-			if (result == null) result = defaultCase(theEObject);
-			return result;
-		}
-		case PlatformkitPackage.CONSTRAINT: {
-			Constraint constraint = (Constraint)theEObject;
-			T result = caseConstraint(constraint);
-			if (result == null) result = caseIOntModelChangeListener(constraint);
-			if (result == null) result = defaultCase(theEObject);
-			return result;
-		}
-		case PlatformkitPackage.IONT_MODEL_CHANGE_LISTENER: {
-			IOntModelChangeListener iOntModelChangeListener = (IOntModelChangeListener)theEObject;
-			T result = caseIOntModelChangeListener(iOntModelChangeListener);
-			if (result == null) result = defaultCase(theEObject);
-			return result;
-		}
-		default: return defaultCase(theEObject);
+			case PlatformkitPackage.CONSTRAINT_SPACE: {
+				ConstraintSpace constraintSpace = (ConstraintSpace)theEObject;
+				T result = caseConstraintSpace(constraintSpace);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PlatformkitPackage.CONSTRAINT_SET: {
+				ConstraintSet constraintSet = (ConstraintSet)theEObject;
+				T result = caseConstraintSet(constraintSet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PlatformkitPackage.CONSTRAINT: {
+				Constraint constraint = (Constraint)theEObject;
+				T result = caseConstraint(constraint);
+				if (result == null) result = caseIOntModelChangeListener(constraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PlatformkitPackage.IONT_MODEL_CHANGE_LISTENER: {
+				IOntModelChangeListener iOntModelChangeListener = (IOntModelChangeListener)theEObject;
+				T result = caseIOntModelChangeListener(iOntModelChangeListener);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			default: return defaultCase(theEObject);
 		}
 	}
 
@@ -204,6 +206,21 @@ public class PlatformkitSwitch<T> {
 	 * @generated
 	 */
 	public T caseIOntModelChangeListener(IOntModelChangeListener object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ont Exception</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ont Exception</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOntException(OntException object) {
 		return null;
 	}
 

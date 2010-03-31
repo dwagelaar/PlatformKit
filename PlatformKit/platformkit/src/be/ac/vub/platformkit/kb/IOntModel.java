@@ -12,6 +12,8 @@ package be.ac.vub.platformkit.kb;
 
 import java.util.Iterator;
 
+import be.ac.vub.platformkit.kb.util.OntException;
+
 /**
  * Interface for ontology models
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
@@ -34,7 +36,8 @@ public interface IOntModel {
 	 * @param uri The URI of the new intersection class, or null for an anonymous class description.
 	 * @param members A list of resources denoting the classes that comprise the intersection
 	 * @return An intersection class description
+	 * @throws OntException if any backing ontology classes for members cannot be found
 	 */
-	public IOntClass createIntersectionClass(String uri, Iterator<IOntClass> members);
+	public IOntClass createIntersectionClass(String uri, Iterator<IOntClass> members) throws OntException;
 
 }

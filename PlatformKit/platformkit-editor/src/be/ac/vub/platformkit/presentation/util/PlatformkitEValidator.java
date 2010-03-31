@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
 import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
-import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.util.PlatformkitSwitch;
 
 /**
@@ -43,15 +42,16 @@ public class PlatformkitEValidator extends EValidatorWrapper {
 		 */
 		@Override
 		public Diagnostic caseConstraint(Constraint object) {
-			//TODO guarantee previous validation of ConstraintSpace?
 			Assert.isNotNull(object.getSet());
 			Assert.isNotNull(object.getSet().getSpace());
-			if (object.getOntClass() == null) {
+			try {
+				object.getOntClass();
+			} catch (Exception e) {
 				return new BasicDiagnostic
 				(Diagnostic.ERROR,
 						DIAGNOSTIC_SOURCE,
 						0,
-						String.format(PlatformkitEditorPlugin.getPlugin().getString("PlatformkitEValidator.owlClassNotFound"), object.getOntClassURI()),
+						e.getLocalizedMessage(),
 						new Object [] { object }); //$NON-NLS-1$
 			}
 			return super.caseConstraint(object);

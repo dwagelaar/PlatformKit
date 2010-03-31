@@ -22,9 +22,10 @@ import org.eclipse.emf.ecore.EObject;
 
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
- * Validates EObjects against an internal ConstraintSpace copy.
+ * Validates {@link EObject}s against an internal {@link ConstraintSpace} copy.
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class PlatformKitEObjectValidator implements IEObjectValidator {
@@ -33,10 +34,11 @@ public class PlatformKitEObjectValidator implements IEObjectValidator {
 	private List<String> valid = new ArrayList<String>();
 
 	/**
-	 * Creates a new CDDEObjectValidator.
+	 * Creates a new {@link PlatformKitEObjectValidator}.
 	 * @param space The ConstraintSpace to validate against.
+	 * @throws OntException 
 	 */
-	public PlatformKitEObjectValidator(ConstraintSpace space) {
+	public PlatformKitEObjectValidator(ConstraintSpace space) throws OntException {
 		Assert.isNotNull(space);
 		for (Iterator<ConstraintSet> it = space.getInvalid().iterator(); it.hasNext();) {
 			ConstraintSet set = it.next();

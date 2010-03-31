@@ -10,6 +10,7 @@
  *******************************************************************************/
 package be.ac.vub.platformkit;
 
+import be.ac.vub.platformkit.kb.util.OntException;
 import org.eclipse.emf.ecore.EFactory;
 
 /**

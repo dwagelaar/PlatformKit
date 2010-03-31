@@ -7,29 +7,30 @@
     <eAnnotations source="GenModel">
       <details key="documentation" value="The total space of platform constraint sets to consider."/>
     </eAnnotations>
-    <eOperations name="getIntersectionSet" eType="#//ConstraintSet">
+    <eOperations name="getIntersectionSet" eType="#//ConstraintSet" eExceptions="#//OntException">
       <eAnnotations source="GenModel">
         <details key="documentation" value="Returns a constraint set consisting of all the intersection classes of all the constraints. Creates the IntersectionClasses for all ConstraintSets as necessary."/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getMostSpecific" upperBound="-1" eType="#//ConstraintSet">
+    <eOperations name="getMostSpecific" upperBound="-1" eType="#//ConstraintSet" eExceptions="#//OntException">
       <eAnnotations source="GenModel">
         <details key="documentation" value="Returns all or valid constraint sets in order, most-specific first. Requires a reasoner."/>
       </eAnnotations>
       <eParameters name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eOperations>
-    <eOperations name="getLeastSpecific" upperBound="-1" eType="#//ConstraintSet">
+    <eOperations name="getLeastSpecific" upperBound="-1" eType="#//ConstraintSet"
+        eExceptions="#//OntException">
       <eAnnotations source="GenModel">
         <details key="documentation" value="Returns all or valid constraint sets in order, least-specific first. Requires a reasoner."/>
       </eAnnotations>
       <eParameters name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eOperations>
-    <eOperations name="getValid" upperBound="-1" eType="#//ConstraintSet">
+    <eOperations name="getValid" upperBound="-1" eType="#//ConstraintSet" eExceptions="#//OntException">
       <eAnnotations source="GenModel">
         <details key="documentation" value="Returns valid constraint sets. Requires a reasoner."/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getInvalid" upperBound="-1" eType="#//ConstraintSet">
+    <eOperations name="getInvalid" upperBound="-1" eType="#//ConstraintSet" eExceptions="#//OntException">
       <eAnnotations source="GenModel">
         <details key="documentation" value="Returns invalid constraint sets. Requires a reasoner."/>
       </eAnnotations>
@@ -51,7 +52,8 @@
     <eAnnotations source="GenModel">
       <details key="documentation" value="A set of platform constraints for a targeted entity."/>
     </eAnnotations>
-    <eOperations name="isValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="isValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        eExceptions="#//OntException">
       <eAnnotations source="GenModel">
         <details key="documentation" value="Returns true if all the constraints hold, false otherwise."/>
       </eAnnotations>
@@ -66,7 +68,7 @@
         <details key="documentation" value="Returns all constraints in this set in order, least-specific first. Requires a reasoner."/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getIntersection" eType="#//Constraint">
+    <eOperations name="getIntersection" eType="#//Constraint" eExceptions="#//OntException">
       <eAnnotations source="GenModel">
         <details key="documentation" value="Returns the intersection class constraint of all contained constraints."/>
       </eAnnotations>
@@ -94,7 +96,8 @@
     <eAnnotations source="GenModel">
       <details key="documentation" value="A single platform constraint. Corresponds to an OntClass."/>
     </eAnnotations>
-    <eOperations name="isValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="isValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        eExceptions="#//OntException">
       <eAnnotations source="GenModel">
         <details key="documentation" value="Returns true if this constraint hold, false otherwise."/>
       </eAnnotations>
@@ -119,7 +122,7 @@
     <eAnnotations source="GenModel">
       <details key="documentation" value="Change listener interface for {@link Ontologies#getOntModel()}"/>
     </eAnnotations>
-    <eOperations name="ontModelChanged">
+    <eOperations name="ontModelChanged" eExceptions="#//OntException">
       <eAnnotations source="GenModel">
         <details key="documentation" value="Invoked when ontology model has changed."/>
       </eAnnotations>
@@ -130,4 +133,6 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OntException" instanceClassName="be.ac.vub.platformkit.kb.util.OntException"
+      abstract="true" interface="true"/>
 </ecore:EPackage>

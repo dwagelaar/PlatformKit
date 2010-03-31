@@ -42,5 +42,6 @@
         <genParameters ecoreParameter="Platformkit.ecore#//IOntModelChangeListener/ontModelChanged/ontModel"/>
       </genOperations>
     </genClasses>
+    <genClasses ecoreClass="Platformkit.ecore#//OntException"/>
   </genPackages>
 </genmodel:GenModel>

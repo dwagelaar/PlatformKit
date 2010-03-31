@@ -12,6 +12,7 @@ package be.ac.vub.platformkit;
 
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,16 +98,17 @@ public interface Constraint extends IOntModelChangeListener {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" exceptions="be.ac.vub.platformkit.OntException"
 	 *        annotation="GenModel documentation='Returns true if this constraint hold, false otherwise.'"
 	 * @generated
 	 */
-	boolean isValid();
+	boolean isValid() throws OntException;
 	
     /**
      * @return The inner ontology class, if it can be determined. Null otherwise.
+     * @throws OntException 
      */
-    IOntClass getOntClass();
+    IOntClass getOntClass() throws OntException;
 
     /**
      * @return The OntModel from the constraint set, if any, null otherwise.

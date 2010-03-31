@@ -91,7 +91,7 @@ public class JenaOntologies extends AbstractOntologies {
 	/* (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#attachPelletReasoner()
 	 */
-	public void attachPelletReasoner() {
+	public void attachPelletReasoner() throws OntException {
 		if (ontology.model.getSpecification().getReasoner() != null) {
 			if (ontology.model.getSpecification().getReasoner() instanceof PelletReasoner) {
 				logger.warning(PlatformkitJenaResources.getString("JenaOntologies.pelletAlreadyAttached")); //$NON-NLS-1$
@@ -112,9 +112,10 @@ public class JenaOntologies extends AbstractOntologies {
 
 	/**
 	 * Attaches the OWL micro reasoner to the knowledgebase.
+	 * @throws OntException 
 	 * @see ReasonerRegistry#getOWLMicroReasoner()
 	 */
-	public void attachOWLReasoner() {
+	public void attachOWLReasoner() throws OntException {
 		if (ontology.model.getSpecification().getReasoner() != null) {
 			if (ontology.model.getSpecification().getReasoner() instanceof OWLMicroReasoner) {
 				logger.warning(PlatformkitJenaResources.getString("JenaOntologies.owlMicroAlreadyAttached")); //$NON-NLS-1$
@@ -140,7 +141,7 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#attachTransitiveReasoner()
 	 * @see ReasonerRegistry#getTransitiveReasoner()
 	 */
-	public void attachTransitiveReasoner() {
+	public void attachTransitiveReasoner() throws OntException {
 		if (ontology.model.getSpecification().getReasoner() != null) {
 			if (ontology.model.getSpecification().getReasoner() instanceof TransitiveReasoner) {
 				logger.warning(PlatformkitJenaResources.getString("JenaOntologies.transAlreadyAttached")); //$NON-NLS-1$
@@ -165,7 +166,7 @@ public class JenaOntologies extends AbstractOntologies {
 	/* (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#detachReasoner()
 	 */
-	public void detachReasoner() {
+	public void detachReasoner() throws OntException {
 		if (ontology.model.getSpecification().getReasoner() == null) {
 			logger.warning(PlatformkitJenaResources.getString("JenaOntologies.alreadyDetached")); //$NON-NLS-1$
 			return;
@@ -199,7 +200,7 @@ public class JenaOntologies extends AbstractOntologies {
 	/* (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadOntology(java.lang.String)
 	 */
-	public void loadOntology(String url) {
+	public void loadOntology(String url) throws OntException {
 		logger.fine(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.loadingOntFrom"), 
 				url)); //$NON-NLS-1$
@@ -212,7 +213,7 @@ public class JenaOntologies extends AbstractOntologies {
 	/* (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadOntology(java.io.InputStream)
 	 */
-	public void loadOntology(InputStream in) {
+	public void loadOntology(InputStream in) throws OntException {
 		logger.fine(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.loadingOntFrom"), 
 				in)); //$NON-NLS-1$

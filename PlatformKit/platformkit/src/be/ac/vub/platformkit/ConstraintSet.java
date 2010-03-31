@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,11 +121,11 @@ public interface ConstraintSet extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" exceptions="be.ac.vub.platformkit.OntException"
 	 *        annotation="GenModel documentation='Returns true if all the constraints hold, false otherwise.'"
 	 * @generated
 	 */
-	boolean isValid();
+	boolean isValid() throws OntException;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,11 +148,11 @@ public interface ConstraintSet extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" exceptions="be.ac.vub.platformkit.OntException"
 	 *        annotation="GenModel documentation='Returns the intersection class constraint of all contained constraints.'"
 	 * @generated
 	 */
-	Constraint getIntersection();
+	Constraint getIntersection() throws OntException;
 
 	/**
 	 * Adds all constraints as listeners to kb.

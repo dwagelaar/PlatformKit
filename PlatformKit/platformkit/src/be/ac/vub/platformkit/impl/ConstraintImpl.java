@@ -12,8 +12,6 @@ package be.ac.vub.platformkit.impl;
 
 import java.util.logging.Logger;
 
-import junit.framework.Assert;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -30,6 +28,7 @@ import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
  * <!-- begin-user-doc -->
@@ -171,9 +170,11 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws OntException 
 	 */
-	public boolean isValid() {
-		Assert.assertNotNull(ontClass);
+	public boolean isValid() throws OntException {
+		verifyConstraint();
+		final IOntClass ontClass = getOntClass();
 		boolean valid;
 		//Jena is not thread-safe when communicating to the DIG reasoner,
 		//so lock all actions that trigger DIG activity.
@@ -190,6 +191,17 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 					PlatformkitResources.getString("ConstraintImpl.isInvalid"), 
 					ontClass)); //$NON-NLS-1$
 			return false;
+		}
+	}
+
+	/**
+	 * @throws OntException If {@link #getOntClass()} returns <code>null</code>.
+	 */
+	public void verifyConstraint() throws OntException {
+		if (getOntClass() == null) {
+			throw new OntException(String.format(
+					PlatformkitResources.getString("ontClassNotFound"),
+					getOntClassURI()));
 		}
 	}
 
@@ -325,7 +337,8 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.IOntModelChangeListener#ontModelChanged(be.ac.vub.platformkit.kb.IOntModel)
 	 */
-	public void ontModelChanged(IOntModel ontModel) {
+	public void ontModelChanged(IOntModel ontModel) throws OntException {
+		final String ontClassURI = getOntClassURI();
 		if (ontClassURI != null) {
 			if (ontModel == null) {
 				setOntClass(null);
@@ -342,9 +355,11 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * Finds the {@link IOntClass} that represents this {@link Constraint}.
 	 * @param ontModel
 	 * @return the {@link IOntClass} that represents this {@link Constraint}, or <code>null</code>.
+	 * @throws OntException 
 	 */
-	protected IOntClass findOntClass(IOntModel ontModel) {
+	protected IOntClass findOntClass(IOntModel ontModel) throws OntException {
 		IOntClass ontClass = null;
+		final String ontClassURI = getOntClassURI();
 		if (ontClassURI != null) {
 			if (ontModel != null) {
 				//Jena is not thread-safe when communicating to the DIG reasoner,
@@ -354,6 +369,11 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 				}
 			}
 		}
+		if (ontClass == null) {
+			throw new OntException(String.format(
+					PlatformkitResources.getString("ontClassNotFound"),
+					ontClassURI));
+		}
 		return ontClass;
 	}
 
@@ -361,9 +381,9 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.Constraint#getOntClass()
 	 */
-	public IOntClass getOntClass() {
+	public IOntClass getOntClass() throws OntException {
 		if (ontClass == null) {
-			ontClass = findOntClass(getOntModel());
+			setOntClass(findOntClass(getOntModel()));
 			logger.info(String.format(
 					PlatformkitResources.getString("ConstraintImpl.refreshed"), 
 					this)); //$NON-NLS-1$
