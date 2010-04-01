@@ -10,8 +10,6 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.java.actions;
 
-import java.util.logging.Logger;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.action.Action;
@@ -21,7 +19,6 @@ import org.eclipse.ui.PlatformUI;
 import be.ac.vub.platformkit.java.PlatformkitJavaResources;
 import be.ac.vub.platformkit.java.jobs.CompatJob;
 import be.ac.vub.platformkit.java.ui.util.OpenFileInEditorRunnable;
-import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.ui.util.MessageDialogRunnable;
 
 /**
@@ -29,8 +26,6 @@ import be.ac.vub.platformkit.ui.util.MessageDialogRunnable;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class ShowCompatResultAction extends Action {
-
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	private CompatJob job;
 

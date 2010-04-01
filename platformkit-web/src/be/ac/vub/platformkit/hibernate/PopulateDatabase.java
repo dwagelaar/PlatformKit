@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 import junit.framework.Assert;
 import be.ac.vub.platformkit.examples.ExamplesOntologyProvider;
-import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.servlet.PlatformDescription;
 import be.ac.vub.platformkit.servlet.PlatformDescriptionStore;
 
@@ -21,7 +21,7 @@ import be.ac.vub.platformkit.servlet.PlatformDescriptionStore;
  */
 public class PopulateDatabase {
 
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(PlatformkitLogger.LOGGER);
 
 	private Properties knownPlatforms = null;
 

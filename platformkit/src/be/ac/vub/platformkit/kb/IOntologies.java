@@ -24,7 +24,6 @@ import be.ac.vub.platformkit.kb.util.OntException;
  */
 public interface IOntologies {
 
-	public static final String LOGGER = "be.ac.vub.platformkit"; //$NON-NLS-1$
 	public static final String ONTOLOGY_EXT_POINT = "be.ac.vub.platformkit.ontology"; //$NON-NLS-1$
 	public static final String LOCAL_INF_NS = "http://local/platformkit/inferred.owl"; //$NON-NLS-1$
 
@@ -98,15 +97,17 @@ public interface IOntologies {
 	 * Loads an instance ontology into the repository, removing the previous
 	 * instance ontology.
 	 * @param url the ontology url or namespace.
+	 * @throws OntException 
 	 */
-	public abstract void loadInstances(String url);
+	public abstract void loadInstances(String url) throws OntException;
 
 	/**
 	 * Loads an instance ontology into the repository, removing the previous
 	 * instance ontology.
 	 * @param in the inputstream containing the ontology.
+	 * @throws OntException 
 	 */
-	public abstract void loadInstances(InputStream in);
+	public abstract void loadInstances(InputStream in) throws OntException;
 
 	/**
 	 * Removes current instance ontology, if any.
@@ -116,8 +117,9 @@ public interface IOntologies {
 	/**
 	 * Writes the ontology to the given output stream.
 	 * @param out
+	 * @throws OntException 
 	 */
-	public abstract void saveOntology(OutputStream out);
+	public abstract void saveOntology(OutputStream out) throws OntException;
 
 	/**
 	 * Checks if all classes are satisfiable.

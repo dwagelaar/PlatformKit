@@ -10,7 +10,6 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.impl;
 
-import java.util.logging.Logger;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -29,6 +28,7 @@ import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,7 +63,6 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 
 	}
 
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 	private IOntClass ontClass = null;
 
 	/**
@@ -182,12 +181,12 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 			valid = ontClass.hasInstances();
 		}
 		if (valid) {
-			logger.fine(String.format(
+			PlatformkitLogger.logger.fine(String.format(
 					PlatformkitResources.getString("ConstraintImpl.isValid"), 
 					ontClass)); //$NON-NLS-1$
 			return true;
 		} else {
-			logger.fine(String.format(
+			PlatformkitLogger.logger.fine(String.format(
 					PlatformkitResources.getString("ConstraintImpl.isInvalid"), 
 					ontClass)); //$NON-NLS-1$
 			return false;
@@ -345,7 +344,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 			} else {
 				setOntClass(findOntClass(ontModel));
 			}
-			logger.info(String.format(
+			PlatformkitLogger.logger.info(String.format(
 					PlatformkitResources.getString("ConstraintImpl.ontModelChanged"), 
 					this)); //$NON-NLS-1$
 		}
@@ -384,7 +383,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	public IOntClass getOntClass() throws OntException {
 		if (ontClass == null) {
 			setOntClass(findOntClass(getOntModel()));
-			logger.info(String.format(
+			PlatformkitLogger.logger.info(String.format(
 					PlatformkitResources.getString("ConstraintImpl.refreshed"), 
 					this)); //$NON-NLS-1$
 		}

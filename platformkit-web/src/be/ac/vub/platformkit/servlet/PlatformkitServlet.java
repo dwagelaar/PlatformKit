@@ -48,6 +48,7 @@ import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
 /**
  * Web service interface for PlatformKit.
@@ -59,7 +60,7 @@ public class PlatformkitServlet extends HttpServlet {
 
 	private static final IOntologiesFactory FACTORY = new OWLAPIOntologiesFactory();
 
-	private static Logger logger = Logger.getLogger(IOntologies.LOGGER);
+	private static Logger logger = Logger.getLogger(PlatformkitLogger.LOGGER);
 	private Level loglevel = null;
 	private Map<String, ConstraintSpacePool> knownSpaces = new HashMap<String, ConstraintSpacePool>();
 	private DateFormat dateFormat = new SimpleDateFormat();
@@ -168,7 +169,8 @@ public class PlatformkitServlet extends HttpServlet {
 	 * @throws OntException 
 	 */
 	private ConstraintSpace init(HttpServletRequest req, String baseurl)
-			throws FileUploadException, IOException, IllegalArgumentException, OntException {
+			throws FileUploadException, IOException, IllegalArgumentException,
+			OntException {
 		logger.info("Request: " + req);
 		Date date = new Date(getURLDate(baseurl));
 		ConstraintSpace space = getConstraintSpace(baseurl, date);

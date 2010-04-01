@@ -13,10 +13,10 @@ package be.ac.vub.platformkit.kb;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Logger;
 
 import be.ac.vub.platformkit.IOntModelChangeListener;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
 /**
  * Shared functionality for ontology providers
@@ -24,7 +24,6 @@ import be.ac.vub.platformkit.kb.util.OntException;
  */
 public abstract class AbstractOntologies implements IOntologies {
 
-	protected static Logger logger = Logger.getLogger(LOGGER);
 	protected List<IOntModelChangeListener> ontologyChangeListeners = new ArrayList<IOntModelChangeListener>();
 	private String reasonerUrl = "http://localhost:8081"; //$NON-NLS-1$
 
@@ -58,7 +57,7 @@ public abstract class AbstractOntologies implements IOntologies {
 			try {
 				buildHierarchyMap(forClasses.get(i));
 			} catch (OntException nfe) {
-				logger.warning(nfe.getMessage());
+				PlatformkitLogger.logger.warning(nfe.getMessage());
 			}
 		}
 	}
@@ -69,14 +68,14 @@ public abstract class AbstractOntologies implements IOntologies {
 			try {
 				pruneHierarchyMap(forClasses.get(i));
 			} catch (OntException nfe) {
-				logger.warning(nfe.getMessage());
+				PlatformkitLogger.logger.warning(nfe.getMessage());
 			}
 		}
 		for (int i = 0; i < forClasses.size(); i++) {
 			try {
 				updateHierarchy(forClasses.get(i));
 			} catch (OntException nfe) {
-				logger.warning(nfe.getMessage());
+				PlatformkitLogger.logger.warning(nfe.getMessage());
 			}
 		}
 	}

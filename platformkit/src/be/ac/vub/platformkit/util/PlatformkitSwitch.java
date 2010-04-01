@@ -10,7 +10,6 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.util;
 
-import be.ac.vub.platformkit.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;

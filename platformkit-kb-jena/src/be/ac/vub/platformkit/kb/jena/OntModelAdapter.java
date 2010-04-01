@@ -55,7 +55,7 @@ public class OntModelAdapter implements IOntModel {
 		 * @see java.util.Iterator#next()
 		 */
 		public OntClass next() {
-			return ((OntClassAdapter) inner.next()).model;
+			return ((OntClassAdapter) inner.next()).getModel();
 		}
 
 		/*
@@ -68,7 +68,7 @@ public class OntModelAdapter implements IOntModel {
 
 	}
 
-	protected OntModel model;
+	private OntModel model;
 
 	/**
 	 * Creates a new {@link OntModelAdapter}.
@@ -76,7 +76,7 @@ public class OntModelAdapter implements IOntModel {
 	 */
 	public OntModelAdapter(OntModel model) {
 		Assert.assertNotNull(model);
-		this.model = model;
+		this.setModel(model);
 	}
 
 	/*
@@ -85,7 +85,7 @@ public class OntModelAdapter implements IOntModel {
 	 */
 	@Override
 	public String toString() {
-		return model.toString();
+		return getModel().toString();
 	}
 
 	/*
@@ -93,7 +93,7 @@ public class OntModelAdapter implements IOntModel {
 	 * @see be.ac.vub.platformkit.kb.IOntModel#getOntClass(java.lang.String)
 	 */
 	public IOntClass getOntClass(String uri){
-		OntClass c = model.getOntClass(uri);
+		OntClass c = getModel().getOntClass(uri);
 		if (c != null) {
 			return new OntClassAdapter(c);
 		}
@@ -105,8 +105,22 @@ public class OntModelAdapter implements IOntModel {
 	 * @see be.ac.vub.platformkit.kb.IOntModel#createIntersectionClass(java.lang.String, java.util.Iterator)
 	 */
 	public IOntClass createIntersectionClass(String uri, Iterator<IOntClass> members) {
-		RDFList constraints = model.createList(new OntClassIterator(members));
-		return new OntClassAdapter(model.createIntersectionClass(uri, constraints));
+		final RDFList constraints = getModel().createList(new OntClassIterator(members));
+		return new OntClassAdapter(getModel().createIntersectionClass(uri, constraints));
+	}
+
+	/**
+	 * @param model the model to set
+	 */
+	protected void setModel(OntModel model) {
+		this.model = model;
+	}
+
+	/**
+	 * @return the model
+	 */
+	protected OntModel getModel() {
+		return model;
 	}
 
 }

@@ -58,6 +58,7 @@ import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologyProvider;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.registry.PlatformkitRegistry;
 
 /**
@@ -66,8 +67,8 @@ import be.ac.vub.platformkit.registry.PlatformkitRegistry;
  */
 public class OWLAPIOntologies extends AbstractOntologies {
 
-	protected OWLOntologyManager mgr;
-	protected OWLReasoner reasoner = null;
+	private OWLOntologyManager mgr;
+	private OWLReasoner reasoner = null;
 	private OWLOntologyAdapter ontology;
 	private OWLOntologyAdapter instances = null;
 	private Map<OWLClass, Set<OWLClass>> superClasses = new HashMap<OWLClass, Set<OWLClass>>();
@@ -79,10 +80,11 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @throws IOException if the local ontology mapping could not be read.
 	 */
 	public OWLAPIOntologies() throws IOException {
-		mgr = OWLManager.createOWLOntologyManager();
-		URI localInfNs = URI.create(IOntologies.LOCAL_INF_NS);
+		setMgr(OWLManager.createOWLOntologyManager());
+		final OWLOntologyManager mgr = getMgr();
+		final URI localInfNs = URI.create(IOntologies.LOCAL_INF_NS);
 		try {
-			ontology = new OWLOntologyAdapter(mgr.createOntology(localInfNs), this);
+			setBaseOntology(new OWLOntologyAdapter(mgr.createOntology(localInfNs), this));
 		} catch (OWLOntologyCreationException e) {
 			IOException ioe = new IOException(e.getLocalizedMessage());
 			ioe.initCause(e);
@@ -128,11 +130,11 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @throws OWLOntologyCreationException
 	 */
 	private void addLocalOntology(InputStream resource) throws OWLOntologyCreationException {
-		OWLOntology ont = mgr.loadOntology(new StreamInputSource(resource));
-		String ns = ont.getURI().toString();
-		logger.info(String.format(
+		final OWLOntologyManager mgr = getMgr();
+		final OWLOntology ont = mgr.loadOntology(new StreamInputSource(resource));
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.addingLocalOnt"), 
-				ns)); //$NON-NLS-1$
+				ont.getURI())); //$NON-NLS-1$
 	}
 
 	/*
@@ -140,27 +142,30 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#attachDIGReasoner()
 	 */
 	public void attachDIGReasoner() {
+		OWLReasoner reasoner = getReasoner();
 		if (reasoner != null) {
 			if (reasoner instanceof DIGReasoner) {
-				logger.warning(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.digAlreadyAttached")); //$NON-NLS-1$
+				PlatformkitLogger.logger.warning(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.digAlreadyAttached")); //$NON-NLS-1$
 				return;
 			}
 			detachReasoner();
 		}
-		logger.info(String.format(
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.attachingDigAt"), 
 				getReasonerUrl())); //$NON-NLS-1$
 		try {
 			DIGReasonerPreferences.getInstance().setReasonerURL(new URL(getReasonerUrl()));
+			final OWLOntologyManager mgr = getMgr();
 			reasoner = new DIGReasoner(mgr);
-			reasoner.loadOntologies(mgr.getImportsClosure(ontology.model));
-			if (instances != null) {
-				reasoner.loadOntologies(mgr.getImportsClosure(instances.model));
+			setReasoner(reasoner);
+			reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
+			if (getInstances() != null) {
+				reasoner.loadOntologies(mgr.getImportsClosure(getInstances().getModel()));
 			}
 		} catch (OWLException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 		} catch (MalformedURLException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 		}
 	}
 
@@ -169,22 +174,25 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#attachPelletReasoner()
 	 */
 	public void attachPelletReasoner() {
+		OWLReasoner reasoner = getReasoner();
 		if (reasoner != null) {
 			if (reasoner instanceof org.mindswap.pellet.owlapi.Reasoner) {
-				logger.warning(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.pelletAlreadyAttached")); //$NON-NLS-1$
+				PlatformkitLogger.logger.warning(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.pelletAlreadyAttached")); //$NON-NLS-1$
 				return;
 			}
 			detachReasoner();
 		}
-		logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.attachingPellet")); //$NON-NLS-1$
+		PlatformkitLogger.logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.attachingPellet")); //$NON-NLS-1$
+		final OWLOntologyManager mgr = getMgr();
 		reasoner = new org.mindswap.pellet.owlapi.Reasoner(mgr);
+		setReasoner(reasoner);
 		try {
-			reasoner.loadOntologies(mgr.getImportsClosure(ontology.model));
-			if (instances != null) {
-				reasoner.loadOntologies(mgr.getImportsClosure(instances.model));
+			reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
+			if (getInstances() != null) {
+				reasoner.loadOntologies(mgr.getImportsClosure(getInstances().getModel()));
 			}
 		} catch (OWLException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 		}
 	}
 
@@ -202,12 +210,13 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#buildHierarchyMap(be.ac.vub.platformkit.kb.IOntClass)
 	 */
 	public void buildHierarchyMap(IOntClass forClass) throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.buildingHierarchyFor"), 
 				forClass)); //$NON-NLS-1$
-		OWLClass owlClass = ((OWLClassAdapter)forClass).model;
+		OWLClass owlClass = ((OWLClassAdapter)forClass).getModel();
 		Set<OWLClass> equivs = new HashSet<OWLClass>();
 		Set<OWLClass> supers = new HashSet<OWLClass>();
+		final OWLReasoner reasoner = getReasoner();
 		if (reasoner != null) {
 			try {
 				Set<Set<OWLClass>> superCs = reasoner.getAncestorClasses(owlClass);
@@ -216,15 +225,15 @@ public class OWLAPIOntologies extends AbstractOntologies {
 				}
 				equivs = reasoner.getEquivalentClasses(owlClass);
 				supers.removeAll(equivs);
-				logger.info(String.format(
+				PlatformkitLogger.logger.info(String.format(
 						PlatformkitOWLAPIResources.getString("OWLAPIOntologies.equivToSubOf"), 
 						forClass, 
 						equivs, 
 						supers)); //$NON-NLS-1$
-				equivClasses.put(owlClass, equivs);
-				superClasses.put(owlClass, supers);
+				getEquivClasses().put(owlClass, equivs);
+				getSuperClasses().put(owlClass, supers);
 			} catch (OWLReasonerException e) {
-				logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 			}
 		}
 	}
@@ -234,18 +243,19 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#checkConsistency()
 	 */
 	public void checkConsistency() throws OntException {
-		logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.checkingConsistency")); //$NON-NLS-1$
+		PlatformkitLogger.logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.checkingConsistency")); //$NON-NLS-1$
+		final OWLReasoner reasoner = getReasoner();
 		if (reasoner != null) {
 			try {
-				if (!reasoner.isConsistent(ontology.model)) {
+				if (!reasoner.isConsistent(getBaseOntology().getModel())) {
 					throw new OntException(String.format(
 							PlatformkitOWLAPIResources.getString("OWLAPIOntologies.ontInconsistent"), 
-							ontology)); //$NON-NLS-1$
+							getBaseOntology())); //$NON-NLS-1$
 				}
-				if ((instances != null) ? !reasoner.isConsistent(instances.model) : false) {
+				if ((getInstances() != null) ? !reasoner.isConsistent(getInstances().getModel()) : false) {
 					throw new OntException(String.format(
 							PlatformkitOWLAPIResources.getString("OWLAPIOntologies.ontInconsistent"), 
-							instances)); //$NON-NLS-1$
+							getInstances())); //$NON-NLS-1$
 				}
 			} catch (OWLReasonerException e) {
 				throw new OntException(e);
@@ -258,28 +268,43 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#detachReasoner()
 	 */
 	public void detachReasoner() {
+		final OWLReasoner reasoner = getReasoner();
 		if (reasoner == null) {
-			logger.warning(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.alreadyDetached")); //$NON-NLS-1$
+			PlatformkitLogger.logger.warning(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.alreadyDetached")); //$NON-NLS-1$
 			return;
 		}
-		logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.detaching")); //$NON-NLS-1$
-		reasoner = null;
+		PlatformkitLogger.logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.detaching")); //$NON-NLS-1$
+		setReasoner(null);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#getBaseOntology()
 	 */
-	public IOntModel getBaseOntology() {
+	public OWLOntologyAdapter getBaseOntology() {
 		return ontology;
+	}
+
+	/**
+	 * @param ontology the ontology to set
+	 */
+	protected void setBaseOntology(OWLOntologyAdapter ontology) {
+		this.ontology = ontology;
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#getInstances()
 	 */
-	public IOntModel getInstances() {
+	public OWLOntologyAdapter getInstances() {
 		return instances;
+	}
+
+	/**
+	 * @param instances the instances to set
+	 */
+	protected void setInstances(OWLOntologyAdapter instances) {
+		this.instances = instances;
 	}
 
 	/*
@@ -288,7 +313,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 */
 	public List<IOntClass> getLocalNamedClasses() {
 		List<IOntClass> namedClasses = new ArrayList<IOntClass>();
-		Iterator<OWLClassAxiom> clsAxs = ontology.model.getClassAxioms().iterator();
+		Iterator<OWLClassAxiom> clsAxs = getBaseOntology().getModel().getClassAxioms().iterator();
 		while (clsAxs.hasNext()) {
 			OWLClassAxiom clsAx = clsAxs.next();
 			for (OWLEntity ent : clsAx.getReferencedEntities()) {
@@ -305,31 +330,33 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#getOntModel()
 	 */
 	public IOntModel getOntModel() {
-		return ontology;
+		return getBaseOntology();
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadInstances(java.lang.String)
 	 */
-	public void loadInstances(String url) {
+	public void loadInstances(String url) throws OntException {
 		unloadInstances();
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.loadingInstanceOntFrom"), 
 				url)); //$NON-NLS-1$
 		try {
+			final OWLOntologyManager mgr = getMgr();
 			OWLOntology ont = mgr.loadOntology(new PhysicalURIInputSource(new URI(url)));
-			instances = new OWLOntologyAdapter(ont, this);
+			setInstances(new OWLOntologyAdapter(ont, this));
+			final OWLReasoner reasoner = getReasoner();
 			if (reasoner != null) {
 				Set<OWLOntology> load = new HashSet<OWLOntology>();
-				load.addAll(mgr.getImportsClosure(instances.model));
-				load.removeAll(mgr.getImportsClosure(ontology.model));
+				load.addAll(mgr.getImportsClosure(getInstances().getModel()));
+				load.removeAll(mgr.getImportsClosure(getBaseOntology().getModel()));
 				reasoner.loadOntologies(load);
 			}
 		} catch (OWLException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		} catch (URISyntaxException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		}
 	}
 
@@ -337,22 +364,24 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadInstances(java.io.InputStream)
 	 */
-	public void loadInstances(InputStream in) {
+	public void loadInstances(InputStream in) throws OntException {
 		unloadInstances();
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.loadingInstanceOntFrom"), 
 				in)); //$NON-NLS-1$
 		try {
+			final OWLOntologyManager mgr = getMgr();
 			OWLOntology ont = mgr.loadOntology(new StreamInputSource(in));
-			instances = new OWLOntologyAdapter(ont, this);
+			setInstances(new OWLOntologyAdapter(ont, this));
+			final OWLReasoner reasoner = getReasoner();
 			if (reasoner != null) {
 				Set<OWLOntology> load = new HashSet<OWLOntology>();
-				load.addAll(mgr.getImportsClosure(instances.model));
-				load.removeAll(mgr.getImportsClosure(ontology.model));
+				load.addAll(mgr.getImportsClosure(getInstances().getModel()));
+				load.removeAll(mgr.getImportsClosure(getBaseOntology().getModel()));
 				reasoner.loadOntologies(load);
 			}
 		} catch (OWLException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		}
 	}
 
@@ -361,17 +390,19 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadOntology(java.lang.String)
 	 */
 	public void loadOntology(String url) throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.loadingOntFrom"), 
 				url)); //$NON-NLS-1$
 		try {
+			final OWLReasoner reasoner = getReasoner();
+			final OWLOntologyManager mgr = getMgr();
 			if (reasoner != null) {
 				reasoner.clearOntologies();
 			}
 			OWLOntology ont = mgr.loadOntology(new PhysicalURIInputSource(new URI(url)));
 			mergeOntology(ont);
 			if (reasoner != null) {
-				reasoner.loadOntologies(mgr.getImportsClosure(ontology.model));
+				reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
 			}
 		} catch (OWLException e) {
 			throw new OntException(e);
@@ -386,17 +417,19 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadOntology(java.io.InputStream)
 	 */
 	public void loadOntology(InputStream in) throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.loadingOntFrom"), 
 				in)); //$NON-NLS-1$
 		try {
+			final OWLReasoner reasoner = getReasoner();
+			final OWLOntologyManager mgr = getMgr();
 			if (reasoner != null) {
 				reasoner.clearOntologies();
 			}
 			OWLOntology ont = mgr.loadOntology(new StreamInputSource(in));
 			mergeOntology(ont);
 			if (reasoner != null) {
-				reasoner.loadOntologies(mgr.getImportsClosure(ontology.model));
+				reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
 			}
 		} catch (OWLException e) {
 			throw new OntException(e);
@@ -409,39 +442,40 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#pruneHierarchyMap(be.ac.vub.platformkit.kb.IOntClass)
 	 */
 	public void pruneHierarchyMap(IOntClass forClass) throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.pruningHierarchyFor"), 
 				forClass)); //$NON-NLS-1$
-		OWLClass owlClass = ((OWLClassAdapter)forClass).model;
+		OWLClass owlClass = ((OWLClassAdapter)forClass).getModel();
 		Set<OWLClass> obsolete = new HashSet<OWLClass>();
-		Set<OWLClass> superCs = superClasses.get(owlClass);
+		Set<OWLClass> superCs = getSuperClasses().get(owlClass);
 		if (superCs == null) {
 			throw new OntException(String.format(
 					PlatformkitOWLAPIResources.getString("OWLAPIOntologies.superNotFound"), 
 					forClass)); //$NON-NLS-1$
 		}
 		for (OWLClass sc : superCs) {
-			Set<OWLClass> superSuperCs = superClasses.get(sc);
+			Set<OWLClass> superSuperCs = getSuperClasses().get(sc);
 			if (superSuperCs != null) {
 				obsolete.addAll(superSuperCs);
 			}
 		}
-		logger.info(String.format(
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.obsoleteSuperOf"), 
 				obsolete, 
 				forClass)); //$NON-NLS-1$
-		obsoleteSuperClasses.put(owlClass, obsolete);        
+		getObsoleteSuperClasses().put(owlClass, obsolete);        
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#saveOntology(java.io.OutputStream)
 	 */
-	public void saveOntology(OutputStream out) {
+	public void saveOntology(OutputStream out) throws OntException {
 		try {
-			mgr.saveOntology(ontology.model, new StreamOutputTarget(out));
+			final OWLOntologyManager mgr = getMgr();
+			mgr.saveOntology(getBaseOntology().getModel(), new StreamOutputTarget(out));
 		} catch (OWLException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		}
 	}
 
@@ -450,20 +484,24 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#unloadInstances()
 	 */
 	public void unloadInstances() {
+		final OWLOntologyAdapter instances = getInstances();
 		if (instances != null) {
-			logger.fine(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.unloadingInstanceOnt")); //$NON-NLS-1$
+			final OWLReasoner reasoner = getReasoner();
+			final OWLOntologyManager mgr = getMgr();
+			final OWLOntology model = instances.getModel();
+			PlatformkitLogger.logger.fine(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.unloadingInstanceOnt")); //$NON-NLS-1$
 			if (reasoner != null) {
 				Set<OWLOntology> unload = new HashSet<OWLOntology>();
-				unload.addAll(mgr.getImportsClosure(instances.model));
-				unload.removeAll(mgr.getImportsClosure(ontology.model));
+				unload.addAll(mgr.getImportsClosure(model));
+				unload.removeAll(mgr.getImportsClosure(getBaseOntology().getModel()));
 				try {
 					reasoner.unloadOntologies(unload);
 				} catch (OWLReasonerException e) {
-					logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+					PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 				}
 			}
-			mgr.removeOntology(instances.model.getURI());
-			instances = null;
+			mgr.removeOntology(model.getURI());
+			setInstances(null);
 		}
 	}
 
@@ -472,23 +510,23 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#updateHierarchy(be.ac.vub.platformkit.kb.IOntClass)
 	 */
 	public void updateHierarchy(IOntClass forClass) throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.updatingHierarchyFor"), 
 				forClass)); //$NON-NLS-1$
-		OWLClass owlClass = ((OWLClassAdapter)forClass).model;
-		Set<OWLClass> equivCs = equivClasses.get(owlClass);
+		OWLClass owlClass = ((OWLClassAdapter)forClass).getModel();
+		Set<OWLClass> equivCs = getEquivClasses().get(owlClass);
 		if (equivCs == null) {
 			throw new OntException(String.format(
 					PlatformkitOWLAPIResources.getString("OWLAPIOntologies.equivNotFound"),
 					forClass)); //$NON-NLS-1$
 		}
-		Set<OWLClass> superCs = superClasses.get(owlClass);
+		Set<OWLClass> superCs = getSuperClasses().get(owlClass);
 		if (superCs == null) {
 			throw new OntException(String.format(
 					PlatformkitOWLAPIResources.getString("OWLAPIOntologies.superNotFound"),
 					forClass)); //$NON-NLS-1$
 		}
-		Set<OWLClass> obsoleteCs = obsoleteSuperClasses.get(owlClass);
+		Set<OWLClass> obsoleteCs = getObsoleteSuperClasses().get(owlClass);
 		if (obsoleteCs == null) {
 			throw new OntException(String.format(
 					PlatformkitOWLAPIResources.getString("OWLAPIOntologies.obsoleteSuperNotFound"),
@@ -510,11 +548,12 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @throws OWLOntologyChangeException
 	 */
 	private void mergeOntology(OWLOntology ont) throws OWLOntologyChangeException {
-		List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
+		final OWLOntology model = getBaseOntology().getModel();
+		final List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
 		for (OWLAxiom ax : ont.getAxioms()) {
-			changes.add(new AddAxiom(ontology.model, ax));
+			changes.add(new AddAxiom(model, ax));
 		}
-		mgr.applyChanges(changes);
+		getMgr().applyChanges(changes);
 	}
 
 	/**
@@ -526,9 +565,11 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 */
 	private void addEquivalentClasses(OWLClass forClass, Collection<OWLClass> equivCs) 
 	throws OWLOntologyChangeException, OWLReasonerException {
+		final OWLOntologyManager mgr = getMgr();
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
-		Set<OWLEquivalentClassesAxiom> ecAxs = ontology.model.getEquivalentClassesAxioms(forClass);
+		final OWLOntology model = getBaseOntology().getModel();
+		Set<OWLEquivalentClassesAxiom> ecAxs = model.getEquivalentClassesAxioms(forClass);
 		for (OWLClass c : equivCs) {
 			boolean isEquiv = false;
 			for (OWLEquivalentClassesAxiom ecAx : ecAxs) {
@@ -538,14 +579,14 @@ public class OWLAPIOntologies extends AbstractOntologies {
 				}
 			}
 			if (!isEquiv) {
-				logger.info(String.format(
+				PlatformkitLogger.logger.info(String.format(
 						PlatformkitOWLAPIResources.getString("OWLAPIOntologies.addingAsEquivTo"),
 						c, 
 						forClass)); //$NON-NLS-1$
 				OWLAxiom axiom = factory.getOWLEquivalentClassesAxiom(c, forClass);
-				changes.add(new AddAxiom(ontology.model, axiom));
+				changes.add(new AddAxiom(model, axiom));
 			} else {
-				logger.fine(String.format(
+				PlatformkitLogger.logger.fine(String.format(
 						PlatformkitOWLAPIResources.getString("OWLAPIOntologies.alreadyHasEquiv"),
 						forClass, 
 						c)); //$NON-NLS-1$
@@ -562,9 +603,10 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @throws OWLReasonerException 
 	 */
 	private void addSuperClasses(OWLClass forClass, Collection<OWLClass> superCs) throws OWLOntologyChangeException, OWLReasonerException {
+		final OWLOntologyManager mgr = getMgr();
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
-		Set<OWLSubClassAxiom> scAxs = ontology.model.getSubClassAxiomsForLHS(forClass);
+		Set<OWLSubClassAxiom> scAxs = getBaseOntology().getModel().getSubClassAxiomsForLHS(forClass);
 		for (OWLClass c : superCs) {
 			boolean isSubclass = false;
 			for (OWLSubClassAxiom scAx : scAxs) {
@@ -574,14 +616,14 @@ public class OWLAPIOntologies extends AbstractOntologies {
 				}
 			}
 			if (!isSubclass) {
-				logger.info(String.format(
+				PlatformkitLogger.logger.info(String.format(
 						PlatformkitOWLAPIResources.getString("OWLAPIOntologies.addingAsSuperTo"),
 						c, 
 						forClass)); //$NON-NLS-1$
 				OWLAxiom axiom = factory.getOWLSubClassAxiom(forClass, c);
-				changes.add(new AddAxiom(ontology.model, axiom));
+				changes.add(new AddAxiom(getBaseOntology().getModel(), axiom));
 			} else {
-				logger.fine(String.format(
+				PlatformkitLogger.logger.fine(String.format(
 						PlatformkitOWLAPIResources.getString("OWLAPIOntologies.alreadyHasSuper"),
 						forClass,
 						c)); //$NON-NLS-1$
@@ -598,29 +640,79 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @throws OWLOntologyChangeException 
 	 */
 	private void removeSuperClasses(OWLClass forClass, Collection<OWLClass> superCs) throws OWLReasonerException, OWLOntologyChangeException {
+		final OWLOntologyManager mgr = getMgr();
 		List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
 		for (OWLClass c : superCs) {
 			boolean isObsolete = false;
-			Set<OWLSubClassAxiom> scAxs = ontology.model.getSubClassAxiomsForLHS(forClass);
+			Set<OWLSubClassAxiom> scAxs = getBaseOntology().getModel().getSubClassAxiomsForLHS(forClass);
 			for (OWLSubClassAxiom scAx : scAxs) {
 				if (scAx.getSuperClass().equals(c)) {
-					logger.info(String.format(
+					PlatformkitLogger.logger.info(String.format(
 							PlatformkitOWLAPIResources.getString("OWLAPIOntologies.removingAsSuperFrom"),
 							c, 
 							forClass)); //$NON-NLS-1$
-					changes.add(new RemoveAxiom(ontology.model, scAx));
+					changes.add(new RemoveAxiom(getBaseOntology().getModel(), scAx));
 					isObsolete = true;
 					break;
 				}
 			}
 			if (!isObsolete) {
-				logger.fine(String.format(
+				PlatformkitLogger.logger.fine(String.format(
 						PlatformkitOWLAPIResources.getString("OWLAPIOntologies.doesNotHaveSuper"),
 						forClass, 
 						c)); //$NON-NLS-1$
 			}
 		}
 		mgr.applyChanges(changes);
+	}
+
+	/**
+	 * @return the reasoner
+	 */
+	protected OWLReasoner getReasoner() {
+		return reasoner;
+	}
+
+	/**
+	 * @param reasoner the reasoner to set
+	 */
+	protected void setReasoner(OWLReasoner reasoner) {
+		this.reasoner = reasoner;
+	}
+
+	/**
+	 * @return the mgr
+	 */
+	protected OWLOntologyManager getMgr() {
+		return mgr;
+	}
+
+	/**
+	 * @param mgr the mgr to set
+	 */
+	protected void setMgr(OWLOntologyManager mgr) {
+		this.mgr = mgr;
+	}
+
+	/**
+	 * @return the superClasses
+	 */
+	protected Map<OWLClass, Set<OWLClass>> getSuperClasses() {
+		return superClasses;
+	}
+
+	/**
+	 * @return the equivClasses
+	 */
+	protected Map<OWLClass, Set<OWLClass>> getEquivClasses() {
+		return equivClasses;
+	}
+
+	/**
+	 * @return the obsoleteSuperClasses
+	 */
+	protected Map<OWLClass, Set<OWLClass>> getObsoleteSuperClasses() {
+		return obsoleteSuperClasses;
 	}
 
 }

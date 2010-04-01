@@ -775,6 +775,7 @@
               </ownedOperation>
             </packagedElement>
           </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_hp-4ED1wEd-qB4v_5eEaiQ" name="logging"/>
         </packagedElement>
       </packagedElement>
     </packagedElement>

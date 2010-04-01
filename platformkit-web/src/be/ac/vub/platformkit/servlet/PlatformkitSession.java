@@ -1,16 +1,15 @@
 package be.ac.vub.platformkit.servlet;
 
 import java.io.*;
-import java.util.logging.*;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.util.Streams;
 import java.util.*;
-import be.ac.vub.platformkit.kb.*;
+import be.ac.vub.platformkit.logging.*;
 
 public class PlatformkitSession {
-	protected java.util.Properties parameters = new Properties();
+	private java.util.Properties parameters = new Properties();
 
 	private boolean leastSpecific = false;
 
@@ -18,22 +17,19 @@ public class PlatformkitSession {
 
 	private java.lang.String baseURL = null;
 
-	protected javax.servlet.http.HttpServletRequest req = null;
-
-	protected java.util.logging.Logger logger = Logger
-			.getLogger(IOntologies.LOGGER);
-
 	private be.ac.vub.platformkit.servlet.PlatformDescription description = null;
 
-	protected be.ac.vub.platformkit.servlet.PlatformDescriptionStore store = new PlatformDescriptionStore();
+	private be.ac.vub.platformkit.servlet.PlatformDescriptionStore store = new PlatformDescriptionStore();
 
 	public PlatformkitSession(javax.servlet.http.HttpServletRequest req)
 			throws org.apache.commons.fileupload.FileUploadException,
 			java.io.IOException, java.sql.SQLException {
-		description = new PlatformDescription();
+		final Properties parameters = getParameters();
+		setDescription(new PlatformDescription());
+		final PlatformDescription description = getDescription();
 		description.setBrowserID(req.getHeader("User-Agent"));
 		if (ServletFileUpload.isMultipartContent(req)) {
-			logger.info("Retrieving uploaded ontology file");
+			PlatformkitLogger.logger.info("Retrieving uploaded ontology file");
 			ServletFileUpload upload = new ServletFileUpload();
 			FileItemIterator fileItems = upload.getItemIterator(req);
 			description.setData(new byte[0]);
@@ -44,7 +40,7 @@ public class PlatformkitSession {
 					if ("context".equals(item.getFieldName())
 							&& (description.getData().length == 0)) {
 						description.setFromInputStream(stream);
-						logger
+						PlatformkitLogger.logger
 								.info("platform description data set from context (length = "
 										+ description.getData().length + ")");
 					} else {
@@ -53,16 +49,17 @@ public class PlatformkitSession {
 					}
 				} else if (description.getData().length == 0) {
 					description.setFromInputStream(stream);
-					logger
+					PlatformkitLogger.logger
 							.info("platform description data set from context file (length = "
 									+ description.getData().length + ")");
 				}
 			}
 		} else {
-			logger.warning("No platform ontology file uploaded");
-			if (req.getParameterNames().hasMoreElements()) {
-				for (Enumeration ns = req.getParameterNames(); ns
-						.hasMoreElements();) {
+			PlatformkitLogger.logger
+					.warning("No platform ontology file uploaded");
+			final Enumeration<?> ns = req.getParameterNames();
+			if (ns.hasMoreElements()) {
+				while (ns.hasMoreElements()) {
 					String name = (String) ns.nextElement();
 					parameters.setProperty(name, req.getParameter(name));
 				}
@@ -75,22 +72,32 @@ public class PlatformkitSession {
 					parameters.setProperty(par.nextToken(), par.nextToken());
 				}
 			}
-			PlatformDescription pd = store.getPlatformDescription(description
-					.getBrowserID());
+			final PlatformDescription pd = getStore().getPlatformDescription(
+					description.getBrowserID());
 			if (pd != null) {
-				logger.info("Standard platform ontology found for: \""
-						+ pd.getBrowserID() + "\"");
-				description = pd;
+				PlatformkitLogger.logger
+						.info("Standard platform ontology found for: \""
+								+ pd.getBrowserID() + "\"");
+				setDescription(pd);
 			} else {
-				logger.info("No standard platform ontology found for: \""
-						+ description.getBrowserID() + "\"");
+				PlatformkitLogger.logger
+						.info("No standard platform ontology found for: \""
+								+ description.getBrowserID() + "\"");
 			}
 		}
-		logger.info(parameters.toString());
+		PlatformkitLogger.logger.info(parameters.toString());
 		setLeastSpecific(parameters.getProperty("result").equals(
 				"leastspecific"));
 		setNoValidate(parameters.getProperty("noValidate").equals("true"));
 		setBaseURL(parameters.getProperty("baseurl"));
+	}
+
+	public java.util.Properties getParameters() {
+		return parameters;
+	}
+
+	public void setParameters(java.util.Properties parameters) {
+		this.parameters = parameters;
 	}
 
 	public boolean getLeastSpecific() {
@@ -124,6 +131,15 @@ public class PlatformkitSession {
 	public void setDescription(
 			be.ac.vub.platformkit.servlet.PlatformDescription description) {
 		this.description = description;
+	}
+
+	public be.ac.vub.platformkit.servlet.PlatformDescriptionStore getStore() {
+		return store;
+	}
+
+	public void setStore(
+			be.ac.vub.platformkit.servlet.PlatformDescriptionStore store) {
+		this.store = store;
 	}
 
 }

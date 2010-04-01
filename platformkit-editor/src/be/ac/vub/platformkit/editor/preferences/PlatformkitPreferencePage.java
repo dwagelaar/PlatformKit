@@ -32,8 +32,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
-import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologiesFactory;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
@@ -195,7 +195,7 @@ public class PlatformkitPreferencePage extends FieldEditorPreferencePage impleme
 		if (ok) {
 			// Directly apply new log level
 			String logLevel = getPreferenceStore().getString(PreferenceConstants.P_LOG_LEVEL);
-			Logger logger = Logger.getLogger(IOntologies.LOGGER);
+			Logger logger = Logger.getLogger(PlatformkitLogger.LOGGER);
 			logger.setLevel(Level.parse(logLevel));
 			logger.info(String.format(
 					PlatformkitEditorPlugin.getPlugin().getString("logLevelSetTo"), 

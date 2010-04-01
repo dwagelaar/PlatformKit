@@ -10,15 +10,13 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.jobs;
 
-import java.util.logging.Logger;
-
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 
-import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
@@ -34,8 +32,6 @@ public abstract class ProgressMonitorJob extends Job {
 	public ProgressMonitorJob(String name) {
 		super(name);
 	}
-
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	private boolean cancelled = false;
 	private long jobStartTime;
@@ -68,7 +64,7 @@ public abstract class ProgressMonitorJob extends Job {
 		monitor.worked(1);
 		if (message != null) {
 			long time = System.currentTimeMillis() - getJobStartTime();
-			logger.info(String.format(
+			PlatformkitLogger.logger.info(String.format(
 					PlatformkitEditorPlugin.getPlugin().getString("ProgressMonitorJob.logAt"), 
 					message,
 					time,
@@ -103,7 +99,7 @@ public abstract class ProgressMonitorJob extends Job {
 	 * @param message
 	 */
 	protected void subTask(IProgressMonitor monitor, String message) {
-		logger.info(message);
+		PlatformkitLogger.logger.info(message);
 		monitor.subTask(message);
 	}
 
@@ -116,7 +112,7 @@ public abstract class ProgressMonitorJob extends Job {
 	protected void beginTask(IProgressMonitor monitor, String message, int totalWork) {
 		setJobStartTime(System.currentTimeMillis());
 		monitor.beginTask(message, totalWork);
-		logger.info(message);
+		PlatformkitLogger.logger.info(message);
 	}
 
 	/**

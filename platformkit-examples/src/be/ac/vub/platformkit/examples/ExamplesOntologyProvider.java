@@ -14,21 +14,18 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
 import org.osgi.framework.Bundle;
 
 import be.ac.vub.platformkit.kb.INamedOntologyProvider;
-import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.util.BundleSwitch;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
 public class ExamplesOntologyProvider implements INamedOntologyProvider {
 
 	protected static Bundle bundle = BundleSwitch.getBundle(ExamplesOntologyProvider.class);
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
-
 	private static final String[] ontologies = new String[] {
 		"platformkit_2010_1/Generic/jdk-1_1-pc.owl",
 		"platformkit_2010_1/Generic/j2se-1_2-pc.owl",
@@ -81,7 +78,7 @@ public class ExamplesOntologyProvider implements INamedOntologyProvider {
 				streams[i] = resource.openStream();
 			}
 			Assert.assertNotNull(streams[i]);
-			logger.fine(String.format(
+			PlatformkitLogger.logger.fine(String.format(
 					PlatformkitExamplesResources.getString("ExamplesOntologyProvider.providingOntAs"), 
 					ontologies[i], 
 					streams[i])); //$NON-NLS-1$
