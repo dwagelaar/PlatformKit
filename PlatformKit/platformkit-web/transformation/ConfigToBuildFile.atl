@@ -10,6 +10,8 @@ create OUT : XML from IN : CFG;
 -- ======================================================================
 
 helper def : ModelPath : String = 'platform:/resource/platformkit-web/models';
+helper def : ModelName : String = 'PlatformkitWeb';
+helper def : ModelPrefix : String = 'pkw';
 
 -- ======================================================================
 -- helper attributes end
@@ -33,26 +35,39 @@ rule ConfigRoot {
 	   	name <- 'target',
 		children <- thisModule->AllTarget(s),
 		parent <- root),
-	-- <target name = 'InstantMessengerModel' depends = 'allBase'>
+	-- <target name = 'all-feedback' depends = '...'>
+	   allFeedbackTarget : XML!"XML::Element" (
+	   	name <- 'target',
+		children <- thisModule.AllFeedbackTarget(s),
+		parent <- root),
+	-- <target name = 'thisModule.ModelName' depends = 'allBase'>
 	   imTarget : XML!"XML::Element" (
 	   	name <- 'target',
 		children <- thisModule->ModelTarget(
-			'PlatformKitWeb',
+			thisModule.ModelName,
 			'inModel',
-			'im',
-			thisModule.ModelPath + '/PlatformKitWeb.uml',
-			'platform:/resource/' + s.targetProject + '/src/PlatformKitWeb.hibernatemapping30'),
+			thisModule.ModelPrefix,
+			thisModule.ModelPath + '/' + thisModule.ModelName + '.uml'),
+		parent <- root),
+	-- <target name = 'thisModule.ModelName-feedback' depends = 'allBase, loadJAVA'>
+	   imTargetFeedback : XML!"XML::Element" (
+	   	name <- 'target',
+		children <- thisModule.ModelFeedbackTarget(
+			thisModule.ModelName + '-feedback',
+			'inModel',
+			s.targetProject,
+			thisModule.ModelPath + '/' + thisModule.ModelName + '.uml'),
 		parent <- root)
 }
 
-rule AllTarget(c : CFG!"instantmessenger::InstantMessengerConfiguration") {
+rule AllTarget(c : CFG!"transformations::TransformationConfig") {
 	-- Sequence{name="all" depends="..."}
 	to targetName : XML!"XML::Attribute"(
 	   	name <- 'name',
 		value <- 'all'),
 	   targetDepends : XML!"XML::Attribute"(
 	   	name <- 'depends',
-		value <- Sequence{'PlatformKitWeb'}
+		value <- Sequence{thisModule.ModelName}
 	   		->append('prettyPrint')
 			->iterate(e; acc : String = '' | acc +
 				if acc = '' then e
@@ -69,7 +84,30 @@ rule AllTarget(c : CFG!"instantmessenger::InstantMessengerConfiguration") {
 	}
 }
 
-rule ModelTarget(name : String, inModel : String, prefix : String, uri : String, hbmuri : String) {
+rule AllFeedbackTarget(c : CFG!"transformations::TransformationConfig") {
+	-- Sequence{name="all-feedback" depends="..."}
+	to targetName : XML!"XML::Attribute"(
+	   	name <- 'name',
+		value <- 'all-feedback'),
+	   targetDepends : XML!"XML::Attribute"(
+	   	name <- 'depends',
+		value <- Sequence{thisModule.ModelName + '-feedback'}
+			->iterate(e; acc : String = '' | acc +
+				if acc = '' then e
+				else ', ' + e endif).debug('AllFeedback')),
+	-- 	<eclipse.refreshLocal resource="thisModule.ModelPath"/>
+	   refresh : XML!"XML::Element" (
+	   	name <- 'eclipse.refreshLocal'),
+	   refreshResource : XML!"XML::Attribute" (
+	   	name <- 'resource',
+		value <- thisModule.ModelPath,
+		parent <- refresh)
+	do {
+		Sequence{targetName, targetDepends, refresh};
+	}
+}
+
+rule ModelTarget(name : String, inModel : String, prefix : String, uri : String) {
 	-- Sequence{name = 'name' depends = 'allBase'}
 	to targetName : XML!"XML::Attribute"(
 	   	name <- 'name',
@@ -77,7 +115,7 @@ rule ModelTarget(name : String, inModel : String, prefix : String, uri : String,
 	   targetDepends : XML!"XML::Attribute"(
 	   	name <- 'depends',
 		value <- 'allBase'),
-	-- <atl.loadModel modelHandler = 'EMF' name = 'inModel' metamodel = 'UML2' uri = 'uri'/>
+	-- <atl.loadModel modelHandler = 'EMF' name = 'inModel' metamodel = 'UML2' path = 'path'/>
 	   loadModel : XML!"XML::Element" (
 	   	name <- 'atl.loadModel'),
 	   modelHandler : XML!"XML::Attribute" (
@@ -92,16 +130,16 @@ rule ModelTarget(name : String, inModel : String, prefix : String, uri : String,
 	   	name <- 'metamodel',
 		value <- 'UML2',
 		parent <- loadModel),
-	   modelUri : XML!"XML::Attribute" (
+	   modelPath : XML!"XML::Attribute" (
 	   	name <- 'uri',
 		value <- uri,
 		parent <- loadModel),
-	-- <antcall target="generateWithHBM" inheritRefs="true">
+	-- <antcall target="generate" inheritRefs="true">
 	   antcall : XML!"XML::Element" (
 	   	name <- 'antcall'),
 	   antcalltarget : XML!"XML::Attribute" (
 	   	name <- 'target',
-		value <- 'generateWithHBM',
+		value <- 'generate',
 		parent <- antcall),
 	   inheritRefs : XML!"XML::Attribute" (
 	   	name <- 'inheritRefs',
@@ -116,19 +154,86 @@ rule ModelTarget(name : String, inModel : String, prefix : String, uri : String,
 	   paramprefix : XML!"XML::Element" (
 	   	name <- 'param',
 		children <- thisModule->Property('prefix', prefix),
-		parent <- antcall),
-	-- <param name="outHBM" value="prefix-HBM"/>
-	   paramoutHBM : XML!"XML::Element" (
-	   	name <- 'param',
-		children <- thisModule->Property('outHBM', prefix + '-HBM'),
-		parent <- antcall),
-	-- <param name="uriHBM" value="hbmuri"/>
-	   parampathHBM : XML!"XML::Element" (
-	   	name <- 'param',
-		children <- thisModule->Property('uriHBM', hbmuri),
 		parent <- antcall)
 	do {
 		Sequence{targetName, targetDepends, loadModel, antcall};
+	}
+}
+
+rule ModelFeedbackTarget(name : String, inModel : String, targetProject : String, path : String) {
+	-- Sequence{name = 'name' depends = 'defineProperties, loadBaseModels, loadJAVA'}
+	to targetName : XML!"XML::Attribute"(
+	   	name <- 'name',
+		value <- name),
+	   targetDepends : XML!"XML::Attribute"(
+	   	name <- 'depends',
+		value <- 'defineProperties, loadBaseModels, loadJAVA'),
+	-- <atl.loadModel modelHandler = 'UML2' name = 'inModel' metamodel = 'UML2' uri = 'path'/>
+	   loadModel : XML!"XML::Element" (
+	   	name <- 'atl.loadModel'),
+	   modelHandler : XML!"XML::Attribute" (
+	   	name <- 'modelHandler',
+		value <- 'UML2',
+		parent <- loadModel),
+	   modelName : XML!"XML::Attribute" (
+	   	name <- 'name',
+		value <- inModel,
+		parent <- loadModel),
+	   metamodel : XML!"XML::Attribute" (
+	   	name <- 'metamodel',
+		value <- 'UML2',
+		parent <- loadModel),
+	   modelPath : XML!"XML::Attribute" (
+	   	name <- 'uri',
+		value <- path,
+		parent <- loadModel),
+	-- <atl.loadModel modelHandler = 'EMF' name = 'inModelCode' metamodel = 'JAVA' path = 'targetProject/targetProject.javaast'/>
+	   loadCode : XML!"XML::Element" (
+	   	name <- 'atl.loadModel'),
+	   modelHandler : XML!"XML::Attribute" (
+	   	name <- 'modelHandler',
+		value <- 'EMF',
+		parent <- loadCode),
+	   modelName : XML!"XML::Attribute" (
+	   	name <- 'name',
+		value <- inModel + 'Code',
+		parent <- loadCode),
+	   metamodel : XML!"XML::Attribute" (
+	   	name <- 'metamodel',
+		value <- 'JAVA',
+		parent <- loadCode),
+	   modelPath : XML!"XML::Attribute" (
+	   	name <- 'path',
+		value <- '../' + targetProject + '.javaast',
+		parent <- loadCode),
+	-- <antcall target="java2uml" inheritRefs="true">
+	   antcall : XML!"XML::Element" (
+	   	name <- 'antcall'),
+	   antcalltarget : XML!"XML::Attribute" (
+	   	name <- 'target',
+		value <- 'java2uml',
+		parent <- antcall),
+	   inheritRefs : XML!"XML::Attribute" (
+	   	name <- 'inheritRefs',
+		value <- 'true',
+		parent <- antcall),
+	-- <param name="in" value="inModel"/>
+	   paramin : XML!"XML::Element" (
+	   	name <- 'param',
+		children <- thisModule.Property('in', inModel),
+		parent <- antcall),
+	-- <param name="code" value="inModelCode"/>
+	   paramcode : XML!"XML::Element" (
+	   	name <- 'param',
+		children <- thisModule.Property('code', inModel + 'Code'),
+		parent <- antcall),
+	-- <param name="uri" value="path"/>
+	   parampath : XML!"XML::Element" (
+	   	name <- 'param',
+		children <- thisModule.Property('uri', path),
+		parent <- antcall)
+	do {
+		Sequence{targetName, targetDepends, loadModel, loadCode, antcall};
 	}
 }
 

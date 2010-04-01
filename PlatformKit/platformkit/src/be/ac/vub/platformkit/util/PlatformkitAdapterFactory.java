@@ -10,7 +10,6 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.util;
 
-import be.ac.vub.platformkit.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;

@@ -17,7 +17,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.logging.Logger;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.command.Command;
@@ -40,7 +39,7 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
-import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
 
@@ -63,8 +62,6 @@ public class PlatformKitItemProviderAdapter implements
 	private ItemProviderAdapter inner;
 	private AdapterFactory factory;
 	private IEObjectValidator validator = null;
-
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	/**
 	 * Creates a new PlatformKitItemProviderAdapter
@@ -105,7 +102,7 @@ public class PlatformKitItemProviderAdapter implements
 		if (!hasItemProvider) {
 			// Bug #26: Profiling the Instant Messenger configuration editor throws ClassCastException
 			// Solved: use AdapterFactory from editingDomain to pro-actively create underlying adapter
-			logger.info(String.format(
+			PlatformkitLogger.logger.info(String.format(
 					PlatformkitEditorPlugin.getPlugin().getString("PlatformKitItemProviderAdapter.creatingNewAdaptersUsing"), 
 					factory)); //$NON-NLS-1$
 			factory.adaptAllNew(object);
@@ -116,7 +113,7 @@ public class PlatformKitItemProviderAdapter implements
 				PlatformKitItemProviderAdapter wrapper =
 					new PlatformKitItemProviderAdapter((ItemProviderAdapter) adapter, factory);
 				wrapper.setValidator(getValidator());
-				logger.info(String.format(
+				PlatformkitLogger.logger.info(String.format(
 						PlatformkitEditorPlugin.getPlugin().getString("PlatformKitItemProviderAdapter.createdWrapperAdapterFor"), 
 						object)); //$NON-NLS-1$
 				object.eAdapters().set(i, wrapper);

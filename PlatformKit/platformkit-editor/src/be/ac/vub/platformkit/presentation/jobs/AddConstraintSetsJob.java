@@ -35,6 +35,7 @@ import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.PlatformkitFactory;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
@@ -213,7 +214,7 @@ public abstract class AddConstraintSetsJob extends ConstraintSpaceJob {
 						ont = translatePath(ont, ann.eResource().getURI(), platformkitURI);
 						if (!ontologies.contains(ont)) {
 							ontologies.add(ont);
-							logger.info(String.format(
+							PlatformkitLogger.logger.info(String.format(
 									PlatformkitEditorPlugin.getPlugin().getString("AddConstraintSetsJob.addedOnt"), 
 									ont)); //$NON-NLS-1$
 						}

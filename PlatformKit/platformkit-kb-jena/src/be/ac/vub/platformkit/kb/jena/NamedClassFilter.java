@@ -32,7 +32,7 @@ public class NamedClassFilter extends Filter<OntClass> {
 	 * @return True if c is a named class.
 	 */
 	public final static boolean isNamedClass(OntClass c) {
-		String uri = c.getURI();
+		final String uri = c.getURI();
 		if (uri == null) { return false; }
 		if (uri.equals(OWL.Thing.getURI())) { return false; }
 		if (uri.equals(OWL.Nothing.getURI())) { return false; }

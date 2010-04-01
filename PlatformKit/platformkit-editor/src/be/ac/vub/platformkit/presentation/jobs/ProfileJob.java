@@ -32,6 +32,8 @@ import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.ConstraintSpaceCache;
 import be.ac.vub.platformkit.presentation.util.IEObjectValidator;
@@ -169,13 +171,13 @@ public class ProfileJob extends ConstraintSpaceJob {
 	 */
 	protected URI findPlatformKitURI() {
 		EObject object = getSelectedObject();
-		logger.info(object.eAdapters().toString());
+		PlatformkitLogger.logger.info(object.eAdapters().toString());
 		Resource res = object.eResource();
 		EObject root = (EObject) res.getContents().get(0);
 		Resource rootRes = root.eClass().eResource();
 		URI resURI = rootRes.getURI();
 		URI platformkitURI = resURI.trimFileExtension().appendFileExtension("platformkit"); //$NON-NLS-1$
-		logger.info(String.format(
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.pkUriIs"), 
 				platformkitURI)); //$NON-NLS-1$
 		return platformkitURI;
@@ -187,8 +189,9 @@ public class ProfileJob extends ConstraintSpaceJob {
 	 * @param space
 	 * @return True if any platform specification was loaded.
 	 * @throws CoreException
+	 * @throws OntException 
 	 */
-	protected boolean loadPlatformInstances(ConstraintSpace space) throws CoreException {
+	protected boolean loadPlatformInstances(ConstraintSpace space) throws CoreException, OntException {
 		boolean loaded = false;
 		IOntologies ont = space.getKnowledgeBase();
 		Object[] sources = getPlatformInstanceSources();
@@ -235,7 +238,7 @@ public class ProfileJob extends ConstraintSpaceJob {
 					new PlatformKitItemProviderAdapter(
 							(ItemProviderAdapter) adapter, 
 							((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory());
-				logger.info(String.format(
+				PlatformkitLogger.logger.info(String.format(
 						PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.createdWrapperFor"), 
 						object)); //$NON-NLS-1$
 				object.eAdapters().set(i, wrapper);
@@ -245,7 +248,7 @@ public class ProfileJob extends ConstraintSpaceJob {
 				PlatformKitItemProviderAdapter pkAdapter = (PlatformKitItemProviderAdapter) adapter;
 				if ((pkAdapter.getValidator() != validator)) {
 					pkAdapter.setValidator(validator);
-					logger.info(String.format(
+					PlatformkitLogger.logger.info(String.format(
 							PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.attachedNewValidatorTo"), 
 							pkAdapter)); //$NON-NLS-1$
 				}
@@ -265,7 +268,7 @@ public class ProfileJob extends ConstraintSpaceJob {
 		if (!(orig instanceof PlatformEValidator)) {
 			EValidator eValidator = new PlatformEValidator(orig);
 			EValidator.Registry.INSTANCE.put(pack, eValidator);
-			logger.info(String.format(
+			PlatformkitLogger.logger.info(String.format(
 					PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.registeredNewEValidatorFor"), 
 					pack.getNsURI())); //$NON-NLS-1$
 		}

@@ -45,6 +45,7 @@ import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.util.EMFURIPathResolver;
 import be.ac.vub.platformkit.util.PathResolver;
 
@@ -84,7 +85,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 
 	}
 
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(PlatformkitLogger.LOGGER);
 	private static ExtensibleURIConverterImpl converter = new ExtensibleURIConverterImpl();
 
 	private IOntologies knowledgeBase = null;
@@ -213,15 +214,15 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	public EList<ConstraintSet> getValid() throws OntException {
 		logger.info(PlatformkitResources.getString("ConstraintSpaceImpl.calcValid")); //$NON-NLS-1$
 		EList<Constraint> optimalClasses = getIntersectionSet().getConstraint();
-		EList<ConstraintSet> optimalLists = new BasicEList<ConstraintSet>();
+		EList<ConstraintSet> optimalSets = new BasicEList<ConstraintSet>();
 		Map<Constraint, ConstraintSet> im = createIntersectionMap(true);
 		for (Iterator<Constraint> ocs = optimalClasses.iterator(); ocs.hasNext();) {
 			ConstraintSet set = im.get(ocs.next());
 			if (set != null) {
-				optimalLists.add(set);
+				optimalSets.add(set);
 			}
 		}
-		return optimalLists;
+		return optimalSets;
 	}
 
 	/**
@@ -452,16 +453,26 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 */
 	public boolean init(boolean searchPreClassified)
 	throws IOException, OntException {
-		Assert.assertNotNull(getKnowledgeBase());
+		final IOntologies kb = getKnowledgeBase();
+		Assert.assertNotNull(kb);
 		boolean preClassified = false;
 		if (searchPreClassified) {
-			getKnowledgeBase().loadOntology(getPreClassifiedOntology());
+			kb.loadOntology(getPreClassifiedOntology());
 			preClassified = true;
 		} else {
-			EList<String> onts = getOntology();
-			for (int i = 0; i < onts.size(); i++) {
-				InputStream in = getPathResolver().getContents(onts.get(i));
-				getKnowledgeBase().loadOntology(in);
+			OntException lastExc = null;
+			for (String ont : getOntology()) {
+				InputStream in = getPathResolver().getContents(ont);
+				try {
+					kb.loadOntology(in);
+					lastExc =  null;
+				} catch (OntException e) {
+					lastExc = e;
+				}
+			}
+			// If there was still an exception after loading the last ontology, throw...
+			if (lastExc != null) {
+				throw new OntException(lastExc);
 			}
 		}
 		return preClassified;

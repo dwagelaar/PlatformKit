@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -36,7 +35,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ListDialog;
 
 import be.ac.vub.platformkit.kb.INamedOntologyProvider;
-import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
@@ -44,8 +43,6 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class PlatformSpecDialog extends ListDialog {
-
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	private boolean builtinSelected = true;
 
@@ -69,7 +66,7 @@ public class PlatformSpecDialog extends ListDialog {
 	private void initPlatformSpecList() throws IOException {
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		if (registry == null) {
-			logger.warning(PlatformkitEditorPlugin.getPlugin().getString("PlatformSpecDialog.registryNotFound")); //$NON-NLS-1$
+			PlatformkitLogger.logger.warning(PlatformkitEditorPlugin.getPlugin().getString("PlatformSpecDialog.registryNotFound")); //$NON-NLS-1$
 			return;
 		}
 		final List<InputStream> content = new ArrayList<InputStream>();

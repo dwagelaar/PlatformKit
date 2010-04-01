@@ -15,8 +15,6 @@ import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
@@ -31,7 +29,6 @@ import org.semanticweb.owl.model.OWLOntologyManager;
 
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
-import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.util.OntException;
 
 /**
@@ -40,9 +37,8 @@ import be.ac.vub.platformkit.kb.util.OntException;
  */
 public class OWLOntologyAdapter implements IOntModel {
 
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
-	protected OWLOntology model;
-	protected OWLAPIOntologies ontologies;
+	private OWLOntology model;
+	private OWLAPIOntologies ontologies;
 
 	/**
 	 * Creates a new {@link OWLOntologyAdapter}.
@@ -52,8 +48,8 @@ public class OWLOntologyAdapter implements IOntModel {
 	public OWLOntologyAdapter(OWLOntology model, OWLAPIOntologies ontologies) {
 		Assert.assertNotNull(model);
 		Assert.assertNotNull(ontologies);
-		this.model = model;
-		this.ontologies = ontologies;
+		this.setModel(model);
+		this.setOntologies(ontologies);
 	}
 
 	/*
@@ -62,7 +58,7 @@ public class OWLOntologyAdapter implements IOntModel {
 	 */
 	@Override
 	public String toString() {
-		return model.toString();
+		return getModel().toString();
 	}
 
 	/*
@@ -71,7 +67,7 @@ public class OWLOntologyAdapter implements IOntModel {
 	 */
 	public IOntClass createIntersectionClass(String uri,
 			Iterator<IOntClass> members) throws OntException {
-		final OWLOntologyManager mgr = ontologies.mgr;
+		final OWLOntologyManager mgr = getOntologies().getMgr();
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		try {
 			URI classURI = new URI(uri);
@@ -85,38 +81,66 @@ public class OWLOntologyAdapter implements IOntModel {
 							PlatformkitOWLAPIResources.getString("OWLOntologyAdapter.ontClassNotFound"),
 							c));
 				}
-				operands.add(c.model);
+				operands.add(c.getModel());
 			}
 			OWLObjectIntersectionOf intersection = factory.getOWLObjectIntersectionOf(operands);
 			OWLAxiom axiom = factory.getOWLEquivalentClassesAxiom(intsecClass, intersection);
-			AddAxiom addAxiom = new AddAxiom(model, axiom);
+			AddAxiom addAxiom = new AddAxiom(getModel(), axiom);
 			mgr.applyChange(addAxiom);
-			return new OWLClassAdapter(intsecClass, ontologies);
+			return new OWLClassAdapter(intsecClass, getOntologies());
 		} catch (URISyntaxException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		} catch (OWLOntologyChangeException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		}
-		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntModel#getOntClass(java.lang.String)
 	 */
-	public IOntClass getOntClass(String uri) {
-		final OWLOntologyManager mgr = ontologies.mgr;
+	public IOntClass getOntClass(String uri) throws OntException {
+		final OWLAPIOntologies ontologies = getOntologies();
+		final OWLOntologyManager mgr = ontologies.getMgr();
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		try {
 			URI classURI = new URI(uri);
-			if (model.containsClassReference(classURI)) {
+			if (getModel().containsClassReference(classURI)) {
 				OWLClass owlClass = factory.getOWLClass(classURI);
 				return new OWLClassAdapter(owlClass, ontologies);
 			}
 		} catch (URISyntaxException e) {
-			logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+			throw new OntException(e);
 		}
 		return null;
+	}
+
+	/**
+	 * @param ontologies the ontologies to set
+	 */
+	protected void setOntologies(OWLAPIOntologies ontologies) {
+		this.ontologies = ontologies;
+	}
+
+	/**
+	 * @return the ontologies
+	 */
+	protected OWLAPIOntologies getOntologies() {
+		return ontologies;
+	}
+
+	/**
+	 * @param model the model to set
+	 */
+	protected void setModel(OWLOntology model) {
+		this.model = model;
+	}
+
+	/**
+	 * @return the model
+	 */
+	protected OWLOntology getModel() {
+		return model;
 	}
 
 }

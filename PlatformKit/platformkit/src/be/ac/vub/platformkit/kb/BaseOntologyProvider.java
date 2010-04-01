@@ -21,6 +21,7 @@ import org.osgi.framework.Bundle;
 
 import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.kb.util.BundleSwitch;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
 /**
  * Provider for default PlatformKit ontologies
@@ -39,7 +40,7 @@ public class BaseOntologyProvider implements IOntologyProvider {
 	};
 
 	protected static Bundle bundle = BundleSwitch.getBundle(BaseOntologyProvider.class);
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(PlatformkitLogger.LOGGER);
 
 	public static BaseOntologyProvider INSTANCE = new BaseOntologyProvider();
 

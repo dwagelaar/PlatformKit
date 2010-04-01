@@ -14,11 +14,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Logger;
 
 import junit.framework.Assert;
 import be.ac.vub.platformkit.PlatformkitResources;
-import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
 /**
  * Sorts the list by repeatedly removing the first smallest element ("root" element).
@@ -34,7 +33,7 @@ import be.ac.vub.platformkit.kb.IOntologies;
  * @author dennis
  */
 public class TreeSorter<T> {
-	private Logger logger = Logger.getLogger(IOntologies.LOGGER);
+
 	private Comparator<T> comp;
 
 	/**
@@ -77,7 +76,7 @@ public class TreeSorter<T> {
 			T element = ls.next();
 			if (isRootElement(element, list)) {
 				ls.remove();
-				logger.info(String.format(
+				PlatformkitLogger.logger.info(String.format(
 						PlatformkitResources.getString("TreeSorter.rootElementRemoved"), 
 						element)); //$NON-NLS-1$
 				return element;
@@ -96,14 +95,14 @@ public class TreeSorter<T> {
 			T element = ls.next();
 			try {
 				if (comp.compare(obj, element) > 0) {
-					logger.fine(String.format(
+					PlatformkitLogger.logger.fine(String.format(
 							PlatformkitResources.getString("TreeSorter.isNotRoot"), 
 							obj, 
 							element)); //$NON-NLS-1$
 					return false;
 				}
 			} catch (ClassCastException e) {
-				logger.fine(String.format(
+				PlatformkitLogger.logger.fine(String.format(
 						PlatformkitResources.getString("TreeSorter.notComparable"), 
 						obj, 
 						element)); //$NON-NLS-1$

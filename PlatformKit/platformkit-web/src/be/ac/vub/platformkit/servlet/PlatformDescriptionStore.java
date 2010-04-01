@@ -16,11 +16,11 @@ public class PlatformDescriptionStore {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		Matcher m = quotes.matcher(browserID);
-		List ps = session.createQuery(
+		List<?> ps = session.createQuery(
 				"from " + PlatformDescription.class.getCanonicalName()
 						+ " where browserID=" + "'"
 						+ m.replaceAll(escapedQuote) + "'").list();
-		Iterator e_itr = ps.iterator();
+		Iterator<?> e_itr = ps.iterator();
 		while (e_itr.hasNext()) {
 			return (PlatformDescription) e_itr.next();
 		}

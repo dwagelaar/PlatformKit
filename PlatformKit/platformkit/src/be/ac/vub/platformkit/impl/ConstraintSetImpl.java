@@ -39,6 +39,7 @@ import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.util.HierarchyComparator;
 import be.ac.vub.platformkit.util.TreeSorter;
 
@@ -114,7 +115,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 
 	}
 
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
+	protected static Logger logger = Logger.getLogger(PlatformkitLogger.LOGGER);
 
 	private EList<Constraint> mostSpecific = null;
 	private EList<Constraint> leastSpecific = null;

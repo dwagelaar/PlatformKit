@@ -12,7 +12,6 @@ package be.ac.vub.platformkit.presentation;
 
 import java.util.logging.Handler;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -37,7 +36,7 @@ import org.osgi.framework.BundleContext;
 
 import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
-import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.presentation.logging.ConsoleStreamHandler;
 import be.ac.vub.platformkit.presentation.util.PlatformkitEValidator;
 import be.ac.vub.platformkit.ui.util.ErrorDialogRunnable;
@@ -82,8 +81,6 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 
 	private static Handler handler;
 	
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
-
 	/**
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
@@ -150,7 +147,7 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 			consoleStream.println("Platformkit Console initialised");
 			handler = new ConsoleStreamHandler(consoleStream);
 			handler.setLevel(Level.ALL);
-			logger.addHandler(handler);
+			PlatformkitLogger.logger.addHandler(handler);
 			// Disable Jena logging on our console to remove dependency
 			//JenaPlugin.getDefault().addLogHandler(handler);
 		}
@@ -194,12 +191,12 @@ public final class PlatformkitEditorPlugin extends EMFPlugin {
 			IPreferenceStore prefStore = getPreferenceStore();
 			if (prefStore != null) {
 				String logLevel = prefStore.getString(PreferenceConstants.P_LOG_LEVEL);
-				logger.setLevel(Level.parse(logLevel));
-				logger.info(String.format(
+				PlatformkitLogger.logger.setLevel(Level.parse(logLevel));
+				PlatformkitLogger.logger.info(String.format(
 						PlatformkitEditorPlugin.getPlugin().getString("logLevelSetTo"), 
 						logLevel)); //$NON-NLS-1$
 			} else {
-				logger.warning(PlatformkitEditorPlugin.getPlugin().getString("PlatformkitEditorPlugin.cannotSetLogLevel")); //$NON-NLS-1$
+				PlatformkitLogger.logger.warning(PlatformkitEditorPlugin.getPlugin().getString("PlatformkitEditorPlugin.cannotSetLogLevel")); //$NON-NLS-1$
 			}
 		}
 	}

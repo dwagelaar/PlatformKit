@@ -28,8 +28,9 @@ public interface IOntModel {
 	 * </p>
 	 * @param uri The uri for the class node, or null for an anonymous class.
 	 * @return An IOntClass resource or null.
+	 * @throws OntException 
 	 */
-	public IOntClass getOntClass(String uri);
+	public IOntClass getOntClass(String uri) throws OntException;
 
 	/**
 	 * <p>Answer a resource representing the class that is the intersection of the given list of class descriptions.</p>

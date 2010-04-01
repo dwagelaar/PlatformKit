@@ -21,7 +21,7 @@ import com.hp.hpl.jena.ontology.OntClass;
  */
 public class OntClassAdapter implements IOntClass {
 
-	protected OntClass model;
+	private OntClass model;
 
 	/**
 	 * Creates a new {@link OntClassAdapter}.
@@ -29,7 +29,7 @@ public class OntClassAdapter implements IOntClass {
 	 */
 	public OntClassAdapter(OntClass model) {
 		Assert.assertNotNull(model);
-		this.model = model;
+		this.setModel(model);
 	}
 
 	/*
@@ -38,7 +38,7 @@ public class OntClassAdapter implements IOntClass {
 	 */
 	@Override
 	public String toString() {
-		return model.toString();
+		return getModel().toString();
 	}
 
 	/*
@@ -46,7 +46,7 @@ public class OntClassAdapter implements IOntClass {
 	 * @see be.ac.vub.platformkit.kb.IOntClass#hasEquivalentClass(be.ac.vub.platformkit.kb.IOntClass)
 	 */
 	public boolean hasEquivalentClass(IOntClass c) throws ClassCastException {
-		return model.hasEquivalentClass(((OntClassAdapter)c).model);
+		return getModel().hasEquivalentClass(((OntClassAdapter)c).getModel());
 	}
 
 	/*
@@ -54,7 +54,7 @@ public class OntClassAdapter implements IOntClass {
 	 * @see be.ac.vub.platformkit.kb.IOntClass#hasSubClass(be.ac.vub.platformkit.kb.IOntClass)
 	 */
 	public boolean hasSubClass(IOntClass c) throws ClassCastException {
-		return model.hasSubClass(((OntClassAdapter)c).model);
+		return getModel().hasSubClass(((OntClassAdapter)c).getModel());
 	}
 
 	/*
@@ -62,7 +62,7 @@ public class OntClassAdapter implements IOntClass {
 	 * @see be.ac.vub.platformkit.kb.IOntClass#hasSuperClass(be.ac.vub.platformkit.kb.IOntClass)
 	 */
 	public boolean hasSuperClass(IOntClass c) throws ClassCastException {
-		return model.hasSuperClass(((OntClassAdapter)c).model);
+		return getModel().hasSuperClass(((OntClassAdapter)c).getModel());
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class OntClassAdapter implements IOntClass {
 	 * @throws ClassCastException
 	 */
 	public void addEquivalentClass(IOntClass c) throws ClassCastException {
-		model.addEquivalentClass(((OntClassAdapter)c).model);
+		getModel().addEquivalentClass(((OntClassAdapter)c).getModel());
 	}
 
 	/*
@@ -79,7 +79,21 @@ public class OntClassAdapter implements IOntClass {
 	 * @see be.ac.vub.platformkit.kb.IOntClass#hasInstances()
 	 */
 	public boolean hasInstances() {
-		return model.listInstances().hasNext();
+		return getModel().listInstances().hasNext();
+	}
+
+	/**
+	 * @param model the model to set
+	 */
+	protected void setModel(OntClass model) {
+		this.model = model;
+	}
+
+	/**
+	 * @return the model
+	 */
+	protected OntClass getModel() {
+		return model;
 	}
 
 }

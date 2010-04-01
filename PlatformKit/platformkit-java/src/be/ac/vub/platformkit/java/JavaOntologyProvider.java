@@ -13,15 +13,14 @@ package be.ac.vub.platformkit.java;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
 import org.osgi.framework.Bundle;
 
-import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologyProvider;
 import be.ac.vub.platformkit.kb.util.BundleSwitch;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
 /**
  * Java ontology provider
@@ -55,7 +54,6 @@ public class JavaOntologyProvider implements IOntologyProvider {
 	}; //$NON-NLS-1$
 
 	protected static Bundle bundle = BundleSwitch.getBundle(JavaOntologyProvider.class);
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
 
 	public static JavaOntologyProvider INSTANCE = new JavaOntologyProvider();
 
@@ -70,7 +68,7 @@ public class JavaOntologyProvider implements IOntologyProvider {
 			}
 			Assert.assertNotNull(resource);
 			streams[i] = resource.openStream();
-			logger.fine(String.format(
+			PlatformkitLogger.logger.fine(String.format(
 					PlatformkitJavaResources.getString("JavaOntologyProvider.providingOntAs"),
 					ontologies[i], 
 					streams[i])); //$NON-NLS-1$

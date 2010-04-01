@@ -22,6 +22,7 @@ import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 import be.ac.vub.platformkit.presentation.util.PlatformKitException;
 
@@ -112,8 +113,9 @@ public class ValidateJob extends ConstraintSpaceJob {
 	 * {@link #getPlatformInstanceSources()}.
 	 * @return True if any platform specification was loaded.
 	 * @throws CoreException
+	 * @throws OntException 
 	 */
-	protected boolean loadPlatformInstances() throws CoreException {
+	protected boolean loadPlatformInstances() throws CoreException, OntException {
 		boolean loaded = false;
 		IOntologies ont = getSpace().getKnowledgeBase();
 		Object[] sources = getPlatformInstanceSources();

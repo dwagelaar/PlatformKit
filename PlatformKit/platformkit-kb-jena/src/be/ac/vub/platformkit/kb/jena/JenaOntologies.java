@@ -33,6 +33,7 @@ import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 import be.ac.vub.platformkit.kb.IOntologyProvider;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.registry.PlatformkitRegistry;
 
 import com.hp.hpl.jena.ontology.OntClass;
@@ -74,9 +75,9 @@ public class JenaOntologies extends AbstractOntologies {
 	public JenaOntologies() throws IOException {
 		OntModel ont = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
 		ont.setNsPrefix("", LOCAL_INF_NS); //$NON-NLS-1$
-		ontology = new OntModelAdapter(ont);
-		baseOntology = ontology;
-		prefixURIs.add(LOCAL_INF_NS + '#');
+		setOntology(new OntModelAdapter(ont));
+		setBaseOntology(getOntology());
+		getPrefixURIs().add(LOCAL_INF_NS + '#');
 		addLocalOntologies();
 	}
 
@@ -92,20 +93,21 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#attachPelletReasoner()
 	 */
 	public void attachPelletReasoner() throws OntException {
-		if (ontology.model.getSpecification().getReasoner() != null) {
-			if (ontology.model.getSpecification().getReasoner() instanceof PelletReasoner) {
-				logger.warning(PlatformkitJenaResources.getString("JenaOntologies.pelletAlreadyAttached")); //$NON-NLS-1$
+		final Reasoner reasoner = getOntology().getModel().getSpecification().getReasoner();
+		if (reasoner != null) {
+			if (reasoner instanceof PelletReasoner) {
+				PlatformkitLogger.logger.warning(PlatformkitJenaResources.getString("JenaOntologies.pelletAlreadyAttached")); //$NON-NLS-1$
 				return;
 			}
 			detachReasoner();
 		}
-		logger.info(PlatformkitJenaResources.getString("JenaOntologies.attachingPellet")); //$NON-NLS-1$
+		PlatformkitLogger.logger.info(PlatformkitJenaResources.getString("JenaOntologies.attachingPellet")); //$NON-NLS-1$
 		//Jena is not thread-safe when communicating to the reasoner,
 		//so lock all actions that trigger reasoner activity.
 		synchronized (JenaOntologies.class) {
-			OntModel ont = ModelFactory.createOntologyModel(PelletReasonerFactory.THE_SPEC, baseOntology.model);
+			OntModel ont = ModelFactory.createOntologyModel(PelletReasonerFactory.THE_SPEC, getBaseOntology().getModel());
 			ont.setNsPrefix("", LOCAL_INF_NS); //$NON-NLS-1$
-			ontology = new OntModelAdapter(ont);
+			setOntology(new OntModelAdapter(ont));
 		}
 		notifyOntologyChanged();
 	}
@@ -116,23 +118,24 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see ReasonerRegistry#getOWLMicroReasoner()
 	 */
 	public void attachOWLReasoner() throws OntException {
-		if (ontology.model.getSpecification().getReasoner() != null) {
-			if (ontology.model.getSpecification().getReasoner() instanceof OWLMicroReasoner) {
-				logger.warning(PlatformkitJenaResources.getString("JenaOntologies.owlMicroAlreadyAttached")); //$NON-NLS-1$
+		final Reasoner reasoner = getOntology().getModel().getSpecification().getReasoner();
+		if (reasoner != null) {
+			if (reasoner instanceof OWLMicroReasoner) {
+				PlatformkitLogger.logger.warning(PlatformkitJenaResources.getString("JenaOntologies.owlMicroAlreadyAttached")); //$NON-NLS-1$
 				return;
 			}
 			detachReasoner();
 		}
-		logger.info(PlatformkitJenaResources.getString("JenaOntologies.attachingOwlMicro")); //$NON-NLS-1$
-		Reasoner r = ReasonerRegistry.getOWLMicroReasoner();
-		OntModelSpec spec = new OntModelSpec(OntModelSpec.OWL_DL_MEM);
+		PlatformkitLogger.logger.info(PlatformkitJenaResources.getString("JenaOntologies.attachingOwlMicro")); //$NON-NLS-1$
+		final Reasoner r = ReasonerRegistry.getOWLMicroReasoner();
+		final OntModelSpec spec = new OntModelSpec(OntModelSpec.OWL_DL_MEM);
 		spec.setReasoner(r);
 		//Jena is not thread-safe when communicating to the reasoner,
 		//so lock all actions that trigger reasoner activity.
 		synchronized (JenaOntologies.class) {
-			OntModel ont = ModelFactory.createOntologyModel(spec, baseOntology.model);
+			OntModel ont = ModelFactory.createOntologyModel(spec, getBaseOntology().getModel());
 			ont.setNsPrefix("", LOCAL_INF_NS); //$NON-NLS-1$
-			ontology = new OntModelAdapter(ont);
+			setOntology(new OntModelAdapter(ont));
 		}
 		notifyOntologyChanged();
 	}
@@ -142,23 +145,24 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see ReasonerRegistry#getTransitiveReasoner()
 	 */
 	public void attachTransitiveReasoner() throws OntException {
-		if (ontology.model.getSpecification().getReasoner() != null) {
-			if (ontology.model.getSpecification().getReasoner() instanceof TransitiveReasoner) {
-				logger.warning(PlatformkitJenaResources.getString("JenaOntologies.transAlreadyAttached")); //$NON-NLS-1$
+		final Reasoner reasoner = getOntology().getModel().getSpecification().getReasoner();
+		if (reasoner != null) {
+			if (reasoner instanceof TransitiveReasoner) {
+				PlatformkitLogger.logger.warning(PlatformkitJenaResources.getString("JenaOntologies.transAlreadyAttached")); //$NON-NLS-1$
 				return;
 			}
 			detachReasoner();
 		}
-		logger.info(PlatformkitJenaResources.getString("JenaOntologies.attachingTrans")); //$NON-NLS-1$
-		Reasoner r = ReasonerRegistry.getTransitiveReasoner();
-		OntModelSpec spec = new OntModelSpec(OntModelSpec.OWL_DL_MEM);
+		PlatformkitLogger.logger.info(PlatformkitJenaResources.getString("JenaOntologies.attachingTrans")); //$NON-NLS-1$
+		final Reasoner r = ReasonerRegistry.getTransitiveReasoner();
+		final OntModelSpec spec = new OntModelSpec(OntModelSpec.OWL_DL_MEM);
 		spec.setReasoner(r);
 		//Jena is not thread-safe when communicating to the reasoner,
 		//so lock all actions that trigger reasoner activity.
 		synchronized (JenaOntologies.class) {
-			OntModel ont = ModelFactory.createOntologyModel(spec, baseOntology.model);
+			OntModel ont = ModelFactory.createOntologyModel(spec, getBaseOntology().getModel());
 			ont.setNsPrefix("", LOCAL_INF_NS); //$NON-NLS-1$
-			ontology = new OntModelAdapter(ont);
+			setOntology(new OntModelAdapter(ont));
 		}
 		notifyOntologyChanged();
 	}
@@ -167,44 +171,59 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#detachReasoner()
 	 */
 	public void detachReasoner() throws OntException {
-		if (ontology.model.getSpecification().getReasoner() == null) {
-			logger.warning(PlatformkitJenaResources.getString("JenaOntologies.alreadyDetached")); //$NON-NLS-1$
+		final Reasoner reasoner = getOntology().getModel().getSpecification().getReasoner();
+		if (reasoner == null) {
+			PlatformkitLogger.logger.warning(PlatformkitJenaResources.getString("JenaOntologies.alreadyDetached")); //$NON-NLS-1$
 			return;
 		}
-		logger.info(PlatformkitJenaResources.getString("JenaOntologies.detaching")); //$NON-NLS-1$
-		ontology = baseOntology;
+		PlatformkitLogger.logger.info(PlatformkitJenaResources.getString("JenaOntologies.detaching")); //$NON-NLS-1$
+		setOntology(getBaseOntology());
 		notifyOntologyChanged();
 	}
 
 	/* (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#getBaseOntology()
 	 */
-	public IOntModel getBaseOntology() {
+	public OntModelAdapter getBaseOntology() {
 		return baseOntology;
+	}
+
+	/**
+	 * @param baseOntology the baseOntology to set
+	 */
+	protected void setBaseOntology(OntModelAdapter baseOntology) {
+		this.baseOntology = baseOntology;
 	}
 
 	/* (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#getOntModel()
 	 */
 	public IOntModel getOntModel() {
-		return ontology;
+		return getOntology();
 	}
 
 	/* (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#getInstances()
 	 */
-	public IOntModel getInstances() {
+	public OntModelAdapter getInstances() {
 		return instances;
+	}
+
+	/**
+	 * @param instances the instances to set
+	 */
+	protected void setInstances(OntModelAdapter instances) {
+		this.instances = instances;
 	}
 
 	/* (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadOntology(java.lang.String)
 	 */
 	public void loadOntology(String url) throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.loadingOntFrom"), 
 				url)); //$NON-NLS-1$
-		OntModel ont = ontology.model;
+		final OntModel ont = getOntology().getModel();
 		ont.read(url);
 		registerPrefix(ont);
 		notifyOntologyChanged();
@@ -214,10 +233,10 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#loadOntology(java.io.InputStream)
 	 */
 	public void loadOntology(InputStream in) throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.loadingOntFrom"), 
 				in)); //$NON-NLS-1$
-		OntModel ont = ontology.model;
+		final OntModel ont = getOntology().getModel();
 		ont.read(in, "");
 		registerPrefix(ont);
 		notifyOntologyChanged();
@@ -227,13 +246,13 @@ public class JenaOntologies extends AbstractOntologies {
 	 * Registers the new prefix URI after reading a model.
 	 */
 	private void registerPrefix(OntModel ont) {
-		String prefixURI = ont.getNsPrefixURI("");
-		String prefix = ont.getNsURIPrefix(prefixURI);
-		logger.info(String.format(
+		final String prefixURI = ont.getNsPrefixURI("");
+		final String prefix = ont.getNsURIPrefix(prefixURI);
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.loadedOntWithNS"), 
 				prefix, 
 				prefixURI)); //$NON-NLS-1$
-		prefixURIs.add(prefixURI);
+		getPrefixURIs().add(prefixURI);
 	}
 
 	/**
@@ -242,11 +261,11 @@ public class JenaOntologies extends AbstractOntologies {
 	private void unregisterPrefix(OntModel ont) {
 		String prefixURI = ont.getNsPrefixURI("");
 		String prefix = ont.getNsURIPrefix(prefixURI);
-		logger.info(String.format(
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.unloadedOntWithNS"), 
 				prefix, 
 				prefixURI)); //$NON-NLS-1$
-		prefixURIs.remove(prefixURI);
+		getPrefixURIs().remove(prefixURI);
 	}
 
 	/* (non-Javadoc)
@@ -254,13 +273,13 @@ public class JenaOntologies extends AbstractOntologies {
 	 */
 	public void loadInstances(String url) {
 		unloadInstances();
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.loadingInstanceOntFrom"), 
 				url)); //$NON-NLS-1$
-		OntModel inst = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
+		final OntModel inst = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
 		inst.read(url);
-		instances = new OntModelAdapter(inst);
-		ontology.model.add(inst);
+		setInstances(new OntModelAdapter(inst));
+		getOntology().getModel().add(inst);
 		registerPrefix(inst);
 	}
 
@@ -269,13 +288,13 @@ public class JenaOntologies extends AbstractOntologies {
 	 */
 	public void loadInstances(InputStream in) {
 		unloadInstances();
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.loadingInstanceOntFrom"), 
 				in)); //$NON-NLS-1$
-		OntModel inst = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
+		final OntModel inst = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
 		inst.read(in, ""); //$NON-NLS-1$
-		instances = new OntModelAdapter(inst);
-		ontology.model.add(inst);
+		setInstances(new OntModelAdapter(inst));
+		getOntology().getModel().add(inst);
 		registerPrefix(inst);
 	}
 
@@ -283,11 +302,13 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#unloadInstances()
 	 */
 	public void unloadInstances() {
+		final OntModelAdapter instances = getInstances();
 		if (instances != null) {
-			logger.fine(PlatformkitJenaResources.getString("JenaOntologies.unloadingInstanceOnt")); //$NON-NLS-1$
-			unregisterPrefix(instances.model);
-			ontology.model.remove(instances.model);
-			instances = null;
+			PlatformkitLogger.logger.fine(PlatformkitJenaResources.getString("JenaOntologies.unloadingInstanceOnt")); //$NON-NLS-1$
+			final OntModel model = instances.getModel();
+			unregisterPrefix(model);
+			getOntology().getModel().remove(model);
+			setInstances(null);
 		}
 	}
 
@@ -295,9 +316,10 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#saveOntology(java.io.OutputStream)
 	 */
 	public void saveOntology(OutputStream out) {
-		RDFWriter writer = ontology.model.getWriter(FileUtils.langXML);
+		final OntModel model = getOntology().getModel();
+		final RDFWriter writer = model.getWriter(FileUtils.langXML);
 		prepareWriter(writer, LOCAL_INF_NS);
-		writer.write(ontology.model, out, LOCAL_INF_NS);
+		writer.write(model, out, LOCAL_INF_NS);
 	}
 
 	/**
@@ -315,12 +337,12 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#checkConsistency()
 	 */
 	public void checkConsistency() throws OntException {
-		logger.info(PlatformkitJenaResources.getString("JenaOntologies.checkingConsistency")); //$NON-NLS-1$
+		PlatformkitLogger.logger.info(PlatformkitJenaResources.getString("JenaOntologies.checkingConsistency")); //$NON-NLS-1$
 		StmtIterator i;
 		//Jena is not thread-safe when communicating to the DIG reasoner,
 		//so lock all actions that trigger DIG activity.
 		synchronized (JenaOntologies.class) {
-			i = ontology.model.listStatements(null, OWL.equivalentClass,
+			i = getOntology().getModel().listStatements(null, OWL.equivalentClass,
 					OWL.Nothing);
 		}
 		while (i.hasNext()) {
@@ -337,8 +359,8 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#addLocalOntologies(be.ac.vub.platformkit.kb.IOntologyProvider)
 	 */
 	public void addLocalOntologies(IOntologyProvider provider) throws IOException {
-		OntDocumentManager dm = ontology.model.getDocumentManager();
-		InputStream[] streams = provider.getOntologies();
+		final OntDocumentManager dm = getOntology().getModel().getDocumentManager();
+		final InputStream[] streams = provider.getOntologies();
 		for (int k = 0; k < streams.length; k++) {
 			addLocalOntology(dm, streams[k]);
 		}
@@ -351,7 +373,7 @@ public class JenaOntologies extends AbstractOntologies {
 	 */
 	private void addLocalOntologies() throws IOException {
 		addLocalOntologies(BaseOntologyProvider.INSTANCE);
-		IOntologyProvider[] providers = PlatformkitRegistry.INSTANCE.getOntologyProviders();
+		final IOntologyProvider[] providers = PlatformkitRegistry.INSTANCE.getOntologyProviders();
 		for (IOntologyProvider provider : providers) {
 			addLocalOntologies(provider);
 		}
@@ -363,11 +385,11 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @param resource The local ontology model resource.
 	 */
 	private void addLocalOntology(OntDocumentManager dm, InputStream resource) {
-		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
+		final OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
 		model.read(resource, null, null);
 		String ns = model.getNsPrefixURI("");
 		ns = ns.substring(0, ns.length() - 1);
-		logger.info(String.format(
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.addingLocalOnt"), 
 				ns)); //$NON-NLS-1$
 		dm.addModel(ns, model);
@@ -385,9 +407,9 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#getLocalNamedClasses()
 	 */
 	public List<IOntClass> getLocalNamedClasses() {
-		List<IOntClass> namedClasses = new ArrayList<IOntClass>();
+		final List<IOntClass> namedClasses = new ArrayList<IOntClass>();
 		synchronized (JenaOntologies.class) {
-			ExtendedIterator<OntClass> ncs = ontology.model.listNamedClasses().filterKeep(ncFilter);
+			final ExtendedIterator<OntClass> ncs = getOntology().getModel().listNamedClasses().filterKeep(ncFilter);
 			while (ncs.hasNext()) {
 				OntClass c = ncs.next();
 				if (hasLocalPrefix(c)) {
@@ -403,24 +425,24 @@ public class JenaOntologies extends AbstractOntologies {
 	 */
 	public void updateHierarchy(IOntClass forClass)
 	throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.updatingHierarchyFor"), 
 				forClass)); //$NON-NLS-1$
-		OntClass ontClass = ((OntClassAdapter)forClass).model;
-		Set<OntClass> equivCs = equivClasses.get(ontClass);
+		final OntClass ontClass = ((OntClassAdapter)forClass).getModel();
+		final Set<OntClass> equivCs = getEquivClasses().get(ontClass);
 		if (equivCs == null) {
 			throw new OntException(String.format(
 					PlatformkitJenaResources.getString("JenaOntologies.equivNotFound"), 
 					forClass)); //$NON-NLS-1$
 		}
 		addEquivalentClasses(ontClass, equivCs);
-		Set<OntClass> superCs = superClasses.get(ontClass);
+		final Set<OntClass> superCs = getSuperClasses().get(ontClass);
 		if (superCs == null) {
 			throw new OntException(String.format(
 					PlatformkitJenaResources.getString("JenaOntologies.superNotFound"), 
 					forClass)); //$NON-NLS-1$
 		}
-		Set<OntClass> obsoleteCs = obsoleteSuperClasses.get(ontClass);
+		final Set<OntClass> obsoleteCs = getObsoleteSuperClasses().get(ontClass);
 		if (obsoleteCs == null) {
 			throw new OntException(String.format(
 					PlatformkitJenaResources.getString("JenaOntologies.obsoleteSuperNotFound"), 
@@ -436,12 +458,12 @@ public class JenaOntologies extends AbstractOntologies {
 	 */
 	public void pruneHierarchyMap(IOntClass forClass)
 	throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.pruningHierarchyFor"), 
 				forClass)); //$NON-NLS-1$
-		OntClass ontClass = ((OntClassAdapter)forClass).model;
-		Set<OntClass> obsolete = new HashSet<OntClass>();
-		Set<OntClass> superCs = superClasses.get(ontClass);
+		final OntClass ontClass = ((OntClassAdapter)forClass).getModel();
+		final Set<OntClass> obsolete = new HashSet<OntClass>();
+		final Set<OntClass> superCs = getSuperClasses().get(ontClass);
 		if (superCs == null) {
 			throw new OntException(String.format(
 					PlatformkitJenaResources.getString("JenaOntologies.superNotFound"), 
@@ -449,16 +471,16 @@ public class JenaOntologies extends AbstractOntologies {
 		}
 		for (Iterator<OntClass> cs = superCs.iterator(); cs.hasNext();) {
 			OntClass superC = cs.next();
-			Set<OntClass> superSuperCs = superClasses.get(superC);
+			Set<OntClass> superSuperCs = getSuperClasses().get(superC);
 			if (superSuperCs != null) {
 				obsolete.addAll(superSuperCs);
 			}
 		}
-		logger.info(String.format(
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.obsoleteSuperOf"), 
 				obsolete, 
 				forClass)); //$NON-NLS-1$
-		obsoleteSuperClasses.put(ontClass, obsolete);        
+		getObsoleteSuperClasses().put(ontClass, obsolete);        
 	}
 
 	/* (non-Javadoc)
@@ -466,25 +488,25 @@ public class JenaOntologies extends AbstractOntologies {
 	 */
 	public void buildHierarchyMap(IOntClass forClass)
 	throws OntException {
-		logger.fine(String.format(
+		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.buildingHierarchyFor"), 
 				forClass)); //$NON-NLS-1$
-		OntClass ontClass = ((OntClassAdapter)forClass).model;
-		OntClass baseClass = getBaseClass(ontClass);
-		Set<OntClass> equivs = new HashSet<OntClass>();
-		Set<OntClass> supers = new HashSet<OntClass>();
+		final OntClass ontClass = ((OntClassAdapter)forClass).getModel();
+		final OntClass baseClass = getBaseClass(ontClass);
+		final Set<OntClass> equivs = new HashSet<OntClass>();
+		final Set<OntClass> supers = new HashSet<OntClass>();
 		synchronized (JenaOntologies.class) {
-			Iterator<OntClass> superCs = ontClass.listSuperClasses().filterKeep(ncFilter);
+			final Iterator<OntClass> superCs = ontClass.listSuperClasses().filterKeep(ncFilter);
 			while (superCs.hasNext()) {
 				OntClass superC = superCs.next();
 				try {
 					OntClass baseSuperC = getBaseClass(superC);
 					supers.add(baseSuperC);
 				} catch (NotFoundException nfe) {
-					logger.warning(nfe.getMessage());
+					PlatformkitLogger.logger.warning(nfe.getMessage());
 				}
 			}
-			Iterator<OntClass> equivCs = ontClass.listEquivalentClasses().filterKeep(ncFilter);
+			final Iterator<OntClass> equivCs = ontClass.listEquivalentClasses().filterKeep(ncFilter);
 			while (equivCs.hasNext()) {
 				OntClass equivC = equivCs.next();
 				if (!equivC.equals(forClass)) {
@@ -492,19 +514,19 @@ public class JenaOntologies extends AbstractOntologies {
 						OntClass baseEquivC = getBaseClass(equivC);
 						equivs.add(baseEquivC);
 					} catch (NotFoundException nfe) {
-						logger.warning(nfe.getMessage());
+						PlatformkitLogger.logger.warning(nfe.getMessage());
 					}
 				}
 			}
 		}
 		supers.removeAll(equivs);
-		logger.info(String.format(
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitJenaResources.getString("JenaOntologies.equivToSubOf"), 
 				forClass, 
 				equivs, 
 				supers)); //$NON-NLS-1$
-		equivClasses.put(baseClass, equivs);
-		superClasses.put(baseClass, supers);
+		getEquivClasses().put(baseClass, equivs);
+		getSuperClasses().put(baseClass, supers);
 	}
 
 	/**
@@ -512,7 +534,7 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @return True if c has a prefix URI of one of the directly loaded models.
 	 */
 	private boolean hasLocalPrefix(OntClass c) {
-		for (Iterator<String> pfxs = prefixURIs.iterator(); pfxs.hasNext();) {
+		for (Iterator<String> pfxs = getPrefixURIs().iterator(); pfxs.hasNext();) {
 			if (c.getURI().startsWith(pfxs.next())) {
 				return true;
 			}
@@ -526,17 +548,16 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @param equivCs
 	 */
 	private void addEquivalentClasses(OntClass forClass, Collection<OntClass> equivCs) {
-		for (Iterator<OntClass> cs = equivCs.iterator(); cs.hasNext();) {
-			OntClass c = cs.next();
+		for (OntClass c : equivCs) {
 			synchronized (JenaOntologies.class) {
 				if (!forClass.hasEquivalentClass(c)) {
-					logger.info(String.format(
+					PlatformkitLogger.logger.info(String.format(
 							PlatformkitJenaResources.getString("JenaOntologies.addingAsEquivTo"), 
 							c, 
 							forClass)); //$NON-NLS-1$
 					forClass.addEquivalentClass(c);
 				} else {
-					logger.fine(String.format(
+					PlatformkitLogger.logger.fine(String.format(
 							PlatformkitJenaResources.getString("JenaOntologies.alreadyHasEquiv"), 
 							forClass, 
 							c)); //$NON-NLS-1$
@@ -551,17 +572,16 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @param superCs
 	 */
 	private void addSuperClasses(OntClass forClass, Collection<OntClass> superCs) {
-		for (Iterator<OntClass> cs = superCs.iterator(); cs.hasNext();) {
-			OntClass c = cs.next();
+		for (OntClass c : superCs) {
 			synchronized (JenaOntologies.class) {
 				if (!forClass.hasSuperClass(c)) {
-					logger.info(String.format(
+					PlatformkitLogger.logger.info(String.format(
 							PlatformkitJenaResources.getString("JenaOntologies.addingAsSuperTo"), 
 							c, 
 							forClass)); //$NON-NLS-1$
 					forClass.addSuperClass(c);
 				} else {
-					logger.fine(String.format(
+					PlatformkitLogger.logger.fine(String.format(
 							PlatformkitJenaResources.getString("JenaOntologies.alreadyHasSuper"), 
 							forClass, 
 							c)); //$NON-NLS-1$
@@ -576,17 +596,16 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @param superCs
 	 */
 	private void removeSuperClasses(OntClass forClass, Collection<OntClass> superCs) {
-		for (Iterator<OntClass> scs = superCs.iterator(); scs.hasNext();) {
-			OntClass c = scs.next();
+		for (OntClass c : superCs) {
 			synchronized (JenaOntologies.class) {
 				if (forClass.hasSuperClass(c)) {
-					logger.info(String.format(
+					PlatformkitLogger.logger.info(String.format(
 							PlatformkitJenaResources.getString("JenaOntologies.addingAsSuperTo="), 
 							c, 
 							forClass)); //$NON-NLS-1$
 					forClass.removeSuperClass(c);
 				} else {
-					logger.fine(String.format(
+					PlatformkitLogger.logger.fine(String.format(
 							PlatformkitJenaResources.getString("JenaOntologies.doesNotHaveSuper"), 
 							forClass, 
 							c)); //$NON-NLS-1$
@@ -602,7 +621,7 @@ public class JenaOntologies extends AbstractOntologies {
 	 */
 	private OntClass getBaseClass(OntClass c)
 	throws NotFoundException {
-		OntModel baseModel = baseOntology.model;
+		final OntModel baseModel = getBaseOntology().getModel();
 		Assert.assertNotNull(baseModel);
 		OntClass baseClass;
 		synchronized (JenaOntologies.class) {
@@ -614,5 +633,47 @@ public class JenaOntologies extends AbstractOntologies {
 					c)); //$NON-NLS-1$
 		}
 		return baseClass;
+	}
+
+	/**
+	 * @param ontology the ontology to set
+	 */
+	protected void setOntology(OntModelAdapter ontology) {
+		this.ontology = ontology;
+	}
+
+	/**
+	 * @return the ontology
+	 */
+	protected OntModelAdapter getOntology() {
+		return ontology;
+	}
+
+	/**
+	 * @return the prefixURIs
+	 */
+	protected Set<String> getPrefixURIs() {
+		return prefixURIs;
+	}
+
+	/**
+	 * @return the superClasses
+	 */
+	protected Map<OntClass, Set<OntClass>> getSuperClasses() {
+		return superClasses;
+	}
+
+	/**
+	 * @return the equivClasses
+	 */
+	protected Map<OntClass, Set<OntClass>> getEquivClasses() {
+		return equivClasses;
+	}
+
+	/**
+	 * @return the obsoleteSuperClasses
+	 */
+	protected Map<OntClass, Set<OntClass>> getObsoleteSuperClasses() {
+		return obsoleteSuperClasses;
 	}
 }

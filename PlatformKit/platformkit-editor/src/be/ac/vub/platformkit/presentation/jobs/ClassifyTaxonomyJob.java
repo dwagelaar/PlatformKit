@@ -32,6 +32,7 @@ import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.util.OntException;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
@@ -184,9 +185,10 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 	 * @param uri
 	 * @throws CoreException
 	 * @throws IOException
+	 * @throws OntException 
 	 */
 	protected void writeOntology(IOntologies ont, URI uri)
-	throws CoreException, IOException {
+	throws CoreException, IOException, OntException {
 		IPath platformkitPath = new Path(uri.toPlatformString(true));
 		Assert.isNotNull(platformkitPath);
 		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(platformkitPath);
@@ -197,7 +199,7 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 				addFileExtension("owl").lastSegment()); //$NON-NLS-1$ //$NON-NLS-2$
 		IContainer cont = file.getParent();
 		IFile dest = cont.getFile(path);
-		logger.info(String.format(
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.writingOntologyTo"), 
 				dest.getLocation())); //$NON-NLS-1$
 		ByteArrayOutputStream output = new ByteArrayOutputStream(OUTPUTSIZE);
@@ -210,7 +212,7 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 					true, null);
 		}
 		output.close();
-		logger.info(String.format(
+		PlatformkitLogger.logger.info(String.format(
 				PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.writtenOntologyTo"), 
 				dest.getLocation())); //$NON-NLS-1$
 	}

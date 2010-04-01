@@ -11,7 +11,6 @@
 package be.ac.vub.platformkit.kb.owlapi;
 
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
@@ -20,7 +19,7 @@ import org.semanticweb.owl.inference.OWLReasonerException;
 import org.semanticweb.owl.model.OWLClass;
 
 import be.ac.vub.platformkit.kb.IOntClass;
-import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
 /**
  * {@link IOntClass} adapter for {@link OWLClass}.
@@ -28,9 +27,8 @@ import be.ac.vub.platformkit.kb.IOntologies;
  */
 public class OWLClassAdapter implements IOntClass {
 
-	protected static Logger logger = Logger.getLogger(IOntologies.LOGGER);
-	protected OWLClass model;
-	protected OWLAPIOntologies ontologies;
+	private OWLClass model;
+	private OWLAPIOntologies ontologies;
 
 	/**
 	 * Creates a new {@link OWLClassAdapter}.
@@ -40,8 +38,8 @@ public class OWLClassAdapter implements IOntClass {
 	public OWLClassAdapter(OWLClass model, OWLAPIOntologies ontologies) {
 		Assert.assertNotNull(model);
 		Assert.assertNotNull(ontologies);
-		this.model = model;
-		this.ontologies = ontologies;
+		this.setModel(model);
+		this.setOntologies(ontologies);
 	}
 
 	/*
@@ -50,7 +48,7 @@ public class OWLClassAdapter implements IOntClass {
 	 */
 	@Override
 	public String toString() {
-		return model.toString();
+		return getModel().toString();
 	}
 
 	/*
@@ -58,12 +56,12 @@ public class OWLClassAdapter implements IOntClass {
 	 * @see be.ac.vub.platformkit.kb.IOntClass#hasEquivalentClass(be.ac.vub.platformkit.kb.IOntClass)
 	 */
 	public boolean hasEquivalentClass(IOntClass c) throws ClassCastException {
-		final OWLReasoner reasoner = ontologies.reasoner;
+		final OWLReasoner reasoner = getOntologies().getReasoner();
 		if (reasoner != null) {
 			try {
-				return reasoner.isEquivalentClass(((OWLClassAdapter)c).model, model);
+				return reasoner.isEquivalentClass(((OWLClassAdapter)c).getModel(), getModel());
 			} catch (OWLReasonerException e) {
-				logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 			}
 		}
 		return false;
@@ -74,12 +72,12 @@ public class OWLClassAdapter implements IOntClass {
 	 * @see be.ac.vub.platformkit.kb.IOntClass#hasSubClass(be.ac.vub.platformkit.kb.IOntClass)
 	 */
 	public boolean hasSubClass(IOntClass c) throws ClassCastException {
-		final OWLReasoner reasoner = ontologies.reasoner;
+		final OWLReasoner reasoner = getOntologies().getReasoner();
 		if (reasoner != null) {
 			try {
-				return reasoner.isSubClassOf(((OWLClassAdapter)c).model, model);
+				return reasoner.isSubClassOf(((OWLClassAdapter)c).getModel(), getModel());
 			} catch (OWLReasonerException e) {
-				logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 			}
 		}
 		return false;
@@ -90,12 +88,12 @@ public class OWLClassAdapter implements IOntClass {
 	 * @see be.ac.vub.platformkit.kb.IOntClass#hasSuperClass(be.ac.vub.platformkit.kb.IOntClass)
 	 */
 	public boolean hasSuperClass(IOntClass c) throws ClassCastException {
-		final OWLReasoner reasoner = ontologies.reasoner;
+		final OWLReasoner reasoner = getOntologies().getReasoner();
 		if (reasoner != null) {
 			try {
-				return reasoner.isSubClassOf(model, ((OWLClassAdapter)c).model);
+				return reasoner.isSubClassOf(getModel(), ((OWLClassAdapter)c).getModel());
 			} catch (OWLReasonerException e) {
-				logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 			}
 		}
 		return false;
@@ -106,15 +104,43 @@ public class OWLClassAdapter implements IOntClass {
 	 * @see be.ac.vub.platformkit.kb.IOntClass#hasInstances()
 	 */
 	public boolean hasInstances() {
-		final OWLReasoner reasoner = ontologies.reasoner;
+		final OWLReasoner reasoner = getOntologies().getReasoner();
 		if (reasoner != null) {
 			try {
-				return !reasoner.getIndividuals(model, false).isEmpty();
+				return !reasoner.getIndividuals(getModel(), false).isEmpty();
 			} catch (OWLReasonerException e) {
-				logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * @param model the model to set
+	 */
+	protected void setModel(OWLClass model) {
+		this.model = model;
+	}
+
+	/**
+	 * @return the model
+	 */
+	protected OWLClass getModel() {
+		return model;
+	}
+
+	/**
+	 * @param ontologies the ontologies to set
+	 */
+	protected void setOntologies(OWLAPIOntologies ontologies) {
+		this.ontologies = ontologies;
+	}
+
+	/**
+	 * @return the ontologies
+	 */
+	protected OWLAPIOntologies getOntologies() {
+		return ontologies;
 	}
 
 }
