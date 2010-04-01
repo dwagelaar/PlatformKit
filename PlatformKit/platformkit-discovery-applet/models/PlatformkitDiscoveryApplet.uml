@@ -144,7 +144,7 @@
                       <type xmi:type="uml:PrimitiveType" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_8jw3kPyKEdqlTr7ZXrCGhQ"/>
                     </ownedParameter>
                     <language>java</language>
-                    <body>StringBuffer buf = new StringBuffer();&#xA;if (getNamespace() != null) {&#xA;&#x9;&#x9;&#x9;buf.append('&amp;');&#xA;&#x9;&#x9;&#x9;buf.append(getNamespace());&#xA;&#x9;&#x9;&#x9;buf.append(';');&#xA;&#x9;&#x9;}&#xA;buf.append('#');&#xA;buf.append(getName());&#xA;return buf.toString();</body>
+                    <body>StringBuffer buf = new StringBuffer();&#xA;if (getNamespace() != null) {&#xA;&#x9;&#x9;&#x9;buf.append('&amp;');&#xA;&#x9;&#x9;&#x9;buf.append(getNamespace());&#xA;&#x9;&#x9;&#x9;buf.append(';');&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;buf.append('#');&#xA;&#x9;&#x9;}&#xA;buf.append(getName());&#xA;return buf.toString();</body>
                   </ownedBehavior>
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_uREiYC1-Ed2e7od4K9wNBA" name="OntologyElement_getClassRefBehavior" specification="_qY1FgC1-Ed2e7od4K9wNBA">
                     <ownedParameter xmi:id="_AO2WkC1_Ed2e7od4K9wNBA" name="return" visibility="public" direction="return" effect="create">
