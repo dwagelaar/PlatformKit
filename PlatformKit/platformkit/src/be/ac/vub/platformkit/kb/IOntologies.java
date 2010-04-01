@@ -25,7 +25,7 @@ import be.ac.vub.platformkit.kb.util.OntException;
 public interface IOntologies {
 
 	public static final String ONTOLOGY_EXT_POINT = "be.ac.vub.platformkit.ontology"; //$NON-NLS-1$
-	public static final String LOCAL_INF_NS = "http://local/platformkit/inferred.owl"; //$NON-NLS-1$
+	public static final String LOCAL_INF_NS = "http://soft.vub.ac.be/platformkit/2010/1/inferred.owl"; //$NON-NLS-1$
 
 	/**
 	 * Adds listener for changes to {@link #getOntModel()}.
