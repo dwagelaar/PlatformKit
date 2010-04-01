@@ -1,6 +1,49 @@
 Change Log
 ==========
 
+Pellet 2.0.2 (Mar 1, 2010)
+--------------------------
+
+* UPDATED: Support the latest interfaces in OWLAPI 3.0.0
+
+* FIXED: NullPointerException thrown with xsd:anyURI datatype
+
+* FIXED: Turning off incremental consistency checking in the presence 
+         of rules
+     
+* FIXED: Incomplete explanation when functional properties are used in 
+         min cardinality restrictions
+
+* FIXED: Slow preprocessing with large number of property chain axioms
+
+* FIXED: Various other bugs
+     
+     See the following link for a list of all the bugs that have been
+     fixed:
+     
+     http://clark-parsia.trac.cvsdude.com/pellet-devel/report/11
+     
+Pellet 2.0.1 (Jan 11, 2010)
+---------------------------
+
+* FIXED: Various issues related to handling of top and bottom properties 
+     
+* FIXED: Handling reification and other built-in RDF properties in SPARQL 
+         queries
+
+* FIXED: OWLAPI v3 dependence in OWLAPI v2 reasoner
+
+* FIXED: Completeness related to disjoint property queries 
+
+* ENHANCED: Verbose mode in CLI improved to provide more information
+
+* FIXED: Various other bugs
+     
+     See the following link for a list of all the bugs that have been
+     fixed:
+     
+     http://clark-parsia.trac.cvsdude.com/pellet-devel/report/11
+     
 Pellet 2.0.0 (Nov 16, 2009)
 ---------------------------
 
