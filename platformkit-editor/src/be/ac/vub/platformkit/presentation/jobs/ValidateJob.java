@@ -48,6 +48,7 @@ public class ValidateJob extends ConstraintSpaceJob {
 	@Override
 	protected void runAction(IProgressMonitor monitor) throws Exception {
 		beginTask(monitor, getName(), 7);
+		setReport(null);
 		ConstraintSpace space = getSpace();
 		IOntologies ont = space.getKnowledgeBase();
 		//
