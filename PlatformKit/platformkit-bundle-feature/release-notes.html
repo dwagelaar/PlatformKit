@@ -7,7 +7,32 @@
 <body lang="EN-US">
 <h2>Release Notes</h2>
 
-<h3>PlatformKit 1.2.1 ($Rev$ - $Date$)</h3>
+<h3>PlatformKit 1.3.0 ($Rev$ - $Date$)</h3>
+
+<ul>
+	<li>Upgrade to Pellet 2.0.2.</li>
+	<li>FIX BUG: Reset report before validating to prevent any previous report to be shown when an exception prematurely ends the job.</li>
+	<li>Refactoring: encapsulate all directly accessed instance fields, centralise static logger field, only call getters once from each method to prevent race conditions, and support reverse engineering in platformkit servlet.</li>
+	<li>Throw OntException when an ontology class URI cannot be resolved.</li>
+	<li>Updated API models (bugfixes, correct application of "inferred" annotations).</li>
+	<li>Externalised strings.</li>
+	<li>FIX BUG: prune Generalizations and Dependencies (InterfaceRealizations) as well.</li>
+	<li>Allow multiple jobs to be run in parallel.</li>
+	<li>Move INamedOntologyProvider to be.ac.vub.platformkit plugin.</li>
+	<li>Remove org.eclipse.core.runtime dependencies where possible.</li>
+	<li>Move org.eclipse.core.runtime dependencies in platformkit plugin into internal package.</li>
+	<li>BREAKING CHANGE: refactored base vocabulary ontologies (platformkit/2010/1).</li>
+	<li>FIX BUG: Parameters are never marked as missing; only their owners are.</li>
+	<li>Don't show results for jobs that have completed, but with an abnormal result. Such abnormal results are generally already communicated to the user in another way.</li>
+	<li>FIX BUG: Return correct IStatus for jobs.</li>
+	<li>FIX BUG: comparison of nested Classifiers failed due to faulty qualifiedName() helper. Test query updated to cover this issue.</li>
+	<li>FIX BUG: pruning algorithm contained a number of errors in filtering the elements to be copied. Preliminary test query written.</li>
+	<li>FIX BUG: handle inferred elements in DEPS model and fix implementation of isMissing on DataTypes.</li>
+	<li>Register Jar right-click action for all jar file candidate extensions.</li>
+	<li>FIX BUG: Progress bar disappears prematurely when determining Java compatibility; use SubProgressMonitor for JarToUML to prevent premature monitor.done() call.</li>
+</ul>
+
+<h3>PlatformKit 1.2.1 (Rev: 7988 - Date: 2010-02-09 20:20:19 +0100 (di, 09 feb 2010))</h3>
 
 <ul>
 	<li>FIX BUG: last step of Classify Taxonomy performed another pruning instead of updating the asserted hierarchy.</li>
