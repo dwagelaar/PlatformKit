@@ -74,15 +74,15 @@
 
    <plugin
          id="be.ac.vub.platformkit.java"
-         download-size="4576"
-         install-size="4576"
+         download-size="5088"
+         install-size="5088"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.examples"
-         download-size="292"
-         install-size="292"
+         download-size="40"
+         install-size="40"
          version="0.0.0"
          unpack="false"/>
 
