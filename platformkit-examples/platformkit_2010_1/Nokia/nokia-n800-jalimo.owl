@@ -1190,6 +1190,7 @@
 
     <owl:Thing rdf:about="#maemoSWT">
         <rdf:type rdf:resource="#MaemoSwt-3_4ClassLibrary"/>
+        <platform:implementsInterface rdf:resource="&swt-3_4;theSWT3_4API"/>
     </owl:Thing>
     
 
@@ -1314,6 +1315,12 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl#theJ2SE1_4BytecodeFormat -->
 
     <owl:Thing rdf:about="&j2se-1_4;theJ2SE1_4BytecodeFormat"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/swt-3_4.owl#theSWT3_4API -->
+
+    <owl:Thing rdf:about="&swt-3_4;theSWT3_4API"/>
 </rdf:RDF>
 
 
