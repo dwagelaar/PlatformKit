@@ -149,9 +149,10 @@ public interface ConstraintSpace extends EObject {
 	
 	/**
 	 * @return The OntModel from the knowledge base.
+	 * @throws OntException 
 	 * @see #getKnowledgeBase()
 	 */
-	IOntModel getOntModel();
+	IOntModel getOntModel() throws OntException;
 	
     /**
      * Loads all ontologies into the knowledge base of this constraint space.

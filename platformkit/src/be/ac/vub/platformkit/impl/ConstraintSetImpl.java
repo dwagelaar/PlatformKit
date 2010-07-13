@@ -563,7 +563,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.ConstraintSet#getOntModel()
 	 */
-	public IOntModel getOntModel() {
+	public IOntModel getOntModel() throws OntException {
 		ConstraintSpace space = getSpace();
 		if (space == null) {
 			space = getTransientSpace();

@@ -175,9 +175,10 @@ public interface ConstraintSet extends EObject {
 
 	/**
 	 * @return The OntModel from the constraint space, if any, null otherwise.
+	 * @throws OntException 
 	 * @see #getSpace()
 	 * @see #setTransientSpace(ConstraintSpace)
 	 */
-	IOntModel getOntModel();
+	IOntModel getOntModel() throws OntException;
 
 } // ConstraintSet

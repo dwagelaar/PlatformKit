@@ -66,13 +66,15 @@ public interface IOntologies {
 
 	/**
 	 * @return The base ontology object (excluding reasoner results).
+	 * @throws OntException 
 	 */
-	public abstract IOntModel getBaseOntology();
+	public abstract IOntModel getBaseOntology() throws OntException;
 
 	/**
 	 * @return The inner ontology object.
+	 * @throws OntException 
 	 */
-	public abstract IOntModel getOntModel();
+	public abstract IOntModel getOntModel() throws OntException;
 
 	/**
 	 * @return The inner instances ontology object.
@@ -111,8 +113,9 @@ public interface IOntologies {
 
 	/**
 	 * Removes current instance ontology, if any.
+	 * @throws OntException 
 	 */
-	public abstract void unloadInstances();
+	public abstract void unloadInstances() throws OntException;
 
 	/**
 	 * Writes the ontology to the given output stream.
@@ -147,21 +150,24 @@ public interface IOntologies {
 
 	/**
 	 * @return The named ontology classes with a local prefix URI
+	 * @throws OntException 
 	 */
-	public abstract List<IOntClass> getLocalNamedClasses();
+	public abstract List<IOntClass> getLocalNamedClasses() throws OntException;
 
 	/**
 	 * Updates the asserted class hierarchy with the inferred hierarchy for the local named classes.
 	 * Requires {@link #buildHierarchyMap()} to be invoked first.
+	 * @throws OntException 
 	 */
-	public abstract void updateHierarchy();
+	public abstract void updateHierarchy() throws OntException;
 
 	/**
 	 * Builds an internal map of the superclasses and equivalent classes of all local named classes in the base ontology.
 	 * Requires DIG reasoner.
 	 * Required for invocation of {@link #updateHierarchy()} and {@link #pruneHierarchyMap(IOntClass)}.
+	 * @throws OntException 
 	 */
-	public abstract void buildHierarchyMap();
+	public abstract void buildHierarchyMap() throws OntException;
 
 	/**
 	 * Updates the asserted class hierarchy with the inferred hierarchy for the given class.

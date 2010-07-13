@@ -112,8 +112,9 @@ public interface Constraint extends IOntModelChangeListener {
 
     /**
      * @return The OntModel from the constraint set, if any, null otherwise.
+     * @throws OntException 
      * @see #getSet()
      */
-    IOntModel getOntModel();
+    IOntModel getOntModel() throws OntException;
 
 } // Constraint
