@@ -123,8 +123,9 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 	 * Operation for building a hierarchy map for an ontology.
 	 * @param monitor
 	 * @param ont
+	 * @throws OntException 
 	 */
-	protected void buildHierarchyMap(IProgressMonitor monitor, IOntologies ont) {
+	protected void buildHierarchyMap(IProgressMonitor monitor, IOntologies ont) throws OntException {
 		List<IOntClass> namedClasses = ont.getLocalNamedClasses();
 		for (int i = 0; i < namedClasses.size(); i++) {
 			try {
@@ -143,8 +144,9 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 	 * Operation for pruning the generated hierarchy map for an ontology.
 	 * @param monitor
 	 * @param ont
+	 * @throws OntException 
 	 */
-	protected void pruneHierarchyMap(IProgressMonitor monitor, IOntologies ont) {
+	protected void pruneHierarchyMap(IProgressMonitor monitor, IOntologies ont) throws OntException {
 		List<IOntClass> namedClasses = ont.getLocalNamedClasses();
 		for (int i = 0; i < namedClasses.size(); i++) {
 			try {
@@ -163,8 +165,9 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 	 * Operation for updating the asserted class hierarchy for an ontology.
 	 * @param monitor
 	 * @param ont
+	 * @throws OntException 
 	 */
-	protected void updateHierarchy(IProgressMonitor monitor, IOntologies ont) {
+	protected void updateHierarchy(IProgressMonitor monitor, IOntologies ont) throws OntException {
 		List<IOntClass> namedClasses = ont.getLocalNamedClasses();
 		for (int i = 0; i < namedClasses.size(); i++) {
 			try {

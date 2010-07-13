@@ -402,7 +402,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.Constraint#getOntModel()
 	 */
-	public IOntModel getOntModel() {
+	public IOntModel getOntModel() throws OntException {
 		ConstraintSet set = getSet();
 		if (set != null) {
 			return set.getOntModel();

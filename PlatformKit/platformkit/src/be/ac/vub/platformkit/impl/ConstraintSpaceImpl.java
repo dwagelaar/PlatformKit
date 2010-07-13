@@ -387,7 +387,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.ConstraintSpace#getOntModel()
 	 */
-	public IOntModel getOntModel() {
+	public IOntModel getOntModel() throws OntException {
 		if (knowledgeBase != null) {
 			return knowledgeBase.getOntModel();
 		} else {

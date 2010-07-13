@@ -27,14 +27,25 @@ public abstract class AbstractOntologies implements IOntologies {
 	protected List<IOntModelChangeListener> ontologyChangeListeners = new ArrayList<IOntModelChangeListener>();
 	private String reasonerUrl = "http://localhost:8081"; //$NON-NLS-1$
 
+	/**
+	 * Creates a new {@link AbstractOntologies}.
+	 */
 	public AbstractOntologies() {
 		super();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#addOntModelChangeListener(be.ac.vub.platformkit.IOntModelChangeListener)
+	 */
 	public void addOntModelChangeListener(IOntModelChangeListener listener) {
 		ontologyChangeListeners.add(listener);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#removeOntModelChangeListener(be.ac.vub.platformkit.IOntModelChangeListener)
+	 */
 	public void removeOntModelChangeListener(IOntModelChangeListener listener) {
 		ontologyChangeListeners.remove(listener);
 	}
@@ -51,7 +62,11 @@ public abstract class AbstractOntologies implements IOntologies {
 		}
 	}
 
-	public void buildHierarchyMap() {
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#buildHierarchyMap()
+	 */
+	public void buildHierarchyMap() throws OntException {
 		List<IOntClass> forClasses = getLocalNamedClasses();
 		for (int i = 0; i < forClasses.size(); i++) {
 			try {
@@ -62,7 +77,11 @@ public abstract class AbstractOntologies implements IOntologies {
 		}
 	}
 
-	public void updateHierarchy() {
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#updateHierarchy()
+	 */
+	public void updateHierarchy() throws OntException {
 		List<IOntClass> forClasses = getLocalNamedClasses();
 		for (int i = 0; i < forClasses.size(); i++) {
 			try {
@@ -80,10 +99,18 @@ public abstract class AbstractOntologies implements IOntologies {
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#setReasonerUrl(java.lang.String)
+	 */
 	public void setReasonerUrl(String reasonerUrl) {
 		this.reasonerUrl = reasonerUrl;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#getReasonerUrl()
+	 */
 	public String getReasonerUrl() {
 		return reasonerUrl;
 	}
