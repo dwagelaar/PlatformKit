@@ -7,6 +7,7 @@
 <mapAttribute key="Input">
 <mapEntry key="IN" value="UML2"/>
 <mapEntry key="PLATFORM" value="OWL"/>
+<mapEntry key="ISA" value="OWL"/>
 <mapEntry key="JAVA" value="OWL"/>
 </mapAttribute>
 <mapAttribute key="Libs">
@@ -23,11 +24,13 @@
 <mapEntry key="UML2" value="METAMODELINPUT"/>
 <mapEntry key="OUT" value="MODELOUTPUT"/>
 <mapEntry key="JAVA" value="MODELINPUT"/>
+<mapEntry key="ISA" value="MODELINPUT"/>
 </mapAttribute>
 <mapAttribute key="Options">
 <mapEntry key="supportUML2Stereotypes" value="true"/>
 <mapEntry key="printExecutionTime" value="true"/>
 <mapEntry key="OPTION_CLEAR" value="true"/>
+<mapEntry key="OPTION_CONTENT_TYPE" value="false"/>
 <mapEntry key="OPTION_DERIVED" value="false"/>
 <mapEntry key="allowInterModelReferences" value="true"/>
 <mapEntry key="step" value="false"/>
@@ -42,6 +45,7 @@
 <mapEntry key="UML2" value="uri:http://www.eclipse.org/uml2/3.0.0/UML"/>
 <mapEntry key="OUT" value="/platformkit-java/build-ontology/jre/j2se-1_2-api.owl"/>
 <mapEntry key="JAVA" value="/platformkit-java/build-ontology/Java.owl"/>
+<mapEntry key="ISA" value=""/>
 </mapAttribute>
 <listAttribute key="Superimpose">
 <listEntry value="/platformkit-java/transformations/UML2ToPackageAPIOntology.asm"/>
