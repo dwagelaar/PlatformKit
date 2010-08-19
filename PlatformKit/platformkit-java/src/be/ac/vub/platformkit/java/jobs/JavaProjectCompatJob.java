@@ -46,7 +46,7 @@ public class JavaProjectCompatJob extends CompatJob {
 	protected void runAction(IProgressMonitor monitor) throws Exception {
         checkAndSwitchStrategy();
         JavaProjectCompatJobRunner runner = new JavaProjectCompatJobRunner();
-		runActionWithRunner(monitor, runner, 14);
+		runActionWithRunner(monitor, runner, 8);
 	}
 
 	public class JavaProjectCompatJobRunner extends CompatJobRunner {
@@ -80,7 +80,7 @@ public class JavaProjectCompatJob extends CompatJob {
 	        jarToUML.addPaths(jproject, true);
 			jarToUML.setOutputFile(path.toString());
 			jarToUML.setOutputModelName(path.removeFileExtension().lastSegment());
-			jarToUML.setMonitor(new SubProgressMonitor(monitor, 7));
+			jarToUML.setMonitor(new SubProgressMonitor(monitor, 2));
 			jarToUML.run();
 			if (jarToUML.isRunComplete()) {
 				jarToUML.getModel().eResource().save(Collections.EMPTY_MAP);
