@@ -675,8 +675,9 @@ public class CompatJob extends ProgressMonitorJob {
 	}
 
 	/**
-	 * Invoked in "finally" block after {@link #run(IProgressMonitor)}
+	 * {@inheritDoc}
 	 */
+	@Override
 	protected void finallyCleanup() {
 		try {
 			removeATLLogHandler();

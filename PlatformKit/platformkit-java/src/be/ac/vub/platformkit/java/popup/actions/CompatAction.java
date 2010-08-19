@@ -10,6 +10,8 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.java.popup.actions;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
@@ -57,6 +59,17 @@ public class CompatAction extends SelectionAction {
 	}
 
 	/**
+	 * @return the workspace resource to lock during the operation, or <code>null</code> if no workspace locking is required
+	 */
+	protected IResource getLockingResource() {
+		final Object res = ((IStructuredSelection) selection).getFirstElement();
+		if (res instanceof IFile) {
+			return ((IFile) res).getParent();
+		}
+		return null;
+	}
+
+	/**
 	 * @param job
 	 * @return A new {@link ShowCompatResultAction}.
 	 */
@@ -71,16 +84,16 @@ public class CompatAction extends SelectionAction {
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	public void run(IAction action) {
-		CompatJob job = createCompatJob();
-		IAction showResultAction = createShowResultAction(job);
+		final CompatJob job = createCompatJob();
+		final IAction showResultAction = createShowResultAction(job);
 		addDoneAction(job, showResultAction);
 		// Select platform API dialog
-		PlatformAPIDialogRunnable paDlg = new PlatformAPIDialogRunnable();
+		final PlatformAPIDialogRunnable paDlg = new PlatformAPIDialogRunnable();
 		paDlg.setTitle(PlatformkitJavaResources.getString("CompatAction.dlgTitle")); //$NON-NLS-1$
 		paDlg.setMessage(PlatformkitJavaResources.getString("CompatAction.dlgMessage")); //$NON-NLS-1$
 		paDlg.setInstruction(PlatformkitJavaResources.getString("CompatAction.dlgInstruction")); //$NON-NLS-1$
 		PlatformkitJavaPlugin.getPlugin().getWorkbench().getDisplay().syncExec(paDlg);
-		URI[] emf_uris = paDlg.getResult();
+		final URI[] emf_uris = paDlg.getResult();
 		if (emf_uris == null || emf_uris.length == 0) {
 			return; //cancel
 		}
