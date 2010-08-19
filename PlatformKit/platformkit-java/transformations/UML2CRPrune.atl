@@ -237,6 +237,7 @@ rule Missing {
 
 endpoint rule End() {
 	do {
+		--nasty "pcall debug" throws away my return value! => wrap in let expression
 		let result : Boolean = thisModule.inElements
 			->select(e|e.oclIsKindOf(UML2!"uml::PackageableElement"))
 			->reject(p|p.owner.oclIsUndefined())

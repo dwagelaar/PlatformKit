@@ -855,9 +855,10 @@ rule Parameter {
 -- that is compatible with the model in DEPS.
 endpoint rule UML2CompatibilityComparison() {
 	do {
-		UML2!"uml::Model".allInstancesFrom('DEPS')
-			->forAll(m|m.hasAllCompatible)
-			.debug('Model is compatible with previous model');
+		--nasty "pcall debug" throws away my return value! => wrap in let expression
+		let result : Boolean = UML2!"uml::Model".allInstancesFrom('DEPS')
+			->forAll(m|m.hasAllCompatible).debug('Model is compatible with previous model') in
+		result;
 	}
 }
 
