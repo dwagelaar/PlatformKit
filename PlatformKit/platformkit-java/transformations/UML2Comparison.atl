@@ -1,4 +1,5 @@
 -- @atlcompiler atl2006
+-- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id:UML2Comparison.atl 7084 2007-07-10 13:19:05Z dwagelaa $
 -- Library for comparing a UML2 model to other versions of the UML2 model
 library UML2Comparison;
@@ -319,7 +320,8 @@ helper context UML2!"uml::Package" def : isLocallyCompatibleWith(p : UML2!"uml::
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Classifier" def : isLocallyCompatibleWith(c : UML2!"uml::Classifier") : Boolean =
 	if self.namedElementIsLocallyCompatibleWith(c) then
-		self.isAbstract implies c.isAbstract
+		self.isAbstract implies c.isAbstract and
+		self.isLeaf implies c.isLeaf
 	else false endif;
 
 -- True iff self is locally compatible with f,
@@ -344,9 +346,13 @@ helper context UML2!"uml::BehavioralFeature" def : isLocallyCompatibleWith(f : U
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Parameter" def : isLocallyCompatibleWith(p : UML2!"uml::Parameter") : Boolean =
 	if p.oclIsUndefined() then false
-	else
-		if self.typedElementIsLocallyCompatibleWith(p)
-		then (self.direction = p.direction)
+	else -- parameter name should be ignored 
+		if (self.myOclType.conformsTo(p.myOclType)) and (self.visibilityIsCompatibleWith(p))
+		then if (self.direction = p.direction) 
+			then if self.type.oclIsUndefined() then p.type.oclIsUndefined()
+			else if p.type.oclIsUndefined()	then false
+				 else (self.type.umlQualifiedName = p.type.umlQualifiedName) endif endif
+		else false endif
 		else false endif
 	endif;
 
