@@ -17,8 +17,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import junit.framework.Assert;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.m2m.atl.core.ATLCoreException;
 import org.eclipse.m2m.atl.core.IExtractor;
@@ -48,7 +46,7 @@ public final class ATLUtil {
 	 * @throws ATLCoreException
 	 */
 	public ATLUtil(String atlVMName) throws ATLCoreException {
-		Assert.assertNotNull(atlVMName);
+		assert atlVMName != null;
 		this.atlVMName = atlVMName;
 		factory = CoreService.getModelFactory(getLauncher().getDefaultModelFactoryName());
 		injector = CoreService.getInjector(factory.getDefaultInjectorName());
@@ -208,7 +206,7 @@ public final class ATLUtil {
 	 * @throws IllegalArgumentException 
 	 */
 	public static boolean getBooleanValue(Object value) throws ClassCastException, SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException {
-		Assert.assertNotNull(value);
+		assert value != null;
 		if ("org.eclipse.m2m.atl.engine.vm.nativelib.ASMBoolean".equals(value.getClass().getName())) { //$NON-NLS-1$
 			final Method getSymbol = value.getClass().getDeclaredMethod("getSymbol"); //$NON-NLS-1$
 			value = (Boolean)getSymbol.invoke(value);

@@ -10,7 +10,6 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.kb.jena;
 
-import junit.framework.Assert;
 import be.ac.vub.platformkit.kb.IOntClass;
 
 import com.hp.hpl.jena.ontology.OntClass;
@@ -28,7 +27,7 @@ public class OntClassAdapter implements IOntClass {
 	 * @param model
 	 */
 	public OntClassAdapter(OntClass model) {
-		Assert.assertNotNull(model);
+		assert model != null;
 		this.setModel(model);
 	}
 

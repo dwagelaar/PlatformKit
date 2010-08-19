@@ -15,8 +15,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-import junit.framework.Assert;
-
 import org.osgi.framework.Bundle;
 
 import be.ac.vub.platformkit.kb.INamedOntologyProvider;
@@ -77,7 +75,7 @@ public class ExamplesOntologyProvider implements INamedOntologyProvider {
 			} else {
 				streams[i] = resource.openStream();
 			}
-			Assert.assertNotNull(streams[i]);
+			assert streams[i] != null;
 			PlatformkitLogger.logger.fine(String.format(
 					PlatformkitExamplesResources.getString("ExamplesOntologyProvider.providingOntAs"), 
 					ontologies[i], 

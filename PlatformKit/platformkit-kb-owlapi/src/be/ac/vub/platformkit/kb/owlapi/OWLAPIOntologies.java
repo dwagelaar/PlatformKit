@@ -213,9 +213,8 @@ public class OWLAPIOntologies extends AbstractOntologies {
 		PlatformkitLogger.logger.fine(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.buildingHierarchyFor"), 
 				forClass)); //$NON-NLS-1$
-		OWLClass owlClass = ((OWLClassAdapter)forClass).getModel();
-		Set<OWLClass> equivs = new HashSet<OWLClass>();
-		Set<OWLClass> supers = new HashSet<OWLClass>();
+		final OWLClass owlClass = ((OWLClassAdapter)forClass).getModel();
+		final Set<OWLClass> supers = new HashSet<OWLClass>();
 		final OWLReasoner reasoner = getReasoner();
 		if (reasoner != null) {
 			try {
@@ -223,7 +222,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 				for (Set<OWLClass> scs : superCs) {
 					supers.addAll(scs);
 				}
-				equivs = reasoner.getEquivalentClasses(owlClass);
+				Set<OWLClass> equivs = reasoner.getEquivalentClasses(owlClass);
 				supers.removeAll(equivs);
 				PlatformkitLogger.logger.info(String.format(
 						PlatformkitOWLAPIResources.getString("OWLAPIOntologies.equivToSubOf"), 

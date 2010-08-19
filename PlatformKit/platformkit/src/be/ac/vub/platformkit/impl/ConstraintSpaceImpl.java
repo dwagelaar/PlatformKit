@@ -18,8 +18,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import junit.framework.Assert;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -400,7 +398,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * @param kb the knowledge base (may not be null).
 	 */
 	private void addAllOntologyChangeListeners(IOntologies kb) {
-		Assert.assertNotNull(kb);
+		assert kb != null;
 		for (Iterator<ConstraintSet> it = getConstraintSet().iterator(); it.hasNext();) {
 			it.next().addAllOntologyChangeListeners(kb);
 		}
@@ -411,7 +409,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * @param kb the knowledge base (may not be null).
 	 */
 	private void removeAllOntologyChangeListeners(IOntologies kb) {
-		Assert.assertNotNull(kb);
+		assert kb != null;
 		for (Iterator<ConstraintSet> it = getConstraintSet().iterator(); it.hasNext();) {
 			it.next().removeAllOntologyChangeListeners(kb);
 		}
@@ -442,8 +440,8 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	 * Requires {@link Resource#getURI()} of {@link #eResource()} to be set.
 	 */
 	protected PathResolver createPathResolver() {
-		Assert.assertNotNull(eResource());
-		Assert.assertNotNull(eResource().getURI());
+		assert eResource() != null;
+		assert eResource().getURI() != null;
 		return new EMFURIPathResolver(eResource().getURI());
 	}
 
@@ -454,7 +452,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 	public boolean init(boolean searchPreClassified)
 	throws IOException, OntException {
 		final IOntologies kb = getKnowledgeBase();
-		Assert.assertNotNull(kb);
+		assert kb != null;
 		boolean preClassified = false;
 		if (searchPreClassified) {
 			kb.loadOntology(getPreClassifiedOntology());

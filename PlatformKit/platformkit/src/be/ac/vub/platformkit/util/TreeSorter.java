@@ -15,7 +15,6 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-import junit.framework.Assert;
 import be.ac.vub.platformkit.PlatformkitResources;
 import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
@@ -58,9 +57,7 @@ public class TreeSorter<T> {
 		List<T> sorted = new ArrayList<T>();
 		while (!list.isEmpty()) {
 			T removed = removeRootElement(list);
-			Assert.assertNotNull(
-					PlatformkitResources.getString("TreeSorter.removeAssertion"), 
-					removed); //$NON-NLS-1$
+			assert removed != null : PlatformkitResources.getString("TreeSorter.removeAssertion"); //$NON-NLS-1$
 			sorted.add(removed);
 		}
 		list.addAll(sorted);
