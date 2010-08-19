@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
@@ -123,10 +124,9 @@ public class PlatformAPIDialogRunnable implements Runnable {
 				}
 			}
 		}
-		for (String category : categories.keySet()) {
-			TreeNode catNode = categories.get(category);
-			List<TreeNode> children = categoryChildren.get(category);
-			catNode.setChildren(children.toArray(new TreeNode[children.size()]));
+		for (Entry<String, TreeNode> entry : categories.entrySet()) {
+			List<TreeNode> children = categoryChildren.get(entry.getKey());
+			entry.getValue().setChildren(children.toArray(new TreeNode[children.size()]));
 		}
 		labelProv = new LabelProvider() {
 			public String getText(Object element) {

@@ -36,12 +36,19 @@ public class PlatformkitJavaPlugin extends AbstractUIPlugin {
 	}
 
 	/**
+	 * Sets the singleton instance of the Eclipse plugin.
+	 * @param pi
+	 */
+	private static void setPlugin(PlatformkitJavaPlugin pi) {
+		plugin = pi;
+	}
+
+	/**
 	 * Creates a new {@link PlatformkitJavaPlugin}.
 	 */
 	public PlatformkitJavaPlugin() {
 		super();
-		// Remember the static instance.
-		plugin = this;
+		setPlugin(this);
 	}
 
 	/**
