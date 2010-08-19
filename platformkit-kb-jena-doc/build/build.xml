@@ -69,6 +69,7 @@
 				<fileset dir="${eclipse.home}/plugins">
 					<include name="**/org.eclipse.*.jar"/>
 					<include name="**/org.junit*/*.jar"/>
+					<exclude name="**/org.eclipse.tptp.*.jar"/>
 				</fileset>
 			</classpath>
 		</javadoc>
