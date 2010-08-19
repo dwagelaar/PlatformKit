@@ -48,6 +48,14 @@ helper context UML2!"uml::Model" def : mergedName : String =
 		let ePrefix : String = e.name.substring(1, e.name.size() - suffixLength) in
 		ePrefix + ' + ' + acc).debug('mergedName');
 
+helper context UML2!"uml::Element" def : hasIncompatibleOrMissingChildren : Boolean =
+	self.ownedElement->exists(e|
+		if e.isIncompatible or e.isMissing then
+			if e.isIncompatibleInMerge or e.isMissingInMerge then true
+			else e.hasIncompatibleOrMissingChildren endif
+		else false endif
+	);
+
 -- ======================================================================
 -- helper attributes end
 -- ======================================================================
@@ -139,7 +147,9 @@ rule Incompatible {
 	from s : UML2!"CompatibilityReport::Incompatible" (
 		if thisModule.inElements->includes(s) then
 			if s.oclIsTypeOf(UML2!"CompatibilityReport::Incompatible") then
-				s.base_Element.isIncompatibleInMerge
+				if s.base_Element.isIncompatibleInMerge then
+					s.base_Element.hasIncompatibleOrMissingChildren
+				else false endif
 			else false endif
 		else false endif)
 	to t : UML2!"CompatibilityReport::Incompatible" (

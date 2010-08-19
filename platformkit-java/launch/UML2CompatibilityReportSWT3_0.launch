@@ -29,6 +29,7 @@
 <mapEntry key="supportUML2Stereotypes" value="true"/>
 <mapEntry key="printExecutionTime" value="true"/>
 <mapEntry key="OPTION_CLEAR" value="true"/>
+<mapEntry key="OPTION_CONTENT_TYPE" value="false"/>
 <mapEntry key="OPTION_DERIVED" value="true"/>
 <mapEntry key="allowInterModelReferences" value="true"/>
 <mapEntry key="step" value="false"/>
@@ -37,7 +38,7 @@
 <mapEntry key="REPORT" value="UML2"/>
 </mapAttribute>
 <mapAttribute key="Path">
-<mapEntry key="IN" value="/platformkit-java/model/swt/swt-3_0.uml"/>
+<mapEntry key="IN" value="/platformkit-java/model/swt/swt-3_0-api.uml"/>
 <mapEntry key="REPORT" value="/platformkit-java/pkCompatReportSWT3_0.uml"/>
 <mapEntry key="UML2" value="/platformkit-java/metamodels/UMLProfiles.ecore"/>
 <mapEntry key="CR" value="/platformkit-java/profiles/CompatibilityReport.profile.uml"/>
