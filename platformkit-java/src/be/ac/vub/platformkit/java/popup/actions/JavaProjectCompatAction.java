@@ -10,6 +10,10 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.java.popup.actions;
 
+import org.eclipse.core.resources.IResource;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jface.viewers.IStructuredSelection;
+
 import be.ac.vub.platformkit.java.jobs.CompatJob;
 import be.ac.vub.platformkit.java.jobs.JavaProjectCompatJob;
 
@@ -25,6 +29,18 @@ public class JavaProjectCompatAction extends CompatAction {
 	@Override
 	protected CompatJob createCompatJob() {
 		return new JavaProjectCompatJob();
+	}
+
+	/* (non-Javadoc)
+	 * @see be.ac.vub.platformkit.java.popup.actions.CompatAction#getLockingResource()
+	 */
+	@Override
+	protected IResource getLockingResource() {
+		final Object res = ((IStructuredSelection) selection).getFirstElement();
+		if (res instanceof IJavaProject) {
+			return ((IJavaProject) res).getProject();
+		}
+		return super.getLockingResource();
 	}
 
 }

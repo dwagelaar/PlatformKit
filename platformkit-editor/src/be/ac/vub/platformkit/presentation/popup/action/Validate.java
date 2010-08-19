@@ -11,8 +11,10 @@
 package be.ac.vub.platformkit.presentation.popup.action;
 
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
@@ -81,6 +83,12 @@ public class Validate extends ViewerFilterAction {
 		job.setPlatformInstanceSources(dlg.getSelection());
 		job.setSpace((ConstraintSpace) ((IStructuredSelection) selection).getFirstElement());
 		job.setUser(true);
+	    final URI spaceUri = job.getSpace().eResource().getURI();
+	    if (spaceUri.isPlatformResource()) {
+	    	final IResource spaceRes = ResourcesPlugin.getWorkspace().getRoot().findMember(spaceUri.toPlatformString(true));
+	    	assert spaceRes != null;
+		    job.setRule(spaceRes.getParent()); //lock containing folder
+	    }
 		// lock editor
 		IWorkbenchSiteProgressService siteService = (IWorkbenchSiteProgressService) 
 		part.getSite().getAdapter(IWorkbenchSiteProgressService.class);

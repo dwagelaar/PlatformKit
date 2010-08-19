@@ -10,11 +10,11 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.jobs;
 
+import org.eclipse.core.resources.WorkspaceJob;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.jobs.Job;
 
 import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
@@ -23,7 +23,7 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  * General superclass for jobs with a progress monitor.
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
-public abstract class ProgressMonitorJob extends Job {
+public abstract class ProgressMonitorJob extends WorkspaceJob {
 
 	/**
 	 * Creates a new {@link ProgressMonitorJob}
@@ -133,7 +133,7 @@ public abstract class ProgressMonitorJob extends Job {
 	 * @see org.eclipse.core.runtime.jobs.Job#run(org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	@Override
-	protected IStatus run(IProgressMonitor monitor) {
+	public final IStatus runInWorkspace(IProgressMonitor monitor) {
 		IStatus st;
 		try {
 			runAction(monitor);
@@ -169,14 +169,14 @@ public abstract class ProgressMonitorJob extends Job {
 	protected abstract void runAction(IProgressMonitor monitor) throws Exception;
 
 	/**
-	 * Invoked after an Exception is caught in {@link #run(IProgressMonitor)}.
+	 * Invoked after an Exception is caught in {@link #runInWorkspace(IProgressMonitor)}.
 	 */
 	protected void catchCleanup() {
 		//stub
 	}
 
 	/**
-	 * Invoked in "finally" block after {@link #run(IProgressMonitor)}.
+	 * Invoked in "finally" block after {@link #runInWorkspace(IProgressMonitor)}.
 	 */
 	protected void finallyCleanup() {
 		//stub

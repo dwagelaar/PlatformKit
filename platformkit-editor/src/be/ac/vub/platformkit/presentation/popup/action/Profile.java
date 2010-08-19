@@ -11,8 +11,10 @@
 package be.ac.vub.platformkit.presentation.popup.action;
 
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -88,6 +90,12 @@ public class Profile extends ViewerFilterAction {
 		job.setSelectedObject((EObject) ((IStructuredSelection) selection).getFirstElement());
 		job.setEditingDomain(editingDomain);
 		job.setUser(true);
+	    final URI spaceUri = job.getSpace().eResource().getURI();
+	    if (spaceUri.isPlatformResource()) {
+	    	final IResource spaceRes = ResourcesPlugin.getWorkspace().getRoot().findMember(spaceUri.toPlatformString(true));
+	    	assert spaceRes != null;
+		    job.setRule(spaceRes.getParent()); //lock containing folder
+	    }
 		// lock editor
 		IWorkbenchSiteProgressService siteService = (IWorkbenchSiteProgressService) 
 		part.getSite().getAdapter(IWorkbenchSiteProgressService.class);

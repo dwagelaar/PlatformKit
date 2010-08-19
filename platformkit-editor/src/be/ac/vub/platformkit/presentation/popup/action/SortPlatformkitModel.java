@@ -10,6 +10,9 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.presentation.popup.action;
 
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
@@ -45,6 +48,12 @@ public abstract class SortPlatformkitModel extends ObjectSelectionAction {
 		job.setEditingDomain(editingDomain);
 		job.setSpace((ConstraintSpace) ((IStructuredSelection) selection).getFirstElement());
 		job.setUser(true);
+	    final URI spaceUri = job.getSpace().eResource().getURI();
+	    if (spaceUri.isPlatformResource()) {
+	    	final IResource spaceRes = ResourcesPlugin.getWorkspace().getRoot().findMember(spaceUri.toPlatformString(true));
+	    	assert spaceRes != null;
+		    job.setRule(spaceRes.getParent()); //lock containing folder
+	    }
 		// lock editor
 		IWorkbenchSiteProgressService siteService = (IWorkbenchSiteProgressService) 
 		part.getSite().getAdapter(IWorkbenchSiteProgressService.class);
