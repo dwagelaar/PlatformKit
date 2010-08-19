@@ -12,7 +12,6 @@ package be.ac.vub.platformkit.kb.jena;
 
 import java.util.Iterator;
 
-import junit.framework.Assert;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
 
@@ -30,7 +29,7 @@ public class OntModelAdapter implements IOntModel {
 	 * Unwraps the {@link OntClass}es from the {@link IOntClass}es.
 	 * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
 	 */
-	private class OntClassIterator implements Iterator<OntClass> {
+	private static class OntClassIterator implements Iterator<OntClass> {
 		private Iterator<IOntClass> inner;
 
 		/**
@@ -38,7 +37,7 @@ public class OntModelAdapter implements IOntModel {
 		 * @param inner
 		 */
 		public OntClassIterator(Iterator<IOntClass> inner) {
-			Assert.assertNotNull(inner);
+			assert inner != null;
 			this.inner = inner;
 		}
 
@@ -75,7 +74,7 @@ public class OntModelAdapter implements IOntModel {
 	 * @param model
 	 */
 	public OntModelAdapter(OntModel model) {
-		Assert.assertNotNull(model);
+		assert model != null;
 		this.setModel(model);
 	}
 
