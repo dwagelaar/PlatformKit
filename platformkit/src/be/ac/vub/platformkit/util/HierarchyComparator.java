@@ -10,6 +10,7 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.util;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
 import be.ac.vub.platformkit.Constraint;
@@ -22,11 +23,13 @@ import be.ac.vub.platformkit.logging.PlatformkitLogger;
  * Compares {@link Constraint} objects, such that the more specific (subclass) constraint is
  * considered smaller (MOST_SPECIFIC_FIRST) or greater (LEAST_SPECIFIC_FIRST) than
  * the less specific (superclass) constraint. If both constraints are equivalent,
- * they are considered equally specific. Ifno subclass relationship can be determined,
+ * they are considered equally specific. If no subclass relationship can be determined,
  * an exception is thrown.
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
-public class HierarchyComparator implements Comparator<Constraint> {
+public class HierarchyComparator implements Serializable, Comparator<Constraint> {
+
+	private static final long serialVersionUID = -5466460771666335878L;
 
 	public static final int MOST_SPECIFIC_FIRST = -1;
 	public static final int LEAST_SPECIFIC_FIRST = 1;
@@ -93,15 +96,23 @@ public class HierarchyComparator implements Comparator<Constraint> {
 		}
 	}
 
-	/**
-	 * @see Comparator#equals(java.lang.Object)
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof HierarchyComparator) {
 			return ((HierarchyComparator) obj).mode == mode;
-		} else {
-			return false;
 		}
+		return super.equals(obj);
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		return HierarchyComparator.class.hashCode() + mode;
 	}
 
 }
