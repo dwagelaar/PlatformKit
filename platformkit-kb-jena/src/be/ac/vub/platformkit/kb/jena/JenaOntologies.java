@@ -22,8 +22,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import junit.framework.Assert;
-
 import org.mindswap.pellet.jena.PelletReasoner;
 import org.mindswap.pellet.jena.PelletReasonerFactory;
 
@@ -509,7 +507,7 @@ public class JenaOntologies extends AbstractOntologies {
 			final Iterator<OntClass> equivCs = ontClass.listEquivalentClasses().filterKeep(ncFilter);
 			while (equivCs.hasNext()) {
 				OntClass equivC = equivCs.next();
-				if (!equivC.equals(forClass)) {
+				if (!equivC.equals(ontClass)) {
 					try {
 						OntClass baseEquivC = getBaseClass(equivC);
 						equivs.add(baseEquivC);
@@ -622,7 +620,7 @@ public class JenaOntologies extends AbstractOntologies {
 	private OntClass getBaseClass(OntClass c)
 	throws NotFoundException {
 		final OntModel baseModel = getBaseOntology().getModel();
-		Assert.assertNotNull(baseModel);
+		assert baseModel != null;
 		OntClass baseClass;
 		synchronized (JenaOntologies.class) {
 			baseClass = baseModel.getOntClass(c.getURI());
