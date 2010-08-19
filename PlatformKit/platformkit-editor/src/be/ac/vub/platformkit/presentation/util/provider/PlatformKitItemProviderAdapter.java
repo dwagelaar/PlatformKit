@@ -141,7 +141,7 @@ public class PlatformKitItemProviderAdapter implements
 				if (value instanceof EObject) {
 					int index = getValidator().indexOf((EObject) value);
 					if (index > -1) {
-						sortedncds.put(new Integer(index), ncd);
+						sortedncds.put(Integer.valueOf(index), ncd);
 						continue;
 					}
 				}
