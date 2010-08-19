@@ -14,8 +14,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.logging.Logger;
 
-import junit.framework.Assert;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -81,7 +79,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 		 * @param inner An Iterator over Constraint objects.
 		 */
 		public ConstraintIterator(Iterator<Constraint> inner) {
-			Assert.assertNotNull(inner);
+			assert inner != null;
 			this.inner = inner;
 		}
 
@@ -334,7 +332,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	private Constraint createIntersection() throws OntException {
 		String ontClassURI = IOntologies.LOCAL_INF_NS + "#" + getName() + "Intersection"; //$NON-NLS-1$ //$NON-NLS-2$
 		IOntModel ontology = getOntModel();
-		Assert.assertNotNull(ontology);
+		assert ontology != null;
 		logger.info(String.format(
 				PlatformkitResources.getString("ConstraintSetImpl.createRetrieveIntersection"), 
 				getName())); //$NON-NLS-1$
@@ -520,7 +518,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * @see be.ac.vub.platformkit.ConstraintSet#addAllOntologyChangeListeners(be.ac.vub.platformkit.kb.IOntologies)
 	 */
 	public void addAllOntologyChangeListeners(IOntologies kb) {
-		Assert.assertNotNull(kb);
+		assert kb != null;
 		for (Iterator<Constraint> it = getConstraint().iterator(); it.hasNext();) {
 			kb.addOntModelChangeListener(it.next());
 		}
@@ -531,7 +529,7 @@ public class ConstraintSetImpl extends EObjectImpl implements ConstraintSet {
 	 * @see be.ac.vub.platformkit.ConstraintSet#removeAllOntologyChangeListeners(be.ac.vub.platformkit.kb.IOntologies)
 	 */
 	public void removeAllOntologyChangeListeners(IOntologies kb) {
-		Assert.assertNotNull(kb);
+		assert kb != null;
 		for (Iterator<Constraint> it = getConstraint().iterator(); it.hasNext();) {
 			Constraint constraint = it.next();
 			kb.removeOntModelChangeListener(constraint);

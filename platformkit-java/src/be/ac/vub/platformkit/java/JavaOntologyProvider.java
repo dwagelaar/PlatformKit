@@ -14,8 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-import junit.framework.Assert;
-
 import org.osgi.framework.Bundle;
 
 import be.ac.vub.platformkit.kb.IOntologyProvider;
@@ -66,7 +64,7 @@ public class JavaOntologyProvider implements IOntologyProvider {
 			} else {
 				resource = bundle.getResource("ontology/" + ontologies[i]); //$NON-NLS-1$
 			}
-			Assert.assertNotNull(resource);
+			assert resource != null;
 			streams[i] = resource.openStream();
 			PlatformkitLogger.logger.fine(String.format(
 					PlatformkitJavaResources.getString("JavaOntologyProvider.providingOntAs"),

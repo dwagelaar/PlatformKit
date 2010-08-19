@@ -12,8 +12,6 @@ package be.ac.vub.platformkit.kb.owlapi;
 
 import java.util.logging.Level;
 
-import junit.framework.Assert;
-
 import org.semanticweb.owl.inference.OWLReasoner;
 import org.semanticweb.owl.inference.OWLReasonerException;
 import org.semanticweb.owl.model.OWLClass;
@@ -36,8 +34,8 @@ public class OWLClassAdapter implements IOntClass {
 	 * @param ontologies
 	 */
 	public OWLClassAdapter(OWLClass model, OWLAPIOntologies ontologies) {
-		Assert.assertNotNull(model);
-		Assert.assertNotNull(ontologies);
+		assert model != null;
+		assert ontologies != null;
 		this.setModel(model);
 		this.setOntologies(ontologies);
 	}

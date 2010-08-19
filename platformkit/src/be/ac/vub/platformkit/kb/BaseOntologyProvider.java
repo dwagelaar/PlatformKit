@@ -15,8 +15,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.logging.Logger;
 
-import junit.framework.Assert;
-
 import org.osgi.framework.Bundle;
 
 import be.ac.vub.platformkit.PlatformkitResources;
@@ -53,7 +51,7 @@ public class BaseOntologyProvider implements IOntologyProvider {
 			} else {
 				resource = bundle.getResource("ontology/" + ontologies[i]); //$NON-NLS-1$
 			}
-			Assert.assertNotNull(resource);
+			assert resource != null;
 			streams[i] = resource.openStream();
 			logger.fine(String.format(
 					PlatformkitResources.getString("BaseOntologyProvider.providingOntology"), 

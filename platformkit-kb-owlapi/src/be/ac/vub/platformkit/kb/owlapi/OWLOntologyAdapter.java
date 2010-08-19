@@ -16,8 +16,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import junit.framework.Assert;
-
 import org.semanticweb.owl.model.AddAxiom;
 import org.semanticweb.owl.model.OWLAxiom;
 import org.semanticweb.owl.model.OWLClass;
@@ -46,8 +44,8 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @param ontologies
 	 */
 	public OWLOntologyAdapter(OWLOntology model, OWLAPIOntologies ontologies) {
-		Assert.assertNotNull(model);
-		Assert.assertNotNull(ontologies);
+		assert model != null;
+		assert ontologies != null;
 		this.setModel(model);
 		this.setOntologies(ontologies);
 	}
@@ -75,12 +73,7 @@ public class OWLOntologyAdapter implements IOntModel {
 			Set<OWLClass> operands = new HashSet<OWLClass>();
 			while (members.hasNext()) {
 				OWLClassAdapter c = (OWLClassAdapter) members.next();
-				Assert.assertNotNull(c);
-				if (c == null) {
-					throw new OntException(String.format(
-							PlatformkitOWLAPIResources.getString("OWLOntologyAdapter.ontClassNotFound"),
-							c));
-				}
+				assert c != null;
 				operands.add(c.getModel());
 			}
 			OWLObjectIntersectionOf intersection = factory.getOWLObjectIntersectionOf(operands);
