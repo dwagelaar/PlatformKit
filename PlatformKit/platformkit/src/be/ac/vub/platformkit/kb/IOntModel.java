@@ -10,6 +10,7 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.kb;
 
+import java.io.OutputStream;
 import java.util.Iterator;
 
 import be.ac.vub.platformkit.kb.util.OntException;
@@ -40,5 +41,64 @@ public interface IOntModel {
 	 * @throws OntException if any backing ontology classes for members cannot be found
 	 */
 	public IOntClass createIntersectionClass(String uri, Iterator<IOntClass> members) throws OntException;
+
+	/**
+	 * Saves this ontology to out.
+	 * @param out
+	 * @throws OntException
+	 */
+	public void save(OutputStream out) throws OntException;
+
+	/**
+	 * @return the namespace URI of this ontology
+	 */
+	public String getNsURI();
+
+	/**
+	 * Creates an ontology class that is equivalent to the object property restriction to the given range on the given property.
+	 * Updates any existing restriction class with the given uri to:
+	 * <ul>
+	 * <li>include any new property restriction ranges;
+	 * <li>weaken down existing property restriction ranges to the given range, if it is a wider range.
+	 * </ul>
+	 * Requires transitive (or better) reasoner.
+	 * @see IOntologies#attachTransitiveReasoner()
+	 * @param uri the ontology class URI
+	 * @param superClass the ontology superclass, if any
+	 * @param propertyURI the URI of the property to restrict
+	 * @param range the restriction range classes
+	 * @return the property restriction ontology class
+	 * @throws OntException
+	 */
+	public IOntClass createSomeRestriction(String uri, IOntClass superClass, 
+			String propertyURI, Iterator<IOntClass> range) throws OntException;
+
+	/**
+	 * Creates an ontology class that is equivalent to the "MinInclusive" data property restriction to the given value.
+	 * Updates any existing restriction class with the given uri.
+	 * @param uri the ontology class URI
+	 * @param superClass the ontology superclass, if any
+	 * @param propertyURI the URI of the property to restrict
+	 * @param datatypeURI the URI of the data type
+	 * @param value the data value of the given data type
+	 * @return the property restriction ontology class
+	 * @throws OntException 
+	 */
+	public IOntClass createMinInclusiveRestriction(String uri, IOntClass superClass, 
+			String propertyURI, String datatypeURI, String value) throws OntException;
+
+	/**
+	 * Creates an ontology class that is equivalent to the "HasValue" data property restriction to the given value.
+	 * Updates any existing restriction class with the given uri.
+	 * @param uri the ontology class URI
+	 * @param superClass the ontology superclass, if any
+	 * @param propertyURI the URI of the property to restrict
+	 * @param datatypeURI the URI of the data type
+	 * @param value the data value of the given data type
+	 * @return the property restriction ontology class
+	 * @throws OntException
+	 */
+	public IOntClass createHasValueRestriction(String uri, IOntClass superClass, 
+			String propertyURI, String datatypeURI, String value) throws OntException;
 
 }

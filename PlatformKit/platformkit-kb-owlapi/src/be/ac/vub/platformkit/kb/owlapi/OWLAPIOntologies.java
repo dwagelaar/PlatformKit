@@ -41,6 +41,7 @@ import org.semanticweb.owl.model.OWLDataFactory;
 import org.semanticweb.owl.model.OWLEntity;
 import org.semanticweb.owl.model.OWLEquivalentClassesAxiom;
 import org.semanticweb.owl.model.OWLException;
+import org.semanticweb.owl.model.OWLImportsDeclaration;
 import org.semanticweb.owl.model.OWLOntology;
 import org.semanticweb.owl.model.OWLOntologyChange;
 import org.semanticweb.owl.model.OWLOntologyChangeException;
@@ -74,6 +75,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	private Map<OWLClass, Set<OWLClass>> superClasses = new HashMap<OWLClass, Set<OWLClass>>();
 	private Map<OWLClass, Set<OWLClass>> equivClasses = new HashMap<OWLClass, Set<OWLClass>>();
 	private Map<OWLClass, Set<OWLClass>> obsoleteSuperClasses = new HashMap<OWLClass, Set<OWLClass>>();
+	private Map<String, IOntModel> localOntologies = new HashMap<String, IOntModel>();
 
 	/**
 	 * Creates a new {@link OWLAPIOntologies}.
@@ -118,7 +120,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 */
 	private void addLocalOntologies() throws IOException {
 		addLocalOntologies(BaseOntologyProvider.INSTANCE);
-		IOntologyProvider[] providers = PlatformkitRegistry.INSTANCE.getOntologyProviders();
+		final IOntologyProvider[] providers = PlatformkitRegistry.INSTANCE.getOntologyProviders();
 		for (IOntologyProvider provider : providers) {
 			addLocalOntologies(provider);
 		}
@@ -132,6 +134,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	private void addLocalOntology(InputStream resource) throws OWLOntologyCreationException {
 		final OWLOntologyManager mgr = getMgr();
 		final OWLOntology ont = mgr.loadOntology(new StreamInputSource(resource));
+		localOntologies.put(ont.getURI().toString(), new OWLOntologyAdapter(ont, this));
 		PlatformkitLogger.logger.info(String.format(
 				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.addingLocalOnt"), 
 				ont.getURI())); //$NON-NLS-1$
@@ -537,6 +540,74 @@ public class OWLAPIOntologies extends AbstractOntologies {
 			addSuperClasses(owlClass, superCs);
 			removeSuperClasses(owlClass, obsoleteCs);
 		} catch (OWLException e) {
+			throw new OntException(e);
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#createNewOntology(java.lang.String)
+	 */
+	public IOntModel createNewOntology(String url) throws OntException {
+		try {
+			final IOntModel ont = new OWLOntologyAdapter(getMgr().createOntology(URI.create(url)), this);
+			addAllImports(ont);
+			return ont;
+		} catch (OWLOntologyCreationException e) {
+			throw new OntException(e);
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#getLocalOntologies()
+	 */
+	public Collection<IOntModel> getLocalOntologies() {
+		return localOntologies.values();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#getLocalOntology(java.lang.String)
+	 */
+	public IOntModel getLocalOntology(String uri) {
+		return localOntologies.get(uri);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#loadSingleOnt(java.io.InputStream)
+	 */
+	public IOntModel loadSingleOnt(InputStream in) throws OntException {
+		PlatformkitLogger.logger.fine(String.format(
+				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.loadingOntFrom"), 
+				in)); //$NON-NLS-1$
+		try {
+			final OWLOntology ont = mgr.loadOntology(new StreamInputSource(in));
+			return new OWLOntologyAdapter(ont, this);
+		} catch (OWLException e) {
+			throw new OntException(e);
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.AbstractOntologies#addImports(be.ac.vub.platformkit.kb.IOntModel, java.io.InputStream)
+	 */
+	@Override
+	protected void addImports(IOntModel ont, IOntModel importedOnt) throws OntException {
+		try {
+			assert ont instanceof OWLOntologyAdapter;
+			assert importedOnt instanceof OWLOntologyAdapter;
+			final OWLOntology owlOnt = ((OWLOntologyAdapter) ont).getModel();
+			final OWLOntology owlImportedOnt = ((OWLOntologyAdapter) importedOnt).getModel();
+			final OWLOntologyManager mgr = getMgr();
+			final OWLDataFactory factory = mgr.getOWLDataFactory();
+			final OWLImportsDeclaration importsDecl = factory.getOWLImportsDeclarationAxiom(
+					owlOnt, 
+					owlImportedOnt.getURI());
+			mgr.applyChange(new AddAxiom(owlOnt, importsDecl));
+		} catch (OWLOntologyChangeException e) {
 			throw new OntException(e);
 		}
 	}

@@ -45,7 +45,7 @@ public class JarFileCompatJob extends CompatJob {
 	protected void runAction(IProgressMonitor monitor) throws Exception {
         checkAndSwitchStrategy();
         JarFileCompatJobRunner runner = new JarFileCompatJobRunner();
-		runActionWithRunner(monitor, runner, 8);
+		runActionWithRunner(monitor, runner, STEPS+3);
 	}
 
 	public class JarFileCompatJobRunner extends CompatJobRunner {
@@ -57,7 +57,7 @@ public class JarFileCompatJob extends CompatJob {
 		public void loadDepsModel(IProgressMonitor monitor)
 				throws ATLCoreException, CoreException, IOException {
 			//
-			// 1
+			// Steps 1+2+3
 			//
 			subTask(monitor, PlatformkitJavaResources.getString("creatingDepsModel")); //$NON-NLS-1$
 			JarToUML jarToUML = new JarToUML();
@@ -81,7 +81,7 @@ public class JarFileCompatJob extends CompatJob {
 			}
 			worked(monitor, PlatformkitJavaResources.getString("createdDepsModel")); //$NON-NLS-1$
 			//
-			// 2
+			// Step 4
 			//
 			subTask(monitor, PlatformkitJavaResources.getString("loadingDepsModel")); //$NON-NLS-1$
 			setDeps(modelLoader.loadDEPSModel(getUml2(), jarToUML.getModel().eResource()));

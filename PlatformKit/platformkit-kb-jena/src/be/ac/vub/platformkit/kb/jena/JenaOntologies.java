@@ -38,9 +38,14 @@ import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntDocumentManager;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
+import com.hp.hpl.jena.ontology.Ontology;
+import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.ModelMaker;
 import com.hp.hpl.jena.rdf.model.RDFWriter;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.ResourceFactory;
+import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.reasoner.Reasoner;
 import com.hp.hpl.jena.reasoner.ReasonerRegistry;
@@ -65,6 +70,7 @@ public class JenaOntologies extends AbstractOntologies {
 	private Map<OntClass, Set<OntClass>> equivClasses = new HashMap<OntClass, Set<OntClass>>();
 	private Map<OntClass, Set<OntClass>> obsoleteSuperClasses = new HashMap<OntClass, Set<OntClass>>();
 	private static NamedClassFilter ncFilter = new NamedClassFilter();
+	private Map<String, IOntModel> localOntologies = new HashMap<String, IOntModel>();
 
 	/**
 	 * Creates a new {@link JenaOntologies}.
@@ -325,7 +331,7 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @param writer
 	 * @param namespace XML namespace.
 	 */
-	private static void prepareWriter(RDFWriter writer, String namespace) {
+	protected static void prepareWriter(RDFWriter writer, String namespace) {
 		writer.setProperty("showXmlDeclaration", "true"); //$NON-NLS-1$ //$NON-NLS-2$
 		writer.setProperty("relativeURIs", "same-document"); //$NON-NLS-1$ //$NON-NLS-2$
 		writer.setProperty("xmlbase", namespace); //$NON-NLS-1$
@@ -391,6 +397,7 @@ public class JenaOntologies extends AbstractOntologies {
 				PlatformkitJenaResources.getString("JenaOntologies.addingLocalOnt"), 
 				ns)); //$NON-NLS-1$
 		dm.addModel(ns, model);
+		localOntologies.put(ns, new OntModelAdapter(model));
 		/*
 		 * If the prefix of this ontology is added, then #getLocalNamedClasses()
 		 * will also return the classes from this ontology. This has as a consequence
@@ -525,6 +532,63 @@ public class JenaOntologies extends AbstractOntologies {
 				supers)); //$NON-NLS-1$
 		getEquivClasses().put(baseClass, equivs);
 		getSuperClasses().put(baseClass, supers);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#createNewOntology(java.lang.String)
+	 */
+	public IOntModel createNewOntology(String url) throws OntException {
+		final ModelMaker maker = OntModelSpec.OWL_DL_MEM.getBaseModelMaker();
+		final Model base = maker.createModel(url);
+		final IOntModel ont = new OntModelAdapter(ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, base));
+		addAllImports(ont);
+		return ont;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#getLocalOntologies()
+	 */
+	public Collection<IOntModel> getLocalOntologies() {
+		return localOntologies.values();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#getLocalOntology(java.lang.String)
+	 */
+	public IOntModel getLocalOntology(String uri) {
+		return localOntologies.get(uri);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#loadSingleOnt(java.io.InputStream)
+	 */
+	public IOntModel loadSingleOnt(InputStream in) throws OntException {
+		PlatformkitLogger.logger.fine(String.format(
+				PlatformkitJenaResources.getString("JenaOntologies.loadingOntFrom"), 
+				in)); //$NON-NLS-1$
+		final OntModel ont = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM);
+		ont.read(in, "");
+		return new OntModelAdapter(ont);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.AbstractOntologies#addImports(be.ac.vub.platformkit.kb.IOntModel, java.io.InputStream)
+	 */
+	@Override
+	protected void addImports(IOntModel ont, IOntModel importedOnt) throws OntException {
+		assert ont instanceof OntModelAdapter;
+		assert importedOnt instanceof OntModelAdapter;
+		final OntModel jenaOnt = ((OntModelAdapter) ont).getModel();
+		final OntModel jenaImportedOnt = ((OntModelAdapter) importedOnt).getModel();
+		final Ontology jenaOntObject = jenaOnt.createOntology(ont.getNsURI());
+		final Ontology jenaImportOntObject = jenaImportedOnt.createOntology(importedOnt.getNsURI());
+		final Statement importStatement = ResourceFactory.createStatement(jenaOntObject, jenaOnt.getProfile().IMPORTS(), jenaImportOntObject);
+		jenaOnt.add(importStatement);
 	}
 
 	/**

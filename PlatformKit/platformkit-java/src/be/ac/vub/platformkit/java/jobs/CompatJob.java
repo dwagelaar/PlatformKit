@@ -14,18 +14,34 @@ import java.io.IOException;
 import java.lang.ref.SoftReference;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.logging.Handler;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.m2m.atl.common.ATLLogger;
@@ -34,12 +50,32 @@ import org.eclipse.m2m.atl.core.IExtractor;
 import org.eclipse.m2m.atl.core.IModel;
 import org.eclipse.m2m.atl.core.IReferenceModel;
 import org.eclipse.m2m.atl.core.launch.ILauncher;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.PackageableElement;
+import org.eclipse.uml2.uml.UMLPackage;
 
+import be.ac.vub.jar2uml.FindContainedClassifierSwitch;
+import be.ac.vub.jar2uml.JarToUML;
+import be.ac.vub.platformkit.Constraint;
+import be.ac.vub.platformkit.ConstraintSet;
+import be.ac.vub.platformkit.ConstraintSpace;
+import be.ac.vub.platformkit.PlatformkitFactory;
 import be.ac.vub.platformkit.editor.preferences.PreferenceConstants;
+import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
+import be.ac.vub.platformkit.io.IFileOutputStream;
+import be.ac.vub.platformkit.java.JavaOntologyProvider;
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 import be.ac.vub.platformkit.java.PlatformkitJavaResources;
 import be.ac.vub.platformkit.java.popup.util.ATLUtil;
 import be.ac.vub.platformkit.jobs.ProgressMonitorJob;
+import be.ac.vub.platformkit.kb.BaseOntologyProvider;
+import be.ac.vub.platformkit.kb.IOntClass;
+import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.IOntologies;
+import be.ac.vub.platformkit.kb.IOntologyProvider;
+import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
 
 /**
@@ -47,6 +83,8 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class CompatJob extends ProgressMonitorJob {
+
+	public static final int STEPS = 8;
 
 	/**
 	 * Adds PlatformKit log handler to ATL logger.
@@ -86,7 +124,7 @@ public class CompatJob extends ProgressMonitorJob {
 	protected void runAction(IProgressMonitor monitor) throws Exception {
 		checkAndSwitchStrategy();
 		CompatJobRunner runner = new CompatJobRunner();
-		runActionWithRunner(monitor, runner, 5);
+		runActionWithRunner(monitor, runner, STEPS);
 	}
 
 	/**
@@ -263,6 +301,9 @@ public class CompatJob extends ProgressMonitorJob {
 		private IFile file;
 		private String crLocation;
 		private IPath crPath;
+		private ConstraintSpace constraintSpace;
+		private Map<URI, Set<String>> providedPackages = new HashMap<URI, Set<String>>();
+		private Map<String, Set<URI>> packageProviders = new HashMap<String, Set<URI>>();
 
 		/**
 		 * @return the uml2
@@ -336,7 +377,8 @@ public class CompatJob extends ProgressMonitorJob {
 		 */
 		protected void setFile(IFile file) {
 			this.file = file;
-			setInputName(file.getName());
+			final String fileName = file.getName();
+			setInputName(fileName.substring(0, fileName.indexOf('.'))); // file basename
 		}
 		/**
 		 * @return the crPath
@@ -363,6 +405,116 @@ public class CompatJob extends ProgressMonitorJob {
 		protected void setCrLocation(String crLocation) {
 			this.crLocation = crLocation;
 		}
+		/**
+		 * @return the constraintSpace
+		 */
+		public ConstraintSpace getConstraintSpace() {
+			return constraintSpace;
+		}
+		/**
+		 * @param constraintSpace the constraintSpace to set
+		 */
+		protected void setConstraintSpace(ConstraintSpace constraintSpace) {
+			this.constraintSpace = constraintSpace;
+		}
+		/**
+		 * @return the {@link IFile} of the Platformkit model, based on the file path
+		 * @see #getFile()
+		 */
+		protected IFile getPkFile() {
+			final IFile file = getFile();
+			assert file != null;
+			return file.getProject().getFile(
+					file.getProjectRelativePath()
+					.removeFileExtension()
+					.removeFileExtension()
+					.addFileExtension("platformkit").toString()); //$NON-NLS-1$
+		}
+		/**
+		 * @return the EMF URI of the Platformkit model, based on the file path
+		 * @see #getFile()
+		 */
+		protected URI getPkLocation() {
+			final IFile file = getPkFile();
+			assert file != null;
+			final StringBuffer pkFileLocation = new StringBuffer();
+			pkFileLocation.append(file.getProject().getName());
+			pkFileLocation.append("/"); //$NON-NLS-1$
+			pkFileLocation.append(file.getProjectRelativePath());
+			return URI.createPlatformResourceURI(pkFileLocation.toString(), true);
+		}
+		/**
+		 * @return the EMF {@link Resource} of the Platformkit model, based on the file path
+		 * @see #getFile()
+		 */
+		protected Resource getPkResource() {
+			final ResourceSet rs = new ResourceSetImpl();
+			Resource res;
+			if (getPkFile().exists()) {
+				res = rs.getResource(getPkLocation(), true);
+			} else {
+				res = rs.createResource(getPkLocation());
+			}
+			return res;
+		}
+		/**
+		 * @return the ontology file, based on the file path
+		 * @see #getFile()
+		 */
+		protected IFile getOntFile() {
+			final IFile file = getFile();
+			assert file != null;
+			final IPath ontPath = file.getProjectRelativePath()
+				.removeFileExtension()
+				.removeFileExtension()
+				.addFileExtension("owl");
+			return file.getProject().getFile(ontPath);
+		}
+		/**
+		 * @param emf_uri
+		 * @return the qualified names of the packages provided by the API model with emf_uri
+		 */
+		public Set<String> getProvidedPackages(URI emf_uri) {
+			Set<String> packages = providedPackages.get(emf_uri);
+			if (packages == null) {
+				packages = new HashSet<String>();
+				providedPackages.put(emf_uri, packages);
+			}
+			return packages;
+		}
+		/**
+		 * @param packName the UML qualified name of the package
+		 * @return the EMF URIs of the API models that provide the package with the given qualified name
+		 */
+		public Set<URI> getPackageProviders(String packName) {
+			Set<URI> emf_uris = packageProviders.get(packName);
+			if (emf_uris == null) {
+				emf_uris = new HashSet<URI>();
+				packageProviders.put(packName, emf_uris);
+			}
+			return emf_uris;
+		}
+
+		/**
+		 * Adds the qualified names of all packages contained in apiModel to
+		 * the set of qualified names of packages provided by the API model with emf_uri,
+		 * and adds emf_uri to the package providers of each package.
+		 * @param emf_uri
+		 * @param apiModel
+		 * @see #getPackageProviders(String)
+		 * @see #getProvidedPackages(URI)
+		 */
+		protected void addAllProvidedPackages(URI emf_uri, IModel apiModel) {
+			final Set<?> packages = apiModel.getElementsByType(UMLPackage.eINSTANCE.getPackage());
+			final Set<String> provided = getProvidedPackages(emf_uri);
+			for (Object pack : packages) {
+				assert pack instanceof Package;
+				String packName = JarToUML.qualifiedName((Package) pack);
+				provided.add(packName);
+				getPackageProviders(packName).add(emf_uri);
+			}
+		}
+
 		/**
 		 * Loads UML2 metamodel
 		 * @param monitor
@@ -399,7 +551,7 @@ public class CompatJob extends ProgressMonitorJob {
 			subTask(monitor, PlatformkitJavaResources.getString("loadingDepsModel")); //$NON-NLS-1$
 			setFile((IFile) getInput());
 			final IFile file = getFile();
-			Assert.isNotNull(file);
+			assert file != null;
 			final String fileLocation = "platform:/resource/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toString(); //$NON-NLS-1$ //$NON-NLS-2$
 			setDeps(modelLoader.loadDEPSModel(getUml2(), fileLocation));
 			setCrPath(file.getProjectRelativePath()
@@ -422,6 +574,7 @@ public class CompatJob extends ProgressMonitorJob {
 					PlatformkitJavaResources.getString("CompatJob.loadingApiModel"), 
 					apiName)); //$NON-NLS-1$
 			setIn(modelLoader.loadINModel(getUml2(), emf_uri));
+			addAllProvidedPackages(emf_uri, getIn());
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedApiModel")); //$NON-NLS-1$
 		}
 
@@ -532,6 +685,250 @@ public class CompatJob extends ProgressMonitorJob {
 		}
 
 		/**
+		 * Loads the Platformkit model for the set file and sets the {@link ConstraintSpace} from the model.
+		 * @param monitor
+		 * @throws CoreException 
+		 * @throws IOException 
+		 * @throws OntException 
+		 * @see #getFile()
+		 * @see #getConstraintSpace()
+		 */
+		public void loadPlatformkitModel(IProgressMonitor monitor) throws IOException, CoreException, OntException {
+			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.loadingPK")); //$NON-NLS-1$
+			final Resource res = getPkResource();
+			assert res != null;
+			ConstraintSpace space = null;
+			for (EObject object : res.getContents()) {
+				if (object instanceof ConstraintSpace) {
+					space = (ConstraintSpace) object;
+					break;
+				}
+			}
+			final IOntologies kb = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
+			if (space == null || !getOntFile().exists()) {
+				final String platformConstraintURI = createInitialOntology(kb, monitor);
+				space = createInitialConstraintSpace(platformConstraintURI);
+				res.getContents().add(space);
+				res.save(Collections.emptyMap());
+			}
+			space.setKnowledgeBase(kb);
+			space.init(false);
+			setConstraintSpace(space);
+			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedPK")); //$NON-NLS-1$
+		}
+
+		/**
+		 * Creates an initial platform dependency constraint ontology
+		 * @param kb the knowledge base object to use
+		 * @param monitor the progress monitor
+		 * @return the platform dependency constraint class URI
+		 * @throws OntException 
+		 * @throws IOException 
+		 */
+		protected String createInitialOntology(final IOntologies kb, final IProgressMonitor monitor)
+		throws OntException, IOException {
+			final IFile ontFile = getOntFile();
+			final IOntModel ont = kb.createNewOntology(IOntologies.DEPS_BASE_NS + ontFile.getName());
+			final IOntModel platform = kb.getLocalOntology(BaseOntologyProvider.PLATFORM_NS);
+			final IOntModel isa = kb.getLocalOntology(BaseOntologyProvider.ISA_NS);
+			final IOntModel java = kb.getLocalOntology(JavaOntologyProvider.JAVA_NS);
+			kb.attachTransitiveReasoner();
+			// Create JavaBytecode constraint class
+			final IOntClass jbcClass = isa.getOntClass(BaseOntologyProvider.JAVA_BYTECODE_URI);
+			assert jbcClass != null;
+			final String jbcConstraintURI = ont.getNsURI() + "#" + getInputName() + "JavaBytecode"; //$NON-NLS-1$ //$NON-NLS-2$
+			final IOntClass jbcConstraintClass = ont.createSomeRestriction(
+					jbcConstraintURI,
+					jbcClass,
+					null,
+					null);
+			// Create JavaVM constraint class
+			final IOntClass jvmClass = java.getOntClass(JavaOntologyProvider.JAVA_VM_URI);
+			assert jvmClass != null;
+			final String jvmConstraintURI = ont.getNsURI() + "#" + getInputName() + "JavaVM"; //$NON-NLS-1$ //$NON-NLS-2$
+			final List<IOntClass> jvmConstraintRange = new ArrayList<IOntClass>();
+			jvmConstraintRange.add(jbcConstraintClass);
+			final IOntClass jvmConstraintClass = ont.createSomeRestriction(
+					jvmConstraintURI,
+					jvmClass,
+					BaseOntologyProvider.IMPLEMENTS_INTERFACE_URI,
+					jvmConstraintRange.iterator());
+			// Create JRE constraint class
+			final IOntClass jreClass = java.getOntClass(JavaOntologyProvider.JRE_URI);
+			assert jreClass != null;
+			final String jreConstraintURI = ont.getNsURI() + "#" + getInputName() + "JRE"; //$NON-NLS-1$ //$NON-NLS-2$
+			final List<IOntClass> jreConstraintRange = new ArrayList<IOntClass>();
+			jreConstraintRange.add(jvmConstraintClass);
+			final IOntClass jreConstraintClass = ont.createSomeRestriction(
+					jreConstraintURI,
+					jreClass,
+					BaseOntologyProvider.PROVIDES_FEATURE_URI,
+					jreConstraintRange.iterator());
+			// Create Platform constraint class
+			final IOntClass platformClass = platform.getOntClass(BaseOntologyProvider.PLATFORM_URI);
+			assert platformClass != null;
+			final String platformConstraintURI = ont.getNsURI() + "#" + getInputName() + "Platform"; //$NON-NLS-1$ //$NON-NLS-2$
+			final List<IOntClass> platformConstraintRange = new ArrayList<IOntClass>();
+			platformConstraintRange.add(jreConstraintClass);
+			ont.createSomeRestriction(
+					platformConstraintURI,
+					platformClass,
+					BaseOntologyProvider.PROVIDES_FEATURE_URI,
+					platformConstraintRange.iterator());
+			kb.detachReasoner();
+			// Write ontology to file
+			final IFileOutputStream out = new IFileOutputStream(ontFile, new SubProgressMonitor(monitor, 0));
+			ont.save(out);
+			out.close();
+			return platformConstraintURI;
+		}
+
+		/**
+		 * Creates an initial {@link ConstraintSpace} object, given the platform dependency constraint class URI.
+		 * @param platformConstraintURI
+		 * @return the initial {@link ConstraintSpace}
+		 */
+		protected ConstraintSpace createInitialConstraintSpace(final String platformConstraintURI) {
+			final ConstraintSpace space = PlatformkitFactory.eINSTANCE.createConstraintSpace();
+			final IFile ontFile = getOntFile();
+			space.getOntology().add(ontFile.getName());
+			final ConstraintSet cs = PlatformkitFactory.eINSTANCE.createConstraintSet();
+			space.getConstraintSet().add(cs);
+			cs.setName(getInputName());
+			final Constraint c = PlatformkitFactory.eINSTANCE.createConstraint();
+			cs.getConstraint().add(c);
+			c.setOntClassURI(platformConstraintURI);
+			return space;
+		}
+
+		/**
+		 * Updates/creates the platform dependency ontology.
+		 * @param monitor
+		 * @throws IOException 
+		 * @throws OntException 
+		 * @throws CoreException 
+		 */
+		public void updateOntology(IProgressMonitor monitor) throws IOException, OntException, CoreException {
+			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.updatingOnt")); //$NON-NLS-1$
+			final ConstraintSpace space = getConstraintSpace();
+			final Constraint constraint = space.getConstraintSet().get(0).getConstraint().get(0);
+			final IOntologies kb = space.getKnowledgeBase();
+			final IOntModel ont = kb.loadSingleOnt(getOntFile().getContents());
+			// Create/update JavaBytecode constraint class
+			final IOntModel isa = kb.getLocalOntology(BaseOntologyProvider.ISA_NS);
+			final IOntClass jbcClass = isa.getOntClass(BaseOntologyProvider.JAVA_BYTECODE_URI);
+			assert jbcClass != null;
+			EAnnotation jbcAnn = findJavaBytecodeAnnotation();
+			assert jbcAnn != null;
+			final EMap<String,String> jbcDetails = jbcAnn.getDetails();
+			final String jbcConstraintURI = ont.getNsURI() + "#" + getInputName() + "JavaBytecode"; //$NON-NLS-1$ //$NON-NLS-2$
+			final IOntClass jbcConstraintClass = ont.createMinInclusiveRestriction(
+					jbcConstraintURI,
+					jbcClass,
+					JavaOntologyProvider.MAJOR_VERSION_NUMBER_URI,
+					IOntologyProvider.INTEGER_URI,
+					jbcDetails.get("majorBytecodeFormatVersion"));
+			if ("false".equals(jbcDetails.get("preverified"))) {
+				ont.createHasValueRestriction(
+						jbcConstraintURI,
+						jbcClass,
+						JavaOntologyProvider.PREVERIFIED_URI,
+						IOntologyProvider.BOOLEAN_URI,
+						jbcDetails.get("preverified"));
+			}
+			// Create/update JavaVM constraint class
+			final IOntModel java = kb.getLocalOntology(JavaOntologyProvider.JAVA_NS);
+			final IOntClass jvmClass = java.getOntClass(JavaOntologyProvider.JAVA_VM_URI);
+			assert jvmClass != null;
+			final String jvmConstraintURI = ont.getNsURI() + "#" + getInputName() + "JavaVM"; //$NON-NLS-1$ //$NON-NLS-2$
+			final List<IOntClass> jvmConstraintRange = new ArrayList<IOntClass>();
+			jvmConstraintRange.add(jbcConstraintClass);
+			kb.attachTransitiveReasoner();
+			final IOntClass jvmConstraintClass = ont.createSomeRestriction(
+					jvmConstraintURI,
+					jvmClass,
+					BaseOntologyProvider.IMPLEMENTS_INTERFACE_URI,
+					jvmConstraintRange.iterator());
+			// Create/update JRE constraint class
+			final List<Package> compatPacks = findCompatiblePackages(monitor);
+			final List<IOntClass> rangeClasses = new ArrayList<IOntClass>();
+			for (Package pack : compatPacks) {
+				String packName = JarToUML.qualifiedName((Package) pack);
+				for (URI emf_uri : getPackageProviders(packName)) {
+					String ont_uri = getOntURI(emf_uri);
+					IOntModel javaOnt = kb.getLocalOntology(ont_uri);
+					IOntClass javaLibrary = javaOnt.getOntClass(ont_uri + "#" + JavaOntologyProvider.toJavaLibaryName(packName));
+					assert javaLibrary != null;
+					rangeClasses.add(javaLibrary);
+				}
+			}
+			rangeClasses.add(jvmConstraintClass);
+			final IOntClass jreClass = java.getOntClass(JavaOntologyProvider.JRE_URI);
+			final String jreConstraintURI = ont.getNsURI() + "#" + getInputName() + "JRE";
+			final IOntClass jreConstraint = ont.createSomeRestriction(
+					jreConstraintURI,
+					jreClass,
+					BaseOntologyProvider.PROVIDES_FEATURE_URI, 
+					rangeClasses.iterator());
+			// Update Platform constraint class
+			final IOntModel platform = kb.getLocalOntology(BaseOntologyProvider.PLATFORM_NS);
+			final IOntClass platformClass = platform.getOntClass(BaseOntologyProvider.PLATFORM_URI);
+			final List<IOntClass> jreConstraintList = new ArrayList<IOntClass>();
+			jreConstraintList.add(jreConstraint);
+			ont.createSomeRestriction(
+					constraint.getOntClassURI(),
+					platformClass,
+					BaseOntologyProvider.PROVIDES_FEATURE_URI, 
+					jreConstraintList.iterator());
+			kb.detachReasoner();
+			IFileOutputStream out = new IFileOutputStream(getOntFile(), new SubProgressMonitor(monitor, 0));
+			ont.save(out);
+			out.close();
+			worked(monitor, PlatformkitJavaResources.getString("CompatJob.updatedOnt")); //$NON-NLS-1$
+		}
+
+		/**
+		 * @param monitor
+		 * @return all classifier-containing packages in the dependency model that are compatible according to the compatibility report
+		 */
+		protected List<Package> findCompatiblePackages(IProgressMonitor monitor) {
+			final List<Package> result = new ArrayList<Package>();
+			final IModel deps = getDeps();
+			final IModel cr = getReport();
+			final Model crRoot = (Model) cr.getElementsByType(UMLPackage.eINSTANCE.getModel()).iterator().next();
+			final FindContainedClassifierSwitch findClassifier = new FindContainedClassifierSwitch();
+			for (Object pack : deps.getElementsByType(UMLPackage.eINSTANCE.getPackage())) {
+				Package umlPack = (Package) pack;
+				for (PackageableElement element : umlPack.getPackagedElements()) {
+					if (element instanceof Classifier) {
+						//package contains classifiers
+						String javaName = JarToUML.qualifiedName(umlPack).replace("::", ".");
+						Package crPack = findClassifier.findPackage(crRoot, javaName, false);
+						if (crPack == null ||
+								(crPack.getAppliedStereotype("CompatibilityReport::Incompatible") == null
+								&& crPack.getAppliedStereotype("CompatibilityReport::Missing") == null)) {
+							//compatibility report does not contain <<Incompatible>> or <<Missing>> version of this package
+							//=> one of the API models provides this package
+							result.add(umlPack);
+						}
+						break;
+					}
+				}
+				checkCanceled(monitor);
+			}
+			return result;
+		}
+
+		/**
+		 * @return the {@link EAnnotation} that contains the required Java bytecode format information
+		 */
+		protected EAnnotation findJavaBytecodeAnnotation() {
+			final IModel deps = getDeps();
+			final Model depsRoot = (Model) deps.getElementsByType(UMLPackage.eINSTANCE.getModel()).iterator().next();
+			return depsRoot.getEAnnotation(JarToUML.EANNOTATION);
+		}
+
+		/**
 		 * @return The file that contains the report model
 		 */
 		public IFile getReportFile() {
@@ -563,6 +960,7 @@ public class CompatJob extends ProgressMonitorJob {
 	private IFile outputFile;
 	private String apiList;
 	private String inputName;
+	private Map<URI, String> ontURIs;
 
 	protected IPreferenceStore store = PlatformkitEditorPlugin.getPlugin().getPreferenceStore();
 	protected ModelLoadingStrategy modelLoader = null;
@@ -601,16 +999,16 @@ public class CompatJob extends ProgressMonitorJob {
 		boolean compatible = true;
 		for (URI emf_uri : emf_uris) {
 			//
-			// Step 4+n
+			// Step n+1
 			//
 			String apiName = labels.getText(emf_uri);
 			runner.loadAPIModel(monitor, apiName, emf_uri);
 			//
-			// Step 5+n
+			// Step n+2
 			//
 			boolean thisCompatible = runner.run(monitor);
 			//
-			// Step 6+n
+			// Step n+3
 			//
 			compatible &= thisCompatible;
 			if (!thisCompatible) {
@@ -632,7 +1030,7 @@ public class CompatJob extends ProgressMonitorJob {
 			}
 		}
 		//
-		// Step 7
+		// Step 4
 		//
 		setApiList(apiList.toString());
 		if (!compatible) {
@@ -641,7 +1039,7 @@ public class CompatJob extends ProgressMonitorJob {
 			worked(monitor, null);
 		}
 		//
-		// Step 8
+		// Step 5
 		//
 		if (!compatible) {
 			runner.saveReport(monitor);
@@ -649,6 +1047,17 @@ public class CompatJob extends ProgressMonitorJob {
 		} else {
 			worked(monitor, null);
 		}
+		//
+		// Step 6
+		//
+		runner.loadPlatformkitModel(monitor);
+		//
+		// Step 7
+		//
+		runner.updateOntology(monitor);
+		//
+		// Step 8
+		//
 		worked(monitor, PlatformkitJavaResources.getString("CompatJob.finished")); //$NON-NLS-1$
 	}
 
@@ -769,6 +1178,36 @@ public class CompatJob extends ProgressMonitorJob {
 	 */
 	public String getInputName() {
 		return inputName;
+	}
+
+	/**
+	 * @param emf_uri
+	 * @return The ontology namespace URI for the platform API model with emf_uri
+	 * @throws IOException
+	 */
+	public String getOntURI(URI emf_uri) throws IOException {
+		if (ontURIs == null) {
+			ontURIs = new HashMap<URI, String>();
+			final IExtensionRegistry registry = Platform.getExtensionRegistry();
+			if (registry == null) {
+				throw new IOException(PlatformkitJavaResources.getString("registryNotFound")); //$NON-NLS-1$
+			}
+			final IExtensionPoint point = registry.getExtensionPoint(PlatformkitJavaPlugin.PLATFORMAPI_EXT_POINT);
+			final IExtension[] extensions = point.getExtensions();
+			for (int i = 0 ; i < extensions.length ; i++) {
+				IConfigurationElement[] elements = extensions[i].getConfigurationElements();
+				for (int j = 0 ; j < elements.length ; j++) {
+					try {
+						URI this_emf_uri = URI.createURI(elements[j].getAttribute("emf_uri")); //$NON-NLS-1$
+						String this_ont_uri = elements[j].getAttribute("ont_uri"); //$NON-NLS-1$
+						ontURIs.put(this_emf_uri, this_ont_uri);
+					} catch (IllegalArgumentException e) {
+						throw new IOException(e.getLocalizedMessage());
+					}
+				}
+			}
+		}
+		return ontURIs.get(emf_uri);
 	}
 
 }

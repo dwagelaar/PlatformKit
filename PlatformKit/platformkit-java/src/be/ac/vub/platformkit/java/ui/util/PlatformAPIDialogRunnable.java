@@ -93,7 +93,7 @@ public class PlatformAPIDialogRunnable implements Runnable {
 	protected PlatformAPISelectionDialog createPlatformAPIDialog(Shell parentShell) throws IOException {
 		final IExtensionRegistry registry = Platform.getExtensionRegistry();
 		if (registry == null) {
-			throw new IOException(PlatformkitJavaResources.getString("PlatformAPIDialogRunnable.registryNotFound")); //$NON-NLS-1$
+			throw new IOException(PlatformkitJavaResources.getString("registryNotFound")); //$NON-NLS-1$
 		}
 		final List<TreeNode> content = new ArrayList<TreeNode>();
 		final Map<Object, String> labels = new HashMap<Object, String>();

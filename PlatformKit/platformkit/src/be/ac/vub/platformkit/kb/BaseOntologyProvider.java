@@ -27,6 +27,16 @@ import be.ac.vub.platformkit.logging.PlatformkitLogger;
  */
 public class BaseOntologyProvider implements IOntologyProvider {
 
+	public static final String PLATFORM_NS = "http://soft.vub.ac.be/platformkit/2010/1/platform.owl";
+	public static final String ISA_NS = "http://soft.vub.ac.be/platformkit/2010/1/isa.owl";
+
+	public static final String PLATFORM_URI = PLATFORM_NS + "#Platform";
+	public static final String FEATURE_URI = PLATFORM_NS + "#Feature";
+	public static final String JAVA_BYTECODE_URI = ISA_NS + "#JavaBytecode";
+
+	public static final String PROVIDES_FEATURE_URI = PLATFORM_NS + "#providesFeature";
+	public static final String IMPLEMENTS_INTERFACE_URI = PLATFORM_NS + "#implementsInterface";
+
 	private static final String[] ontologies = new String[] {
 		"platformkit_2010_1/platform.owl",
 		"platformkit_2010_1/io.owl",
