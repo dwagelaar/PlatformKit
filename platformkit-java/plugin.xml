@@ -118,86 +118,103 @@
         point="be.ac.vub.platformkit.java.apimodel">
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/jdk-1_1-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/jdk-1_1.owl"
            category="%apiModel.category"
            name="%apiModel.name">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_2-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/j2se-1_2.owl"
            category="%apiModel.category.0"
            name="%apiModel.name.0">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_3-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/j2se-1_3.owl"
            category="%apiModel.category.1"
            name="%apiModel.name.1">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-1_4-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/j2se-1_4.owl"
            category="%apiModel.category.2"
            name="%apiModel.name.2">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2se-5_0-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/j2se-5_0.owl"
            category="%apiModel.category.3"
            name="%apiModel.name.3">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/java-se-6-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/java-se-6.owl"
            category="%apiModel.category.4"
            name="%apiModel.name.4">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/personaljava-1_1-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/personaljava-1_1.owl"
            category="%apiModel.category.5"
            name="%apiModel.name.5">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2me-pp-1_0-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_0.owl"
            category="%apiModel.category.6"
            name="%apiModel.name.6">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2me-pp-1_1-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/j2me-pp-1_1.owl"
            category="%apiModel.category.7"
            name="%apiModel.name.7">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2me-midp-1_0-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/j2me-midp-1_0.owl"
            category="%apiModel.category.8"
            name="%apiModel.name.8">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/jre/j2me-midp-2_0-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/j2me-midp-2_0.owl"
            category="%apiModel.category.9"
            name="%apiModel.name.9">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_0-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/swt-3_0.owl"
            category="%apiModel.category.10"
            name="%apiModel.name.10">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_1-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/swt-3_1.owl"
            category="%apiModel.category.11"
            name="%apiModel.name.11">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_2-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/swt-3_2.owl"
            category="%apiModel.category.12"
            name="%apiModel.name.12">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_3-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/swt-3_3.owl"
            category="%apiModel.category.13"
            name="%apiModel.name.13">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_4-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/swt-3_4.owl"
            category="%apiModel.category.14"
            name="%apiModel.name.14">
      </apiModel>
      <apiModel
            emf_uri="platform:/plugin/be.ac.vub.platformkit.java/model/swt/swt-3_5-api.uml"
+           ont_uri="http://soft.vub.ac.be/platformkit/2010/1/swt-3_5.owl"
            category="%apiModel.category.15"
            name="%apiModel.name.15">
      </apiModel>

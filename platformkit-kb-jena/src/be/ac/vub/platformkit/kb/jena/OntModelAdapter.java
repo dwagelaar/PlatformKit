@@ -10,14 +10,23 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.kb.jena;
 
+import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
+import be.ac.vub.platformkit.kb.util.OntException;
 
+import com.hp.hpl.jena.ontology.HasValueRestriction;
+import com.hp.hpl.jena.ontology.IntersectionClass;
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFList;
+import com.hp.hpl.jena.rdf.model.RDFWriter;
+import com.hp.hpl.jena.util.FileUtils;
 
 /**
  * {@link IOntModel} adapter for {@link OntModel}. 
@@ -106,6 +115,68 @@ public class OntModelAdapter implements IOntModel {
 	public IOntClass createIntersectionClass(String uri, Iterator<IOntClass> members) {
 		final RDFList constraints = getModel().createList(new OntClassIterator(members));
 		return new OntClassAdapter(getModel().createIntersectionClass(uri, constraints));
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntModel#save(java.io.OutputStream)
+	 */
+	public void save(OutputStream out) throws OntException {
+		final OntModel model = getModel();
+		final String ns = getNsURI();
+		final RDFWriter writer = model.getWriter(FileUtils.langXML);
+		JenaOntologies.prepareWriter(writer, ns);
+		writer.write(model, out, ns);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntModel#getNsURI()
+	 */
+	public String getNsURI() {
+		final String ns = getModel().getNsPrefixURI("");
+		return ns.substring(0, ns.length() - 1);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntModel#createSomeRestriction(java.lang.String, be.ac.vub.platformkit.kb.IOntClass, java.lang.String, java.util.Iterator)
+	 */
+	public IOntClass createSomeRestriction(String uri, IOntClass superClass, 
+			String propertyURI,	Iterator<IOntClass> range) throws OntException {
+		//TODO update existing property restrictions
+		final OntClass restrClass = getModel().createClass(uri);
+		if (propertyURI != null && range != null) {
+			final Property property = getModel().getProperty(propertyURI);
+			final List<OntClass> restrList = new ArrayList<OntClass>();
+			while (range.hasNext()) {
+				HasValueRestriction restr = getModel().createHasValueRestriction(
+						null, property, ((OntClassAdapter) range.next()).getModel());
+				restrList.add(restr);
+			}
+			final RDFList restrMembers = getModel().createList(restrList.iterator());
+			final IntersectionClass restrIntersection = getModel().createIntersectionClass(null, restrMembers);
+			restrClass.addEquivalentClass(restrIntersection);
+		}
+		if (superClass != null) {
+			assert superClass instanceof OntClassAdapter;
+			restrClass.addSuperClass(((OntClassAdapter) superClass).getModel());
+		}
+		return new OntClassAdapter(restrClass);
+	}
+
+	public IOntClass createMinInclusiveRestriction(String uri,
+			IOntClass superClass, String propertyURI, String datatypeURI,
+			String value) throws OntException {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
+	}
+
+	public IOntClass createHasValueRestriction(String uri,
+			IOntClass superClass, String propertyURI, String datatypeURI,
+			String value) throws OntException {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -8,6 +8,7 @@ Bundle-Activator: be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin$Imp
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: be.ac.vub.platformkit.editor.preferences,
+ be.ac.vub.platformkit.io,
  be.ac.vub.platformkit.jobs,
  be.ac.vub.platformkit.presentation,
  be.ac.vub.platformkit.presentation.jobs,

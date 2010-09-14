@@ -115,4 +115,23 @@ public abstract class AbstractOntologies implements IOntologies {
 		return reasonerUrl;
 	}
 
+	/**
+	 * Adds import declarations to ont for all registered ontology providers.
+	 * @param ont
+	 * @throws OntException
+	 */
+	protected void addAllImports(IOntModel ont) throws OntException {
+		for (IOntModel localOnt : getLocalOntologies()) {
+			addImports(ont, localOnt);
+		}
+	}
+	
+	/**
+	 * Adds an import declaration to ont for importedOnt.
+	 * @param ont
+	 * @param importedOnt
+	 * @throws OntException
+	 */
+	protected abstract void addImports(IOntModel ont, IOntModel importedOnt) throws OntException;
+
 }

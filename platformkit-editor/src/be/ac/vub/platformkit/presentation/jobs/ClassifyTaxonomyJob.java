@@ -10,8 +10,6 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.presentation.jobs;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -29,6 +27,7 @@ import org.eclipse.emf.common.util.URI;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
 import be.ac.vub.platformkit.editor.preferences.PreferenceInitializer;
+import be.ac.vub.platformkit.io.IFileOutputStream;
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.util.OntException;
@@ -41,8 +40,6 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
-
-	private static final int OUTPUTSIZE = 512*1024; // 512 KB
 
 	/**
 	 * Creates a new {@link ClassifyTaxonomyJob}.
@@ -205,15 +202,8 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 		PlatformkitLogger.logger.info(String.format(
 				PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.writingOntologyTo"), 
 				dest.getLocation())); //$NON-NLS-1$
-		ByteArrayOutputStream output = new ByteArrayOutputStream(OUTPUTSIZE);
+		IFileOutputStream output = new IFileOutputStream(dest);
 		ont.saveOntology(output);
-		if (dest.exists()) {
-			dest.setContents(new ByteArrayInputStream(output.toByteArray()), 
-					true, true, null);
-		} else {
-			dest.create(new ByteArrayInputStream(output.toByteArray()), 
-					true, null);
-		}
 		output.close();
 		PlatformkitLogger.logger.info(String.format(
 				PlatformkitEditorPlugin.getPlugin().getString("ClassifyTaxonomyJob.writtenOntologyTo"), 

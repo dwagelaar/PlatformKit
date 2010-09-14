@@ -13,6 +13,7 @@ package be.ac.vub.platformkit.java;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.StringTokenizer;
 
 import org.osgi.framework.Bundle;
 
@@ -25,6 +26,15 @@ import be.ac.vub.platformkit.logging.PlatformkitLogger;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class JavaOntologyProvider implements IOntologyProvider {
+
+	public static final String JAVA_NS = "http://soft.vub.ac.be/platformkit/2010/1/java.owl";
+
+	public static final String JRE_URI = JAVA_NS + "#JRE";
+	public static final String JAVA_CLASS_LIBRARY_URI = JAVA_NS + "#JavaClassLibrary";
+	public static final String JAVA_VM_URI = JAVA_NS + "#JavaVM";
+
+	public static final String MAJOR_VERSION_NUMBER_URI = JAVA_NS + "#majorVersionNumber";
+	public static final String PREVERIFIED_URI = JAVA_NS + "#preverified";
 
 	private static final String[] ontologies = new String[] {
 		"platformkit_2010_1/java.owl",
@@ -54,6 +64,23 @@ public class JavaOntologyProvider implements IOntologyProvider {
 	protected static Bundle bundle = BundleSwitch.getBundle(JavaOntologyProvider.class);
 
 	public static JavaOntologyProvider INSTANCE = new JavaOntologyProvider();
+
+	/**
+	 * Translates the qualified UML package name into its JavaLibrary ontology class representation.
+	 * @param umlQualifiedPackageName the qualified UML package name
+	 * @return the JavaLibrary ontology class that represents the UML package
+	 */
+	public static String toJavaLibaryName(String umlQualifiedPackageName) {
+		StringTokenizer st = new StringTokenizer(umlQualifiedPackageName, "::"); //$NON-NLS-1$
+		StringBuffer sb = new StringBuffer();
+		while (st.hasMoreTokens()) {
+			String name = st.nextToken();
+			sb.append(name.substring(0, 1).toUpperCase());
+			sb.append(name.substring(1));
+		}
+		sb.append("ClassLibrary"); //$NON-NLS-1$
+		return sb.toString();
+	}
 
 	public InputStream[] getOntologies() throws IOException {
 		InputStream[] streams = new InputStream[ontologies.length];

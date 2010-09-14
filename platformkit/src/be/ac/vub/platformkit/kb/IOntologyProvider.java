@@ -19,6 +19,13 @@ import java.io.InputStream;
  */
 public interface IOntologyProvider {
 
+	public static final String XSD_NS = "http://www.w3.org/2001/XMLSchema";
+
+	public static final String INTEGER_URI = XSD_NS + "#integer";
+	public static final String BOOLEAN_URI = XSD_NS + "#boolean";
+	public static final String FLOAT_URI = XSD_NS + "#float";
+	public static final String STRING_URI = XSD_NS + "#string";
+
 	/**
 	 * @return An array of {@link InputStream} objects that provide the ontology's contents.
 	 * @throws IOException if one or more streams to ontologies could not be opened.

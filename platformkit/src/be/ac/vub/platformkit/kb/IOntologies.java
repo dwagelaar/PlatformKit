@@ -13,6 +13,7 @@ package be.ac.vub.platformkit.kb;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collection;
 import java.util.List;
 
 import be.ac.vub.platformkit.IOntModelChangeListener;
@@ -25,7 +26,9 @@ import be.ac.vub.platformkit.kb.util.OntException;
 public interface IOntologies {
 
 	public static final String ONTOLOGY_EXT_POINT = "be.ac.vub.platformkit.ontology"; //$NON-NLS-1$
-	public static final String LOCAL_INF_NS = "http://soft.vub.ac.be/platformkit/2010/1/inferred.owl"; //$NON-NLS-1$
+	public static final String BASE_NS = "http://soft.vub.ac.be/platformkit/2010/1/"; //$NON-NLS-1$
+	public static final String DEPS_BASE_NS = BASE_NS + "dependencies/"; //$NON-NLS-1$
+	public static final String LOCAL_INF_NS = BASE_NS + "inferred.owl"; //$NON-NLS-1$
 
 	/**
 	 * Adds listener for changes to {@link #getOntModel()}.
@@ -196,5 +199,35 @@ public interface IOntologies {
 	 */
 	public abstract void buildHierarchyMap(IOntClass forClass)
 	throws OntException;
+
+	/**
+	 * Creates a new default Platformkit ontology with the given url.
+	 * @param url
+	 * @return the new ontology
+	 * @throws OntException
+	 */
+	public abstract IOntModel createNewOntology(String url)
+	throws OntException;
+
+	/**
+	 * @return all local ontologies
+	 */
+	public Collection<IOntModel> getLocalOntologies();
+
+	/**
+	 * Retrieves the local ontology registered under uri.
+	 * @param uri
+	 * @return the local ontology, or <code>null</code>.
+	 * @throws OntException
+	 */
+	public IOntModel getLocalOntology(String uri);
+
+	/**
+	 * Loads a single ontology without adding it to the central knowledgebase.
+	 * @param in
+	 * @return the loaded ontology
+	 * @throws OntException
+	 */
+	public IOntModel loadSingleOnt(InputStream in) throws OntException;
 
 }
