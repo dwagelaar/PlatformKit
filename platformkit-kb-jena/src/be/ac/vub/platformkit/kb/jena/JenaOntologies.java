@@ -319,9 +319,9 @@ public class JenaOntologies extends AbstractOntologies {
 	 */
 	public void saveOntology(OutputStream out) {
 		final OntModel model = getOntology().getModel();
-		final RDFWriter writer = model.getWriter(FileUtils.langXML);
+		final RDFWriter writer = model.getWriter(FileUtils.langXMLAbbrev);
 		prepareWriter(writer, LOCAL_INF_NS);
-		writer.write(model, out, LOCAL_INF_NS);
+		writer.write(model.getBaseModel(), out, LOCAL_INF_NS);
 	}
 
 	/**
