@@ -39,9 +39,7 @@ import com.hp.hpl.jena.ontology.OntDocumentManager;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
 import com.hp.hpl.jena.ontology.Ontology;
-import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.ModelMaker;
 import com.hp.hpl.jena.rdf.model.RDFWriter;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
@@ -539,11 +537,11 @@ public class JenaOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#createNewOntology(java.lang.String)
 	 */
 	public IOntModel createNewOntology(String url) throws OntException {
-		final ModelMaker maker = OntModelSpec.OWL_DL_MEM.getBaseModelMaker();
-		final Model base = maker.createModel(url);
-		final IOntModel ont = new OntModelAdapter(ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, base));
-		addAllImports(ont);
-		return ont;
+		final OntModel ont = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM, null);
+		ont.setNsPrefix("", url + "#"); //$NON-NLS-1$
+		final IOntModel iont = new OntModelAdapter(ont);
+		addAllImports(iont);
+		return iont;
 	}
 
 	/*
@@ -577,7 +575,7 @@ public class JenaOntologies extends AbstractOntologies {
 
 	/*
 	 * (non-Javadoc)
-	 * @see be.ac.vub.platformkit.kb.AbstractOntologies#addImports(be.ac.vub.platformkit.kb.IOntModel, java.io.InputStream)
+	 * @see be.ac.vub.platformkit.kb.AbstractOntologies#addImports(be.ac.vub.platformkit.kb.IOntModel, be.ac.vub.platformkit.kb.IOntModel)
 	 */
 	@Override
 	protected void addImports(IOntModel ont, IOntModel importedOnt) throws OntException {

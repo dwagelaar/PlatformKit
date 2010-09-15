@@ -203,12 +203,6 @@ public class OWLOntologyAdapter implements IOntModel {
 						restrictionSet.addAll(getOtherRestrictions(ecAxiom, propURI));
 						restrictionSet.remove(restrClass);
 					}
-//					final OWLEquivalentClassesAxiom existingEcAxiom = getExistingEquivalentClassesAxiom(restrClass, propURI);
-//					if (existingEcAxiom != null) {
-//						changes.add(new RemoveAxiom(getModel(), existingEcAxiom));
-//						restrictionSet.addAll(getOtherRestrictions(existingEcAxiom, propURI));
-//						restrictionSet.remove(restrClass);
-//					}
 					//add new equivalence class axiom
 					final OWLDescription restrIntersection = factory.getOWLObjectIntersectionOf(restrictionSet);
 					final OWLAxiom ecAxiom = factory.getOWLEquivalentClassesAxiom(restrClass, restrIntersection);
@@ -244,7 +238,7 @@ public class OWLOntologyAdapter implements IOntModel {
 			final List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
 			final URI restrClassURI = new URI(uri);
 			final OWLClass restrClass = factory.getOWLClass(restrClassURI);
-			if (propertyURI != null && datatypeURI != null) {
+			if (propertyURI != null && datatypeURI != null && value != null) {
 				final URI propURI = new URI(propertyURI);
 				final OWLDataProperty property = factory.getOWLDataProperty(propURI);
 				final Set<OWLDescription> restrictionSet = new HashSet<OWLDescription>();
@@ -301,7 +295,7 @@ public class OWLOntologyAdapter implements IOntModel {
 			final List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
 			final URI restrClassURI = new URI(uri);
 			final OWLClass restrClass = factory.getOWLClass(restrClassURI);
-			if (propertyURI != null && datatypeURI != null) {
+			if (propertyURI != null && datatypeURI != null && value != null) {
 				final URI propURI = new URI(propertyURI);
 				final OWLDataProperty property = factory.getOWLDataProperty(propURI);
 				final Set<OWLDescription> restrictionSet = new HashSet<OWLDescription>();
@@ -343,7 +337,7 @@ public class OWLOntologyAdapter implements IOntModel {
 	}
 
 	/**
-	 * @param uri
+	 * @param restrClass
 	 * @param propertyURI
 	 * @return any existing property restriction range classes on the property with propertyURI for the ontology class with the given uri
 	 */
@@ -369,7 +363,7 @@ public class OWLOntologyAdapter implements IOntModel {
 			} else if (c instanceof OWLObjectSomeRestriction) {
 				OWLObjectSomeRestriction restr = (OWLObjectSomeRestriction) c;
 				if (restr.getProperty().getNamedProperty().getURI().equals(propertyURI)) {
-					rangeSet.add(((OWLObjectSomeRestriction) c).getFiller());
+					rangeSet.add(restr.getFiller());
 				}
 			}
 		}
