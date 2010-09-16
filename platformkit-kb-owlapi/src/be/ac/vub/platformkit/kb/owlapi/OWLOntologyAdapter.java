@@ -177,13 +177,14 @@ public class OWLOntologyAdapter implements IOntModel {
 			final OWLClass restrClass = factory.getOWLClass(restrClassURI);
 			if (propertyURI != null && range != null) {
 				final URI propURI = new URI(propertyURI);
-				final Set<OWLDescription> existingRanges = getExistingPropertyRestrictionRanges(restrClass, propURI);
+				final Set<OWLDescription> existingRanges = getExistingPropertyRestrictionRanges(
+						restrClass, propURI);
 				final OWLObjectProperty property = factory.getOWLObjectProperty(propURI);
 				final Set<OWLDescription> restrictionSet = new HashSet<OWLDescription>();
 				//create property restrictions on given ranges
 				while (range.hasNext()) {
 					OWLDescription rangeClass = ((OWLClassAdapter) range.next()).getModel();
-					if (!mergeClassIntoRange(rangeClass, existingRanges)) {
+					if (!mergeClassIntoRange(rangeClass, existingRanges, false)) {
 						//append current range
 						OWLDescription restriction = factory.getOWLObjectSomeRestriction(
 								property, rangeClass);
@@ -359,7 +360,12 @@ public class OWLOntologyAdapter implements IOntModel {
 		for (OWLDescription c : classes) {
 			if (c instanceof OWLObjectIntersectionOf) {
 				OWLObjectIntersectionOf inters = (OWLObjectIntersectionOf) c;
-				rangeSet.addAll(getExistingPropertyRestrictionRangesFrom(inters.getOperands(), propertyURI));
+				rangeSet.addAll(getExistingPropertyRestrictionRangesFrom(
+						inters.getOperands(), propertyURI));
+			} else if (c instanceof OWLObjectUnionOf) {
+				OWLObjectUnionOf union = (OWLObjectUnionOf) c;
+				rangeSet.addAll(getExistingPropertyRestrictionRangesFrom(
+						union.getOperands(), propertyURI));
 			} else if (c instanceof OWLObjectSomeRestriction) {
 				OWLObjectSomeRestriction restr = (OWLObjectSomeRestriction) c;
 				if (restr.getProperty().getNamedProperty().getURI().equals(propertyURI)) {
@@ -439,11 +445,12 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * Requires (transitive) reasoner.
 	 * @param owlClass the OWL class description to merge
 	 * @param range the range of OWL class descriptions into which owlClass should be merged
+	 * @param rangeIsUnion if <code>true</code>, range is considered to be joined in a union instead of an intersection
 	 * @return <code>false</code> iff none of the above rules apply, and owlClass should just be added to the range 
 	 * @throws OWLReasonerException 
 	 */
 	protected boolean mergeClassIntoRange(final OWLDescription owlClass, 
-			final Set<OWLDescription> range) throws OWLReasonerException {
+			final Set<OWLDescription> range, boolean rangeIsUnion) throws OWLReasonerException {
 
 		final OWLAPIOntologies ontologies = getOntologies();
 		final OWLOntologyManager mgr = ontologies.getMgr();
@@ -453,7 +460,8 @@ public class OWLOntologyAdapter implements IOntModel {
 		assert reasoner != null;
 
 		boolean merged = false;
-		Set<OWLDescription> newEntries = new HashSet<OWLDescription>();
+		final Set<OWLDescription> newEntries = new HashSet<OWLDescription>();
+		final Set<OWLDescription> unionEntries = new HashSet<OWLDescription>();
 
 		//find least specific superclass in range
 		for (final Iterator<OWLDescription> oc = range.iterator(); oc.hasNext();) {
@@ -466,21 +474,35 @@ public class OWLOntologyAdapter implements IOntModel {
 				oc.remove();
 				newEntries.add(owlClass);
 				merged = true;
-			} else if (owlClassName.equals(getLocalNameOf(otherClass))) {
-				//replace range entry by union of range entry and owlClass
-				oc.remove();
-				newEntries.add(factory.getOWLObjectUnionOf(owlClass, otherClass));
-				merged = true;
 			} else if (otherClass instanceof OWLObjectUnionOf) {
 				//merge into class union
 				Set<OWLDescription> ops = new HashSet<OWLDescription>(
 						((OWLObjectUnionOf) otherClass).getOperands());
-				if (mergeClassIntoRange(owlClass, ops)) {
-					//replace by new union
+				if (mergeClassIntoRange(owlClass, ops, true)) {
+					//replace by new union if ops.size() > 1
 					oc.remove();
-					newEntries.add(factory.getOWLObjectUnionOf(ops));
+					if (ops.size() > 1) {
+						newEntries.add(factory.getOWLObjectUnionOf(ops));
+					} else {
+						newEntries.addAll(ops);
+					}
 					merged = true;
 				}
+			} else if (owlClassName.equals(getLocalNameOf(otherClass))) {
+				//replace range entry by union of range entry and owlClass
+				oc.remove();
+				unionEntries.add(otherClass);
+				unionEntries.add(owlClass);
+				merged = true;
+			}
+		}
+
+		//process union entries, depending on whether range already represents a union or not
+		if (!unionEntries.isEmpty()) {
+			if (rangeIsUnion) {
+				newEntries.addAll(unionEntries);
+			} else {
+				newEntries.add(factory.getOWLObjectUnionOf(unionEntries));
 			}
 		}
 
