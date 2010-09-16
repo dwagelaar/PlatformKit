@@ -21,6 +21,7 @@ import be.ac.vub.platformkit.kb.util.OntException;
 
 import com.hp.hpl.jena.datatypes.RDFDatatype;
 import com.hp.hpl.jena.datatypes.TypeMapper;
+import com.hp.hpl.jena.ontology.AllValuesFromRestriction;
 import com.hp.hpl.jena.ontology.BooleanClassDescription;
 import com.hp.hpl.jena.ontology.ComplementClass;
 import com.hp.hpl.jena.ontology.HasValueRestriction;
@@ -37,6 +38,8 @@ import com.hp.hpl.jena.rdf.model.RDFList;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.RDFWriter;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.util.FileUtils;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -78,14 +81,27 @@ public class OntModelAdapter implements IOntModel {
 	 */
 	public static final void removeNode(RDFNode node, Set<Resource> excluding) {
 		BooleanClassDescription bcd = null;
+		SomeValuesFromRestriction sr = null;
+		AllValuesFromRestriction ar = null;
+		HasValueRestriction hr = null;
 		OntClass c =  null;
 		Resource r = null;
+		RDFNode rop = null;
 		if (node.canAs(IntersectionClass.class)) {
 			r = c = bcd = node.as(IntersectionClass.class);
 		} else if (node.canAs(UnionClass.class)) {
 			r = c = bcd = node.as(UnionClass.class);
 		} else if (node.canAs(ComplementClass.class)) {
 			r = c = bcd = node.as(ComplementClass.class);
+		} else if (node.canAs(SomeValuesFromRestriction.class)) {
+			r = c = sr = node.as(SomeValuesFromRestriction.class);
+			rop = sr.getSomeValuesFrom();
+		} else if (node.canAs(AllValuesFromRestriction.class)) {
+			r = c = ar = node.as(AllValuesFromRestriction.class);
+			rop = ar.getAllValuesFrom();
+		} else if (node.canAs(HasValueRestriction.class)) {
+			r = c = hr = node.as(HasValueRestriction.class);
+			rop = hr.getHasValue();
 		} else if (node.canAs(OntClass.class)) {
 			r = c = node.as(OntClass.class);
 		} else if (node.canAs(Resource.class)) {
@@ -103,7 +119,17 @@ public class OntModelAdapter implements IOntModel {
 				}
 			}
 		}
+		if (rop != null && rop.isAnon()) {
+			removeNode(rop, excluding);
+		}
 		if (r != null) {
+			for (StmtIterator stmts = r.listProperties(); stmts.hasNext();) {
+				Statement stmt = stmts.next();
+				RDFNode ob = stmt.getObject();
+				if (ob != null && ob.isAnon() && !excluding.contains(ob)) {
+					removeNode(ob, excluding);
+				}
+			}
 			r.removeProperties();
 		}
 		if (c != null) {
@@ -230,7 +256,7 @@ public class OntModelAdapter implements IOntModel {
 			//create property restrictions on given ranges
 			while (range.hasNext()) {
 				OntClass rangeClass = ((OntClassAdapter) range.next()).getModel();
-				if (!mergeClassIntoRange(rangeClass, existingRanges)) {
+				if (!mergeClassIntoRange(rangeClass, existingRanges, false)) {
 					//append current range
 					SomeValuesFromRestriction restr = model.createSomeValuesFromRestriction(
 							null, property, rangeClass);
@@ -372,6 +398,9 @@ public class OntModelAdapter implements IOntModel {
 			if (c.canAs(IntersectionClass.class)) {
 				IntersectionClass inters = c.as(IntersectionClass.class);
 				rangeSet.addAll(getExistingPropertyRestrictionRangesFrom(inters.listOperands(), propertyURI));
+			} else if (c.canAs(UnionClass.class)) {
+				UnionClass union = c.as(UnionClass.class);
+				rangeSet.addAll(getExistingPropertyRestrictionRangesFrom(union.listOperands(), propertyURI));
 			} else if (c.canAs(SomeValuesFromRestriction.class)) {
 				SomeValuesFromRestriction restr = c.as(SomeValuesFromRestriction.class);
 				if (restr.getOnProperty().getURI().equals(propertyURI)) {
@@ -440,16 +469,18 @@ public class OntModelAdapter implements IOntModel {
 	 * Requires (transitive) reasoner.
 	 * @param owlClass the OWL class description to merge
 	 * @param range the range of OWL class descriptions into which owlClass should be merged
+	 * @param rangeIsUnion if <code>true</code>, range is considered to be joined in a union instead of an intersection
 	 * @return <code>false</code> iff none of the above rules apply, and owlClass should just be added to the range 
 	 */
 	protected boolean mergeClassIntoRange(final OntClass owlClass, 
-			final Set<Resource> range) {
+			final Set<Resource> range, boolean rangeIsUnion) {
 
 		final OntModel model = getModel();
 		final String owlClassName = owlClass.getLocalName();
 
 		boolean merged = false;
-		Set<Resource> newEntries = new HashSet<Resource>();
+		final Set<Resource> newEntries = new HashSet<Resource>();
+		final Set<Resource> unionEntries = new HashSet<Resource>();
 
 		//find least specific superclass in range
 		for (final Iterator<Resource> oc = range.iterator(); oc.hasNext();) {
@@ -460,13 +491,10 @@ public class OntModelAdapter implements IOntModel {
 			} else if (owlClass.hasSubClass(otherClass)) {
 				//replace range entry by owlClass
 				oc.remove();
+				if (otherClass.isAnon()) {
+					removeNode(otherClass, range);
+				}
 				newEntries.add(owlClass);
-				merged = true;
-			} else if (owlClassName.equals(otherClass.getLocalName())) {
-				//replace range entry by union of range entry and owlClass
-				oc.remove();
-				RDFList members = model.createList(new RDFNode[]{ owlClass, otherClass });
-				newEntries.add(model.createUnionClass(null, members));
 				merged = true;
 			} else if (otherClass.canAs(UnionClass.class)) {
 				//merge into class union
@@ -475,12 +503,34 @@ public class OntModelAdapter implements IOntModel {
 				for (Iterator<? extends Resource> o = unionClass.listOperands(); o.hasNext();) {
 					ops.add(o.next());
 				}
-				if (mergeClassIntoRange(owlClass, ops)) {
-					//replace by new union
+				if (mergeClassIntoRange(owlClass, ops, true)) {
+					//replace by new union if ops.size() > 1
 					oc.remove();
-					newEntries.add(model.createUnionClass(null, model.createList(ops.iterator())));
+					removeNode(unionClass, range);
+					if (ops.size() > 1) {
+						newEntries.add(model.createUnionClass(
+								null, model.createList(ops.iterator())));
+					} else {
+						newEntries.addAll(ops);
+					}
 					merged = true;
 				}
+			} else if (owlClassName.equals(otherClass.getLocalName())) {
+				//replace range entry by union of range entry and owlClass
+				oc.remove();
+				unionEntries.add(otherClass);
+				unionEntries.add(owlClass);
+				merged = true;
+			}
+		}
+
+		//process union entries, depending on whether range already represents a union or not
+		if (!unionEntries.isEmpty()) {
+			if (rangeIsUnion) {
+				newEntries.addAll(unionEntries);
+			} else {
+				newEntries.add(model.createUnionClass(
+						null, model.createList(unionEntries.iterator())));
 			}
 		}
 
