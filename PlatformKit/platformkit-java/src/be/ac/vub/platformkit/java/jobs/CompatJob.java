@@ -56,6 +56,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
+import be.ac.vub.jar2uml.AddInferredTagSwitch;
 import be.ac.vub.jar2uml.FindContainedClassifierSwitch;
 import be.ac.vub.jar2uml.JarToUML;
 import be.ac.vub.platformkit.Constraint;
@@ -104,6 +105,22 @@ public class CompatJob extends ProgressMonitorJob {
 	 */
 	public static void removeATLLogHandler() {
 		ATLLogger.getLogger().removeHandler(PlatformkitEditorPlugin.getHandler());
+	}
+
+	/**
+	 * @param umlPack
+	 * @return <code>true</code> iff umlPack contains non-inferred {@link Classifier}s
+	 */
+	public static final boolean containsClassifiers(Package umlPack) {
+		if (AddInferredTagSwitch.isInferred(umlPack)) {
+			return false;
+		}
+		for (PackageableElement element : umlPack.getPackagedElements()) {
+			if (element instanceof Classifier && !AddInferredTagSwitch.isInferred(element)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -509,9 +526,11 @@ public class CompatJob extends ProgressMonitorJob {
 			final Set<String> provided = getProvidedPackages(emf_uri);
 			for (Object pack : packages) {
 				assert pack instanceof Package;
-				String packName = JarToUML.qualifiedName((Package) pack);
-				provided.add(packName);
-				getPackageProviders(packName).add(emf_uri);
+				if (containsClassifiers((Package) pack)) {
+					String packName = JarToUML.qualifiedName((Package) pack);
+					provided.add(packName);
+					getPackageProviders(packName).add(emf_uri);
+				}
 			}
 		}
 
@@ -827,14 +846,14 @@ public class CompatJob extends ProgressMonitorJob {
 					jbcClass,
 					JavaOntologyProvider.MAJOR_VERSION_NUMBER_URI,
 					IOntologyProvider.INTEGER_URI,
-					jbcDetails.get("majorBytecodeFormatVersion"));
-			if ("false".equals(jbcDetails.get("preverified"))) {
+					jbcDetails.get(JarToUML.MAJOR_BYTECODE_FORMAT_VERSION));
+			if (!Boolean.parseBoolean(jbcDetails.get(JarToUML.PREVERIFIED))) {
 				ont.createHasValueRestriction(
 						jbcConstraintURI,
 						jbcClass,
 						JavaOntologyProvider.PREVERIFIED_URI,
 						IOntologyProvider.BOOLEAN_URI,
-						jbcDetails.get("preverified"));
+						Boolean.FALSE.toString());
 			}
 			// Create/update JavaVM constraint class
 			final IOntModel java = kb.getLocalOntology(JavaOntologyProvider.JAVA_NS);
@@ -899,19 +918,15 @@ public class CompatJob extends ProgressMonitorJob {
 			final FindContainedClassifierSwitch findClassifier = new FindContainedClassifierSwitch();
 			for (Object pack : deps.getElementsByType(UMLPackage.eINSTANCE.getPackage())) {
 				Package umlPack = (Package) pack;
-				for (PackageableElement element : umlPack.getPackagedElements()) {
-					if (element instanceof Classifier) {
-						//package contains classifiers
-						String javaName = JarToUML.qualifiedName(umlPack).replace("::", ".");
-						Package crPack = findClassifier.findPackage(crRoot, javaName, false);
-						if (crPack == null ||
-								(crPack.getAppliedStereotype("CompatibilityReport::Incompatible") == null
-								&& crPack.getAppliedStereotype("CompatibilityReport::Missing") == null)) {
-							//compatibility report does not contain <<Incompatible>> or <<Missing>> version of this package
-							//=> one of the API models provides this package
-							result.add(umlPack);
-						}
-						break;
+				if (containsClassifiers(umlPack)) {
+					String javaName = JarToUML.qualifiedName(umlPack).replace("::", ".");
+					Package crPack = findClassifier.findPackage(crRoot, javaName, false);
+					if (crPack == null ||
+							(crPack.getAppliedStereotype("CompatibilityReport::Incompatible") == null
+							&& crPack.getAppliedStereotype("CompatibilityReport::Missing") == null)) {
+						//compatibility report does not contain <<Incompatible>> or <<Missing>> version of this package
+						//=> one of the API models provides this package
+						result.add(umlPack);
 					}
 				}
 				checkCanceled(monitor);
