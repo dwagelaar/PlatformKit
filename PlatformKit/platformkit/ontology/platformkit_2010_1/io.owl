@@ -9,7 +9,6 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY io "http://soft.vub.ac.be/platformkit/2010/1/io.owl#" >
-    <!ENTITY io2 "http://soft.vub.ac.be/platformkit/2010/1/io.owl#3" >
     <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
 ]>
 
@@ -20,7 +19,6 @@
      xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:io2="&io;3"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
