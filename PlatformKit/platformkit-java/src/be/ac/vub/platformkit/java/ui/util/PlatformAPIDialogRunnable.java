@@ -46,6 +46,7 @@ public class PlatformAPIDialogRunnable implements Runnable {
 	private String instruction;
 	private URI[] result = null;
 	private ILabelProvider labelProv;
+	private boolean createOntology;
 
 	/**
 	 * Creates a new PlatformAPIDialogRunnable.
@@ -63,6 +64,7 @@ public class PlatformAPIDialogRunnable implements Runnable {
 			dlg.setTitleAreaMessage(getMessage());
 			dlg.setMessage(getInstruction());
 			dlg.open();
+			setCreateOntology(dlg.isCreateOntology());
 			if (dlg.getReturnCode() == Window.OK) {
 				setResult(filterResults(dlg.getResult()));
 			}
@@ -206,5 +208,20 @@ public class PlatformAPIDialogRunnable implements Runnable {
 	 */
 	public void setInstruction(String instruction) {
 		this.instruction = instruction;
+	}
+
+	/**
+	 * @return whether or not the createOntology option is selected
+	 */
+	public boolean isCreateOntology() {
+		return createOntology;
+	}
+
+	/**
+	 * Sets whether or not the createOntology option is selected.
+	 * @param createOntology the createOntology to set
+	 */
+	protected void setCreateOntology(boolean createOntology) {
+		this.createOntology = createOntology;
 	}
 }

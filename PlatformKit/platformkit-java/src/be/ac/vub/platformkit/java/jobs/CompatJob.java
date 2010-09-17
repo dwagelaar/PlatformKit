@@ -976,6 +976,7 @@ public class CompatJob extends ProgressMonitorJob {
 	private String apiList;
 	private String inputName;
 	private Map<URI, String> ontURIs;
+	private boolean createOntology;
 
 	protected IPreferenceStore store = PlatformkitEditorPlugin.getPlugin().getPreferenceStore();
 	protected ModelLoadingStrategy modelLoader = null;
@@ -995,7 +996,9 @@ public class CompatJob extends ProgressMonitorJob {
 		if (emf_uris == null || emf_uris.length == 0) {
 			return; //cancel
 		}
-		beginTask(monitor, getName(), steps + emf_uris.length * 3);
+		final boolean createOntology = isCreateOntology();
+		//amount of tasks = default + 3 * amount of API models - 2 if no ontology is created
+		beginTask(monitor, getName(), steps + emf_uris.length * 3 - (createOntology ? 0 : 2));
 		addATLLogHandler();
 		//
 		// Step 1
@@ -1062,14 +1065,16 @@ public class CompatJob extends ProgressMonitorJob {
 		} else {
 			worked(monitor, null);
 		}
-		//
-		// Step 6
-		//
-		runner.loadPlatformkitModel(monitor);
-		//
-		// Step 7
-		//
-		runner.updateOntology(monitor);
+		if (createOntology) {
+			//
+			// Step 6
+			//
+			runner.loadPlatformkitModel(monitor);
+			//
+			// Step 7
+			//
+			runner.updateOntology(monitor);
+		}
 		//
 		// Step 8
 		//
@@ -1223,6 +1228,21 @@ public class CompatJob extends ProgressMonitorJob {
 			}
 		}
 		return ontURIs.get(emf_uri);
+	}
+
+	/**
+	 * @return whether or not to create/update a platform dependency ontology
+	 */
+	public boolean isCreateOntology() {
+		return createOntology;
+	}
+
+	/**
+	 * Sets whether or not to create/update a platform dependency ontology.
+	 * @param createOntology the createOntology to set
+	 */
+	public void setCreateOntology(boolean createOntology) {
+		this.createOntology = createOntology;
 	}
 
 }

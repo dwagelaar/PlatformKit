@@ -10,14 +10,23 @@
  *******************************************************************************/
 package be.ac.vub.platformkit.java.ui.dialogs;
 
+import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.FormAttachment;
+import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 
+import be.ac.vub.platformkit.java.PlatformkitJavaResources;
 import be.ac.vub.platformkit.ui.dialogs.PlatformKitTreeSelectionDialog;
 
 /**
@@ -25,6 +34,8 @@ import be.ac.vub.platformkit.ui.dialogs.PlatformKitTreeSelectionDialog;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class PlatformAPISelectionDialog extends PlatformKitTreeSelectionDialog {
+
+	private boolean createOntology;
 
 	/**
 	 * Creates a new PlatformAPISelectionDialog
@@ -49,6 +60,48 @@ public class PlatformAPISelectionDialog extends PlatformKitTreeSelectionDialog {
 			}
 		});
 		return treeViewer;
+	}
+
+	/* (non-Javadoc)
+	 * @see be.ac.vub.platformkit.ui.dialogs.PlatformKitTreeSelectionDialog#createSelectionButtons(org.eclipse.swt.widgets.Composite)
+	 */
+	@Override
+	protected Composite createSelectionButtons(Composite composite) {
+		final Composite btnControl = super.createSelectionButtons(composite);
+        btnControl.setLayoutData(GridDataFactory.swtDefaults().create());
+        btnControl.setLayout(new FormLayout());
+		final Button createOntology = new Button(btnControl, SWT.CHECK);
+		final FormData createOntologyData = new FormData();
+		createOntologyData.top = new FormAttachment(0, 0);
+		createOntologyData.left = new FormAttachment(0, 0);
+		createOntologyData.right = new FormAttachment(100, 0);
+		createOntology.setLayoutData(createOntologyData);
+		createOntology.setText(PlatformkitJavaResources.getString("PlatformAPISelectionDialog.createOntology")); //$NON-NLS-1$
+		createOntology.setSelection(isCreateOntology());
+		createOntology.addSelectionListener(new SelectionAdapter() {
+			/* (non-Javadoc)
+			 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
+			 */
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				setCreateOntology(createOntology.getSelection());
+			}
+		});
+		return btnControl;
+	}
+
+	/**
+	 * @return whether or not the createOntology option is selected
+	 */
+	public boolean isCreateOntology() {
+		return createOntology;
+	}
+
+	/**
+	 * @param createOntology the createOntology to set
+	 */
+	protected void setCreateOntology(boolean createOntology) {
+		this.createOntology = createOntology;
 	}
 
 }
