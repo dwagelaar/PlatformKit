@@ -98,6 +98,7 @@ public class CompatAction extends SelectionAction {
 			return; //cancel
 		}
 		// run operation
+		job.setCreateOntology(paDlg.isCreateOntology());
 		job.setInput(((IStructuredSelection) selection).getFirstElement());
 		job.setEmfUris(emf_uris);
 		job.setEmfUriLabels(paDlg.getLabels());
