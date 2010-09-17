@@ -7,7 +7,7 @@
 --   from the same dependency model.
 -- * Requires the input compatibility reports to be unpruned.
 --
-module UML2CRIntersection; -- extends UML2Copy
+module UML2CRMerge; -- extends UML2Copy
 
 create OUT : UML2		-- The merged compatibility report model
 from IN : UML2, 		-- The first input compatibility report model
@@ -147,8 +147,9 @@ rule Incompatible {
 	from s : UML2!"CompatibilityReport::Incompatible" (
 		if thisModule.inElements->includes(s) then
 			if s.oclIsTypeOf(UML2!"CompatibilityReport::Incompatible") then
-				if s.base_Element.isIncompatibleInMerge then
-					s.base_Element.hasIncompatibleOrMissingChildren
+				let e : UML2!"uml::Element" = s.base_Element in
+				if e.isIncompatibleInMerge or e.isMissingInMerge then
+					e.hasIncompatibleOrMissingChildren
 				else false endif
 			else false endif
 		else false endif)
