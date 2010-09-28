@@ -11,7 +11,6 @@
 package be.ac.vub.platformkit.java.jobs;
 
 import java.io.IOException;
-import java.lang.ref.SoftReference;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -59,6 +58,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import be.ac.vub.jar2uml.AddInferredTagSwitch;
 import be.ac.vub.jar2uml.FindContainedClassifierSwitch;
 import be.ac.vub.jar2uml.JarToUML;
+import be.ac.vub.jar2uml.MergeModel;
 import be.ac.vub.platformkit.Constraint;
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
@@ -85,7 +85,7 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  */
 public class CompatJob extends ProgressMonitorJob {
 
-	public static final int STEPS = 8;
+	public static final int STEPS = 9;
 
 	/**
 	 * Adds PlatformKit log handler to ATL logger.
@@ -111,7 +111,7 @@ public class CompatJob extends ProgressMonitorJob {
 	 * @param umlPack
 	 * @return <code>true</code> iff umlPack contains non-inferred {@link Classifier}s
 	 */
-	public static final boolean containsClassifiers(Package umlPack) {
+	public static final boolean containsClassifiers(final Package umlPack) {
 		if (AddInferredTagSwitch.isInferred(umlPack)) {
 			return false;
 		}
@@ -121,6 +121,18 @@ public class CompatJob extends ProgressMonitorJob {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Finds the root {@link Model} in model, or creates a new one if not found.
+	 * @param model
+	 * @return the root {@link Model} in model
+	 */
+	public static final Model findRootModel(final IModel model) {
+		for (Object o : model.getElementsByType(UMLPackage.eINSTANCE.getModel())) {
+			return (Model) o;
+		}
+		return (Model) model.newElement(UMLPackage.eINSTANCE.getModel());
 	}
 
 	/**
@@ -145,9 +157,9 @@ public class CompatJob extends ProgressMonitorJob {
 	}
 
 	/**
-	 * Defines model loading strategy interface and behaviour
+	 * Defines model loading strategy interface and behaviour.
 	 */
-	public abstract class ModelLoadingStrategy {
+	public class ModelLoadingStrategy {
 
 		private String atlVMName;
 		protected ATLUtil atlUtil;
@@ -184,11 +196,23 @@ public class CompatJob extends ProgressMonitorJob {
 
 		/**
 		 * @param uml2 The UML2 metamodel
-		 * @param emf_uri The EMF URI to load from
+		 * @param emf_uri The EMF {@link URI} to load from
 		 * @return the loaded 'IN' model
 		 * @throws ATLCoreException 
 		 */
-		public abstract IModel loadINModel(IReferenceModel uml2, URI emf_uri) throws ATLCoreException;
+		public IModel loadINModel(IReferenceModel uml2, URI emfUri) throws ATLCoreException {
+			return atlUtil.loadModel(uml2, emfUri.toString(), "IN", emfUri.toString()); //$NON-NLS-1$
+		}
+
+		/**
+		 * @param uml2 The UML2 metamodel
+		 * @param res The EMF {@link Resource} to load from
+		 * @return the loaded 'IN' model
+		 * @throws ATLCoreException 
+		 */
+		public IModel loadINModelFromResource(IReferenceModel uml2, Resource res) throws ATLCoreException {
+			return atlUtil.loadModel(uml2, res, "IN"); //$NON-NLS-1$
+		}
 
 		/**
 		 * @param uml2 The UML2 metamodel
@@ -226,7 +250,7 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @param atlVMName
 		 * @return True if this ModelLoadingStrategy is valid for the given ATL VM name.
 		 */
-		public boolean isValidFor(String atlVMName, boolean useCache) {
+		public boolean isValidFor(String atlVMName) {
 			return this.atlVMName.equals(atlVMName);
 		}
 
@@ -251,56 +275,6 @@ public class CompatJob extends ProgressMonitorJob {
 		 */
 		public void flush() throws ATLCoreException {
 			atlUtil = new ATLUtil(atlVMName);
-		}
-	}
-
-	private class SimpleModelLoadingStrategy extends ModelLoadingStrategy {
-
-		public SimpleModelLoadingStrategy(String atlVMName) throws ATLCoreException {
-			super(atlVMName);
-		}
-
-		@Override
-		public IModel loadINModel(IReferenceModel uml2, URI emfUri) throws ATLCoreException {
-			return atlUtil.loadModel(uml2, emfUri.toString(), "IN", emfUri.toString()); //$NON-NLS-1$
-		}
-
-		/* (non-Javadoc)
-		 * @see be.ac.vub.platformkit.java.popup.actions.CompatAction.ModelLoadingStrategy#isValidFor(java.lang.String, boolean)
-		 */
-		@Override
-		public boolean isValidFor(String atlVMName, boolean useCache) {
-			return super.isValidFor(atlVMName, useCache) && !useCache;
-		}
-	}
-
-	private class CachingModelLoadingStrategy extends ModelLoadingStrategy {
-
-		protected Map<URI,SoftReference<IModel>> inModelCache = new HashMap<URI,SoftReference<IModel>>();
-
-		public CachingModelLoadingStrategy(String atlVMName) throws ATLCoreException {
-			super(atlVMName);
-		}
-
-		@Override
-		public IModel loadINModel(IReferenceModel uml2, URI emfUri) throws ATLCoreException {
-			IModel in = null;
-			if (inModelCache.containsKey(emfUri)) {
-				in = inModelCache.get(emfUri).get();
-			}
-			if (in == null) {
-				in = atlUtil.loadModel(uml2, emfUri.toString(), "IN", emfUri.toString()); //$NON-NLS-1$
-				inModelCache.put(emfUri, new SoftReference<IModel>(in));
-			}
-			return in;
-		}
-
-		/* (non-Javadoc)
-		 * @see be.ac.vub.platformkit.java.popup.actions.CompatAction.ModelLoadingStrategy#isValidFor(java.lang.String, boolean)
-		 */
-		@Override
-		public boolean isValidFor(String atlVMName, boolean useCache) {
-			return super.isValidFor(atlVMName, useCache) && useCache;
 		}
 	}
 
@@ -592,8 +566,24 @@ public class CompatJob extends ProgressMonitorJob {
 			subTask(monitor, String.format(
 					PlatformkitJavaResources.getString("CompatJob.loadingApiModel"), 
 					apiName)); //$NON-NLS-1$
-			setIn(modelLoader.loadINModel(getUml2(), emf_uri));
-			addAllProvidedPackages(emf_uri, getIn());
+			final IModel load = modelLoader.loadINModel(getUml2(), emf_uri);
+			final IModel in = getIn();
+			if (in == null) {
+				setIn(load);
+				monitor.worked(2);
+			} else {
+				final MergeModel mergeModel = new MergeModel();
+				final Model base = findRootModel(in);
+				final Model merge = findRootModel(load);
+				assert base != null;
+				assert merge != null;
+				mergeModel.setBaseModel(base);
+				mergeModel.setMergeModel(merge);
+				mergeModel.setMonitor(new SubProgressMonitor(monitor, 2));
+				mergeModel.run();
+				setIn(modelLoader.loadINModelFromResource(getUml2(), base.eResource()));
+			}
+			addAllProvidedPackages(emf_uri, load);
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedApiModel")); //$NON-NLS-1$
 		}
 
@@ -998,7 +988,7 @@ public class CompatJob extends ProgressMonitorJob {
 		}
 		final boolean createOntology = isCreateOntology();
 		//amount of tasks = default + 3 * amount of API models - 2 if no ontology is created
-		beginTask(monitor, getName(), steps + emf_uris.length * 3 - (createOntology ? 0 : 2));
+		beginTask(monitor, getName(), steps + emf_uris.length*3 - (createOntology ? 0 : 2));
 		addATLLogHandler();
 		//
 		// Step 1
@@ -1013,32 +1003,12 @@ public class CompatJob extends ProgressMonitorJob {
 		//
 		runner.loadDepsModel(monitor);
 		StringBuffer apiList = null;
-		IModel lastReport = null;
-		boolean compatible = true;
 		for (URI emf_uri : emf_uris) {
-			//
-			// Step n+1
-			//
-			String apiName = labels.getText(emf_uri);
-			runner.loadAPIModel(monitor, apiName, emf_uri);
-			//
-			// Step n+2
-			//
-			boolean thisCompatible = runner.run(monitor);
 			//
 			// Step n+3
 			//
-			compatible &= thisCompatible;
-			if (!thisCompatible) {
-				if (lastReport != null) {
-					runner.mergeReport(monitor, lastReport);
-				} else {
-					worked(monitor, null);
-				}
-				lastReport = runner.getReport();
-			} else {
-				worked(monitor, null);
-			}
+			String apiName = labels.getText(emf_uri);
+			runner.loadAPIModel(monitor, apiName, emf_uri);
 			if (apiList == null) {
 				apiList = new StringBuffer();
 				apiList.append(apiName);
@@ -1050,14 +1020,18 @@ public class CompatJob extends ProgressMonitorJob {
 		//
 		// Step 4
 		//
+		final boolean compatible = runner.run(monitor);
+		//
+		// Step 5
+		//
 		setApiList(apiList.toString());
 		if (!compatible) {
-			compatible = runner.pruneReport(monitor);
+			runner.pruneReport(monitor);
 		} else {
 			worked(monitor, null);
 		}
 		//
-		// Step 5
+		// Step 6
 		//
 		if (!compatible) {
 			runner.saveReport(monitor);
@@ -1067,16 +1041,16 @@ public class CompatJob extends ProgressMonitorJob {
 		}
 		if (createOntology) {
 			//
-			// Step 6
+			// Step 7
 			//
 			runner.loadPlatformkitModel(monitor);
 			//
-			// Step 7
+			// Step 8
 			//
 			runner.updateOntology(monitor);
 		}
 		//
-		// Step 8
+		// Step 7 or 9
 		//
 		worked(monitor, PlatformkitJavaResources.getString("CompatJob.finished")); //$NON-NLS-1$
 	}
@@ -1086,20 +1060,15 @@ public class CompatJob extends ProgressMonitorJob {
 	 * @throws ATLCoreException
 	 */
 	protected void checkAndSwitchStrategy() throws ATLCoreException {
-		final boolean useCache = store.getBoolean(PreferenceConstants.P_CACHE_API);
 		final String atlVMName = store.getString(PreferenceConstants.P_ATLVM);
 		if (atlVMName == null || atlVMName.equals("")) {
 			throw new ATLCoreException(
 					PlatformkitJavaResources.getString("CompatJob.noAtlVmChosen")); //$NON-NLS-1$
 		}
-		if (modelLoader != null && modelLoader.isValidFor(atlVMName, useCache)) {
+		if (modelLoader != null && modelLoader.isValidFor(atlVMName)) {
 			return;
 		}
-		if (useCache) {
-			modelLoader = new CachingModelLoadingStrategy(atlVMName);
-		} else {
-			modelLoader = new SimpleModelLoadingStrategy(atlVMName);
-		}
+		modelLoader = new ModelLoadingStrategy(atlVMName);
 		Assert.isNotNull(modelLoader);
 	}
 
