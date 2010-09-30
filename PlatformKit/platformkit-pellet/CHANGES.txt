@@ -1,6 +1,140 @@
 Change Log
 ==========
 
+Pellet 2.2.2 (Sep 16, 2010)
+---------------------------
+
+* UPDATED: OWLAPI v3 to 3.1.0
+
+* ADDED: Support for xsd:dateTimeStamp datatype
+
+* FIXED: Name clashes between OWLAPIv2 and v3 in Pellet CLI
+
+* ENHANCED: IncrementalClassifier to support checking entailment of 
+            all axiom types in isEntailed() method
+            
+* ENHANCED: Lint validates now global restriction axioms in OWL DL,
+            improper punning, and misuse of object and data 
+            properties
+
+* FIXED: Incomplete explanations when reasoner is running in 
+         non-buffering mode
+
+* FIXED: Incorrect number of results and not printing of duplicate 
+         results in tabular output format in CLI
+         
+* FIXED: Incorrect results for domain queries when equivalent classes
+         to the domain of the property existed
+         
+* FIXED: Problems with IncrementalClassifier and imported ontologies
+
+* FIXED: Anonymous inverse properties not being detected by EL 
+         expressivity checker
+
+* ENHANCED: Printing explanations incrementally as they are generated       
+
+* FIXED: Various other bugs; see the following link for a list of all 
+         the bugs that have been fixed:
+     
+         http://clark-parsia.trac.cvsdude.com/pellet-devel/report/11
+
+Pellet 2.2.1 (Aug 16, 2010)
+---------------------------
+
+* FIXED: Classification errors that were also triggered by property 
+         domain queries
+         
+* ADDED: Ability to close Jena inference models without closing the
+         underlying raw models         
+
+* FIXED: Explanation retrieval bug through Jena that caused subsequent 
+         modifications to be ignored         
+         
+* FIXED: Parsing errors for SPARQL queries that contain complex class
+         expressions         
+
+* FIXED: Pellet CLI command entail is restored
+         
+* ENHANCED: Explanation feature to handle user-defined dataypes
+
+* ENHANCED: Datatype reasoner to support built-in datatype derived from
+            string and better handling for floats and doubles
+
+* DEPRECATED: DIG server which is based on an obsolete protocol that
+              does not have full OWL support  
+              
+* FIXED: Various other bugs; see the following link for a list of all 
+         the bugs that have been fixed:
+     
+         http://clark-parsia.trac.cvsdude.com/pellet-devel/report/11
+
+
+Pellet 2.2 (July 5, 2010)
+-------------------------
+
+* ENHANCED: TBox reasoning performance especially in the presence of 
+            inverse properties
+
+* ENHANCED: Realization performance where classes have multiple super 
+            classes
+
+* ENHANCED: Pellet's ability to process ABox updates without reloading 
+            the ABox
+            
+* ADDED: Support for incremental classification in command-line by
+         persisting the classification results (via --persist option)            
+
+* ENHANCED: Support for annotation queries
+
+* UPDATED: Jena libraries to 2.6.3
+
+* FIXED: Various bugs; see the 2.2 release report in Trac for a
+         complete listing:
+
+         http://clark-parsia.trac.cvsdude.com/pellet-devel/report/11
+
+
+Pellet 2.1 (April 1, 2010)
+--------------------------
+
+* ADDED: Support for Manchester Syntax in SPARQL basic graph
+         patterns: i.e., syntactic sugar for querying OWL
+         ontologies with SPARQL. Any legal Manchester 
+         syntax form can be used in subject or object position. 
+         
+         See *.terp in the examples/data directory.
+
+         This feature is experimental: please report bugs and send
+         feature requests to pellet-users@lists.clarkparsia.com.
+
+* ADDED: Disk persistence of all reasoning results via OWLAPI 3.0
+         when using Pellet's incremental classifier.
+
+* ENHANCED: New datatype reasoner implementation that is more
+            complete, more performant, and more correct compared
+            to earlier versions of Pellet's datatype reasoner.
+
+* ENHANCED: Substantially complete OWL2 support, with the sole
+            exception that Pellet 2.1 does not support annotation
+            axioms through Jena interface. Please report missing 
+            OWL2 features as bugs to pellet-users mailing list.
+
+* ENHANCED: Transition to OWLAPI 3.0 support complete; please report
+            missing OWLAPI 3.0 support.
+
+* DEPRECATED: Pellet support for OWLAPI 2.x is deprecated in 2.1 and
+              will be completely removed in a future version.
+            
+* ENHANCED: New command-line subcommand, 'info', which reports for one
+            or more OWL ontologies relevant properties, metadata, and
+            other information, including OWL2 profile detection.
+
+* FIXED: Lots of bugs; see the 2.1 release report in Trac for a
+         complete listing:
+
+         http://clark-parsia.trac.cvsdude.com/pellet-devel/report/11
+            
+
 Pellet 2.0.2 (Mar 1, 2010)
 --------------------------
 
