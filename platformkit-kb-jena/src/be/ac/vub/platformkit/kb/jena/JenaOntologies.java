@@ -69,6 +69,8 @@ public class JenaOntologies extends AbstractOntologies {
 	private Map<OntClass, Set<OntClass>> obsoleteSuperClasses = new HashMap<OntClass, Set<OntClass>>();
 	private static NamedClassFilter ncFilter = new NamedClassFilter();
 	private Map<String, IOntModel> localOntologies = new HashMap<String, IOntModel>();
+	private String dlReasonerId = "org.mindswap.pellet.jena.PelletReasoner"; //$NON-NLS-1$
+	private boolean dlReasonerAttached;
 
 	/**
 	 * Creates a new {@link JenaOntologies}.
@@ -83,16 +85,44 @@ public class JenaOntologies extends AbstractOntologies {
 		addLocalOntologies();
 	}
 
-	/* (non-Javadoc)
-	 * @see be.ac.vub.platformkit.kb.IOntologies#attachDIGReasoner()
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#attachDLReasoner()
 	 */
-	public void attachDIGReasoner() {
-		throw new UnsupportedOperationException(
-				PlatformkitJenaResources.getString("JenaOntologies.digNoLongerAvailable")); //$NON-NLS-1$
+	public void attachDLReasoner() throws OntException {
+		if (dlReasonerAttached) {
+			PlatformkitLogger.logger.warning(PlatformkitJenaResources.getString("JenaOntologies.dlReasonerAlreadyAttached")); //$NON-NLS-1$
+			return;
+		}
+		final String id = getDlReasonerId();
+		if ("org.mindswap.pellet.jena.PelletReasoner".equals(id)) {
+			attachPelletReasoner();
+		} else {
+			throw new OntException(String.format(
+					PlatformkitJenaResources.getString("JenaOntologies.reasonerNotFound"), 
+					id)); //$NON-NLS-1$
+		}
+		dlReasonerAttached = true;
 	}
 
-	/* (non-Javadoc)
-	 * @see be.ac.vub.platformkit.kb.IOntologies#attachPelletReasoner()
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#selectDLReasoner(java.lang.String)
+	 */
+	public void selectDLReasoner(String id) throws OntException {
+		dlReasonerId = id;
+	}
+
+	/**
+	 * @return the dlReasonerId
+	 */
+	public String getDlReasonerId() {
+		return dlReasonerId;
+	}
+
+	/**
+	 * Attaches the Pellet DL reasoner.
+	 * @throws OntException 
 	 */
 	public void attachPelletReasoner() throws OntException {
 		final Reasoner reasoner = getOntology().getModel().getSpecification().getReasoner();
