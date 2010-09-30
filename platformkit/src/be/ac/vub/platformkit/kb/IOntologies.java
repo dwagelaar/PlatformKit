@@ -26,6 +26,7 @@ import be.ac.vub.platformkit.kb.util.OntException;
 public interface IOntologies {
 
 	public static final String ONTOLOGY_EXT_POINT = "be.ac.vub.platformkit.ontology"; //$NON-NLS-1$
+	public static final String KB_EXT_POINT = "be.ac.vub.platformkit.knowledgebase"; //$NON-NLS-1$
 	public static final String BASE_NS = "http://soft.vub.ac.be/platformkit/2010/1/"; //$NON-NLS-1$
 	public static final String DEPS_BASE_NS = BASE_NS + "dependencies/"; //$NON-NLS-1$
 	public static final String LOCAL_INF_NS = BASE_NS + "inferred.owl"; //$NON-NLS-1$
@@ -45,15 +46,16 @@ public interface IOntologies {
 			IOntModelChangeListener listener);
 
 	/**
-	 * Attaches the DIG reasoner to the knowledgebase.
+	 * Selects the DL reasoner with the given ID.
+	 * @param id
+	 * @throws OntException if the reasoner does not exist
 	 */
-	public abstract void attachDIGReasoner();
+	public abstract void selectDLReasoner(String id) throws OntException;
 
 	/**
-	 * Attaches the Pellet OWL reasoner to the knowledgebase.
-	 * @throws OntException 
+	 * Attaches the DL reasoner to the knowledgebase.
 	 */
-	public abstract void attachPelletReasoner() throws OntException;
+	public abstract void attachDLReasoner() throws OntException;
 
 	/**
 	 * Attaches the transitive reasoner to the knowledgebase.

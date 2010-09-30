@@ -54,15 +54,12 @@ public abstract class ConstraintSpaceJob extends ProgressMonitorJob {
 	 */
 	protected void attachDLReasoner(IProgressMonitor monitor, IOntologies ont) throws OntException {
 		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
-		.getPreferenceStore();
-		String reasoner = store.getString(PreferenceConstants.P_REASONER);
-		if (PreferenceConstants.P_DIG.equals(reasoner)) {
-			String url = store.getString(PreferenceConstants.P_DIG_URL);
-			ont.setReasonerUrl(url);
-			ont.attachDIGReasoner();
-		} else {
-			ont.attachPelletReasoner();
-		}
+				.getPreferenceStore();
+		String kbrs = store.getString(PreferenceConstants.P_KBRS);
+		String url = store.getString(PreferenceConstants.P_DIG_URL);
+		ont.selectDLReasoner(kbrs);
+		ont.setReasonerUrl(url);
+		ont.attachDLReasoner();
 	}
 
 	/**

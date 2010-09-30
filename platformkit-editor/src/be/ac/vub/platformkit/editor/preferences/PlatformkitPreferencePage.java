@@ -22,13 +22,11 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.ComboFieldEditor;
+import org.eclipse.jface.preference.FieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
+import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.m2m.atl.core.service.CoreService;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
@@ -54,6 +52,9 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  */
 public class PlatformkitPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
+	private ComboFieldEditor kb;
+	private DynamicComboFieldEditor kbrs;
+
 	public PlatformkitPreferencePage() {
 		super(GRID);
 		setPreferenceStore(PlatformkitEditorPlugin.getPlugin().getPreferenceStore());
@@ -68,28 +69,25 @@ public class PlatformkitPreferencePage extends FieldEditorPreferencePage impleme
 	 * restore itself.
 	 */
 	public void createFieldEditors() {
-		RadioGroupFieldEditor reasoner = new RadioGroupFieldEditor(
-				PreferenceConstants.P_REASONER,
-				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.owlReasoner"),
-				1,
-				new String[][] { 
-						{ PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.pelletReasoner"), 
-							PreferenceConstants.P_BUILTIN }, 
-						{ PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.digReasoner"), 
-								PreferenceConstants.P_DIG } },
-						getFieldEditorParent(),
-						true); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		addField(reasoner);
+		String[][] kbs = getKBs();
+		kb = new ComboFieldEditor(
+				PreferenceConstants.P_KB, 
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.kbImpl"),
+				kbs,
+				getFieldEditorParent()); //$NON-NLS-1$
+		addField(kb);
 
-		Composite reasonerUrlContainer = new Composite(
-				reasoner.getRadioBoxControl(getFieldEditorParent()), 
-				SWT.NONE);
-		reasonerUrlContainer.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
+		kbrs = new DynamicComboFieldEditor(
+				PreferenceConstants.P_KBRS, 
+				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.owlReasoner"),
+				getFieldEditorParent()); //$NON-NLS-1$
+		updateKBRS(getPreferenceStore().getString(PreferenceConstants.P_KB));
+		addField(kbrs);
 
 		StringFieldEditor reasonerUrl = new StringFieldEditor(
 				PreferenceConstants.P_DIG_URL, 
 				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.digUrl"),
-				reasonerUrlContainer) {
+				getFieldEditorParent()) {
 
 			/* (non-Javadoc)
 			 * @see org.eclipse.jface.preference.StringFieldEditor#doCheckState()
@@ -107,14 +105,6 @@ public class PlatformkitPreferencePage extends FieldEditorPreferencePage impleme
 		reasonerUrl.setErrorMessage(
 				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.digUrlError")); //$NON-NLS-1$
 		addField(reasonerUrl);
-
-		String[][] kbs = getKBs();
-		ComboFieldEditor kb = new ComboFieldEditor(
-				PreferenceConstants.P_KB, 
-				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.kbImpl"),
-				kbs,
-				getFieldEditorParent()); //$NON-NLS-1$
-		addField(kb);
 
 		String[] vms = CoreService.getLaunchersNames();
 		String[][] vmss = new String[vms.length][2];
@@ -186,6 +176,28 @@ public class PlatformkitPreferencePage extends FieldEditorPreferencePage impleme
 		return kbs;
 	}
 
+	/**
+	 * Updates the kbrs combo box with the new selection of reasoners
+	 * @param factory the {@link IOntologiesFactory} for which to retrieve the supported reasoners
+	 */
+	private void updateKBRS(String factory) {
+        kbrs.clearEntries();
+        IExtensionRegistry registry = Platform.getExtensionRegistry();
+        IExtensionPoint point = registry.getExtensionPoint(IOntologiesFactory.KB_EXT_POINT);
+        for (IExtension extension : point.getExtensions()) {
+            for (IConfigurationElement element : extension.getConfigurationElements()) {
+            	if (factory.equals(element.getAttribute("factory"))) {
+            		for (IConfigurationElement child : element.getChildren()) {
+            			kbrs.addEntry(
+            					child.getAttribute("name"), 
+            					child.getAttribute("id"));
+            		}
+            	}
+            }
+        }
+        kbrs.load();
+	}
+
 	/* (non-Javadoc)
 	 * @see org.eclipse.jface.preference.FieldEditorPreferencePage#performOk()
 	 */
@@ -202,6 +214,17 @@ public class PlatformkitPreferencePage extends FieldEditorPreferencePage impleme
 					logLevel)); //$NON-NLS-1$
 		}
 		return ok;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.jface.preference.FieldEditorPreferencePage#propertyChange(org.eclipse.jface.util.PropertyChangeEvent)
+	 */
+	@Override
+	public void propertyChange(PropertyChangeEvent event) {
+		super.propertyChange(event);
+		if (event.getProperty().equals(FieldEditor.VALUE) && event.getSource() == kb) {
+			updateKBRS((String) event.getNewValue());
+		}
 	}
 
 }

@@ -179,7 +179,7 @@ public class PlatformkitServlet extends HttpServlet {
 			ont.addLocalOntologies(JavaOntologyProvider.INSTANCE);
 			space.setKnowledgeBase(ont);
 			space.init(true);
-			ont.attachPelletReasoner();
+			ont.attachDLReasoner();
 		}
 		return space;
 	}
