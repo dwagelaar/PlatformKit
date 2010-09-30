@@ -618,38 +618,6 @@ public class CompatJob extends ProgressMonitorJob {
 		}
 
 		/**
-		 * Merges current compatibility report with otherReport by intersection
-		 * @param monitor
-		 * @param otherReport
-		 * @throws ATLCoreException
-		 * @throws CoreException
-		 * @throws IOException
-		 * @throws ClassCastException
-		 * @throws SecurityException
-		 * @throws IllegalArgumentException
-		 * @throws NoSuchMethodException
-		 * @throws IllegalAccessException
-		 * @throws InvocationTargetException
-		 */
-		public void mergeReport(IProgressMonitor monitor, IModel otherReport) throws ATLCoreException, CoreException, IOException, ClassCastException, SecurityException, IllegalArgumentException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.mergingCRs")); //$NON-NLS-1$
-			IModel report = getReport();
-			if ((otherReport == null) || (report == null)) {
-				throw new IllegalArgumentException(
-						PlatformkitJavaResources.getString("CompatJob.cannotMergeNull")); //$NON-NLS-1$
-			}
-			modelLoader.flush(); // report must be in new resource set
-			setReport(modelLoader.createOUTModel(getUml2(), getCrLocation()));
-			final ILauncher launcher = modelLoader.getAtlLauncher();
-			launcher.addInModel(report, "IN", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
-			launcher.addInModel(otherReport, "MERGE", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
-			launcher.addOutModel(getReport(), "OUT", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
-			launcher.addLibrary("UML2", uml2Lib.openStream()); //$NON-NLS-1$
-			launcher.launch(ILauncher.RUN_MODE, monitor, vmoptions, uml2Copy.openStream(), uml2CRMerge.openStream());
-			worked(monitor, PlatformkitJavaResources.getString("CompatJob.mergedCRs"));
-		}
-
-		/**
 		 * Prunes the current compatibility report
 		 * @param monitor
 		 * @return True if the pruned report is empty (i.e. the result is compatible)
@@ -953,8 +921,6 @@ public class CompatJob extends ProgressMonitorJob {
 		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2.asm"); //$NON-NLS-1$
 	protected final URL uml2Copy = 
 		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2Copy.asm"); //$NON-NLS-1$
-	protected final URL uml2CRMerge = 
-		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CRMerge.asm"); //$NON-NLS-1$
 	protected final URL uml2CRPrune = 
 		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CRPrune.asm"); //$NON-NLS-1$
 	protected final Map<String, Object> vmoptions = new HashMap<String, Object>();

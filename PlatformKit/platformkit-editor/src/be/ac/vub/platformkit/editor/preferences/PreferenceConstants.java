@@ -16,13 +16,10 @@ package be.ac.vub.platformkit.editor.preferences;
  */
 public class PreferenceConstants {
 
-	public static final String P_REASONER  = "reasonerPreference"; //$NON-NLS-1$
-	public static final String P_BUILTIN   = "builtin"; //$NON-NLS-1$
-	public static final String P_DIG       = "dig"; //$NON-NLS-1$
-
 	public static final String P_DIG_URL   = "digUrlPreference"; //$NON-NLS-1$
 
 	public static final String P_KB        = "kbPreference"; //$NON-NLS-1$
+	public static final String P_KBRS      = "kbReasoner"; //$NON-NLS-1$
 
 	public static final String P_ATLVM     = "atlVMPreference"; //$NON-NLS-1$
 

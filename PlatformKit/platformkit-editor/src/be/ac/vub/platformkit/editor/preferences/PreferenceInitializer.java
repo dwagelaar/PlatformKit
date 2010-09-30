@@ -41,14 +41,18 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
 				.getPreferenceStore();
-		store.setDefault(PreferenceConstants.P_REASONER, "builtin"); //$NON-NLS-1$
-		store.setDefault(PreferenceConstants.P_DIG_URL, "http://localhost:8081"); //$NON-NLS-1$
 		store.setDefault(PreferenceConstants.P_KB, "be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory"); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_KBRS, "uk.ac.manchester.cs.factplusplus.owlapi.Reasoner"); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_DIG_URL, "http://localhost:8081"); //$NON-NLS-1$
 		store.setDefault(PreferenceConstants.P_ATLVM, CoreService.getLaunchersNames()[0]);
 		store.setDefault(PreferenceConstants.P_CACHE_API, true);
 		store.setDefault(PreferenceConstants.P_LOG_LEVEL, Level.INFO.toString());
 	}
-	
+
+	/**
+	 * @return The preferred {@link IOntologiesFactory}
+	 * @throws CoreException if no preferred factory could be found
+	 */
 	public static IOntologiesFactory getPreferredOntologyFactory() throws CoreException {
 		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
 				.getPreferenceStore();
@@ -69,6 +73,16 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
         		PlatformkitEditorPlugin.getPlugin().getBundle().getSymbolicName(),
         		PlatformkitEditorPlugin.getPlugin().getString("PreferenceInitializer.noPrefKbError")); //$NON-NLS-1$
         throw new CoreException(status);
+	}
+
+	/**
+	 * 
+	 * @return the preferred reasoner id for the preferred {@link IOntologiesFactory}
+	 */
+	public static String getPreferredReasonerId() throws CoreException {
+		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
+				.getPreferenceStore();
+		return store.getString(PreferenceConstants.P_KBRS);
 	}
 
 }
