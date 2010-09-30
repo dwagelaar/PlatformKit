@@ -30,6 +30,7 @@ import java.util.logging.Level;
 import org.semanticweb.owl.apibinding.OWLManager;
 import org.semanticweb.owl.inference.OWLReasoner;
 import org.semanticweb.owl.inference.OWLReasonerException;
+import org.semanticweb.owl.inference.OWLReasonerFactory;
 import org.semanticweb.owl.io.PhysicalURIInputSource;
 import org.semanticweb.owl.io.StreamInputSource;
 import org.semanticweb.owl.io.StreamOutputTarget;
@@ -49,6 +50,8 @@ import org.semanticweb.owl.model.OWLOntologyCreationException;
 import org.semanticweb.owl.model.OWLOntologyManager;
 import org.semanticweb.owl.model.OWLSubClassAxiom;
 import org.semanticweb.owl.model.RemoveAxiom;
+import org.semanticweb.reasonerfactory.factpp.FaCTPlusPlusReasonerFactory;
+import org.semanticweb.reasonerfactory.pellet.PelletReasonerFactory;
 
 import uk.ac.manchester.cs.owl.inference.dig11.DIGReasoner;
 import uk.ac.manchester.cs.owl.inference.dig11.DIGReasonerPreferences;
@@ -76,6 +79,8 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	private Map<OWLClass, Set<OWLClass>> equivClasses = new HashMap<OWLClass, Set<OWLClass>>();
 	private Map<OWLClass, Set<OWLClass>> obsoleteSuperClasses = new HashMap<OWLClass, Set<OWLClass>>();
 	private Map<String, IOntModel> localOntologies = new HashMap<String, IOntModel>();
+	private String dlReasonerId = "uk.ac.manchester.cs.factplusplus.owlapi.Reasoner"; //$NON-NLS-1$
+	private boolean dlReasonerAttached;
 
 	/**
 	 * Creates a new {@link OWLAPIOntologies}.
@@ -142,7 +147,46 @@ public class OWLAPIOntologies extends AbstractOntologies {
 
 	/*
 	 * (non-Javadoc)
-	 * @see be.ac.vub.platformkit.kb.IOntologies#attachDIGReasoner()
+	 * @see be.ac.vub.platformkit.kb.IOntologies#attachDLReasoner()
+	 */
+	public void attachDLReasoner() throws OntException {
+		if (dlReasonerAttached) {
+			PlatformkitLogger.logger.warning(
+					PlatformkitOWLAPIResources.getString("OWLAPIOntologies.dlAlreadyAttached")); //$NON-NLS-1$
+			return;
+		}
+		final String id = getDlReasonerId();
+		if ("uk.ac.manchester.cs.factplusplus.owlapi.Reasoner".equals(id)) {
+			attachFactPPReasoner();
+		} else if ("org.mindswap.pellet.owlapi.Reasoner".equals(id)) {
+			attachPelletReasoner();
+		} else if ("uk.ac.manchester.cs.owl.inference.dig11.DIGReasoner".equals(id)) {
+			attachDIGReasoner();
+		} else {
+			throw new OntException(String.format(
+					PlatformkitOWLAPIResources.getString("OWLAPIOntologies.reasonerNotFound"), 
+					id)); //$NON-NLS-1$
+		}
+		dlReasonerAttached = true;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#selectDLReasoner(java.lang.String)
+	 */
+	public void selectDLReasoner(String id) throws OntException {
+		dlReasonerId = id;
+	}
+
+	/**
+	 * @return the dlReasonerId
+	 */
+	public String getDlReasonerId() {
+		return dlReasonerId;
+	}
+
+	/**
+	 * Attaches a DIG DL reasoner.
 	 */
 	public void attachDIGReasoner() {
 		OWLReasoner reasoner = getReasoner();
@@ -172,30 +216,45 @@ public class OWLAPIOntologies extends AbstractOntologies {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see be.ac.vub.platformkit.kb.IOntologies#attachPelletReasoner()
+	/**
+	 * Attaches the Pellet DL reasoner.
+	 * @throws OntException 
 	 */
-	public void attachPelletReasoner() {
-		OWLReasoner reasoner = getReasoner();
-		if (reasoner != null) {
-			if (reasoner instanceof org.mindswap.pellet.owlapi.Reasoner) {
-				PlatformkitLogger.logger.warning(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.pelletAlreadyAttached")); //$NON-NLS-1$
-				return;
-			}
-			detachReasoner();
-		}
+	public void attachPelletReasoner() throws OntException {
 		PlatformkitLogger.logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.attachingPellet")); //$NON-NLS-1$
 		final OWLOntologyManager mgr = getMgr();
-		reasoner = new org.mindswap.pellet.owlapi.Reasoner(mgr);
-		setReasoner(reasoner);
 		try {
+			final OWLReasonerFactory fact = new PelletReasonerFactory();
+			reasoner = fact.createReasoner(mgr);
+			setReasoner(reasoner);
 			reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
 			if (getInstances() != null) {
 				reasoner.loadOntologies(mgr.getImportsClosure(getInstances().getModel()));
 			}
-		} catch (OWLException e) {
-			PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+		} catch (Exception e) {
+			throw new OntException(e);
+		}
+	}
+
+	/**
+	 * Attaches the Fact++ DL reasoner.
+	 * @throws OntException 
+	 */
+	public void attachFactPPReasoner() throws OntException {
+		PlatformkitLogger.logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.attachingFactPP")); //$NON-NLS-1$
+		final OWLOntologyManager mgr = getMgr();
+		try {
+			final OWLReasonerFactory fact = new FaCTPlusPlusReasonerFactory();
+			reasoner = fact.createReasoner(mgr);
+			setReasoner(reasoner);
+			reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
+			if (getInstances() != null) {
+				reasoner.loadOntologies(mgr.getImportsClosure(getInstances().getModel()));
+			}
+			reasoner.classify();
+			reasoner.realise();
+		} catch (Exception e) {
+			throw new OntException(e);
 		}
 	}
 
@@ -203,7 +262,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#attachTransitiveReasoner()
 	 */
-	public void attachTransitiveReasoner() {
+	public void attachTransitiveReasoner() throws OntException {
 		//TODO there is no transitive reasoner for OWLAPI
 		attachPelletReasoner();
 	}
@@ -277,6 +336,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 		}
 		PlatformkitLogger.logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.detaching")); //$NON-NLS-1$
 		setReasoner(null);
+		dlReasonerAttached = false;
 	}
 
 	/*
