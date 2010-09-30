@@ -22,6 +22,10 @@
       <knowledgebase
             factory="be.ac.vub.platformkit.kb.jena.JenaOntologiesFactory"
             name="%knowledgebase.name">
+         <reasoner
+               id="org.mindswap.pellet.jena.PelletReasoner"
+               name="%reasoner.name">
+         </reasoner>
       </knowledgebase>
    </extension>
 
