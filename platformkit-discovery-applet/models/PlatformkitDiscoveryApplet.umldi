@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_CqXrsS1cEd2KTNOPeUc_7g" activeDiagram="_NjO2YC2CEd2e7od4K9wNBA">
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_CqXrsS1cEd2KTNOPeUc_7g" activeDiagram="_QAsMkC1cEd2KTNOPeUc_7g">
   <model href="PlatformkitDiscoveryApplet.uml#_w8IxIM37EdqwVrslYOdUDA"/>
   <diagrams xmi:id="_CqbWEC1cEd2KTNOPeUc_7g" position="0,0" size="100,100" name="PlatformkitDiscoveryApplet" viewport="0,0">
     <property xmi:id="_CxdyMC1cEd2KTNOPeUc_7g" key="pageFormatName" value="A4"/>
@@ -85,11 +85,11 @@
         </diagrams>
         <subdiagrams xmi:id="_QAq-cC1cEd2KTNOPeUc_7g">
           <model href="PlatformkitDiscoveryApplet.uml#_O5BZ4C1cEd2KTNOPeUc_7g"/>
-          <diagrams xmi:id="_QAsMkC1cEd2KTNOPeUc_7g" position="0,0" size="100,100" name="unnamed" viewport="0,0">
-            <property xmi:id="_QAzhUC1cEd2KTNOPeUc_7g" key="pageFormatName" value="A0"/>
-            <property xmi:id="_QAzhUS1cEd2KTNOPeUc_7g" key="diagramWidth" value="3364"/>
-            <property xmi:id="_QAzhUi1cEd2KTNOPeUc_7g" key="diagramHeight" value="4756"/>
-            <property xmi:id="_QAzhUy1cEd2KTNOPeUc_7g" key="pageMarginName" value="Small Margin"/>
+          <diagrams xmi:id="_QAsMkC1cEd2KTNOPeUc_7g" position="0,0" size="100,100" name="unnamed" viewport="-59,0">
+            <property xmi:id="_QAzhUC1cEd2KTNOPeUc_7g" key="pageFormatName" value=""/>
+            <property xmi:id="_QAzhUS1cEd2KTNOPeUc_7g" key="diagramWidth" value="813"/>
+            <property xmi:id="_QAzhUi1cEd2KTNOPeUc_7g" key="diagramHeight" value="635"/>
+            <property xmi:id="_QAzhUy1cEd2KTNOPeUc_7g" key="pageMarginName" value="A0"/>
             <property xmi:id="_QAzhVC1cEd2KTNOPeUc_7g" key="diagramTopMargin" value="20"/>
             <property xmi:id="_QAzhVS1cEd2KTNOPeUc_7g" key="diagramBottomMargin" value="20"/>
             <property xmi:id="_QAzhVi1cEd2KTNOPeUc_7g" key="diagramLeftMargin" value="20"/>
@@ -153,6 +153,7 @@
               </semanticModel>
             </contained>
             <contained xsi:type="di:GraphEdge" xmi:id="_-B99YC2AEd2e7od4K9wNBA" anchor="_-B9WUC2AEd2e7od4K9wNBA _-B9WUS2AEd2e7od4K9wNBA">
+              <property xmi:id="_GYCFoM2CEd-8Y9n3Oggclw" key="router" value="Oblique"/>
               <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_-B99YS2AEd2e7od4K9wNBA" presentation="default">
                 <element href="PlatformkitDiscoveryApplet.uml#_-B99Yy2AEd2e7od4K9wNBA"/>
               </semanticModel>
@@ -487,14 +488,14 @@
           <subdiagrams xmi:id="_NjNoQC2CEd2e7od4K9wNBA">
             <model href="PlatformkitDiscoveryApplet.uml#_ICi1AC2CEd2e7od4K9wNBA"/>
             <diagrams xmi:id="_NjO2YC2CEd2e7od4K9wNBA" position="0,0" size="100,100" name="unnamed" viewport="0,0">
-              <property xmi:id="_NjZOcC2CEd2e7od4K9wNBA" key="pageFormatName" value="A4"/>
-              <property xmi:id="_NjZOcS2CEd2e7od4K9wNBA" key="diagramWidth" value="840"/>
-              <property xmi:id="_NjZOci2CEd2e7od4K9wNBA" key="diagramHeight" value="1188"/>
-              <property xmi:id="_NjZOcy2CEd2e7od4K9wNBA" key="pageMarginName" value="Small Margin"/>
-              <property xmi:id="_NjZOdC2CEd2e7od4K9wNBA" key="diagramTopMargin" value="20"/>
-              <property xmi:id="_NjZOdS2CEd2e7od4K9wNBA" key="diagramBottomMargin" value="20"/>
-              <property xmi:id="_NjZOdi2CEd2e7od4K9wNBA" key="diagramLeftMargin" value="20"/>
-              <property xmi:id="_NjZOdy2CEd2e7od4K9wNBA" key="diagramRightMargin" value="20"/>
+              <property xmi:id="_NjZOcC2CEd2e7od4K9wNBA" key="pageFormatName" value=""/>
+              <property xmi:id="_NjZOcS2CEd2e7od4K9wNBA" key="diagramWidth" value="758"/>
+              <property xmi:id="_NjZOci2CEd2e7od4K9wNBA" key="diagramHeight" value="489"/>
+              <property xmi:id="_NjZOcy2CEd2e7od4K9wNBA" key="pageMarginName" value="A5"/>
+              <property xmi:id="_NjZOdC2CEd2e7od4K9wNBA" key="diagramTopMargin" value="0"/>
+              <property xmi:id="_NjZOdS2CEd2e7od4K9wNBA" key="diagramBottomMargin" value="0"/>
+              <property xmi:id="_NjZOdi2CEd2e7od4K9wNBA" key="diagramLeftMargin" value="0"/>
+              <property xmi:id="_NjZOdy2CEd2e7od4K9wNBA" key="diagramRightMargin" value="0"/>
               <property xmi:id="_NjZOeC2CEd2e7od4K9wNBA" key="orientation" value="portrait"/>
               <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_NjO2YS2CEd2e7od4K9wNBA" presentation="org.topcased.modeler.uml.classdiagram">
                 <element href="PlatformkitDiscoveryApplet.uml#_ICi1AC2CEd2e7od4K9wNBA"/>
@@ -625,11 +626,11 @@
             </diagrams>
             <subdiagrams xmi:id="_8Wb9wC2CEd2e7od4K9wNBA">
               <model href="PlatformkitDiscoveryApplet.uml#_RpXlUi2CEd2e7od4K9wNBA"/>
-              <diagrams xmi:id="_8Wdy8C2CEd2e7od4K9wNBA" position="0,0" size="100,100" name="unnamed" viewport="0,602">
-                <property xmi:id="_8WoLAC2CEd2e7od4K9wNBA" key="pageFormatName" value="A0"/>
-                <property xmi:id="_8WoLAS2CEd2e7od4K9wNBA" key="diagramWidth" value="3364"/>
-                <property xmi:id="_8WoLAi2CEd2e7od4K9wNBA" key="diagramHeight" value="4756"/>
-                <property xmi:id="_8WoLAy2CEd2e7od4K9wNBA" key="pageMarginName" value="Small Margin"/>
+              <diagrams xmi:id="_8Wdy8C2CEd2e7od4K9wNBA" position="0,0" size="100,100" name="unnamed" viewport="0,0">
+                <property xmi:id="_8WoLAC2CEd2e7od4K9wNBA" key="pageFormatName" value=""/>
+                <property xmi:id="_8WoLAS2CEd2e7od4K9wNBA" key="diagramWidth" value="1173"/>
+                <property xmi:id="_8WoLAi2CEd2e7od4K9wNBA" key="diagramHeight" value="1151"/>
+                <property xmi:id="_8WoLAy2CEd2e7od4K9wNBA" key="pageMarginName" value="A0"/>
                 <property xmi:id="_8WoLBC2CEd2e7od4K9wNBA" key="diagramTopMargin" value="20"/>
                 <property xmi:id="_8WoLBS2CEd2e7od4K9wNBA" key="diagramBottomMargin" value="20"/>
                 <property xmi:id="_8WoLBi2CEd2e7od4K9wNBA" key="diagramLeftMargin" value="20"/>
@@ -954,11 +955,11 @@
             </subdiagrams>
             <subdiagrams xmi:id="_g4adsDiLEd2dy_l0QkGsYA">
               <model href="PlatformkitDiscoveryApplet.uml#_fOTsUDiLEd2dy_l0QkGsYA"/>
-              <diagrams xmi:id="_g4f9QDiLEd2dy_l0QkGsYA" position="0,0" size="100,100" name="unnamed" viewport="0,564">
-                <property xmi:id="_g5cYcDiLEd2dy_l0QkGsYA" key="pageFormatName" value="A0"/>
-                <property xmi:id="_g5c_gDiLEd2dy_l0QkGsYA" key="diagramWidth" value="3364"/>
-                <property xmi:id="_g5c_gTiLEd2dy_l0QkGsYA" key="diagramHeight" value="4756"/>
-                <property xmi:id="_g5c_gjiLEd2dy_l0QkGsYA" key="pageMarginName" value="Small Margin"/>
+              <diagrams xmi:id="_g4f9QDiLEd2dy_l0QkGsYA" position="0,0" size="100,100" name="unnamed" viewport="0,0">
+                <property xmi:id="_g5cYcDiLEd2dy_l0QkGsYA" key="pageFormatName" value=""/>
+                <property xmi:id="_g5c_gDiLEd2dy_l0QkGsYA" key="diagramWidth" value="1235"/>
+                <property xmi:id="_g5c_gTiLEd2dy_l0QkGsYA" key="diagramHeight" value="1209"/>
+                <property xmi:id="_g5c_gjiLEd2dy_l0QkGsYA" key="pageMarginName" value="A0"/>
                 <property xmi:id="_g5c_gziLEd2dy_l0QkGsYA" key="diagramTopMargin" value="20"/>
                 <property xmi:id="_g5c_hDiLEd2dy_l0QkGsYA" key="diagramBottomMargin" value="20"/>
                 <property xmi:id="_g5c_hTiLEd2dy_l0QkGsYA" key="diagramLeftMargin" value="20"/>
