@@ -1,0 +1,134 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: be.ac.vub.platformkit.kb.owlapi;singleton:=true
+Bundle-Version: 1.4.0
+Bundle-Vendor: %Bundle-Vendor
+Require-Bundle: be.ac.vub.platformkit,
+ org.junit,
+ be.ac.vub.platformkit.pellet;bundle-version="2.0.2"
+Bundle-ActivationPolicy: lazy
+Export-Package: be.ac.vub.platformkit.kb.owlapi;uses:="org.semanticweb.owl.inference,be.ac.vub.platformkit.kb,org.semanticweb.owl.model",
+ com.clarkparsia.explanation;x-friends:="be.ac.vub.platformkit.pellet",
+ com.clarkparsia.explanation.io;x-friends:="be.ac.vub.platformkit.pellet",
+ com.clarkparsia.explanation.util;x-friends:="be.ac.vub.platformkit.pellet",
+ com.clarkparsia.modularity.locality;x-friends:="be.ac.vub.platformkit.pellet",
+ com.clarkparsia.owlapi;x-friends:="be.ac.vub.platformkit.pellet",
+ de.uulm.ecs.ai.owl.krssparser;x-friends:="be.ac.vub.platformkit.pellet",
+ de.uulm.ecs.ai.owl.krssrenderer;x-friends:="be.ac.vub.platformkit.pellet",
+ edu.unika.aifb.rdf.api.syntax;x-friends:="be.ac.vub.platformkit.pellet",
+ edu.unika.aifb.rdf.api.util;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.manchesterowlsyntax;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.obo.parser;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.obo.renderer;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.functionalparser;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.functionalrenderer;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.krssparser;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.latex;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.owlxmlparser;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.rdf.model;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.rdf.rdfxml;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.rdf.renderer;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.rdf.turtle;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owl.rdfxml.parser;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owlapiv2.owlxml.renderer;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.owlapiv2.xml;x-friends:="be.ac.vub.platformkit.pellet",
+ org.coode.string;x-friends:="be.ac.vub.platformkit.pellet",
+ org.mindswap.pellet.owlapi;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.apibinding;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.debugging;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.expression;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.inference;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.io;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.metrics;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.model;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.modularity;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.normalform;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.profiles;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.util;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.owl.vocab;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.reasonerfactory;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.reasonerfactory.factpp;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.reasonerfactory.hermit;x-friends:="be.ac.vub.platformkit.pellet",
+ org.semanticweb.reasonerfactory.pellet;x-friends:="be.ac.vub.platformkit.pellet",
+ uk.ac.manchester.cs.bhig.util;x-friends:="be.ac.vub.platformkit.pellet",
+ uk.ac.manchester.cs.owl;x-friends:="be.ac.vub.platformkit.pellet",
+ uk.ac.manchester.cs.owl.dlsyntax;x-friends:="be.ac.vub.platformkit.pellet",
+ uk.ac.manchester.cs.owl.dlsyntax.parser;x-friends:="be.ac.vub.platformkit.pellet",
+ uk.ac.manchester.cs.owl.explanation.ordering;x-friends:="be.ac.vub.platformkit.pellet",
+ uk.ac.manchester.cs.owl.inference.dig11;x-friends:="be.ac.vub.platformkit.pellet",
+ uk.ac.manchester.cs.owl.mansyntaxrenderer;
+  x-friends:="be.ac.vub.platformkit.pellet,
+   be.ac.vub.platformkit.factplusplus";
+  uses:="org.coode.manchesterowlsyntax,
+   org.semanticweb.owl.io,
+   org.semanticweb.owl.util,
+   org.coode.xml,
+   org.semanticweb.owl.model",
+ uk.ac.manchester.cs.owl.modularity;
+  x-friends:="be.ac.vub.platformkit.pellet,
+   be.ac.vub.platformkit.factplusplus";
+  uses:="org.semanticweb.owl.modularity,
+   org.semanticweb.owl.model,
+   com.clarkparsia.modularity.locality",
+ uk.ac.manchester.cs.owl.turtle.parser;
+  x-friends:="be.ac.vub.platformkit.pellet,
+   be.ac.vub.platformkit.factplusplus";
+  uses:="org.semanticweb.owl.io,
+   org.semanticweb.owl.model,
+   org.coode.owl.rdfxml.parser"
+Bundle-NativeCode: lib/native/64bit/FaCTPlusPlusJNI.dll;
+ osname=WindowsXP ;
+ osname=Windows XP ;
+ osname=WinXP ;
+ osname=WindowsVista ;
+ osname=Windows Vista ;
+ osname=Windows2003 ;
+ osname=Windows 7 ;
+ processor=x86_64 ;
+ processor = amd64 ,
+ lib/native/32bit/FaCTPlusPlusJNI.dll;
+ osname=Windows95 ;
+ osname=Windows 95 ;
+ osname=Win95 ;
+ osname=Windows98 ;
+ osname=Windows 98 ;
+ osname=Win98 ;
+ osname=WindowsNT ;
+ osname=Windows NT ;
+ osname=WinNT ;
+ osname=WindowsCE ;
+ osname=Winndows CE ;
+ osname=WinCE ;
+ osname=WindowsXP ;
+ osname=Windows XP ;
+ osname=WinXP ;
+ osname=WindowsVista ;
+ osname=Windows Vista ;
+ osname=Windows2003 ;
+ osname=Windows 7 ;
+ processor = i386 ;
+ processor = x86 ,
+ lib/native/64bit/libFaCTPlusPlusJNI.so;
+ osname=Linux ;
+ processor=x86_64 ;
+ processor=amd64 ,
+ lib/native/32bit/libFaCTPlusPlusJNI.so;
+ osname=Linux ;
+ processor=i386 ,
+ lib/native/64bit/libFaCTPlusPlusJNI.jnilib;
+ osname=MacOSX ;
+ osname=Mac OS X ;
+ processor=ppc64 ;
+ processor=x86_64 ,
+ lib/native/32bit/libFaCTPlusPlusJNI.jnilib;
+ osname=MacOSX ;
+ osname=Mac OS X ;
+ processor=ppc ;
+ processor=i386
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ClassPath: .,
+ lib/owlapi-bin.jar,
+ lib/pellet-owlapi.jar,
+ lib/FaCTPlusPlus.jar
