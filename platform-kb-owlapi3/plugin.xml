@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<!--
+ <copyright>
+ Copyright (c) 2005-2010 Dennis Wagelaar, Vrije Universiteit Brussel.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+ Contributors:
+     Dennis Wagelaar, Vrije Universiteit Brussel
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension
+         point="be.ac.vub.platformkit.knowledgebase">
+      <knowledgebase
+            factory="be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory"
+            name="%knowledgebase.name">
+         <reasoner
+               id="uk.ac.manchester.cs.factplusplus.owlapi.Reasoner"
+               name="%reasoner.name">
+         </reasoner>
+         <reasoner
+               id="org.mindswap.pellet.owlapi.Reasoner"
+               name="%reasoner.name.0">
+         </reasoner>
+         <reasoner
+               id="uk.ac.manchester.cs.owl.inference.dig11.DIGReasoner"
+               name="%reasoner.name.1">
+         </reasoner>
+      </knowledgebase>
+   </extension>
+
+</plugin>
