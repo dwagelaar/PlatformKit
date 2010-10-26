@@ -8,47 +8,46 @@
  * Contributors:
  *     Dennis Wagelaar, Vrije Universiteit Brussel
  *******************************************************************************/
-package be.ac.vub.platformkit.kb.owlapi;
+package be.ac.vub.platformkit.kb.owlapi3;
 
 import java.io.OutputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import org.semanticweb.owl.inference.OWLReasoner;
-import org.semanticweb.owl.inference.OWLReasonerException;
-import org.semanticweb.owl.io.StreamOutputTarget;
-import org.semanticweb.owl.model.AddAxiom;
-import org.semanticweb.owl.model.OWLAxiom;
-import org.semanticweb.owl.model.OWLClass;
-import org.semanticweb.owl.model.OWLDataFactory;
-import org.semanticweb.owl.model.OWLDataProperty;
-import org.semanticweb.owl.model.OWLDataRangeFacetRestriction;
-import org.semanticweb.owl.model.OWLDataRangeRestriction;
-import org.semanticweb.owl.model.OWLDataSomeRestriction;
-import org.semanticweb.owl.model.OWLDataType;
-import org.semanticweb.owl.model.OWLDataValueRestriction;
-import org.semanticweb.owl.model.OWLDescription;
-import org.semanticweb.owl.model.OWLEquivalentClassesAxiom;
-import org.semanticweb.owl.model.OWLObjectIntersectionOf;
-import org.semanticweb.owl.model.OWLObjectProperty;
-import org.semanticweb.owl.model.OWLObjectSomeRestriction;
-import org.semanticweb.owl.model.OWLObjectUnionOf;
-import org.semanticweb.owl.model.OWLOntology;
-import org.semanticweb.owl.model.OWLOntologyChange;
-import org.semanticweb.owl.model.OWLOntologyChangeException;
-import org.semanticweb.owl.model.OWLOntologyManager;
-import org.semanticweb.owl.model.OWLOntologyStorageException;
-import org.semanticweb.owl.model.OWLProperty;
-import org.semanticweb.owl.model.OWLPropertyExpression;
-import org.semanticweb.owl.model.OWLRestriction;
-import org.semanticweb.owl.model.RemoveAxiom;
-import org.semanticweb.owl.model.UnknownOWLOntologyException;
-import org.semanticweb.owl.vocab.OWLRestrictedDataRangeFacetVocabulary;
+import org.semanticweb.owlapi.io.StreamDocumentTarget;
+import org.semanticweb.owlapi.model.AddAxiom;
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLDataHasValue;
+import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataSomeValuesFrom;
+import org.semanticweb.owlapi.model.OWLDatatype;
+import org.semanticweb.owlapi.model.OWLDatatypeRestriction;
+import org.semanticweb.owlapi.model.OWLEquivalentClassesAxiom;
+import org.semanticweb.owlapi.model.OWLFacetRestriction;
+import org.semanticweb.owlapi.model.OWLObjectIntersectionOf;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
+import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
+import org.semanticweb.owlapi.model.OWLObjectUnionOf;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyChange;
+import org.semanticweb.owlapi.model.OWLOntologyChangeException;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.model.OWLProperty;
+import org.semanticweb.owlapi.model.OWLPropertyExpression;
+import org.semanticweb.owlapi.model.OWLRestriction;
+import org.semanticweb.owlapi.model.RemoveAxiom;
+import org.semanticweb.owlapi.model.UnknownOWLOntologyException;
+import org.semanticweb.owlapi.reasoner.NodeSet;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.vocab.OWLFacet;
 
 import be.ac.vub.platformkit.kb.IOntClass;
 import be.ac.vub.platformkit.kb.IOntModel;
@@ -64,9 +63,9 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @param desc
 	 * @return the local name of desc or the empty string if not available
 	 */
-	public static final String getLocalNameOf(OWLDescription desc) {
+	public static final String getLocalNameOf(OWLClassExpression desc) {
 		if (!desc.isAnonymous()) {
-			return desc.asOWLClass().getURI().getFragment();
+			return desc.asOWLClass().getIRI().getFragment();
 		}
 		return "";
 	}
@@ -104,15 +103,13 @@ public class OWLOntologyAdapter implements IOntModel {
 		final OWLOntologyManager mgr = getOntologies().getMgr();
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		try {
-			final OWLClass intsecClass = factory.getOWLClass(new URI(uri));
+			final OWLClass intsecClass = factory.getOWLClass(IRI.create(uri));
 			final Set<OWLClass> operands = toOWLClassSet(members);
 			final OWLObjectIntersectionOf intersection = factory.getOWLObjectIntersectionOf(operands);
 			final OWLAxiom axiom = factory.getOWLEquivalentClassesAxiom(intsecClass, intersection);
 			final AddAxiom addAxiom = new AddAxiom(getModel(), axiom);
 			mgr.applyChange(addAxiom);
 			return new OWLClassAdapter(intsecClass, getOntologies());
-		} catch (URISyntaxException e) {
-			throw new OntException(e);
 		} catch (OWLOntologyChangeException e) {
 			throw new OntException(e);
 		}
@@ -126,14 +123,10 @@ public class OWLOntologyAdapter implements IOntModel {
 		final OWLAPIOntologies ontologies = getOntologies();
 		final OWLOntologyManager mgr = ontologies.getMgr();
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
-		try {
-			final URI classURI = new URI(uri);
-			if (getModel().containsClassReference(classURI)) {
-				final OWLClass owlClass = factory.getOWLClass(classURI);
-				return new OWLClassAdapter(owlClass, ontologies);
-			}
-		} catch (URISyntaxException e) {
-			throw new OntException(e);
+		final IRI classURI = IRI.create(uri);
+		if (getModel().containsClassInSignature(classURI)) {
+			final OWLClass owlClass = factory.getOWLClass(classURI);
+			return new OWLClassAdapter(owlClass, ontologies);
 		}
 		return null;
 	}
@@ -146,7 +139,7 @@ public class OWLOntologyAdapter implements IOntModel {
 		final OWLAPIOntologies ontologies = getOntologies();
 		final OWLOntologyManager mgr = ontologies.getMgr();
 		try {
-			mgr.saveOntology(getModel(), new StreamOutputTarget(out));
+			mgr.saveOntology(getModel(), new StreamDocumentTarget(out));
 		} catch (UnknownOWLOntologyException e) {
 			throw new OntException(e);
 		} catch (OWLOntologyStorageException e) {
@@ -159,7 +152,7 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @see be.ac.vub.platformkit.kb.IOntModel#getNsURI()
 	 */
 	public String getNsURI() {
-		return getModel().getURI().toString();
+		return getModel().getOntologyID().getOntologyIRI().toString();
 	}
 
 	/*
@@ -173,27 +166,27 @@ public class OWLOntologyAdapter implements IOntModel {
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		try {
 			final List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
-			final URI restrClassURI = new URI(uri);
+			final IRI restrClassURI = IRI.create(uri);
 			final OWLClass restrClass = factory.getOWLClass(restrClassURI);
 			if (propertyURI != null && range != null) {
-				final URI propURI = new URI(propertyURI);
-				final Set<OWLDescription> existingRanges = getExistingPropertyRestrictionRanges(
+				final IRI propURI = IRI.create(propertyURI);
+				final Set<OWLClassExpression> existingRanges = getExistingPropertyRestrictionRanges(
 						restrClass, propURI);
 				final OWLObjectProperty property = factory.getOWLObjectProperty(propURI);
-				final Set<OWLDescription> restrictionSet = new HashSet<OWLDescription>();
+				final Set<OWLClassExpression> restrictionSet = new HashSet<OWLClassExpression>();
 				//create property restrictions on given ranges
 				while (range.hasNext()) {
-					OWLDescription rangeClass = ((OWLClassAdapter) range.next()).getModel();
+					OWLClassExpression rangeClass = ((OWLClassAdapter) range.next()).getModel();
 					if (!mergeClassIntoRange(rangeClass, existingRanges, false)) {
 						//append current range
-						OWLDescription restriction = factory.getOWLObjectSomeRestriction(
+						OWLClassExpression restriction = factory.getOWLObjectSomeValuesFrom(
 								property, rangeClass);
 						restrictionSet.add(restriction);
 					}
 				}
 				//include remaining existing ranges
-				for (OWLDescription rangeClass : existingRanges) {
-					OWLDescription restriction = factory.getOWLObjectSomeRestriction(
+				for (OWLClassExpression rangeClass : existingRanges) {
+					OWLClassExpression restriction = factory.getOWLObjectSomeValuesFrom(
 							property, rangeClass);
 					restrictionSet.add(restriction);
 				}
@@ -205,23 +198,19 @@ public class OWLOntologyAdapter implements IOntModel {
 						restrictionSet.remove(restrClass);
 					}
 					//add new equivalence class axiom
-					final OWLDescription restrIntersection = factory.getOWLObjectIntersectionOf(restrictionSet);
+					final OWLClassExpression restrIntersection = factory.getOWLObjectIntersectionOf(restrictionSet);
 					final OWLAxiom ecAxiom = factory.getOWLEquivalentClassesAxiom(restrClass, restrIntersection);
 					changes.add(new AddAxiom(getModel(), ecAxiom));
 				}
 			}
 			if (superClass != null) {
 				assert superClass instanceof OWLClassAdapter;
-				final OWLAxiom scAxiom = factory.getOWLSubClassAxiom(restrClass, ((OWLClassAdapter) superClass).getModel());
+				final OWLAxiom scAxiom = factory.getOWLSubClassOfAxiom(restrClass, ((OWLClassAdapter) superClass).getModel());
 				changes.add(new AddAxiom(getModel(), scAxiom));
 			}
 			mgr.applyChanges(changes);
 			return new OWLClassAdapter(restrClass, getOntologies());
-		} catch (URISyntaxException e) {
-			throw new OntException(e);
 		} catch (OWLOntologyChangeException e) {
-			throw new OntException(e);
-		} catch (OWLReasonerException e) {
 			throw new OntException(e);
 		}
 	}
@@ -237,12 +226,12 @@ public class OWLOntologyAdapter implements IOntModel {
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		try {
 			final List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
-			final URI restrClassURI = new URI(uri);
+			final IRI restrClassURI = IRI.create(uri);
 			final OWLClass restrClass = factory.getOWLClass(restrClassURI);
 			if (propertyURI != null && datatypeURI != null && value != null) {
-				final URI propURI = new URI(propertyURI);
+				final IRI propURI = IRI.create(propertyURI);
 				final OWLDataProperty property = factory.getOWLDataProperty(propURI);
-				final Set<OWLDescription> restrictionSet = new HashSet<OWLDescription>();
+				final Set<OWLClassExpression> restrictionSet = new HashSet<OWLClassExpression>();
 	
 				//remove existing equivalence class axiom
 				for (OWLEquivalentClassesAxiom ecAxiom : getModel().getEquivalentClassesAxioms(restrClass)) {
@@ -251,16 +240,16 @@ public class OWLOntologyAdapter implements IOntModel {
 					restrictionSet.remove(restrClass);
 				}
 				//add new equivalence class axiom
-				final URI dtURI = new URI(datatypeURI);
-				final OWLDataType dataType = factory.getOWLDataType(dtURI);
-				final OWLDataRangeFacetRestriction facetRestr = factory.getOWLDataRangeFacetRestriction(
-						OWLRestrictedDataRangeFacetVocabulary.MIN_INCLUSIVE, 
-						factory.getOWLTypedConstant(value, dataType));
-				final OWLDataRangeRestriction rangeRestr = factory.getOWLDataRangeRestriction(dataType, facetRestr);
-				final OWLDataSomeRestriction restr = factory.getOWLDataSomeRestriction(property, rangeRestr);
+				final IRI dtURI = IRI.create(datatypeURI);
+				final OWLDatatype dataType = factory.getOWLDatatype(dtURI);
+				final OWLFacetRestriction facetRestr = factory.getOWLFacetRestriction(
+						OWLFacet.MIN_INCLUSIVE, 
+						factory.getOWLLiteral(value, dataType));
+				final OWLDatatypeRestriction rangeRestr = factory.getOWLDatatypeRestriction(dataType, facetRestr);
+				final OWLDataSomeValuesFrom restr = factory.getOWLDataSomeValuesFrom(property, rangeRestr);
 				if (!restrictionSet.isEmpty()) {
 					restrictionSet.add(restr);
-					final OWLDescription restrIntersection = factory.getOWLObjectIntersectionOf(restrictionSet);
+					final OWLClassExpression restrIntersection = factory.getOWLObjectIntersectionOf(restrictionSet);
 					final OWLAxiom ecAxiom = factory.getOWLEquivalentClassesAxiom(restrClass, restrIntersection);
 					changes.add(new AddAxiom(getModel(), ecAxiom));
 				} else {
@@ -271,13 +260,11 @@ public class OWLOntologyAdapter implements IOntModel {
 			}
 			if (superClass != null) {
 				assert superClass instanceof OWLClassAdapter;
-				final OWLAxiom scAxiom = factory.getOWLSubClassAxiom(restrClass, ((OWLClassAdapter) superClass).getModel());
+				final OWLAxiom scAxiom = factory.getOWLSubClassOfAxiom(restrClass, ((OWLClassAdapter) superClass).getModel());
 				changes.add(new AddAxiom(getModel(), scAxiom));
 			}
 			mgr.applyChanges(changes);
 			return new OWLClassAdapter(restrClass, getOntologies());
-		} catch (URISyntaxException e) {
-			throw new OntException(e);
 		} catch (OWLOntologyChangeException e) {
 			throw new OntException(e);
 		}
@@ -294,12 +281,12 @@ public class OWLOntologyAdapter implements IOntModel {
 		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		try {
 			final List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
-			final URI restrClassURI = new URI(uri);
+			final IRI restrClassURI = IRI.create(uri);
 			final OWLClass restrClass = factory.getOWLClass(restrClassURI);
 			if (propertyURI != null && datatypeURI != null && value != null) {
-				final URI propURI = new URI(propertyURI);
+				final IRI propURI = IRI.create(propertyURI);
 				final OWLDataProperty property = factory.getOWLDataProperty(propURI);
-				final Set<OWLDescription> restrictionSet = new HashSet<OWLDescription>();
+				final Set<OWLClassExpression> restrictionSet = new HashSet<OWLClassExpression>();
 	
 				//remove existing equivalence class axiom
 				for (OWLEquivalentClassesAxiom ecAxiom : getModel().getEquivalentClassesAxioms(restrClass)) {
@@ -308,13 +295,13 @@ public class OWLOntologyAdapter implements IOntModel {
 					restrictionSet.remove(restrClass);
 				}
 				//add new equivalence class axiom
-				final URI dtURI = new URI(datatypeURI);
-				final OWLDataType dataType = factory.getOWLDataType(dtURI);
-				final OWLDataValueRestriction restr = factory.getOWLDataValueRestriction(
-						property, factory.getOWLTypedConstant(value, dataType));
+				final IRI dtURI = IRI.create(datatypeURI);
+				final OWLDatatype dataType = factory.getOWLDatatype(dtURI);
+				final OWLDataHasValue restr = factory.getOWLDataHasValue(
+						property, factory.getOWLLiteral(value, dataType));
 				if (!restrictionSet.isEmpty()) {
 					restrictionSet.add(restr);
-					final OWLDescription restrIntersection = factory.getOWLObjectIntersectionOf(restrictionSet);
+					final OWLClassExpression restrIntersection = factory.getOWLObjectIntersectionOf(restrictionSet);
 					final OWLAxiom ecAxiom = factory.getOWLEquivalentClassesAxiom(restrClass, restrIntersection);
 					changes.add(new AddAxiom(getModel(), ecAxiom));
 				} else {
@@ -325,13 +312,11 @@ public class OWLOntologyAdapter implements IOntModel {
 			}
 			if (superClass != null) {
 				assert superClass instanceof OWLClassAdapter;
-				final OWLAxiom scAxiom = factory.getOWLSubClassAxiom(restrClass, ((OWLClassAdapter) superClass).getModel());
+				final OWLAxiom scAxiom = factory.getOWLSubClassOfAxiom(restrClass, ((OWLClassAdapter) superClass).getModel());
 				changes.add(new AddAxiom(getModel(), scAxiom));
 			}
 			mgr.applyChanges(changes);
 			return new OWLClassAdapter(restrClass, getOntologies());
-		} catch (URISyntaxException e) {
-			throw new OntException(e);
 		} catch (OWLOntologyChangeException e) {
 			throw new OntException(e);
 		}
@@ -342,8 +327,8 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @param propertyURI
 	 * @return any existing property restriction range classes on the property with propertyURI for the ontology class with the given uri
 	 */
-	protected Set<OWLDescription> getExistingPropertyRestrictionRanges(
-			final OWLClass restrClass, final URI propertyURI) {
+	protected Set<OWLClassExpression> getExistingPropertyRestrictionRanges(
+			final OWLClass restrClass, final IRI propertyURI) {
 		assert restrClass != null;
 		return getExistingPropertyRestrictionRangesFrom(
 				restrClass.getEquivalentClasses(getModel()), propertyURI);
@@ -354,10 +339,10 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @param propertyURI
 	 * @return any existing property restriction range classes within classes on the property with propURI
 	 */
-	protected Set<OWLDescription> getExistingPropertyRestrictionRangesFrom(
-			final Set<OWLDescription> classes, final URI propertyURI) {
-		final Set<OWLDescription> rangeSet = new HashSet<OWLDescription>();
-		for (OWLDescription c : classes) {
+	protected Set<OWLClassExpression> getExistingPropertyRestrictionRangesFrom(
+			final Set<OWLClassExpression> classes, final IRI propertyURI) {
+		final Set<OWLClassExpression> rangeSet = new HashSet<OWLClassExpression>();
+		for (OWLClassExpression c : classes) {
 			if (c instanceof OWLObjectIntersectionOf) {
 				OWLObjectIntersectionOf inters = (OWLObjectIntersectionOf) c;
 				rangeSet.addAll(getExistingPropertyRestrictionRangesFrom(
@@ -366,9 +351,9 @@ public class OWLOntologyAdapter implements IOntModel {
 				OWLObjectUnionOf union = (OWLObjectUnionOf) c;
 				rangeSet.addAll(getExistingPropertyRestrictionRangesFrom(
 						union.getOperands(), propertyURI));
-			} else if (c instanceof OWLObjectSomeRestriction) {
-				OWLObjectSomeRestriction restr = (OWLObjectSomeRestriction) c;
-				if (restr.getProperty().getNamedProperty().getURI().equals(propertyURI)) {
+			} else if (c instanceof OWLObjectSomeValuesFrom) {
+				OWLObjectSomeValuesFrom restr = (OWLObjectSomeValuesFrom) c;
+				if (restr.getProperty().getNamedProperty().getIRI().equals(propertyURI)) {
 					rangeSet.add(restr.getFiller());
 				}
 			}
@@ -381,9 +366,10 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @param propertyURI
 	 * @return the restrictions in the equivalence class axiom that are not property restrictions on the property with propertyURI
 	 */
-	protected Set<OWLDescription> getOtherRestrictions(final OWLEquivalentClassesAxiom ecAxiom, final URI propertyURI) {
+	protected Set<OWLClassExpression> getOtherRestrictions(final OWLEquivalentClassesAxiom ecAxiom, 
+			final IRI propertyURI) {
 		assert ecAxiom != null;
-		return getOtherRestrictionsFrom(ecAxiom.getDescriptions(), propertyURI);
+		return getOtherRestrictionsFrom(ecAxiom.getClassExpressions(), propertyURI);
 	}
 
 	/**
@@ -391,10 +377,10 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @param propertyURI
 	 * @return the restrictions in classes that are not property restrictions on the property with propertyURI
 	 */
-	protected Set<OWLDescription> getOtherRestrictionsFrom(
-			final Set<OWLDescription> classes, final URI propertyURI) {
-		final Set<OWLDescription> otherRestrictions = new HashSet<OWLDescription>();
-		for (OWLDescription desc : classes) {
+	protected Set<OWLClassExpression> getOtherRestrictionsFrom(
+			final Set<OWLClassExpression> classes, final IRI propertyURI) {
+		final Set<OWLClassExpression> otherRestrictions = new HashSet<OWLClassExpression>();
+		for (OWLClassExpression desc : classes) {
 			if (desc instanceof OWLObjectIntersectionOf) {
 				otherRestrictions.addAll(
 						getOtherRestrictionsFrom(((OWLObjectIntersectionOf) desc).getOperands(), propertyURI));
@@ -410,22 +396,22 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @param propertyURI
 	 * @return <code>true</code> iff desc is, or contains, a property restriction on the property with propertyURI
 	 */
-	protected boolean isPropertyRestrictionOn(OWLDescription desc, URI propertyURI) {
+	protected boolean isPropertyRestrictionOn(OWLClassExpression desc, IRI propertyURI) {
 		if (desc instanceof OWLObjectIntersectionOf) {
 			final OWLObjectIntersectionOf inters = (OWLObjectIntersectionOf) desc;
-			for (OWLDescription sub : inters.getOperands()) {
+			for (OWLClassExpression sub : inters.getOperands()) {
 				if (isPropertyRestrictionOn(sub, propertyURI)) {
 					return true;
 				}
 			}
-		} else if (desc instanceof OWLRestriction<?>) {
-			final OWLPropertyExpression<?,?> propExp = ((OWLRestriction<?>) desc).getProperty();
+		} else if (desc instanceof OWLRestriction<?,?,?>) {
+			final OWLPropertyExpression<?,?> propExp = ((OWLRestriction<?,?,?>) desc).getProperty();
 			if (!propExp.isAnonymous()) {
 				final Set<OWLProperty<?,?>> props = new HashSet<OWLProperty<?,?>>();
 				props.addAll(propExp.getDataPropertiesInSignature());
 				props.addAll(propExp.getObjectPropertiesInSignature());
 				assert props.size() == 1;
-				if (propertyURI.equals(props.iterator().next().getURI())) {
+				if (propertyURI.equals(props.iterator().next().getIRI())) {
 					return true;
 				}
 			}
@@ -447,10 +433,9 @@ public class OWLOntologyAdapter implements IOntModel {
 	 * @param range the range of OWL class descriptions into which owlClass should be merged
 	 * @param rangeIsUnion if <code>true</code>, range is considered to be joined in a union instead of an intersection
 	 * @return <code>false</code> iff none of the above rules apply, and owlClass should just be added to the range 
-	 * @throws OWLReasonerException 
 	 */
-	protected boolean mergeClassIntoRange(final OWLDescription owlClass, 
-			final Set<OWLDescription> range, boolean rangeIsUnion) throws OWLReasonerException {
+	protected boolean mergeClassIntoRange(final OWLClassExpression owlClass, 
+			final Set<OWLClassExpression> range, boolean rangeIsUnion) {
 
 		final OWLAPIOntologies ontologies = getOntologies();
 		final OWLOntologyManager mgr = ontologies.getMgr();
@@ -460,23 +445,25 @@ public class OWLOntologyAdapter implements IOntModel {
 		assert reasoner != null;
 
 		boolean merged = false;
-		final Set<OWLDescription> newEntries = new HashSet<OWLDescription>();
-		final Set<OWLDescription> unionEntries = new HashSet<OWLDescription>();
+		final Set<OWLClassExpression> newEntries = new HashSet<OWLClassExpression>();
+		final Set<OWLClassExpression> unionEntries = new HashSet<OWLClassExpression>();
 
 		//find least specific superclass in range
-		for (final Iterator<OWLDescription> oc = range.iterator(); oc.hasNext();) {
-			OWLDescription otherClass = oc.next();
-			if (reasoner.isSubClassOf(owlClass, otherClass)) {
+		for (final Iterator<OWLClassExpression> oc = range.iterator(); oc.hasNext();) {
+			OWLClassExpression otherClass = oc.next();
+			NodeSet<OWLClass> subcs = reasoner.getSubClasses(owlClass, false);
+			NodeSet<OWLClass> supercs = reasoner.getSuperClasses(owlClass, false);
+			if (supercs.getFlattened().contains(otherClass)) {
 				//discard owlClass
 				merged = true;
-			} else if (reasoner.isSubClassOf(otherClass, owlClass)) {
+			} else if (subcs.getFlattened().contains(otherClass)) {
 				//replace range entry by owlClass
 				oc.remove();
 				newEntries.add(owlClass);
 				merged = true;
 			} else if (otherClass instanceof OWLObjectUnionOf) {
 				//merge into class union
-				Set<OWLDescription> ops = new HashSet<OWLDescription>(
+				Set<OWLClassExpression> ops = new HashSet<OWLClassExpression>(
 						((OWLObjectUnionOf) otherClass).getOperands());
 				if (mergeClassIntoRange(owlClass, ops, true)) {
 					//replace by new union if ops.size() > 1

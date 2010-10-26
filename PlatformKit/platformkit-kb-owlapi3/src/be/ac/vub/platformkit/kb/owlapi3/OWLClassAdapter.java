@@ -8,16 +8,14 @@
  * Contributors:
  *     Dennis Wagelaar, Vrije Universiteit Brussel
  *******************************************************************************/
-package be.ac.vub.platformkit.kb.owlapi;
+package be.ac.vub.platformkit.kb.owlapi3;
 
-import java.util.logging.Level;
-
-import org.semanticweb.owl.inference.OWLReasoner;
-import org.semanticweb.owl.inference.OWLReasonerException;
-import org.semanticweb.owl.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.reasoner.Node;
+import org.semanticweb.owlapi.reasoner.NodeSet;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
 
 import be.ac.vub.platformkit.kb.IOntClass;
-import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
 /**
  * {@link IOntClass} adapter for {@link OWLClass}.
@@ -56,11 +54,8 @@ public class OWLClassAdapter implements IOntClass {
 	public boolean hasEquivalentClass(IOntClass c) throws ClassCastException {
 		final OWLReasoner reasoner = getOntologies().getReasoner();
 		if (reasoner != null) {
-			try {
-				return reasoner.isEquivalentClass(((OWLClassAdapter)c).getModel(), getModel());
-			} catch (OWLReasonerException e) {
-				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
-			}
+			final Node<OWLClass> ecs = reasoner.getEquivalentClasses(getModel());
+			return ecs.contains(((OWLClassAdapter)c).getModel());
 		}
 		return false;
 	}
@@ -72,11 +67,8 @@ public class OWLClassAdapter implements IOntClass {
 	public boolean hasSubClass(IOntClass c) throws ClassCastException {
 		final OWLReasoner reasoner = getOntologies().getReasoner();
 		if (reasoner != null) {
-			try {
-				return reasoner.isSubClassOf(((OWLClassAdapter)c).getModel(), getModel());
-			} catch (OWLReasonerException e) {
-				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
-			}
+			final NodeSet<OWLClass> scs = reasoner.getSubClasses(getModel(), false);
+			return scs.containsEntity(((OWLClassAdapter)c).getModel());
 		}
 		return false;
 	}
@@ -88,11 +80,8 @@ public class OWLClassAdapter implements IOntClass {
 	public boolean hasSuperClass(IOntClass c) throws ClassCastException {
 		final OWLReasoner reasoner = getOntologies().getReasoner();
 		if (reasoner != null) {
-			try {
-				return reasoner.isSubClassOf(getModel(), ((OWLClassAdapter)c).getModel());
-			} catch (OWLReasonerException e) {
-				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
-			}
+			final NodeSet<OWLClass> scs = reasoner.getSuperClasses(getModel(), false);
+			return scs.containsEntity(((OWLClassAdapter)c).getModel());
 		}
 		return false;
 	}
@@ -104,11 +93,7 @@ public class OWLClassAdapter implements IOntClass {
 	public boolean hasInstances() {
 		final OWLReasoner reasoner = getOntologies().getReasoner();
 		if (reasoner != null) {
-			try {
-				return !reasoner.getIndividuals(getModel(), false).isEmpty();
-			} catch (OWLReasonerException e) {
-				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
-			}
+			return !reasoner.getInstances(getModel(), false).isEmpty();
 		}
 		return false;
 	}

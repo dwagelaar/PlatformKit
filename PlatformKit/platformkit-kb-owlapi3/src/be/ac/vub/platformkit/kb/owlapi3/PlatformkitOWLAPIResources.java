@@ -8,7 +8,7 @@
  * Contributors:
  *     Dennis Wagelaar, Vrije Universiteit Brussel
  *******************************************************************************/
-package be.ac.vub.platformkit.kb.owlapi;
+package be.ac.vub.platformkit.kb.owlapi3;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
