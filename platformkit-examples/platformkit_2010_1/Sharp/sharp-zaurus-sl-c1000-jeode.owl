@@ -275,7 +275,7 @@
 
     <resource:NetworkResource rdf:about="#compactFlashWiFi">
         <rdf:type rdf:resource="&owl;Thing"/>
-        <resource:dataSpeed rdf:datatype="&xsd;decimal">11</resource:dataSpeed>
+        <resource:dataSpeed rdf:datatype="&xsd;double">11</resource:dataSpeed>
     </resource:NetworkResource>
     
 
@@ -284,7 +284,7 @@
 
     <arm:ARMv5TE_CPU rdf:about="#intel_PXA270_CPU">
         <rdf:type rdf:resource="&owl;Thing"/>
-        <resource:processingSpeed rdf:datatype="&xsd;decimal">416</resource:processingSpeed>
+        <resource:processingSpeed rdf:datatype="&xsd;double">416</resource:processingSpeed>
         <platform:implementsInterface rdf:resource="&arm;theARMv5TE"/>
     </arm:ARMv5TE_CPU>
     
@@ -374,8 +374,8 @@
 
     <owl:Thing rdf:about="#zaurusBattery">
         <rdf:type rdf:resource="&resource;BatteryResource"/>
-        <resource:batteryCapacity rdf:datatype="&xsd;decimal">1800</resource:batteryCapacity>
-        <resource:voltage rdf:datatype="&xsd;decimal">3.7</resource:voltage>
+        <resource:batteryCapacity rdf:datatype="&xsd;integer">1800</resource:batteryCapacity>
+        <resource:voltage rdf:datatype="&xsd;double">3.7</resource:voltage>
     </owl:Thing>
     
 
@@ -384,7 +384,7 @@
 
     <owl:Thing rdf:about="#zaurusInternalStorage">
         <rdf:type rdf:resource="&resource;StorageResource"/>
-        <resource:dataCapacity rdf:datatype="&xsd;decimal">128</resource:dataCapacity>
+        <resource:dataCapacity rdf:datatype="&xsd;double">128</resource:dataCapacity>
     </owl:Thing>
     
 
@@ -401,7 +401,7 @@
 
     <resource:MemoryResource rdf:about="#zaurusRAM">
         <rdf:type rdf:resource="&owl;Thing"/>
-        <resource:dataCapacity rdf:datatype="&xsd;decimal">64</resource:dataCapacity>
+        <resource:dataCapacity rdf:datatype="&xsd;double">64</resource:dataCapacity>
     </resource:MemoryResource>
     
 

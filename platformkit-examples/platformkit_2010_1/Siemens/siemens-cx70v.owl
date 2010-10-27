@@ -265,7 +265,7 @@
 
     <resource:BatteryResource rdf:about="#siemensCX70vBattery">
         <rdf:type rdf:resource="&owl;Thing"/>
-        <resource:batteryCapacity rdf:datatype="&xsd;decimal">750</resource:batteryCapacity>
+        <resource:batteryCapacity rdf:datatype="&xsd;integer">750</resource:batteryCapacity>
     </resource:BatteryResource>
     
 
@@ -282,7 +282,7 @@
 
     <owl:Thing rdf:about="#siemensCX70vFlashMemory">
         <rdf:type rdf:resource="&resource;StorageResource"/>
-        <resource:dataCapacity rdf:datatype="&xsd;decimal">10</resource:dataCapacity>
+        <resource:dataCapacity rdf:datatype="&xsd;double">10</resource:dataCapacity>
     </owl:Thing>
     
 
@@ -291,7 +291,7 @@
 
     <resource:NetworkResource rdf:about="#siemensCX70vGPRS">
         <rdf:type rdf:resource="&owl;Thing"/>
-        <resource:dataSpeed rdf:datatype="&xsd;decimal">0.0144</resource:dataSpeed>
+        <resource:dataSpeed rdf:datatype="&xsd;double">0.0144</resource:dataSpeed>
     </resource:NetworkResource>
     
 
@@ -300,7 +300,7 @@
 
     <owl:Thing rdf:about="#siemensCX70vIrDA">
         <rdf:type rdf:resource="&resource;NetworkResource"/>
-        <resource:dataSpeed rdf:datatype="&xsd;decimal">0.1152</resource:dataSpeed>
+        <resource:dataSpeed rdf:datatype="&xsd;double">0.1152</resource:dataSpeed>
     </owl:Thing>
     
 
@@ -310,7 +310,7 @@
     <io:DirectionalPad rdf:about="#siemensCX70vKeypad">
         <rdf:type rdf:resource="&io;NumericKeypad"/>
         <rdf:type rdf:resource="&owl;Thing"/>
-        <io:numberOfKeys rdf:datatype="&xsd;positiveInteger">21</io:numberOfKeys>
+        <io:numberOfKeys rdf:datatype="&xsd;integer">21</io:numberOfKeys>
     </io:DirectionalPad>
     
 
@@ -327,9 +327,9 @@
 
     <owl:Thing rdf:about="#siemensCX70vScreen">
         <rdf:type rdf:resource="&io;Screen"/>
-        <io:screenWidth rdf:datatype="&xsd;positiveInteger">120</io:screenWidth>
-        <io:screenHeight rdf:datatype="&xsd;positiveInteger">160</io:screenHeight>
-        <io:numberOfColors rdf:datatype="&xsd;positiveInteger">65535</io:numberOfColors>
+        <io:screenWidth rdf:datatype="&xsd;integer">120</io:screenWidth>
+        <io:screenHeight rdf:datatype="&xsd;integer">160</io:screenHeight>
+        <io:numberOfColors rdf:datatype="&xsd;integer">65535</io:numberOfColors>
     </owl:Thing>
     
 

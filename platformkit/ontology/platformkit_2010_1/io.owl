@@ -70,7 +70,7 @@
         <rdfs:comment xml:lang="en"
             >Amount of analog channels on an analog input interface.</rdfs:comment>
         <rdfs:domain rdf:resource="#AnalogInputInterface"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -82,7 +82,7 @@
         <rdfs:comment xml:lang="en"
             >Number of buttons on an input interface.</rdfs:comment>
         <rdfs:domain rdf:resource="#InputInterface"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -94,7 +94,7 @@
         <rdfs:comment xml:lang="en"
             >Amount of colors that the screen can display.</rdfs:comment>
         <rdfs:domain rdf:resource="#Screen"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -106,7 +106,7 @@
         <rdfs:comment xml:lang="en"
             >Amount of keys on a key input interface.</rdfs:comment>
         <rdfs:domain rdf:resource="#KeyInputInterface"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -116,7 +116,7 @@
     <owl:DatatypeProperty rdf:about="#photoXResolution">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="#PhotoCamera"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -126,7 +126,7 @@
     <owl:DatatypeProperty rdf:about="#photoYResolution">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="#PhotoCamera"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -138,7 +138,7 @@
         <rdfs:comment xml:lang="en"
             >Screen height in pixels.</rdfs:comment>
         <rdfs:domain rdf:resource="#Screen"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -150,7 +150,7 @@
         <rdfs:comment xml:lang="en"
             >Screen width in pixels.</rdfs:comment>
         <rdfs:domain rdf:resource="#Screen"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -160,7 +160,7 @@
     <owl:DatatypeProperty rdf:about="#videoXResolution">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="#VideoCamera"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -170,7 +170,7 @@
     <owl:DatatypeProperty rdf:about="#videoYResolution">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="#VideoCamera"/>
-        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
