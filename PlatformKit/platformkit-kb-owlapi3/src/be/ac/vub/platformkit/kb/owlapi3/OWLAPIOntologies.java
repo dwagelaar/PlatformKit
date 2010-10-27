@@ -72,7 +72,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	private Map<OWLClass, Set<OWLClass>> equivClasses = new HashMap<OWLClass, Set<OWLClass>>();
 	private Map<OWLClass, Set<OWLClass>> obsoleteSuperClasses = new HashMap<OWLClass, Set<OWLClass>>();
 	private Map<String, IOntModel> localOntologies = new HashMap<String, IOntModel>();
-	private String dlReasonerId = "uk.ac.manchester.cs.factplusplus.owlapi.Reasoner"; //$NON-NLS-1$
+	private String dlReasonerId = "uk.ac.manchester.cs.factplusplus.owlapiv3.FaCTPlusPlusReasoner"; //$NON-NLS-1$
 	private boolean dlReasonerAttached;
 
 	/**
