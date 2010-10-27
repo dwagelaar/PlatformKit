@@ -5,12 +5,12 @@
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
 	<!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl">
-	<!ENTITY isa "http://soft.vub.ac.be/platformkit/2010/1/isa.owl#" >
-	<!ENTITY io "http://soft.vub.ac.be/platformkit/2010/1/io.owl#" >
-	<!ENTITY os "http://soft.vub.ac.be/platformkit/2010/1/os.owl#" >
-	<!ENTITY resource "http://soft.vub.ac.be/platformkit/2010/1/resource.owl#" >
-	<!ENTITY arm "http://soft.vub.ac.be/platformkit/2010/1/arm.owl#" >
-	<!ENTITY x86 "http://soft.vub.ac.be/platformkit/2010/1/x86.owl#" >
+	<!ENTITY isa "http://soft.vub.ac.be/platformkit/2010/1/isa.owl">
+	<!ENTITY io "http://soft.vub.ac.be/platformkit/2010/1/io.owl">
+	<!ENTITY os "http://soft.vub.ac.be/platformkit/2010/1/os.owl">
+	<!ENTITY resource "http://soft.vub.ac.be/platformkit/2010/1/resource.owl">
+	<!ENTITY arm "http://soft.vub.ac.be/platformkit/2010/1/arm.owl">
+	<!ENTITY x86 "http://soft.vub.ac.be/platformkit/2010/1/x86.owl">
 	<!ENTITY java "http://soft.vub.ac.be/platformkit/2010/1/java.owl">
 	<!ENTITY jdk-1_1 "http://soft.vub.ac.be/platformkit/2010/1/jdk-1_1.owl">
 	<!ENTITY j2se-1_2 "http://soft.vub.ac.be/platformkit/2010/1/j2se-1_2.owl">
