@@ -5,6 +5,7 @@
 	<property name="platformkit-java.path" value="../../platformkit-java"/>
 	<property name="platformkit-kb-jena.path" value="../../platformkit-kb-jena"/>
 	<property name="platformkit-kb-owlapi.path" value="../../platformkit-kb-owlapi"/>
+	<property name="platformkit-kb-owlapi3.path" value="../../platformkit-kb-owlapi3"/>
 	<property name="platformkit-pellet.path" value="../../platformkit-pellet"/>
 	<property name="pkda.jar.path" value="../../platformkit-discovery-applet/packaging/pkda.jar"/>
 	
@@ -33,14 +34,12 @@
         		<exclude name="**/java/*Plugin.class"/>
         	</classes>
         	<classes dir="${platformkit-java.path}/ontology"/>
-        	<classes dir="${platformkit-kb-owlapi.path}/bin">
-        		<include name="**/owlapi/*"/>
-        	</classes>
+        	<classes dir="${platformkit-kb-owlapi3.path}/bin"/>
         	<lib dir="../lib">
         		<exclude name="*.xml"/>
         		<exclude name="javax.servlet.jar"/>
       		</lib>
-        	<lib dir="${platformkit-kb-owlapi.path}/lib"/>
+        	<lib dir="${platformkit-kb-owlapi3.path}/lib"/>
         	<lib dir="${platformkit-pellet.path}/lib"/>
        	</war>
     </target>

@@ -46,7 +46,7 @@ import be.ac.vub.platformkit.hibernate.HibernateUtil;
 import be.ac.vub.platformkit.java.JavaOntologyProvider;
 import be.ac.vub.platformkit.kb.IOntologies;
 import be.ac.vub.platformkit.kb.IOntologiesFactory;
-import be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory;
+import be.ac.vub.platformkit.kb.owlapi3.OWLAPIOntologiesFactory;
 import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
@@ -179,6 +179,7 @@ public class PlatformkitServlet extends HttpServlet {
 			ont.addLocalOntologies(JavaOntologyProvider.INSTANCE);
 			space.setKnowledgeBase(ont);
 			space.init(true);
+			ont.selectDLReasoner(getInitParameter("reasoner.id"));
 			ont.attachDLReasoner();
 		}
 		return space;
