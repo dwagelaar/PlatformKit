@@ -24,6 +24,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-java"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-examples"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-kb-owlapi"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/platformkit-kb-owlapi3"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

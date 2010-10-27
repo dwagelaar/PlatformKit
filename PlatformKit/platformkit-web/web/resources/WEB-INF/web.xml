@@ -39,6 +39,11 @@
       	<param-name>connection.password</param-name>
       	<param-value></param-value>
 	  </init-param>
+	  <init-param>
+	    <param-name>reasoner.id</param-name>
+	    <param-value>uk.ac.manchester.cs.factplusplus.owlapiv3.FaCTPlusPlusReasoner</param-value>
+	    <!-- <param-value>com.clarkparsia.pellet.owlapiv3.PelletReasoner</param-value> -->
+	  </init-param>
       <!-- Load this servlet at server startup time -->
       <load-on-startup>5</load-on-startup>
     </servlet>
