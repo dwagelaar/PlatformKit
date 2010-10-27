@@ -455,7 +455,7 @@ public class ConstraintSpaceImpl extends EObjectImpl implements ConstraintSpace 
 		assert kb != null;
 		boolean preClassified = false;
 		if (searchPreClassified) {
-			kb.loadOntology(getPreClassifiedOntology());
+			kb.loadBaseOntology(getPreClassifiedOntology());
 			preClassified = true;
 		} else {
 			OntException lastExc = null;

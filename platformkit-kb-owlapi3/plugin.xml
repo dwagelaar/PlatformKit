@@ -26,6 +26,10 @@
                id="uk.ac.manchester.cs.factplusplus.owlapi.Reasoner"
                name="%reasoner.name">
          </reasoner>
+         <reasoner
+               id="com.clarkparsia.pellet.owlapiv3.PelletReasoner"
+               name="%reasoner.name.0">
+         </reasoner>
       </knowledgebase>
    </extension>
 

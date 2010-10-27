@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 public class PlatformkitOWLAPIResources {
 
 	private static final ResourceBundle resourceBundle =
-		ResourceBundle.getBundle("be.ac.vub.platformkit.kb.owlapi.messages"); //$NON-NLS-1$
+		ResourceBundle.getBundle("be.ac.vub.platformkit.kb.owlapi3.messages"); //$NON-NLS-1$
 
 	/**
 	 * Not meant to be instantiated.

@@ -64,6 +64,7 @@ import be.ac.vub.platformkit.kb.IOntologyProvider;
 import be.ac.vub.platformkit.kb.util.OntException;
 import be.ac.vub.platformkit.logging.PlatformkitLogger;
 import be.ac.vub.platformkit.registry.PlatformkitRegistry;
+import de.uulm.ecs.ai.owl.inference.racer.tcp.RacerTCPReasonerFactory;
 
 /**
  * The OWLAPI version of the ontology repository for the PlatformKit.
@@ -72,9 +73,9 @@ import be.ac.vub.platformkit.registry.PlatformkitRegistry;
 public class OWLAPIOntologies extends AbstractOntologies {
 
 	private OWLOntologyManager mgr;
-	private OWLReasoner reasoner = null;
+	private OWLReasoner reasoner;
 	private OWLOntologyAdapter ontology;
-	private OWLOntologyAdapter instances = null;
+	private OWLOntologyAdapter instances;
 	private Map<OWLClass, Set<OWLClass>> superClasses = new HashMap<OWLClass, Set<OWLClass>>();
 	private Map<OWLClass, Set<OWLClass>> equivClasses = new HashMap<OWLClass, Set<OWLClass>>();
 	private Map<OWLClass, Set<OWLClass>> obsoleteSuperClasses = new HashMap<OWLClass, Set<OWLClass>>();
@@ -162,10 +163,19 @@ public class OWLAPIOntologies extends AbstractOntologies {
 			attachPelletReasoner();
 		} else if ("uk.ac.manchester.cs.owl.inference.dig11.DIGReasoner".equals(id)) {
 			attachDIGReasoner();
+		} else if ("de.uulm.ecs.ai.owl.inference.racer.RacerOWLReasoner".equals(id)) {
+			attachRacerReasoner();
 		} else {
 			throw new OntException(String.format(
 					PlatformkitOWLAPIResources.getString("OWLAPIOntologies.reasonerNotFound"), 
 					id)); //$NON-NLS-1$
+		}
+		final OWLReasoner reasoner = getReasoner();
+		try {
+			reasoner.classify();
+			reasoner.realise();
+		} catch (OWLReasonerException e) {
+			throw new OntException(e);
 		}
 		dlReasonerAttached = true;
 	}
@@ -225,7 +235,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 		final OWLOntologyManager mgr = getMgr();
 		try {
 			final OWLReasonerFactory fact = new PelletReasonerFactory();
-			reasoner = fact.createReasoner(mgr);
+			final OWLReasoner reasoner = fact.createReasoner(mgr);
 			setReasoner(reasoner);
 			reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
 			if (getInstances() != null) {
@@ -245,14 +255,32 @@ public class OWLAPIOntologies extends AbstractOntologies {
 		final OWLOntologyManager mgr = getMgr();
 		try {
 			final OWLReasonerFactory fact = new FaCTPlusPlusReasonerFactory();
-			reasoner = fact.createReasoner(mgr);
+			final OWLReasoner reasoner = fact.createReasoner(mgr);
 			setReasoner(reasoner);
 			reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
 			if (getInstances() != null) {
 				reasoner.loadOntologies(mgr.getImportsClosure(getInstances().getModel()));
 			}
-			reasoner.classify();
-			reasoner.realise();
+		} catch (Exception e) {
+			throw new OntException(e);
+		}
+	}
+
+	/**
+	 * Attaches the RacerPro DL reasoner.
+	 * @throws OntException
+	 */
+	public void attachRacerReasoner() throws OntException {
+		PlatformkitLogger.logger.info(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.attachingRacer")); //$NON-NLS-1$
+		final OWLOntologyManager mgr = getMgr();
+		try {
+			final OWLReasonerFactory fact = new RacerTCPReasonerFactory();
+			final OWLReasoner reasoner = fact.createReasoner(mgr);
+			setReasoner(reasoner);
+			reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
+			if (getInstances() != null) {
+				reasoner.loadOntologies(mgr.getImportsClosure(getInstances().getModel()));
+			}
 		} catch (Exception e) {
 			throw new OntException(e);
 		}
@@ -264,7 +292,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 */
 	public void attachTransitiveReasoner() throws OntException {
 		//TODO there is no transitive reasoner for OWLAPI
-		attachPelletReasoner();
+		attachDLReasoner();
 	}
 
 	/*
@@ -294,7 +322,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 				getEquivClasses().put(owlClass, equivs);
 				getSuperClasses().put(owlClass, supers);
 			} catch (OWLReasonerException e) {
-				PlatformkitLogger.logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+				throw new OntException(e);
 			}
 		}
 	}
@@ -329,8 +357,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 * @see be.ac.vub.platformkit.kb.IOntologies#detachReasoner()
 	 */
 	public void detachReasoner() {
-		final OWLReasoner reasoner = getReasoner();
-		if (reasoner == null) {
+		if (getReasoner() == null) {
 			PlatformkitLogger.logger.warning(PlatformkitOWLAPIResources.getString("OWLAPIOntologies.alreadyDetached")); //$NON-NLS-1$
 			return;
 		}
@@ -488,8 +515,41 @@ public class OWLAPIOntologies extends AbstractOntologies {
 			if (reasoner != null) {
 				reasoner.clearOntologies();
 			}
-			OWLOntology ont = mgr.loadOntology(new StreamInputSource(in));
+			final OWLOntology ont = mgr.loadOntology(new StreamInputSource(in));
 			mergeOntology(ont);
+			if (reasoner != null) {
+				reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
+			}
+		} catch (OWLException e) {
+			throw new OntException(e);
+		}
+		notifyOntologyChanged();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#loadBaseOntology(java.io.InputStream)
+	 */
+	public void loadBaseOntology(InputStream in) throws OntException {
+		PlatformkitLogger.logger.fine(String.format(
+				PlatformkitOWLAPIResources.getString("OWLAPIOntologies.loadingBaseOntFrom"), 
+				in)); //$NON-NLS-1$
+		try {
+			final OWLReasoner reasoner = getReasoner();
+			final OWLOntologyManager mgr = getMgr();
+			if (reasoner != null) {
+				reasoner.clearOntologies();
+			}
+			final URI localURI = URI.create(LOCAL_INF_NS);
+			mgr.removeOntology(localURI);
+			final OWLOntology ont = mgr.loadOntology(new StreamInputSource(in));
+			if (!ont.getURI().equals(localURI)) {
+				throw new OntException(String.format(
+						PlatformkitOWLAPIResources.getString("OWLAPIOntologies.baseOntMustHaveIRI"), 
+						LOCAL_INF_NS,
+						ont.getURI()));
+			}
+			setBaseOntology(new OWLOntologyAdapter(ont, this));
 			if (reasoner != null) {
 				reasoner.loadOntologies(mgr.getImportsClosure(getBaseOntology().getModel()));
 			}
@@ -620,6 +680,14 @@ public class OWLAPIOntologies extends AbstractOntologies {
 
 	/*
 	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#unloadOntology(be.ac.vub.platformkit.kb.IOntModel)
+	 */
+	public void unloadOntology(IOntModel ont) throws OntException {
+		getMgr().removeOntology(((OWLOntologyAdapter) ontology).getModel().getURI());
+	}
+
+	/*
+	 * (non-Javadoc)
 	 * @see be.ac.vub.platformkit.kb.IOntologies#getLocalOntologies()
 	 */
 	public Collection<IOntModel> getLocalOntologies() {
@@ -679,9 +747,17 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 */
 	private void mergeOntology(OWLOntology ont) throws OWLOntologyChangeException {
 		final OWLOntology model = getBaseOntology().getModel();
+		final OWLOntologyManager mgr = getMgr();
+		final OWLDataFactory factory = mgr.getOWLDataFactory();
 		final List<OWLOntologyChange> changes = new ArrayList<OWLOntologyChange>();
 		for (OWLAxiom ax : ont.getAxioms()) {
-			changes.add(new AddAxiom(model, ax));
+			if (ax.isLogicalAxiom()) {
+				changes.add(new AddAxiom(model, ax));
+			} else if (ax instanceof OWLImportsDeclaration) {
+				//add imports declaration from ont to inferred model
+				OWLImportsDeclaration imp = factory.getOWLImportsDeclarationAxiom(model, ((OWLImportsDeclaration) ax).getImportedOntologyURI());
+				changes.add(new AddAxiom(model, imp));
+			}
 		}
 		getMgr().applyChanges(changes);
 	}

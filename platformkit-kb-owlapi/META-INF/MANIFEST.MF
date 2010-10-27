@@ -131,4 +131,5 @@ Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ClassPath: .,
  lib/owlapi-bin.jar,
  lib/pellet-owlapi.jar,
- lib/FaCTPlusPlus.jar
+ lib/FaCTPlusPlus.jar,
+ lib/racer.jar

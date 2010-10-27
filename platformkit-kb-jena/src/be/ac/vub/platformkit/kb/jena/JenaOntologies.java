@@ -274,6 +274,14 @@ public class JenaOntologies extends AbstractOntologies {
 		notifyOntologyChanged();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#loadBaseOntology(java.io.InputStream)
+	 */
+	public void loadBaseOntology(InputStream in) throws OntException {
+		loadOntology(in);
+	}
+
 	/**
 	 * Registers the new prefix URI after reading a model.
 	 */
@@ -572,6 +580,14 @@ public class JenaOntologies extends AbstractOntologies {
 		final IOntModel iont = new OntModelAdapter(ont);
 		addAllImports(iont);
 		return iont;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see be.ac.vub.platformkit.kb.IOntologies#unloadOntology(be.ac.vub.platformkit.kb.IOntModel)
+	 */
+	public void unloadOntology(IOntModel ont) throws OntException {
+		//nothing required
 	}
 
 	/*

@@ -757,6 +757,7 @@ public class CompatJob extends ProgressMonitorJob {
 			final IFileOutputStream out = new IFileOutputStream(ontFile, new SubProgressMonitor(monitor, 0));
 			ont.save(out);
 			out.close();
+			kb.unloadOntology(ont);
 			return platformConstraintURI;
 		}
 
@@ -861,6 +862,7 @@ public class CompatJob extends ProgressMonitorJob {
 			IFileOutputStream out = new IFileOutputStream(getOntFile(), new SubProgressMonitor(monitor, 0));
 			ont.save(out);
 			out.close();
+			kb.unloadOntology(ont);
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.updatedOnt")); //$NON-NLS-1$
 		}
 
