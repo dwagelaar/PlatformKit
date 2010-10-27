@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit"
       label="%featureName"
-      version="1.3.0"
+      version="1.4.0"
       provider-name="%providerName"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">
@@ -42,19 +42,20 @@
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.apache.xerces"/>
+      <import plugin="org.eclipse.osgi"/>
    </requires>
 
    <plugin
          id="be.ac.vub.platformkit.editor"
-         download-size="256"
-         install-size="256"
+         download-size="260"
+         install-size="260"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.edit"
-         download-size="36"
-         install-size="36"
+         download-size="32"
+         install-size="32"
          version="0.0.0"
          unpack="false"/>
 
@@ -67,15 +68,15 @@
 
    <plugin
          id="be.ac.vub.platformkit.doc"
-         download-size="888"
-         install-size="888"
+         download-size="924"
+         install-size="924"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="be.ac.vub.platformkit.java"
-         download-size="5088"
-         install-size="5088"
+         download-size="5092"
+         install-size="5092"
          version="0.0.0"
          unpack="false"/>
 
@@ -88,8 +89,8 @@
 
    <plugin
          id="be.ac.vub.platformkit.pellet"
-         download-size="2452"
-         install-size="2452"
+         download-size="3088"
+         install-size="3088"
          version="0.0.0"
          unpack="false"/>
 
