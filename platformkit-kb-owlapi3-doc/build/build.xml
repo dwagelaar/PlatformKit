@@ -47,23 +47,22 @@
 			nonavbar="false" 
 			notree="false" 
 			packagenames="
-				be.ac.vub.platformkit.kb.owlapi,
-				be.ac.vub.platformkit.kb.owlapi.eclipse" 
+				be.ac.vub.platformkit.kb.owlapi3" 
 			source="1.5" 
 			sourcepath="
-				../../platformkit-kb-owlapi/src"
+				../../platformkit-kb-owlapi3/src"
 			splitindex="true" 
 			use="true" 
 			version="true">
 			<link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>
 			<link href="http://www.osgi.org/javadoc/r4v42/"/>
-			<link href="../owlapi/javadoc"/>
+			<link href="../owlapi3/javadoc"/>
 			<link href="../../../be.ac.vub.platformkit.doc/doc/javadoc"/>
 			<link href="../../../org.eclipse.platform.doc.isv/reference/api"/>
 			<link href="http://logging.apache.org/log4j/docs/api/"/>
 			<classpath>
 				<pathelement path="../../platformkit/bin"/>
-				<fileset dir="../../platformkit-kb-owlapi/lib">
+				<fileset dir="../../platformkit-kb-owlapi3/lib">
 					<include name="**/*.jar"/>
 				</fileset>
 				<fileset dir="../../platformkit-pellet/lib">

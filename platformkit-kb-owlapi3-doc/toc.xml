@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?NLS TYPE="org.eclipse.help.toc"?>
 
-<toc label="PlatformKit OWLAPI Knowledgebase Documentation">
+<toc label="PlatformKit OWLAPI3 Knowledgebase Documentation">
 	<topic label="API documentation" href="doc/javadoc/index.html"/> 
-	<topic label="OWLAPI API documentation" href="doc/owlapi/javadoc/index.html"/> 
+	<topic label="OWLAPI3 API documentation" href="doc/owlapi3/javadoc/index.html"/> 
 </toc>
