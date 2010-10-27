@@ -41,8 +41,8 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
 				.getPreferenceStore();
-		store.setDefault(PreferenceConstants.P_KB, "be.ac.vub.platformkit.kb.owlapi.OWLAPIOntologiesFactory"); //$NON-NLS-1$
-		store.setDefault(PreferenceConstants.P_KBRS, "uk.ac.manchester.cs.factplusplus.owlapi.Reasoner"); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_KB, "be.ac.vub.platformkit.kb.owlapi3.OWLAPIOntologiesFactory"); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_KBRS, "uk.ac.manchester.cs.factplusplus.owlapiv3.FaCTPlusPlusReasoner"); //$NON-NLS-1$
 		store.setDefault(PreferenceConstants.P_DIG_URL, "http://localhost:8081"); //$NON-NLS-1$
 		store.setDefault(PreferenceConstants.P_ATLVM, CoreService.getLaunchersNames()[0]);
 		store.setDefault(PreferenceConstants.P_CACHE_API, true);
