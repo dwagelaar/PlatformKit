@@ -196,7 +196,7 @@ public class CompatJob extends ProgressMonitorJob {
 
 		/**
 		 * @param uml2 The UML2 metamodel
-		 * @param emf_uri The EMF {@link URI} to load from
+		 * @param emfUri The EMF {@link URI} to load from
 		 * @return the loaded 'IN' model
 		 * @throws ATLCoreException 
 		 */
