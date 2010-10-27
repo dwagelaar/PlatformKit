@@ -7,7 +7,26 @@
 <body lang="EN-US">
 <h2>Release Notes</h2>
 
-<h3>PlatformKit 1.3.0 ($Rev$ - $Date$)</h3>
+<h3>PlatformKit 1.4.0 ($Rev$ - $Date$)</h3>
+
+<ul>
+	<li>Remove OWLAPI and Jena from PlatformKit Bundle, and add OWLAPI3 as new default.</li>
+	<li>Updated platform ontologies to use only simple XSD data types that are supported by Fact++.</li>
+	<li>Added RacerPro support to OWLAPI (2) knowledgebase.</li>
+	<li>Added new OWLAPI3 knowledgebase implementation.</li>
+	<li>Updated to OWLAPI (v2) bundled with Pellet 2.2.2, and bundled Fact++ reasoner as an alternative to Pellet.</li>
+	<li>Upgrade  to Jena 2.6.3.</li>
+	<li>Updated architecture to allow the use of knowledgebase-specific DL reasoners.</li>
+	<li>Upgrade to Pellet 2.2.2.</li>
+	<li>Fixed <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=71">bug 71: Determine compatibility against multiple platforms does not work in the context of inherited features</a>.</li>
+	<li>Fixed <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=70">bug 70: Merging/pruning of multiple compatibility reports sometimes results in corrupted report</a>.</li>
+	<li>Fixed <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=69">bug 69: Saving inferred models takes very long (> 5 min.)</a>.</li>
+	<li>Implemented <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=68">bug 68: Support automatic creation of platform dependency ontologies based on Java compatibility checks</a>.</li>
+	<li>Small user interface fixes (Use a WorkspaceJob to prevent conflicting workspace modifications; Correct amount of progress monitor ticks).</li>
+	<li>Several ATL transformation bugfixes for the platformkit-java plug-in.</li>
+</ul>
+
+<h3>PlatformKit 1.3.0 (Rev: 8118 - Date: 2010-04-01 16:31:03 +0200 (Thu, 01 Apr 2010))</h3>
 
 <ul>
 	<li>Upgrade to Pellet 2.0.2.</li>
