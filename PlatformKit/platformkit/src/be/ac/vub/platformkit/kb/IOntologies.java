@@ -101,6 +101,12 @@ public interface IOntologies {
 	public abstract void loadOntology(InputStream in) throws OntException;
 
 	/**
+	 * Replaces the base ontology by the ontology loaded from in.
+	 * @param in
+	 */
+	public abstract void loadBaseOntology(InputStream in) throws OntException;
+
+	/**
 	 * Loads an instance ontology into the repository, removing the previous
 	 * instance ontology.
 	 * @param url the ontology url or namespace.
@@ -210,6 +216,14 @@ public interface IOntologies {
 	 */
 	public abstract IOntModel createNewOntology(String url)
 	throws OntException;
+
+	/**
+	 * Removes ont from the set of loaded ontologies. Does not remove
+	 * any logical axioms that have been merged into the knowledge base.
+	 * @param ont
+	 * @throws OntException
+	 */
+	public void unloadOntology(IOntModel ont) throws OntException;
 
 	/**
 	 * @return all local ontologies

@@ -34,6 +34,10 @@
                id="uk.ac.manchester.cs.owl.inference.dig11.DIGReasoner"
                name="%reasoner.name.1">
          </reasoner>
+         <reasoner
+               id="de.uulm.ecs.ai.owl.inference.racer.RacerOWLReasoner"
+               name="%reasoner.name.2">
+         </reasoner>
       </knowledgebase>
    </extension>
 
