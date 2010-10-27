@@ -23,7 +23,7 @@
             factory="be.ac.vub.platformkit.kb.owlapi3.OWLAPIOntologiesFactory"
             name="%knowledgebase.name">
          <reasoner
-               id="uk.ac.manchester.cs.factplusplus.owlapi.Reasoner"
+               id="uk.ac.manchester.cs.factplusplus.owlapiv3.FaCTPlusPlusReasoner"
                name="%reasoner.name">
          </reasoner>
          <reasoner

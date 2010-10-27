@@ -149,7 +149,7 @@ public class OWLAPIOntologies extends AbstractOntologies {
 			return;
 		}
 		final String id = getDlReasonerId();
-		if ("uk.ac.manchester.cs.factplusplus.owlapi.Reasoner".equals(id)) {
+		if ("uk.ac.manchester.cs.factplusplus.owlapiv3.FaCTPlusPlusReasoner".equals(id)) {
 			attachFactPPReasoner();
 		} else if ("com.clarkparsia.pellet.owlapiv3.PelletReasoner".equals(id)) {
 			attachPelletReasoner();

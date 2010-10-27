@@ -28,12 +28,7 @@
          version="0.0.0"/>
 
    <includes
-         id="be.ac.vub.platformkit.kb.jena"
-         version="0.0.0"
-         optional="true"/>
-
-   <includes
-         id="be.ac.vub.platformkit.kb.owlapi"
+         id="be.ac.vub.platformkit.kb.owlapi3"
          version="0.0.0"/>
 
 </feature>
