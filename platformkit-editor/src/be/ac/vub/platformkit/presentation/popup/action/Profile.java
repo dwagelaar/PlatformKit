@@ -90,11 +90,11 @@ public class Profile extends ViewerFilterAction {
 		job.setSelectedObject((EObject) ((IStructuredSelection) selection).getFirstElement());
 		job.setEditingDomain(editingDomain);
 		job.setUser(true);
-	    final URI spaceUri = job.getSpace().eResource().getURI();
-	    if (spaceUri.isPlatformResource()) {
-	    	final IResource spaceRes = ResourcesPlugin.getWorkspace().getRoot().findMember(spaceUri.toPlatformString(true));
-	    	assert spaceRes != null;
-		    job.setRule(spaceRes.getParent()); //lock containing folder
+	    final URI modelUri = job.getSelectedObject().eResource().getURI();
+	    if (modelUri.isPlatformResource()) {
+	    	final IResource modelRes = ResourcesPlugin.getWorkspace().getRoot().findMember(modelUri.toPlatformString(true));
+	    	assert modelRes != null;
+		    job.setRule(modelRes.getParent()); //lock containing folder
 	    }
 		// lock editor
 		IWorkbenchSiteProgressService siteService = (IWorkbenchSiteProgressService) 
