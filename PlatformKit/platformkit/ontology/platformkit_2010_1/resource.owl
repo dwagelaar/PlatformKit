@@ -72,7 +72,7 @@
         <rdfs:comment xml:lang="en"
             >Battery capacity in mAh (milliampere-hours).</rdfs:comment>
         <rdfs:domain rdf:resource="#BatteryResource"/>
-        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -85,7 +85,7 @@
             >Memory/storage size in MB (megabytes).</rdfs:comment>
         <rdfs:seeAlso
             >http://en.wikipedia.org/wiki/Megabyte</rdfs:seeAlso>
-        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -107,7 +107,7 @@
         <rdfs:seeAlso
             >http://en.wikipedia.org/wiki/Megabit_per_second</rdfs:seeAlso>
         <rdfs:domain rdf:resource="#NetworkResource"/>
-        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
     </owl:DatatypeProperty>
     
 
@@ -121,7 +121,7 @@
         <rdfs:comment xml:lang="en"
             >CPU clock speed in MHz (mega-hertz).</rdfs:comment>
         <rdfs:domain rdf:resource="#ProcessingResource"/>
-        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
     </owl:DatatypeProperty>
     
 
@@ -137,7 +137,7 @@
         <rdfs:comment xml:lang="en"
             >Power source voltage in V (Volt).</rdfs:comment>
         <rdfs:domain rdf:resource="#PowerResource"/>
-        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
     </owl:DatatypeProperty>
     
 

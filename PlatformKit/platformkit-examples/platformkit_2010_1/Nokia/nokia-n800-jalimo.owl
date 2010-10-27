@@ -1220,7 +1220,7 @@
 
     <owl:Thing rdf:about="#nokiaN800Battery">
         <rdf:type rdf:resource="&resource;BatteryResource"/>
-        <resource:batteryCapacity rdf:datatype="&xsd;positiveInteger">1500</resource:batteryCapacity>
+        <resource:batteryCapacity rdf:datatype="&xsd;integer">1500</resource:batteryCapacity>
     </owl:Thing>
     
 
@@ -1229,7 +1229,7 @@
 
     <resource:NetworkResource rdf:about="#nokiaN800Bluetooth">
         <rdf:type rdf:resource="&owl;Thing"/>
-        <resource:dataSpeed rdf:datatype="&xsd;positiveInteger">3</resource:dataSpeed>
+        <resource:dataSpeed rdf:datatype="&xsd;double">3</resource:dataSpeed>
     </resource:NetworkResource>
     
 
@@ -1239,10 +1239,10 @@
     <io:PhotoCamera rdf:about="#nokiaN800Camera">
         <rdf:type rdf:resource="&io;VideoCamera"/>
         <rdf:type rdf:resource="&owl;Thing"/>
-        <io:photoYResolution rdf:datatype="&xsd;positiveInteger">480</io:photoYResolution>
-        <io:videoYResolution rdf:datatype="&xsd;positiveInteger">480</io:videoYResolution>
-        <io:photoXResolution rdf:datatype="&xsd;positiveInteger">640</io:photoXResolution>
-        <io:videoXResolution rdf:datatype="&xsd;positiveInteger">640</io:videoXResolution>
+        <io:photoYResolution rdf:datatype="&xsd;integer">480</io:photoYResolution>
+        <io:videoYResolution rdf:datatype="&xsd;integer">480</io:videoYResolution>
+        <io:photoXResolution rdf:datatype="&xsd;integer">640</io:photoXResolution>
+        <io:videoXResolution rdf:datatype="&xsd;integer">640</io:videoXResolution>
     </io:PhotoCamera>
     
 
@@ -1251,7 +1251,7 @@
 
     <owl:Thing rdf:about="#nokiaN800DPad">
         <rdf:type rdf:resource="&io;DirectionalPad"/>
-        <io:numberOfButtons rdf:datatype="&xsd;positiveInteger">5</io:numberOfButtons>
+        <io:numberOfButtons rdf:datatype="&xsd;integer">5</io:numberOfButtons>
     </owl:Thing>
     
 
@@ -1260,7 +1260,7 @@
 
     <owl:Thing rdf:about="#nokiaN800InternalFlash">
         <rdf:type rdf:resource="&resource;StorageResource"/>
-        <resource:dataCapacity rdf:datatype="&xsd;positiveInteger">256</resource:dataCapacity>
+        <resource:dataCapacity rdf:datatype="&xsd;double">256</resource:dataCapacity>
     </owl:Thing>
     
 
@@ -1269,7 +1269,7 @@
 
     <resource:MemoryResource rdf:about="#nokiaN800RAM">
         <rdf:type rdf:resource="&owl;Thing"/>
-        <resource:dataCapacity rdf:datatype="&xsd;positiveInteger">128</resource:dataCapacity>
+        <resource:dataCapacity rdf:datatype="&xsd;double">128</resource:dataCapacity>
     </resource:MemoryResource>
     
 
@@ -1278,9 +1278,9 @@
 
     <owl:Thing rdf:about="#nokiaN800Screen">
         <rdf:type rdf:resource="&io;TouchScreen"/>
-        <io:screenHeight rdf:datatype="&xsd;positiveInteger">480</io:screenHeight>
-        <io:numberOfColors rdf:datatype="&xsd;positiveInteger">65535</io:numberOfColors>
-        <io:screenWidth rdf:datatype="&xsd;positiveInteger">800</io:screenWidth>
+        <io:screenHeight rdf:datatype="&xsd;integer">480</io:screenHeight>
+        <io:numberOfColors rdf:datatype="&xsd;integer">65535</io:numberOfColors>
+        <io:screenWidth rdf:datatype="&xsd;integer">800</io:screenWidth>
     </owl:Thing>
     
 
@@ -1297,7 +1297,7 @@
 
     <resource:NetworkResource rdf:about="#nokiaN800WiFi">
         <rdf:type rdf:resource="&owl;Thing"/>
-        <resource:dataSpeed rdf:datatype="&xsd;positiveInteger">54</resource:dataSpeed>
+        <resource:dataSpeed rdf:datatype="&xsd;double">54</resource:dataSpeed>
     </resource:NetworkResource>
     
 
@@ -1306,7 +1306,7 @@
 
     <owl:Thing rdf:about="#tiOMAP2420">
         <rdf:type rdf:resource="&arm;ARMv6_CPU"/>
-        <resource:processingSpeed rdf:datatype="&xsd;decimal">400</resource:processingSpeed>
+        <resource:processingSpeed rdf:datatype="&xsd;double">400</resource:processingSpeed>
         <platform:implementsInterface rdf:resource="&arm;theARMv6"/>
     </owl:Thing>
     
