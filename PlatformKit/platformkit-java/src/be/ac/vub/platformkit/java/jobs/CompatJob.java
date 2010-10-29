@@ -791,6 +791,7 @@ public class CompatJob extends ProgressMonitorJob {
 			final ConstraintSpace space = getConstraintSpace();
 			final Constraint constraint = space.getConstraintSet().get(0).getConstraint().get(0);
 			final IOntologies kb = space.getKnowledgeBase();
+			selectReasoner(kb);
 			final IOntModel ont = kb.loadSingleOnt(getOntFile().getContents());
 			// Create/update JavaBytecode constraint class
 			final IOntModel isa = kb.getLocalOntology(BaseOntologyProvider.ISA_NS);
@@ -1051,6 +1052,20 @@ public class CompatJob extends ProgressMonitorJob {
 		} catch (ATLCoreException e) {
 			PlatformkitJavaPlugin.getPlugin().report(e);
 		}
+	}
+
+	/**
+	 * Selects the preferred reasoner for ont.
+	 * @param ont
+	 * @throws OntException
+	 */
+	protected void selectReasoner(IOntologies ont) throws OntException {
+		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
+				.getPreferenceStore();
+		String kbrs = store.getString(PreferenceConstants.P_KBRS);
+		String url = store.getString(PreferenceConstants.P_DIG_URL);
+		ont.selectDLReasoner(kbrs);
+		ont.setReasonerUrl(url);
 	}
 
 	/**

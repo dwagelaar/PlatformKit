@@ -11,7 +11,6 @@
 package be.ac.vub.platformkit.presentation.jobs;
 
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.edit.command.AddCommand;
@@ -47,19 +46,17 @@ public abstract class ConstraintSpaceJob extends ProgressMonitorJob {
 	}
 
 	/**
-	 * Attaches either a DIG reasoner or the built-in Pellet reasoner.
-	 * @param monitor
+	 * Selects the preferred reasoner for ont.
 	 * @param ont
-	 * @throws OntException 
+	 * @throws OntException
 	 */
-	protected void attachDLReasoner(IProgressMonitor monitor, IOntologies ont) throws OntException {
+	protected void selectReasoner(IOntologies ont) throws OntException {
 		IPreferenceStore store = PlatformkitEditorPlugin.getPlugin()
 				.getPreferenceStore();
 		String kbrs = store.getString(PreferenceConstants.P_KBRS);
 		String url = store.getString(PreferenceConstants.P_DIG_URL);
 		ont.selectDLReasoner(kbrs);
 		ont.setReasonerUrl(url);
-		ont.attachDLReasoner();
 	}
 
 	/**

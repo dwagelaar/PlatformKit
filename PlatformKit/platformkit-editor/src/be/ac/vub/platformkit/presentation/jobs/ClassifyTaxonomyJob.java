@@ -60,6 +60,7 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("loadingSourceOnt")); //$NON-NLS-1$
 		// Don't use existing knowledgebase, since it may be pre-classified
 		IOntologies ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
+		selectReasoner(ont);
 		ConstraintSpace space = getSpace();
 		space.setKnowledgeBase(ont);
 		space.init(false);
@@ -76,7 +77,7 @@ public class ClassifyTaxonomyJob extends ConstraintSpaceJob {
 		// 3
 		//
 		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachingDlReasoner")); //$NON-NLS-1$
-		attachDLReasoner(monitor, ont);
+		ont.attachDLReasoner();
 		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachedDlReasoner")); //$NON-NLS-1$
 		//
 		// 4
