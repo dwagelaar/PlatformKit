@@ -681,13 +681,13 @@ public class CompatJob extends ProgressMonitorJob {
 					break;
 				}
 			}
-			final IOntologies kb = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
 			if (space == null || !getOntFile().exists()) {
-				final String platformConstraintURI = createInitialOntology(kb, monitor);
+				final String platformConstraintURI = createInitialOntology(monitor);
 				space = createInitialConstraintSpace(platformConstraintURI);
 				res.getContents().add(space);
 				res.save(Collections.emptyMap());
 			}
+			final IOntologies kb = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
 			space.setKnowledgeBase(kb);
 			space.init(false);
 			setConstraintSpace(space);
@@ -696,14 +696,15 @@ public class CompatJob extends ProgressMonitorJob {
 
 		/**
 		 * Creates an initial platform dependency constraint ontology
-		 * @param kb the knowledge base object to use
 		 * @param monitor the progress monitor
 		 * @return the platform dependency constraint class URI
 		 * @throws OntException 
 		 * @throws IOException 
+		 * @throws CoreException 
 		 */
-		protected String createInitialOntology(final IOntologies kb, final IProgressMonitor monitor)
-		throws OntException, IOException {
+		protected String createInitialOntology(final IProgressMonitor monitor)
+		throws OntException, IOException, CoreException {
+			final IOntologies kb = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
 			final IFile ontFile = getOntFile();
 			final IOntModel ont = kb.createNewOntology(IOntologies.DEPS_BASE_NS + ontFile.getName());
 			final IOntModel platform = kb.getLocalOntology(BaseOntologyProvider.PLATFORM_NS);
