@@ -94,6 +94,7 @@ public class ProfileJob extends ConstraintSpaceJob {
 			}
 			space = (ConstraintSpace) platformkit.getContents().get(0);
 			IOntologies ont = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
+			selectReasoner(ont);
 			space.setKnowledgeBase(ont);
 			if (!space.init(true)) {
 				throw new PlatformKitException(
@@ -105,13 +106,14 @@ public class ProfileJob extends ConstraintSpaceJob {
 			// 4
 			//
 			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachingDlReasoner")); //$NON-NLS-1$
-			attachDLReasoner(monitor, ont);
+			ont.attachDLReasoner();
 			worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachedDlReasoner")); //$NON-NLS-1$
 		} else {
 			//
 			// 2, 3, 4
 			//
 			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("ProfileJob.usingCachedCS")); //$NON-NLS-1$
+			selectReasoner(space.getKnowledgeBase());
 			worked(monitor, null);
 			worked(monitor, null);
 			worked(monitor, null);

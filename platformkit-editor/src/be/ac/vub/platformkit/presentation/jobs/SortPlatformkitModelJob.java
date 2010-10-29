@@ -74,6 +74,7 @@ public class SortPlatformkitModelJob extends ConstraintSpaceJob {
 			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("usingPreloadedOnt")); //$NON-NLS-1$
 			worked(monitor, null);
 		}
+		selectReasoner(ont);
 		//
 		// 2
 		//

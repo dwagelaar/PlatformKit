@@ -67,11 +67,12 @@ public class ValidateJob extends ConstraintSpaceJob {
 			subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("usingPreloadedOnt")); //$NON-NLS-1$
 			worked(monitor, null);
 		}
+		selectReasoner(ont);
 		//
 		// 2
 		//
 		subTask(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachingDlReasoner")); //$NON-NLS-1$
-		attachDLReasoner(monitor, ont);
+		ont.attachDLReasoner();
 		worked(monitor, PlatformkitEditorPlugin.getPlugin().getString("attachedDlReasoner")); //$NON-NLS-1$
 		//
 		// 3
