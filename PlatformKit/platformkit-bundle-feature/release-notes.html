@@ -7,7 +7,16 @@
 <body lang="EN-US">
 <h2>Release Notes</h2>
 
-<h3>PlatformKit 1.4.2 ($Rev$ - $Date$)</h3>
+<h3>PlatformKit 1.4.3 ($Rev$ - $Date$)</h3>
+
+<ul>
+	<li>Additional fix for <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=74">bug 74: Wrong reasoner selected when creating/updating platform dependency ontology and when sorting constraint sets</a>.</li>
+	<li>Additional fix for <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=68">bug 68: Support automatic creation of platform dependency ontologies based on Java compatibility checks</a>.</li>
+	<li>Fixed <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=75">bug 75: Prefixes are sometimes missing when saving OWL ontologies.</a></li>
+	<li>Fixed <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=76">bug 76: PlatformKit throws OWLOntologyAlreadyExistsException when creating a new platform dependency ontology</a>.</li>
+</ul>
+
+<h3>PlatformKit 1.4.2 (Rev: 8318 - Date: 2010-10-29 10:52:40 +0200 (Fri, 29 Oct 2010))</h3>
 
 <ul>
 	<li>Fixed <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=74">bug 74: Wrong reasoner selected when creating/updating platform dependency ontology and when sorting constraint sets</a>.</li>
@@ -22,6 +31,7 @@
 <h3>PlatformKit 1.4.0 (Rev: 8304 - Date: 2010-10-27 14:59:20 +0200 (Wed, 27 Oct 2010))</h3>
 
 <ul>
+	<li>Known issue: <a href="https://soft.vub.ac.be/bugzilla/show_bug.cgi?id=72">bug 72: Pellet reasoner (v2.2.2) cannot deal with platform ontologies.</a></li>
 	<li>Remove OWLAPI and Jena from PlatformKit Bundle, and add OWLAPI3 as new default.</li>
 	<li>Updated platform ontologies to use only simple XSD data types that are supported by Fact++.</li>
 	<li>Added RacerPro support to OWLAPI (2) knowledgebase.</li>
