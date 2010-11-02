@@ -705,6 +705,7 @@ public class CompatJob extends ProgressMonitorJob {
 		protected String createInitialOntology(final IProgressMonitor monitor)
 		throws OntException, IOException, CoreException {
 			final IOntologies kb = PreferenceInitializer.getPreferredOntologyFactory().createIOntologies();
+			selectReasoner(kb);
 			final IFile ontFile = getOntFile();
 			final IOntModel ont = kb.createNewOntology(IOntologies.DEPS_BASE_NS + ontFile.getName());
 			final IOntModel platform = kb.getLocalOntology(BaseOntologyProvider.PLATFORM_NS);
