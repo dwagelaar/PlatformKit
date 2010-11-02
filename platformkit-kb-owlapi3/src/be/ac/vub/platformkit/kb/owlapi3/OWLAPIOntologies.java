@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.coode.xml.XMLWriterPreferences;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.StreamDocumentSource;
 import org.semanticweb.owlapi.io.StreamDocumentTarget;
@@ -64,14 +65,19 @@ import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
  */
 public class OWLAPIOntologies extends AbstractOntologies {
 
+	static {
+		//OWLAPI3 uses a global singleton to store settings
+		XMLWriterPreferences.getInstance().setUseNamespaceEntities(true);
+	}
+
 	private OWLOntologyManager mgr;
 	private OWLReasoner reasoner = null;
 	private OWLOntologyAdapter ontology;
 	private OWLOntologyAdapter instances = null;
-	private Map<OWLClass, Set<OWLClass>> superClasses = new HashMap<OWLClass, Set<OWLClass>>();
-	private Map<OWLClass, Set<OWLClass>> equivClasses = new HashMap<OWLClass, Set<OWLClass>>();
-	private Map<OWLClass, Set<OWLClass>> obsoleteSuperClasses = new HashMap<OWLClass, Set<OWLClass>>();
-	private Map<String, IOntModel> localOntologies = new HashMap<String, IOntModel>();
+	private final Map<OWLClass, Set<OWLClass>> superClasses = new HashMap<OWLClass, Set<OWLClass>>();
+	private final Map<OWLClass, Set<OWLClass>> equivClasses = new HashMap<OWLClass, Set<OWLClass>>();
+	private final Map<OWLClass, Set<OWLClass>> obsoleteSuperClasses = new HashMap<OWLClass, Set<OWLClass>>();
+	private final Map<String, IOntModel> localOntologies = new HashMap<String, IOntModel>();
 	private String dlReasonerId = "uk.ac.manchester.cs.factplusplus.owlapiv3.FaCTPlusPlusReasoner"; //$NON-NLS-1$
 	private boolean dlReasonerAttached;
 
@@ -551,7 +557,9 @@ public class OWLAPIOntologies extends AbstractOntologies {
 	 */
 	public IOntModel createNewOntology(String url) throws OntException {
 		try {
-			final IOntModel ont = new OWLOntologyAdapter(getMgr().createOntology(IRI.create(url)), this);
+			final OWLOntologyManager mgr = getMgr();
+			final OWLOntology owlOnt = mgr.createOntology(IRI.create(url));
+			final IOntModel ont = new OWLOntologyAdapter(owlOnt, this);
 			addAllImports(ont);
 			return ont;
 		} catch (OWLOntologyCreationException e) {
