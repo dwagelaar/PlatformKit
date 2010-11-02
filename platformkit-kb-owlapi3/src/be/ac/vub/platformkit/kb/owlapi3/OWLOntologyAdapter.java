@@ -45,6 +45,7 @@ import org.semanticweb.owlapi.model.OWLPropertyExpression;
 import org.semanticweb.owlapi.model.OWLRestriction;
 import org.semanticweb.owlapi.model.RemoveAxiom;
 import org.semanticweb.owlapi.model.UnknownOWLOntologyException;
+import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.vocab.OWLFacet;
@@ -451,9 +452,11 @@ public class OWLOntologyAdapter implements IOntModel {
 		//find least specific superclass in range
 		for (final Iterator<OWLClassExpression> oc = range.iterator(); oc.hasNext();) {
 			OWLClassExpression otherClass = oc.next();
+			Node<OWLClass> equivcs = reasoner.getEquivalentClasses(owlClass);
 			NodeSet<OWLClass> subcs = reasoner.getSubClasses(owlClass, false);
 			NodeSet<OWLClass> supercs = reasoner.getSuperClasses(owlClass, false);
-			if (supercs.getFlattened().contains(otherClass)) {
+			if (otherClass.isAnonymous() ? false : equivcs.contains(otherClass.asOWLClass()) 
+					|| supercs.getFlattened().contains(otherClass)) {
 				//discard owlClass
 				merged = true;
 			} else if (subcs.getFlattened().contains(otherClass)) {
