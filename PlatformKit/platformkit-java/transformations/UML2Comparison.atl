@@ -226,7 +226,7 @@ helper context UML2!"uml::Classifier" def : compatibleInPrev : Sequence(UML2!"um
 -- All Models X other than self for which self is equivalent with X.
 helper context UML2!"uml::Model" def : equivalentInPrev : Sequence(UML2!"uml::Model") =
 	self.allOther
-		->select(m|self.hasAllPackagesEquivalentWith(m))
+		->select(m|self.hasAllPackagesEquivalentWith(m) and m.hasAllPackagesEquivalentWith(self))
 		.debug(thisModule.modelName.prefix + self.qualifiedName + ' equivalent models');
 
 -- All Packages X other than self for which self is equivalent with X
