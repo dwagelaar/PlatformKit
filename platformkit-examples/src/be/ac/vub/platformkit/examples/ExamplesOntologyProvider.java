@@ -21,6 +21,10 @@ import be.ac.vub.platformkit.kb.INamedOntologyProvider;
 import be.ac.vub.platformkit.kb.util.BundleSwitch;
 import be.ac.vub.platformkit.logging.PlatformkitLogger;
 
+/**
+ * Provides example platform instance ontologies. 
+ * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
+ */
 public class ExamplesOntologyProvider implements INamedOntologyProvider {
 
 	protected static Bundle bundle = BundleSwitch.getBundle(ExamplesOntologyProvider.class);
