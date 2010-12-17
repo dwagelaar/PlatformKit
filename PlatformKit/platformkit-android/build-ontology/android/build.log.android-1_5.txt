@@ -1,0 +1,1519 @@
+[Android 1.5] Android 1.5::android compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::app compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::view compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::view::inputmethod compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::view::animation compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::content compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::content::res compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::content::pm compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::os compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics::drawable compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics::drawable::shapes compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::net compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::net::http compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::net::wifi compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::database compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::database::sqlite compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::util compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::widget compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::appwidget compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::hardware compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::inputmethodservice compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::location compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::media compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::opengl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::preference compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::provider compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::webkit compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::sax compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::speech compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::telephony compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::telephony::gsm compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::format compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::method compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::style compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::util compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::test compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::mock compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::suitebuilder compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::suitebuilder::annotation compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang::annotation compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang::reflect compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang::ref compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::util compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::concurrent compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::concurrent::atomic compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::concurrent::locks compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::regex compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::jar compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::zip compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::logging compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::prefs compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::io compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio::channels compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio::channels::spi compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio::charset compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio::charset::spi compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::net compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::security compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::security::cert compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::security::spec compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::security::acl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::security::interfaces compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::text compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::awt::font compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::beans compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::math compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::sql compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::xmlpull::v1 compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::xmlpull::v1::sax2 compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::xml::sax compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::xml::sax::helpers compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::xml::sax::ext compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::w3c::dom compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::commons::logging compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::protocol compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::util compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::auth compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::auth::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::methods compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::entity compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::protocol compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::utils compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::cookie compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::cookie::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::scheme compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::routing compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::ssl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::util compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::entity compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::message compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::entity compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::auth compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::client compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::conn compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::conn::tsccm compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::io compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::cookie compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::io compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::json compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos::opengles compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos::egl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::net compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::net::ssl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::callback compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::x500 compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::login compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::cert compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::crypto compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::crypto::interfaces compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::crypto::spec compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::sql compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::xml compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::xml::parsers compatible packages: Sequence {}
+[Android 1.5] Android 1.5::junit::framework compatible packages: Sequence {}
+[Android 1.5] Android 1.5::junit::runner compatible packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::annotation compatible packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::bytecode compatible packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::system compatible packages: Sequence {}
+[Android 1.5] Android 1.5 compatible models: Sequence {}
+[Android 1.5] Android 1.5 equivalent models: Sequence {}
+[Android 1.5] Package: 'Android'
+[Android 1.5] Android 1.5::android equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'AndroidApp'
+[Android 1.5] Android 1.5::android::app equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::app referenced packages: Sequence {IN!os, IN!database, IN!net, IN!pm, IN!util, IN!util, IN!io, IN!view, IN!content, IN!widget, IN!lang, IN!graphics, IN!res, IN!drawable}
+[Android 1.5] Package: 'AndroidView'
+[Android 1.5] Android 1.5::android::view equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::view referenced packages: Sequence {IN!content, IN!os, IN!lang, IN!net, IN!annotation, IN!v1, IN!graphics, IN!res, IN!util, IN!util, IN!inputmethod, IN!animation, IN!drawable, IN!hardware}
+[Android 1.5] Package: 'AndroidViewInputmethod'
+[Android 1.5] Android 1.5::android::view::inputmethod equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::view::inputmethod referenced packages: Sequence {IN!view, IN!content, IN!os, IN!lang, IN!graphics, IN!pm, IN!util, IN!util, IN!text, IN!drawable}
+[Android 1.5] Package: 'AndroidViewAnimation'
+[Android 1.5] Android 1.5::android::view::animation equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::view::animation referenced packages: Sequence {IN!graphics, IN!view, IN!util, IN!content, IN!util, IN!lang}
+[Android 1.5] Package: 'AndroidContent'
+[Android 1.5] Android 1.5::android::content equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::content referenced packages: Sequence {IN!os, IN!database, IN!net, IN!pm, IN!util, IN!util, IN!io, IN!view, IN!sqlite, IN!lang, IN!v1, IN!graphics, IN!res, IN!drawable}
+[Android 1.5] Package: 'AndroidContentRes'
+[Android 1.5] Android 1.5::android::content::res equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::content::res referenced packages: Sequence {IN!graphics, IN!util, IN!util, IN!os, IN!lang, IN!drawable, IN!v1, IN!io}
+[Android 1.5] Package: 'AndroidContentPm'
+[Android 1.5] Android 1.5::android::content::pm equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::content::pm referenced packages: Sequence {IN!res, IN!util, IN!content, IN!util, IN!os, IN!lang, IN!drawable, IN!net}
+[Android 1.5] Package: 'AndroidOs'
+[Android 1.5] Android 1.5::android::os equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::os referenced packages: Sequence {IN!lang, IN!concurrent, IN!util, IN!util, IN!net, IN!io}
+[Android 1.5] Package: 'AndroidGraphics'
+[Android 1.5] Android 1.5::android::graphics equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics referenced packages: Sequence {IN!res, IN!os, IN!lang, IN!nio, IN!io, IN!opengles}
+[Android 1.5] Package: 'AndroidGraphicsDrawable'
+[Android 1.5] Android 1.5::android::graphics::drawable equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics::drawable referenced packages: Sequence {IN!graphics, IN!res, IN!util, IN!shapes, IN!lang, IN!v1, IN!io}
+[Android 1.5] Package: 'AndroidGraphicsDrawableShapes'
+[Android 1.5] Android 1.5::android::graphics::drawable::shapes equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics::drawable::shapes referenced packages: Sequence {IN!graphics, IN!lang}
+[Android 1.5] Package: 'AndroidNet'
+[Android 1.5] Android 1.5::android::net equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::net referenced packages: Sequence {IN!net, IN!content, IN!util, IN!os, IN!lang, IN!net, IN!ssl, IN!io}
+[Android 1.5] Package: 'AndroidNetHttp'
+[Android 1.5] Android 1.5::android::net::http equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::net::http referenced packages: Sequence {IN!cert, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidNetWifi'
+[Android 1.5] Android 1.5::android::net::wifi equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::net::wifi referenced packages: Sequence {IN!net, IN!util, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidDatabase'
+[Android 1.5] Android 1.5::android::database equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::database referenced packages: Sequence {IN!content, IN!sqlite, IN!os, IN!lang, IN!net, IN!util, IN!io}
+[Android 1.5] Package: 'AndroidDatabaseSqlite'
+[Android 1.5] Android 1.5::android::database::sqlite equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::database::sqlite referenced packages: Sequence {IN!content, IN!util, IN!lang, IN!database, IN!io}
+[Android 1.5] Package: 'AndroidUtil'
+[Android 1.5] Android 1.5::android::util equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::util referenced packages: Sequence {IN!util, IN!lang, IN!sax, IN!v1, IN!io}
+[Android 1.5] Package: 'AndroidWidget'
+[Android 1.5] Android 1.5::android::widget equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::widget referenced packages: Sequence {IN!app, IN!os, IN!database, IN!net, IN!util, IN!util, IN!animation, IN!method, IN!media, IN!view, IN!content, IN!lang, IN!annotation, IN!graphics, IN!res, IN!inputmethod, IN!text, IN!drawable}
+[Android 1.5] Package: 'AndroidAppwidget'
+[Android 1.5] Android 1.5::android::appwidget equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::appwidget referenced packages: Sequence {IN!graphics, IN!view, IN!content, IN!widget, IN!util, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidHardware'
+[Android 1.5] Android 1.5::android::hardware equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::hardware referenced packages: Sequence {IN!view, IN!util, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidInputmethodservice'
+[Android 1.5] Android 1.5::android::inputmethodservice equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::inputmethodservice referenced packages: Sequence {IN!view, IN!content, IN!widget, IN!app, IN!os, IN!lang, IN!graphics, IN!res, IN!util, IN!util, IN!inputmethod, IN!drawable, IN!io}
+[Android 1.5] Package: 'AndroidLocation'
+[Android 1.5] Android 1.5::android::location equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::location referenced packages: Sequence {IN!util, IN!content, IN!util, IN!app, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidMedia'
+[Android 1.5] Android 1.5::android::media equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::media referenced packages: Sequence {IN!graphics, IN!res, IN!view, IN!content, IN!app, IN!os, IN!lang, IN!database, IN!net, IN!hardware, IN!nio, IN!io}
+[Android 1.5] Package: 'AndroidOpengl'
+[Android 1.5] Android 1.5::android::opengl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::opengl referenced packages: Sequence {IN!graphics, IN!view, IN!util, IN!content, IN!lang, IN!egl, IN!io, IN!opengles}
+[Android 1.5] Package: 'AndroidPreference'
+[Android 1.5] Android 1.5::android::preference equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::preference referenced packages: Sequence {IN!view, IN!content, IN!widget, IN!app, IN!os, IN!lang, IN!net, IN!res, IN!util, IN!drawable}
+[Android 1.5] Package: 'AndroidProvider'
+[Android 1.5] Android 1.5::android::provider equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::provider referenced packages: Sequence {IN!graphics, IN!res, IN!util, IN!content, IN!webkit, IN!lang, IN!database, IN!net, IN!io}
+[Android 1.5] Package: 'AndroidWebkit'
+[Android 1.5] Android 1.5::android::webkit equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::webkit referenced packages: Sequence {IN!view, IN!content, IN!widget, IN!os, IN!lang, IN!graphics, IN!util, IN!util, IN!http, IN!io}
+[Android 1.5] Package: 'AndroidSax'
+[Android 1.5] Android 1.5::android::sax equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::sax referenced packages: Sequence {IN!sax, IN!lang}
+[Android 1.5] Package: 'AndroidSpeech'
+[Android 1.5] Android 1.5::android::speech equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::speech referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'AndroidTelephony'
+[Android 1.5] Android 1.5::android::telephony equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::telephony referenced packages: Sequence {IN!content, IN!util, IN!text, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidTelephonyGsm'
+[Android 1.5] Android 1.5::android::telephony::gsm equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::telephony::gsm referenced packages: Sequence {IN!telephony, IN!util, IN!app, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidText'
+[Android 1.5] Android 1.5::android::text equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text referenced packages: Sequence {IN!graphics, IN!view, IN!util, IN!util, IN!os, IN!lang, IN!drawable, IN!regex, IN!sax}
+[Android 1.5] Package: 'AndroidTextFormat'
+[Android 1.5] Android 1.5::android::text::format equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::format referenced packages: Sequence {IN!content, IN!text, IN!util, IN!lang}
+[Android 1.5] Package: 'AndroidTextMethod'
+[Android 1.5] Android 1.5::android::text::method equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::method referenced packages: Sequence {IN!graphics, IN!view, IN!content, IN!widget, IN!text, IN!app, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidTextStyle'
+[Android 1.5] Android 1.5::android::text::style equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::style referenced packages: Sequence {IN!graphics, IN!res, IN!view, IN!content, IN!text, IN!os, IN!lang, IN!drawable, IN!net}
+[Android 1.5] Package: 'AndroidTextUtil'
+[Android 1.5] Android 1.5::android::text::util equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::util referenced packages: Sequence {IN!regex, IN!widget, IN!text, IN!lang}
+[Android 1.5] Package: 'AndroidTest'
+[Android 1.5] Android 1.5::android::test equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::test referenced packages: Sequence {IN!view, IN!content, IN!app, IN!sqlite, IN!os, IN!lang, IN!mock, IN!net, IN!annotation, IN!util, IN!runner, IN!framework, IN!regex, IN!io}
+[Android 1.5] Package: 'AndroidTestMock'
+[Android 1.5] Android 1.5::android::test::mock equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::mock referenced packages: Sequence {IN!app, IN!os, IN!database, IN!net, IN!pm, IN!util, IN!util, IN!io, IN!content, IN!sqlite, IN!lang, IN!graphics, IN!res, IN!drawable}
+[Android 1.5] Package: 'AndroidTestSuitebuilder'
+[Android 1.5] Android 1.5::android::test::suitebuilder equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::suitebuilder referenced packages: Sequence {IN!framework, IN!reflect, IN!util, IN!annotation, IN!lang}
+[Android 1.5] Package: 'AndroidTestSuitebuilderAnnotation'
+[Android 1.5] Android 1.5::android::test::suitebuilder::annotation equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::suitebuilder::annotation referenced packages: Sequence {IN!annotation}
+[Android 1.5] Package: 'JavaLang'
+[Android 1.5] Android 1.5::java::lang equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang referenced packages: Sequence {IN!security, IN!nio, IN!annotation, IN!reflect, IN!util, IN!net, IN!channels, IN!io}
+[Android 1.5] Package: 'JavaLangAnnotation'
+[Android 1.5] Android 1.5::java::lang::annotation equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang::annotation referenced packages: Sequence {IN!reflect, IN!lang}
+[Android 1.5] Package: 'JavaLangReflect'
+[Android 1.5] Android 1.5::java::lang::reflect equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang::reflect referenced packages: Sequence {IN!annotation, IN!io, IN!security, IN!lang}
+[Android 1.5] Package: 'JavaLangRef'
+[Android 1.5] Android 1.5::java::lang::ref equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang::ref referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'JavaUtil'
+[Android 1.5] Android 1.5::java::util equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::util referenced packages: Sequence {IN!security, IN!lang, IN!math, IN!channels, IN!regex, IN!io}
+[Android 1.5] Package: 'JavaUtilConcurrent'
+[Android 1.5] Android 1.5::java::util::concurrent equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::concurrent referenced packages: Sequence {IN!security, IN!lang, IN!util, IN!io}
+[Android 1.5] Package: 'JavaUtilConcurrentAtomic'
+[Android 1.5] Android 1.5::java::util::concurrent::atomic equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::concurrent::atomic referenced packages: Sequence {IN!io, IN!lang}
+[Android 1.5] Package: 'JavaUtilConcurrentLocks'
+[Android 1.5] Android 1.5::java::util::concurrent::locks equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::concurrent::locks referenced packages: Sequence {IN!concurrent, IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaUtilRegex'
+[Android 1.5] Android 1.5::java::util::regex equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::regex referenced packages: Sequence {IN!io, IN!lang}
+[Android 1.5] Package: 'JavaUtilJar'
+[Android 1.5] Android 1.5::java::util::jar equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::jar referenced packages: Sequence {IN!util, IN!zip, IN!lang, IN!beans, IN!io}
+[Android 1.5] Package: 'JavaUtilZip'
+[Android 1.5] Android 1.5::java::util::zip equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::zip referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaUtilLogging'
+[Android 1.5] Android 1.5::java::util::logging equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::logging referenced packages: Sequence {IN!util, IN!security, IN!lang, IN!beans, IN!io}
+[Android 1.5] Package: 'JavaUtilPrefs'
+[Android 1.5] Android 1.5::java::util::prefs equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::util::prefs referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaIo'
+[Android 1.5] Android 1.5::java::io equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::io referenced packages: Sequence {IN!charset, IN!util, IN!security, IN!lang, IN!net, IN!channels, IN!nio}
+[Android 1.5] Package: 'JavaNio'
+[Android 1.5] Android 1.5::java::nio equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'JavaNioChannels'
+[Android 1.5] Android 1.5::java::nio::channels equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio::channels referenced packages: Sequence {IN!charset, IN!util, IN!lang, IN!net, IN!spi, IN!nio, IN!io}
+[Android 1.5] Package: 'JavaNioChannelsSpi'
+[Android 1.5] Android 1.5::java::nio::channels::spi equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio::channels::spi referenced packages: Sequence {IN!channels, IN!util, IN!lang}
+[Android 1.5] Package: 'JavaNioCharset'
+[Android 1.5] Android 1.5::java::nio::charset equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio::charset referenced packages: Sequence {IN!util, IN!lang, IN!nio, IN!io}
+[Android 1.5] Package: 'JavaNioCharsetSpi'
+[Android 1.5] Android 1.5::java::nio::charset::spi equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::nio::charset::spi referenced packages: Sequence {IN!charset, IN!util, IN!lang}
+[Android 1.5] Package: 'JavaNet'
+[Android 1.5] Android 1.5::java::net equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::net referenced packages: Sequence {IN!lang, IN!security, IN!jar, IN!util, IN!channels, IN!io}
+[Android 1.5] Package: 'JavaSecurity'
+[Android 1.5] Android 1.5::java::security equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::security referenced packages: Sequence {IN!cert, IN!lang, IN!spec, IN!crypto, IN!nio, IN!util, IN!callback, IN!net, IN!auth, IN!io}
+[Android 1.5] Package: 'JavaSecurityCert'
+[Android 1.5] Android 1.5::java::security::cert equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::security::cert referenced packages: Sequence {IN!util, IN!security, IN!lang, IN!math, IN!x500, IN!io}
+[Android 1.5] Package: 'JavaSecuritySpec'
+[Android 1.5] Android 1.5::java::security::spec equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::security::spec referenced packages: Sequence {IN!interfaces, IN!security, IN!lang, IN!math}
+[Android 1.5] Package: 'JavaSecurityAcl'
+[Android 1.5] Android 1.5::java::security::acl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::security::acl referenced packages: Sequence {IN!util, IN!security, IN!lang}
+[Android 1.5] Package: 'JavaSecurityInterfaces'
+[Android 1.5] Android 1.5::java::security::interfaces equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::security::interfaces referenced packages: Sequence {IN!security, IN!math, IN!spec}
+[Android 1.5] Package: 'JavaText'
+[Android 1.5] Android 1.5::java::text equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::text referenced packages: Sequence {IN!util, IN!lang, IN!io}
+[Android 1.5] Package: 'JavaAwtFont'
+[Android 1.5] Android 1.5::java::awt::font equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::awt::font referenced packages: Sequence {IN!text, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaBeans'
+[Android 1.5] Android 1.5::java::beans equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::beans referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaMath'
+[Android 1.5] Android 1.5::java::math equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::math referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaSql'
+[Android 1.5] Android 1.5::java::sql equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::sql referenced packages: Sequence {IN!util, IN!lang, IN!security, IN!net, IN!math, IN!io}
+[Android 1.5] Package: 'OrgXmlpullV1'
+[Android 1.5] Android 1.5::org::xmlpull::v1 equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::xmlpull::v1 referenced packages: Sequence {IN!util, IN!lang, IN!io}
+[Android 1.5] Package: 'OrgXmlpullV1Sax2'
+[Android 1.5] Android 1.5::org::xmlpull::v1::sax2 equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::xmlpull::v1::sax2 referenced packages: Sequence {IN!sax, IN!v1, IN!lang}
+[Android 1.5] Package: 'OrgXmlSax'
+[Android 1.5] Android 1.5::org::xml::sax equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::xml::sax referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'OrgXmlSaxHelpers'
+[Android 1.5] Android 1.5::org::xml::sax::helpers equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::xml::sax::helpers referenced packages: Sequence {IN!util, IN!lang, IN!sax}
+[Android 1.5] Package: 'OrgXmlSaxExt'
+[Android 1.5] Android 1.5::org::xml::sax::ext equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::xml::sax::ext referenced packages: Sequence {IN!sax, IN!lang, IN!helpers}
+[Android 1.5] Package: 'OrgW3cDom'
+[Android 1.5] Android 1.5::org::w3c::dom equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::w3c::dom referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'OrgApacheCommonsLogging'
+[Android 1.5] Android 1.5::org::apache::commons::logging equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::commons::logging referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'OrgApacheHttp'
+[Android 1.5] Android 1.5::org::apache::http equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http referenced packages: Sequence {IN!params, IN!util, IN!protocol, IN!lang, IN!net, IN!util, IN!io}
+[Android 1.5] Package: 'OrgApacheHttpProtocol'
+[Android 1.5] Android 1.5::org::apache::http::protocol equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::protocol referenced packages: Sequence {IN!params, IN!http, IN!util, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpUtil'
+[Android 1.5] Android 1.5::org::apache::http::util equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::util referenced packages: Sequence {IN!http, IN!util, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpParams'
+[Android 1.5] Android 1.5::org::apache::http::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::params referenced packages: Sequence {IN!http, IN!io, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpAuth'
+[Android 1.5] Android 1.5::org::apache::http::auth equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::auth referenced packages: Sequence {IN!params, IN!http, IN!util, IN!security, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpAuthParams'
+[Android 1.5] Android 1.5::org::apache::http::auth::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::auth::params referenced packages: Sequence {IN!params, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpClient'
+[Android 1.5] Android 1.5::org::apache::http::client equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client referenced packages: Sequence {IN!cookie, IN!params, IN!auth, IN!conn, IN!http, IN!util, IN!protocol, IN!lang, IN!net, IN!io, IN!methods}
+[Android 1.5] Package: 'OrgApacheHttpClientMethods'
+[Android 1.5] Android 1.5::org::apache::http::client::methods equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::methods referenced packages: Sequence {IN!conn, IN!http, IN!util, IN!lang, IN!net, IN!message}
+[Android 1.5] Package: 'OrgApacheHttpClientEntity'
+[Android 1.5] Android 1.5::org::apache::http::client::entity equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::entity referenced packages: Sequence {IN!util, IN!entity, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpClientParams'
+[Android 1.5] Android 1.5::org::apache::http::client::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::params referenced packages: Sequence {IN!params, IN!params, IN!conn, IN!http, IN!util, IN!lang, IN!params, IN!params}
+[Android 1.5] Package: 'OrgApacheHttpClientProtocol'
+[Android 1.5] Android 1.5::org::apache::http::client::protocol equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::protocol referenced packages: Sequence {IN!cookie, IN!auth, IN!http, IN!util, IN!protocol, IN!lang, IN!client}
+[Android 1.5] Package: 'OrgApacheHttpClientUtils'
+[Android 1.5] Android 1.5::org::apache::http::client::utils equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::utils referenced packages: Sequence {IN!http, IN!util, IN!lang, IN!net}
+[Android 1.5] Package: 'OrgApacheHttpCookie'
+[Android 1.5] Android 1.5::org::apache::http::cookie equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::cookie referenced packages: Sequence {IN!params, IN!http, IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpCookieParams'
+[Android 1.5] Android 1.5::org::apache::http::cookie::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::cookie::params referenced packages: Sequence {IN!params, IN!util, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpConn'
+[Android 1.5] Android 1.5::org::apache::http::conn equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn referenced packages: Sequence {IN!params, IN!concurrent, IN!http, IN!protocol, IN!lang, IN!net, IN!routing, IN!ssl, IN!entity, IN!io, IN!scheme}
+[Android 1.5] Package: 'OrgApacheHttpConnParams'
+[Android 1.5] Android 1.5::org::apache::http::conn::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::params referenced packages: Sequence {IN!params, IN!http, IN!util, IN!lang, IN!net, IN!routing}
+[Android 1.5] Package: 'OrgApacheHttpConnScheme'
+[Android 1.5] Android 1.5::org::apache::http::conn::scheme equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::scheme referenced packages: Sequence {IN!params, IN!http, IN!util, IN!lang, IN!net}
+[Android 1.5] Package: 'OrgApacheHttpConnRouting'
+[Android 1.5] Android 1.5::org::apache::http::conn::routing equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::routing referenced packages: Sequence {IN!http, IN!protocol, IN!lang, IN!net}
+[Android 1.5] Package: 'OrgApacheHttpConnSsl'
+[Android 1.5] Android 1.5::org::apache::http::conn::ssl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::ssl referenced packages: Sequence {IN!params, IN!cert, IN!lang, IN!security, IN!net, IN!ssl, IN!scheme}
+[Android 1.5] Package: 'OrgApacheHttpConnUtil'
+[Android 1.5] Android 1.5::org::apache::http::conn::util equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::util referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpEntity'
+[Android 1.5] Android 1.5::org::apache::http::entity equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::entity referenced packages: Sequence {IN!http, IN!io, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpMessage'
+[Android 1.5] Android 1.5::org::apache::http::message equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::message referenced packages: Sequence {IN!params, IN!http, IN!util, IN!lang, IN!util}
+[Android 1.5] Package: 'OrgApacheHttpImpl'
+[Android 1.5] Android 1.5::org::apache::http::impl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl referenced packages: Sequence {IN!params, IN!protocol, IN!entity, IN!lang, IN!io, IN!http, IN!util, IN!net}
+[Android 1.5] Package: 'OrgApacheHttpImplEntity'
+[Android 1.5] Android 1.5::org::apache::http::impl::entity equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::entity referenced packages: Sequence {IN!http, IN!entity, IN!io, IN!lang, IN!io}
+[Android 1.5] Package: 'OrgApacheHttpImplAuth'
+[Android 1.5] Android 1.5::org::apache::http::impl::auth equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::auth referenced packages: Sequence {IN!params, IN!auth, IN!http, IN!util, IN!lang, IN!util}
+[Android 1.5] Package: 'OrgApacheHttpImplClient'
+[Android 1.5] Android 1.5::org::apache::http::impl::client equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::client referenced packages: Sequence {IN!cookie, IN!params, IN!protocol, IN!lang, IN!message, IN!auth, IN!conn, IN!http, IN!util, IN!net, IN!routing, IN!client, IN!io, IN!methods}
+[Android 1.5] Package: 'OrgApacheHttpImplConn'
+[Android 1.5] Android 1.5::org::apache::http::impl::conn equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::conn referenced packages: Sequence {IN!params, IN!protocol, IN!lang, IN!message, IN!io, IN!ssl, IN!io, IN!logging, IN!concurrent, IN!conn, IN!impl, IN!http, IN!util, IN!net, IN!util, IN!routing, IN!io, IN!scheme}
+[Android 1.5] Package: 'OrgApacheHttpImplConnTsccm'
+[Android 1.5] Android 1.5::org::apache::http::impl::conn::tsccm equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::conn::tsccm referenced packages: Sequence {IN!params, IN!locks, IN!lang, IN!conn, IN!concurrent, IN!conn, IN!util, IN!routing, IN!ref, IN!scheme}
+[Android 1.5] Package: 'OrgApacheHttpImplIo'
+[Android 1.5] Android 1.5::org::apache::http::impl::io equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::io referenced packages: Sequence {IN!params, IN!http, IN!lang, IN!net, IN!util, IN!message, IN!io, IN!io}
+[Android 1.5] Package: 'OrgApacheHttpImplCookie'
+[Android 1.5] Android 1.5::org::apache::http::impl::cookie equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::cookie referenced packages: Sequence {IN!cookie, IN!params, IN!http, IN!util, IN!lang, IN!util, IN!message}
+[Android 1.5] Package: 'OrgApacheHttpIo'
+[Android 1.5] Android 1.5::org::apache::http::io equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::io referenced packages: Sequence {IN!http, IN!lang, IN!util}
+[Android 1.5] Package: 'OrgJson'
+[Android 1.5] Android 1.5::org::json equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::json referenced packages: Sequence {IN!util, IN!lang}
+[Android 1.5] Package: 'JavaxMicroeditionKhronosOpengles'
+[Android 1.5] Android 1.5::javax::microedition::khronos::opengles equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos::opengles referenced packages: Sequence {IN!nio, IN!lang}
+[Android 1.5] Package: 'JavaxMicroeditionKhronosEgl'
+[Android 1.5] Android 1.5::javax::microedition::khronos::egl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos::egl referenced packages: Sequence {IN!lang, IN!opengles}
+[Android 1.5] Package: 'JavaxNet'
+[Android 1.5] Android 1.5::javax::net equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::net referenced packages: Sequence {IN!lang, IN!net}
+[Android 1.5] Package: 'JavaxNetSsl'
+[Android 1.5] Android 1.5::javax::net::ssl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::net::ssl referenced packages: Sequence {IN!cert, IN!lang, IN!security, IN!nio, IN!net, IN!util, IN!net, IN!io}
+[Android 1.5] Package: 'JavaxSecurityAuth'
+[Android 1.5] Android 1.5::javax::security::auth equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth referenced packages: Sequence {IN!util, IN!lang, IN!security, IN!io}
+[Android 1.5] Package: 'JavaxSecurityAuthCallback'
+[Android 1.5] Android 1.5::javax::security::auth::callback equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::callback referenced packages: Sequence {IN!io, IN!lang}
+[Android 1.5] Package: 'JavaxSecurityAuthX500'
+[Android 1.5] Android 1.5::javax::security::auth::x500 equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::x500 referenced packages: Sequence {IN!security, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaxSecurityAuthLogin'
+[Android 1.5] Android 1.5::javax::security::auth::login equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::login referenced packages: Sequence {IN!security, IN!lang}
+[Android 1.5] Package: 'JavaxSecurityCert'
+[Android 1.5] Android 1.5::javax::security::cert equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::cert referenced packages: Sequence {IN!util, IN!security, IN!io, IN!lang, IN!math}
+[Android 1.5] Package: 'JavaxCrypto'
+[Android 1.5] Android 1.5::javax::crypto equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::crypto referenced packages: Sequence {IN!cert, IN!lang, IN!security, IN!spec, IN!nio, IN!io}
+[Android 1.5] Package: 'JavaxCryptoInterfaces'
+[Android 1.5] Android 1.5::javax::crypto::interfaces equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::crypto::interfaces referenced packages: Sequence {IN!crypto, IN!security, IN!math, IN!spec}
+[Android 1.5] Package: 'JavaxCryptoSpec'
+[Android 1.5] Android 1.5::javax::crypto::spec equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::crypto::spec referenced packages: Sequence {IN!crypto, IN!io, IN!lang, IN!math, IN!spec}
+[Android 1.5] Package: 'JavaxSql'
+[Android 1.5] Android 1.5::javax::sql equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::sql referenced packages: Sequence {IN!util, IN!lang, IN!math, IN!io, IN!sql}
+[Android 1.5] Package: 'JavaxXml'
+[Android 1.5] Android 1.5::javax::xml equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::xml referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'JavaxXmlParsers'
+[Android 1.5] Android 1.5::javax::xml::parsers equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::xml::parsers referenced packages: Sequence {IN!lang, IN!helpers, IN!sax, IN!dom, IN!io}
+[Android 1.5] Package: 'JunitFramework'
+[Android 1.5] Android 1.5::junit::framework equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::junit::framework referenced packages: Sequence {IN!util, IN!reflect, IN!lang}
+[Android 1.5] Package: 'JunitRunner'
+[Android 1.5] Android 1.5::junit::runner equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::junit::runner referenced packages: Sequence {IN!framework, IN!util, IN!lang}
+[Android 1.5] Package: 'DalvikAnnotation'
+[Android 1.5] Android 1.5::dalvik::annotation equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::annotation referenced packages: Sequence {IN!annotation, IN!lang}
+[Android 1.5] Package: 'DalvikBytecode'
+[Android 1.5] Android 1.5::dalvik::bytecode equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::bytecode referenced packages: Sequence {}
+[Android 1.5] Package: 'DalvikSystem'
+[Android 1.5] Android 1.5::dalvik::system equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::system referenced packages: Sequence {IN!util, IN!io, IN!lang, IN!net}
+[Android 1.5] Android 1.5::android compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::app compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::view compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::view::inputmethod compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::view::animation compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::content compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::content::res compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::content::pm compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::os compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics::drawable compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics::drawable::shapes compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::net compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::net::http compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::net::wifi compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::database compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::database::sqlite compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::util compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::widget compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::appwidget compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::hardware compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::inputmethodservice compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::location compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::media compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::opengl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::preference compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::provider compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::webkit compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::sax compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::speech compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::telephony compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::telephony::gsm compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::format compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::method compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::style compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::util compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::test compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::mock compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::suitebuilder compatible packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::suitebuilder::annotation compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang compatible packages: Sequence {PREVIN!lang}
+[Android 1.5] J2SE 5.0::java::lang::StringBuffer misses generals compatible with : Sequence {IN!AbstractStringBuilder}
+[Android 1.5] J2SE 5.0::java::lang::StringBuilder misses generals compatible with : Sequence {IN!AbstractStringBuilder}
+[Android 1.5] J2SE 5.0::java::lang misses classifiers compatible with : Sequence {IN!AbstractStringBuilder, IN!StringBuffer, IN!StringBuilder}
+[Android 1.5] Android 1.5::java::lang equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::lang::annotation compatible packages: Sequence {PREVIN!annotation}
+[Android 1.5] Android 1.5::java::lang::annotation equivalent packages: Sequence {PREVIN!annotation}
+[Android 1.5] Android 1.5::java::lang::reflect compatible packages: Sequence {PREVIN!reflect}
+[Android 1.5] Android 1.5::java::lang::reflect equivalent packages: Sequence {PREVIN!reflect}
+[Android 1.5] Android 1.5::java::lang::ref compatible packages: Sequence {PREVIN!ref}
+[Android 1.5] Android 1.5::java::lang::ref equivalent packages: Sequence {PREVIN!ref}
+[Android 1.5] Android 1.5::java::util compatible packages: Sequence {PREVIN!util}
+[Android 1.5] Android 1.5::java::util equivalent packages: Sequence {PREVIN!util}
+[Android 1.5] Android 1.5::java::util::concurrent compatible packages: Sequence {PREVIN!concurrent}
+[Android 1.5] Android 1.5::java::util::concurrent equivalent packages: Sequence {PREVIN!concurrent}
+[Android 1.5] Android 1.5::java::util::concurrent::atomic compatible packages: Sequence {PREVIN!atomic}
+[Android 1.5] Android 1.5::java::util::concurrent::atomic equivalent packages: Sequence {PREVIN!atomic}
+[Android 1.5] Android 1.5::java::util::concurrent::locks compatible packages: Sequence {PREVIN!locks}
+[Android 1.5] Android 1.5::java::util::concurrent::locks equivalent packages: Sequence {PREVIN!locks}
+[Android 1.5] Android 1.5::java::util::regex compatible packages: Sequence {PREVIN!regex}
+[Android 1.5] Android 1.5::java::util::regex equivalent packages: Sequence {PREVIN!regex}
+[Android 1.5] Android 1.5::java::util::jar compatible packages: Sequence {PREVIN!jar}
+[Android 1.5] Android 1.5::java::util::jar equivalent packages: Sequence {PREVIN!jar}
+[Android 1.5] Android 1.5::java::util::zip compatible packages: Sequence {PREVIN!zip}
+[Android 1.5] Android 1.5::java::util::zip equivalent packages: Sequence {PREVIN!zip}
+[Android 1.5] Android 1.5::java::util::logging compatible packages: Sequence {PREVIN!logging}
+[Android 1.5] Android 1.5::java::util::logging equivalent packages: Sequence {PREVIN!logging}
+[Android 1.5] Android 1.5::java::util::prefs compatible packages: Sequence {PREVIN!prefs}
+[Android 1.5] Android 1.5::java::util::prefs equivalent packages: Sequence {PREVIN!prefs}
+[Android 1.5] Android 1.5::java::io compatible packages: Sequence {PREVIN!io}
+[Android 1.5] Android 1.5::java::io equivalent packages: Sequence {PREVIN!io}
+[Android 1.5] Android 1.5::java::nio compatible packages: Sequence {PREVIN!nio}
+[Android 1.5] Android 1.5::java::nio equivalent packages: Sequence {PREVIN!nio}
+[Android 1.5] Android 1.5::java::nio::channels compatible packages: Sequence {PREVIN!channels}
+[Android 1.5] Android 1.5::java::nio::channels equivalent packages: Sequence {PREVIN!channels}
+[Android 1.5] Android 1.5::java::nio::channels::spi compatible packages: Sequence {PREVIN!spi}
+[Android 1.5] Android 1.5::java::nio::channels::spi equivalent packages: Sequence {PREVIN!spi}
+[Android 1.5] Android 1.5::java::nio::charset compatible packages: Sequence {PREVIN!charset}
+[Android 1.5] Android 1.5::java::nio::charset equivalent packages: Sequence {PREVIN!charset}
+[Android 1.5] Android 1.5::java::nio::charset::spi compatible packages: Sequence {PREVIN!spi}
+[Android 1.5] Android 1.5::java::nio::charset::spi equivalent packages: Sequence {PREVIN!spi}
+[Android 1.5] Android 1.5::java::net compatible packages: Sequence {PREVIN!net}
+[Android 1.5] Android 1.5::java::net equivalent packages: Sequence {PREVIN!net}
+[Android 1.5] Android 1.5::java::security compatible packages: Sequence {PREVIN!security}
+[Android 1.5] Android 1.5::java::security equivalent packages: Sequence {PREVIN!security}
+[Android 1.5] Android 1.5::java::security::cert compatible packages: Sequence {PREVIN!cert}
+[Android 1.5] Android 1.5::java::security::cert equivalent packages: Sequence {PREVIN!cert}
+[Android 1.5] Android 1.5::java::security::spec compatible packages: Sequence {PREVIN!spec}
+[Android 1.5] Android 1.5::java::security::spec equivalent packages: Sequence {PREVIN!spec}
+[Android 1.5] Android 1.5::java::security::acl compatible packages: Sequence {PREVIN!acl}
+[Android 1.5] Android 1.5::java::security::acl equivalent packages: Sequence {PREVIN!acl}
+[Android 1.5] Android 1.5::java::security::interfaces compatible packages: Sequence {PREVIN!interfaces}
+[Android 1.5] Android 1.5::java::security::interfaces equivalent packages: Sequence {PREVIN!interfaces}
+[Android 1.5] Android 1.5::java::text compatible packages: Sequence {PREVIN!text}
+[Android 1.5] Android 1.5::java::text equivalent packages: Sequence {PREVIN!text}
+[Android 1.5] Android 1.5::java::awt::font misses classifiers compatible with : Sequence {PREVIN!GlyphJustificationInfo, PREVIN!GlyphMetrics, PREVIN!GraphicAttribute, PREVIN!ImageGraphicAttribute, PREVIN!LineBreakMeasurer, PREVIN!MultipleMaster, PREVIN!OpenType, PREVIN!ShapeGraphicAttribute, PREVIN!TextHitInfo, PREVIN!TextLayout, PREVIN!CaretPolicy, PREVIN!TextMeasurer, PREVIN!LineMetrics, PREVIN!GlyphVector, PREVIN!FontRenderContext, PREVIN!TransformAttribute}
+[Android 1.5] Android 1.5::java::awt::font compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::beans misses classifiers compatible with : Sequence {PREVIN!AppletInitializer, PREVIN!Customizer, PREVIN!DefaultPersistenceDelegate, PREVIN!PersistenceDelegate, PREVIN!Encoder, PREVIN!EventHandler, PREVIN!ExceptionListener, PREVIN!Expression, PREVIN!Statement, PREVIN!ParameterDescriptor, PREVIN!FeatureDescriptor, PREVIN!VetoableChangeListenerProxy, PREVIN!VetoableChangeListener, PREVIN!XMLDecoder, PREVIN!XMLEncoder, PREVIN!BeanInfo, PREVIN!Beans, PREVIN!VetoableChangeSupport, PREVIN!DesignMode, PREVIN!Visibility, PREVIN!MethodDescriptor, PREVIN!SimpleBeanInfo, PREVIN!IndexedPropertyDescriptor, PREVIN!PropertyDescriptor, PREVIN!BeanDescriptor, PREVIN!PropertyEditorSupport, PREVIN!PropertyEditor, PREVIN!PropertyEditorManager, PREVIN!EventSetDescriptor, PREVIN!Introspector, PREVIN!IntrospectionException, PREVIN!PropertyVetoException}
+[Android 1.5] Android 1.5::java::beans compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java::math compatible packages: Sequence {PREVIN!math}
+[Android 1.5] Android 1.5::java::math equivalent packages: Sequence {PREVIN!math}
+[Android 1.5] Android 1.5::java::sql compatible packages: Sequence {PREVIN!sql}
+[Android 1.5] Android 1.5::java::sql equivalent packages: Sequence {PREVIN!sql}
+[Android 1.5] Android 1.5::org::xmlpull::v1 compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::xmlpull::v1::sax2 compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::xml::sax compatible packages: Sequence {PREVIN!sax}
+[Android 1.5] Android 1.5::org::xml::sax equivalent packages: Sequence {PREVIN!sax}
+[Android 1.5] Android 1.5::org::xml::sax::helpers compatible packages: Sequence {PREVIN!helpers}
+[Android 1.5] Android 1.5::org::xml::sax::helpers equivalent packages: Sequence {PREVIN!helpers}
+[Android 1.5] Android 1.5::org::xml::sax::ext compatible packages: Sequence {PREVIN!ext}
+[Android 1.5] Android 1.5::org::xml::sax::ext equivalent packages: Sequence {PREVIN!ext}
+[Android 1.5] Android 1.5::org::w3c::dom::Element misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!setIdAttribute, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!getSchemaTypeInfo, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!setIdAttributeNS, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!setIdAttributeNode, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::DOMImplementation misses features compatible with : Sequence {PREVIN!getFeature}
+[Android 1.5] Android 1.5::org::w3c::dom::Document misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!adoptNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!getDocumentURI, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!setDocumentURI, PREVIN!getXmlEncoding, PREVIN!normalizeDocument, PREVIN!compareDocumentPosition, PREVIN!getStrictErrorChecking, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!setXmlVersion, PREVIN!getXmlVersion, PREVIN!getFeature, PREVIN!setStrictErrorChecking, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!getXmlStandalone, PREVIN!lookupPrefix, PREVIN!getDomConfig, PREVIN!renameNode, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!setXmlStandalone, PREVIN!getUserData, PREVIN!getInputEncoding, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Comment misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::CharacterData misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::DocumentFragment misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Node misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!getTextContent, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!setTextContent, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!lookupPrefix, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!isDefaultNamespace, PREVIN!compareDocumentPosition, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC, PREVIN!getFeature}
+[Android 1.5] Android 1.5::org::w3c::dom::ProcessingInstruction misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::EntityReference misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Attr misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!getSchemaTypeInfo, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!isId, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::DocumentType misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Notation misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::DOMException misses features compatible with : Sequence {PREVIN!TYPE_MISMATCH_ERR, PREVIN!VALIDATION_ERR}
+[Android 1.5] Android 1.5::org::w3c::dom::CDATASection misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!replaceWholeText, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!getWholeText, PREVIN!compareDocumentPosition, PREVIN!isElementContentWhitespace, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Text misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!replaceWholeText, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!getWholeText, PREVIN!compareDocumentPosition, PREVIN!isElementContentWhitespace, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Entity misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!getXmlEncoding, PREVIN!getXmlVersion, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getInputEncoding, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom misses classifiers compatible with : Sequence {PREVIN!Element, PREVIN!DOMConfiguration, PREVIN!DOMError, PREVIN!DOMErrorHandler, PREVIN!DOMImplementation, PREVIN!DOMImplementationList, PREVIN!DOMImplementationSource, PREVIN!DOMLocator, PREVIN!DOMStringList, PREVIN!NameList, PREVIN!TypeInfo, PREVIN!UserDataHandler, PREVIN!Document, PREVIN!Comment, PREVIN!CharacterData, PREVIN!DocumentFragment, PREVIN!Node, PREVIN!ProcessingInstruction, PREVIN!EntityReference, PREVIN!Attr, PREVIN!DocumentType, PREVIN!Notation, PREVIN!DOMException, PREVIN!CDATASection, PREVIN!Text, PREVIN!Entity}
+[Android 1.5] Android 1.5::org::w3c::dom compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::commons::logging compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::protocol compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::util compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::auth compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::auth::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::methods compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::entity compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::protocol compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::utils compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::cookie compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::cookie::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::params compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::scheme compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::routing compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::ssl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::util compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::entity compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::message compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::entity compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::auth compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::client compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::conn compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::conn::tsccm compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::io compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::cookie compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::io compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::json compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos::opengles compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos::egl compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::net compatible packages: Sequence {PREVIN!net}
+[Android 1.5] Android 1.5::javax::net equivalent packages: Sequence {PREVIN!net}
+[Android 1.5] Android 1.5::javax::net::ssl compatible packages: Sequence {PREVIN!ssl}
+[Android 1.5] Android 1.5::javax::net::ssl equivalent packages: Sequence {PREVIN!ssl}
+[Android 1.5] Android 1.5::javax::security::auth misses classifiers compatible with : Sequence {PREVIN!Policy, PREVIN!RefreshFailedException, PREVIN!Refreshable}
+[Android 1.5] Android 1.5::javax::security::auth compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::callback misses classifiers compatible with : Sequence {PREVIN!ChoiceCallback, PREVIN!ConfirmationCallback, PREVIN!LanguageCallback, PREVIN!NameCallback, PREVIN!TextInputCallback, PREVIN!TextOutputCallback}
+[Android 1.5] Android 1.5::javax::security::auth::callback compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::x500 misses classifiers compatible with : Sequence {PREVIN!X500PrivateCredential}
+[Android 1.5] Android 1.5::javax::security::auth::x500 compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::login misses classifiers compatible with : Sequence {PREVIN!AccountException, PREVIN!AccountExpiredException, PREVIN!AccountLockedException, PREVIN!AccountNotFoundException, PREVIN!AppConfigurationEntry, PREVIN!LoginModuleControlFlag, PREVIN!Configuration, PREVIN!CredentialException, PREVIN!CredentialExpiredException, PREVIN!CredentialNotFoundException, PREVIN!FailedLoginException, PREVIN!LoginContext}
+[Android 1.5] Android 1.5::javax::security::auth::login compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::cert compatible packages: Sequence {PREVIN!cert}
+[Android 1.5] Android 1.5::javax::security::cert equivalent packages: Sequence {PREVIN!cert}
+[Android 1.5] Android 1.5::javax::crypto compatible packages: Sequence {PREVIN!crypto}
+[Android 1.5] Android 1.5::javax::crypto equivalent packages: Sequence {PREVIN!crypto}
+[Android 1.5] Android 1.5::javax::crypto::interfaces compatible packages: Sequence {PREVIN!interfaces}
+[Android 1.5] Android 1.5::javax::crypto::interfaces equivalent packages: Sequence {PREVIN!interfaces}
+[Android 1.5] Android 1.5::javax::crypto::spec compatible packages: Sequence {PREVIN!spec}
+[Android 1.5] Android 1.5::javax::crypto::spec equivalent packages: Sequence {PREVIN!spec}
+[Android 1.5] Android 1.5::javax::sql misses classifiers compatible with : Sequence {PREVIN!XAConnection, PREVIN!XADataSource}
+[Android 1.5] Android 1.5::javax::sql compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::xml compatible packages: Sequence {PREVIN!xml}
+[Android 1.5] J2SE 5.0::javax::xml misses classifiers compatible with : Sequence {IN!XMLConstants}
+[Android 1.5] Android 1.5::javax::xml equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::xml::parsers::SAXParser misses features compatible with : Sequence {PREVIN!getSchema}
+[Android 1.5] Android 1.5::javax::xml::parsers::SAXParserFactory misses features compatible with : Sequence {PREVIN!setSchema, PREVIN!getSchema}
+[Android 1.5] Android 1.5::javax::xml::parsers::DocumentBuilder misses features compatible with : Sequence {PREVIN!getSchema}
+[Android 1.5] Android 1.5::javax::xml::parsers::DocumentBuilderFactory misses features compatible with : Sequence {PREVIN!getSchema, PREVIN!setSchema}
+[Android 1.5] Android 1.5::javax::xml::parsers misses classifiers compatible with : Sequence {PREVIN!SAXParser, PREVIN!SAXParserFactory, PREVIN!DocumentBuilder, PREVIN!DocumentBuilderFactory}
+[Android 1.5] Android 1.5::javax::xml::parsers compatible packages: Sequence {}
+[Android 1.5] Android 1.5::junit::framework compatible packages: Sequence {}
+[Android 1.5] Android 1.5::junit::runner compatible packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::annotation compatible packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::bytecode compatible packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::system compatible packages: Sequence {}
+[Android 1.5] Android 1.5::java compatible packages: Sequence {PREVIN!java}
+[Android 1.5] Android 1.5::java::awt misses classifiers compatible with : Sequence {PREVIN!Panel, PREVIN!AccessibleAWTPanel, PREVIN!BufferCapabilities, PREVIN!FlipContents, PREVIN!Button, PREVIN!AccessibleAWTButton, PREVIN!Component, PREVIN!AccessibleAWTComponent, PREVIN!AccessibleAWTComponentHandler, PREVIN!AccessibleAWTFocusHandler, PREVIN!BltBufferStrategy, PREVIN!FlipBufferStrategy, PREVIN!Canvas, PREVIN!AccessibleAWTCanvas, PREVIN!Checkbox, PREVIN!AccessibleAWTCheckbox, PREVIN!ItemSelectable, PREVIN!CheckboxGroup, PREVIN!CheckboxMenuItem, PREVIN!AccessibleAWTCheckboxMenuItem, PREVIN!MenuItem, PREVIN!AccessibleAWTMenuItem, PREVIN!Choice, PREVIN!AccessibleAWTChoice, PREVIN!CompositeContext, PREVIN!Container, PREVIN!AccessibleAWTContainer, PREVIN!AccessibleContainerHandler, PREVIN!Dialog, PREVIN!AccessibleAWTDialog, PREVIN!Window, PREVIN!AccessibleAWTWindow, PREVIN!DisplayMode, PREVIN!FileDialog, PREVIN!GradientPaint, PREVIN!Paint, PREVIN!GraphicsConfigTemplate, PREVIN!GridBagConstraints, PREVIN!GridBagLayout, PREVIN!LayoutManager2, PREVIN!IllegalComponentStateException, PREVIN!JobAttributes, PREVIN!DefaultSelectionType, PREVIN!DestinationType, PREVIN!DialogType, PREVIN!MultipleDocumentHandlingType, PREVIN!SidesType, PREVIN!Label, PREVIN!AccessibleAWTLabel, PREVIN!List, PREVIN!AccessibleAWTList, PREVIN!AccessibleAWTListChild, PREVIN!Menu, PREVIN!AccessibleAWTMenu, PREVIN!MenuBar, PREVIN!AccessibleAWTMenuBar, PREVIN!MenuComponent, PREVIN!AccessibleAWTMenuComponent, PREVIN!MenuShortcut, PREVIN!MouseInfo, PREVIN!PageAttributes, PREVIN!ColorType, PREVIN!MediaType, PREVIN!OrientationRequestedType, PREVIN!OriginType, PREVIN!PrintQualityType, PREVIN!PaintContext, PREVIN!Polygon, PREVIN!Shape, PREVIN!PopupMenu, PREVIN!AccessibleAWTPopupMenu, PREVIN!Robot, PREVIN!ScrollPane, PREVIN!AccessibleAWTScrollPane, PREVIN!ScrollPaneAdjustable, PREVIN!Adjustable, PREVIN!Scrollbar, PREVIN!AccessibleAWTScrollBar, PREVIN!TextArea, PREVIN!AccessibleAWTTextArea, PREVIN!TextComponent, PREVIN!AccessibleAWTTextComponent, PREVIN!TextField, PREVIN!AccessibleAWTTextField, PREVIN!TexturePaint, PREVIN!AWTEvent, PREVIN!Graphics, PREVIN!LayoutManager, PREVIN!AWTError, PREVIN!Frame, PREVIN!AccessibleAWTFrame, PREVIN!AWTPermission, PREVIN!DefaultKeyboardFocusManager, PREVIN!FontFormatException, PREVIN!GridLayout, PREVIN!PrintGraphics, PREVIN!MenuContainer, PREVIN!Rectangle, PREVIN!RenderingHints, PREVIN!Key, PREVIN!CardLayout, PREVIN!AWTEventMulticaster, PREVIN!FlowLayout, PREVIN!AWTKeyStroke, PREVIN!FocusTraversalPolicy, PREVIN!ActiveEvent, PREVIN!BasicStroke, PREVIN!Stroke, PREVIN!AlphaComposite, PREVIN!Composite, PREVIN!Graphics2D, PREVIN!PointerInfo, PREVIN!Transparency, PREVIN!Image, PREVIN!AWTException, PREVIN!Event, PREVIN!BorderLayout, PREVIN!MediaTracker, PREVIN!ComponentOrientation, PREVIN!DefaultFocusTraversalPolicy, PREVIN!ContainerOrderFocusTraversalPolicy, PREVIN!KeyboardFocusManager, PREVIN!KeyEventDispatcher, PREVIN!KeyEventPostProcessor, PREVIN!Font, PREVIN!Dimension, PREVIN!Insets, PREVIN!Color, PREVIN!PrintJob, PREVIN!Cursor, PREVIN!Point, PREVIN!HeadlessException, PREVIN!SystemColor, PREVIN!ImageCapabilities, PREVIN!GraphicsConfiguration, PREVIN!GraphicsDevice, PREVIN!FontMetrics, PREVIN!Toolkit, PREVIN!GraphicsEnvironment, PREVIN!EventQueue}
+[Android 1.5] Android 1.5::java::awt compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org compatible packages: Sequence {PREVIN!org}
+[Android 1.5] Android 1.5::org::xmlpull compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::xml compatible packages: Sequence {PREVIN!xml}
+[Android 1.5] Android 1.5::org::w3c compatible packages: Sequence {PREVIN!w3c}
+[Android 1.5] Android 1.5::org::apache compatible packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::commons compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax compatible packages: Sequence {PREVIN!javax}
+[Android 1.5] Android 1.5::javax::microedition compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos compatible packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security compatible packages: Sequence {PREVIN!security}
+[Android 1.5] Android 1.5::junit compatible packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik compatible packages: Sequence {}
+[Android 1.5] Android 1.5 misses packages compatible with : Sequence {PREVIN!auth, PREVIN!callback, PREVIN!x500, PREVIN!kerberos, PREVIN!login, PREVIN!spi, PREVIN!sasl, PREVIN!accessibility, PREVIN!swing, PREVIN!text, PREVIN!html, PREVIN!parser, PREVIN!rtf, PREVIN!event, PREVIN!colorchooser, PREVIN!plaf, PREVIN!basic, PREVIN!metal, PREVIN!multi, PREVIN!synth, PREVIN!tree, PREVIN!border, PREVIN!filechooser, PREVIN!table, PREVIN!undo, PREVIN!management, PREVIN!openmbean, PREVIN!loading, PREVIN!modelmbean, PREVIN!monitor, PREVIN!relation, PREVIN!remote, PREVIN!rmi, PREVIN!timer, PREVIN!activity, PREVIN!imageio, PREVIN!metadata, PREVIN!event, PREVIN!plugins, PREVIN!bmp, PREVIN!jpeg, PREVIN!stream, PREVIN!spi, PREVIN!naming, PREVIN!directory, PREVIN!event, PREVIN!ldap, PREVIN!spi, PREVIN!print, PREVIN!attribute, PREVIN!standard, PREVIN!event, PREVIN!rmi, PREVIN!CORBA, PREVIN!ssl, PREVIN!sound, PREVIN!midi, PREVIN!spi, PREVIN!sampled, PREVIN!spi, PREVIN!sql, PREVIN!rowset, PREVIN!spi, PREVIN!serial, PREVIN!transaction, PREVIN!xa, PREVIN!datatype, PREVIN!namespace, PREVIN!transform, PREVIN!dom, PREVIN!sax, PREVIN!stream, PREVIN!validation, PREVIN!xpath, PREVIN!parsers, PREVIN!instrument, PREVIN!management, PREVIN!applet, PREVIN!awt, PREVIN!event, PREVIN!image, PREVIN!renderable, PREVIN!geom, PREVIN!im, PREVIN!spi, PREVIN!color, PREVIN!datatransfer, PREVIN!dnd, PREVIN!font, PREVIN!print, PREVIN!beans, PREVIN!beancontext, PREVIN!rmi, PREVIN!activation, PREVIN!server, PREVIN!dgc, PREVIN!registry, PREVIN!dom, PREVIN!ls, PREVIN!bootstrap, PREVIN!css, PREVIN!stylesheets, PREVIN!views, PREVIN!events, PREVIN!html, PREVIN!traversal, PREVIN!ranges, PREVIN!omg, PREVIN!CORBA_2_3, PREVIN!portable, PREVIN!CORBA, PREVIN!portable, PREVIN!DynAnyPackage, PREVIN!ORBPackage, PREVIN!TypeCodePackage, PREVIN!SendingContext, PREVIN!CosNaming, PREVIN!NamingContextExtPackage, PREVIN!NamingContextPackage, PREVIN!PortableServer, PREVIN!CurrentPackage, PREVIN!POAManagerPackage, PREVIN!POAPackage, PREVIN!portable, PREVIN!ServantLocatorPackage, PREVIN!Dynamic, PREVIN!DynamicAny, PREVIN!DynAnyFactoryPackage, PREVIN!DynAnyPackage, PREVIN!IOP, PREVIN!CodecFactoryPackage, PREVIN!CodecPackage, PREVIN!Messaging, PREVIN!PortableInterceptor, PREVIN!ORBInitInfoPackage, PREVIN!stub, PREVIN!java, PREVIN!rmi, PREVIN!javax, PREVIN!management, PREVIN!remote, PREVIN!rmi, PREVIN!ietf, PREVIN!jgss}
+[Android 1.5] Android 1.5 compatible models: Sequence {}
+[Android 1.5] Android 1.5::android equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::app equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::view equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::view::inputmethod equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::view::animation equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::content equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::content::res equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::content::pm equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::os equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics::drawable equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::graphics::drawable::shapes equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::net equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::net::http equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::net::wifi equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::database equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::database::sqlite equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::util equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::widget equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::appwidget equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::hardware equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::inputmethodservice equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::location equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::media equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::opengl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::preference equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::provider equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::webkit equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::sax equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::speech equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::telephony equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::telephony::gsm equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::format equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::method equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::style equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::text::util equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::test equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::mock equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::suitebuilder equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::android::test::suitebuilder::annotation equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java equivalent packages: Sequence {PREVIN!java}
+[Android 1.5] Android 1.5::java::awt equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::awt::font equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::java::beans equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org equivalent packages: Sequence {PREVIN!org}
+[Android 1.5] Android 1.5::org::xmlpull equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::xmlpull::v1 equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::xmlpull::v1::sax2 equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::xml equivalent packages: Sequence {PREVIN!xml}
+[Android 1.5] Android 1.5::org::w3c equivalent packages: Sequence {PREVIN!w3c}
+[Android 1.5] Android 1.5::org::w3c::dom equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::commons equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::commons::logging equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::protocol equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::util equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::auth equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::auth::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::methods equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::entity equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::protocol equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::client::utils equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::cookie equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::cookie::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::params equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::scheme equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::routing equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::ssl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::conn::util equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::entity equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::message equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::entity equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::auth equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::client equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::conn equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::conn::tsccm equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::io equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::impl::cookie equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::apache::http::io equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::org::json equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax equivalent packages: Sequence {PREVIN!javax}
+[Android 1.5] Android 1.5::javax::microedition equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos::opengles equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::microedition::khronos::egl equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security equivalent packages: Sequence {PREVIN!security}
+[Android 1.5] Android 1.5::javax::security::auth equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::callback equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::x500 equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::security::auth::login equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::sql equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::javax::xml::parsers equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::junit equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::junit::framework equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::junit::runner equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::annotation equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::bytecode equivalent packages: Sequence {}
+[Android 1.5] Android 1.5::dalvik::system equivalent packages: Sequence {}
+[Android 1.5] Android 1.5 misses packages equivalent with : Sequence {PREVIN!auth, PREVIN!callback, PREVIN!x500, PREVIN!kerberos, PREVIN!login, PREVIN!spi, PREVIN!sasl, PREVIN!accessibility, PREVIN!swing, PREVIN!text, PREVIN!html, PREVIN!parser, PREVIN!rtf, PREVIN!event, PREVIN!colorchooser, PREVIN!plaf, PREVIN!basic, PREVIN!metal, PREVIN!multi, PREVIN!synth, PREVIN!tree, PREVIN!border, PREVIN!filechooser, PREVIN!table, PREVIN!undo, PREVIN!management, PREVIN!openmbean, PREVIN!loading, PREVIN!modelmbean, PREVIN!monitor, PREVIN!relation, PREVIN!remote, PREVIN!rmi, PREVIN!timer, PREVIN!activity, PREVIN!imageio, PREVIN!metadata, PREVIN!event, PREVIN!plugins, PREVIN!bmp, PREVIN!jpeg, PREVIN!stream, PREVIN!spi, PREVIN!naming, PREVIN!directory, PREVIN!event, PREVIN!ldap, PREVIN!spi, PREVIN!print, PREVIN!attribute, PREVIN!standard, PREVIN!event, PREVIN!rmi, PREVIN!CORBA, PREVIN!ssl, PREVIN!sound, PREVIN!midi, PREVIN!spi, PREVIN!sampled, PREVIN!spi, PREVIN!sql, PREVIN!rowset, PREVIN!spi, PREVIN!serial, PREVIN!transaction, PREVIN!xa, PREVIN!xml, PREVIN!datatype, PREVIN!namespace, PREVIN!transform, PREVIN!dom, PREVIN!sax, PREVIN!stream, PREVIN!validation, PREVIN!xpath, PREVIN!parsers, PREVIN!lang, PREVIN!instrument, PREVIN!management, PREVIN!applet, PREVIN!awt, PREVIN!event, PREVIN!image, PREVIN!renderable, PREVIN!geom, PREVIN!im, PREVIN!spi, PREVIN!color, PREVIN!datatransfer, PREVIN!dnd, PREVIN!font, PREVIN!print, PREVIN!beans, PREVIN!beancontext, PREVIN!rmi, PREVIN!activation, PREVIN!server, PREVIN!dgc, PREVIN!registry, PREVIN!dom, PREVIN!ls, PREVIN!bootstrap, PREVIN!css, PREVIN!stylesheets, PREVIN!views, PREVIN!events, PREVIN!html, PREVIN!traversal, PREVIN!ranges, PREVIN!omg, PREVIN!CORBA_2_3, PREVIN!portable, PREVIN!CORBA, PREVIN!portable, PREVIN!DynAnyPackage, PREVIN!ORBPackage, PREVIN!TypeCodePackage, PREVIN!SendingContext, PREVIN!CosNaming, PREVIN!NamingContextExtPackage, PREVIN!NamingContextPackage, PREVIN!PortableServer, PREVIN!CurrentPackage, PREVIN!POAManagerPackage, PREVIN!POAPackage, PREVIN!portable, PREVIN!ServantLocatorPackage, PREVIN!Dynamic, PREVIN!DynamicAny, PREVIN!DynAnyFactoryPackage, PREVIN!DynAnyPackage, PREVIN!IOP, PREVIN!CodecFactoryPackage, PREVIN!CodecPackage, PREVIN!Messaging, PREVIN!PortableInterceptor, PREVIN!ORBInitInfoPackage, PREVIN!stub, PREVIN!java, PREVIN!rmi, PREVIN!javax, PREVIN!management, PREVIN!remote, PREVIN!rmi, PREVIN!ietf, PREVIN!jgss}
+[Android 1.5] J2SE 5.0::javax compatible packages: Sequence {IN!javax}
+[Android 1.5] J2SE 5.0::javax equivalent packages: Sequence {IN!javax}
+[Android 1.5] J2SE 5.0::javax::crypto compatible packages: Sequence {IN!crypto}
+[Android 1.5] J2SE 5.0::javax::crypto equivalent packages: Sequence {IN!crypto}
+[Android 1.5] J2SE 5.0::javax::crypto::interfaces compatible packages: Sequence {IN!interfaces}
+[Android 1.5] J2SE 5.0::javax::crypto::interfaces equivalent packages: Sequence {IN!interfaces}
+[Android 1.5] J2SE 5.0::javax::crypto::spec compatible packages: Sequence {IN!spec}
+[Android 1.5] J2SE 5.0::javax::crypto::spec equivalent packages: Sequence {IN!spec}
+[Android 1.5] J2SE 5.0::javax::net compatible packages: Sequence {IN!net}
+[Android 1.5] J2SE 5.0::javax::net equivalent packages: Sequence {IN!net}
+[Android 1.5] J2SE 5.0::javax::net::ssl compatible packages: Sequence {IN!ssl}
+[Android 1.5] J2SE 5.0::javax::net::ssl equivalent packages: Sequence {IN!ssl}
+[Android 1.5] J2SE 5.0::javax::security compatible packages: Sequence {IN!security}
+[Android 1.5] J2SE 5.0::javax::security equivalent packages: Sequence {IN!security}
+[Android 1.5] J2SE 5.0::javax::security::cert compatible packages: Sequence {IN!cert}
+[Android 1.5] J2SE 5.0::javax::security::cert equivalent packages: Sequence {IN!cert}
+[Android 1.5] J2SE 5.0::javax::security::auth compatible packages: Sequence {IN!auth}
+[Android 1.5] Android 1.5::javax::security::auth misses classifiers compatible with : Sequence {PREVIN!Policy, PREVIN!RefreshFailedException, PREVIN!Refreshable}
+[Android 1.5] J2SE 5.0::javax::security::auth equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::security::auth::callback compatible packages: Sequence {IN!callback}
+[Android 1.5] Android 1.5::javax::security::auth::callback misses classifiers compatible with : Sequence {PREVIN!ChoiceCallback, PREVIN!ConfirmationCallback, PREVIN!LanguageCallback, PREVIN!NameCallback, PREVIN!TextInputCallback, PREVIN!TextOutputCallback}
+[Android 1.5] J2SE 5.0::javax::security::auth::callback equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::security::auth::x500 compatible packages: Sequence {IN!x500}
+[Android 1.5] Android 1.5::javax::security::auth::x500 misses classifiers compatible with : Sequence {PREVIN!X500PrivateCredential}
+[Android 1.5] J2SE 5.0::javax::security::auth::x500 equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::security::auth::kerberos compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::security::auth::kerberos equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::security::auth::login compatible packages: Sequence {IN!login}
+[Android 1.5] Android 1.5::javax::security::auth::login misses classifiers compatible with : Sequence {PREVIN!AccountException, PREVIN!AccountExpiredException, PREVIN!AccountLockedException, PREVIN!AccountNotFoundException, PREVIN!AppConfigurationEntry, PREVIN!LoginModuleControlFlag, PREVIN!Configuration, PREVIN!CredentialException, PREVIN!CredentialExpiredException, PREVIN!CredentialNotFoundException, PREVIN!FailedLoginException, PREVIN!LoginContext}
+[Android 1.5] J2SE 5.0::javax::security::auth::login equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::security::auth::spi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::security::auth::spi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::security::sasl compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::security::sasl equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::accessibility compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::accessibility equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::text compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::text equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::text::html compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::text::html equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::text::html::parser compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::text::html::parser equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::text::rtf compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::text::rtf equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::event compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::event equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::colorchooser compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::colorchooser equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf::basic compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf::basic equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf::metal compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf::metal equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf::multi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf::multi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf::synth compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::plaf::synth equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::tree compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::tree equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::border compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::border equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::filechooser compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::filechooser equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::table compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::table equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::undo compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::swing::undo equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::openmbean compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::openmbean equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::loading compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::loading equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::modelmbean compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::modelmbean equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::monitor compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::monitor equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::relation compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::relation equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::remote compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::remote equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::remote::rmi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::remote::rmi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::timer compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::management::timer equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::activity compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::activity equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::metadata compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::metadata equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::event compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::event equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::plugins compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::plugins equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::plugins::bmp compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::plugins::bmp equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::plugins::jpeg compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::plugins::jpeg equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::stream compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::stream equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::spi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::imageio::spi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming::directory compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming::directory equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming::event compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming::event equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming::ldap compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming::ldap equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming::spi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::naming::spi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::print compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::print equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::print::attribute compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::print::attribute equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::print::attribute::standard compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::print::attribute::standard equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::print::event compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::print::event equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::rmi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::rmi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::rmi::CORBA compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::rmi::CORBA equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::rmi::ssl compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::rmi::ssl equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound::midi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound::midi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound::midi::spi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound::midi::spi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound::sampled compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound::sampled equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound::sampled::spi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sound::sampled::spi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sql compatible packages: Sequence {IN!sql}
+[Android 1.5] Android 1.5::javax::sql misses classifiers compatible with : Sequence {PREVIN!XAConnection, PREVIN!XADataSource}
+[Android 1.5] J2SE 5.0::javax::sql equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sql::rowset compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sql::rowset equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sql::rowset::spi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sql::rowset::spi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sql::rowset::serial compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::sql::rowset::serial equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::transaction compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::transaction equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::transaction::xa compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::transaction::xa equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml misses classifiers compatible with : Sequence {IN!XMLConstants}
+[Android 1.5] J2SE 5.0::javax::xml compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::datatype compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::datatype equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::namespace compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::namespace equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::transform compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::transform equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::transform::dom compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::transform::dom equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::transform::sax compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::transform::sax equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::transform::stream compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::transform::stream equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::validation compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::validation equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::xpath compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::xpath equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::javax::xml::parsers compatible packages: Sequence {IN!parsers}
+[Android 1.5] Android 1.5::javax::xml::parsers::SAXParser misses features compatible with : Sequence {PREVIN!getSchema}
+[Android 1.5] Android 1.5::javax::xml::parsers::SAXParserFactory misses features compatible with : Sequence {PREVIN!setSchema, PREVIN!getSchema}
+[Android 1.5] Android 1.5::javax::xml::parsers::DocumentBuilder misses features compatible with : Sequence {PREVIN!getSchema}
+[Android 1.5] Android 1.5::javax::xml::parsers::DocumentBuilderFactory misses features compatible with : Sequence {PREVIN!getSchema, PREVIN!setSchema}
+[Android 1.5] Android 1.5::javax::xml::parsers misses classifiers compatible with : Sequence {PREVIN!SAXParser, PREVIN!SAXParserFactory, PREVIN!DocumentBuilder, PREVIN!DocumentBuilderFactory}
+[Android 1.5] J2SE 5.0::javax::xml::parsers equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java compatible packages: Sequence {IN!java}
+[Android 1.5] J2SE 5.0::java equivalent packages: Sequence {IN!java}
+[Android 1.5] J2SE 5.0::java::lang::StringBuffer misses generals compatible with : Sequence {IN!AbstractStringBuilder}
+[Android 1.5] J2SE 5.0::java::lang::StringBuilder misses generals compatible with : Sequence {IN!AbstractStringBuilder}
+[Android 1.5] J2SE 5.0::java::lang misses classifiers compatible with : Sequence {IN!AbstractStringBuilder, IN!StringBuffer, IN!StringBuilder}
+[Android 1.5] J2SE 5.0::java::lang compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::lang equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::lang::reflect compatible packages: Sequence {IN!reflect}
+[Android 1.5] J2SE 5.0::java::lang::reflect equivalent packages: Sequence {IN!reflect}
+[Android 1.5] J2SE 5.0::java::lang::annotation compatible packages: Sequence {IN!annotation}
+[Android 1.5] J2SE 5.0::java::lang::annotation equivalent packages: Sequence {IN!annotation}
+[Android 1.5] J2SE 5.0::java::lang::instrument compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::lang::instrument equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::lang::management compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::lang::management equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::lang::ref compatible packages: Sequence {IN!ref}
+[Android 1.5] J2SE 5.0::java::lang::ref equivalent packages: Sequence {IN!ref}
+[Android 1.5] J2SE 5.0::java::security compatible packages: Sequence {IN!security}
+[Android 1.5] J2SE 5.0::java::security equivalent packages: Sequence {IN!security}
+[Android 1.5] J2SE 5.0::java::security::spec compatible packages: Sequence {IN!spec}
+[Android 1.5] J2SE 5.0::java::security::spec equivalent packages: Sequence {IN!spec}
+[Android 1.5] J2SE 5.0::java::security::cert compatible packages: Sequence {IN!cert}
+[Android 1.5] J2SE 5.0::java::security::cert equivalent packages: Sequence {IN!cert}
+[Android 1.5] J2SE 5.0::java::security::acl compatible packages: Sequence {IN!acl}
+[Android 1.5] J2SE 5.0::java::security::acl equivalent packages: Sequence {IN!acl}
+[Android 1.5] J2SE 5.0::java::security::interfaces compatible packages: Sequence {IN!interfaces}
+[Android 1.5] J2SE 5.0::java::security::interfaces equivalent packages: Sequence {IN!interfaces}
+[Android 1.5] J2SE 5.0::java::math compatible packages: Sequence {IN!math}
+[Android 1.5] J2SE 5.0::java::math equivalent packages: Sequence {IN!math}
+[Android 1.5] J2SE 5.0::java::nio compatible packages: Sequence {IN!nio}
+[Android 1.5] J2SE 5.0::java::nio equivalent packages: Sequence {IN!nio}
+[Android 1.5] J2SE 5.0::java::nio::channels compatible packages: Sequence {IN!channels}
+[Android 1.5] J2SE 5.0::java::nio::channels equivalent packages: Sequence {IN!channels}
+[Android 1.5] J2SE 5.0::java::nio::channels::spi compatible packages: Sequence {IN!spi}
+[Android 1.5] J2SE 5.0::java::nio::channels::spi equivalent packages: Sequence {IN!spi}
+[Android 1.5] J2SE 5.0::java::nio::charset compatible packages: Sequence {IN!charset}
+[Android 1.5] J2SE 5.0::java::nio::charset equivalent packages: Sequence {IN!charset}
+[Android 1.5] J2SE 5.0::java::nio::charset::spi compatible packages: Sequence {IN!spi}
+[Android 1.5] J2SE 5.0::java::nio::charset::spi equivalent packages: Sequence {IN!spi}
+[Android 1.5] J2SE 5.0::java::io compatible packages: Sequence {IN!io}
+[Android 1.5] J2SE 5.0::java::io equivalent packages: Sequence {IN!io}
+[Android 1.5] J2SE 5.0::java::net compatible packages: Sequence {IN!net}
+[Android 1.5] J2SE 5.0::java::net equivalent packages: Sequence {IN!net}
+[Android 1.5] J2SE 5.0::java::util compatible packages: Sequence {IN!util}
+[Android 1.5] J2SE 5.0::java::util equivalent packages: Sequence {IN!util}
+[Android 1.5] J2SE 5.0::java::util::regex compatible packages: Sequence {IN!regex}
+[Android 1.5] J2SE 5.0::java::util::regex equivalent packages: Sequence {IN!regex}
+[Android 1.5] J2SE 5.0::java::util::concurrent compatible packages: Sequence {IN!concurrent}
+[Android 1.5] J2SE 5.0::java::util::concurrent equivalent packages: Sequence {IN!concurrent}
+[Android 1.5] J2SE 5.0::java::util::concurrent::atomic compatible packages: Sequence {IN!atomic}
+[Android 1.5] J2SE 5.0::java::util::concurrent::atomic equivalent packages: Sequence {IN!atomic}
+[Android 1.5] J2SE 5.0::java::util::concurrent::locks compatible packages: Sequence {IN!locks}
+[Android 1.5] J2SE 5.0::java::util::concurrent::locks equivalent packages: Sequence {IN!locks}
+[Android 1.5] J2SE 5.0::java::util::jar compatible packages: Sequence {IN!jar}
+[Android 1.5] J2SE 5.0::java::util::jar equivalent packages: Sequence {IN!jar}
+[Android 1.5] J2SE 5.0::java::util::zip compatible packages: Sequence {IN!zip}
+[Android 1.5] J2SE 5.0::java::util::zip equivalent packages: Sequence {IN!zip}
+[Android 1.5] J2SE 5.0::java::util::logging compatible packages: Sequence {IN!logging}
+[Android 1.5] J2SE 5.0::java::util::logging equivalent packages: Sequence {IN!logging}
+[Android 1.5] J2SE 5.0::java::util::prefs compatible packages: Sequence {IN!prefs}
+[Android 1.5] J2SE 5.0::java::util::prefs equivalent packages: Sequence {IN!prefs}
+[Android 1.5] J2SE 5.0::java::applet compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::applet equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt compatible packages: Sequence {IN!awt}
+[Android 1.5] Android 1.5::java::awt misses classifiers compatible with : Sequence {PREVIN!Panel, PREVIN!AccessibleAWTPanel, PREVIN!BufferCapabilities, PREVIN!FlipContents, PREVIN!Button, PREVIN!AccessibleAWTButton, PREVIN!Component, PREVIN!AccessibleAWTComponent, PREVIN!AccessibleAWTComponentHandler, PREVIN!AccessibleAWTFocusHandler, PREVIN!BltBufferStrategy, PREVIN!FlipBufferStrategy, PREVIN!Canvas, PREVIN!AccessibleAWTCanvas, PREVIN!Checkbox, PREVIN!AccessibleAWTCheckbox, PREVIN!ItemSelectable, PREVIN!CheckboxGroup, PREVIN!CheckboxMenuItem, PREVIN!AccessibleAWTCheckboxMenuItem, PREVIN!MenuItem, PREVIN!AccessibleAWTMenuItem, PREVIN!Choice, PREVIN!AccessibleAWTChoice, PREVIN!CompositeContext, PREVIN!Container, PREVIN!AccessibleAWTContainer, PREVIN!AccessibleContainerHandler, PREVIN!Dialog, PREVIN!AccessibleAWTDialog, PREVIN!Window, PREVIN!AccessibleAWTWindow, PREVIN!DisplayMode, PREVIN!FileDialog, PREVIN!GradientPaint, PREVIN!Paint, PREVIN!GraphicsConfigTemplate, PREVIN!GridBagConstraints, PREVIN!GridBagLayout, PREVIN!LayoutManager2, PREVIN!IllegalComponentStateException, PREVIN!JobAttributes, PREVIN!DefaultSelectionType, PREVIN!DestinationType, PREVIN!DialogType, PREVIN!MultipleDocumentHandlingType, PREVIN!SidesType, PREVIN!Label, PREVIN!AccessibleAWTLabel, PREVIN!List, PREVIN!AccessibleAWTList, PREVIN!AccessibleAWTListChild, PREVIN!Menu, PREVIN!AccessibleAWTMenu, PREVIN!MenuBar, PREVIN!AccessibleAWTMenuBar, PREVIN!MenuComponent, PREVIN!AccessibleAWTMenuComponent, PREVIN!MenuShortcut, PREVIN!MouseInfo, PREVIN!PageAttributes, PREVIN!ColorType, PREVIN!MediaType, PREVIN!OrientationRequestedType, PREVIN!OriginType, PREVIN!PrintQualityType, PREVIN!PaintContext, PREVIN!Polygon, PREVIN!Shape, PREVIN!PopupMenu, PREVIN!AccessibleAWTPopupMenu, PREVIN!Robot, PREVIN!ScrollPane, PREVIN!AccessibleAWTScrollPane, PREVIN!ScrollPaneAdjustable, PREVIN!Adjustable, PREVIN!Scrollbar, PREVIN!AccessibleAWTScrollBar, PREVIN!TextArea, PREVIN!AccessibleAWTTextArea, PREVIN!TextComponent, PREVIN!AccessibleAWTTextComponent, PREVIN!TextField, PREVIN!AccessibleAWTTextField, PREVIN!TexturePaint, PREVIN!AWTEvent, PREVIN!Graphics, PREVIN!LayoutManager, PREVIN!AWTError, PREVIN!Frame, PREVIN!AccessibleAWTFrame, PREVIN!AWTPermission, PREVIN!DefaultKeyboardFocusManager, PREVIN!FontFormatException, PREVIN!GridLayout, PREVIN!PrintGraphics, PREVIN!MenuContainer, PREVIN!Rectangle, PREVIN!RenderingHints, PREVIN!Key, PREVIN!CardLayout, PREVIN!AWTEventMulticaster, PREVIN!FlowLayout, PREVIN!AWTKeyStroke, PREVIN!FocusTraversalPolicy, PREVIN!ActiveEvent, PREVIN!BasicStroke, PREVIN!Stroke, PREVIN!AlphaComposite, PREVIN!Composite, PREVIN!Graphics2D, PREVIN!PointerInfo, PREVIN!Transparency, PREVIN!Image, PREVIN!AWTException, PREVIN!Event, PREVIN!BorderLayout, PREVIN!MediaTracker, PREVIN!ComponentOrientation, PREVIN!DefaultFocusTraversalPolicy, PREVIN!ContainerOrderFocusTraversalPolicy, PREVIN!KeyboardFocusManager, PREVIN!KeyEventDispatcher, PREVIN!KeyEventPostProcessor, PREVIN!Font, PREVIN!Dimension, PREVIN!Insets, PREVIN!Color, PREVIN!PrintJob, PREVIN!Cursor, PREVIN!Point, PREVIN!HeadlessException, PREVIN!SystemColor, PREVIN!ImageCapabilities, PREVIN!GraphicsConfiguration, PREVIN!GraphicsDevice, PREVIN!FontMetrics, PREVIN!Toolkit, PREVIN!GraphicsEnvironment, PREVIN!EventQueue}
+[Android 1.5] J2SE 5.0::java::awt equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::event compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::event equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::image compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::image equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::image::renderable compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::image::renderable equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::geom compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::geom equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::im compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::im equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::im::spi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::im::spi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::color compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::color equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::datatransfer compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::datatransfer equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::dnd compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::dnd equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::font compatible packages: Sequence {IN!font}
+[Android 1.5] Android 1.5::java::awt::font misses classifiers compatible with : Sequence {PREVIN!GlyphJustificationInfo, PREVIN!GlyphMetrics, PREVIN!GraphicAttribute, PREVIN!ImageGraphicAttribute, PREVIN!LineBreakMeasurer, PREVIN!MultipleMaster, PREVIN!OpenType, PREVIN!ShapeGraphicAttribute, PREVIN!TextHitInfo, PREVIN!TextLayout, PREVIN!CaretPolicy, PREVIN!TextMeasurer, PREVIN!LineMetrics, PREVIN!GlyphVector, PREVIN!FontRenderContext, PREVIN!TransformAttribute}
+[Android 1.5] J2SE 5.0::java::awt::font equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::print compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::awt::print equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::text compatible packages: Sequence {IN!text}
+[Android 1.5] J2SE 5.0::java::text equivalent packages: Sequence {IN!text}
+[Android 1.5] J2SE 5.0::java::beans compatible packages: Sequence {IN!beans}
+[Android 1.5] Android 1.5::java::beans misses classifiers compatible with : Sequence {PREVIN!AppletInitializer, PREVIN!Customizer, PREVIN!DefaultPersistenceDelegate, PREVIN!PersistenceDelegate, PREVIN!Encoder, PREVIN!EventHandler, PREVIN!ExceptionListener, PREVIN!Expression, PREVIN!Statement, PREVIN!ParameterDescriptor, PREVIN!FeatureDescriptor, PREVIN!VetoableChangeListenerProxy, PREVIN!VetoableChangeListener, PREVIN!XMLDecoder, PREVIN!XMLEncoder, PREVIN!BeanInfo, PREVIN!Beans, PREVIN!VetoableChangeSupport, PREVIN!DesignMode, PREVIN!Visibility, PREVIN!MethodDescriptor, PREVIN!SimpleBeanInfo, PREVIN!IndexedPropertyDescriptor, PREVIN!PropertyDescriptor, PREVIN!BeanDescriptor, PREVIN!PropertyEditorSupport, PREVIN!PropertyEditor, PREVIN!PropertyEditorManager, PREVIN!EventSetDescriptor, PREVIN!Introspector, PREVIN!IntrospectionException, PREVIN!PropertyVetoException}
+[Android 1.5] J2SE 5.0::java::beans equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::beans::beancontext compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::beans::beancontext equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi::activation compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi::activation equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi::server compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi::server equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi::dgc compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi::dgc equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi::registry compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::rmi::registry equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::java::sql compatible packages: Sequence {IN!sql}
+[Android 1.5] J2SE 5.0::java::sql equivalent packages: Sequence {IN!sql}
+[Android 1.5] J2SE 5.0::org compatible packages: Sequence {IN!org}
+[Android 1.5] J2SE 5.0::org equivalent packages: Sequence {IN!org}
+[Android 1.5] J2SE 5.0::org::w3c compatible packages: Sequence {IN!w3c}
+[Android 1.5] J2SE 5.0::org::w3c equivalent packages: Sequence {IN!w3c}
+[Android 1.5] J2SE 5.0::org::w3c::dom compatible packages: Sequence {IN!dom}
+[Android 1.5] Android 1.5::org::w3c::dom::Element misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!setIdAttribute, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!getSchemaTypeInfo, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!setIdAttributeNS, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!setIdAttributeNode, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::DOMImplementation misses features compatible with : Sequence {PREVIN!getFeature}
+[Android 1.5] Android 1.5::org::w3c::dom::Document misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!adoptNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!getDocumentURI, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!setDocumentURI, PREVIN!getXmlEncoding, PREVIN!normalizeDocument, PREVIN!compareDocumentPosition, PREVIN!getStrictErrorChecking, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!setXmlVersion, PREVIN!getXmlVersion, PREVIN!getFeature, PREVIN!setStrictErrorChecking, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!getXmlStandalone, PREVIN!lookupPrefix, PREVIN!getDomConfig, PREVIN!renameNode, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!setXmlStandalone, PREVIN!getUserData, PREVIN!getInputEncoding, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Comment misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::CharacterData misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::DocumentFragment misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Node misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!getTextContent, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!setTextContent, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!lookupPrefix, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!isDefaultNamespace, PREVIN!compareDocumentPosition, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC, PREVIN!getFeature}
+[Android 1.5] Android 1.5::org::w3c::dom::ProcessingInstruction misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::EntityReference misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Attr misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!getSchemaTypeInfo, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!isId, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::DocumentType misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Notation misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::DOMException misses features compatible with : Sequence {PREVIN!TYPE_MISMATCH_ERR, PREVIN!VALIDATION_ERR}
+[Android 1.5] Android 1.5::org::w3c::dom::CDATASection misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!replaceWholeText, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!getWholeText, PREVIN!compareDocumentPosition, PREVIN!isElementContentWhitespace, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Text misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!replaceWholeText, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!getWholeText, PREVIN!compareDocumentPosition, PREVIN!isElementContentWhitespace, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom::Entity misses features compatible with : Sequence {PREVIN!isSameNode, PREVIN!setUserData, PREVIN!isEqualNode, PREVIN!DOCUMENT_POSITION_FOLLOWING, PREVIN!DOCUMENT_POSITION_CONTAINS, PREVIN!getBaseURI, PREVIN!DOCUMENT_POSITION_PRECEDING, PREVIN!getXmlEncoding, PREVIN!getXmlVersion, PREVIN!compareDocumentPosition, PREVIN!DOCUMENT_POSITION_DISCONNECTED, PREVIN!getFeature, PREVIN!getInputEncoding, PREVIN!getTextContent, PREVIN!setTextContent, PREVIN!lookupPrefix, PREVIN!isDefaultNamespace, PREVIN!lookupNamespaceURI, PREVIN!getUserData, PREVIN!DOCUMENT_POSITION_CONTAINED_BY, PREVIN!DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}
+[Android 1.5] Android 1.5::org::w3c::dom misses classifiers compatible with : Sequence {PREVIN!Element, PREVIN!DOMConfiguration, PREVIN!DOMError, PREVIN!DOMErrorHandler, PREVIN!DOMImplementation, PREVIN!DOMImplementationList, PREVIN!DOMImplementationSource, PREVIN!DOMLocator, PREVIN!DOMStringList, PREVIN!NameList, PREVIN!TypeInfo, PREVIN!UserDataHandler, PREVIN!Document, PREVIN!Comment, PREVIN!CharacterData, PREVIN!DocumentFragment, PREVIN!Node, PREVIN!ProcessingInstruction, PREVIN!EntityReference, PREVIN!Attr, PREVIN!DocumentType, PREVIN!Notation, PREVIN!DOMException, PREVIN!CDATASection, PREVIN!Text, PREVIN!Entity}
+[Android 1.5] J2SE 5.0::org::w3c::dom equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::ls compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::ls equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::bootstrap compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::bootstrap equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::css compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::css equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::stylesheets compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::stylesheets equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::views compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::views equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::events compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::events equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::html compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::html equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::traversal compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::traversal equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::ranges compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::w3c::dom::ranges equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA_2_3 compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA_2_3 equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA_2_3::portable compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA_2_3::portable equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA::portable compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA::portable equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA::DynAnyPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA::DynAnyPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA::ORBPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA::ORBPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA::TypeCodePackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CORBA::TypeCodePackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::SendingContext compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::SendingContext equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CosNaming compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CosNaming equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CosNaming::NamingContextExtPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CosNaming::NamingContextExtPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CosNaming::NamingContextPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::CosNaming::NamingContextPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::CurrentPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::CurrentPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::POAManagerPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::POAManagerPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::POAPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::POAPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::portable compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::portable equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::ServantLocatorPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableServer::ServantLocatorPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::Dynamic compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::Dynamic equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::DynamicAny compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::DynamicAny equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::DynamicAny::DynAnyFactoryPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::DynamicAny::DynAnyFactoryPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::DynamicAny::DynAnyPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::DynamicAny::DynAnyPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::IOP compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::IOP equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::IOP::CodecFactoryPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::IOP::CodecFactoryPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::IOP::CodecPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::IOP::CodecPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::Messaging compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::Messaging equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableInterceptor compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableInterceptor equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableInterceptor::ORBInitInfoPackage compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::PortableInterceptor::ORBInitInfoPackage equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::java compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::java equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::java::rmi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::java::rmi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::javax compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::javax equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::javax::management compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::javax::management equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::javax::management::remote compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::javax::management::remote equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::javax::management::remote::rmi compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::omg::stub::javax::management::remote::rmi equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::xml compatible packages: Sequence {IN!xml}
+[Android 1.5] J2SE 5.0::org::xml equivalent packages: Sequence {IN!xml}
+[Android 1.5] J2SE 5.0::org::xml::sax compatible packages: Sequence {IN!sax}
+[Android 1.5] J2SE 5.0::org::xml::sax equivalent packages: Sequence {IN!sax}
+[Android 1.5] J2SE 5.0::org::xml::sax::ext compatible packages: Sequence {IN!ext}
+[Android 1.5] J2SE 5.0::org::xml::sax::ext equivalent packages: Sequence {IN!ext}
+[Android 1.5] J2SE 5.0::org::xml::sax::helpers compatible packages: Sequence {IN!helpers}
+[Android 1.5] J2SE 5.0::org::xml::sax::helpers equivalent packages: Sequence {IN!helpers}
+[Android 1.5] J2SE 5.0::org::ietf compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::ietf equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::ietf::jgss compatible packages: Sequence {}
+[Android 1.5] J2SE 5.0::org::ietf::jgss equivalent packages: Sequence {}
+[Android 1.5] J2SE 5.0 misses packages equivalent with : Sequence {IN!android, IN!app, IN!view, IN!inputmethod, IN!animation, IN!content, IN!res, IN!pm, IN!os, IN!graphics, IN!drawable, IN!shapes, IN!net, IN!http, IN!wifi, IN!database, IN!sqlite, IN!util, IN!widget, IN!appwidget, IN!hardware, IN!inputmethodservice, IN!location, IN!media, IN!opengl, IN!preference, IN!provider, IN!webkit, IN!sax, IN!speech, IN!telephony, IN!gsm, IN!text, IN!format, IN!method, IN!style, IN!util, IN!test, IN!mock, IN!suitebuilder, IN!annotation, IN!lang, IN!awt, IN!font, IN!beans, IN!xmlpull, IN!v1, IN!sax2, IN!dom, IN!apache, IN!commons, IN!logging, IN!http, IN!protocol, IN!util, IN!params, IN!auth, IN!params, IN!client, IN!methods, IN!entity, IN!params, IN!protocol, IN!utils, IN!cookie, IN!params, IN!conn, IN!params, IN!scheme, IN!routing, IN!ssl, IN!util, IN!entity, IN!message, IN!impl, IN!entity, IN!auth, IN!client, IN!conn, IN!tsccm, IN!io, IN!cookie, IN!io, IN!json, IN!microedition, IN!khronos, IN!opengles, IN!egl, IN!auth, IN!callback, IN!x500, IN!login, IN!sql, IN!xml, IN!parsers, IN!junit, IN!framework, IN!runner, IN!dalvik, IN!annotation, IN!bytecode, IN!system}
+[Android 1.5] Android 1.5 equivalent models: Sequence {}
+[Android 1.5] Package: 'Android'
+[Android 1.5] Android 1.5::android referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'AndroidApp'
+[Android 1.5] Android 1.5::android::app referenced packages: Sequence {IN!os, IN!database, IN!net, IN!pm, IN!util, IN!util, IN!io, IN!view, IN!content, IN!widget, IN!lang, IN!graphics, IN!res, IN!drawable}
+[Android 1.5] Package: 'AndroidView'
+[Android 1.5] Android 1.5::android::view referenced packages: Sequence {IN!content, IN!os, IN!lang, IN!net, IN!annotation, IN!v1, IN!graphics, IN!res, IN!util, IN!util, IN!inputmethod, IN!animation, IN!drawable, IN!hardware}
+[Android 1.5] Package: 'AndroidViewInputmethod'
+[Android 1.5] Android 1.5::android::view::inputmethod referenced packages: Sequence {IN!view, IN!content, IN!os, IN!lang, IN!graphics, IN!pm, IN!util, IN!util, IN!text, IN!drawable}
+[Android 1.5] Package: 'AndroidViewAnimation'
+[Android 1.5] Android 1.5::android::view::animation referenced packages: Sequence {IN!graphics, IN!view, IN!util, IN!content, IN!util, IN!lang}
+[Android 1.5] Package: 'AndroidContent'
+[Android 1.5] Android 1.5::android::content referenced packages: Sequence {IN!os, IN!database, IN!net, IN!pm, IN!util, IN!util, IN!io, IN!view, IN!sqlite, IN!lang, IN!v1, IN!graphics, IN!res, IN!drawable}
+[Android 1.5] Package: 'AndroidContentRes'
+[Android 1.5] Android 1.5::android::content::res referenced packages: Sequence {IN!graphics, IN!util, IN!util, IN!os, IN!lang, IN!drawable, IN!v1, IN!io}
+[Android 1.5] Package: 'AndroidContentPm'
+[Android 1.5] Android 1.5::android::content::pm referenced packages: Sequence {IN!res, IN!util, IN!content, IN!util, IN!os, IN!lang, IN!drawable, IN!net}
+[Android 1.5] Package: 'AndroidOs'
+[Android 1.5] Android 1.5::android::os referenced packages: Sequence {IN!lang, IN!concurrent, IN!util, IN!util, IN!net, IN!io}
+[Android 1.5] Package: 'AndroidGraphics'
+[Android 1.5] Android 1.5::android::graphics referenced packages: Sequence {IN!res, IN!os, IN!lang, IN!nio, IN!io, IN!opengles}
+[Android 1.5] Package: 'AndroidGraphicsDrawable'
+[Android 1.5] Android 1.5::android::graphics::drawable referenced packages: Sequence {IN!graphics, IN!res, IN!util, IN!shapes, IN!lang, IN!v1, IN!io}
+[Android 1.5] Package: 'AndroidGraphicsDrawableShapes'
+[Android 1.5] Android 1.5::android::graphics::drawable::shapes referenced packages: Sequence {IN!graphics, IN!lang}
+[Android 1.5] Package: 'AndroidNet'
+[Android 1.5] Android 1.5::android::net referenced packages: Sequence {IN!net, IN!content, IN!util, IN!os, IN!lang, IN!net, IN!ssl, IN!io}
+[Android 1.5] Package: 'AndroidNetHttp'
+[Android 1.5] Android 1.5::android::net::http referenced packages: Sequence {IN!cert, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidNetWifi'
+[Android 1.5] Android 1.5::android::net::wifi referenced packages: Sequence {IN!net, IN!util, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidDatabase'
+[Android 1.5] Android 1.5::android::database referenced packages: Sequence {IN!content, IN!sqlite, IN!os, IN!lang, IN!net, IN!util, IN!io}
+[Android 1.5] Package: 'AndroidDatabaseSqlite'
+[Android 1.5] Android 1.5::android::database::sqlite referenced packages: Sequence {IN!content, IN!util, IN!lang, IN!database, IN!io}
+[Android 1.5] Package: 'AndroidUtil'
+[Android 1.5] Android 1.5::android::util referenced packages: Sequence {IN!util, IN!lang, IN!sax, IN!v1, IN!io}
+[Android 1.5] Package: 'AndroidWidget'
+[Android 1.5] Android 1.5::android::widget referenced packages: Sequence {IN!app, IN!os, IN!database, IN!net, IN!util, IN!util, IN!animation, IN!method, IN!media, IN!view, IN!content, IN!lang, IN!annotation, IN!graphics, IN!res, IN!inputmethod, IN!text, IN!drawable}
+[Android 1.5] Package: 'AndroidAppwidget'
+[Android 1.5] Android 1.5::android::appwidget referenced packages: Sequence {IN!graphics, IN!view, IN!content, IN!widget, IN!util, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidHardware'
+[Android 1.5] Android 1.5::android::hardware referenced packages: Sequence {IN!view, IN!util, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidInputmethodservice'
+[Android 1.5] Android 1.5::android::inputmethodservice referenced packages: Sequence {IN!view, IN!content, IN!widget, IN!app, IN!os, IN!lang, IN!graphics, IN!res, IN!util, IN!util, IN!inputmethod, IN!drawable, IN!io}
+[Android 1.5] Package: 'AndroidLocation'
+[Android 1.5] Android 1.5::android::location referenced packages: Sequence {IN!util, IN!content, IN!util, IN!app, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidMedia'
+[Android 1.5] Android 1.5::android::media referenced packages: Sequence {IN!graphics, IN!res, IN!view, IN!content, IN!app, IN!os, IN!lang, IN!database, IN!net, IN!hardware, IN!nio, IN!io}
+[Android 1.5] Package: 'AndroidOpengl'
+[Android 1.5] Android 1.5::android::opengl referenced packages: Sequence {IN!graphics, IN!view, IN!util, IN!content, IN!lang, IN!egl, IN!io, IN!opengles}
+[Android 1.5] Package: 'AndroidPreference'
+[Android 1.5] Android 1.5::android::preference referenced packages: Sequence {IN!view, IN!content, IN!widget, IN!app, IN!os, IN!lang, IN!net, IN!res, IN!util, IN!drawable}
+[Android 1.5] Package: 'AndroidProvider'
+[Android 1.5] Android 1.5::android::provider referenced packages: Sequence {IN!graphics, IN!res, IN!util, IN!content, IN!webkit, IN!lang, IN!database, IN!net, IN!io}
+[Android 1.5] Package: 'AndroidWebkit'
+[Android 1.5] Android 1.5::android::webkit referenced packages: Sequence {IN!view, IN!content, IN!widget, IN!os, IN!lang, IN!graphics, IN!util, IN!util, IN!http, IN!io}
+[Android 1.5] Package: 'AndroidSax'
+[Android 1.5] Android 1.5::android::sax referenced packages: Sequence {IN!sax, IN!lang}
+[Android 1.5] Package: 'AndroidSpeech'
+[Android 1.5] Android 1.5::android::speech referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'AndroidTelephony'
+[Android 1.5] Android 1.5::android::telephony referenced packages: Sequence {IN!content, IN!util, IN!text, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidTelephonyGsm'
+[Android 1.5] Android 1.5::android::telephony::gsm referenced packages: Sequence {IN!telephony, IN!util, IN!app, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidText'
+[Android 1.5] Android 1.5::android::text referenced packages: Sequence {IN!graphics, IN!view, IN!util, IN!util, IN!os, IN!lang, IN!drawable, IN!regex, IN!sax}
+[Android 1.5] Package: 'AndroidTextFormat'
+[Android 1.5] Android 1.5::android::text::format referenced packages: Sequence {IN!content, IN!text, IN!util, IN!lang}
+[Android 1.5] Package: 'AndroidTextMethod'
+[Android 1.5] Android 1.5::android::text::method referenced packages: Sequence {IN!graphics, IN!view, IN!content, IN!widget, IN!text, IN!app, IN!os, IN!lang}
+[Android 1.5] Package: 'AndroidTextStyle'
+[Android 1.5] Android 1.5::android::text::style referenced packages: Sequence {IN!graphics, IN!res, IN!view, IN!content, IN!text, IN!os, IN!lang, IN!drawable, IN!net}
+[Android 1.5] Package: 'AndroidTextUtil'
+[Android 1.5] Android 1.5::android::text::util referenced packages: Sequence {IN!regex, IN!widget, IN!text, IN!lang}
+[Android 1.5] Package: 'AndroidTest'
+[Android 1.5] Android 1.5::android::test referenced packages: Sequence {IN!view, IN!content, IN!app, IN!sqlite, IN!os, IN!lang, IN!mock, IN!net, IN!annotation, IN!util, IN!runner, IN!framework, IN!regex, IN!io}
+[Android 1.5] Package: 'AndroidTestMock'
+[Android 1.5] Android 1.5::android::test::mock referenced packages: Sequence {IN!app, IN!os, IN!database, IN!net, IN!pm, IN!util, IN!util, IN!io, IN!content, IN!sqlite, IN!lang, IN!graphics, IN!res, IN!drawable}
+[Android 1.5] Package: 'AndroidTestSuitebuilder'
+[Android 1.5] Android 1.5::android::test::suitebuilder referenced packages: Sequence {IN!framework, IN!reflect, IN!util, IN!annotation, IN!lang}
+[Android 1.5] Package: 'AndroidTestSuitebuilderAnnotation'
+[Android 1.5] Android 1.5::android::test::suitebuilder::annotation referenced packages: Sequence {IN!annotation}
+[Android 1.5] Package: 'JavaLang'
+[Android 1.5] Android 1.5::java::lang referenced packages: Sequence {IN!security, IN!nio, IN!annotation, IN!reflect, IN!util, IN!net, IN!channels, IN!io}
+[Android 1.5] Package: 'JavaLangAnnotation'
+[Android 1.5] Android 1.5::java::lang::annotation referenced packages: Sequence {IN!reflect, IN!lang}
+[Android 1.5] Package: 'JavaLangReflect'
+[Android 1.5] Android 1.5::java::lang::reflect referenced packages: Sequence {IN!annotation, IN!io, IN!security, IN!lang}
+[Android 1.5] Package: 'JavaLangRef'
+[Android 1.5] Android 1.5::java::lang::ref referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'JavaUtil'
+[Android 1.5] Android 1.5::java::util referenced packages: Sequence {IN!security, IN!lang, IN!math, IN!channels, IN!regex, IN!io}
+[Android 1.5] Package: 'JavaUtilConcurrent'
+[Android 1.5] Android 1.5::java::util::concurrent referenced packages: Sequence {IN!security, IN!lang, IN!util, IN!io}
+[Android 1.5] Package: 'JavaUtilConcurrentAtomic'
+[Android 1.5] Android 1.5::java::util::concurrent::atomic referenced packages: Sequence {IN!io, IN!lang}
+[Android 1.5] Package: 'JavaUtilConcurrentLocks'
+[Android 1.5] Android 1.5::java::util::concurrent::locks referenced packages: Sequence {IN!concurrent, IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaUtilRegex'
+[Android 1.5] Android 1.5::java::util::regex referenced packages: Sequence {IN!io, IN!lang}
+[Android 1.5] Package: 'JavaUtilJar'
+[Android 1.5] Android 1.5::java::util::jar referenced packages: Sequence {IN!util, IN!zip, IN!lang, IN!beans, IN!io}
+[Android 1.5] Package: 'JavaUtilZip'
+[Android 1.5] Android 1.5::java::util::zip referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaUtilLogging'
+[Android 1.5] Android 1.5::java::util::logging referenced packages: Sequence {IN!util, IN!security, IN!lang, IN!beans, IN!io}
+[Android 1.5] Package: 'JavaUtilPrefs'
+[Android 1.5] Android 1.5::java::util::prefs referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaIo'
+[Android 1.5] Android 1.5::java::io referenced packages: Sequence {IN!charset, IN!util, IN!security, IN!lang, IN!net, IN!channels, IN!nio}
+[Android 1.5] Package: 'JavaNio'
+[Android 1.5] Android 1.5::java::nio referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'JavaNioChannels'
+[Android 1.5] Android 1.5::java::nio::channels referenced packages: Sequence {IN!charset, IN!util, IN!lang, IN!net, IN!spi, IN!nio, IN!io}
+[Android 1.5] Package: 'JavaNioChannelsSpi'
+[Android 1.5] Android 1.5::java::nio::channels::spi referenced packages: Sequence {IN!channels, IN!util, IN!lang}
+[Android 1.5] Package: 'JavaNioCharset'
+[Android 1.5] Android 1.5::java::nio::charset referenced packages: Sequence {IN!util, IN!lang, IN!nio, IN!io}
+[Android 1.5] Package: 'JavaNioCharsetSpi'
+[Android 1.5] Android 1.5::java::nio::charset::spi referenced packages: Sequence {IN!charset, IN!util, IN!lang}
+[Android 1.5] Package: 'JavaNet'
+[Android 1.5] Android 1.5::java::net referenced packages: Sequence {IN!lang, IN!security, IN!jar, IN!util, IN!channels, IN!io}
+[Android 1.5] Package: 'JavaSecurity'
+[Android 1.5] Android 1.5::java::security referenced packages: Sequence {IN!cert, IN!lang, IN!spec, IN!crypto, IN!nio, IN!util, IN!callback, IN!net, IN!auth, IN!io}
+[Android 1.5] Package: 'JavaSecurityCert'
+[Android 1.5] Android 1.5::java::security::cert referenced packages: Sequence {IN!util, IN!security, IN!lang, IN!math, IN!x500, IN!io}
+[Android 1.5] Package: 'JavaSecuritySpec'
+[Android 1.5] Android 1.5::java::security::spec referenced packages: Sequence {IN!interfaces, IN!security, IN!lang, IN!math}
+[Android 1.5] Package: 'JavaSecurityAcl'
+[Android 1.5] Android 1.5::java::security::acl referenced packages: Sequence {IN!util, IN!security, IN!lang}
+[Android 1.5] Package: 'JavaSecurityInterfaces'
+[Android 1.5] Android 1.5::java::security::interfaces referenced packages: Sequence {IN!security, IN!math, IN!spec}
+[Android 1.5] Package: 'JavaText'
+[Android 1.5] Android 1.5::java::text referenced packages: Sequence {IN!util, IN!lang, IN!io}
+[Android 1.5] Package: 'JavaAwtFont'
+[Android 1.5] Android 1.5::java::awt::font referenced packages: Sequence {IN!text, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaBeans'
+[Android 1.5] Android 1.5::java::beans referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaMath'
+[Android 1.5] Android 1.5::java::math referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaSql'
+[Android 1.5] Android 1.5::java::sql referenced packages: Sequence {IN!util, IN!lang, IN!security, IN!net, IN!math, IN!io}
+[Android 1.5] Package: 'OrgXmlpullV1'
+[Android 1.5] Android 1.5::org::xmlpull::v1 referenced packages: Sequence {IN!util, IN!lang, IN!io}
+[Android 1.5] Package: 'OrgXmlpullV1Sax2'
+[Android 1.5] Android 1.5::org::xmlpull::v1::sax2 referenced packages: Sequence {IN!sax, IN!v1, IN!lang}
+[Android 1.5] Package: 'OrgXmlSax'
+[Android 1.5] Android 1.5::org::xml::sax referenced packages: Sequence {IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'OrgXmlSaxHelpers'
+[Android 1.5] Android 1.5::org::xml::sax::helpers referenced packages: Sequence {IN!util, IN!lang, IN!sax}
+[Android 1.5] Package: 'OrgXmlSaxExt'
+[Android 1.5] Android 1.5::org::xml::sax::ext referenced packages: Sequence {IN!sax, IN!lang, IN!helpers}
+[Android 1.5] Package: 'OrgW3cDom'
+[Android 1.5] Android 1.5::org::w3c::dom referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'OrgApacheCommonsLogging'
+[Android 1.5] Android 1.5::org::apache::commons::logging referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'OrgApacheHttp'
+[Android 1.5] Android 1.5::org::apache::http referenced packages: Sequence {IN!params, IN!util, IN!protocol, IN!lang, IN!net, IN!util, IN!io}
+[Android 1.5] Package: 'OrgApacheHttpProtocol'
+[Android 1.5] Android 1.5::org::apache::http::protocol referenced packages: Sequence {IN!params, IN!http, IN!util, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpUtil'
+[Android 1.5] Android 1.5::org::apache::http::util referenced packages: Sequence {IN!http, IN!util, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpParams'
+[Android 1.5] Android 1.5::org::apache::http::params referenced packages: Sequence {IN!http, IN!io, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpAuth'
+[Android 1.5] Android 1.5::org::apache::http::auth referenced packages: Sequence {IN!params, IN!http, IN!util, IN!security, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpAuthParams'
+[Android 1.5] Android 1.5::org::apache::http::auth::params referenced packages: Sequence {IN!params, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpClient'
+[Android 1.5] Android 1.5::org::apache::http::client referenced packages: Sequence {IN!cookie, IN!params, IN!auth, IN!conn, IN!http, IN!util, IN!protocol, IN!lang, IN!net, IN!io, IN!methods}
+[Android 1.5] Package: 'OrgApacheHttpClientMethods'
+[Android 1.5] Android 1.5::org::apache::http::client::methods referenced packages: Sequence {IN!conn, IN!http, IN!util, IN!lang, IN!net, IN!message}
+[Android 1.5] Package: 'OrgApacheHttpClientEntity'
+[Android 1.5] Android 1.5::org::apache::http::client::entity referenced packages: Sequence {IN!util, IN!entity, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpClientParams'
+[Android 1.5] Android 1.5::org::apache::http::client::params referenced packages: Sequence {IN!params, IN!params, IN!conn, IN!http, IN!util, IN!lang, IN!params, IN!params}
+[Android 1.5] Package: 'OrgApacheHttpClientProtocol'
+[Android 1.5] Android 1.5::org::apache::http::client::protocol referenced packages: Sequence {IN!cookie, IN!auth, IN!http, IN!util, IN!protocol, IN!lang, IN!client}
+[Android 1.5] Package: 'OrgApacheHttpClientUtils'
+[Android 1.5] Android 1.5::org::apache::http::client::utils referenced packages: Sequence {IN!http, IN!util, IN!lang, IN!net}
+[Android 1.5] Package: 'OrgApacheHttpCookie'
+[Android 1.5] Android 1.5::org::apache::http::cookie referenced packages: Sequence {IN!params, IN!http, IN!util, IN!io, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpCookieParams'
+[Android 1.5] Android 1.5::org::apache::http::cookie::params referenced packages: Sequence {IN!params, IN!util, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpConn'
+[Android 1.5] Android 1.5::org::apache::http::conn referenced packages: Sequence {IN!params, IN!concurrent, IN!http, IN!protocol, IN!lang, IN!net, IN!routing, IN!ssl, IN!entity, IN!io, IN!scheme}
+[Android 1.5] Package: 'OrgApacheHttpConnParams'
+[Android 1.5] Android 1.5::org::apache::http::conn::params referenced packages: Sequence {IN!params, IN!http, IN!util, IN!lang, IN!net, IN!routing}
+[Android 1.5] Package: 'OrgApacheHttpConnScheme'
+[Android 1.5] Android 1.5::org::apache::http::conn::scheme referenced packages: Sequence {IN!params, IN!http, IN!util, IN!lang, IN!net}
+[Android 1.5] Package: 'OrgApacheHttpConnRouting'
+[Android 1.5] Android 1.5::org::apache::http::conn::routing referenced packages: Sequence {IN!http, IN!protocol, IN!lang, IN!net}
+[Android 1.5] Package: 'OrgApacheHttpConnSsl'
+[Android 1.5] Android 1.5::org::apache::http::conn::ssl referenced packages: Sequence {IN!params, IN!cert, IN!lang, IN!security, IN!net, IN!ssl, IN!scheme}
+[Android 1.5] Package: 'OrgApacheHttpConnUtil'
+[Android 1.5] Android 1.5::org::apache::http::conn::util referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpEntity'
+[Android 1.5] Android 1.5::org::apache::http::entity referenced packages: Sequence {IN!http, IN!io, IN!lang}
+[Android 1.5] Package: 'OrgApacheHttpMessage'
+[Android 1.5] Android 1.5::org::apache::http::message referenced packages: Sequence {IN!params, IN!http, IN!util, IN!lang, IN!util}
+[Android 1.5] Package: 'OrgApacheHttpImpl'
+[Android 1.5] Android 1.5::org::apache::http::impl referenced packages: Sequence {IN!params, IN!protocol, IN!entity, IN!lang, IN!io, IN!http, IN!util, IN!net}
+[Android 1.5] Package: 'OrgApacheHttpImplEntity'
+[Android 1.5] Android 1.5::org::apache::http::impl::entity referenced packages: Sequence {IN!http, IN!entity, IN!io, IN!lang, IN!io}
+[Android 1.5] Package: 'OrgApacheHttpImplAuth'
+[Android 1.5] Android 1.5::org::apache::http::impl::auth referenced packages: Sequence {IN!params, IN!auth, IN!http, IN!util, IN!lang, IN!util}
+[Android 1.5] Package: 'OrgApacheHttpImplClient'
+[Android 1.5] Android 1.5::org::apache::http::impl::client referenced packages: Sequence {IN!cookie, IN!params, IN!protocol, IN!lang, IN!message, IN!auth, IN!conn, IN!http, IN!util, IN!net, IN!routing, IN!client, IN!io, IN!methods}
+[Android 1.5] Package: 'OrgApacheHttpImplConn'
+[Android 1.5] Android 1.5::org::apache::http::impl::conn referenced packages: Sequence {IN!params, IN!protocol, IN!lang, IN!message, IN!io, IN!ssl, IN!io, IN!logging, IN!concurrent, IN!conn, IN!impl, IN!http, IN!util, IN!net, IN!util, IN!routing, IN!io, IN!scheme}
+[Android 1.5] Package: 'OrgApacheHttpImplConnTsccm'
+[Android 1.5] Android 1.5::org::apache::http::impl::conn::tsccm referenced packages: Sequence {IN!params, IN!locks, IN!lang, IN!conn, IN!concurrent, IN!conn, IN!util, IN!routing, IN!ref, IN!scheme}
+[Android 1.5] Package: 'OrgApacheHttpImplIo'
+[Android 1.5] Android 1.5::org::apache::http::impl::io referenced packages: Sequence {IN!params, IN!http, IN!lang, IN!net, IN!util, IN!message, IN!io, IN!io}
+[Android 1.5] Package: 'OrgApacheHttpImplCookie'
+[Android 1.5] Android 1.5::org::apache::http::impl::cookie referenced packages: Sequence {IN!cookie, IN!params, IN!http, IN!util, IN!lang, IN!util, IN!message}
+[Android 1.5] Package: 'OrgApacheHttpIo'
+[Android 1.5] Android 1.5::org::apache::http::io referenced packages: Sequence {IN!http, IN!lang, IN!util}
+[Android 1.5] Package: 'OrgJson'
+[Android 1.5] Android 1.5::org::json referenced packages: Sequence {IN!util, IN!lang}
+[Android 1.5] Package: 'JavaxMicroeditionKhronosOpengles'
+[Android 1.5] Android 1.5::javax::microedition::khronos::opengles referenced packages: Sequence {IN!nio, IN!lang}
+[Android 1.5] Package: 'JavaxMicroeditionKhronosEgl'
+[Android 1.5] Android 1.5::javax::microedition::khronos::egl referenced packages: Sequence {IN!lang, IN!opengles}
+[Android 1.5] Package: 'JavaxNet'
+[Android 1.5] Android 1.5::javax::net referenced packages: Sequence {IN!lang, IN!net}
+[Android 1.5] Package: 'JavaxNetSsl'
+[Android 1.5] Android 1.5::javax::net::ssl referenced packages: Sequence {IN!cert, IN!lang, IN!security, IN!nio, IN!net, IN!util, IN!net, IN!io}
+[Android 1.5] Package: 'JavaxSecurityAuth'
+[Android 1.5] Android 1.5::javax::security::auth referenced packages: Sequence {IN!util, IN!lang, IN!security, IN!io}
+[Android 1.5] Package: 'JavaxSecurityAuthCallback'
+[Android 1.5] Android 1.5::javax::security::auth::callback referenced packages: Sequence {IN!io, IN!lang}
+[Android 1.5] Package: 'JavaxSecurityAuthX500'
+[Android 1.5] Android 1.5::javax::security::auth::x500 referenced packages: Sequence {IN!security, IN!io, IN!lang}
+[Android 1.5] Package: 'JavaxSecurityAuthLogin'
+[Android 1.5] Android 1.5::javax::security::auth::login referenced packages: Sequence {IN!security, IN!lang}
+[Android 1.5] Package: 'JavaxSecurityCert'
+[Android 1.5] Android 1.5::javax::security::cert referenced packages: Sequence {IN!util, IN!security, IN!io, IN!lang, IN!math}
+[Android 1.5] Package: 'JavaxCrypto'
+[Android 1.5] Android 1.5::javax::crypto referenced packages: Sequence {IN!cert, IN!lang, IN!security, IN!spec, IN!nio, IN!io}
+[Android 1.5] Package: 'JavaxCryptoInterfaces'
+[Android 1.5] Android 1.5::javax::crypto::interfaces referenced packages: Sequence {IN!crypto, IN!security, IN!math, IN!spec}
+[Android 1.5] Package: 'JavaxCryptoSpec'
+[Android 1.5] Android 1.5::javax::crypto::spec referenced packages: Sequence {IN!crypto, IN!io, IN!lang, IN!math, IN!spec}
+[Android 1.5] Package: 'JavaxSql'
+[Android 1.5] Android 1.5::javax::sql referenced packages: Sequence {IN!util, IN!lang, IN!math, IN!io, IN!sql}
+[Android 1.5] Package: 'JavaxXml'
+[Android 1.5] Android 1.5::javax::xml referenced packages: Sequence {IN!lang}
+[Android 1.5] Package: 'JavaxXmlParsers'
+[Android 1.5] Android 1.5::javax::xml::parsers referenced packages: Sequence {IN!lang, IN!helpers, IN!sax, IN!dom, IN!io}
+[Android 1.5] Package: 'JunitFramework'
+[Android 1.5] Android 1.5::junit::framework referenced packages: Sequence {IN!util, IN!reflect, IN!lang}
+[Android 1.5] Package: 'JunitRunner'
+[Android 1.5] Android 1.5::junit::runner referenced packages: Sequence {IN!framework, IN!util, IN!lang}
+[Android 1.5] Package: 'DalvikAnnotation'
+[Android 1.5] Android 1.5::dalvik::annotation referenced packages: Sequence {IN!annotation, IN!lang}
+[Android 1.5] Package: 'DalvikBytecode'
+[Android 1.5] Android 1.5::dalvik::bytecode referenced packages: Sequence {}
+[Android 1.5] Package: 'DalvikSystem'
+[Android 1.5] Android 1.5::dalvik::system referenced packages: Sequence {IN!util, IN!io, IN!lang, IN!net}

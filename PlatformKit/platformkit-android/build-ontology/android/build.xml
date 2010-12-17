@@ -1,0 +1,47 @@
+<project name="platformkit-jre/build-ontology/sun" basedir="." default="buildlogs">
+
+	<import file="../common.xml"/>
+
+	<property name="inmodel.uri" value="${umlmodel.uri}/android"/>
+	<property name="outmodel.uri" value="${owlmodel.uri}/android"/>
+
+	<target name="loadModels" depends="loadCommonModels">
+		<atl.loadModel modelHandler="UML2" name="J2SE-5_0"    metamodel="UML2" uri="${platformkit-java.umlmodel.uri}/jre/j2se-5_0-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="JAVA-SE-6"   metamodel="UML2" uri="${platformkit-java.umlmodel.uri}/jre/java-se-6-api.uml"/>
+		<atl.loadModel modelHandler="UML2" name="ANDROID-1_5" metamodel="UML2" uri="${inmodel.uri}/android-1_5.uml"/>
+		<atl.loadModel modelHandler="UML2" name="ANDROID-1_6" metamodel="UML2" uri="${inmodel.uri}/android-1_6.uml"/>
+		<atl.loadModel modelHandler="UML2" name="ANDROID-2_1" metamodel="UML2" uri="${inmodel.uri}/android-2_1.uml"/>
+		<atl.loadModel modelHandler="UML2" name="ANDROID-2_2" metamodel="UML2" uri="${inmodel.uri}/android-2_2.uml"/>
+		<atl.loadModel modelHandler="UML2" name="ANDROID-2_3" metamodel="UML2" uri="${inmodel.uri}/android-2_3.uml"/>
+	</target>
+	
+	<target name="pre-transform" depends="loadModels">
+		<nice currentpriority="curpri" newpriority="1"/>
+		<parallel threadsperprocessor="1"><!-- start heaviest task first -->
+			<preUML2ToAPIOntology in="JAVA-SE-6"     out="preJAVA-SE-6_OWL"     uri="${outmodel.uri}/java-se-6.owl"/>
+			<preUML2ToAPIOntology in="J2SE-5_0"      out="preJ2SE-5_0_OWL"      uri="${outmodel.uri}/j2se-5_0.owl"/>
+			<preUML2ToAPIOntology in="ANDROID-2_2"   out="preANDROID-2_2_OWL"   uri="${outmodel.uri}/android-2_2.owl"/>
+			<preUML2ToAPIOntology in="ANDROID-2_1"   out="preANDROID-2_1_OWL"   uri="${outmodel.uri}/android-2_1.owl"/>
+			<preUML2ToAPIOntology in="ANDROID-1_6"   out="preANDROID-1_6_OWL"   uri="${outmodel.uri}/android-1_6.owl"/>
+			<preUML2ToAPIOntology in="ANDROID-1_5"   out="preANDROID-1_5_OWL"   uri="${outmodel.uri}/android-1_5.owl"/>
+		</parallel>
+		<nice newpriority="${curpri}"/>
+	</target>
+	
+	<target name="transform" depends="pre-transform">
+		<nice currentpriority="curpri" newpriority="1"/>
+		<parallel threadsperprocessor="1"><!-- start heaviest task first -->
+			<UML2ToAPIOntology2 in="ANDROID-2_3"   prevout="preANDROID-2_2_OWL"   previn="ANDROID-2_2"   prevout2="preJAVA-SE-6_OWL"     previn2="JAVA-SE-6"                               out="ANDROID-2_3_OWL"           uri="${outmodel.uri}/android-2_3.owl"/>
+			<UML2ToAPIOntology2 in="ANDROID-2_2"   prevout="preANDROID-2_1_OWL"   previn="ANDROID-2_1"   prevout2="preJAVA-SE-6_OWL"     previn2="JAVA-SE-6"                               out="ANDROID-2_2_OWL"           uri="${outmodel.uri}/android-2_2.owl"/>
+			<UML2ToAPIOntology2 in="ANDROID-2_1"   prevout="preANDROID-1_6_OWL"   previn="ANDROID-1_6"   prevout2="preJAVA-SE-6_OWL"     previn2="JAVA-SE-6"                               out="ANDROID-2_1_OWL"           uri="${outmodel.uri}/android-2_1.owl"/>
+			<UML2ToAPIOntology2 in="ANDROID-1_6"   prevout="preANDROID-1_5_OWL"   previn="ANDROID-1_5"   prevout2="preJ2SE-5_0_OWL"      previn2="J2SE-5_0"                                out="ANDROID-1_6_OWL"           uri="${outmodel.uri}/android-1_6.owl"/>
+			<UML2ToAPIOntology1 in="ANDROID-1_5"   prevout="preJ2SE-5_0_OWL"      previn="J2SE-5_0"      out="ANDROID-1_5_OWL"           uri="${outmodel.uri}/android-1_5.owl"/>
+		</parallel>
+		<nice newpriority="${curpri}"/>
+	</target>
+	
+	<target name="buildlogs" depends="transform">
+		<exec command="./mkbuildlogs.sh"/>
+	</target>
+	
+</project>

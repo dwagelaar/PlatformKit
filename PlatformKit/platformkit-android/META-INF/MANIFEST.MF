@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: be.ac.vub.platformkit.android;singleton:=true
+Bundle-Version: 1.4.0
+Bundle-Vendor: %Bundle-Vendor
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: be.ac.vub.platformkit;bundle-version="1.4.0",
+ be.ac.vub.platformkit.java;bundle-version="1.4.3",
+ org.eclipse.osgi;bundle-version="3.5.2"
