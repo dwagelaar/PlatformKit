@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="be.ac.vub.platformkit.java.apimodel">
+      <apiModel
+            category="%apiModel.category"
+            emf_uri="platform:/plugin/be.ac.vub.platformkit.android/model/android/android-1_5.uml"
+            ont_uri="http://soft.vub.ac.be/platformkit/2010/1/android-1_5.owl"
+            name="%apiModel.name">
+      </apiModel>
+   </extension>
+   <extension
+         point="be.ac.vub.platformkit.java.apimodel">
+      <apiModel
+            category="%apiModel.category"
+            emf_uri="platform:/plugin/be.ac.vub.platformkit.android/model/android/android-1_6.uml"
+            ont_uri="http://soft.vub.ac.be/platformkit/2010/1/android-1_6.owl"
+            name="%apiModel.name.0">
+      </apiModel>
+   </extension>
+   <extension
+         point="be.ac.vub.platformkit.java.apimodel">
+      <apiModel
+            category="%apiModel.category"
+            emf_uri="platform:/plugin/be.ac.vub.platformkit.android/model/android/android-2_1.uml"
+            ont_uri="http://soft.vub.ac.be/platformkit/2010/1/android-2_1.owl"
+            name="%apiModel.name.1">
+      </apiModel>
+   </extension>
+   <extension
+         point="be.ac.vub.platformkit.java.apimodel">
+      <apiModel
+            category="%apiModel.category"
+            emf_uri="platform:/plugin/be.ac.vub.platformkit.android/model/android/android-2_2.uml"
+            ont_uri="http://soft.vub.ac.be/platformkit/2010/1/android-2_2.owl"
+            name="%apiModel.name.2">
+      </apiModel>
+   </extension>
+   <extension
+         point="be.ac.vub.platformkit.java.apimodel">
+      <apiModel
+            category="%apiModel.category"
+            emf_uri="platform:/plugin/be.ac.vub.platformkit.android/model/android/android-2_3.uml"
+            ont_uri="http://soft.vub.ac.be/platformkit/2010/1/android-2_3.owl"
+            name="%apiModel.name.3">
+      </apiModel>
+   </extension>
+   <extension
+         point="be.ac.vub.platformkit.ontology">
+      <ontology
+            provider="be.ac.vub.platformkit.android.AndroidOntologyProvider">
+      </ontology>
+   </extension>
+   <extension
+         point="be.ac.vub.platformkit.editor.platformSpec">
+      <platformSpec provider="be.ac.vub.platformkit.android.AndroidExamplesOntologyProvider"/>
+   </extension>
+
+</plugin>
