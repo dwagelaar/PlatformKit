@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY isa "http://soft.vub.ac.be/platformkit/2010/1/isa.owl#" >
+    <!ENTITY java "http://soft.vub.ac.be/platformkit/2010/1/java.owl#" >
+    <!ENTITY android "http://soft.vub.ac.be/platformkit/2010/1/android.owl#" >
+    <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/android.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/android.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:android="http://soft.vub.ac.be/platformkit/2010/1/android.owl#"
+     xmlns:isa="http://soft.vub.ac.be/platformkit/2010/1/isa.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:java="http://soft.vub.ac.be/platformkit/2010/1/java.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit Android software platform ontology.</rdfs:label>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <rdfs:seeAlso
+            >http://developer.android.com/</rdfs:seeAlso>
+        <owl:versionInfo>$Id$</owl:versionInfo>
+        <rdfs:comment xml:lang="en"
+            >Describes the parts of the Google Android software platform.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2011, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/isa.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/java.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/platform.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="&platform;implementsInterface"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#providesFeature -->
+
+    <owl:ObjectProperty rdf:about="&platform;providesFeature"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/android.owl#AndroidRE -->
+
+    <owl:Class rdf:about="#AndroidRE">
+        <rdfs:subClassOf rdf:resource="&platform;RuntimeEnvironment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&platform;providesFeature"/>
+                <owl:someValuesFrom rdf:resource="&java;JavaClassLibrary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&platform;providesFeature"/>
+                <owl:someValuesFrom rdf:resource="#DalvikVM"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/android.owl#DalvikVM -->
+
+    <owl:Class rdf:about="#DalvikVM">
+        <rdfs:subClassOf rdf:resource="&platform;VirtualMachine"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&platform;implementsInterface"/>
+                <owl:allValuesFrom rdf:resource="&isa;DalvikBytecode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/isa.owl#DalvikBytecode -->
+
+    <owl:Class rdf:about="&isa;DalvikBytecode"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/java.owl#JavaClassLibrary -->
+
+    <owl:Class rdf:about="&java;JavaClassLibrary"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#RuntimeEnvironment -->
+
+    <owl:Class rdf:about="&platform;RuntimeEnvironment"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#VirtualMachine -->
+
+    <owl:Class rdf:about="&platform;VirtualMachine"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/android.owl#theDalvikBytecode -->
+
+    <isa:DalvikBytecode rdf:about="#theDalvikBytecode">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </isa:DalvikBytecode>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
