@@ -30,12 +30,12 @@
             >PlatformKit Java software platform ontology.</rdfs:label>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
-        <rdfs:comment xml:lang="en"
-            >Describes the parts of the Java software platform.</rdfs:comment>
         <rdfs:seeAlso
             >http://java.sun.com/</rdfs:seeAlso>
         <owl:versionInfo
             >$Id$</owl:versionInfo>
+        <rdfs:comment xml:lang="en"
+            >Describes the parts of the Java software platform.</rdfs:comment>
         <dc:rights xml:lang="en"
             >&#169; 2010, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
         <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/isa.owl"/>
@@ -190,8 +190,8 @@
                 <owl:allValuesFrom rdf:resource="#JavaAPIPart"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:seeAlso xml:lang="en"
-            >Java API implemented by a Java class library.</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en"
+            >Java API implemented by a Java class library.</rdfs:comment>
     </owl:Class>
     
 
@@ -200,6 +200,8 @@
 
     <owl:Class rdf:about="#JavaAPIPart">
         <rdfs:subClassOf rdf:resource="&platform;APIPart"/>
+        <rdfs:comment xml:lang="en"
+            >Part of a Java API.</rdfs:comment>
     </owl:Class>
     
 
