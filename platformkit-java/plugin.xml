@@ -20,7 +20,9 @@
    <extension-point id="be.ac.vub.platformkit.java.apimodel" name="%extension-point.name" schema="schema/be.ac.vub.platformkit.java.apimodel.exsd"/>
    <extension
          point="be.ac.vub.platformkit.ontology">
-      <ontology provider="be.ac.vub.platformkit.java.JavaOntologyProvider"/>
+      <ontology
+            priority="10"
+            provider="be.ac.vub.platformkit.java.JavaOntologyProvider"/>
    </extension>
    <extension
          point="org.eclipse.ui.popupMenus">
