@@ -75,6 +75,14 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/isa.owl#DalvikBytecode -->
+
+    <owl:Class rdf:about="#DalvikBytecode">
+        <rdfs:subClassOf rdf:resource="&platform;ISA"/>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/isa.owl#Intel_x86 -->
 
     <owl:Class rdf:about="#Intel_x86">
@@ -137,6 +145,7 @@
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="#ARM"/>
+            <rdf:Description rdf:about="#DalvikBytecode"/>
             <rdf:Description rdf:about="#Intel_x86"/>
             <rdf:Description rdf:about="#JavaBytecode"/>
             <rdf:Description rdf:about="#PowerPC"/>
