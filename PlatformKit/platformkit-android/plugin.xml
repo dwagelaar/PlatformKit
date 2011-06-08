@@ -49,6 +49,7 @@
    <extension
          point="be.ac.vub.platformkit.ontology">
       <ontology
+            priority="20"
             provider="be.ac.vub.platformkit.android.AndroidOntologyProvider">
       </ontology>
    </extension>

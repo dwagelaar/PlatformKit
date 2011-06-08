@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY io "http://soft.vub.ac.be/platformkit/2010/1/io.owl#" >
+    <!ENTITY arm "http://soft.vub.ac.be/platformkit/2010/1/arm.owl#" >
+    <!ENTITY platform "http://soft.vub.ac.be/platformkit/2010/1/platform.owl#" >
+    <!ENTITY resource "http://soft.vub.ac.be/platformkit/2010/1/resource.owl#" >
+    <!ENTITY android-1_5 "http://soft.vub.ac.be/platformkit/2010/1/android-1_5.owl#" >
+    <!ENTITY google-android-1_5 "http://soft.vub.ac.be/platformkit/2010/1/examples/google-android-1_5.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://soft.vub.ac.be/platformkit/2010/1/examples/google-android-1_5.owl#"
+     xml:base="http://soft.vub.ac.be/platformkit/2010/1/examples/google-android-1_5.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:platform="http://soft.vub.ac.be/platformkit/2010/1/platform.owl#"
+     xmlns:resource="http://soft.vub.ac.be/platformkit/2010/1/resource.owl#"
+     xmlns:google-android-1_5="http://soft.vub.ac.be/platformkit/2010/1/examples/google-android-1_5.owl#"
+     xmlns:io="http://soft.vub.ac.be/platformkit/2010/1/io.owl#"
+     xmlns:android-1_5="http://soft.vub.ac.be/platformkit/2010/1/android-1_5.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:arm="http://soft.vub.ac.be/platformkit/2010/1/arm.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label xml:lang="en"
+            >PlatformKit ontology of a Google Android 1.5 smartphone.</rdfs:label>
+        <dc:creator
+            >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
+        <owl:versionInfo
+            >$Id: google-nexus-one.owl 8344 2011-01-10 16:45:43Z dwagelaa $</owl:versionInfo>
+        <rdfs:comment xml:lang="en"
+            >Example PlatformKit platform instance ontology.</rdfs:comment>
+        <dc:rights xml:lang="en"
+            >&#169; 2011, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/android-1_5.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/android.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/arm.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/io.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/isa.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/java.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/os.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/platform.owl"/>
+        <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/resource.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="&platform;implementsInterface"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#providesFeature -->
+
+    <owl:ObjectProperty rdf:about="&platform;providesFeature"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/android-1_5.owl#Android1_5ClassLibrary -->
+
+    <owl:Class rdf:about="&android-1_5;Android1_5ClassLibrary"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/android-1_5.owl#Android1_5RE -->
+
+    <owl:Class rdf:about="&android-1_5;Android1_5RE"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/android-1_5.owl#Android1_5VM -->
+
+    <owl:Class rdf:about="&android-1_5;Android1_5VM"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Platform -->
+
+    <owl:Class rdf:about="&platform;Platform"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/android-1_5.owl#theAndroid1_5API -->
+
+    <owl:Thing rdf:about="&android-1_5;theAndroid1_5API"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/android-1_5.owl#theAndroid1_5BytecodeFormat -->
+
+    <owl:Thing rdf:about="&android-1_5;theAndroid1_5BytecodeFormat"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/arm.owl#theARMv7-A -->
+
+    <owl:Thing rdf:about="&arm;theARMv7-A"/>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/google-android-1_5.owl#googleAndroid1_5ClassLibrary -->
+
+    <owl:Thing rdf:about="#googleAndroid1_5ClassLibrary">
+        <rdf:type rdf:resource="&android-1_5;Android1_5ClassLibrary"/>
+        <platform:implementsInterface rdf:resource="&android-1_5;theAndroid1_5API"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/google-android-1_5.owl#googleAndroid1_5DalvikVM -->
+
+    <android-1_5:Android1_5VM rdf:about="#googleAndroid1_5DalvikVM">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:implementsInterface rdf:resource="&android-1_5;theAndroid1_5BytecodeFormat"/>
+    </android-1_5:Android1_5VM>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/google-android-1_5.owl#googleAndroid1_5Phone -->
+
+    <platform:Platform rdf:about="#googleAndroid1_5Phone">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:providesFeature rdf:resource="#googleAndroid1_5RE"/>
+    </platform:Platform>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/google-android-1_5.owl#googleAndroid1_5RE -->
+
+    <android-1_5:Android1_5RE rdf:about="#googleAndroid1_5RE">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <platform:providesFeature rdf:resource="#googleAndroid1_5ClassLibrary"/>
+        <platform:providesFeature rdf:resource="#googleAndroid1_5DalvikVM"/>
+    </android-1_5:Android1_5RE>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

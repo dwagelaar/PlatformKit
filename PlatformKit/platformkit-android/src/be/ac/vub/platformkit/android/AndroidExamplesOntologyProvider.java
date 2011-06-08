@@ -32,8 +32,13 @@ public class AndroidExamplesOntologyProvider implements INamedOntologyProvider {
 		"platformkit_2010_1/Google/android-1_5-phone.owl",
 		"platformkit_2010_1/Google/android-1_6-phone.owl",
 		"platformkit_2010_1/Google/android-2_1-phone.owl",
-		"platformkit_2010_1/Google/android-2_2_phone.owl",
-		"platformkit_2010_1/Google/android-2_3_phone.owl"
+		"platformkit_2010_1/Google/android-2_2-phone.owl",
+		"platformkit_2010_1/Google/android-2_3-phone.owl",
+
+		"platformkit_2010_1/Google/google-nexus-one.owl",
+		"platformkit_2010_1/Google/google-nexus-s.owl",
+
+		"platformkit_2010_1/HTC/htc-hero.owl"
 	}; //$NON-NLS-1$
 
 	private static final String[] names = new String[ontologies.length];

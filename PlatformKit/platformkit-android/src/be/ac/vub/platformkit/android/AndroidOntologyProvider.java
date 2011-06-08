@@ -27,6 +27,8 @@ import be.ac.vub.platformkit.logging.PlatformkitLogger;
 public class AndroidOntologyProvider implements IOntologyProvider {
 
 	private static final String[] ontologies = new String[] {
+		"platformkit_2010_1/android.owl",
+		
 		"platformkit_2010_1/android-1_5.owl",
 		"platformkit_2010_1/android-1_6.owl",
 		"platformkit_2010_1/android-2_1.owl",
