@@ -12,6 +12,7 @@ package be.ac.vub.platformkit.registry.internal;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -36,7 +37,7 @@ public final class EclipsePlatformkitRegistry implements IPlatformkitRegistry {
 	 * @return The registered {@link IOntologyProvider}s, if the Eclipse extension registry is available.
 	 */
 	public IOntologyProvider[] getOntologyProviders() {
-		List<IOntologyProvider> ontProviders = new ArrayList<IOntologyProvider>();
+		TreeMap<String, List<IOntologyProvider>> priorityMap = new TreeMap<String, List<IOntologyProvider>>();
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		if (registry == null) {
 			throw new UnsupportedOperationException(
@@ -46,8 +47,17 @@ public final class EclipsePlatformkitRegistry implements IPlatformkitRegistry {
 		for (IExtension extension : point.getExtensions()) {
 			for (IConfigurationElement element : extension.getConfigurationElements()) {
 				try {
+					String priority = element.getAttribute("priority"); //$NON-NLS-1$
+					if (priority == null) priority = "";
 					IOntologyProvider provider = (IOntologyProvider)
 					element.createExecutableExtension("provider"); //$NON-NLS-1$
+					List<IOntologyProvider> ontProviders;
+					if (!priorityMap.containsKey(priority)) {
+						ontProviders = new ArrayList<IOntologyProvider>();
+						priorityMap.put(priority, ontProviders);
+					} else {
+						ontProviders = priorityMap.get(priority);
+					}
 					ontProviders.add(provider);
 				} catch (CoreException e) {
 					RuntimeException re = new RuntimeException(e.getLocalizedMessage());
@@ -56,7 +66,12 @@ public final class EclipsePlatformkitRegistry implements IPlatformkitRegistry {
 				}
 			}
 		}
-		return ontProviders.toArray(new IOntologyProvider[ontProviders.size()]);
+		
+		final List<IOntologyProvider> allProviders = new ArrayList<IOntologyProvider>();
+		for (List<IOntologyProvider> providers : priorityMap.values()) {
+			allProviders.addAll(providers);
+		}
+		return allProviders.toArray(new IOntologyProvider[allProviders.size()]);
 	}
 
 }
