@@ -63,6 +63,8 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#comprisesInterfacePart -->
 
     <owl:ObjectProperty rdf:about="#comprisesInterfacePart">
+        <rdfs:comment xml:lang="en"
+            >The parts that make up a feature interface.</rdfs:comment>
         <rdfs:domain rdf:resource="#FeatureInterface"/>
         <rdfs:range rdf:resource="#FeatureInterfacePart"/>
     </owl:ObjectProperty>
@@ -197,10 +199,10 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#Feature -->
 
     <owl:Class rdf:about="#Feature">
-        <rdfs:label xml:lang="en"
-            >Platform feature. Can be implemented in software or hardware.</rdfs:label>
         <owl:disjointWith rdf:resource="#FeatureInterface"/>
         <owl:disjointWith rdf:resource="#FeatureInterfacePart"/>
+        <rdfs:comment xml:lang="en"
+            >Platform feature. Can be implemented in software or hardware.</rdfs:comment>
     </owl:Class>
     
 
@@ -290,9 +292,9 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/platform.owl#ISA -->
 
     <owl:Class rdf:about="#ISA">
-        <rdfs:label xml:lang="en"
-            >Instruction Set Architecture of a machine. Can be implemented in hardware or a software virtual machine.</rdfs:label>
         <rdfs:subClassOf rdf:resource="#ABI"/>
+        <rdfs:comment xml:lang="en"
+            >Instruction Set Architecture of a machine. Can be implemented in hardware or a software virtual machine.</rdfs:comment>
         <rdfs:seeAlso
             >http://en.wikipedia.org/wiki/Category:Instruction_set_architectures</rdfs:seeAlso>
         <rdfs:seeAlso
