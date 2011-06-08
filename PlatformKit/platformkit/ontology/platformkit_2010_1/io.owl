@@ -195,10 +195,30 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#AGPS -->
+
+    <owl:Class rdf:about="#AGPS">
+        <rdfs:subClassOf rdf:resource="#GPS"/>
+        <rdfs:comment xml:lang="en"
+            >Assisted Global Position System receiver.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Accelerometer -->
+
+    <owl:Class rdf:about="#Accelerometer">
+        <rdfs:subClassOf rdf:resource="#AnalogInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#AnalogInputInterface -->
 
     <owl:Class rdf:about="#AnalogInputInterface">
         <rdfs:subClassOf rdf:resource="#InputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
     </owl:Class>
     
 
@@ -225,6 +245,15 @@
 
     <owl:Class rdf:about="#Camera">
         <rdfs:subClassOf rdf:resource="#VideoInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#DigitalCompass -->
+
+    <owl:Class rdf:about="#DigitalCompass">
+        <rdfs:subClassOf rdf:resource="#AnalogInputInterface"/>
         <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
     </owl:Class>
     
@@ -257,11 +286,39 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#GPS -->
+
+    <owl:Class rdf:about="#GPS">
+        <rdfs:subClassOf rdf:resource="#LocationInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+        <rdfs:comment xml:lang="en"
+            >Global Position System receiver.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Gyroscope -->
+
+    <owl:Class rdf:about="#Gyroscope">
+        <rdfs:subClassOf rdf:resource="#AnalogInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#HandwritingRecognition -->
 
     <owl:Class rdf:about="#HandwritingRecognition">
         <rdfs:subClassOf rdf:resource="#KeyInputInterface"/>
         <rdfs:subClassOf rdf:resource="&platform;VirtualIODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#HapticOutputInterface -->
+
+    <owl:Class rdf:about="#HapticOutputInterface">
+        <rdfs:subClassOf rdf:resource="#OutputInterface"/>
     </owl:Class>
     
 
@@ -309,6 +366,23 @@
     <owl:Class rdf:about="#Keyboard">
         <rdfs:subClassOf rdf:resource="#NumericKeypad"/>
         <rdfs:subClassOf rdf:resource="#Thumbboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#LightSensor -->
+
+    <owl:Class rdf:about="#LightSensor">
+        <rdfs:subClassOf rdf:resource="#AnalogInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#LocationInputInterface -->
+
+    <owl:Class rdf:about="#LocationInputInterface">
+        <rdfs:subClassOf rdf:resource="#InputInterface"/>
     </owl:Class>
     
 
@@ -411,6 +485,14 @@
     
 
 
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#ProximitySensor -->
+
+    <owl:Class rdf:about="#ProximitySensor">
+        <rdfs:subClassOf rdf:resource="#AnalogInputInterface"/>
+    </owl:Class>
+    
+
+
     <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#Screen -->
 
     <owl:Class rdf:about="#Screen">
@@ -495,6 +577,15 @@
 
     <owl:Class rdf:about="#Trackpad">
         <rdfs:subClassOf rdf:resource="#PointerInputInterface"/>
+        <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/io.owl#VibrationDevice -->
+
+    <owl:Class rdf:about="#VibrationDevice">
+        <rdfs:subClassOf rdf:resource="#HapticOutputInterface"/>
         <rdfs:subClassOf rdf:resource="&platform;IODevice"/>
     </owl:Class>
     
