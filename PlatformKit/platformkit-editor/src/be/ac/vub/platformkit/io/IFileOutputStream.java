@@ -25,6 +25,25 @@ import org.eclipse.core.runtime.IProgressMonitor;
  * @author Dennis Wagelaar <dennis.wagelaar@vub.ac.be>
  */
 public class IFileOutputStream extends ByteArrayOutputStream {
+
+	/**
+	 * Introduces nested exceptions on {@link IOException}.
+	 * @author <a href="mailto:dennis.wagelaar@vub.ac.be">Dennis Wagelaar</a>
+	 */
+	private static class WrappedIOException extends IOException {
+
+		private static final long serialVersionUID = 8054573470333348243L;
+
+		/**
+		 * Creates a new {@link WrappedIOException}.
+		 * @param cause the nested exception
+		 */
+		public WrappedIOException(Throwable cause) {
+			super();
+			initCause(cause);
+		}
+
+	}
 	
 	private static final int OUTPUTSIZE = 512*1024; // 512 KB
 
@@ -91,7 +110,7 @@ public class IFileOutputStream extends ByteArrayOutputStream {
 				dest.create(is, true, getMonitor());
 			}
 		} catch (CoreException e) {
-			throw new IOException(e);
+			throw new WrappedIOException(e);
 		}
 	}
 
