@@ -132,13 +132,7 @@ helper context UML2!"uml::Classifier" def : incompSuppliers : Sequence(UML2!"uml
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
-helper context UML2!"ecore::EObject" def : isMissing : Boolean =
-	false;
-
--- True iff there are no elements X other than self,
--- for which self is locally compatible with X,
--- where locally compatible means compatible without considering any contained elements.
-helper context UML2!"ecore::EStringToStringMapEntry" def : isMissing : Boolean =
+helper context OclAny def : isMissing : Boolean =
 	false;
 
 -- True iff there are no elements X other than self,
