@@ -1,4 +1,4 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- $Id$
 -- Query for determining the compatibility of a UML2 model to other versions of the UML2 model
 query UML2CompatibilityComparison = UML2!"uml::Model".allInstancesFrom('IN')

@@ -22,7 +22,6 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.m2m.atl.core.service.CoreService;
 
 import be.ac.vub.platformkit.kb.IOntologiesFactory;
 import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
@@ -44,8 +43,6 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.P_KB, "be.ac.vub.platformkit.kb.owlapi3.OWLAPIOntologiesFactory"); //$NON-NLS-1$
 		store.setDefault(PreferenceConstants.P_KBRS, "uk.ac.manchester.cs.factplusplus.owlapiv3.FaCTPlusPlusReasoner"); //$NON-NLS-1$
 		store.setDefault(PreferenceConstants.P_DIG_URL, "http://localhost:8081"); //$NON-NLS-1$
-		store.setDefault(PreferenceConstants.P_ATLVM, CoreService.getLaunchersNames()[0]);
-		store.setDefault(PreferenceConstants.P_CACHE_API, true);
 		store.setDefault(PreferenceConstants.P_LOG_LEVEL, Level.INFO.toString());
 	}
 

@@ -1,4 +1,4 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id:UML2Comparison.atl 7084 2007-07-10 13:19:05Z dwagelaa $
 -- Library for comparing a UML2 model to other versions of the UML2 model
@@ -82,14 +82,14 @@ helper context UML2!"uml::Element" def : myOclType : OclType =
 -- ------------------------ isInferred ----------------------------------
 
 -- Looks up isInferred at its container.
-helper context UML2!"ecore::EObject" def : objectIsInferred : Boolean =
-	let owner : UML2!"ecore::EObject" = self.refImmediateComposite() in
+helper context OclAny def : objectIsInferred : Boolean =
+	let owner : OclAny = self.refImmediateComposite() in
 	if owner.oclIsUndefined() then false else
 		owner.isInferred
 	endif;
 
 -- True iff self or its container is annotated with an inferred tag.
-helper context UML2!"ecore::EObject" def : isInferred : Boolean =
+helper context OclAny def : isInferred : Boolean =
 	self.objectIsInferred;
 
 -- True iff self or its container is annotated with an inferred tag.
@@ -186,14 +186,14 @@ helper context UML2!"uml::NamedElement" def : allSuppliers : Set(UML2!"uml::Name
 
 -- All features of self, including any inherited or interface features.
 helper context UML2!"uml::Classifier" def : allFeatures : Set(UML2!"uml::Feature") =
-	self.features->union(
+	self.features->asSet()
+	->union(
 		self.allGenerals
 			->collect(c|c.features)->flatten())
-			->union(
+	->union(
 		self.allSuppliers
 			->select(s|s.oclIsKindOf(UML2!"uml::Classifier"))
-			->collect(c|c.features)->flatten())
-		->asSet();
+			->collect(c|c.features)->flatten());
 
 -- ------------------------ allGenerals ---------------------------------
 
@@ -510,15 +510,20 @@ helper context UML2!"uml::Classifier" def : hasFeatureCompatibleWith(f : UML2!"u
 
 -- True iff for all O in otherpars, the matching S in selfpars is compatible with O.
 helper def : compatibleParameters(selfpars : Sequence(UML2!"uml::Parameter"), otherpars : Sequence(UML2!"uml::Parameter")) : Boolean =
-	let selfpar : UML2!"uml::Parameter" = selfpars->first() in
-	let otherpar : UML2!"uml::Parameter" = otherpars->first() in
-	if selfpar.oclIsUndefined() then otherpar.oclIsUndefined()
+	if selfpars.isEmpty() or otherpars.isEmpty() then
+		selfpars.isEmpty() and otherpars.isEmpty()
 	else
-		if selfpar.isCompatibleWith(otherpar) then
-			thisModule.compatibleParameters(
-				selfpars->excluding(selfpar), 
-				otherpars->excluding(otherpar))
-		else false endif
+		let selfpar : UML2!"uml::Parameter" = selfpars->first() in
+		let otherpar : UML2!"uml::Parameter" = otherpars->first() in
+		if selfpar.oclIsUndefined() then
+			otherpar.oclIsUndefined()
+		else
+			if selfpar.isCompatibleWith(otherpar) then
+				thisModule.compatibleParameters(
+					selfpars->excluding(selfpar), 
+					otherpars->excluding(otherpar))
+			else false endif
+		endif
 	endif;
 
 -- ------------------------ visibilityIsCompatibleWith ------------------

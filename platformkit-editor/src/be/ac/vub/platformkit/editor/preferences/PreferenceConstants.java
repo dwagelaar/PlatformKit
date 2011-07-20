@@ -21,10 +21,6 @@ public class PreferenceConstants {
 	public static final String P_KB        = "kbPreference"; //$NON-NLS-1$
 	public static final String P_KBRS      = "kbReasoner"; //$NON-NLS-1$
 
-	public static final String P_ATLVM     = "atlVMPreference"; //$NON-NLS-1$
-
-	public static final String P_CACHE_API = "cacheAPIModels"; //$NON-NLS-1$
-
 	public static final String P_LOG_LEVEL = "LogLevel"; //$NON-NLS-1$
 
 }

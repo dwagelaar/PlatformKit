@@ -1,4 +1,4 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- $Id$
 -- Transforms a UML2 model to an API OWL ontology containing all the packages and classifiers
 module UML2ToClassAPIOntology; --extends UML2ToAPIOntology

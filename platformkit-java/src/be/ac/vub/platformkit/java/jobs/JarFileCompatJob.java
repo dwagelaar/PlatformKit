@@ -20,7 +20,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
-import org.eclipse.m2m.atl.core.ATLCoreException;
+import org.eclipse.m2m.atl.emftvm.EmftvmFactory;
+import org.eclipse.m2m.atl.emftvm.Model;
 
 import be.ac.vub.jar2uml.JarToUML;
 import be.ac.vub.platformkit.java.PlatformkitJavaResources;
@@ -43,7 +44,6 @@ public class JarFileCompatJob extends CompatJob {
 	 */
 	@Override
 	protected void runAction(IProgressMonitor monitor) throws Exception {
-        checkAndSwitchStrategy();
         JarFileCompatJobRunner runner = new JarFileCompatJobRunner();
 		runActionWithRunner(monitor, runner, STEPS+3);
 	}
@@ -55,7 +55,7 @@ public class JarFileCompatJob extends CompatJob {
 		 */
 		@Override
 		public void loadDepsModel(IProgressMonitor monitor)
-				throws ATLCoreException, CoreException, IOException {
+				throws CoreException, IOException {
 			//
 			// Steps 1+2+3
 			//
@@ -84,7 +84,9 @@ public class JarFileCompatJob extends CompatJob {
 			// Step 4
 			//
 			subTask(monitor, PlatformkitJavaResources.getString("loadingDepsModel")); //$NON-NLS-1$
-			setDeps(modelLoader.loadDEPSModel(getUml2(), jarToUML.getModel().eResource()));
+			final Model deps = EmftvmFactory.eINSTANCE.createModel();
+			deps.setResource(jarToUML.getModel().eResource());
+			setDeps(deps);
 			setCrPath(file.getProjectRelativePath()
 					.removeFileExtension()
 					.removeFileExtension()

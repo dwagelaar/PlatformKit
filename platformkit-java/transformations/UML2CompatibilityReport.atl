@@ -1,4 +1,4 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id$
 -- Creates a report of the compatibility of a UML2 model
@@ -19,10 +19,6 @@ uses UML2Comparison;
 
 helper def : UML2CompatibilityReportVersionString : String =
 	'$Id$';
-
--- All elements from DEPS
-helper def : depsElements : Set(UML2!"ecore::EObject") =
-	UML2!"ecore::EObject".allInstancesFrom('DEPS');
 
 -- CompatibilityReport Profile
 helper def : crProfile : UML2!"uml::Profile" = 
@@ -342,8 +338,7 @@ helper context OclAny def : join(separator : String) : String =
 
 -- The root element of the compatibility report.
 rule Model {
-	from s : UML2!"uml::Model" (
-		thisModule.depsElements->includes(s))
+	from s : UML2!"uml::Model" in DEPS
 	using {
 		provides : String = thisModule.allModelsFromIn
 			->collect(m|m.name)
@@ -368,8 +363,7 @@ rule Model {
 
 -- Copy all EAnnotations in DEPS.
 rule EAnnotation {
-    from s : UML2!"ecore::EAnnotation" (
-    	thisModule.depsElements->includes(s))
+    from s : UML2!"ecore::EAnnotation" in DEPS
     to t : UML2!"ecore::EAnnotation" (
         source <- s.source,
         eAnnotations <- s.eAnnotations,
@@ -380,8 +374,7 @@ rule EAnnotation {
 
 -- Copy all EStringToMapEntries in DEPS.
 rule EStringToStringMapEntry {
-    from s : UML2!"ecore::EStringToStringMapEntry" (
-    	thisModule.depsElements->includes(s))
+    from s : UML2!"ecore::EStringToStringMapEntry" in DEPS
     to t : UML2!"ecore::EStringToStringMapEntry" (
         key <- s.key,
         value <- s.value)
@@ -389,13 +382,11 @@ rule EStringToStringMapEntry {
 
 -- Copy all Packages in DEPS that are not missing or have missing elements.
 rule Package {
-	from s : UML2!"uml::Package" (
-		if thisModule.depsElements->includes(s) then
-			if s.oclIsTypeOf(UML2!"uml::Package") then
-				if s.isMissing then false else
-					not s.hasElementsMissing
-				endif
-			else false endif
+	from s : UML2!"uml::Package" in DEPS (
+		if s.oclIsTypeOf(UML2!"uml::Package") then
+			if s.isMissing then false else
+				not s.hasElementsMissing
+			endif
 		else false endif)
     to t : UML2!"uml::Package" (
         name <- s.name.debug('>>Package<< ' + s.qualifiedName),
@@ -406,13 +397,11 @@ rule Package {
 
 -- Mark all Packages in DEPS that are not missing, but have missing elements, as <<Incompatible>>.
 rule IncompatiblePackage {
-	from s : UML2!"uml::Package" (
-		if thisModule.depsElements->includes(s) then
-			if s.oclIsTypeOf(UML2!"uml::Package") then
-				if s.isMissing then false else
-					s.hasElementsMissing
-				endif
-			else false endif
+	from s : UML2!"uml::Package" in DEPS (
+		if s.oclIsTypeOf(UML2!"uml::Package") then
+			if s.isMissing then false else
+				s.hasElementsMissing
+			endif
 		else false endif)
     to t : UML2!"uml::Package" (
         name <- s.name.debug('>>IncompatiblePackage<< ' + s.qualifiedName),
@@ -426,11 +415,9 @@ rule IncompatiblePackage {
 
 -- Mark all Packages in DEPS that are missing as <<Missing>>.
 rule MissingPackage {
-	from s : UML2!"uml::Package" (
-		if thisModule.depsElements->includes(s) then
-			if s.oclIsTypeOf(UML2!"uml::Package") then
-				s.isMissing
-			else false endif
+	from s : UML2!"uml::Package" in DEPS (
+		if s.oclIsTypeOf(UML2!"uml::Package") then
+			s.isMissing
 		else false endif)
     to t : UML2!"uml::Package" (
         name <- s.name.debug('>>MissingPackage<< ' + s.qualifiedName),
@@ -444,13 +431,11 @@ rule MissingPackage {
 
 -- Copy all Classes in DEPS that are not missing or have missing elements.
 rule Class {
-    from s : UML2!"uml::Class" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Class") then
-				if s.isMissing then false else
-					not s.hasElementsMissing
-				endif
-			else false endif
+    from s : UML2!"uml::Class" in DEPS (
+   		if s.oclIsTypeOf(UML2!"uml::Class") then
+			if s.isMissing then false else
+				not s.hasElementsMissing
+			endif
 		else false endif)
     to t : UML2!"uml::Class" (
         name <- s.name.debug('>>Class<< ' + s.qualifiedName),
@@ -468,13 +453,11 @@ rule Class {
 
 -- Mark all Classes in DEPS that are not missing, but have missing elements, as <<Incompatible>>.
 rule IncompatibleClass {
-    from s : UML2!"uml::Class" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Class") then
-				if s.isMissing then false else
-					s.hasElementsMissing
-				endif
-			else false endif
+    from s : UML2!"uml::Class" in DEPS (
+   		if s.oclIsTypeOf(UML2!"uml::Class") then
+			if s.isMissing then false else
+				s.hasElementsMissing
+			endif
 		else false endif)
     to t : UML2!"uml::Class" (
         name <- s.name.debug('>>IncompatibleClass<< ' + s.qualifiedName),
@@ -495,11 +478,9 @@ rule IncompatibleClass {
 
 -- Mark all Classes in DEPS that are missing as <<Missing>>.
 rule MissingClass {
-    from s : UML2!"uml::Class" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Class") then
-				s.isMissing
-			else false endif
+    from s : UML2!"uml::Class" in DEPS (
+   		if s.oclIsTypeOf(UML2!"uml::Class") then
+			s.isMissing
 		else false endif)
     to t : UML2!"uml::Class" (
         name <- s.name.debug('>>MissingClass<< ' + s.qualifiedName),
@@ -520,12 +501,10 @@ rule MissingClass {
 
 -- Copy all Interfaces in DEPS that are not missing or have missing elements.
 rule Interface {
-    from s : UML2!"uml::Interface" (
-		if thisModule.depsElements->includes(s) then
-    		if s.isMissing then false else
-    			not s.hasElementsMissing
-			endif
-		else false endif)
+    from s : UML2!"uml::Interface" in DEPS (
+   		if s.isMissing then false else
+   			not s.hasElementsMissing
+		endif)
 	to t : UML2!"uml::Interface" (
         name <- s.name.debug('>>Interface<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -540,12 +519,10 @@ rule Interface {
 
 -- Mark all Interfaces in DEPS that are not missing, but have missing elements, as <<Incompatible>>.
 rule IncompatibleInterface {
-    from s : UML2!"uml::Interface" (
-		if thisModule.depsElements->includes(s) then
-    		if s.isMissing then false else
-    			s.hasElementsMissing
-			endif
-		else false endif)
+    from s : UML2!"uml::Interface" in DEPS (
+   		if s.isMissing then false else
+   			s.hasElementsMissing
+		endif)
 	to t : UML2!"uml::Interface" (
         name <- s.name.debug('>>IncompatibleInterface<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -563,10 +540,8 @@ rule IncompatibleInterface {
 
 -- Mark all Interfaces in DEPS that are missing as <<Missing>>.
 rule MissingInterface {
-    from s : UML2!"uml::Interface" (
-    	if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::Interface" in DEPS (
+   		s.isMissing)
 	to t : UML2!"uml::Interface" (
         name <- s.name.debug('>>MissingInterface<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -584,11 +559,9 @@ rule MissingInterface {
 
 -- Copy all DataTypes in DEPS that are not missing.
 rule DataType {
-    from s : UML2!"uml::DataType" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::DataType") then
-		   		not s.isMissing
-			else false endif
+    from s : UML2!"uml::DataType" in DEPS (
+   		if s.oclIsTypeOf(UML2!"uml::DataType") then
+	   		not s.isMissing
 		else false endif)
 	to t : UML2!"uml::DataType" (
         name <- s.name.debug('>>DataType<< ' + s.qualifiedName),
@@ -603,11 +576,9 @@ rule DataType {
 
 -- Mark all DataTypes in DEPS that are missing as <<Missing>>.
 rule MissingDataType {
-    from s : UML2!"uml::DataType" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::DataType") then
-    			s.isMissing
-			else false endif
+    from s : UML2!"uml::DataType" in DEPS (
+   		if s.oclIsTypeOf(UML2!"uml::DataType") then
+   			s.isMissing
 		else false endif)
 	to t : UML2!"uml::DataType" (
         name <- s.name.debug('>>MissingDataType<< ' + s.qualifiedName),
@@ -625,10 +596,8 @@ rule MissingDataType {
 
 -- Copy all PrimitiveTypes in DEPS that are not missing.
 rule PrimitiveType {
-    from s : UML2!"uml::PrimitiveType" (
-		if thisModule.depsElements->includes(s) then
-    		not s.isMissing
-		else false endif)
+    from s : UML2!"uml::PrimitiveType" in DEPS (
+   		not s.isMissing)
 	to t : UML2!"uml::PrimitiveType" (
         name <- s.name.debug('>>PrimitiveType<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -640,10 +609,8 @@ rule PrimitiveType {
 
 -- Mark all PrimitiveTypes in DEPS that are missing as <<Missing>>.
 rule MissingPrimitiveType {
-    from s : UML2!"uml::PrimitiveType" (
-		if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::PrimitiveType" in DEPS (
+   		s.isMissing)
 	to t : UML2!"uml::PrimitiveType" (
         name <- s.name.debug('>>MissingPrimitiveType<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -658,10 +625,8 @@ rule MissingPrimitiveType {
 
 -- Copy all Generalizations in DEPS that are not missing.
 rule Generalization {
-    from s : UML2!"uml::Generalization" (
-		if thisModule.depsElements->includes(s) then
-    		not s.isMissing
-		else false endif)
+    from s : UML2!"uml::Generalization" in DEPS (
+   		not s.isMissing)
     to t : UML2!"uml::Generalization" (
 		eAnnotations <- s.eAnnotations,
     	general <- s.general)
@@ -669,10 +634,8 @@ rule Generalization {
 
 -- Mark all Generalizations in DEPS that are missing as <<Missing>>.
 rule MissingGeneralization {
-    from s : UML2!"uml::Generalization" (
-		if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::Generalization" in DEPS (
+   		s.isMissing)
     to t : UML2!"uml::Generalization" (
 		eAnnotations <- s.eAnnotations,
     	general <- s.general)
@@ -683,32 +646,30 @@ rule MissingGeneralization {
 
 -- Copy all InterfaceRealizations in DEPS that are not missing.
 rule InterfaceRealization {
-    from s : UML2!"uml::InterfaceRealization" (
-		if thisModule.depsElements->includes(s) then
-    		not s.isMissing
-		else false endif)
+    from s : UML2!"uml::InterfaceRealization" in DEPS (
+   		not s.isMissing)
     to t : UML2!"uml::InterfaceRealization" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
 		visibility <- s.visibility,
 		supplier <- s.supplier,
         client <- s.client,
-        contract <- s.contract)
+        contract <- s.contract,
+		implementingClassifier <- s.implementingClassifier)
 }
 
 -- Mark all InterfaceRealizations in DEPS that are missing as <<Missing>>.
 rule MissingInterfaceRealization {
-    from s : UML2!"uml::InterfaceRealization" (
-		if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::InterfaceRealization" in DEPS (
+   		s.isMissing)
     to t : UML2!"uml::InterfaceRealization" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
 		visibility <- s.visibility,
 		supplier <- s.supplier,
         client <- s.client,
-        contract <- s.contract)
+        contract <- s.contract,
+		implementingClassifier <- s.implementingClassifier)
 	do {
 		t.applyStereotype(thisModule.stMissing);
 	}
@@ -716,11 +677,9 @@ rule MissingInterfaceRealization {
 
 -- Copy all Properties in DEPS that are not missing.
 rule Property {
-    from s : UML2!"uml::Property" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Property") then
-				not s.isMissing
-			else false endif
+    from s : UML2!"uml::Property" in DEPS (
+   		if s.oclIsTypeOf(UML2!"uml::Property") then
+			not s.isMissing
 		else false endif)
     to t : UML2!"uml::Property" (
         name <- s.name,
@@ -738,11 +697,9 @@ rule Property {
 
 -- Mark all Properties in DEPS that are missing as <<Missing>>.
 rule MissingProperty {
-    from s : UML2!"uml::Property" (
-		if thisModule.depsElements->includes(s) then
-    		if s.oclIsTypeOf(UML2!"uml::Property") then
-				s.isMissing
-			else false endif
+    from s : UML2!"uml::Property" in DEPS (
+   		if s.oclIsTypeOf(UML2!"uml::Property") then
+			s.isMissing
 		else false endif)
     to t : UML2!"uml::Property" (
         name <- s.name,
@@ -763,12 +720,10 @@ rule MissingProperty {
 
 -- Copy all LiteralUnlimitedNaturals in DEPS that are contained in a Property or Parameter.
 rule LiteralUnlimitedNatural {
-    from s : UML2!"uml::LiteralUnlimitedNatural" (
-    	if thisModule.depsElements->includes(s) then
-			let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
-			if p.oclIsTypeOf(UML2!"uml::Property") then true
-			else p.oclIsKindOf(UML2!"uml::Parameter") endif
-		else false endif)
+    from s : UML2!"uml::LiteralUnlimitedNatural" in DEPS (
+		let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
+		if p.oclIsTypeOf(UML2!"uml::Property") then true
+		else p.oclIsKindOf(UML2!"uml::Parameter") endif)
     to t : UML2!"uml::LiteralUnlimitedNatural" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -778,12 +733,10 @@ rule LiteralUnlimitedNatural {
 
 -- Copy all LiteralIntegers in DEPS that are contained in a Property or Parameter.
 rule LiteralInteger {
-    from s : UML2!"uml::LiteralInteger" (
-    	if thisModule.depsElements->includes(s) then
-			let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
-			if p.oclIsTypeOf(UML2!"uml::Property") then true
-			else p.oclIsKindOf(UML2!"uml::Parameter") endif
-		else false endif)
+    from s : UML2!"uml::LiteralInteger" in DEPS (
+		let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
+		if p.oclIsTypeOf(UML2!"uml::Property") then true
+		else p.oclIsKindOf(UML2!"uml::Parameter") endif)
     to t : UML2!"uml::LiteralInteger" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -793,10 +746,8 @@ rule LiteralInteger {
 
 -- Copy all Operations in DEPS that are not missing.
 rule Operation {
-    from s : UML2!"uml::Operation" (
-		if thisModule.depsElements->includes(s) then
-    		not s.isMissing
-		else false endif)
+    from s : UML2!"uml::Operation" in DEPS (
+   		not s.isMissing)
     to t : UML2!"uml::Operation" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -812,10 +763,8 @@ rule Operation {
 
 -- Mark all Operations in DEPS that are missing as <<Missing>>.
 rule MissingOperation {
-    from s : UML2!"uml::Operation" (
-		if thisModule.depsElements->includes(s) then
-    		s.isMissing
-		else false endif)
+    from s : UML2!"uml::Operation" in DEPS (
+   		s.isMissing)
     to t : UML2!"uml::Operation" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -834,8 +783,7 @@ rule MissingOperation {
 
 -- Copy all Parameters in DEPS.
 rule Parameter {
-    from s : UML2!"uml::Parameter" (
-    	thisModule.depsElements->includes(s))
+    from s : UML2!"uml::Parameter" in DEPS
     to t : UML2!"uml::Parameter" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
