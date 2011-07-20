@@ -1,12 +1,14 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id$
 -- Prunes superfluous elements from a CompatibilityReport UML2 model.
 --
-module UML2CRPrune; -- extends UML2Copy
+module UML2CRPrune;
 
 create OUT : UML2		-- The pruned compatibility report model
 from IN : UML2; 		-- The input compatibility report model
+
+uses UML2Copy;
 
 -- ======================================================================
 -- context helper attributes begin
@@ -93,12 +95,12 @@ helper context UML2!"uml::Interface" def : hasReferredTypes : Boolean =
 -- context-free helper attributes begin
 -- ======================================================================
 
-helper def : allElements : Set(UML2!"ecore::EObject") =
-	UML2!"uml::Element".allInstances();
+helper def : allElements : Set(UML2!"uml::Element") =
+	UML2!"uml::Element".allInstances()->asSet();
 
 helper def : inElements : Set(UML2!"ecore::EObject") =
 	thisModule.filterInElements(
-	UML2!"ecore::EObject".allInstancesFrom('IN'));
+	UML2!"ecore::EObject".allInstancesFrom('IN')->asSet());
 
 -- ======================================================================
 -- helper attributes end

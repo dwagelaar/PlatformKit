@@ -1,4 +1,4 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id: UML2TestCompatibilityReport.atl 7950 2010-01-31 19:20:25Z dwagelaa $
 -- Performs a number of tests on generated compatibility reports

@@ -1,4 +1,4 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id$
 -- Copies UML2 models
@@ -7,7 +7,7 @@ module UML2Copy;
 create OUT : UML2 from IN : UML2;
 
 helper def : inElements : Set(UML2!"ecore::EObject") = 
-	UML2!"ecore::EObject".allInstancesFrom('IN');
+	UML2!"ecore::EObject".allInstancesFrom('IN')->asSet();
 
 -- ======================================================================
 -- Ecore copying rules begin

@@ -1,4 +1,4 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- $Id$
 -- Adds Generalizations to java::lang::Object where missing
 module UML2AddGeneralizations; --extends UML2Copy

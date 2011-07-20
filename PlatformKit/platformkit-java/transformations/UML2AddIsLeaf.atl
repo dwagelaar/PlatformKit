@@ -1,4 +1,4 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- $Id$
 -- Copies isLeaf and isReadOnly attribute values from a reference model
 module UML2AddIsLeaf; --extends UML2Copy

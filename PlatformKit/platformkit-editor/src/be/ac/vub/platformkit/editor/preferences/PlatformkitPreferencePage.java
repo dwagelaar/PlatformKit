@@ -20,13 +20,11 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.jface.util.PropertyChangeEvent;
-import org.eclipse.m2m.atl.core.service.CoreService;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
@@ -105,26 +103,6 @@ public class PlatformkitPreferencePage extends FieldEditorPreferencePage impleme
 		reasonerUrl.setErrorMessage(
 				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.digUrlError")); //$NON-NLS-1$
 		addField(reasonerUrl);
-
-		String[] vms = CoreService.getLaunchersNames();
-		String[][] vmss = new String[vms.length][2];
-		for (int i = 0; i < vms.length; i++) {
-			vmss[i][0] = vms[i];
-			vmss[i][1] = vms[i];
-		}
-		ComboFieldEditor atlVM = new ComboFieldEditor(
-				PreferenceConstants.P_ATLVM, 
-				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.atlVm"),
-				vmss,
-				getFieldEditorParent()); //$NON-NLS-1$
-		addField(atlVM);
-
-		BooleanFieldEditor cacheAPI = new BooleanFieldEditor(
-				PreferenceConstants.P_CACHE_API,
-				PlatformkitEditorPlugin.getPlugin().getString("PlatformkitPreferencePage.cacheApi"),
-				BooleanFieldEditor.SEPARATE_LABEL,
-				getFieldEditorParent()); //$NON-NLS-1$
-		addField(cacheAPI);
 
 		String[][] lvls = new String[][] {
 				createComboEntry(Level.OFF),

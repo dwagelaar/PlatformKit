@@ -24,7 +24,6 @@ import java.util.logging.Handler;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
@@ -44,13 +43,16 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.m2m.atl.common.ATLLogger;
-import org.eclipse.m2m.atl.core.ATLCoreException;
-import org.eclipse.m2m.atl.core.IExtractor;
-import org.eclipse.m2m.atl.core.IModel;
-import org.eclipse.m2m.atl.core.IReferenceModel;
-import org.eclipse.m2m.atl.core.launch.ILauncher;
+import org.eclipse.m2m.atl.emftvm.EmftvmFactory;
+import org.eclipse.m2m.atl.emftvm.ExecEnv;
+import org.eclipse.m2m.atl.emftvm.Metamodel;
+import org.eclipse.m2m.atl.emftvm.Model;
+import org.eclipse.m2m.atl.emftvm.util.DefaultModuleResolver;
+import org.eclipse.m2m.atl.emftvm.util.LazyList;
+import org.eclipse.m2m.atl.emftvm.util.StackFrame;
+import org.eclipse.m2m.atl.emftvm.util.TimingData;
+import org.eclipse.m2m.atl.emftvm.util.VMMonitor;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -69,7 +71,6 @@ import be.ac.vub.platformkit.io.IFileOutputStream;
 import be.ac.vub.platformkit.java.JavaOntologyProvider;
 import be.ac.vub.platformkit.java.PlatformkitJavaPlugin;
 import be.ac.vub.platformkit.java.PlatformkitJavaResources;
-import be.ac.vub.platformkit.java.popup.util.ATLUtil;
 import be.ac.vub.platformkit.jobs.ProgressMonitorJob;
 import be.ac.vub.platformkit.kb.BaseOntologyProvider;
 import be.ac.vub.platformkit.kb.IOntClass;
@@ -85,7 +86,71 @@ import be.ac.vub.platformkit.presentation.PlatformkitEditorPlugin;
  */
 public class CompatJob extends ProgressMonitorJob {
 
+	/**
+	 * Adapts {@link IProgressMonitor} to {@link VMMonitor}.
+	 * @author <a href="mailto:dennis.wagelaar@vub.ac.be">Dennis Wagelaar</a>
+	 */
+	public static class ProgressMonitorAdapter implements VMMonitor {
+
+		private final IProgressMonitor monitor;
+
+		/**
+		 * Creates a new {@link ProgressMonitorAdapter}.
+		 * @param monitor the adapter {@link IProgressMonitor}
+		 */
+		public ProgressMonitorAdapter(IProgressMonitor monitor) {
+			this.monitor = monitor;
+		}
+	
+		/**
+		 * {@inheritDoc}
+		 */
+		public void terminated() {
+		}
+	
+		/**
+		 * {@inheritDoc}
+		 */
+		public void step(StackFrame frame) {
+		}
+	
+		/**
+		 * {@inheritDoc}
+		 */
+		public void leave(StackFrame frame) {
+		}
+	
+		/**
+		 * {@inheritDoc}
+		 */
+		public boolean isTerminated() {
+			return monitor.isCanceled();
+		}
+	
+		/**
+		 * {@inheritDoc}
+		 */
+		public void error(StackFrame frame, String msg, Exception e) {
+		}
+	
+		/**
+		 * {@inheritDoc}
+		 */
+		public void enter(StackFrame frame) {
+		}
+	}
+
+	public static final String TRANSF_PREFIX_URI = "platform:/plugin/" + 
+			PlatformkitJavaPlugin.getPlugin().getBundle().getSymbolicName() + 
+			"/transformations/";
+	public static final String REPORT_MODULE = "UML2CompatibilityReport";
+	public static final String PRUNE_MODULE = "UML2CRPrune";
 	public static final int STEPS = 9;
+	public static final String UML  = "platform:/plugin/" + 
+			PlatformkitJavaPlugin.getPlugin().getBundle().getSymbolicName() +
+			"/metamodels/UMLProfiles.ecore"; //$NON-NLS-1$
+	public static final String CR_PROF = 
+			"http://soft.vub.ac.be/platformkit-java/CompatibilityReport.profile.uml"; //$NON-NLS-1$
 
 	/**
 	 * Adds PlatformKit log handler to ATL logger.
@@ -124,15 +189,15 @@ public class CompatJob extends ProgressMonitorJob {
 	}
 
 	/**
-	 * Finds the root {@link Model} in model, or creates a new one if not found.
+	 * Finds the root {@link org.eclipse.uml2.uml.Model} in model, or creates a new one if not found.
 	 * @param model
-	 * @return the root {@link Model} in model
+	 * @return the root {@link org.eclipse.uml2.uml.Model} in model
 	 */
-	public static final Model findRootModel(final IModel model) {
-		for (Object o : model.getElementsByType(UMLPackage.eINSTANCE.getModel())) {
-			return (Model) o;
+	public static final org.eclipse.uml2.uml.Model findRootModel(final Model model) {
+		for (EObject o : model.allInstancesOf(UMLPackage.eINSTANCE.getModel())) {
+			return (org.eclipse.uml2.uml.Model)o;
 		}
-		return (Model) model.newElement(UMLPackage.eINSTANCE.getModel());
+		return (org.eclipse.uml2.uml.Model)model.newElement(UMLPackage.eINSTANCE.getModel());
 	}
 
 	/**
@@ -151,131 +216,8 @@ public class CompatJob extends ProgressMonitorJob {
 	 */
 	@Override
 	protected void runAction(IProgressMonitor monitor) throws Exception {
-		checkAndSwitchStrategy();
 		CompatJobRunner runner = new CompatJobRunner();
 		runActionWithRunner(monitor, runner, STEPS);
-	}
-
-	/**
-	 * Defines model loading strategy interface and behaviour.
-	 */
-	public class ModelLoadingStrategy {
-
-		private String atlVMName;
-		protected ATLUtil atlUtil;
-
-		/**
-		 * Creates a new ModelLoadingStrategy
-		 * @param atlVMName
-		 * @throws ATLCoreException
-		 */
-		public ModelLoadingStrategy(String atlVMName) throws ATLCoreException {
-			Assert.isNotNull(atlVMName);
-			this.atlVMName = atlVMName;
-			atlUtil = new ATLUtil(atlVMName);
-		}
-
-		/**
-		 * @return The UML2 metamodel
-		 * @throws IOException 
-		 * @throws ATLCoreException 
-		 */
-		public IReferenceModel getUML2() throws ATLCoreException, IOException {
-			return atlUtil.loadRefModel(UML_MM.openStream(), "UML2", UML_MM.toString(), MODEL_HANDLER); //$NON-NLS-1$
-		}
-
-		/**
-		 * @param uml2 The UML2 metamodel
-		 * @return The CompatibilityReport profile model
-		 * @throws IOException 
-		 * @throws ATLCoreException 
-		 */
-		public IModel getCRProfile(IReferenceModel uml2) throws ATLCoreException, IOException {
-			return atlUtil.loadModel(uml2, CR_PROF, "CR", CR_PROF); //$NON-NLS-1$
-		}
-
-		/**
-		 * @param uml2 The UML2 metamodel
-		 * @param emfUri The EMF {@link URI} to load from
-		 * @return the loaded 'IN' model
-		 * @throws ATLCoreException 
-		 */
-		public IModel loadINModel(IReferenceModel uml2, URI emfUri) throws ATLCoreException {
-			return atlUtil.loadModel(uml2, emfUri.toString(), "IN", emfUri.toString()); //$NON-NLS-1$
-		}
-
-		/**
-		 * @param uml2 The UML2 metamodel
-		 * @param res The EMF {@link Resource} to load from
-		 * @return the loaded 'IN' model
-		 * @throws ATLCoreException 
-		 */
-		public IModel loadINModelFromResource(IReferenceModel uml2, Resource res) throws ATLCoreException {
-			return atlUtil.loadModel(uml2, res, "IN"); //$NON-NLS-1$
-		}
-
-		/**
-		 * @param uml2 The UML2 metamodel
-		 * @param path The path to the source model
-		 * @return the loaded 'DEPS' model
-		 * @throws ATLCoreException 
-		 */
-		public IModel loadDEPSModel(IReferenceModel uml2,
-				String path) throws ATLCoreException {
-			return atlUtil.loadModel(uml2, path, "DEPS", path); //$NON-NLS-1$
-		}
-
-		/**
-		 * @param uml2 The UML2 metamodel
-		 * @param resource The resource containing the source model
-		 * @return the loaded 'DEPS' model
-		 * @throws ATLCoreException 
-		 */
-		public IModel loadDEPSModel(IReferenceModel uml2,
-				Resource resource) throws ATLCoreException {
-			return atlUtil.loadModel(uml2, resource, "DEPS"); //$NON-NLS-1$
-		}
-
-		/**
-		 * @param uml2 The UML2 metamodel
-		 * @param path The future path of the model
-		 * @return the new 'REPORT' model
-		 * @throws ATLCoreException 
-		 */
-		public IModel createOUTModel(IReferenceModel uml2, String path) throws ATLCoreException {
-			return atlUtil.newModel(uml2, "REPORT", path); //$NON-NLS-1$
-		}
-
-		/**
-		 * @param atlVMName
-		 * @return True if this ModelLoadingStrategy is valid for the given ATL VM name.
-		 */
-		public boolean isValidFor(String atlVMName) {
-			return this.atlVMName.equals(atlVMName);
-		}
-
-		/**
-		 * @return an ATL launcher
-		 * @throws ATLCoreException 
-		 */
-		public ILauncher getAtlLauncher() throws ATLCoreException {
-			return atlUtil.getLauncher();
-		}
-
-		/**
-		 * @return an ATL extractor
-		 */
-		public IExtractor getAtlExtractor() {
-			return atlUtil.getExtractor();
-		}
-
-		/**
-		 * Flushes internal ATL objects and models
-		 * @throws ATLCoreException
-		 */
-		public void flush() throws ATLCoreException {
-			atlUtil = new ATLUtil(atlVMName);
-		}
 	}
 
 	/**
@@ -284,11 +226,12 @@ public class CompatJob extends ProgressMonitorJob {
 	 */
 	public class CompatJobRunner {
 
-		private IReferenceModel uml2;
-		private IModel crProfile;
-		private IModel deps;
-		private IModel in;
-		private IModel report;
+		protected final ResourceSet rs = new ResourceSetImpl();
+		private Metamodel uml2;
+		private Model crProfile;
+		private Model deps;
+		private Model in;
+		private Model report;
 		private IFile file;
 		private String crLocation;
 		private IPath crPath;
@@ -299,61 +242,61 @@ public class CompatJob extends ProgressMonitorJob {
 		/**
 		 * @return the uml2
 		 */
-		public IReferenceModel getUml2() {
+		public Metamodel getUml2() {
 			return uml2;
 		}
 		/**
 		 * @param uml2 the uml2 to set
 		 */
-		protected void setUml2(IReferenceModel uml2) {
+		protected void setUml2(Metamodel uml2) {
 			this.uml2 = uml2;
 		}
 		/**
 		 * @return the crProfile
 		 */
-		public IModel getCrProfile() {
+		public Model getCrProfile() {
 			return crProfile;
 		}
 		/**
 		 * @param crProfile the crProfile to set
 		 */
-		protected void setCrProfile(IModel crProfile) {
+		protected void setCrProfile(Model crProfile) {
 			this.crProfile = crProfile;
 		}
 		/**
 		 * @return the deps
 		 */
-		public IModel getDeps() {
+		public Model getDeps() {
 			return deps;
 		}
 		/**
 		 * @param deps the deps to set
 		 */
-		protected void setDeps(IModel deps) {
+		protected void setDeps(Model deps) {
 			this.deps = deps;
 		}
 		/**
 		 * @return the in
 		 */
-		public IModel getIn() {
+		public Model getIn() {
 			return in;
 		}
 		/**
 		 * @param in the in to set
 		 */
-		protected void setIn(IModel in) {
+		protected void setIn(Model in) {
 			this.in = in;
 		}
 		/**
 		 * @return the report
 		 */
-		public IModel getReport() {
+		public Model getReport() {
 			return report;
 		}
 		/**
 		 * @param report the report to set
 		 */
-		protected void setReport(IModel report) {
+		protected void setReport(Model report) {
 			this.report = report;
 		}
 
@@ -495,12 +438,12 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @see #getPackageProviders(String)
 		 * @see #getProvidedPackages(URI)
 		 */
-		protected void addAllProvidedPackages(URI emf_uri, IModel apiModel) {
-			final Set<?> packages = apiModel.getElementsByType(UMLPackage.eINSTANCE.getPackage());
+		protected void addAllProvidedPackages(URI emf_uri, Model apiModel) {
+			final LazyList<EObject> packages = apiModel.allInstancesOf(UMLPackage.eINSTANCE.getPackage());
 			final Set<String> provided = getProvidedPackages(emf_uri);
-			for (Object pack : packages) {
+			for (EObject pack : packages) {
 				assert pack instanceof Package;
-				if (containsClassifiers((Package) pack)) {
+				if (containsClassifiers((Package)pack)) {
 					String packName = JarToUML.qualifiedName((Package) pack);
 					provided.add(packName);
 					getPackageProviders(packName).add(emf_uri);
@@ -512,12 +455,13 @@ public class CompatJob extends ProgressMonitorJob {
 		 * Loads UML2 metamodel
 		 * @param monitor
 		 * @throws IOException 
-		 * @throws ATLCoreException 
 		 */
 
-		public void loadUml2(IProgressMonitor monitor) throws ATLCoreException, IOException {
+		public void loadUml2(IProgressMonitor monitor) throws IOException {
 			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.loadingUml2")); //$NON-NLS-1$
-			setUml2(modelLoader.getUML2());
+			final Metamodel uml2 = EmftvmFactory.eINSTANCE.createMetamodel();
+			uml2.setResource(rs.getResource(URI.createURI(UML), true));
+			setUml2(uml2);
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedUml2")); //$NON-NLS-1$
 		}
 
@@ -525,11 +469,12 @@ public class CompatJob extends ProgressMonitorJob {
 		 * Loads CompatiblityReport profile
 		 * @param monitor
 		 * @throws IOException 
-		 * @throws ATLCoreException 
 		 */
-		public void loadCRProfile(IProgressMonitor monitor) throws ATLCoreException, IOException {
+		public void loadCRProfile(IProgressMonitor monitor) throws IOException {
 			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.loadingCRProfile")); //$NON-NLS-1$
-			setCrProfile(modelLoader.getCRProfile(getUml2()));
+			final Model crProfile = EmftvmFactory.eINSTANCE.createModel();
+			crProfile.setResource(rs.getResource(URI.createURI(CR_PROF), true));
+			setCrProfile(crProfile);
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedCRProfile")); //$NON-NLS-1$
 		}
 
@@ -537,16 +482,17 @@ public class CompatJob extends ProgressMonitorJob {
 		 * Loads dependency model
 		 * @param monitor
 		 * @throws IOException 
-		 * @throws ATLCoreException 
 		 */
 		public void loadDepsModel(IProgressMonitor monitor) 
-		throws ATLCoreException, CoreException, IOException {
+		throws CoreException, IOException {
 			subTask(monitor, PlatformkitJavaResources.getString("loadingDepsModel")); //$NON-NLS-1$
 			setFile((IFile) getInput());
 			final IFile file = getFile();
 			assert file != null;
 			final String fileLocation = "platform:/resource/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toString(); //$NON-NLS-1$ //$NON-NLS-2$
-			setDeps(modelLoader.loadDEPSModel(getUml2(), fileLocation));
+			final Model deps = EmftvmFactory.eINSTANCE.createModel();
+			deps.setResource(rs.getResource(URI.createURI(fileLocation), true));
+			setDeps(deps);
 			setCrPath(file.getProjectRelativePath()
 					.removeFileExtension()
 					.removeFileExtension()
@@ -559,29 +505,32 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @param monitor
 		 * @param apiName The API name to display
 		 * @param emf_uri The API model URI to load from
-		 * @throws IOException 
-		 * @throws ATLCoreException 
+		 * @throws CoreException
 		 */
-		public void loadAPIModel(IProgressMonitor monitor, String apiName, URI emf_uri) throws ATLCoreException, CoreException {
+		public void loadAPIModel(IProgressMonitor monitor, String apiName, URI emf_uri) 
+		throws CoreException {
 			subTask(monitor, String.format(
 					PlatformkitJavaResources.getString("CompatJob.loadingApiModel"), 
 					apiName)); //$NON-NLS-1$
-			final IModel load = modelLoader.loadINModel(getUml2(), emf_uri);
-			final IModel in = getIn();
+			final Model load = EmftvmFactory.eINSTANCE.createModel();
+			load.setResource(rs.getResource(emf_uri, true));
+			Model in = getIn();
 			if (in == null) {
 				setIn(load);
 				monitor.worked(2);
 			} else {
 				final MergeModel mergeModel = new MergeModel();
-				final Model base = findRootModel(in);
-				final Model merge = findRootModel(load);
+				final org.eclipse.uml2.uml.Model base = findRootModel(in);
+				final org.eclipse.uml2.uml.Model merge = findRootModel(load);
 				assert base != null;
 				assert merge != null;
 				mergeModel.setBaseModel(base);
 				mergeModel.setMergeModel(merge);
 				mergeModel.setMonitor(new SubProgressMonitor(monitor, 2));
 				mergeModel.run();
-				setIn(modelLoader.loadINModelFromResource(getUml2(), base.eResource()));
+				in = EmftvmFactory.eINSTANCE.createModel();
+				in.setResource(base.eResource());
+				setIn(in);
 			}
 			addAllProvidedPackages(emf_uri, load);
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedApiModel")); //$NON-NLS-1$
@@ -591,7 +540,6 @@ public class CompatJob extends ProgressMonitorJob {
 		 * Performs a single run of the UML2CompatbilityReport transformation
 		 * @param monitor
 		 * @return The transformation result
-		 * @throws ATLCoreException 
 		 * @throws CoreException 
 		 * @throws IOException 
 		 * @throws InvocationTargetException 
@@ -601,27 +549,34 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws SecurityException 
 		 * @throws ClassCastException 
 		 */
-		public boolean run(IProgressMonitor monitor) throws ATLCoreException, CoreException, IOException, ClassCastException, SecurityException, IllegalArgumentException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+		public boolean run(final IProgressMonitor monitor) 
+		throws CoreException, IOException, ClassCastException, SecurityException, IllegalArgumentException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.creatingCR")); //$NON-NLS-1$
-			modelLoader.flush(); // report must be in new resource set
-			setReport(modelLoader.createOUTModel(getUml2(), getCrLocation()));
-			final ILauncher launcher = modelLoader.getAtlLauncher();
-			launcher.addInModel(getCrProfile(), "CR", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
-			launcher.addInModel(getDeps(), "DEPS", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
-			launcher.addInModel(getIn(), "IN", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
-			launcher.addOutModel(getReport(), "REPORT", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
-			launcher.addLibrary("UML2", uml2Lib.openStream()); //$NON-NLS-1$
-			launcher.addLibrary("UML2Comparison", uml2Comparison.openStream()); //$NON-NLS-1$
-			Object result = launcher.launch(ILauncher.RUN_MODE, monitor, vmoptions, uml2CompatibilityReport.openStream());
+			final Model report = EmftvmFactory.eINSTANCE.createModel();
+			report.setResource(rs.createResource(URI.createURI(getCrLocation())));
+			setReport(report);
+
+			final TimingData td = new TimingData();
+			final ExecEnv env = EmftvmFactory.eINSTANCE.createExecEnv();
+			final Map<String, Model> input = env.getInputModels();
+			input.put("CR", getCrProfile());
+			input.put("DEPS", getDeps());
+			input.put("IN", getIn());
+			env.getOutputModels().put("REPORT", getReport());
+			env.getMetaModels().put("UML2", getUml2());
+			env.loadModule(new DefaultModuleResolver(TRANSF_PREFIX_URI, rs), REPORT_MODULE);
+			td.finishLoading();
+			final Boolean result = (Boolean)env.run(td, new ProgressMonitorAdapter(monitor));
+			td.finish();
+			
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.createdCR")); //$NON-NLS-1$
-			return ATLUtil.getBooleanValue(result);
+			return result;
 		}
 
 		/**
 		 * Prunes the current compatibility report
 		 * @param monitor
 		 * @return True if the pruned report is empty (i.e. the result is compatible)
-		 * @throws ATLCoreException
 		 * @throws CoreException
 		 * @throws IOException
 		 * @throws ClassCastException
@@ -631,32 +586,41 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @throws IllegalAccessException
 		 * @throws InvocationTargetException
 		 */
-		public boolean pruneReport(IProgressMonitor monitor) throws ATLCoreException, CoreException, IOException, ClassCastException, SecurityException, IllegalArgumentException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+		public boolean pruneReport(IProgressMonitor monitor) 
+		throws CoreException, IOException, ClassCastException, SecurityException, IllegalArgumentException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.pruningCR")); //$NON-NLS-1$
-			IModel report = getReport();
+			final Model report = getReport();
 			if (report == null) {
 				throw new IllegalArgumentException(
 						PlatformkitJavaResources.getString("CompatJob.cannotPruneNull")); //$NON-NLS-1$
 			}
-			modelLoader.flush(); // report must be in new resource set
-			setReport(modelLoader.createOUTModel(getUml2(), getCrLocation()));
-			final ILauncher launcher = modelLoader.getAtlLauncher();
-			launcher.addInModel(report, "IN", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
-			launcher.addOutModel(getReport(), "OUT", "UML2"); //$NON-NLS-1$ //$NON-NLS-2$
-			Object result = launcher.launch(ILauncher.RUN_MODE, monitor, vmoptions, uml2Copy.openStream(), uml2CRPrune.openStream());
+			final Model prunedReport = EmftvmFactory.eINSTANCE.createModel();
+			prunedReport.setResource(rs.createResource(URI.createURI(getCrLocation())));
+			setReport(prunedReport);
+
+			final TimingData td = new TimingData();
+			final ExecEnv env = EmftvmFactory.eINSTANCE.createExecEnv();
+			env.getInputModels().put("IN", report);
+			env.getOutputModels().put("OUT", prunedReport);
+			env.getMetaModels().put("UML2", getUml2());
+			env.loadModule(new DefaultModuleResolver(TRANSF_PREFIX_URI, rs), PRUNE_MODULE);
+			td.finishLoading();
+			final Boolean result = (Boolean)env.run(td, new ProgressMonitorAdapter(monitor));
+			td.finish();
+
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.prunedCR")); //$NON-NLS-1$
-			return ATLUtil.getBooleanValue(result);
+			return result;
 		}
 
 		/**
 		 * Saves the report model
 		 * @param monitor
-		 * @throws ATLCoreException 
 		 * @throws CoreException 
+		 * @throws IOException 
 		 */
-		public void saveReport(IProgressMonitor monitor) throws ATLCoreException, CoreException {
+		public void saveReport(IProgressMonitor monitor) throws CoreException, IOException {
 			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.savingCR")); //$NON-NLS-1$
-			modelLoader.getAtlExtractor().extract(getReport(), getCrLocation());
+			getReport().getResource().save(Collections.emptyMap());
 			getFile().getParent().refreshLocal(IResource.DEPTH_INFINITE, null);
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.savedCR")); //$NON-NLS-1$
 		}
@@ -875,12 +839,13 @@ public class CompatJob extends ProgressMonitorJob {
 		 */
 		protected List<Package> findCompatiblePackages(IProgressMonitor monitor) {
 			final List<Package> result = new ArrayList<Package>();
-			final IModel deps = getDeps();
-			final IModel cr = getReport();
-			final Model crRoot = (Model) cr.getElementsByType(UMLPackage.eINSTANCE.getModel()).iterator().next();
+			final Model deps = getDeps();
+			final Model cr = getReport();
+			final org.eclipse.uml2.uml.Model crRoot = (org.eclipse.uml2.uml.Model)
+					cr.allInstancesOf(UMLPackage.eINSTANCE.getModel()).first();
 			final FindContainedClassifierSwitch findClassifier = new FindContainedClassifierSwitch();
-			for (Object pack : deps.getElementsByType(UMLPackage.eINSTANCE.getPackage())) {
-				Package umlPack = (Package) pack;
+			for (EObject pack : deps.allInstancesOf(UMLPackage.eINSTANCE.getPackage())) {
+				Package umlPack = (Package)pack;
 				if (containsClassifiers(umlPack)) {
 					String javaName = JarToUML.qualifiedName(umlPack).replace("::", ".");
 					Package crPack = findClassifier.findPackage(crRoot, javaName, false);
@@ -901,8 +866,9 @@ public class CompatJob extends ProgressMonitorJob {
 		 * @return the {@link EAnnotation} that contains the required Java bytecode format information
 		 */
 		protected EAnnotation findJavaBytecodeAnnotation() {
-			final IModel deps = getDeps();
-			final Model depsRoot = (Model) deps.getElementsByType(UMLPackage.eINSTANCE.getModel()).iterator().next();
+			final Model deps = getDeps();
+			final org.eclipse.uml2.uml.Model depsRoot = (org.eclipse.uml2.uml.Model)
+					deps.allInstancesOf(UMLPackage.eINSTANCE.getModel()).first();
 			return depsRoot.getEAnnotation(JarToUML.EANNOTATION);
 		}
 
@@ -913,10 +879,6 @@ public class CompatJob extends ProgressMonitorJob {
 			return getFile().getProject().getFile(getCrPath());
 		}
 	}
-
-	private static final URL UML_MM  = PlatformkitJavaPlugin.getPlugin().getBundle().getResource("metamodels/UMLProfiles.ecore"); //$NON-NLS-1$
-	private static final String CR_PROF = "http://soft.vub.ac.be/platformkit-java/CompatibilityReport.profile.uml"; //$NON-NLS-1$
-	private static final String MODEL_HANDLER = "UML2"; //$NON-NLS-1$
 
 	protected final URL uml2CompatibilityReport = 
 		PlatformkitJavaPlugin.getPlugin().getBundle().getResource("transformations/UML2CompatibilityReport.asm"); //$NON-NLS-1$
@@ -940,7 +902,7 @@ public class CompatJob extends ProgressMonitorJob {
 	private boolean createOntology;
 
 	protected IPreferenceStore store = PlatformkitEditorPlugin.getPlugin().getPreferenceStore();
-	protected ModelLoadingStrategy modelLoader = null;
+//	protected ModelLoadingStrategy modelLoader = null;
 
 	/**
 	 * Runs the main action using the given runner object
@@ -1027,33 +989,11 @@ public class CompatJob extends ProgressMonitorJob {
 	}
 
 	/**
-	 * Checks the current model loading strategy and updates it if necessary
-	 * @throws ATLCoreException
-	 */
-	protected void checkAndSwitchStrategy() throws ATLCoreException {
-		final String atlVMName = store.getString(PreferenceConstants.P_ATLVM);
-		if (atlVMName == null || atlVMName.equals("")) {
-			throw new ATLCoreException(
-					PlatformkitJavaResources.getString("CompatJob.noAtlVmChosen")); //$NON-NLS-1$
-		}
-		if (modelLoader != null && modelLoader.isValidFor(atlVMName)) {
-			return;
-		}
-		modelLoader = new ModelLoadingStrategy(atlVMName);
-		Assert.isNotNull(modelLoader);
-	}
-
-	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected void finallyCleanup() {
-		try {
-			removeATLLogHandler();
-			modelLoader.flush();
-		} catch (ATLCoreException e) {
-			PlatformkitJavaPlugin.getPlugin().report(e);
-		}
+		removeATLLogHandler();
 	}
 
 	/**

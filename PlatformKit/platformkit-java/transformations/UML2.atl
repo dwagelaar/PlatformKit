@@ -1,9 +1,7 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- $Id$
 -- UML2 helpers
 library UML2;
-
-uses Strings;
 
 ------------------------------- General helpers -----------------------------------
 
@@ -67,12 +65,6 @@ helper context UML2!"uml::Classifier" def : qualifiedName(separator : String) : 
 	endif;
 
 ------------------------------- MultiplicityElement -----------------------------------
-
-helper context UML2!"uml::MultiplicityElement" def : accessorBaseName : String =
-	self.name.firstToUpper;
-
-helper context UML2!"uml::MultiplicityElement" def : accessorBaseNameS : String =
-	self.accessorBaseName + if self.isSingle then '' else 's' endif;
 
 helper context UML2!"uml::MultiplicityElement" def : isSingle : Boolean =
 	if self.upperValue.oclIsUndefined() then true
