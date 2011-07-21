@@ -35,15 +35,17 @@ helper context String def : prefix : String =
 -- The UML '::' separated qualified name for elements that are
 -- contained in a Package (exact) or a Classifier, the simple name otherwise.
 helper context UML2!"uml::NamedElement" def : umlQualifiedName : String =
-	if self.oclIsKindOf(UML2!"uml::Feature") then
-		self.name
+	let owner : UML2!"uml::Element" = self.owner in
+	if owner.oclIsTypeOf(UML2!"uml::Package") or owner.oclIsKindOf(UML2!"uml::Classifier") then
+		owner.umlQualifiedName + '::' + self.name
 	else
-		if self.owner.oclIsTypeOf(UML2!"uml::Package") or self.owner.oclIsKindOf(UML2!"uml::Classifier") then
-			self.owner.umlQualifiedName + '::' + self.name
-		else
-			self.name
-		endif
+		self.name
 	endif;
+
+-- The UML '::' separated qualified name for elements that are
+-- contained in a Package (exact) or a Classifier, the simple name otherwise.
+helper context UML2!"uml::Feature" def : umlQualifiedName : String =
+	self.name;
 
 -- ------------------------ allOwnedPackages ----------------------------
 
@@ -81,25 +83,15 @@ helper context UML2!"uml::Element" def : myOclType : OclType =
 
 -- ------------------------ isInferred ----------------------------------
 
--- Looks up isInferred at its container.
-helper context OclAny def : objectIsInferred : Boolean =
-	let owner : OclAny = self.refImmediateComposite() in
-	if owner.oclIsUndefined() then false else
-		owner.isInferred
-	endif;
-
 -- True iff self or its container is annotated with an inferred tag.
 helper context OclAny def : isInferred : Boolean =
-	self.objectIsInferred;
+	not self.oclIsUndefined() and self.refImmediateComposite().isInferred;
 
 -- True iff self or its container is annotated with an inferred tag.
 helper context UML2!"ecore::EModelElement" def : isInferred : Boolean =
-	let ann : UML2!"ecore::EAnnotation" = self.getEAnnotation('Jar2UML') in
-	if ann.oclIsUndefined() then self.objectIsInferred
-	else
-		if ann.details->exists(d|d.key='inferred' and d.value='true') then true
-		else self.objectIsInferred endif
-	endif;
+	let ann : UML2!"ecore::EAnnotation" = self.jar2umlAnnotation in
+	(not ann.oclIsUndefined() and ann.details->exists(d|d.key='inferred' and d.value='true'))
+	or self.refImmediateComposite().isInferred;
 
 -- ------------------------ allOther --------------------------------------
 
@@ -117,7 +109,7 @@ helper context UML2!"uml::Package" def : allOther : Sequence(UML2!"uml::Package"
 -- ------------------------ jar2umlAnnotation -----------------------------
 
 -- The "Jar2UML" EAnnotation, if any.
-helper context UML2!"uml::Model" def : jar2umlAnnotation : UML2!"ecore::EAnnotation" =
+helper context UML2!"ecore::EModelElement" def : jar2umlAnnotation : UML2!"ecore::EAnnotation" =
 	self.getEAnnotation('Jar2UML');
 
 -- ------------------------ bytecodeMajorVersion --------------------------
@@ -292,18 +284,18 @@ helper context UML2!"uml::Model" def : allPackagesIncompatibleWith(m : UML2!"uml
 
 -- True iff for all Packages X contained in m, self has a Package Y that is compatible with X.
 helper context UML2!"uml::Model" def : hasAllPackagesCompatibleWith(m : UML2!"uml::Model") : Boolean =
-	let compPackages : Sequence(UML2!"uml::Package") = self.allPackagesIncompatibleWith(m)
-	in if compPackages->isEmpty() then true
-	   else compPackages.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses packages compatible with ')->isEmpty() endif;
+	let compPackages : Sequence(UML2!"uml::Package") = self.allPackagesIncompatibleWith(m) in
+	compPackages->isEmpty() or
+	compPackages.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses packages compatible with ')->isEmpty();
 
 -- ------------------------ hasAllPackagesEquivalentWith ----------------
 
 -- True iff for all Packages X contained in m, self has a Package Y that is equivalent with X.
 helper context UML2!"uml::Model" def : hasAllPackagesEquivalentWith(m : UML2!"uml::Model") : Boolean =
 	let equivPackages : Sequence(UML2!"uml::Package") = m.allOwnedPackages
-		->select(p|not self.hasPackageEquivalentWith(p))
-	in if equivPackages->isEmpty() then true
-	   else equivPackages.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses packages equivalent with ')->isEmpty() endif;
+		->select(p|not self.hasPackageEquivalentWith(p)) in
+	equivPackages->isEmpty() or
+	equivPackages.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses packages equivalent with ')->isEmpty();
 
 -- ------------------------ hasPackageLocallyCompatibleWith -----------
 
@@ -331,103 +323,89 @@ helper context UML2!"uml::Model" def : hasPackageEquivalentWith(p : UML2!"uml::P
 
 -- True iff self is compatible with e.
 helper context UML2!"uml::NamedElement" def : isCompatibleWith(e : UML2!"uml::NamedElement") : Boolean =
-	if self.isLocallyCompatibleWith(e) then
-		self.hasElementsCompatibleWith(e)
-	else false endif;
+	self.isLocallyCompatibleWith(e) and self.hasElementsCompatibleWith(e);
 	
 -- ------------------------ isLocallyCompatibleWith ---------------------
 
 -- True iff self is locally compatible with p,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Parameter" def : isLocallyCompatibleWith(p : UML2!"uml::Parameter") : Boolean =
-	if p.oclIsUndefined() then false
-	else -- parameter name should be ignored 
-		if self.myOclType.conformsTo(p.myOclType) then
-			if (self.direction = p.direction) then 
-				if self.type.oclIsUndefined() then p.type.oclIsUndefined()
-				else
-					if p.type.oclIsUndefined()	then false
-					else (self.type.umlQualifiedName = p.type.umlQualifiedName) endif
-				endif
-			else false endif
-		else false endif
+	not p.oclIsUndefined() and -- parameter name should be ignored
+	self.myOclType.conformsTo(p.myOclType) and
+	self.direction = p.direction and
+	if self.type.oclIsUndefined() then
+		p.type.oclIsUndefined()
+	else
+		not p.type.oclIsUndefined() and
+		self.type.umlQualifiedName = p.type.umlQualifiedName
 	endif;
 
 -- True iff self is locally compatible with t,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::TypedElement" def : isLocallyCompatibleWith(t : UML2!"uml::TypedElement") : Boolean =
-	if super.isLocallyCompatibleWith(t)
-	then if self.type.oclIsUndefined()
-		 then t.type.oclIsUndefined()
-		 else if t.type.oclIsUndefined()
-		 	  then false
-			  else (self.type.umlQualifiedName = t.type.umlQualifiedName) endif endif
-	else false endif;
+	super.isLocallyCompatibleWith(t) and
+	if self.type.oclIsUndefined() then
+		t.type.oclIsUndefined()
+	else 
+		not t.type.oclIsUndefined() and
+		self.type.umlQualifiedName = t.type.umlQualifiedName
+	endif;
 	
 -- True iff self is locally compatible with e,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::NamedElement" def : isLocallyCompatibleWith(e : UML2!"uml::NamedElement") : Boolean =
-	if (self.umlQualifiedName = e.umlQualifiedName) then
-		(self.myOclType.conformsTo(e.myOclType))
-	else false endif;
+	self.umlQualifiedName = e.umlQualifiedName and
+	self.myOclType.conformsTo(e.myOclType);
 
 -- ------------------------ hasElementsCompatibleWith -------------------
 
 -- True iff for all elements X contained by p there exists an element Y contained by self
 -- that is compatible with X.
 helper context UML2!"uml::Package" def : hasElementsCompatibleWith(p : UML2!"uml::Package") : Boolean =
-	if super.hasElementsCompatibleWith(p)
-	then (let compClassifiers : Sequence(UML2!"uml::Classifier") = p.allOwnedClassifiers->reject(c|self.hasOwnedClassifierCompatibleWith(c))
-		  in if compClassifiers->isEmpty() then true
-		  	 else compClassifiers.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses classifiers compatible with ')->isEmpty() endif)
-	else false endif;
+	super.hasElementsCompatibleWith(p) and
+	(let compClassifiers : Sequence(UML2!"uml::Classifier") = 
+		p.allOwnedClassifiers->reject(c|self.hasOwnedClassifierCompatibleWith(c)) in
+	compClassifiers->isEmpty() or
+	compClassifiers.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses classifiers compatible with ')->isEmpty());
 
 -- True iff for all elements X contained by c there exists an element Y contained by self
 -- that is compatible with X.
 helper context UML2!"uml::Classifier" def : hasElementsCompatibleWith(c : UML2!"uml::Classifier") : Boolean =
-	if self.isAbstract implies c.isAbstract
-	and	self.isLeaf implies c.isLeaf then
-		if super.hasElementsCompatibleWith(c) then
-			if (let compGenerals : Sequence(UML2!"uml::Classifier") = self.allGeneralsIncompatibleWith(c)
-				in if compGenerals->isEmpty() then true
-				   else compGenerals.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses generals compatible with ')->isEmpty() endif)
-			then (let compFeatures : Sequence(UML2!"uml::Feature") = self.allFeaturesIncompatibleWith(c)
-				  in if compFeatures->isEmpty() then true
-			  		 else compFeatures.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses features compatible with ')->isEmpty() endif)
-			else false endif
-		else false endif
-	else false endif;
+	(self.isAbstract implies c.isAbstract) and
+	(self.isLeaf implies c.isLeaf) and
+	super.hasElementsCompatibleWith(c) and
+	(let compGenerals : Sequence(UML2!"uml::Classifier") = self.allGeneralsIncompatibleWith(c) in
+	compGenerals->isEmpty() or
+	compGenerals.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses generals compatible with ')->isEmpty()) and
+	(let compFeatures : Sequence(UML2!"uml::Feature") = self.allFeaturesIncompatibleWith(c) in
+	compFeatures->isEmpty() or
+	compFeatures.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses features compatible with ')->isEmpty());
 
 -- True iff for all elements X contained by f there exists an element Y contained by self
 -- that is compatible with X.
 helper context UML2!"uml::StructuralFeature" def : hasElementsCompatibleWith(f : UML2!"uml::StructuralFeature") : Boolean =
-	if (self.isStatic = f.isStatic)
-	and (self.isReadOnly implies f.isReadOnly)
-	and (self.isLeaf implies f.isLeaf) then
-		super.hasElementsCompatibleWith(f)
-	else false endif;
+	(self.isStatic = f.isStatic) and
+	(self.isReadOnly implies f.isReadOnly) and
+	(self.isLeaf implies f.isLeaf) and
+	super.hasElementsCompatibleWith(f);
 
 -- True iff for all elements X contained by f there exists an element Y contained by self
 -- that is compatible with X.
 helper context UML2!"uml::BehavioralFeature" def : hasElementsCompatibleWith(f : UML2!"uml::BehavioralFeature") : Boolean =
-	if (self.isStatic = f.isStatic)
-	and (self.isAbstract implies f.isAbstract)
-	and (self.isLeaf implies f.isLeaf) then
-		if super.hasElementsCompatibleWith(f) then
-			if (self.ownedParameter->size() = f.ownedParameter->size()) then
-				thisModule.compatibleParameters(self.ownedParameter, f.ownedParameter)
-			else false endif
-		else false endif
-	else false endif;
+	(self.isStatic = f.isStatic) and
+	(self.isAbstract implies f.isAbstract) and
+	(self.isLeaf implies f.isLeaf) and
+	super.hasElementsCompatibleWith(f) and
+	(self.ownedParameter->size() = f.ownedParameter->size()) and
+	thisModule.compatibleParameters(self.ownedParameter, f.ownedParameter);
 
 -- True iff for all elements X contained by e there exists an element Y contained by self
 -- that is compatible with X.
 helper context UML2!"uml::NamedElement" def : hasElementsCompatibleWith(e : UML2!"uml::NamedElement") : Boolean =
-	if (self.visibilityIsCompatibleWith(e)) then
-		let compSuppliers : Sequence(UML2!"uml::NamedElement") = self.allSuppliersIncompatibleWith(e)
-		in if compSuppliers->isEmpty() then true
-		   else	compSuppliers.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses dependency suppliers compatible with ')->isEmpty() endif
-	else false endif;
+	self.visibilityIsCompatibleWith(e) and
+	(let compSuppliers : Sequence(UML2!"uml::NamedElement") = self.allSuppliersIncompatibleWith(e) in
+	compSuppliers->isEmpty() or
+	compSuppliers.debug(thisModule.modelName.prefix + self.qualifiedName + ' misses dependency suppliers compatible with ')->isEmpty());
 
 -- ------------------------ allOwnedClassifiersLocallyIncompatibleWith --
 
@@ -509,11 +487,10 @@ helper def : compatibleParameters(selfpars : Sequence(UML2!"uml::Parameter"), ot
 		if selfpar.oclIsUndefined() then
 			otherpar.oclIsUndefined()
 		else
-			if selfpar.isCompatibleWith(otherpar) then
-				thisModule.compatibleParameters(
-					selfpars->excluding(selfpar), 
-					otherpars->excluding(otherpar))
-			else false endif
+			selfpar.isCompatibleWith(otherpar) and
+			thisModule.compatibleParameters(
+				selfpars->excluding(selfpar), 
+				otherpars->excluding(otherpar))
 		endif
 	endif;
 
@@ -521,10 +498,10 @@ helper def : compatibleParameters(selfpars : Sequence(UML2!"uml::Parameter"), ot
 
 -- True iff the visibility of self is compatible with the visibility of e.
 helper context UML2!"uml::NamedElement" def : visibilityIsCompatibleWith(e : UML2!"uml::NamedElement") : Boolean =
-	if (self.visibility = #public) then true
-	else if (self.visibility = #protected) then (e.visibility = #protected) or (e.visibility = #private)
-	else if (self.visibility = #package) then (e.visibility = #package) or (e.visibility = #private)
-	else (self.visibility = e.visibility) endif endif endif;
+	self.visibility = #public or
+	if self.visibility = #protected then (e.visibility = #protected) or (e.visibility = #private)
+	else if self.visibility = #package then (e.visibility = #package) or (e.visibility = #private)
+	else self.visibility = e.visibility endif endif;
 
 -- ------------------------ allSuppliersIncompatibleWith ----------------
 
@@ -536,8 +513,8 @@ helper context UML2!"uml::NamedElement" def : allSuppliersIncompatibleWith(e : U
 
 -- True iff self, or one of its generals, has a supplier that is compatible with e.
 helper context UML2!"uml::Classifier" def : hasSupplierCompatibleWith(e : UML2!"uml::NamedElement") : Boolean =
-	if super.hasSupplierCompatibleWith(e) then true
-	else self.general->exists(g|g.hasSupplierCompatibleWith(e)) endif;
+	super.hasSupplierCompatibleWith(e) or
+	self.general->exists(g|g.hasSupplierCompatibleWith(e));
 
 -- True iff self has a supplier that is compatible with e.
 helper context UML2!"uml::NamedElement" def : hasSupplierCompatibleWith(e : UML2!"uml::NamedElement") : Boolean =
