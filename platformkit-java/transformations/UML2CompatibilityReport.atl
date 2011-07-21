@@ -140,104 +140,68 @@ helper context OclAny def : isMissing : Boolean =
 -- where locally compatible means compatible without considering any contained elements.
 -- The root Model is never missing.
 helper context UML2!"uml::Model" def : isMissing : Boolean =
-	if self.isInferred then false
-	else self.hasMissingOwner endif;
+	not self.isInferred and
+	self.hasMissingOwner;
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Package" def : isMissing : Boolean =
-	if self.isInferred then false else
-		if self.hasMissingOwner then true else
-			self.locallyCompatibleWithSelf->isEmpty()
-		endif
-	endif;
+	not self.isInferred and
+	(self.hasMissingOwner or
+	self.locallyCompatibleWithSelf->isEmpty());
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
-helper context UML2!"uml::Class" def : isMissing : Boolean =
-	if self.isInferred then false else
-		if self.hasMissingOwner then true else
-			self.locallyCompatibleWithSelf->isEmpty()
-		endif
-	endif;
-
--- True iff there are no elements X other than self,
--- for which self is locally compatible with X,
--- where locally compatible means compatible without considering any contained elements.
-helper context UML2!"uml::Interface" def : isMissing : Boolean =
-	if self.isInferred then false else
-		if self.hasMissingOwner then true else
-			self.locallyCompatibleWithSelf->isEmpty()
-		endif
-	endif;
-
--- True iff there are no elements X other than self,
--- for which self is locally compatible with X,
--- where locally compatible means compatible without considering any contained elements.
-helper context UML2!"uml::DataType" def : isMissing : Boolean =
-	if self.isInferred then false else
-		if self.hasMissingOwner then true else
-			self.locallyCompatibleWithSelf->isEmpty()
-		endif
-	endif;
+helper context UML2!"uml::Classifier" def : isMissing : Boolean =
+	not self.isInferred and
+	(self.hasMissingOwner or
+	self.locallyCompatibleWithSelf->isEmpty());
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Generalization" def : isMissing : Boolean =
-	if self.isInferred then false else
-		if self.specific.isMissing then true else
-			self.specific.incompGenerals->includes(self.general)
-		endif
-	endif;
+	not self.isInferred and
+	(self.specific.isMissing or
+	self.specific.incompGenerals->includes(self.general));
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::InterfaceRealization" def : isMissing : Boolean =
-	if self.isInferred then false else
-		if self.implementingClassifier.isMissing then true else
-			self.implementingClassifier.incompSuppliers->exists(i|self.supplier->includes(i))
-		endif
-	endif;
+	not self.isInferred and
+	(self.implementingClassifier.isMissing or
+	self.implementingClassifier.incompSuppliers->exists(i|self.supplier->includes(i)));
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Property" def : isMissing : Boolean =
-	if self.isInferred then false else
-		if self.hasMissingOwner then true else
-			if self.class.oclIsUndefined() then false else
-				self.class.incompFeatures->includes(self)
-			endif
-		endif
-	endif;
+	not self.isInferred and
+	(self.hasMissingOwner or
+		(not self.class.oclIsUndefined() and
+		self.class.incompFeatures->includes(self)));
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Operation" def : isMissing : Boolean =
-	if self.isInferred then false else
-		if self.hasMissingOwner then true else
-			if self.class.oclIsUndefined() then
-				if self.interface.oclIsUndefined() then false else
-					self.interface.incompFeatures->includes(self)
-				endif
-			else
-				self.class.incompFeatures->includes(self)
-			endif
-		endif
-	endif;
+	not self.isInferred and
+	(self.hasMissingOwner or
+		(not self.class.oclIsUndefined() and
+		self.class.incompFeatures->includes(self))
+	or
+		(not self.interface.oclIsUndefined() and
+		self.interface.incompFeatures->includes(self)));
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
 -- where locally compatible means compatible without considering any contained elements.
 helper context UML2!"uml::Parameter" def : isMissing : Boolean =
-	if self.operation.oclIsUndefined() then false else
-		self.operation.isMissing
-	endif;
+	not self.operation.oclIsUndefined() and
+	self.operation.isMissing;
 
 -- True iff there are no elements X other than self,
 -- for which self is locally compatible with X,
@@ -263,45 +227,27 @@ helper context UML2!"uml::Element" def : hasElementsMissing : Boolean =
 -- for which X contains all elements A such that
 -- there exists an element B contained in self that is compatible with A.
 helper context UML2!"uml::Package" def : hasElementsMissing : Boolean =
-	if self.isInferred then false else
-		if self.hasMissingOwner then false else
-			if self.compatibleWithSelf->isEmpty() then true
-	 		else self.allOwnedPackages->exists(p|p.compatibleWithSelf->isEmpty()) endif
-		endif
-	endif;
+	not self.isInferred and
+	not self.hasMissingOwner and
+	(self.compatibleWithSelf->isEmpty() or
+	self.allOwnedPackages->exists(p|p.compatibleWithSelf->isEmpty()));
 
 -- True iff there are no elements X other than self,
 -- for which X contains all elements A such that
 -- there exists an element B contained in self that is compatible with A.
-helper context UML2!"uml::Class" def : hasElementsMissing : Boolean =
-	if self.isInferred then false else
-		if self.hasMissingOwner then false else
-			if self.compatibleWithSelf->isEmpty() then true
-	 		else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
-		endif
-	endif;
-
--- True iff there are no elements X other than self,
--- for which X contains all elements A such that
--- there exists an element B contained in self that is compatible with A.
-helper context UML2!"uml::Interface" def : hasElementsMissing : Boolean =
-	if self.isInferred then false else
-		if self.hasMissingOwner then false else
-			if self.compatibleWithSelf->isEmpty() then true
-	 		else self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()) endif
-		endif
-	endif;
+helper context UML2!"uml::Classifier" def : hasElementsMissing : Boolean =
+	not self.isInferred and
+	not self.hasMissingOwner and
+	(self.compatibleWithSelf->isEmpty() or
+	self.allOwnedClassifiers->exists(c|c.compatibleWithSelf->isEmpty()));
 
 -- ------------------------ hasMissingOwner -----------------------------
 
 -- True iff an element that transitively contains self is missing.
 helper context UML2!"uml::Element" def : hasMissingOwner : Boolean =
 	let owner : UML2!"uml::Element" = self.owner in
-	if owner.oclIsUndefined() then false else
-		if owner.isMissing then true else
-			owner.hasMissingOwner
-		endif
-	endif;
+	not owner.oclIsUndefined() and
+	(owner.isMissing or owner.hasMissingOwner);
 
 -- ======================================================================
 -- helper attributes end
@@ -377,11 +323,9 @@ rule EStringToStringMapEntry {
 -- Copy all Packages in DEPS that are not missing or have missing elements.
 rule Package {
 	from s : UML2!"uml::Package" in DEPS (
-		if s.oclIsTypeOf(UML2!"uml::Package") then
-			if s.isMissing then false else
-				not s.hasElementsMissing
-			endif
-		else false endif)
+		s.oclIsTypeOf(UML2!"uml::Package") and
+		not s.isMissing and
+		not s.hasElementsMissing)
     to t : UML2!"uml::Package" (
         name <- s.name.debug('>>Package<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -392,11 +336,9 @@ rule Package {
 -- Mark all Packages in DEPS that are not missing, but have missing elements, as <<Incompatible>>.
 rule IncompatiblePackage {
 	from s : UML2!"uml::Package" in DEPS (
-		if s.oclIsTypeOf(UML2!"uml::Package") then
-			if s.isMissing then false else
-				s.hasElementsMissing
-			endif
-		else false endif)
+		s.oclIsTypeOf(UML2!"uml::Package") and
+		not s.isMissing and
+		s.hasElementsMissing)
     to t : UML2!"uml::Package" (
         name <- s.name.debug('>>IncompatiblePackage<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -410,9 +352,8 @@ rule IncompatiblePackage {
 -- Mark all Packages in DEPS that are missing as <<Missing>>.
 rule MissingPackage {
 	from s : UML2!"uml::Package" in DEPS (
-		if s.oclIsTypeOf(UML2!"uml::Package") then
-			s.isMissing
-		else false endif)
+		s.oclIsTypeOf(UML2!"uml::Package") and
+		s.isMissing)
     to t : UML2!"uml::Package" (
         name <- s.name.debug('>>MissingPackage<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -426,11 +367,9 @@ rule MissingPackage {
 -- Copy all Classes in DEPS that are not missing or have missing elements.
 rule Class {
     from s : UML2!"uml::Class" in DEPS (
-   		if s.oclIsTypeOf(UML2!"uml::Class") then
-			if s.isMissing then false else
-				not s.hasElementsMissing
-			endif
-		else false endif)
+   		s.oclIsTypeOf(UML2!"uml::Class") and
+		not s.isMissing and
+		not s.hasElementsMissing)
     to t : UML2!"uml::Class" (
         name <- s.name.debug('>>Class<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -448,11 +387,9 @@ rule Class {
 -- Mark all Classes in DEPS that are not missing, but have missing elements, as <<Incompatible>>.
 rule IncompatibleClass {
     from s : UML2!"uml::Class" in DEPS (
-   		if s.oclIsTypeOf(UML2!"uml::Class") then
-			if s.isMissing then false else
-				s.hasElementsMissing
-			endif
-		else false endif)
+   		s.oclIsTypeOf(UML2!"uml::Class") and
+		not s.isMissing and
+		s.hasElementsMissing)
     to t : UML2!"uml::Class" (
         name <- s.name.debug('>>IncompatibleClass<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -473,9 +410,8 @@ rule IncompatibleClass {
 -- Mark all Classes in DEPS that are missing as <<Missing>>.
 rule MissingClass {
     from s : UML2!"uml::Class" in DEPS (
-   		if s.oclIsTypeOf(UML2!"uml::Class") then
-			s.isMissing
-		else false endif)
+   		s.oclIsTypeOf(UML2!"uml::Class") and
+		s.isMissing)
     to t : UML2!"uml::Class" (
         name <- s.name.debug('>>MissingClass<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -496,9 +432,8 @@ rule MissingClass {
 -- Copy all Interfaces in DEPS that are not missing or have missing elements.
 rule Interface {
     from s : UML2!"uml::Interface" in DEPS (
-   		if s.isMissing then false else
-   			not s.hasElementsMissing
-		endif)
+   		not s.isMissing and
+   		not s.hasElementsMissing)
 	to t : UML2!"uml::Interface" (
         name <- s.name.debug('>>Interface<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -514,9 +449,8 @@ rule Interface {
 -- Mark all Interfaces in DEPS that are not missing, but have missing elements, as <<Incompatible>>.
 rule IncompatibleInterface {
     from s : UML2!"uml::Interface" in DEPS (
-   		if s.isMissing then false else
-   			s.hasElementsMissing
-		endif)
+   		not s.isMissing and
+   		s.hasElementsMissing)
 	to t : UML2!"uml::Interface" (
         name <- s.name.debug('>>IncompatibleInterface<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -554,9 +488,8 @@ rule MissingInterface {
 -- Copy all DataTypes in DEPS that are not missing.
 rule DataType {
     from s : UML2!"uml::DataType" in DEPS (
-   		if s.oclIsTypeOf(UML2!"uml::DataType") then
-	   		not s.isMissing
-		else false endif)
+   		s.oclIsTypeOf(UML2!"uml::DataType") and
+	   	not s.isMissing)
 	to t : UML2!"uml::DataType" (
         name <- s.name.debug('>>DataType<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -571,9 +504,8 @@ rule DataType {
 -- Mark all DataTypes in DEPS that are missing as <<Missing>>.
 rule MissingDataType {
     from s : UML2!"uml::DataType" in DEPS (
-   		if s.oclIsTypeOf(UML2!"uml::DataType") then
-   			s.isMissing
-		else false endif)
+   		s.oclIsTypeOf(UML2!"uml::DataType") and
+   		s.isMissing)
 	to t : UML2!"uml::DataType" (
         name <- s.name.debug('>>MissingDataType<< ' + s.qualifiedName),
 		eAnnotations <- s.eAnnotations,
@@ -672,9 +604,8 @@ rule MissingInterfaceRealization {
 -- Copy all Properties in DEPS that are not missing.
 rule Property {
     from s : UML2!"uml::Property" in DEPS (
-   		if s.oclIsTypeOf(UML2!"uml::Property") then
-			not s.isMissing
-		else false endif)
+   		s.oclIsTypeOf(UML2!"uml::Property") and
+		not s.isMissing)
     to t : UML2!"uml::Property" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -692,9 +623,8 @@ rule Property {
 -- Mark all Properties in DEPS that are missing as <<Missing>>.
 rule MissingProperty {
     from s : UML2!"uml::Property" in DEPS (
-   		if s.oclIsTypeOf(UML2!"uml::Property") then
-			s.isMissing
-		else false endif)
+   		s.oclIsTypeOf(UML2!"uml::Property") and
+		s.isMissing)
     to t : UML2!"uml::Property" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -716,8 +646,8 @@ rule MissingProperty {
 rule LiteralUnlimitedNatural {
     from s : UML2!"uml::LiteralUnlimitedNatural" in DEPS (
 		let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
-		if p.oclIsTypeOf(UML2!"uml::Property") then true
-		else p.oclIsKindOf(UML2!"uml::Parameter") endif)
+		p.oclIsTypeOf(UML2!"uml::Property") or
+		p.oclIsKindOf(UML2!"uml::Parameter"))
     to t : UML2!"uml::LiteralUnlimitedNatural" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
@@ -729,8 +659,8 @@ rule LiteralUnlimitedNatural {
 rule LiteralInteger {
     from s : UML2!"uml::LiteralInteger" in DEPS (
 		let p : UML2!"ecore::EObject" =  s.refImmediateComposite() in
-		if p.oclIsTypeOf(UML2!"uml::Property") then true
-		else p.oclIsKindOf(UML2!"uml::Parameter") endif)
+		p.oclIsTypeOf(UML2!"uml::Property") or
+		p.oclIsKindOf(UML2!"uml::Parameter"))
     to t : UML2!"uml::LiteralInteger" (
         name <- s.name,
 		eAnnotations <- s.eAnnotations,
