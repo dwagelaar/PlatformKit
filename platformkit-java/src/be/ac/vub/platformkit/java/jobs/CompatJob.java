@@ -146,9 +146,6 @@ public class CompatJob extends ProgressMonitorJob {
 	public static final String REPORT_MODULE = "UML2CompatibilityReport";
 	public static final String PRUNE_MODULE = "UML2CRPrune";
 	public static final int STEPS = 9;
-	public static final String UML  = "platform:/plugin/" + 
-			PlatformkitJavaPlugin.getPlugin().getBundle().getSymbolicName() +
-			"/metamodels/UMLProfiles.ecore"; //$NON-NLS-1$
 	public static final String CR_PROF = 
 			"http://soft.vub.ac.be/platformkit-java/CompatibilityReport.profile.uml"; //$NON-NLS-1$
 
@@ -460,7 +457,7 @@ public class CompatJob extends ProgressMonitorJob {
 		public void loadUml2(IProgressMonitor monitor) throws IOException {
 			subTask(monitor, PlatformkitJavaResources.getString("CompatJob.loadingUml2")); //$NON-NLS-1$
 			final Metamodel uml2 = EmftvmFactory.eINSTANCE.createMetamodel();
-			uml2.setResource(rs.getResource(URI.createURI(UML), true));
+			uml2.setResource(UMLPackage.eINSTANCE.eResource());
 			setUml2(uml2);
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.loadedUml2")); //$NON-NLS-1$
 		}

@@ -14,40 +14,40 @@ uses UML2Copy;
 -- context helper attributes begin
 -- ======================================================================
 
--- ------------------------ mustBePruned --------------------------------
+-- ------------------------ mustCopy ------------------------------------
 
-helper context OclAny def : mustBePruned : Boolean =
+helper context OclAny def : mustCopy : Boolean =
 	let owner : OclAny = self.refImmediateComposite() in
-	if owner.oclIsUndefined() then false
-	else owner.mustBePruned endif;
+	owner.oclIsUndefined() or owner.mustCopy;
 
-helper context UML2!"uml::Model" def : mustBePruned : Boolean =
-	false;
+helper context UML2!"uml::Model" def : mustCopy : Boolean =
+	true;
 
-helper context UML2!"uml::Package" def : mustBePruned : Boolean =
-	if self.isMissing then false else
-	if self.isIncompatible then false else
-	if self.hasReferredTypes then false else true.debug('Pruned ' + self.qualifiedName)
-	endif endif endif;
+helper context UML2!"uml::Package" def : mustCopy : Boolean =
+	if self.isMissing or self.isIncompatible or self.hasReferredTypes then 
+		true
+	else
+		false.debug('Pruned ' + self.qualifiedName)
+	endif;
 
-helper context UML2!"uml::Classifier" def : mustBePruned : Boolean =
-	if self.isMissing then false else
-	if self.isIncompatible then false else
-	if self.isReferred then false else
-	if self.hasReferredTypes then false else true.debug('Pruned ' + self.qualifiedName)
-	endif endif endif endif;
+helper context UML2!"uml::Classifier" def : mustCopy : Boolean =
+	if self.isMissing or self.isIncompatible or self.isReferred or self.hasReferredTypes then
+		true
+	else
+		false.debug('Pruned ' + self.qualifiedName)
+	endif;
 
-helper context UML2!"uml::Operation" def : mustBePruned : Boolean =
-	not self.isMissing;
+helper context UML2!"uml::Operation" def : mustCopy : Boolean =
+	self.isMissing;
 
-helper context UML2!"uml::Property" def : mustBePruned : Boolean =
-	not self.isMissing;
+helper context UML2!"uml::Property" def : mustCopy : Boolean =
+	self.isMissing;
 
-helper context UML2!"uml::Dependency" def : mustBePruned : Boolean =
-	not self.isMissing;
+helper context UML2!"uml::Dependency" def : mustCopy : Boolean =
+	self.isMissing;
 
-helper context UML2!"uml::Generalization" def : mustBePruned : Boolean =
-	not self.isMissing;
+helper context UML2!"uml::Generalization" def : mustCopy : Boolean =
+	self.isMissing;
 
 -- ------------------------ isMissing -----------------------------------
 
@@ -69,10 +69,7 @@ helper context UML2!"uml::Element" def : isReferred : Boolean =
 
 helper context UML2!"uml::Classifier" def : isReferred : Boolean =
 	thisModule.allElements
-	->exists(e|
-		if e.isMissing then
-			e.refersToType(self)
-		else false endif);
+	->exists(e | e.isMissing and e.refersToType(self));
 
 -- ------------------------ hasReferredTypes ----------------------------
 
@@ -81,7 +78,7 @@ helper context UML2!"uml::Element" def : hasReferredTypes : Boolean =
 
 helper context UML2!"uml::Package" def : hasReferredTypes : Boolean =
 	self.packagedElement
-	->exists(e|if e.isReferred then true else e.hasReferredTypes endif);
+	->exists(e|e.isReferred or e.hasReferredTypes);
 
 helper context UML2!"uml::Class" def : hasReferredTypes : Boolean =
 	self.nestedClassifier
@@ -96,11 +93,7 @@ helper context UML2!"uml::Interface" def : hasReferredTypes : Boolean =
 -- ======================================================================
 
 helper def : allElements : Set(UML2!"uml::Element") =
-	UML2!"uml::Element".allInstances()->asSet();
-
-helper def : inElements : Set(UML2!"ecore::EObject") =
-	thisModule.filterInElements(
-	UML2!"ecore::EObject".allInstancesFrom('IN')->asSet());
+	UML2!"uml::Element".allInstancesFrom('IN')->asSet();
 
 -- ======================================================================
 -- helper attributes end
@@ -110,28 +103,22 @@ helper def : inElements : Set(UML2!"ecore::EObject") =
 -- helper methods begin
 -- ======================================================================
 
--- ------------------------ filterInElements ----------------------------
-	
--- work around superimposition bug where amount of local vars in main is not updated
-helper def : filterInElements(inElements : Set(UML2!"ecore::EObject")) : Set(UML2!"ecore::EObject") =
-	inElements->reject(e|e.mustBePruned);
-
 -- ------------------------ refersToType --------------------------------
 
 helper context UML2!"uml::Element" def : refersToType(type : UML2!"uml::Type") : Boolean =
 	false;
 
 helper context UML2!"uml::Property" def : refersToType(type : UML2!"uml::Type") : Boolean =
-	self.type=type;
+	self.type = type;
 
 helper context UML2!"uml::Parameter" def : refersToType(type : UML2!"uml::Type") : Boolean =
-	self.type=type;
+	self.type = type;
 
 helper context UML2!"uml::Generalization" def : refersToType(type : UML2!"uml::Type") : Boolean =
-	self.general=type;
+	self.general = type;
 
 helper context UML2!"uml::InterfaceRealization" def : refersToType(type : UML2!"uml::Type") : Boolean =
-	self.contract=type;
+	self.contract = type;
 
 -- ======================================================================
 -- helper methods end
@@ -141,11 +128,51 @@ helper context UML2!"uml::InterfaceRealization" def : refersToType(type : UML2!"
 -- transformation rules begin
 -- ======================================================================
 
+rule Model {
+    from s : UML2!"uml::Model" in IN (s.mustCopy)
+    to t : UML2!"uml::Model" (
+        __xmiID__ <- s.__xmiID__,
+        name <- s.name,
+        visibility <- s.visibility,
+        viewpoint <- s.viewpoint,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        packageMerge <- s.packageMerge,
+        packagedElement <- s.packagedElement->select(p|p.mustCopy),
+        profileApplication <- s.profileApplication)
+}
+
+rule Package {
+    from s : UML2!"uml::Package" in IN (s.oclIsTypeOf(UML2!"uml::Package") and s.mustCopy)
+    to t : UML2!"uml::Package" (
+        __xmiID__ <- s.__xmiID__,
+        name <- s.name,
+        visibility <- s.visibility,
+        eAnnotations <- s.eAnnotations,
+        ownedComment <- s.ownedComment,
+        clientDependency <- s.clientDependency,
+        nameExpression <- s.nameExpression,
+        elementImport <- s.elementImport,
+        packageImport <- s.packageImport,
+        ownedRule <- s.ownedRule,
+        templateParameter <- s.templateParameter,
+        templateBinding <- s.templateBinding,
+        ownedTemplateSignature <- s.ownedTemplateSignature,
+        packageMerge <- s.packageMerge,
+        packagedElement <- s.packagedElement->select(p|p.mustCopy),
+        profileApplication <- s.profileApplication)
+}
+
 rule Class {
-    from s : UML2!"uml::Class" (
-		if s.oclIsTypeOf(UML2!"uml::Class") then
-			thisModule.inElements->includes(s)
-		else false endif)
+    from s : UML2!"uml::Class" in IN (s.oclIsTypeOf(UML2!"uml::Class") and s.mustCopy)
     to t : UML2!"uml::Class" (
         name <- s.name,
         visibility <- s.visibility,
@@ -170,19 +197,19 @@ rule Class {
         collaborationUse <- s.collaborationUse,
         ownedUseCase <- s.ownedUseCase,
         useCase <- s.useCase,
-        ownedAttribute <- s.ownedAttribute,
+        ownedAttribute <- s.ownedAttribute->select(a|a.mustCopy),
         ownedConnector <- s.ownedConnector,
         ownedBehavior <- s.ownedBehavior,
         classifierBehavior <- s.classifierBehavior,
         interfaceRealization <- s.interfaceRealization->select(c|c.isMissing),
         ownedTrigger <- s.ownedTrigger,
-        nestedClassifier <- s.nestedClassifier,
-        ownedOperation <- s.ownedOperation,
+        nestedClassifier <- s.nestedClassifier->select(c|c.mustCopy),
+        ownedOperation <- s.ownedOperation->select(o|o.mustCopy),
         ownedReception <- s.ownedReception)
 }
 
 rule Interface {
-    from s : UML2!"uml::Interface" (thisModule.inElements->includes(s))
+    from s : UML2!"uml::Interface" (s.mustCopy)
     to t : UML2!"uml::Interface" (
         name <- s.name,
         visibility <- s.visibility,
@@ -206,45 +233,20 @@ rule Interface {
         collaborationUse <- s.collaborationUse,
         ownedUseCase <- s.ownedUseCase,
         useCase <- s.useCase,
-        ownedAttribute <- s.ownedAttribute,
-        ownedOperation <- s.ownedOperation,
-        nestedClassifier <- s.nestedClassifier,
+        ownedAttribute <- s.ownedAttribute->select(a|a.mustCopy),
+        ownedOperation <- s.ownedOperation->select(o|o.mustCopy),
+        nestedClassifier <- s.nestedClassifier->select(c|c.mustCopy),
         redefinedInterface <- s.redefinedInterface,
         ownedReception <- s.ownedReception,
         protocol <- s.protocol)
 }
 
-rule CompatibilityReport {
-	from s : UML2!"CompatibilityReport::CompatibilityReport" (
-		thisModule.inElements->includes(s))
-	to t : UML2!"CompatibilityReport::CompatibilityReport" (
-		base_Model <- s.base_Model)
-}
-
-rule Incompatible {
-	from s : UML2!"CompatibilityReport::Incompatible" (
-		if thisModule.inElements->includes(s) then
-			s.oclIsTypeOf(UML2!"CompatibilityReport::Incompatible")
-		else false endif)
-	to t : UML2!"CompatibilityReport::Incompatible" (
-		base_Element <- s.base_Element)
-}
-
-rule Missing {
-	from s : UML2!"CompatibilityReport::Missing" (
-		thisModule.inElements->includes(s))
-	to t : UML2!"CompatibilityReport::Missing" (
-		base_Element <- s.base_Element)
-}
-
-endpoint rule End() {
+endpoint rule Result() {
 	do {
-		--nasty "pcall debug" throws away my return value! => wrap in let expression
-		let result : Boolean = thisModule.inElements
-			->select(e|e.oclIsKindOf(UML2!"uml::PackageableElement"))
+		thisModule.allElements
+			->select(e|e.oclIsKindOf(UML2!"uml::PackageableElement") and e.mustCopy)
 			->reject(p|p.owner.oclIsUndefined())
-			->isEmpty().debug('Empty pruned model') in
-		result;
+			->isEmpty().debug('Empty pruned model');
 	}
 }
 

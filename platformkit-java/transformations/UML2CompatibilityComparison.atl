@@ -1,4 +1,5 @@
 -- @atlcompiler emftvm
+-- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id$
 -- Query for determining the compatibility of a UML2 model to other versions of the UML2 model
 query UML2CompatibilityComparison = UML2!"uml::Model".allInstancesFrom('IN')

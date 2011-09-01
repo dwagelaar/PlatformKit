@@ -7,13 +7,14 @@
 --   from the same dependency model.
 -- * Requires the input compatibility reports to be unpruned.
 --
-module UML2CRMerge; -- extends UML2Copy
+module UML2CRMerge;
 
 create OUT : UML2		-- The merged compatibility report model
 from IN : UML2, 		-- The first input compatibility report model
      MERGE : UML2; 		-- The second input compatibility report model
 
 uses UML2;
+uses UML2Copy;
 
 -- ======================================================================
 -- helper attributes begin
@@ -115,8 +116,45 @@ helper context UML2!"uml::NamedElement" def : namedElementSameAs(n : UML2!"uml::
 -- transformation rules begin
 -- ======================================================================
 
+lazy rule ApplyStereotypes {
+	from s : UML2!"uml::Element" in IN
+	do {
+		for (st in s.getAppliedStereotypes()) {
+			if (st.getQualifiedName() = 'CompatibilityReport::Incompatible') {
+				if ((s.isIncompatibleInMerge or s.isMissingInMerge) and s.hasIncompatibleOrMissingChildren) {
+					thisModule.ApplyStereotype(s.debug('Incompatible'), st);
+				}
+			} else if (st.getQualifiedName() = 'CompatibilityReport::Missing') {
+				if (s.isMissingInMerge) {
+					thisModule.ApplyStereotype(s.debug('Missing'), st);
+				} else if (s.isIncompatibleInMerge) {
+					thisModule.ApplyStereotype(s, s.getApplicableStereotype('CompatibilityReport::Incompatible'));
+				}
+			} else {
+				thisModule.ApplyStereotype(s.debug('MissingToIncompatible'), st);
+			}
+		}
+	}
+}
+
+lazy rule ApplyStereotype {
+	from s : UML2!"uml::Element" in IN,
+		 st : UML2!"uml::Stereotype"
+	using {
+		t : UML2!"uml::Element" = s.resolve();
+	}
+	do {
+		t.applyStereotype(st);
+		for (a in st.getAllAttributes()) {
+			if (not a.name.startsWith('base_') and s.hasValue(st, a.name)) {
+				t.setValue(st, a.name, s.getValue(st, a.name));
+			}
+		}
+	}
+}
+
 rule Model {
-    from s : UML2!"uml::Model" (thisModule.inElements->includes(s))
+    from s : UML2!"uml::Model" in IN
     to t : UML2!"uml::Model" (
         name <- s.mergedName,
         visibility <- s.visibility,
@@ -134,45 +172,6 @@ rule Model {
         packageMerge <- s.packageMerge,
         packagedElement <- s.packagedElement,
         profileApplication <- s.profileApplication)
-}
-
-rule CompatibilityReport {
-	from s : UML2!"CompatibilityReport::CompatibilityReport" (
-		thisModule.inElements->includes(s))
-	to t : UML2!"CompatibilityReport::CompatibilityReport" (
-		base_Model <- s.base_Model)
-}
-
-rule Incompatible {
-	from s : UML2!"CompatibilityReport::Incompatible" (
-		if thisModule.inElements->includes(s) then
-			if s.oclIsTypeOf(UML2!"CompatibilityReport::Incompatible") then
-				let e : UML2!"uml::Element" = s.base_Element in
-				if e.isIncompatibleInMerge or e.isMissingInMerge then
-					e.hasIncompatibleOrMissingChildren
-				else false endif
-			else false endif
-		else false endif)
-	to t : UML2!"CompatibilityReport::Incompatible" (
-		base_Element <- s.base_Element.debug('Incompatible'))
-}
-
-rule Missing {
-	from s : UML2!"CompatibilityReport::Missing" (
-		if thisModule.inElements->includes(s) then
-			s.base_Element.isMissingInMerge
-		else false endif)
-	to t : UML2!"CompatibilityReport::Missing" (
-		base_Element <- s.base_Element.debug('Missing'))
-}
-
-rule MissingToIncompatible {
-	from s : UML2!"CompatibilityReport::Missing" (
-		if thisModule.inElements->includes(s) then
-			s.base_Element.isIncompatibleInMerge
-		else false endif)
-	to t : UML2!"CompatibilityReport::Incompatible" (
-		base_Element <- s.base_Element.debug('MissingToIncompatible'))
 }
 
 -- ======================================================================
