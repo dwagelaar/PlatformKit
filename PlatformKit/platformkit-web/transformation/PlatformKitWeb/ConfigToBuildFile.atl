@@ -1,16 +1,18 @@
--- @atlcompiler atl2006
+-- @atlcompiler emftvm
 -- Generates a build.xml file from a Transformations.ecore config file
 -- $Id$
-module ConfigToBuildFile; --extends ConfigToBuildFile from uml2cs-transformations
+module "PlatformKitWeb::ConfigToBuildFile";
 
 create OUT : XML from IN : CFG;
+
+uses "Transformations::ConfigToBuildFile";
 
 -- ======================================================================
 -- helper attributes begin
 -- ======================================================================
 
 helper def : ModelPath : String = 'platform:/resource/platformkit-web/models';
-helper def : ModelName : String = 'PlatformkitWeb';
+helper def : ModelName : String = 'PlatformKitWeb';
 helper def : ModelPrefix : String = 'pkw';
 
 -- ======================================================================
@@ -24,8 +26,8 @@ helper def : ModelPrefix : String = 'pkw';
 rule ConfigRoot {
 	from s : CFG!"transformations::TransformationConfig"
 	-- <project name="s.targetProject/build" default="all">
-	to root : XML!"XML::Root" mapsTo s (
-		name <- thisModule->ConfigHeader(s)),
+	to root : XML!"XML::Root" (
+		name <- thisModule.ConfigHeader(s)),
 	   default : XML!"XML::Attribute" (
 	   	parent <- root,
 	   	name <- 'default',
@@ -33,7 +35,7 @@ rule ConfigRoot {
 	-- <target name = 'all' depends = '...'>
 	   allTarget : XML!"XML::Element" (
 	   	name <- 'target',
-		children <- thisModule->AllTarget(s),
+		children <- thisModule.AllTarget(s),
 		parent <- root),
 	-- <target name = 'all-feedback' depends = '...'>
 	   allFeedbackTarget : XML!"XML::Element" (
@@ -43,11 +45,12 @@ rule ConfigRoot {
 	-- <target name = 'thisModule.ModelName' depends = 'allBase'>
 	   imTarget : XML!"XML::Element" (
 	   	name <- 'target',
-		children <- thisModule->ModelTarget(
+		children <- thisModule.ModelTarget(
 			thisModule.ModelName,
 			'inModel',
 			thisModule.ModelPrefix,
-			thisModule.ModelPath + '/' + thisModule.ModelName + '.uml'),
+			thisModule.ModelPath + '/' + thisModule.ModelName + '.uml',
+			'platform:/resource/' + s.targetProject + '/src/' + thisModule.ModelName + '.hibernatemapping30'),
 		parent <- root),
 	-- <target name = 'thisModule.ModelName-feedback' depends = 'allBase, loadJAVA'>
 	   imTargetFeedback : XML!"XML::Element" (
@@ -60,7 +63,8 @@ rule ConfigRoot {
 		parent <- root)
 }
 
-rule AllTarget(c : CFG!"transformations::TransformationConfig") {
+lazy rule AllTarget {
+	from c : CFG!"transformations::TransformationConfig"
 	-- Sequence{name="all" depends="..."}
 	to targetName : XML!"XML::Attribute"(
 	   	name <- 'name',
@@ -71,20 +75,14 @@ rule AllTarget(c : CFG!"transformations::TransformationConfig") {
 	   		->append('prettyPrint')
 			->iterate(e; acc : String = '' | acc +
 				if acc = '' then e
-				else ', ' + e endif)->debug('All')),
-	-- 	<eclipse.refreshLocal resource="${ant.project.name}"/>
-	   refresh : XML!"XML::Element" (
-	   	name <- 'eclipse.refreshLocal'),
-	   refreshResource : XML!"XML::Attribute" (
-	   	name <- 'resource',
-		value <- '${ant.project.name}',
-		parent <- refresh)
+				else ', ' + e endif)->debug('All'))
 	do {
-		Sequence{targetName, targetDepends, refresh};
+		Sequence{targetName, targetDepends};
 	}
 }
 
-rule AllFeedbackTarget(c : CFG!"transformations::TransformationConfig") {
+lazy rule AllFeedbackTarget {
+	from c : CFG!"transformations::TransformationConfig"
 	-- Sequence{name="all-feedback" depends="..."}
 	to targetName : XML!"XML::Attribute"(
 	   	name <- 'name',
@@ -107,7 +105,7 @@ rule AllFeedbackTarget(c : CFG!"transformations::TransformationConfig") {
 	}
 }
 
-rule ModelTarget(name : String, inModel : String, prefix : String, uri : String) {
+rule ModelTarget(name : String, inModel : String, prefix : String, uri : String, hbmuri : String) {
 	-- Sequence{name = 'name' depends = 'allBase'}
 	to targetName : XML!"XML::Attribute"(
 	   	name <- 'name',
@@ -115,31 +113,23 @@ rule ModelTarget(name : String, inModel : String, prefix : String, uri : String)
 	   targetDepends : XML!"XML::Attribute"(
 	   	name <- 'depends',
 		value <- 'allBase'),
-	-- <atl.loadModel modelHandler = 'EMF' name = 'inModel' metamodel = 'UML2' path = 'path'/>
+	-- <emftvm.loadModel name = 'inModel' uri = 'uri'/>
 	   loadModel : XML!"XML::Element" (
-	   	name <- 'atl.loadModel'),
-	   modelHandler : XML!"XML::Attribute" (
-	   	name <- 'modelHandler',
-		value <- 'EMF',
-		parent <- loadModel),
+	   	name <- 'emftvm.loadModel'),
 	   modelName : XML!"XML::Attribute" (
 	   	name <- 'name',
 		value <- inModel,
-		parent <- loadModel),
-	   metamodel : XML!"XML::Attribute" (
-	   	name <- 'metamodel',
-		value <- 'UML2',
 		parent <- loadModel),
 	   modelPath : XML!"XML::Attribute" (
 	   	name <- 'uri',
 		value <- uri,
 		parent <- loadModel),
-	-- <antcall target="generate" inheritRefs="true">
+	-- <antcall target="generateWithHBM" inheritRefs="true">
 	   antcall : XML!"XML::Element" (
 	   	name <- 'antcall'),
 	   antcalltarget : XML!"XML::Attribute" (
 	   	name <- 'target',
-		value <- 'generate',
+		value <- 'generateWithHBM',
 		parent <- antcall),
 	   inheritRefs : XML!"XML::Attribute" (
 	   	name <- 'inheritRefs',
@@ -148,19 +138,29 @@ rule ModelTarget(name : String, inModel : String, prefix : String, uri : String)
 	-- <param name="in" value="inModel"/>
 	   paramin : XML!"XML::Element" (
 	   	name <- 'param',
-		children <- thisModule->Property('in', inModel),
+		children <- thisModule.Property('in', inModel),
 		parent <- antcall),
 	-- <param name="prefix" value="prefix"/>
 	   paramprefix : XML!"XML::Element" (
 	   	name <- 'param',
-		children <- thisModule->Property('prefix', prefix),
+		children <- thisModule.Property('prefix', prefix),
+		parent <- antcall),
+	-- <param name="outHBM" value="inModelHBM"/>
+	   paramoutHBM : XML!"XML::Element" (
+	   	name <- 'param',
+		children <- thisModule.Property('outHBM', inModel + 'HBM'),
+		parent <- antcall),
+	-- <param name="uriHBM" value="hbmuri"/>
+	   paramuriHBM : XML!"XML::Element" (
+	   	name <- 'param',
+		children <- thisModule.Property('uriHBM', hbmuri),
 		parent <- antcall)
 	do {
 		Sequence{targetName, targetDepends, loadModel, antcall};
 	}
 }
 
-rule ModelFeedbackTarget(name : String, inModel : String, targetProject : String, path : String) {
+rule ModelFeedbackTarget(name : String, inModel : String, targetProject : String, uri : String) {
 	-- Sequence{name = 'name' depends = 'defineProperties, loadBaseModels, loadJAVA'}
 	to targetName : XML!"XML::Attribute"(
 	   	name <- 'name',
@@ -168,43 +168,27 @@ rule ModelFeedbackTarget(name : String, inModel : String, targetProject : String
 	   targetDepends : XML!"XML::Attribute"(
 	   	name <- 'depends',
 		value <- 'defineProperties, loadBaseModels, loadJAVA'),
-	-- <atl.loadModel modelHandler = 'UML2' name = 'inModel' metamodel = 'UML2' uri = 'path'/>
+	-- <emftvm.loadModel name = 'inModel' uri = 'uri'/>
 	   loadModel : XML!"XML::Element" (
-	   	name <- 'atl.loadModel'),
-	   modelHandler : XML!"XML::Attribute" (
-	   	name <- 'modelHandler',
-		value <- 'UML2',
-		parent <- loadModel),
+	   	name <- 'emftvm.loadModel'),
 	   modelName : XML!"XML::Attribute" (
 	   	name <- 'name',
 		value <- inModel,
 		parent <- loadModel),
-	   metamodel : XML!"XML::Attribute" (
-	   	name <- 'metamodel',
-		value <- 'UML2',
-		parent <- loadModel),
 	   modelPath : XML!"XML::Attribute" (
 	   	name <- 'uri',
-		value <- path,
+		value <- uri,
 		parent <- loadModel),
-	-- <atl.loadModel modelHandler = 'EMF' name = 'inModelCode' metamodel = 'JAVA' path = 'targetProject/targetProject.javaast'/>
+	-- <emftvm.loadModel name = 'inModelCode' path = 'targetProject/targetProject.javaxmi'/>
 	   loadCode : XML!"XML::Element" (
-	   	name <- 'atl.loadModel'),
-	   cmodelHandler : XML!"XML::Attribute" (
-	   	name <- 'modelHandler',
-		value <- 'EMF',
-		parent <- loadCode),
+	   	name <- 'emftvm.loadModel'),
 	   cmodelName : XML!"XML::Attribute" (
 	   	name <- 'name',
 		value <- inModel + 'Code',
 		parent <- loadCode),
-	   cmetamodel : XML!"XML::Attribute" (
-	   	name <- 'metamodel',
-		value <- 'JAVA',
-		parent <- loadCode),
 	   cmodelPath : XML!"XML::Attribute" (
 	   	name <- 'path',
-		value <- '../' + targetProject + '.javaast',
+		value <- '../' + targetProject + '.javaxmi',
 		parent <- loadCode),
 	-- <antcall target="java2uml" inheritRefs="true">
 	   antcall : XML!"XML::Element" (
@@ -227,10 +211,10 @@ rule ModelFeedbackTarget(name : String, inModel : String, targetProject : String
 	   	name <- 'param',
 		children <- thisModule.Property('code', inModel + 'Code'),
 		parent <- antcall),
-	-- <param name="uri" value="path"/>
+	-- <param name="uri" value="uri"/>
 	   parampath : XML!"XML::Element" (
 	   	name <- 'param',
-		children <- thisModule.Property('uri', path),
+		children <- thisModule.Property('uri', uri),
 		parent <- antcall)
 	do {
 		Sequence{targetName, targetDepends, loadModel, loadCode, antcall};

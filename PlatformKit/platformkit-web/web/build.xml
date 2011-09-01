@@ -19,7 +19,9 @@
 
     <target name="war" depends="clean">
         <war destfile="platformkitservlet.war" webxml="resources/WEB-INF/web.xml">
-        	<fileset dir="resources/" excludes="WEB-INF/*"/>
+        	<fileset dir="resources/">
+        		<exclude name="WEB-INF/*"/>
+        	</fileset>
         	<fileset dir="${platformkit-examples.path}/"/>
         	<fileset file="${pkda.jar.path}"/>
         	<classes dir="../bin">
@@ -40,7 +42,6 @@
         		<exclude name="javax.servlet.jar"/>
       		</lib>
         	<lib dir="${platformkit-kb-owlapi3.path}/lib"/>
-        	<lib dir="${platformkit-pellet.path}/lib"/>
        	</war>
     </target>
 	

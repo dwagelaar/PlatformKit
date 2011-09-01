@@ -44,8 +44,8 @@ public class PlatformkitSession {
 								.info("platform description data set from context (length = "
 										+ description.getData().length + ")");
 					} else {
-						parameters.setProperty(item.getFieldName(), Streams
-								.asString(stream));
+						parameters.setProperty(item.getFieldName(),
+								Streams.asString(stream));
 					}
 				} else if (description.getData().length == 0) {
 					description.setFromInputStream(stream);
@@ -64,8 +64,8 @@ public class PlatformkitSession {
 					parameters.setProperty(name, req.getParameter(name));
 				}
 			} else {
-				StringTokenizer query = new StringTokenizer(req
-						.getQueryString(), "&");
+				StringTokenizer query = new StringTokenizer(
+						req.getQueryString(), "&");
 				while (query.hasMoreTokens()) {
 					StringTokenizer par = new StringTokenizer(
 							query.nextToken(), "=");

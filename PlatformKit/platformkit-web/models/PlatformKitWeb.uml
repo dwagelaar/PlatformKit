@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Persistence="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Persistence/_8oOa4B6PEdyzWPQ9uYFypQ/2 ../../uml2cs-transformations/profiles/Persistence.profile.uml#_8oQ3IB6PEdyzWPQ9uYFypQ http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
   <uml:Model xmi:id="_qb8akM37EdqwVrslYOdUDA" name="PlatformKitWeb">
     <ownedComment xmi:id="_te4EYBIsEd-skPKoMNVqXQ">
       <body>/*******************************************************************************
@@ -19,6 +19,43 @@
         <packagedElement xmi:type="uml:Package" xmi:id="_L0QPQMHBEduKcpNg9SVSYQ" name="vub">
           <packagedElement xmi:type="uml:Package" xmi:id="_OkCPQMHBEduKcpNg9SVSYQ" name="platformkit">
             <packagedElement xmi:type="uml:Package" xmi:id="__om3cOKeEdusoPrkeXo32Q" name="servlet">
+              <packageImport xmi:id="_hEQT4NRuEeCULYSDGCW3cw">
+                <importedPackage href="j2se-1_4-headless.uml#_Z20N4R5BEdycUoU7n1_rLw"/>
+              </packageImport>
+              <packageImport xmi:id="_tVAT0NRuEeCULYSDGCW3cw">
+                <importedPackage xmi:type="uml:Model" href="../../uml2cs-transformations/models/PrimitiveTypes.uml#_tPOCIaLHEdqkGMDvm75SlQ"/>
+              </packageImport>
+              <packageImport xmi:id="_3v4-UNRuEeCULYSDGCW3cw">
+                <importedPackage href="j2se-1_4-headless.uml#_Z2PmIB5BEdycUoU7n1_rLw"/>
+              </packageImport>
+              <packageImport xmi:id="_6rbiYNRuEeCULYSDGCW3cw">
+                <importedPackage href="JavaxServlet.uml#_d2WzAeKgEduOI6ponYIZJQ"/>
+              </packageImport>
+              <packageImport xmi:id="_A-hRENRvEeCULYSDGCW3cw">
+                <importedPackage href="j2se-1_4-headless.uml#_Z2bzYB5BEdycUoU7n1_rLw"/>
+              </packageImport>
+              <packageImport xmi:id="_Fd_GANRvEeCULYSDGCW3cw">
+                <importedPackage href="j2se-1_4-headless.uml#_aFmQwB5BEdycUoU7n1_rLw"/>
+              </packageImport>
+              <packageImport xmi:id="_WWiXgNRvEeCULYSDGCW3cw">
+                <importedPackage href="CommonsFileupload.uml#_9hjvw-K8Edukv8xN3-i5uA"/>
+              </packageImport>
+              <packageImport xmi:id="_cAwIUNRvEeCULYSDGCW3cw">
+                <importedPackage href="hibernate3.uml#_g14IYR5aEdyJx7sGKFMuHQ"/>
+              </packageImport>
+              <packageImport xmi:id="_lti9wNRvEeCULYSDGCW3cw">
+                <importedPackage href="j2se-1_4-headless.uml#_Z2FOEB5BEdycUoU7n1_rLw"/>
+              </packageImport>
+              <packageImport xmi:id="_w6-fgNRvEeCULYSDGCW3cw">
+                <importedPackage href="Platformkit.uml#_cDXQw-KzEducvf06rPkdnw"/>
+              </packageImport>
+              <packageImport xmi:id="_CAt4cNRwEeCULYSDGCW3cw" importedPackage="_OkCPQMHBEduKcpNg9SVSYQ"/>
+              <packageImport xmi:id="_GDSWANRwEeCULYSDGCW3cw">
+                <importedPackage href="CommonsFileupload.uml#_9hqdcOK8Edukv8xN3-i5uA"/>
+              </packageImport>
+              <packageImport xmi:id="_SwV3cNRwEeCULYSDGCW3cw">
+                <importedPackage href="CommonsFileupload.uml#_9hwkEeK8Edukv8xN3-i5uA"/>
+              </packageImport>
               <packagedElement xmi:type="uml:Class" xmi:id="_Cn1osOKfEdusoPrkeXo32Q" name="PlatformkitSession" clientDependency="_ZoiI4OK6EdupF4iz9hbLXA _tudRIOLBEduDvd4CuKZXNQ _uVmJoOLBEduDvd4CuKZXNQ _uiFtgOLBEduDvd4CuKZXNQ _uw5lkOLBEduDvd4CuKZXNQ _nCW8gOkXEduSvsosCY1j6g _mKX6ED1wEd-qB4v_5eEaiQ">
                 <ownedAttribute xmi:id="__nrYcOKgEduOI6ponYIZJQ" name="parameters" visibility="public">
                   <type xmi:type="uml:Class" href="j2se-1_4-headless.uml#_Z22qIB5BEdycUoU7n1_rLw"/>
@@ -214,4 +251,6 @@
   </uml:Model>
   <Standard:Create xmi:id="_FBHXwOKgEduOI6ponYIZJQ" base_BehavioralFeature="_C9sHcOKgEduOI6ponYIZJQ"/>
   <Standard:Create xmi:id="_3GBiUOj0EduMF8bmKxtVtA"/>
+  <Persistence:Persistent xmi:id="_yG5DkNRwEeCULYSDGCW3cw" id="_Ra3AgMHDEduKcpNg9SVSYQ" base_Class="_PCGO0MHCEduKcpNg9SVSYQ"/>
+  <Persistence:mapped xmi:id="_BWnWENRxEeCULYSDGCW3cw" type="binary" length="100000" base_Property="_bSvkoOkgEduSvsosCY1j6g"/>
 </xmi:XMI>
