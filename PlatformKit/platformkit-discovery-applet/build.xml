@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="platformkit-discovery-applet" default="all">
 
-	<!-- atl.vm = "Regular VM (with debugger)" | "EMF-specific VM" -->
-	<!--property name="atl.launcher" value="Regular VM (with debugger)"/-->
-	<property name="atl.launcher" value="EMF-specific VM"/>
+	<eclipse.convertPath property="resources.path" resourcepath="/uml2cs-instantmessenger-config-editor/transformations/Transformations"/>
 
-	<eclipse.convertPath resourcepath="/uml2cs-instantmessenger-config-editor/transformations/Transformations" property="trans.path"/>
-	<eclipse.convertPath resourcepath="/${ant.project.name}/transformation" property="localtrans.path"/>
-
+	<property name="trans.uri" value="platform:/resource/uml2cs-instantmessenger-config-editor/transformations/"/>
+	<property name="trans.local.uri" value="platform:/resource/${ant.project.name}/transformation/"/>
+	
 	<property name="Transformations.nsuri" value="http://soft.vub.ac.be/uml2cs/Transformations"/>
-	<property name="XML.ecore.uri" value="platform:/resource/uml2cs-transformations/metamodels/XML.ecore"/>
+	<property name="XML.ecore.uri" value="platform:/resource/uml2cs-instantmessenger-config-editor/metamodels/XML.ecore"/>
 	<property name="TransformationConfig.xmi.uri" value="platform:/resource/${ant.project.name}/TransformationConfig.xmi"/>
 	<property name="BuildParameters.xmi.uri" value="platform:/resource/${ant.project.name}/parameters.xmi"/>
-
+	
 	<target name="clean">
 		<mkdir dir="build"/>
         <delete includeemptydirs="true">
@@ -23,41 +21,40 @@
 	</target>
 	
 	<target name="loadModels">
-		<atl.loadModel modelHandler="EMF" name="ConfigMM" metamodel="MOF" nsuri="${Transformations.nsuri}"/>
-		<atl.loadModel modelHandler="EMF" name="Config" metamodel="ConfigMM" uri="${TransformationConfig.xmi.uri}"/>
-		<atl.loadModel modelHandler="EMF" name="XML" metamodel="MOF" uri="${XML.ecore.uri}"/>
-		<atl.loadModel modelHandler="EMF" name="BuildParameters" metamodel="XML" uri="${BuildParameters.xmi.uri}"/>
+		<emftvm.loadMetamodel name="ConfigMM" uri="${Transformations.nsuri}"/>
+		<emftvm.loadModel name="Config" uri="${TransformationConfig.xmi.uri}"/>
+		<emftvm.loadMetamodel name="XML" uri="${XML.ecore.uri}"/>
+		<emftvm.loadModel name="BuildParameters" uri="${BuildParameters.xmi.uri}"/>
 	</target>
 
 	<target name="transform" depends="loadModels">
-		<atl.launch path="${trans.path}/ConfigToBuildFile.asm">
-			<inmodel name="CFG" model="ConfigMM"/>
-			<inmodel name="IN" model="Config"/>
-			<inmodel name="XML" model="XML"/>
-			<outmodel name="OUT" model="Build" metamodel="XML" path="platform:/resource/${ant.project.name}/build/build.xml"/>
-			<superimpose path="${localtrans.path}/ConfigToBuildFile.asm"/>
-		</atl.launch>
-		<atl.launch path="${trans.path}/ConfigToParameters.asm">
-			<inmodel name="CFG" model="ConfigMM"/>
-			<inmodel name="IN" model="Config"/>
-			<inmodel name="XML" model="XML"/>
-			<outmodel name="OUT" model="Parameters" metamodel="XML" path="platform:/resource/${ant.project.name}/build/parameters.xml"/>
-		</atl.launch>
+		<emftvm.run modulepath="${trans.local.uri},${trans.uri}" module="PKDA::ConfigToBuildFile">
+			<metamodel name="ConfigMM" as="CFG"/>
+			<metamodel name="XML"/>
+			<inputmodel name="Config" as="IN"/>
+			<outputmodel name="Build" as="OUT" wspath="/${ant.project.name}/build/build.xml"/>
+		</emftvm.run>
+		<emftvm.run modulepath="${trans.local.uri},${trans.uri}" module="Transformations::ConfigToParameters">
+			<metamodel name="ConfigMM" as="CFG"/>
+			<metamodel name="XML"/>
+			<inputmodel name="Config" as="IN"/>
+			<outputmodel name="Parameters" as="OUT" wspath="/${ant.project.name}/build/parameters.xmi"/>
+		</emftvm.run>
 	</target>
 	
 	<target name="saveModels" depends="transform">
-		<atl.launch path="${trans.path}/XMLExtractor.asm">
-			<inmodel name="IN" model="Build"/>
-			<inmodel name="parameters" model="BuildParameters"/>
-			<inmodel name="XML" model="XML"/>
-		</atl.launch>
-		<atl.saveModel model="Parameters" uri="platform:/resource/${ant.project.name}/build/parameters.xmi"/>
+		<emftvm.run modulepath="${trans.local.uri},${trans.uri}" module="Transformations::XMLExtractor">
+			<metamodel name="XML"/>
+			<inputmodel name="Build" as="IN"/>
+			<inputmodel name="BuildParameters" as="parameters"/>
+		</emftvm.run>
+		<emftvm.saveModel name="Parameters" wspath="/${ant.project.name}/build/parameters.xmi"/>
 		<eclipse.refreshLocal resource="${ant.project.name}"/>
 	</target>
 	
 	<target name="copyCommon">
 		<copy todir="build">
-			<fileset dir="${trans.path}">
+			<fileset dir="${resources.path}">
 				<include name="common.xml"/>
 				<include name="hibernate-tools.jar"/>
 			</fileset>
@@ -66,7 +63,7 @@
 	</target>
 	
 	<target name="invokeBuild" depends="saveModels, copyCommon">
-		<ant dir="build" antfile="build.xml"></ant>
+		<ant dir="build" antfile="build.xml" inheritall="false"/>
 		<eclipse.refreshLocal resource="${ant.project.name}"/>
 	</target>
 	
