@@ -37,11 +37,9 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import be.ac.vub.platformkit.ConstraintSet;
 import be.ac.vub.platformkit.ConstraintSpace;
-import be.ac.vub.platformkit.PlatformkitPackage;
 import be.ac.vub.platformkit.hibernate.HibernateUtil;
 import be.ac.vub.platformkit.java.JavaOntologyProvider;
 import be.ac.vub.platformkit.kb.IOntologies;
@@ -65,12 +63,12 @@ public class PlatformkitServlet extends HttpServlet {
 	private Map<String, ConstraintSpacePool> knownSpaces = new HashMap<String, ConstraintSpacePool>();
 	private DateFormat dateFormat = new SimpleDateFormat();
 
-	static {
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
-				"platformkit", new XMIResourceFactoryImpl());
-		PlatformkitPackage packageInstance = PlatformkitPackage.eINSTANCE;
-		Assert.assertNotNull(packageInstance);
-	}
+//	static {
+//		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
+//				"platformkit", new XMIResourceFactoryImpl());
+//		PlatformkitPackage packageInstance = PlatformkitPackage.eINSTANCE;
+//		Assert.assertNotNull(packageInstance);
+//	}
 
 	/**
 	 * Processes any request to the web service.
@@ -247,8 +245,7 @@ public class PlatformkitServlet extends HttpServlet {
 					pool.removeSpace(space);
 				}
 			} else {
-				logger
-						.info("Different constraint space detected - purging pool");
+				logger.info("Different constraint space detected - purging pool");
 				while (pool.getSpaces().hasMoreElements()) {
 					space = (ConstraintSpace) pool.getSpaces().nextElement();
 					pool.removeSpace(space);

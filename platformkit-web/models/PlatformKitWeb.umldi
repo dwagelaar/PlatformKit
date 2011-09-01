@@ -111,7 +111,7 @@
           </diagrams>
           <subdiagrams xmi:id="_TtTRcMplEdyweLrXr02Gag">
             <model href="PlatformKitWeb.uml#__om3cOKeEdusoPrkeXo32Q"/>
-            <diagrams xmi:id="_TtTRccplEdyweLrXr02Gag" position="0,0" size="100,100" name="unnamed" viewport="0,0">
+            <diagrams xmi:id="_TtTRccplEdyweLrXr02Gag" position="0,0" size="100,100" name="be.ac.vub.platformkit.servlet" viewport="39,0">
               <property xmi:id="_TtTRcsplEdyweLrXr02Gag" key="pageFormatName" value="ecorePageFormat"/>
               <property xmi:id="_TtTRc8plEdyweLrXr02Gag" key="diagramWidth" value="1090"/>
               <property xmi:id="_TtTRdMplEdyweLrXr02Gag" key="diagramHeight" value="840"/>
@@ -177,7 +177,7 @@
                   </contained>
                 </contained>
               </contained>
-              <contained xsi:type="di:GraphNode" xmi:id="_TtVtucplEdyweLrXr02Gag" position="535,47" size="245,-1">
+              <contained xsi:type="di:GraphNode" xmi:id="_TtVtucplEdyweLrXr02Gag" position="535,31" size="245,-1">
                 <anchorage xmi:id="_TtVtusplEdyweLrXr02Gag" graphEdge="_TtXi4MplEdyweLrXr02Gag"/>
                 <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_TtVtu8plEdyweLrXr02Gag" presentation="default">
                   <element href="PlatformKitWeb.uml#_PCGO0MHCEduKcpNg9SVSYQ"/>

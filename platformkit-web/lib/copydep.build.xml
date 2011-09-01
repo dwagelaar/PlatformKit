@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="atl-commandline/copydep" default="all">
+<project name="platformkit-web/lib" default="all">
 	<target name="cleandep">
 		<delete verbose="true">
 			<fileset dir=".">
