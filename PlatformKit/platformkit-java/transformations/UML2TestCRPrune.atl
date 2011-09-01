@@ -98,10 +98,7 @@ helper context UML2!"uml::Element" def : isReferred : Boolean =
 
 helper context UML2!"uml::Classifier" def : isReferred : Boolean =
 	UML2!"uml::Element".allInstances()
-		->exists(e|
-			if e.isMissing then
-				e.refersToType(self)
-			else false endif);
+		->exists(e | e.isMissing and e.refersToType(self));
 
 -- ------------------------ hasReferredTypes ----------------------------
 
@@ -134,16 +131,16 @@ helper context UML2!"uml::Element" def : refersToType(type : UML2!"uml::Type") :
 	false;
 
 helper context UML2!"uml::Property" def : refersToType(type : UML2!"uml::Type") : Boolean =
-	self.type=type;
+	self.type = type;
 
 helper context UML2!"uml::Parameter" def : refersToType(type : UML2!"uml::Type") : Boolean =
-	self.type=type;
+	self.type = type;
 
 helper context UML2!"uml::Generalization" def : refersToType(type : UML2!"uml::Type") : Boolean =
-	self.general=type;
+	self.general = type;
 
 helper context UML2!"uml::InterfaceRealization" def : refersToType(type : UML2!"uml::Type") : Boolean =
-	self.contract=type;
+	self.contract = type;
 
 -- ======================================================================
 -- helper methods end

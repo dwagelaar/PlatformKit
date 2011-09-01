@@ -1,11 +1,13 @@
 -- @atlcompiler emftvm
+-- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id$
 -- Copies isLeaf and isReadOnly attribute values from a reference model
-module UML2AddIsLeaf; --extends UML2Copy
+module UML2AddIsLeaf;
 
 create OUT : UML2 from IN : UML2, REF : UML2;
 
 uses UML2Comparison;
+uses UML2Copy;
 
 -- ======================================================================
 -- model-specific helpers begin
@@ -27,15 +29,13 @@ helper context UML2!"uml::Classifier" def : fromPrev() : Sequence(UML2!"uml::Cla
 -- ======================================================================
 
 rule Class {
-    from s : UML2!"uml::Class" (
-		if thisModule.inElements->includes(s) then
-			s.oclIsTypeOf(UML2!"uml::Class")
-		else false endif)
+    from s : UML2!"uml::Class" in IN (
+		s.oclIsTypeOf(UML2!"uml::Class"))
 	using {
     	prev : UML2!"uml::Classifier" = s.fromPrev()->first()
 			.debug(s.qualifiedName + ' from prev');
     }
-    to t : UML2!"uml::Class" mapsTo s (
+    to t : UML2!"uml::Class" (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
@@ -71,12 +71,12 @@ rule Class {
 }
 
 rule Interface {
-    from s : UML2!"uml::Interface" (thisModule.inElements->includes(s))
+    from s : UML2!"uml::Interface" in IN
 	using {
     	prev : UML2!"uml::Classifier" = s.fromPrev()->first()
 			.debug(s.qualifiedName + ' from prev');
     }
-	to t : UML2!"uml::Interface" mapsTo s (
+	to t : UML2!"uml::Interface" (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
@@ -108,15 +108,13 @@ rule Interface {
 }
 
 rule DataType {
-    from s : UML2!"uml::DataType" (
-		if thisModule.inElements->includes(s) then
-			s.oclIsTypeOf(UML2!"uml::DataType")
-		else false endif)
+    from s : UML2!"uml::DataType" in IN (
+		s.oclIsTypeOf(UML2!"uml::DataType"))
 	using {
     	prev : UML2!"uml::Classifier" = s.fromPrev()->first()
 			.debug(s.qualifiedName + ' from prev');
     }
-	to t : UML2!"uml::DataType" mapsTo s (
+	to t : UML2!"uml::DataType" (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
@@ -144,17 +142,15 @@ rule DataType {
 }
 
 rule Property {
-    from s : UML2!"uml::Property" (
-		if thisModule.inElements->includes(s) then
-			s.oclIsTypeOf(UML2!"uml::Property")
-		else false endif)
+    from s : UML2!"uml::Property" in IN (
+		s.oclIsTypeOf(UML2!"uml::Property"))
 	using {
     	prevC : UML2!"uml::Classifier" = s.namespace.fromPrev()->first();
 		prev : UML2!"uml::StructuralFeature" = if prevC.oclIsUndefined() then OclUndefined
 			else prevC.allFeatures->select(f|s.isCompatibleWith(f))->first() endif
 			.debug(s.qualifiedName + ' from prev');
     }
-	to t : UML2!"uml::Property" mapsTo s (
+	to t : UML2!"uml::Property" (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,
@@ -185,14 +181,14 @@ rule Property {
 }
 
 rule Operation {
-    from s : UML2!"uml::Operation" (thisModule.inElements->includes(s))
+    from s : UML2!"uml::Operation" in IN
 	using {
     	prevC : UML2!"uml::Classifier" = s.namespace.fromPrev()->first();
 		prev : UML2!"uml::BehavioralFeature" = if prevC.oclIsUndefined() then OclUndefined
 			else prevC.allFeatures->select(f|s.isCompatibleWith(f))->first() endif
 			.debug(s.qualifiedName + ' from prev');
     }
-	to t : UML2!"uml::Operation" mapsTo s (
+	to t : UML2!"uml::Operation" (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- if prev.oclIsUndefined() then s.isLeaf else prev.isLeaf endif,

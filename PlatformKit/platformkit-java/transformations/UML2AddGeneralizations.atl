@@ -1,11 +1,13 @@
 -- @atlcompiler emftvm
+-- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
 -- $Id$
 -- Adds Generalizations to java::lang::Object where missing
-module UML2AddGeneralizations; --extends UML2Copy
+module UML2AddGeneralizations;
 
 create OUT : UML2 from IN : UML2;
 
 uses UML2;
+uses UML2Copy;
 
 -- ======================================================================
 -- model-specific helpers begin
@@ -21,56 +23,10 @@ helper def : javaLangObject : UML2!"uml::Class" = 'java::lang::Object'.class();
 -- transformation rules begin
 -- ======================================================================
 
-rule ClassWithoutGeneralization {
-    from s : UML2!"uml::Class" (
-		if thisModule.inElements->includes(s) then
-			s.oclIsTypeOf(UML2!"uml::Class") and
-			s.general->isEmpty() and s <> thisModule.javaLangObject
-		else false endif)
-    to t : UML2!"uml::Class" mapsTo s (
-        name <- s.name,
-        visibility <- s.visibility,
-        isLeaf <- s.isLeaf,
-        isAbstract <- s.isAbstract,
-        isActive <- s.isActive,
-        eAnnotations <- s.eAnnotations,
-        ownedComment <- s.ownedComment,
-        clientDependency <- s.clientDependency,
-        nameExpression <- s.nameExpression,
-        elementImport <- s.elementImport,
-        packageImport <- s.packageImport,
-        ownedRule <- s.ownedRule,
-        templateParameter <- s.templateParameter,
-        templateBinding <- s.templateBinding,
-        ownedTemplateSignature <- s.ownedTemplateSignature,
-        generalization <- Set{g},
-        powertypeExtent <- s.powertypeExtent,
-        redefinedClassifier <- s.redefinedClassifier,
-        substitution <- s.substitution,
-        representation <- s.representation,
-        collaborationUse <- s.collaborationUse,
-        ownedUseCase <- s.ownedUseCase,
-        useCase <- s.useCase,
-        ownedAttribute <- s.ownedAttribute,
-        ownedConnector <- s.ownedConnector,
-        ownedBehavior <- s.ownedBehavior,
-        classifierBehavior <- s.classifierBehavior,
-        interfaceRealization <- s.interfaceRealization,
-        ownedTrigger <- s.ownedTrigger,
-        nestedClassifier <- s.nestedClassifier,
-        ownedOperation <- s.ownedOperation,
-        ownedReception <- s.ownedReception),
-	   g : UML2!"uml::Generalization" (
-	   	general <- thisModule.javaLangObject)
-}
-
 rule Class {
-    from s : UML2!"uml::Class" (
-		if thisModule.inElements->includes(s) then
-			s.oclIsTypeOf(UML2!"uml::Class") and
-			(s.general->notEmpty() or s = thisModule.javaLangObject)
-		else false endif)
-    to t : UML2!"uml::Class" mapsTo s (
+    from s : UML2!"uml::Class" in IN (
+		s.oclIsTypeOf(UML2!"uml::Class"))
+    to t : UML2!"uml::Class" (
         name <- s.name,
         visibility <- s.visibility,
         isLeaf <- s.isLeaf,
@@ -103,6 +59,15 @@ rule Class {
         nestedClassifier <- s.nestedClassifier,
         ownedOperation <- s.ownedOperation,
         ownedReception <- s.ownedReception)
+}
+
+rule ClassWithoutGeneralization extends Class {
+    from s : UML2!"uml::Class" in IN (
+		s.general->isEmpty() and s <> thisModule.javaLangObject)
+    to t : UML2!"uml::Class" (
+        generalization <- Sequence{g}),
+	   g : UML2!"uml::Generalization" (
+	   	general <- thisModule.javaLangObject)
 }
 
 -- ======================================================================
