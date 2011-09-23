@@ -81,9 +81,9 @@
 			splitindex="true" 
 			use="true" 
 			version="true">
-			<link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>
+			<link href="http://download.oracle.com/javase/1.5.0/docs/api/"/>
 			<link href="http://www.osgi.org/javadoc/r4v42/"/>
-			<link href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.6.0/"/>
+			<link href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.7.0/"/>
 			<link href="../../../org.eclipse.platform.doc.isv/reference/api"/>
 			<link href="../../../be.ac.vub.jar2uml.doc/doc/javadoc"/>
 			<link href="http://logging.apache.org/log4j/docs/api/"/>
