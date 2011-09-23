@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.kb.owlapi3"
       label="%featureName"
-      version="1.4.4"
+      version="1.4.5"
       provider-name="%providerName">
 
    <description url="about.html">
