@@ -2,5 +2,5 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: be.ac.vub.platformkit.kb.owlapi3.doc;singleton:=true
-Bundle-Version: 1.4.3
+Bundle-Version: 1.4.5
 Bundle-Vendor: %Bundle-Vendor
