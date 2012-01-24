@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit"
       label="%featureName"
-      version="1.4.5"
+      version="1.4.6"
       provider-name="%providerName"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">
@@ -20,7 +20,7 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="http://soft.vub.ac.be/eclipse/update-3.5"/>
+      <update label="%updateSiteName" url="http://soft.vub.ac.be/eclipse/update-3.7"/>
    </url>
 
    <requires>

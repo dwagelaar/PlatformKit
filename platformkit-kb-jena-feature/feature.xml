@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.kb.jena"
       label="%featureName"
-      version="1.4.5"
+      version="1.4.6"
       provider-name="%providerName">
 
    <description url="about.html">
@@ -18,7 +18,7 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="http://soft.vub.ac.be/eclipse/update-3.5"/>
+      <update label="%updateSiteName" url="http://soft.vub.ac.be/eclipse/update-3.7"/>
    </url>
 
    <requires>
