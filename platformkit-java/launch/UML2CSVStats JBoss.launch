@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.m2m.atl.emftvm.launcher.EMFTVMTransformation">
+<stringAttribute key="ATL File Name" value="//platformkit-java/transformations/UML2CSVStats.atl"/>
+<booleanAttribute key="Display Timing Data" value="true"/>
+<mapAttribute key="Inout Model Options"/>
+<mapAttribute key="Inout Models"/>
+<mapAttribute key="Inout Models Output Locations"/>
+<mapAttribute key="Input Model Options"/>
+<mapAttribute key="Input Models">
+<mapEntry key="IN" value="platform:/resource/platformkit-jboss-as/model/jboss-as/jboss-as-3_0_8.uml"/>
+<mapEntry key="IN2" value="platform:/resource/platformkit-jboss-as/model/jboss-as/jboss-as-3_2_8_sp1.uml"/>
+<mapEntry key="IN3" value="platform:/resource/platformkit-jboss-as/model/jboss-as/jboss-as-4_0_5_ga.uml"/>
+<mapEntry key="IN4" value="platform:/resource/platformkit-jboss-as/model/jboss-as/jboss-as-4_2_3_ga.uml"/>
+<mapEntry key="IN5" value="platform:/resource/platformkit-jboss-as/model/jboss-as/jboss-as-5_0_1_ga.uml"/>
+<mapEntry key="IN6" value="platform:/resource/platformkit-jboss-as/model/jboss-as/jboss-as-5_1_0_ga.uml"/>
+<mapEntry key="IN7" value="platform:/resource/platformkit-jboss-as/model/jboss-as/jboss-as-6_0_0_20100721-m4.uml"/>
+</mapAttribute>
+<mapAttribute key="Metamodel Options"/>
+<mapAttribute key="Metamodels">
+<mapEntry key="UML2" value="http://www.eclipse.org/uml2/3.0.0/UML"/>
+</mapAttribute>
+<stringAttribute key="Module Name" value="UML2CSVStats"/>
+<stringAttribute key="Module Path" value="/platformkit-java/transformations/"/>
+<mapAttribute key="Output Model Options"/>
+<mapAttribute key="Output Models"/>
+<listAttribute key="Superimpose">
+<listEntry value="//platformkit-java/transformations/UML2Comparison.asm"/>
+<listEntry value="//platformkit-java/transformations/UML2.asm"/>
+</listAttribute>
+</launchConfiguration>

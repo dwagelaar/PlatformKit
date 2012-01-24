@@ -1,0 +1,32 @@
+-- @atlcompiler emftvm
+-- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
+-- $Id$
+-- Gathers statistics about a UML model and prints them to console.
+query UML2Stats = 
+	let allCls : Sequence(UML2!Classifier) = UML2!Classifier.allInstances() in
+	let clses : Sequence(UML2!Classifier) = allCls->select(c | c.oclIsKindOf(UML2!Class)) in
+	let ifaces : Sequence(UML2!Classifier) = allCls->select(c | c.oclIsKindOf(UML2!Interface)) in
+	let feats : Sequence(UML2!Feature) = UML2!Feature.allInstances() in
+	let atts : Sequence(UML2!Feature) = feats->select(f | f.oclIsKindOf(UML2!Property)) in
+	let ops : Sequence(UML2!Feature) = feats->select(f | f.oclIsKindOf(UML2!Operation)) in
+	
+	(UML2!Model.allInstances()->collect(m | m.name)->join(', ')
+	+ '\n\tNumber of Classifiers:' + allCls->size().toString()
+	+ '\n\tNumber of Classes:' + clses->size().toString()
+	+ '\n\tNumber of Interfaces:' + ifaces->size().toString()
+	+ '\n\tNumber of Other Classifiers:' + (allCls->size() - clses->size() - ifaces->size()).toString()
+	+ '\n\tNumber of Features:' + feats->size().toString()
+	+ '\n\tNumber of Properties:' + atts->size().toString()
+	+ '\n\tNumber of Operations:' + ops->size().toString()
+	+ '\n\tNumber of Other Features:' + (feats->size() - atts->size() - ops->size()).toString()
+	+ '\n')
+	.debug('Model');
+
+helper context OclAny def : join(delim : String) : String =
+	self->iterate(e; acc: String = '' |
+		if acc = '' then
+			acc + e
+		else
+			acc + delim + e
+		endif
+	);

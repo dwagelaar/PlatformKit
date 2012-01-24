@@ -1,0 +1,69 @@
+-- @atlcompiler emftvm
+-- @nsURI UML2=http://www.eclipse.org/uml2/3.0.0/UML
+-- $Id$
+-- Gathers statistics about a UML model and prints them as CSV to console.
+query UML2CSVStats =
+	(Sequence{
+		'Model',
+		'Number of Classifiers',
+		'Number of Inferred Classifiers',
+		'Number of Classed',
+		'Number of Inferred Classes',
+		'Number of Interfaces',
+		'Number of Inferred Interfaces',
+		'Number of Features',
+		'Number of Inferred Features',
+		'Number of Properties',
+		'Number of Inferred Properties',
+		'Number of Operations',
+		'Number of Inferred Operations'
+	}->join(',') + '\n' +
+	UML2!Model.allInstances()->collect(m | m.stats())->join('\n'))
+	.debug('CSV Stats');
+
+uses UML2Comparison;
+
+-- Joins a collection of strings into one string
+-- @param delim the delimiter to put between the strings
+-- @return the joined string
+helper context OclAny def : join(delim : String) : String =
+	self->iterate(e; acc: String = '' |
+		if acc = '' then
+			acc + e.toString()
+		else
+			acc + delim + e.toString()
+		endif
+	);
+
+-- Calculates the statistics for a given UML Model
+-- @return the CSV-formatted Model statistics
+helper context UML2!Model def : stats() : String =
+	let elements : Sequence(UML2!Element) = self.allOwnedElements() in
+	let classifiers : Sequence(UML2!Classifier) = elements->select(e | e.oclIsKindOf(UML2!Classifier)) in
+	let infClassifiers : Sequence(UML2!Classifier) = classifiers->select(c | c.isInferred) in
+	let classes : Sequence(UML2!Class) = classifiers->select(c | c.oclIsKindOf(UML2!Class)) in
+	let infClasses : Sequence(UML2!Class) = classes->select(c | c.isInferred) in
+	let interfaces : Sequence(UML2!Interface) = classifiers->select(c | c.oclIsKindOf(UML2!Interface)) in
+	let infInterfaces : Sequence(UML2!Interface) = interfaces->select(i | i.isInferred) in
+	let features : Sequence(UML2!Feature) = elements->select(e | e.oclIsKindOf(UML2!Feature)) in
+	let infFeatures : Sequence(UML2!Feature) = features->select(f | f.isInferred) in
+	let properties : Sequence(UML2!Property) = features->select(f | f.oclIsKindOf(UML2!Property)) in
+	let infProperties : Sequence(UML2!Property) = properties->select(p | p.isInferred) in
+	let operations : Sequence(UML2!Operation) = features->select(f | f.oclIsKindOf(UML2!Operation)) in
+	let infOperations : Sequence(UML2!Operation) = operations->select(o | o.isInferred) in
+	
+	Sequence{
+		self.name,
+		classifiers->size(),
+		infClassifiers->size(),
+		classes->size(),
+		infClasses->size(),
+		interfaces->size(),
+		infInterfaces->size(),
+		features->size(),
+		infFeatures->size(),
+		properties->size(),
+		infProperties->size(),
+		operations->size(),
+		infOperations->size()
+	}->join(',');
