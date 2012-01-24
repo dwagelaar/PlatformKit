@@ -36,11 +36,12 @@
             >PlatformKit ontology of a HTC Hero smartphone.</rdfs:label>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
-        <rdfs:seeAlso
-            >http://www.google.com/phone/detail/nexus-one</rdfs:seeAlso>
-        <owl:versionInfo>$Id$</owl:versionInfo>
+        <owl:versionInfo
+            >$Id$</owl:versionInfo>
         <rdfs:comment xml:lang="en"
             >Example PlatformKit platform instance ontology.</rdfs:comment>
+        <rdfs:seeAlso
+            >http://www.google.com/phone/detail/nexus-one</rdfs:seeAlso>
         <dc:rights xml:lang="en"
             >&#169; 2011, Vrije Universiteit Brussel. All rights reserved.</dc:rights>
         <owl:imports rdf:resource="http://soft.vub.ac.be/platformkit/2010/1/android-2_1.owl"/>
@@ -410,6 +411,7 @@
         <rdf:type rdf:resource="&owl;Thing"/>
         <platform:providesFeature rdf:resource="#htcHeroAndroidClassLibrary"/>
         <platform:providesFeature rdf:resource="#htcHeroDalvikVM"/>
+        <platform:providesFeature rdf:resource="#htcHeroVirtualKeyboard"/>
     </android-2_1:Android2_1RE>
     
 
@@ -555,12 +557,11 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/htc-hero.owl#htcHeroTouchScreen -->
 
-    <io:ScreenKeyboard rdf:about="#htcHeroTouchScreen">
-        <rdf:type rdf:resource="&io;TouchScreen"/>
+    <io:TouchScreen rdf:about="#htcHeroTouchScreen">
         <rdf:type rdf:resource="&owl;Thing"/>
         <io:screenWidth rdf:datatype="&xsd;integer">320</io:screenWidth>
         <io:screenHeight rdf:datatype="&xsd;integer">480</io:screenHeight>
-    </io:ScreenKeyboard>
+    </io:TouchScreen>
     
 
 
@@ -569,6 +570,14 @@
     <owl:Thing rdf:about="#htcHeroTrackball">
         <rdf:type rdf:resource="&io;Trackball"/>
     </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/htc-hero.owl#htcHeroVirtualKeyboard -->
+
+    <io:ScreenKeyboard rdf:about="#htcHeroVirtualKeyboard">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </io:ScreenKeyboard>
     
 
 

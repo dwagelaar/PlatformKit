@@ -38,7 +38,8 @@
             >http://www.google.com/phone/detail/nexus-one</rdfs:seeAlso>
         <dc:creator
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
-        <owl:versionInfo>$Id$</owl:versionInfo>
+        <owl:versionInfo
+            >$Id$</owl:versionInfo>
         <rdfs:comment xml:lang="en"
             >Example PlatformKit platform instance ontology.</rdfs:comment>
         <dc:rights xml:lang="en"
@@ -406,6 +407,7 @@
         <rdf:type rdf:resource="&owl;Thing"/>
         <platform:providesFeature rdf:resource="#googleNexusOneAndroidClassLibrary"/>
         <platform:providesFeature rdf:resource="#googleNexusOneDalvikVM"/>
+        <platform:providesFeature rdf:resource="#googleNexusOneVirtualKeyboard"/>
     </android-2_2:Android2_2RE>
     
 
@@ -551,12 +553,11 @@
 
     <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/google-nexus-one.owl#googleNexusOneTouchScreen -->
 
-    <io:ScreenKeyboard rdf:about="#googleNexusOneTouchScreen">
+    <owl:Thing rdf:about="#googleNexusOneTouchScreen">
         <rdf:type rdf:resource="&io;TouchScreen"/>
-        <rdf:type rdf:resource="&owl;Thing"/>
         <io:screenWidth rdf:datatype="&xsd;integer">480</io:screenWidth>
         <io:screenHeight rdf:datatype="&xsd;integer">800</io:screenHeight>
-    </io:ScreenKeyboard>
+    </owl:Thing>
     
 
 
@@ -565,6 +566,14 @@
     <owl:Thing rdf:about="#googleNexusOneTrackball">
         <rdf:type rdf:resource="&io;Trackball"/>
     </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/google-nexus-one.owl#googleNexusOneVirtualKeyboard -->
+
+    <io:ScreenKeyboard rdf:about="#googleNexusOneVirtualKeyboard">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </io:ScreenKeyboard>
     
 
 

@@ -38,7 +38,8 @@
             >Dennis Wagelaar &lt;dennis.wagelaar@vub.ac.be&gt;</dc:creator>
         <rdfs:seeAlso
             >http://www.google.com/phone/detail/nexus-s</rdfs:seeAlso>
-        <owl:versionInfo>$Id$</owl:versionInfo>
+        <owl:versionInfo
+            >$Id$</owl:versionInfo>
         <rdfs:comment xml:lang="en"
             >Example PlatformKit platform instance ontology.</rdfs:comment>
         <dc:rights xml:lang="en"
@@ -420,6 +421,7 @@
         <rdf:type rdf:resource="&owl;Thing"/>
         <platform:providesFeature rdf:resource="#googleNexusSAndroidClassLibrary"/>
         <platform:providesFeature rdf:resource="#googleNexusSDalvikVM"/>
+        <platform:providesFeature rdf:resource="#googleNexusSVirtualKeyboard"/>
     </android-2_3:Android2_3RE>
     
 
@@ -591,11 +593,18 @@
     <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/google-nexus-s.owl#googleNexusSTouchScreen -->
 
     <owl:Thing rdf:about="#googleNexusSTouchScreen">
-        <rdf:type rdf:resource="&io;ScreenKeyboard"/>
         <rdf:type rdf:resource="&io;TouchScreen"/>
         <io:screenWidth rdf:datatype="&xsd;integer">480</io:screenWidth>
         <io:screenHeight rdf:datatype="&xsd;integer">800</io:screenHeight>
     </owl:Thing>
+    
+
+
+    <!-- http://soft.vub.ac.be/platformkit/2010/1/examples/google-nexus-s.owl#googleNexusSVirtualKeyboard -->
+
+    <io:ScreenKeyboard rdf:about="#googleNexusSVirtualKeyboard">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </io:ScreenKeyboard>
     
 
 
