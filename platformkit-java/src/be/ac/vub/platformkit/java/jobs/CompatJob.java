@@ -50,7 +50,6 @@ import org.eclipse.m2m.atl.emftvm.Model;
 import org.eclipse.m2m.atl.emftvm.util.DefaultModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.LazyList;
 import org.eclipse.m2m.atl.emftvm.util.StackFrame;
-import org.eclipse.m2m.atl.emftvm.util.TimingData;
 import org.eclipse.m2m.atl.emftvm.util.VMMonitor;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Package;
@@ -553,18 +552,15 @@ public class CompatJob extends ProgressMonitorJob {
 			report.setResource(rs.createResource(URI.createURI(getCrLocation())));
 			setReport(report);
 
-			final TimingData td = new TimingData();
 			final ExecEnv env = EmftvmFactory.eINSTANCE.createExecEnv();
-			final Map<String, Model> input = env.getInputModels();
-			input.put("CR", getCrProfile());
-			input.put("DEPS", getDeps());
-			input.put("IN", getIn());
-			env.getOutputModels().put("REPORT", getReport());
-			env.getMetaModels().put("UML2", getUml2());
+			env.setMonitor(new ProgressMonitorAdapter(monitor));
+			env.registerInputModel("CR", getCrProfile());
+			env.registerInputModel("DEPS", getDeps());
+			env.registerInputModel("IN", getIn());
+			env.registerOutputModel("REPORT", getReport());
+			env.registerMetaModel("UML2", getUml2());
 			env.loadModule(new DefaultModuleResolver(TRANSF_PREFIX_URI, rs), REPORT_MODULE);
-			td.finishLoading();
-			final Boolean result = (Boolean)env.run(td, new ProgressMonitorAdapter(monitor));
-			td.finish();
+			final Boolean result = (Boolean)env.run(null);
 			
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.createdCR")); //$NON-NLS-1$
 			return result;
@@ -595,15 +591,13 @@ public class CompatJob extends ProgressMonitorJob {
 			prunedReport.setResource(rs.createResource(URI.createURI(getCrLocation())));
 			setReport(prunedReport);
 
-			final TimingData td = new TimingData();
 			final ExecEnv env = EmftvmFactory.eINSTANCE.createExecEnv();
-			env.getInputModels().put("IN", report);
-			env.getOutputModels().put("OUT", prunedReport);
-			env.getMetaModels().put("UML2", getUml2());
+			env.setMonitor(new ProgressMonitorAdapter(monitor));
+			env.registerInputModel("IN", report);
+			env.registerOutputModel("OUT", prunedReport);
+			env.registerMetaModel("UML2", getUml2());
 			env.loadModule(new DefaultModuleResolver(TRANSF_PREFIX_URI, rs), PRUNE_MODULE);
-			td.finishLoading();
-			final Boolean result = (Boolean)env.run(td, new ProgressMonitorAdapter(monitor));
-			td.finish();
+			final Boolean result = (Boolean)env.run(null);
 
 			worked(monitor, PlatformkitJavaResources.getString("CompatJob.prunedCR")); //$NON-NLS-1$
 			return result;
