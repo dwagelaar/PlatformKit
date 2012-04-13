@@ -2,8 +2,10 @@
 <launchConfiguration type="org.eclipse.m2m.atl.emftvm.launcher.EMFTVMTransformation">
 <stringAttribute key="ATL File Name" value="//platformkit-java/transformations/UML2CompatibilityReport.atl"/>
 <booleanAttribute key="Display Timing Data" value="true"/>
+<booleanAttribute key="Enable JIT compiler" value="false"/>
 <mapAttribute key="Inout Model Options"/>
 <mapAttribute key="Inout Models"/>
+<mapAttribute key="Inout Models Output Locations"/>
 <mapAttribute key="Input Model Options"/>
 <mapAttribute key="Input Models">
 <mapEntry key="CR" value="platform:/resource/platformkit-java/profiles/CompatibilityReport.profile.uml"/>
@@ -14,7 +16,6 @@
 <mapAttribute key="Metamodels">
 <mapEntry key="UML2" value="http://www.eclipse.org/uml2/3.0.0/UML"/>
 </mapAttribute>
-<stringAttribute key="Module File Name" value="/platformkit-java/transformations/UML2CompatibilityReport.emftvm"/>
 <stringAttribute key="Module Name" value="UML2CompatibilityReport"/>
 <stringAttribute key="Module Path" value="/platformkit-java/transformations/"/>
 <mapAttribute key="Output Model Options">
@@ -26,6 +27,5 @@
 <listAttribute key="Superimpose">
 <listEntry value="//platformkit-java/transformations/UML2.asm"/>
 <listEntry value="//platformkit-java/transformations/UML2Comparison.asm"/>
-<listEntry value="//platformkit-java/transformations/UML2.asm"/>
 </listAttribute>
 </launchConfiguration>
