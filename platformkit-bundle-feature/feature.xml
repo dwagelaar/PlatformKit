@@ -2,7 +2,7 @@
 <feature
       id="be.ac.vub.platformkit.bundle"
       label="%featureName"
-      version="1.4.6"
+      version="1.4.7"
       provider-name="%providerName"
       plugin="be.ac.vub.platformkit"
       image="VUB_logo_compact.gif">
